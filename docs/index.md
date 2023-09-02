@@ -40,9 +40,9 @@ Ce module se déroulera en 15 heures de cours sous forme de Cours - TP.
 
 
 ### Contenu du cours
-1. [Installation d'une distribution Linux](./contents/installation-wsl.md)
-2. [Lecture préliminaire](./contents/preliminary-reading.md)
-3. [TP1 - Premières commandes](./contents/tp1.md)
+1. [Installation d'une distribution Linux](./contenus/installation-wsl.md)
+2. [Lecture préliminaire](./contenus/preliminary-reading.md)
+3. [TP1 - Premières commandes](./contenus/tp1.md)
 4. [TP2 - Système de fichiers et permissions](#) (à venir)
 5. [TP3 - Environnement de travail](#) (à venir)
 6. [TP4 - Descripteurs de fichiers, tubes et redirections](#) (à venir)
