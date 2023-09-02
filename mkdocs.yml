@@ -1,6 +1,6 @@
-site_name: TI307I - Introduction to Linux
+site_name: TI307 - Introduction au système Linux
 
-repo_url: https://github.com/douga19/introduction-linux
+repo_url: https://github.com/douga19/introduction-linux-fr
 
 edit_uri: ""
 
@@ -91,7 +91,7 @@ plugins:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/douga19/introduction-linux
+      link: https://github.com/douga19/introduction-linux-fr
       name: Github repo of this course
 
-copyright:  TI307I - Introduction to Linux - Efrei Paris | Rado Rakotonarivo 2023.
+copyright:  TI307 - Introduction au système Linux - Efrei Paris | Rado Rakotonarivo 2023.
