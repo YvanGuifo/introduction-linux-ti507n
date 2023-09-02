@@ -54,22 +54,21 @@ $ echo       Hello,        world!
 
 ### Exercice 2 : Répertoires et fichiers
 
-1. Open a terminal and type the following command, respecting its syntax:
-2. Ouvrez un terminal Debian et tapez la commande suivante, en respectant sa syntaxe :
+1. Ouvrez un terminal Debian et tapez la commande suivante, en respectant sa syntaxe :
 ```bash
 PS1='$ '
 ```
-3. Entrez la commande `pwd` (*print working directory*), c'est-à-dire afficher le nom du répertoire courant) et notez ce qui est affiché à l'écran : c'est le chemin absolu de votre répertoire personnel, votre *home*.
-4. Entrez la commande `cd ..` (*change directory*,  avec un espace entre `cd` et `..`) puis `pwd`. Répétez plusieurs fois ces deux commandes jusqu'à ce que le résultat reste le même. Que s'est-il passé ?
-5. Entrez la commande `cd` (sans argument), puis `pwd`. Commentez.
-6. Entrez la commande `cd /`, puis `pwd` et `ls`. À quoi sert la commande `ls` ?
-7. Entrez la commande `cd /usr/include`. Utilisez la commande `ls`. À quoi semble servir ce répertoire ?
-8. La commande `cat` (*concatenate*) affiche un ou plusieurs fichiers donnés en arguments (l'un après l'autre) dans le terminal. La commande `wc` (*word count*) affiche (dans cet ordre) le nombre de lignes, de mots et de caractères des fichiers donnés en arguments, puis, s'il y en a plusieurs, les sommes de ces nombres pour tous les fichiers. Affichez le contenu du fichier `stdlib.h` et le nombre de lignes de ce fichier.
-9. Entrez la commande `cd ..`, `pwd` et `ls`.
-10. Entrez la commande `cd share/man`, puis `pwd` et `ls`. Pouvez-vous deviner à quoi se réfèrent certains des résultats affichés ?
-11. Entrez la commande `ls /bin`. Certains noms vous sont-ils familiers ?
-12. Le caractère `~` (qui se lit *tilde*) est entré au clavier avec la combinaison de touches `Alt Gr-2`. Entrez la commande `echo ~`, puis la commande `cd ~`. Que fait le shell au caractère `~` ?
-13. Représentez les répertoires et fichiers mentionnés dans l'Exercice sous la forme d'un arbre (c'est-à-dire comme un arbre généalogique).
+2. Entrez la commande `pwd` (*print working directory*), c'est-à-dire afficher le nom du répertoire courant) et notez ce qui est affiché à l'écran : c'est le chemin absolu de votre répertoire personnel, votre *home*.
+3. Entrez la commande `cd ..` (*change directory*,  avec un espace entre `cd` et `..`) puis `pwd`. Répétez plusieurs fois ces deux commandes jusqu'à ce que le résultat reste le même. Que s'est-il passé ?
+4. Entrez la commande `cd` (sans argument), puis `pwd`. Commentez.
+5. Entrez la commande `cd /`, puis `pwd` et `ls`. À quoi sert la commande `ls` ?
+6. Entrez la commande `cd /usr/include`. Utilisez la commande `ls`. À quoi semble servir ce répertoire ?
+7. La commande `cat` (*concatenate*) affiche un ou plusieurs fichiers donnés en arguments (l'un après l'autre) dans le terminal. La commande `wc` (*word count*) affiche (dans cet ordre) le nombre de lignes, de mots et de caractères des fichiers donnés en arguments, puis, s'il y en a plusieurs, les sommes de ces nombres pour tous les fichiers. Affichez le contenu du fichier `stdlib.h` et le nombre de lignes de ce fichier.
+8. Entrez la commande `cd ..`, `pwd` et `ls`.
+9. Entrez la commande `cd share/man`, puis `pwd` et `ls`. Pouvez-vous deviner à quoi se réfèrent certains des résultats affichés ?
+10. Entrez la commande `ls /bin`. Certains noms vous sont-ils familiers ?
+11. Le caractère `~` (qui se lit *tilde*) est entré au clavier avec la combinaison de touches `Alt Gr-2`. Entrez la commande `echo ~`, puis la commande `cd ~`. Que fait le shell au caractère `~` ?
+12. Représentez les répertoires et fichiers mentionnés dans l'Exercice sous la forme d'un arbre (c'est-à-dire comme un arbre généalogique).
 
 ### Exercice 3 : Gestion de répertoires et de fichiers (1)
 
