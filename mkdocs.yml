@@ -45,6 +45,7 @@ theme:
     # - navigation.tabs
     - navigation.top
     - header.autohide
+    - toc.integrate
 
 markdown_extensions:
   # code highlighting

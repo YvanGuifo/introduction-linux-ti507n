@@ -1,29 +1,29 @@
 ---
-title: Home
+title: Accueil
 ---
 
-# TI307I - Introduction to Linux
+# TI307 - Introduction au système Linux
 
-### Course description
+### Description
 
-This course is an introduction to the concept of operating systems, and in particular GNU/Linux based operating systems. You will discover the philosophy, operations, basic components and powerful tools found on GNU/Linux systems through one of its distributions: Debian.
+Ce cours est une introduction au concept de système d'exploitation, et en particulier aux systèmes d'exploitation basés sur GNU/Linux. Vous découvrirez la philosophie, le fonctionnement, les composants de base et les outils puissants présents sur les systèmes GNU/Linux à travers l'une de ses distributions : Debian.
 
-This year the coordinator of this module will be M. Rado Rakotonarivo. You can contact him at `rado.rakotonarivo@efrei.fr`.
+Cette année le coordinateur de ce module sera M. Rado Rakotonarivo. Vous pouvez le contacter à `rado.rakotonarivo@efrei.fr`.
 
-### Sequencencing
+### Séquencement
 
-This module will be taught in 15 hours as a Lab/Lecture sessions.
+Ce module se déroulera en 15 heures de cours sous forme de Cours - TP.
 
--   Week 36: 3 hours of lab work
--   Week 37: 3 hours of lab work
--   Week 38: 3 hours of lab work
--   Week 39: 3 hours of lab work + 25 minutes of evaluation (CC)
--   Week 40: 2 hours of lab work
--   Week 41: 1 hour of final examination (DE)
+- Semaine 36: 3 heures de TP
+- Semaine 37: 3 heures de TP
+- Semaine 38: 3 heures de TP
+- Semaine 39: 3 heures de TP + 25 minutes d'évaluation (CC)
+- Semaine 40: 2 heures de TP
+- Semaine 41: 1 heure d'examen final (DE)
 
-### Group repartition
+### Répartition des groupes
 
-| Group     | Teacher                   | Contact    |
+| Groupe     | Enseignant                   | Contact    |
 |-----------|---------------------------|------------|
 | A         | Zouhour Guiras            | zouhour.guiras@intervenants.efrei.net           |
 | B         |                           |        |
@@ -39,12 +39,11 @@ This module will be taught in 15 hours as a Lab/Lecture sessions.
 | INT3      | Rado Rakotonarivo         | rado.rakotonarivo@efrei.fr       |
 
 
-
-### Course contents
-1. [Get yourself a Linux environment](./contents/installation-wsl.md)
-2. [Preliminary reading](./contents/preliminary-reading.md)
-3. [Lab1 - First commands](./contents/tp1.md)
-4. [Lab2 - File System and permissions](./contents/tp2.md)
-5. [Lab3 - Working environment](./contents/tp3.md)
-6. [Lab4 - File descriptors, pipes and tube](./contents/tp4.md)
-6. [Lab5 - Processes management](./contents/tp5.md)
+### Contenu du cours
+1. [Installation d'une distribution Linux](./contents/installation-wsl.md)
+2. [Lecture préliminaire](./contents/preliminary-reading.md)
+3. [TP1 - Premières commandes](./contents/tp1.md)
+4. [TP2 - Système de fichiers et permissions](#) (à venir)
+5. [TP3 - Environnement de travail](#) (à venir)
+6. [TP4 - Descripteurs de fichiers, tubes et redirections](#) (à venir)
+7. [TP5 - Gestion de processus](#) (à venir)
