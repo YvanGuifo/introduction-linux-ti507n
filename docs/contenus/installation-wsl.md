@@ -10,17 +10,17 @@ Dans ce tutoriel nous verrons comment vous pouvez directement avoir un environne
 
 ### Activation de wsl
 1. Dans la barre de recherche de Windows, tapez *"Activer ou désactiver des Fonctionnalités Windows"*.
-![Windows functionnalities](/assets/img/activate-windows-funtionnalities.png)
+![Windows functionnalities](assets/img/activate-windows-funtionnalities.png)
 2. Une boîte de dialogue va s'ouvrir dans laquelle nous allons cocher des options.
 3. Assurez-vous que les options **Sous-système Windows pour Linux** et **Plateforme de machine virtuelle** sont cochées et cliquez sur OK.
-![Check wsl and vm](/assets/img/checked-wsl-vm.png)
+![Check wsl and vm](assets/img/checked-wsl-vm.png)
 4. Il se peut que vous soyez invité à redémarrer votre ordinateur pour que les changements prennent effet.
 
 ### Installation de Debian
 
 1. Ouvrez le *Microsoft Store* et tapez **debian** dans la barre de recherche. Une fois que **Debian** est proposé dans les suggestions, cliquez dessus.
 2. Cliquez sur **Obtenir**.
-![Debian](/assets/img/debian.png)
+![Debian](assets/img/debian.png)
 3. Une fois le téléchargement terminé (environ 80 Mo), recherchez Debian dans la barre de recherche de Windows et cliquez dessus.
 4. Un émulateur de terminal nommé *Debian* va s'ouvrir et finaliser l'installation.
 5. Dans ce terminal, une fois l'installation terminée, on vous demandera de saisir un nom d'utilisateur et un mot de passe. Notez que pour des raisons de sécurité, le mot de passe que vous allez taper n'apparaîtra pas en clair, vous aurez peut-être l'impression de ne rien taper, mais en fait si.
@@ -30,7 +30,7 @@ Dans ce tutoriel nous verrons comment vous pouvez directement avoir un environne
 
 1. Ouvrez un explorateur de fichiers depuis Windows.
 2. Dans la barre d'adresse, tapez: `\\wls$`, puis appuyez sur entrée.
-![Windows explorer](/assets/img/wsl.png)
+![Windows explorer](assets/img/wsl.png)
 3. Double cliquez sur Debian. À partir de là, vous pourrez accéder à votre répertoire personnel (dossier personnel) en cliquant sur `home` puis sur le dossier dont le nom est votre `login`.
 4. Vous êtes maintenant en mesure de récupérer vos fichiers debian depuis Windows.
 5. Pour tester que tout va bien, dans le terminal debian saisissez la commande suivante: 
@@ -39,7 +39,7 @@ touch file.txt
 ```
 ensuite depuis l'explorateur de fichiers Windows vérifiez que le fichier a bien été créé dans votre répertoire personnel (il se peut que vous ayez besoin de rafraîchir la fenêtre avec `F5`).
 6. Éditez le fichier `file.txt` dans un éditeur de texte depuis Windows, puis enregistrez-le.
-![File editing](/assets/img/fichier.png)
+![File editing](assets/img/fichier.png)
 7. Enfin, retournez dans le terminal debian pour vérifier que le fichier a bien été modifié. Saisissez la commande:
 ```bash
 cat file.txt
@@ -54,10 +54,10 @@ Dans ce tutoriel nous verrons comment vous pouvez directement avoir un environne
 
 1. Télécharger l'application UTM depuis l'App Store. Ou directement depuis [ici](https://mac.getutm.app/). C'est un logiciel gratuit.
 2. Une fois le téléchargement terminé, ouvrez l'application. Vous aurez une fenêtre qui ressemble à ceci:
-   ![UTM](/assets/img/home-utm.png)
+   ![UTM](assets/img/home-utm.png)
 3. Choisissez ensuite *Parcourir la bibliothèque d'UTM*, une liste de systèmes d'exploitation s'affichera.   
 4. Choisissez une des distributions Debian 11 de votre choix (pour ce tuto j'ai choisi celle avec l'environnement graphique Xfce).
-   ![Debian distribution](/assets/img/debian-distro.png)
+   ![Debian distribution](assets/img/debian-distro.png)
 5. Cliquez ensuite sur le bouton *Open in UTM*, cela va télécharger l'image de la distribution Debian et l'installer sur votre ordinateur.
 6. Après l'installation, revenez à l'application UTM, vous verrez la distribution Debian dans la liste des systèmes d'exploitation installés sur la gauche.
 7. Cliquez sur la distribution Debian, puis sur le bouton *Play*.
@@ -73,7 +73,7 @@ Dans ce tutoriel nous verrons comment vous pouvez directement avoir un environne
 5. Vous pouvez maintenant supprimer le clavier par défaut qui était le QWERTY.
 6. Après la configuration, vous devriez avoir quelque chose de similaire à ceci:
 
-<img src="/assets/img/keyboard-setting.png" alt="Keyboard layout configuration" width="250"/>
+<img src="assets/img/keyboard-setting.png" alt="Keyboard layout configuration" width="250"/>
 
 Vous pouvez ensuite fermer la fenêtre, et maintenant vous pouvez utiliser le clavier auquel vous êtes habitué.
 
@@ -90,7 +90,7 @@ Pour cette étape, vous aurez besoin d'avoir un dossier dans votre MacOS que vou
 4. Cliquez sur l'option *Partage*, puis au niveau de *Emplacement* cliquez sur le bouton *Parcourir*, selectionnez alors le dossier que vous souhaitez partager.
 5. À la fin de la configuration, vous devriez arriver à un résultat similaire à ceci (avec biensûr le chemin de votre dossier):
 
-    ![Shared folder setting](/assets/img/shared-folder-setting.png)
+    ![Shared folder setting](assets/img/shared-folder-setting.png)
 
 6. Vous pouvez maintenant allumer votre OS Debian en cliquant sur le bouton *Play*.
 7. Connectez-vous, puis sur le bureau vous devriez voir un *Disque de volume* nommé `share`. Double-cliquez dessus et vous devriez récupérer le dossier que vous avez partagé depuis MacOS.
