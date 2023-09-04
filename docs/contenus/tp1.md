@@ -205,7 +205,7 @@ Depuis votre répertoire personnel, exécutez les opératiorns suivantes (plusie
     man 1 printf
     man 3 printf
     ```
-6. Dans la page de manuel de mv, observer les deux premières lignes de la partie « SYNOPSIS ». Que signifient les crochets ? les points de suspension ? Si besoin, se reporter au manuel de `man`.
+6. Dans la page de manuel de `mv`, observer les deux premières lignes de la partie « SYNOPSIS ». Que signifient les crochets ? les points de suspension ? Si besoin, se reporter au manuel de `man`.
 
 ### Exercice 7 : Caractères joker
 
