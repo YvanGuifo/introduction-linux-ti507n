@@ -221,23 +221,24 @@ Depuis votre répertoire personnel, exécutez les opératiorns suivantes (plusie
     * `?` représente un seul caractère quelconque;
     * Vous pouvez retrouver la liste des caractères joker dans le manuel de bash, à la section *Pathname Expansion*.
     
-1. Create the `tp_joker` directory in your home directory. Move to this directory. Create the following (empty) files: `annee1` `Annee2` `annee4` `annee45` `annee41` `annee510` `annee_saucisse` `annee_banane` `bonbon`
-2. Try to predict the result of the following commands, then test them:
-
-        $ echo *
-        $ echo *_*
-        $ echo [ab]*
-        $ echo [^ab]*
-        $ echo c*
-        $ echo ??????
-
-3. Using the `ls` command, list all the files that:
-    - ends with `5`
-    - starts with `annee4`
-    - starts with `annee4` and has a maximum of 7 letters
-    - starts with `annee` and whose sixth character is not a digit
-    - contains the string `ana`
-    - starts with `a` or `A`
-    - whose penultimate character is `4` or `1`
-4. List all the hidden files in your home directory (files whose name starts with a dot).
-5. List all the files starting with `std` and ending with `.h` in the `/usr/include` directory and its subdirectories.
+1. Créez un répertoire `tp_joker` dans votre répertoire personnel. Déplacez-vous dans ce répertoire. Créez les fichiers (vides) suivants : `annee1` `Annee2` `annee4` `annee45` `annee41` `annee510` `annee_saucisse` `annee_banane` `bonbon`.
+2. Dans un premier temps, sans les exécuter, essayez de prédire le résultat des commandes suivantes :
+    ```bash
+    $ echo *
+    $ echo *_*
+    $ echo [ab]*
+    $ echo [^ab]*
+    $ echo c*
+    $ echo ??????
+    ```
+    Puis testez les.
+3. En utilisant la commande `ls`, listez tous les fichiers qui :
+    - se terminent par `5`
+    - commencent par `annee4`
+    - commencent par `annee4` et ont au maximum 7 lettres
+    - commencent par `annee` et dont le sixième caractère n'est pas un chiffre
+    - contiennent la chaîne `ana`
+    - commencent par `a` ou `A`
+    - dont l'avant-dernier caractère est `4` ou `1`
+4. Listez tous les fichiers cachés de votre répertoire personnel (les fichiers dont le nom commence par un point).
+5. Listez tous les fichiers dont le nom commence par `std` et se termine par `.h` dans le répertoire `/usr/include` et ses sous-répertoires.
