@@ -111,15 +111,14 @@ en entrant
     ```bash    
     $ ls ~/arbres abeilles/ .
     ```
-9. The `mv` command for *move*, allows you to move or rename files. Observe with `ls` the result of each of the following commands:
-10. La commande `mv` pour *move* permet de déplacer ou renommer des fichiers. Observez avec `ls` le résultat de chacune des commandes suivantes :
+9. La commande `mv` pour *move* permet de déplacer ou renommer des fichiers. Observez avec `ls` le résultat de chacune des commandes suivantes :
     ```bash
     $ mv arbres/hello.c arbres/bonjour.c
     $ mv abeilles arbres vivant/
     $ mv bidule vivant
     $ mv vivant vie
     ```
-11. La commande `cp` pour *copy*, permet de copier des fichiers et des répertoires. Observez le résultat des commandes suivantes :
+10. La commande `cp` pour *copy*, permet de copier des fichiers et des répertoires. Observez le résultat des commandes suivantes :
     ```bash
     $ cp vie/arbres/bonjour.c salut.c
     $ mkdir copies
@@ -130,7 +129,7 @@ en entrant
     $ cp -R vie copie_vie
     ``` 
 Essayez de décrire les opérations de la commande `cp` en fonction que son dernier argument soit un répertoire existant ou non et que l'option `-R` soit présente ou non.       
-12. Enfin, la commande `rm` (pour *remove*) permet de supprimer des fichiers et des répertoires. Observez le résultat des commandes suivantes :
+11. Enfin, la commande `rm` (pour *remove*) permet de supprimer des fichiers et des répertoires. Observez le résultat des commandes suivantes :
     ```bash
     $ rm vie/bidule
     $ rm copies
