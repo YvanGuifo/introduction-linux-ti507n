@@ -128,8 +128,8 @@ en entrant
     $ cp -R vie/bidule tp_shell copies
     $ cp vie copie_vie
     $ cp -R vie copie_vie
-    ```
-Describe the operation of the `cp` command, depending on whether its last argument is an existing directory or not and whether the `-R` option is present or not.        
+    ``` 
+Essayez de décrire les opération de la commande `cp` en fonction que son dernier argument soit un répertoire existant ou non et que l'option `-R` soit présente ou non.       
 12. Enfin, la commande `rm` (pour *remove*) permet de supprimer des fichiers et des répertoires. Observez le résultat des commandes suivantes :
     ```bash
     $ rm vie/bidule
