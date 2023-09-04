@@ -29,7 +29,7 @@ Dans ce tutoriel nous verrons comment vous pouvez directement avoir un environne
 ### Accéder aux fichiers wsl depuis Windows
 
 1. Ouvrez un explorateur de fichiers depuis Windows.
-2. Dans la barre d'adresse, tapez: `\\wls$`, puis appuyez sur entrée.
+2. Dans la barre d'adresse, tapez: `\\wsl$`, puis appuyez sur entrée.
 ![Windows explorer](../../assets/img/wsl.png)
 3. Double cliquez sur Debian. À partir de là, vous pourrez accéder à votre répertoire personnel (dossier personnel) en cliquant sur `home` puis sur le dossier dont le nom est votre `login`.
 4. Vous êtes maintenant en mesure de récupérer vos fichiers debian depuis Windows.
