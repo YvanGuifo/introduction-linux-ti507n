@@ -128,7 +128,7 @@ en entrant
     $ cp vie copie_vie
     $ cp -R vie copie_vie
     ``` 
-Essayez de décrire les opérations de la commande `cp` en fonction que son dernier argument soit un répertoire existant ou non et que l'option `-R` soit présente ou non.       
+Essayez de décrire les opérations de la commande `cp` en fonction que son dernier argument soit un répertoire existant ou non et que l'option `-R` soit présente ou non. Pouvez-vous déduire l'utilité de l'option `-R` ?      
 11. Enfin, la commande `rm` (pour *remove*) permet de supprimer des fichiers et des répertoires. Observez le résultat des commandes suivantes :
     ```bash
     $ rm vie/bidule
