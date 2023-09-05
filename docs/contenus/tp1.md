@@ -108,9 +108,9 @@ et supprimez le sous-répertoire `tp1` du répertoire `tp_shell`.
     $ touch ~/arbres/hello.c abeilles/truc.txt bidule
     ```
 en entrant
-    ```bash    
-    $ ls ~/arbres abeilles/ .
-    ```
+```bash    
+$ ls ~/arbres abeilles/ .
+```
 9. La commande `mv` pour *move* permet de déplacer ou renommer des fichiers. Observez avec `ls` le résultat de chacune des commandes suivantes :
     ```bash
     $ mv arbres/hello.c arbres/bonjour.c
