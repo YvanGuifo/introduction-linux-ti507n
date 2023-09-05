@@ -217,7 +217,7 @@ Depuis votre répertoire personnel, exécutez les opératiorns suivantes (plusie
     Il existe plusieurs types de caractères joker, mais nous n'utiliserons que les plus courants : `*`, `?` et `[ ]`.
 
     * `*` sert à représenter une chaîne de caractères éventuellement vide, sauf si c'est le premier caractère de la chaîne et que la chaîne commence par un point (`.`);
-    *`[ ]` représente un seul caractère qui est dans l'intervalle de caractères spécifié entre les crochets. Vous pouvez utiliser des intervalles, comme dans `[a-z]` qui représente une seule lettre minuscule ou dans `[0-5]` qui représente un seul chiffre entre `0` et `5`. Vous pouvez inverser la recherche en commençant l'intervalle par `^` : par exemple `[^0-9]` représente un seul caractère qui est tout sauf un chiffre.
+    * `[ ]` représente un seul caractère qui est dans l'intervalle de caractères spécifié entre les crochets. Vous pouvez utiliser des intervalles, comme dans `[a-z]` qui représente une seule lettre minuscule ou dans `[0-5]` qui représente un seul chiffre entre `0` et `5`. Vous pouvez inverser la recherche en commençant l'intervalle par `^` : par exemple `[^0-9]` représente un seul caractère qui est tout sauf un chiffre.
     * `?` représente un seul caractère quelconque;
     * Vous pouvez retrouver la liste des caractères joker dans le manuel de bash, à la section *Pathname Expansion*.
     
