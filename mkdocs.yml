@@ -21,7 +21,7 @@ theme:
       note: octicons/tag-16
       abstract: octicons/checklist-16
       info: octicons/info-16
-      tip: octicons/squirrel-16
+      tip: octicons/pin-16
       success: octicons/check-16
       question: fontawesome/solid/bullhorn
       warning: octicons/alert-16

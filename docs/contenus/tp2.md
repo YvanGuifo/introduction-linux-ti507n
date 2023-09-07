@@ -195,6 +195,8 @@ title: TP2 - Système de fichiers et permissions
 
     `umask` est une commande qui permet de définir les permissions par défaut des fichiers et des répertoires que vous créez. La valeur de l'umask est une valeur octale qui est *soustraite* des permissions par défaut. Par exemple, si l'umask vaut 022, les permissions par défaut sont 755 pour les répertoires et 644 pour les fichiers.
 
+---
+
 ### Exercice 5 : `umask` (en plus)
 
 1. Dans un terminal, tapez la commande `umask` et notez le résultat.
