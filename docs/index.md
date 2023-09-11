@@ -23,18 +23,18 @@ Ce module se déroulera en 15 heures de cours sous forme de Cours - TP.
 
 ### Répartition des groupes
 
-| Groupe     | Enseignant                   | Contact    |
+| Groupe    | Enseignant                | Contact    |
 |-----------|---------------------------|------------|
 | A         | Zouhour Guiras            | zouhour.guiras@intervenants.efrei.net           |
-| B         |                           |        |
-| C         |                           |        |
+| B         | Halim Djerroud            | halim.djerroud@intervenants.efrei.net       |
+| C         | Borhene Eddine Dakkar     | borhen-eddine.dakkar@intervenants.efrei.net       |
 | D         | Zouhour Guiras            | zouhour.guiras@intervenants.efrei.net       |
 | E         |                           |        |
 | F         | Rado Rakotonarivo         | rado.rakotonarivo@efrei.fr       |
 | P         | Nathalie Xiaodan Chin     | nathalie.xiaodan-chin@intervenants.efrei.net       |
 | BN        | Nathalie Xiaodan Chin     | nathalie.xiaodan-chin@intervenants.efrei.net       |
 | BDX       | John Dreyfus              | john.dreyfus@intervenants.efrei.net       |
-| INT1      |                           |        |
+| INT1      | Rostom Kachouri           | rostom.kachouri@intervenants.efrei.net        |
 | INT2      | Nathalie Xiaodan Chin     | nathalie.xiaodan-chin@intervenants.efrei.net       |
 | INT3      | Rado Rakotonarivo         | rado.rakotonarivo@efrei.fr       |
 
