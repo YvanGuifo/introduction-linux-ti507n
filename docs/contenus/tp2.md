@@ -23,7 +23,7 @@ title: TP2 - Système de fichiers et permissions
 
     À moins d'être un administrateur système, vous n'avez pas besoin de vous soucier de la plupart des fichiers et répertoires système. Toutefois il est important de comprendre comment les répertoires et les fichiers sont organisés afin de pouvoir naviguer dans le système de fichiers et de pouvoir trouver les fichiers dont vous avez besoin.
 
-    Le tableau décrit le contenu des principaux répertoires du système de fichiers Linux.
+    Le tableau suivant décrit le contenu des principaux répertoires du système de fichiers Linux.
 
     | Répertoire | Description |
     ------------ | -------------
@@ -78,7 +78,7 @@ title: TP2 - Système de fichiers et permissions
       - **write** `w`: permet de modifier le contenu du fichier.
       - **execute** `x`: permet d'exécuter le fichier (si c'est un programme ou un script).
 
-    L'option `-l` de la commande `ls` les méta-données associées à un fichier, son nom, sa taille, son propriétaire, son groupe, ... et en particuler ses permissions, par exemple :
+    L'option `-l` de la commande `ls` affiche les méta-données associées à un fichier, son nom, sa taille, son propriétaire, son groupe, ... et en particuler ses permissions, par exemple :
 
     ```bash
     $ ls -l fichier
