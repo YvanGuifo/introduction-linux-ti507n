@@ -39,7 +39,7 @@ $ rm ${nom_fich}
 4. Entrez les commandes suivantes et essayez de commenter leur effet:
 ```bash
 $ sujet=Alice verbe=aime cod=piscine
-$ phrase ="$sujet $verbe la $cod."
+$ phrase="$sujet $verbe la $cod."
 $ echo $phrase
 $ sujet=Bob verbe=mange cod=salade
 $ echo $phrase
@@ -189,7 +189,9 @@ $ echo {a..d}.txt
 ## Substitution de commande
 !!! tip "Substitution de commande"
     La substitution de commanande est un mécanisme qui permet d’insérer le résultat d’une commande dans une chaîne de caractères. 
+    
     La substitution de commandes dans une chaîne de caractères est une autre facilité offerte par le shell. Elle permet de capturer la sortie d'une commande et de l'assigner à une variable ou de l'utiliser comme un argument d'une autre commande. Comme beaucoup de commandes Linux génèrent une sortie, la substitution de commandes peut être très intéressante. 
+    
     Il existe deux syntaxes pour la substitution de commande : la syntaxe ancienne avec les accents graves (`` ` ``) et la syntaxe moderne avec les parenthèses `$(...)`. L'ancienne syntaxe est déconseillée car elle ne permet pas d’imbriquer les substitutions de commande. Nous ne la présenterons donc pas ici.
 ---
 ### Exercice 7 : Substitution de commande simple
