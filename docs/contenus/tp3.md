@@ -166,10 +166,10 @@ $ echo "$mavar font plein de choses"
 ### Exercice 6 : Extension de l'accolade
 1. Testez les commandes suivantes
 ```bash
-$ echo {a, b, c, d}
+$ echo {a,b,c,d}
 $ echo {a..d}
 $ echo {a..d..2}
-$ echo {1, 2, 3, 4, 5, 6, 7, 8, 9}
+$ echo {1,2,3,4,5,6,7,8,9}
 $ echo {1..9}
 $ echo {1..9..2}
 ```
