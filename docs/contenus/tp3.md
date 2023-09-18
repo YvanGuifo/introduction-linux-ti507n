@@ -210,9 +210,9 @@ $ echo "Nous sommes le $(date)"
 $ prefix="Nous sommes le"
 $ echo $prefix $(date)
 $ echo $prefix $aujourdhui
-$ echo ${prefix} ${ajourdhui}
-$ phrase=${prefix} ${ajourdhui}
-$ phrase="${prefix} ${ajourdhui}"
+$ echo ${prefix} ${aujourdhui}
+$ phrase=${prefix} ${aujourdhui}
+$ phrase="${prefix} ${aujourdhui}"
 $ echo $phrase
 $ echo "$phrase"
 ```
