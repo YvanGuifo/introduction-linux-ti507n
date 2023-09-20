@@ -136,7 +136,7 @@ $ echo "\\\\\"\$\`\*\'"
 ```
 2. Testez les commande suivantes et notez vos observations:
 ```bash
-$ mavar ="Alice<newline> et<newline>Bob"
+$ mavar="Alice<newline> et<newline>Bob"
 $ echo $mavar font plein de choses
 $ echo "$mavar font plein de choses"
 ```
