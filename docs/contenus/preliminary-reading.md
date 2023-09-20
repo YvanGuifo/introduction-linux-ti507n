@@ -28,7 +28,7 @@ Comparé à Microsoft Windows, le système d'exploitation le plus utilisé, Linu
 
 ### Qu'est-ce qu'une distribution Linux ?
 
-Une distribution est un système d'exploitation complet composé d'un \emph{noyau} (c'est-à-dire le cœur d'un système d'exploitation) et d'utilitaires (dont certains sont également nécessaires au fonctionnement du système d'exploitation) ainsi que d'une variété de programmes d'application.
+Une distribution est un système d'exploitation complet composé d'un *noyau* (c'est-à-dire le cœur d'un système d'exploitation) et d'utilitaires (dont certains sont également nécessaires au fonctionnement du système d'exploitation) ainsi que d'une variété de programmes d'application.
 
 Il existe une centaine de distributions de Linux disponibles actuellement. Elles sont livrées avec diverses saveurs, de la plus conviviale pour les débutants complets à la plus avancée pour les experts. Les plus populaires d'entre elles sont Ubuntu, Fedora, Debian.
 
@@ -66,8 +66,6 @@ Debian est un système d'exploitation (SE) gratuit basé sur un noyau de type UN
 Nous avons vu qu'un SE gère les demandes d'utilisation des ressources de l'ordinateur. Ces demandes sont faites à travers une interface utilisateur. Il existe deux types d'interfaces utilisateur : (1) les interfaces utilisateur graphiques (GUI) et (2) les interfaces utilisateur en ligne de commande (CLI).
 
 Un shell est un programme qui fournit l'interface utilisateur traditionnelle, uniquement textuelle, pour les systèmes d'exploitation de type Unix. Sa fonction principale est de lire les commandes (c'est-à-dire les instructions) qui sont saisies dans une console (c'est-à-dire un mode d'affichage tout texte) ou une fenêtre de terminal (c'est-à-dire un mode d'affichage graphique), puis de les exécuter.
-
-In this course we will use the Bash shell. Bash is the GNU Project's shell. Bash is the Bourne Again SHell. Bash is an sh-compatible shell that incorporates useful features from the Korn shell (ksh) and C shell (csh). It is intended to conform to the IEEE POSIX P1003.2/ISO 9945.2 Shell and Tools standard. It offers functional improvements over sh for both programming and interactive use. In addition, most sh scripts can be run by Bash without modification.
 
 Dans ce module nous allons utiliser le shell Bash. Bash est le shell du projet GNU. Bash est le Bourne Again SHell. Bash est un shell compatible sh qui intègre des fonctionnalités utiles du shell Korn (ksh) et du shell C (csh). Il est destiné à se conformer à la norme IEEE POSIX P1003.2/ISO 9945.2 Shell and Tools. Il offre des améliorations fonctionnelles par rapport à sh pour la programmation et l'utilisation interactive. De plus, la plupart des scripts sh peuvent être exécutés par Bash sans modification.
 
