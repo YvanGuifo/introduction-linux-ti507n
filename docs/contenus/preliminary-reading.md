@@ -8,7 +8,7 @@ Cette première lecture préliminaire permet de comprendre la genèse de Linux e
 
 ### Qu'est-ce qu'un système d'exploitation ?
 
-Selon Wikipédia, l'encyclopédie libre, un système d'exploitation (SE) est un logiciel système qui gère les ressources matérielles et logicielles de l'ordinateur et fournit des services communs pour les programmes informatiques.
+Selon Wikipédia, l'encyclopédie libre, un système d'exploitation (SE) est un logiciel qui gère les ressources matérielles et logicielles de l'ordinateur et fournit des services communs pour les programmes informatiques.
 
 Il reçoit des demandes d'utilisation des ressources de l'ordinateur - ressources de stockage de la mémoire (par exemple, accès à la RAM, disques durs), ressources de calcul du processeur central, ressources de communication vers les périphériques (par exemple, pour demander des ressources de calcul du GPU ou de toute autre carte d'extension) ou via le réseau - à partir du logiciel d'application. Le système d'exploitation gère ces demandes et les ressources nécessaires pour éviter les interférences entre les applications logicielles.
 
