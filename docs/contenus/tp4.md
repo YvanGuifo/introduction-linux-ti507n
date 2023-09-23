@@ -149,7 +149,7 @@ Nous allons refaire le même exercice que l'exercice 2 mais cette fois-ci en uti
 
 ## Les tubes
 
-!!! tip "Tube"
+!!! tip "Tubes"
     Un *tube* (*pipe* en anglais) est un mécanisme qui permet de connecter la sortie standard d'une commande à l'entrée standard d'une autre commande. On utilise le caractère `|` pour créer un tube.
 
     C'est-à-dire que pour
@@ -262,7 +262,7 @@ Nous allons refaire le même exercice que l'exercice 2 mais cette fois-ci en uti
 
 Dans cet exercice, nous voudrions afficher sur le terminal le nom de base des 10 fichiers les plus légers (en taille en octets) parmi les fichier `.h ` du répertoire `/usr/include`.
 
-En utilisant les commande `wc`, `sort`, `cut`, `head` (ou éventuellement `tail`), et les redirections par tube, écrivez une commande qui affiche le nom de base des 10 fichiers les plus légers parmi les fichiers `.h` du répertoire `/usr/include`.
+En utilisant les commandes `wc`, `sort`, `cut`, `head` (ou éventuellement `tail`), et les redirections par tube, écrivez une commande qui affiche le nom de base des 10 fichiers les plus légers parmi les fichiers `.h` du répertoire `/usr/include`.
 
 !!! info "Indication"
 
