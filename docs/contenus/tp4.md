@@ -36,7 +36,7 @@ title: TP4 - Filtres textuels, redirections et tubes
 $ echo "Est-ce que j'apparais sur le terminal ?"
 $ echo "Ou bien dans le fichier ?" > fichier.txt
 $ cat fichier.txt
-$ cat "Et moi ?" > fichier.txt
+$ echo "Et moi ?" > fichier.txt
 $ cat fichier.txt
 $ echo "Je ne veux pas vider le fichier" >> fichier.txt
 $ cat fichier.txt
