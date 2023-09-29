@@ -107,7 +107,7 @@ title: TP5 - Processus, et autres commandes
     - Quelle différence remarquez-vous entre `./gro_processus 1` puis `C-z` et directement `./gros_processus 2 &` ? (À part 1 et 2 bien-sûr) ?
     - À quoi sert l'option `-p` de la commande `jobs` ?
     - Sans passer par `help bg`, pouvez-vous deviner ce que fait les commandes `bg %1` et `bg %2`? et la commande `bg` de manière générale ?
-    - Quels sont les différents état des tâches que vous avez observé ?
+    - Quels sont les différents états des tâches que vous avez observé ?
 
 ---
 ## Envoyer des signaux à un processus
