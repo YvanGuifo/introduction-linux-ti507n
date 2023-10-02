@@ -10,7 +10,9 @@ title: TP5 - Processus, et autres commandes
     - Pour chaque nouvelle commande, n'hésitez pas à consulter sa page de manuel avec la commande `man`, ou à utiliser l'option `--help` (si elle est disponible) pour savoir ce qu'elle fait.
     - N'hésitez pas à reconsulter les anciens TP pour vous aider.
     - Les exercices 1, 2, 3 et 4 sont **obligatoires**. Le reste est optionnel, mais à finir si vous avez le temps.
-    
+
+!!! warning "Dernière séance"
+    Comme il s'agit de la dernière séance du module, prennez le temps de répondre au questionnaire d'évaluation du cours :) N'hésitez pas à nous faire part de ce que vous avez trouvé de bien et de moins bien. Vos réponses sont anonymes et nous permettront d'améliorer le cours pour les prochaines années. Merci d'avance !
 
 ## Processus et tâches
 
@@ -175,7 +177,8 @@ $ jobs # pour voir disparaître la tâche [3]
     - `unzip` : permet de décompresser et d'extraire un fichier archivé avec `zip`.
   
     !!! warning "Remarque"
-        - `tar` permet à la fois la compression et l'archivage
+        `tar` permet à la fois la compression et l'archivage
+        
         - L'option `-c` de `tar` permet de créer une archive.
         - L'option `-x` de `tar` permet d'extraire une archive.
         - L'option `-f` de `tar` permet de spécifier le nom de l'archive.
@@ -197,18 +200,18 @@ dir
     ├── img004.png
     └── img005.png
 ```
-2. On se place dans le répertoire `dir`. Tapez ensuite la commande suivante pour créer une archive `files.tar` contenant les fichiers du répertoire `files`:
+1. On se place dans le répertoire `dir`. Tapez ensuite la commande suivante pour créer une archive `files.tar` contenant les fichiers du répertoire `files`:
 ```bash
 $ tar -cvf files.tar files
 ```
     Listez ensuite les fichiers de `dir`.
-3. Toujours dans `dir`. Tapez la commande suivante pour créer une archive `imgs.tar` contenant les images du répertoire `imgs`:
+1. Toujours dans `dir`. Tapez la commande suivante pour créer une archive `imgs.tar` contenant les images du répertoire `imgs`:
 ```bash
 $ tar -cf imgs.tar imgs
 ```
     Listez ensuite les fichiers de `dir`.
-4. Que pouvez vous dire sur l'option `-v` de `tar` ?
-5. Déplacer vous ensuite dans le répertoire parent de `dir` et tapez les commandes suivantes:
+1. Que pouvez vous dire sur l'option `-v` de `tar` ?
+2. Déplacer vous ensuite dans le répertoire parent de `dir` et tapez les commandes suivantes:
 ```bash
 $ tar -czvf dir.tar.gz dir
 $ ls
