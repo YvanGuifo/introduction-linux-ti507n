@@ -228,7 +228,8 @@ $ tar -xvf dir.tar
 !!! tip "Un éditeur de texte dans la console"
     `vim`  est un éditeur de texte en mode console. Il permet de créer, modifier et visualiser des fichiers textes. Il est très puissant et très utilisé par les développeurs. Il est très complet et possède de nombreuses fonctionnalités. Il est donc assez difficile de le maîtriser. Nous allons voir quelques commandes de base pour pouvoir l'utiliser.
 
-    Dans `vim` il existe plusieurs *modes* (il est renseigné en bas à gauche de la fenêtre)):
+    Dans `vim` il existe plusieurs *modes* (il est renseigné en bas à gauche de la fenêtre):
+    
     - Le mode *normal* : c'est le mode par défaut. Il permet de naviguer dans le fichier, de copier, coller, supprimer, etc.
     - Le mode *insertion* : il permet d'insérer du texte dans le fichier.
     - Le mode *commande* : il permet d'entrer des commandes pour effectuer des actions sur le fichier.
