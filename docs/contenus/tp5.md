@@ -106,7 +106,7 @@ title: TP5 - Processus, et autres commandes
     $ jobs
     ```
     - Quels procédés permettent de placer un processus en arrière-plan ? et en avant-plan ?
-    - Quelle différence remarquez-vous entre `./gro_processus 1` puis `C-z` et directement `./gros_processus 2 &` ? (À part 1 et 2 bien-sûr) ?
+    - Quelle différence remarquez-vous entre `./gros_processus 1` puis `C-z` et directement `./gros_processus 2 &` ? (À part 1 et 2 bien-sûr) ?
     - À quoi sert l'option `-p` de la commande `jobs` ?
     - Sans passer par `help bg`, pouvez-vous deviner ce que fait les commandes `bg %1` et `bg %2`? et la commande `bg` de manière générale ?
     - Quels sont les différents états des tâches que vous avez observé ?
@@ -286,7 +286,7 @@ $ tar -xvf dir.tar
         - Si vous avez déjà un fichier `a.out` dans votre répertoire, il sera écrasé par la commande `gcc hello.c`.
         - `a.out` est le nom par défaut de l'exécutable créé par `gcc`. Vous pouvez changer ce nom en utilisant l'option `-o` de `gcc`. Par exemple, `gcc hello.c -o hello` va créer un exécutable `hello` au lieu de `a.out`.
 
-3. Récupérez ensuite cette archive [hello.tar.gz](/assets/files/hello.tar.gz).
+3. Récupérez ensuite cette archive [hello.tar.gz](../../assets/files/hello.tar.gz).
 4. Extraire les fichiers de cet archive et déplacez vos dans le répertoire `hello`.
 5. Tapez la commande 
 ```bash
