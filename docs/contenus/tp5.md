@@ -286,7 +286,7 @@ $ tar -xvf dir.tar
         - Si vous avez déjà un fichier `a.out` dans votre répertoire, il sera écrasé par la commande `gcc hello.c`.
         - `a.out` est le nom par défaut de l'exécutable créé par `gcc`. Vous pouvez changer ce nom en utilisant l'option `-o` de `gcc`. Par exemple, `gcc hello.c -o hello` va créer un exécutable `hello` au lieu de `a.out`.
 
-3. Récupérez ensuite cette archive [hello.tar.gz](../../assets/files/hello.tar.gz).
+3. Récupérez ensuite cette archive [hello.tar.gz](../assets/files/hello.tar.gz).
 4. Extraire les fichiers de cet archive et déplacez vos dans le répertoire `hello`.
 5. Tapez la commande 
 ```bash
