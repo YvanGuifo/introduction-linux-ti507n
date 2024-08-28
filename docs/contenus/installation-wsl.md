@@ -95,9 +95,10 @@ Pour cette étape, vous aurez besoin d'avoir un dossier dans votre MacOS que vou
 6. Vous pouvez maintenant allumer votre OS Debian en cliquant sur le bouton *Play*.
 7. Connectez-vous, puis sur le bureau vous devriez voir un *Disque de volume* nommé `share`. Double-cliquez dessus et vous devriez récupérer le dossier que vous avez partagé depuis MacOS.
 8. Dans cet explorateur de fichier, faîtes un clic droit, puis choisissez *Open in Terminal Here*. Ensuite tapez la commande suivante:
-```bash
-sudo touch file.txt
-```
+
+    ```bash
+    sudo touch file.txt
+    ``` 
     !!! note "`sudo` ?"
         La commande `sudo` vous permet d'exécuter la commande qui la suit en tant qu'administrateur. On vous demandera votre mot de passe (une fois par session).
 

@@ -16,27 +16,29 @@ Ce module se déroulera en 15 heures de cours sous forme de Cours - TP.
 
 - Semaine 36: 3 heures de TP
 - Semaine 37: 3 heures de TP
-- Semaine 38: 3 heures de TP
-- Semaine 39: 3 heures de TP + 25 minutes d'évaluation (CC)
-- Semaine 40: 2 heures de TP
+- Semaine 38: 3 heures de TP + 25 minutes d'évaluation (CC)
+- Semaine 39: 3 heures de TP 
+- Semaine 40: 2 heures de TP dont 1 heure d'évaluation (TP noté)
 - Semaine 41: 1 heure d'examen final (DE)
 
 ### Répartition des groupes
 
 | Groupe    | Enseignant                | Contact    |
 |-----------|---------------------------|------------|
-| A         | Zouhour Guiras            | zouhour.guiras@intervenants.efrei.net           |
-| B         | Halim Djerroud            | halim.djerroud@intervenants.efrei.net       |
-| C         | Borhene Eddine Dakkar     | borhen-eddine.dakkar@intervenants.efrei.net       |
-| D         | Zouhour Guiras            | zouhour.guiras@intervenants.efrei.net       |
-| E         | Mourad Kmimech            | mourad.kmimech@efrei.fr       |
-| F         | Rado Rakotonarivo         | rado.rakotonarivo@efrei.fr       |
-| P         | Nathalie Xiaodan Chin     | nathalie.xiaodan-chin@intervenants.efrei.net       |
-| BN        | Nathalie Xiaodan Chin     | nathalie.xiaodan-chin@intervenants.efrei.net       |
-| BDX       | John Dreyfus              | john.dreyfus@intervenants.efrei.net       |
-| INT1      | Rostom Kachouri           | rostom.kachouri@intervenants.efrei.net        |
-| INT2      | Nathalie Xiaodan Chin     | nathalie.xiaodan-chin@intervenants.efrei.net       |
-| INT3      | Rado Rakotonarivo         | rado.rakotonarivo@efrei.fr       |
+| A         | Michel Landschoot         | mlandsnet@yahoo.fr      |
+| B         | Michel Landschoot         | mlandsnet@yahoo.fr      |
+| C         | Zouhour Guiras            | zouhour.guiras@intervenants.efrei.net           |
+| D         | Michel Landschoot         | mlandsnet@yahoo.fr      |
+| E         | Nathalie Xiaodan Chin     | nathalie.xiaodan-chin@intervenants.efrei.net       |
+| F         | Halim Djerroud            | halim.djerroud@intervenants.efrei.net       |
+| BN        | Zouhour Guiras            | zouhour.guiras@intervenants.efrei.net       |
+| PP        | Yvan Guifo Fodjo          | yvan.guifo-fodjo@efrei.fr      |
+| PM        | Yvan Guifo Fodjo          | yvan.guifo-fodjo@efrei.fr      |
+| BDX       | Mikaël Valot              | mikael.valot@efrei.fr       |
+| INT1      | Yaovi Soglo           | yaovi.soglo@efrei.fr       |
+| INT2      | Rado Rakotonarivo         | rado.rakotonarivo@efrei.fr       |
+| INT3      | Yaovi Soglo           | yaovi.soglo@efrei.fr       |
+
 
 
 ### Contenu du cours
