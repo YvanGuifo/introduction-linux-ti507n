@@ -85,10 +85,10 @@ markdown_extensions:
 plugins:
   # enable site search
   - search
-
   # enable tags in posts
   - tags
   # enable hidden pages for the corrige
+  - awesome-pages
 
 extra:
   social:
@@ -96,4 +96,4 @@ extra:
       link: https://github.com/douga19/introduction-linux-fr
       name: Github repo of this course
 
-copyright:  TI307 - Introduction au système Linux - Efrei Paris | Rado Rakotonarivo 2023.
+copyright:  TI307 - Introduction au système Linux - Efrei Paris | Rado Rakotonarivo 2024.
