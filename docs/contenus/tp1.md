@@ -9,12 +9,12 @@ hide:
 
 !!! info "Instructions"
     
-        - Dans tous les exercices, la chaîne `$ ` au début de la ligne représente l'invite de commande et ne doit pas être saisie.
-        - Pour l'instant, à chaque fois que vous ouvrez un terminal, vous êtes invité à saisir la commande suivante, (suivie, comme toujours, de la touche entrée), pour des raisons pédagogiques :
+    - Dans tous les exercices, la chaîne `$ ` au début de la ligne représente l'invite de commande et ne doit pas être saisie.
+    - Pour l'instant, à chaque fois que vous ouvrez un terminal, vous êtes invité à saisir la commande suivante, (suivie, comme toujours, de la touche entrée), pour des raisons pédagogiques :
 
-        ```bash
-        $ PS1='$ '
-        ```
+    ```bash
+    $ PS1='$ '
+    ```
 
 ### Exercice 1 : Premières commandes
 
