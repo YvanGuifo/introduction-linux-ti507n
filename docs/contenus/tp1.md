@@ -20,7 +20,7 @@ hide:
 
 !!! tip "Qu'est-ce qu'une commande ?"
 
-    Une *commande* est une séquence de mots se terminant par un caractère de nouvelle ligne. Autrement dit, une commande est une séquence de caractères qui se termine par la touche `<Entrée>`. Le premier mot est le nom de la commande, les autres sont ses *arguments*. La commande est exécutée par le shell, qui est un programme qui interprète la ligne de commande.
+    Une *commande* est une séquence de mots se terminant par un caractère de nouvelle ligne. Autrement dit, une commande est une séquence de caractères qui se termine par la touche <kbd>⏎ Entrée</kbd>. Le premier mot est le nom de la commande, les autres sont ses *arguments*. La commande est exécutée par le shell, qui est un programme qui interprète la ligne de commande.
 
     ```bash
     $ touch file.txt
@@ -43,13 +43,13 @@ $ uname -mrs
 $ echo Hello, world!
 $ echo       Hello,        world!
 ```
-2. Appuyez sur la touche `↑` (flèche vers le haut) de votre clavier, ou bien `C-p` (`Ctrl` et `p` en même temps), plusieurs fois jusqu'à ce que la commande `who` s'affiche. Appuyez maintenant sur la touche `↓` (flèche vers le bas) ou bien tapez `C-n` jusqu'à ce que la commande `uname -m -r` s'affiche puis appuyez sur la touche entrée. Notez à quoi servent ces raccourcis et apprenez-les.
-3. Appuyez sur `C-l`. Notez à quoi sert ce raccourci et apprenez-le.
+2. Appuyez sur la touche <kbd>↑</kbd> (flèche vers le haut) de votre clavier, ou bien <kbd>Ctrl</kbd> + <kbd>P</kbd> (<kbd>Ctrl</kbd> et <kbd>P</kbd> en même temps), plusieurs fois jusqu'à ce que la commande `who` s'affiche. Appuyez maintenant sur la touche <kbd>↓</kbd> (flèche vers le bas) ou bien tapez <kbd>Ctrl</kbd> + <kbd>N</kbd> jusqu'à ce que la commande `uname -m -r` s'affiche puis appuyez sur la touche entrée. Notez à quoi servent ces raccourcis et apprenez-les.
+3. Appuyez sur <kbd>Ctrl</kbd> + <kbd>L</kbd>. Notez à quoi sert ce raccourci et apprenez-le.
 4. Sans écrire la commande, afficher la commande `cal 3 2022`, *sans l'exécuter* (c'est-à-dire sans appuyer sur entrée).
-5. Appuyez sur `C-u`. Notez à quoi sert ce raccourci et apprenez-le.
-6. Affichez de nouveau la commande `uname`, sans l'écrire ni l'exécuter, puis appuyez sur `C-d`. Que se passe-t-il ?
-7. Effacez la ligne de commande avec un raccourci clavier et appuyez de nouveau sur `C-d`. Que se passe-t-il ?
-8. Ouvrez de nouveau un terminal Debian et appuyez plusieurs fois sur `C-p`. Qu'observez-vous ?
+5. Appuyez sur <kbd>Ctrl</kbd> + <kbd>U</kbd>. Notez à quoi sert ce raccourci et apprenez-le.
+6. Affichez de nouveau la commande `uname`, sans l'écrire ni l'exécuter, puis appuyez sur <kbd>Ctrl</kbd> + <kbd>D</kbd>. Que se passe-t-il ?
+7. Effacez la ligne de commande avec un raccourci clavier et appuyez de nouveau sur <kbd>Ctrl</kbd> + <kbd>D</kbd>. Que se passe-t-il ?
+8. Ouvrez de nouveau un terminal Debian et appuyez plusieurs fois sur <kbd>Ctrl</kbd> + <kbd>P</kbd>. Qu'observez-vous ?
 9. Fermez le terminal avec un raccourci clavier.
 
 ### Exercice 2 : Répertoires et fichiers
@@ -58,7 +58,7 @@ $ echo       Hello,        world!
 ```bash
 PS1='$ '
 ```
-2. Entrez la commande `pwd` (*print working directory*), c'est-à-dire afficher le nom du répertoire courant) et notez ce qui est affiché à l'écran : c'est le chemin absolu de votre répertoire personnel, votre *home*.
+2. Entrez la commande `pwd` (*print working directory*), c'est-à-dire afficher le nom du répertoire courant et notez ce qui est affiché à l'écran : c'est le chemin absolu de votre répertoire personnel, votre *home*.
 3. Entrez la commande `cd ..` (*change directory*,  avec un espace entre `cd` et `..`) puis `pwd`. Répétez plusieurs fois ces deux commandes jusqu'à ce que le résultat reste le même. Que s'est-il passé ?
 4. Entrez la commande `cd` (sans argument), puis `pwd`. Commentez.
 5. Entrez la commande `cd /`, puis `pwd` et `ls`. À quoi sert la commande `ls` ?
@@ -83,6 +83,11 @@ PS1='$ '
 
     Le `.` fait référence au répertoire courant. Les `..` font référence au répertoire parent.
 
+!!! warning "Où se trouve `~` sur le clavier ?"
+
+    - Sur un clavier azerty windows, le caractère `~` (tilde) est entré au clavier avec la combinaison de touches <kbd>Alt Gr</kbd> + <kbd>2</kbd>
+    - Sur un clavier mac, le caractère `~` (tilde) est entré au clavier avec la combinaison de touches <kbd>Alt</kbd> + <kbd>N</kbd>
+
 1. Assurez-vous d'être dans votre répertoire personnel et listez son contenu.
 2. Entrez la commande `mkdir tp_shell` (pour *make directory*, c'est-à-dire créer un répertoire). Listez le contenu du répertoire personnel et du répertoire `tp_shell`.
 3. Entrez la commande `mkdir abeilles tp_shell/tp1 ~/arbres`. Que fait-elle ? Parmi ses arguments, lesquels sont des chemins absolus et lesquels sont des chemins relatifs ? (indice : voir le résultat de `echo ~/arbres`).`
@@ -90,7 +95,7 @@ PS1='$ '
     ```bash
     $ mkdir -p vivant/plante/fleur tp_shell/tp1/exos/ex1/
     ```
-5. Le shell `bash` (qui est votre shell par défaut) possède une fonctionnalité qui fait gagner beaucoup de temps et évite les fautes de frappe : la complétion automatique. Elle se fait avec la touche de tabulation (la touche à gauche de la touche `a`). Entrez les caractères suivants (la touche de tabulation est représentée ci-dessous par `<Tab>`) et observez le résultat dans le terminal :
+5. Le shell `bash` (qui est votre shell par défaut) possède une fonctionnalité qui fait gagner beaucoup de temps et évite les fautes de frappe : la complétion automatique. Elle se fait avec la touche de tabulation (la touche à gauche de la touche `a`). Entrez les caractères suivants (la touche de tabulation <kbd>⇥ Tab</kbd> est représentée ci-dessous par `<Tab>`) et observez le résultat dans le terminal :
     ```bash
     $ mkd<Tab> vi<Tab><Tab><Tab>roses
     ```
@@ -103,7 +108,7 @@ PS1='$ '
     $ rmdir vivant tp_shell/tp1/exos/ex1
     ```
 et supprimez le sous-répertoire `tp1` du répertoire `tp_shell`.
-8. La commande `touch` permet (entre autres) de créer des fichiers vides (normaux). Observez le résultat de la commande (exécutée depuis votre répertoire personnel) :
+1. La commande `touch` permet (entre autres) de créer des fichiers vides (normaux). Observez le résultat de la commande (exécutée depuis votre répertoire personnel) :
     ```bash
     $ touch ~/arbres/hello.c abeilles/truc.txt bidule
     ```
@@ -111,14 +116,14 @@ en entrant
 ```bash    
 $ ls ~/arbres abeilles/ .
 ```
-9. La commande `mv` pour *move* permet de déplacer ou renommer des fichiers. Observez avec `ls` le résultat de chacune des commandes suivantes :
+1. La commande `mv` pour *move* permet de déplacer ou renommer des fichiers. Observez avec `ls` le résultat de chacune des commandes suivantes :
     ```bash
     $ mv arbres/hello.c arbres/bonjour.c
     $ mv abeilles arbres vivant/
     $ mv bidule vivant
     $ mv vivant vie
     ```
-10. La commande `cp` pour *copy*, permet de copier des fichiers et des répertoires. Observez le résultat des commandes suivantes :
+2.  La commande `cp` pour *copy*, permet de copier des fichiers et des répertoires. Observez le résultat des commandes suivantes :
     ```bash
     $ cp vie/arbres/bonjour.c salut.c
     $ mkdir copies
@@ -129,7 +134,7 @@ $ ls ~/arbres abeilles/ .
     $ cp -R vie copie_vie
     ``` 
 Essayez de décrire les opérations de la commande `cp` en fonction que son dernier argument soit un répertoire existant ou non et que l'option `-R` soit présente ou non. Pouvez-vous déduire l'utilité de l'option `-R` ?      
-11. Enfin, la commande `rm` (pour *remove*) permet de supprimer des fichiers et des répertoires. Observez le résultat des commandes suivantes :
+1.  Enfin, la commande `rm` (pour *remove*) permet de supprimer des fichiers et des répertoires. Observez le résultat des commandes suivantes :
     ```bash
     $ rm vie/bidule
     $ rm copies
@@ -137,7 +142,7 @@ Essayez de décrire les opérations de la commande `cp` en fonction que son dern
     $ rm -R copie_vie
     $ rm -i vie/arbres/bonjour.c vie/abeilles/truc.txt
     ```
-12. Supprimez tous les fichiers et répertoires créés lors de cet Exercice.
+2.  Supprimez tous les fichiers et répertoires créés lors de cet Exercice.
 
 ### Exercice 4 : Gestion de répertoires et de fichiers (2)
 
