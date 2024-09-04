@@ -93,24 +93,28 @@ Pour cette étape, vous aurez besoin d'avoir un dossier dans votre MacOS que vou
     ![Shared folder setting](../../assets/img/shared-folder-setting.png)
 
 6. Vous pouvez maintenant allumer votre OS Debian en cliquant sur le bouton *Play*.
-7. Connectez-vous, puis sur le bureau vous devriez voir un *Disque de volume* nommé `share`. Double-cliquez dessus et vous devriez récupérer le dossier que vous avez partagé depuis MacOS.
-8. Dans cet explorateur de fichier, faîtes un clic droit, puis choisissez *Open in Terminal Here*. Ensuite tapez la commande suivante:
+7. Connectez-vous, puis sur le bureau vous devriez voir un *Disque de volume* nommé `share`. Double-cliquez dessus : ce dossier est désormais celui que vous avez partagé depuis MacOS.
+8. Dans cet explorateur de fichier, faîtes un clic droit dans l'espace vide (du dossier), puis choisissez *Open in Terminal Here*. Ensuite tapez les commandes suivantes:
 
     ```bash
-    sudo touch file.txt
+    cd ..
+    sudo chmod 777 share
+    cd share
+    touch file.txt
     ``` 
     !!! note "`sudo` ?"
-        La commande `sudo` vous permet d'exécuter la commande qui la suit en tant qu'administrateur. On vous demandera votre mot de passe (une fois par session).
+        - La commande `sudo` vous permet d'exécuter la commande qui la suit en tant qu'administrateur. On vous demandera votre mot de passe (une fois par session). 
+        - La commande `chmod 777` permet de donner tous les droits sur le dossier `share` à tous les utilisateurs.
 
 9. Revenez dans l'explorateur de fichier MacOS, vous devriez trouver le fichier `file.txt` dans le dossier que vous avez partagé. Éditez ce fichier à l'aide d'un éditeur de texte, puis enregistrez-le.
 10. Revenez dans le terminal Debian, et tapez la commande suivante:
-```bash
-sudo cat file.txt
-```
-Si vous vouyvez le contenu de `file.txt` dans le terminal, tout s'est bien passé et à partir de maintenant vous pouvez partager des fichiers entre MacOS et Debian.
+    ```bash
+    cat file.txt
+    ```
+Si vous voyez le contenu de `file.txt` dans le terminal, tout s'est bien passé et à partir de maintenant vous pouvez partager des fichiers entre MacOS et Debian.
 
     !!! tip "Chemin vers le dossier partagé"
-        Dans l'OS Debian, le chemin vers le dossier partagé est `/media/share`. Assurez-vous de vous en souvenir :)
+        Dans l'OS Debian, le chemin vers le dossier partagé est `/media/share`. Assurez-vous de vous en souvenir 😉
 
 
 

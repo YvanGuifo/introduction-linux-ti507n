@@ -188,6 +188,10 @@ Depuis votre répertoire personnel, exécutez les opératiorns suivantes (plusie
 
 ### Exercice 6 : Obtenir l'aide
 
+!!! warning "Si vous êtes sur Windows et que vous utilisez WSL"
+
+    Il se peut que `man` ne soit pas installé sur votre Debian. Vous pouvez installer `man` avec la commande `sudo apt install manpages man-db`.
+
 !!! tip "Les pages du manuel"
 
     La commande `man` fournit l'aide pour les commandes externes. Pour les commandes internes, vous pouvez utiliser la commande `help`.
@@ -199,6 +203,7 @@ Depuis votre répertoire personnel, exécutez les opératiorns suivantes (plusie
     * Il peut y avoir une partie `EXAMPLES` qui donne des exemples d'utilisation de la commande.
 
     Les pages du manuel peuvent être plus ou moins compréhensibles... Mais on a rarement besoin de tout comprendre.
+
 
 1. Entrez la commande `man ls`. Quelles sont les options `-l` et `-a` ? Appuyez sur la touche `q` pour quitter l'aide et testez-les.
 2. À l'aide du manuel, dire à quoi sert l'option `-f` de la commande `rm` et comment on peut supprimer un fichier dont le nom commence par un tiret (comme par exemple `-f`).
