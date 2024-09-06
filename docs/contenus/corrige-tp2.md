@@ -188,7 +188,7 @@ title: TP2 - Système de fichiers et permissions
     ```
     
     !!! success "Réponse"
-        La syntaxe est : l’une des lettre augo (all, user, group, others) suivi d’un des caractères `=+-` (affecter les permissions, ajouters des permissions, retirer des permissions) suivi d’une partie de `rwx` (qui peut être vide) ou bien, d’un caractère parmi ugo, pour égaler, ajouter ou supprimer les permissions d’une de ces catégories d’utilisateurs. 
+        La syntaxe est : l’une des lettres `augo` (all, user, group, others) suivi d’un des caractères `=+-` (affecter les permissions, ajouters des permissions, retirer des permissions) suivi d’une partie de `rwx` (qui peut être vide) ou bien, d’un caractère parmi ugo, pour égaler, ajouter ou supprimer les permissions d’une de ces catégories d’utilisateurs. 
         
         Enfin, on peut juxtaposer ces modifications en les séparant par une virgule (sans espace, car cela doit être un seul argument).
 
@@ -197,7 +197,7 @@ title: TP2 - Système de fichiers et permissions
     !!! success "Réponse"
         On a donné la permission de lire pour tous et la permission d’écrire pour le propriétaire.
 
-3. Avec les deux modes d'utilisation de `chmod` (octale et symbolique), modifiez les permission du fichier `f` de la manière suivante :
+3. Avec les deux modes d'utilisation de `chmod` (octale et symbolique), modifiez les permissions du fichier `f` de la manière suivante :
     - exécution pour tous, lecture et écriture uniquement pour le propriétaire.
     - lecture et exécution pour tous, personne ne peut écrire.
     - toutes les permissions pour tous, pas d'écriture pour les autres.
