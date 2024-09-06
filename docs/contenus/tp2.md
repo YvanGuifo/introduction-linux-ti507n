@@ -141,11 +141,42 @@ title: TP2 - Système de fichiers et permissions
     $ chmod a+x,g-w f; ls -l f
     ```
 2. Testez la commande `chmod 644 f; ls -l f`. Que fait cette commande ?
-3. Avec les deux modes d'utilisation de `chmod` (octale et symbolique), modifiez les permission du fichier `f` de la manière suivante :
+3. Avec les deux modes d'utilisation de `chmod` (octale et symbolique), modifiez les permissions du fichier `f` de la manière suivante :
     - exécution pour tous, lecture et écriture uniquement pour le propriétaire.
     - lecture et exécution pour tous, personne ne peut écrire.
     - toutes les permissions pour tous, pas d'écriture pour les autres.
     - lecture et écriture pour le propriétaire, exécution pour le groupe et aucune pour les autres.
+
+### Exercice 4 : Permissions associées aux fichiers normaux
+
+1. Dans un répertoire de votre choix, créer deux fichiers `f` et `g`. Puis entrer (par exemple avec un éditeur de texte) du texte dans ces fichiers.
+2. Pour vous (propriétaire), retirer la permission de lire dans le fichier `f` et la permission d'écrire dans le fichier `g`.
+3. Testez ensuite les commandes suivantes, puis notez les résultats :
+    ```bash
+    $ cat f
+    $ cat g
+    ```
+4. Essayer de modifier `g` avec un éditeur de texte. Que se passe-t-il ?
+5. Tester les commandes:
+    ```bash
+    $ cp f h
+    $ cp g h
+    ```
+    Puis observer le contenu du fichier `h` ainsi que les permissions associées à ce fichier.
+6. La commande suivante permet d'écrire la chaîne `toto` à la fin du fichier `f` (nous la verrons plus en détail dans un prochain TP) :
+    ```bash
+    $ echo "toto" >> f
+    ```
+    Tester cette commande, puis redonnez-vous les droits de lecture sur le fichier `f`. Enfin affichez le contenu du fichier `f` grâce à la commande `cat`.
+7. Tester la commande:
+    ```bash
+    $ rm g
+    ```
+    **Tapez `n` pour refuser**. Enfin tester la commande suivante:
+    ```bash
+    $ rm -f g
+    ```
+    A-t-elle réussie ? Que pouvez vous en déduire ?
 
 ## Permissions associées aux répertoires
 
@@ -160,7 +191,7 @@ title: TP2 - Système de fichiers et permissions
       - **execute** `x`: permet d'ouvrir le répertoire (avec la commande `cd` par exemple).
 ---
 
-### Exercice 4 : Permissions associées aux répertoires
+### Exercice 5 : Permissions associées aux répertoires
 
 1. Créez un répertoire `rep` et deux fichiers normaux `a` et `b` à l'intérieur de ce répertoire.
 2. Retirez toutes les permissions sur le répertoire `rep` et essayez les commandes suivantes :
@@ -184,20 +215,86 @@ title: TP2 - Système de fichiers et permissions
     $ rm rep/a
     ```
 6. Avec l'ensemble de permissions `-wx` sur `rep` pour tous les utilisateurs, essayez de:
-   - créer un fichier d dans `rep`
-   - renommer le fichier b
-   - retirer toutes les permissions associées au fichier d
-   - supprimer le fichier d
+      
+      - créer un fichier `d` dans `rep`
+      - renommer le fichier `b`
+      - retirer toutes les permissions associées au fichier `d`
+      - supprimer le fichier `d`
 
-## Permissions par défaut
+
+### Exercice 6 : Les répertoires du `PATH`
+
+!!! warning "Attention"
+    
+    Cet exercice de type *expérimentation* est délicat et important. Il faut le traiter avec un soin particulier et en prenant son temps.
+
+1. Ouvrir un nouveau terminal et entrer la commande suivante :
+    ```bash
+    $ echo $PATH
+    ```
+    Observer le résultat, à votre avis à quoi correspondent les éléments séparés par des `:` ?
+2. Créer un répertoire `bin` dans votre répertoire personnel et entrer les commandes suivantes:
+    ```bash
+    $ PATH=~/bin:$PATH
+    $ echo $PATH
+    ```
+    Quelle est la différence avec d'affichage avec le résultat de la question 1 ?
+3. À l’aide de la commande `type`, chercher les chemin absolus des programmes `cat` et `rm` et les noter.
+4. Faire une copie de `cat` dans `~/bin` en le renommant `rm`.
+5. Créer un fichier `fic`, y mettre quelques caractères et créer deux copies `fic2` et `fic3` de `fic`.
+6. Essayer de détruire `fic` avec la commande `rm`. Que s’est-il passé ?
+7. Entrer la commande `$ type rm`.
+8. Lancer la commande
+    ```bash
+    $ <chemin vers rm> fic
+    ```
+    en remplaçant `<chemin vers rm>` par le chemin absolu vers la commande `rm` noté à la question 3. Que s’est-il passé ?
+9. Enlever la permission `x` sur le fichier `~/bin/rm` et essayer de supprimer `fic2`.
+10. Demander au shell d’oublier les emplacements enregistrés (« hachés ») avec la commande `$ hash -r`, puis entrer les commandes
+    ```bash
+    $ type rm
+    $ rm fic2
+    ```
+11. Remettre la permission `x` sur `~/bin/rm` puis entrer les commandes suivantes (où `<chemin vers rm>` désigne le chemin absolu noté à la question 3) :
+    ```bash
+    $ ~/bin/rm fic3
+    $ cd ~/bin
+    $ ./rm fic3
+    $ <chemin vers rm> rm
+    $ rm fic3
+    ```
+12. Faire le bilan de cet exercice en répondant aux questions suivantes :
+    - Qu'est-ce qui est contenu dans `PATH` ?
+    - Dans quel cas est-ce qu’un nom de commande est cherché dans les répertoires du `PATH` ?
+    - S’il y a plusieurs programmes correspondants dans les répertoires du `PATH`, lequel est choisi ?
+
+
+## Récapitulatif sur permissions et permissions par défaut
+
+### Exercice 7: On lache le clavier
+
+!!! info "Consigne"
+    
+    Cet exercice est à faire à l’écrit, on lâche le clavier !
+
+Pour chacune des commandes suivantes, dire quelles permissions sont nécessaires pour qu’elle réussisse (on suppose que tous les répertoires et fichiers existent, sauf ceux qu’on veut créer).
+
+```bash
+$ cat /usr/include/stdio.h
+$ cd /usr/include/
+$ ls /usr/include/
+$ echo '/* fin */' >> /usr/include/stdio.h
+$ rm /usr/include/stdio.h
+$ touch /usr/include/ma_bib.h
+$ chmod u+w /usr/include/stdio.h
+$ /usr/bin/uname
+```
+
+### Exercice 8 : Permissions par défaut et `umask` (optionnel)
 
 !!! tip 
 
     `umask` est une commande qui permet de définir les permissions par défaut des fichiers et des répertoires que vous créez. La valeur de l'umask est une valeur octale qui est *soustraite* des permissions par défaut. Par exemple, si l'umask vaut 022, les permissions par défaut sont 755 pour les répertoires et 644 pour les fichiers.
-
----
-
-### Exercice 5 : `umask` (en plus)
 
 1. Dans un terminal, tapez la commande `umask` et notez le résultat.
 2. Créez un répertoire `rep` et un fichier `f` au même niveau que `rep`. Affichez les permissions associées à `rep` et `f` avec la commande `ls -ld rep f`. Convertissez ces permissions en représentation octale et notez-les. Enfin, supprimez `rep` et `f`.
