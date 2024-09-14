@@ -1,8 +1,8 @@
 ---
-title: TP3 - Environnement de travail
+title: TP3 - Environnement de travail et Compilateur C
 ---
 
-# TP3 - Environnement de travail
+# TP3 - Environnement de travail et Compilateur C
 
 !!! info "Instructions"
     - On rappelle que dans tous les exercices le `$` en début de commande représente le prompt, il n'est pas à saisir lorsque vous écrivez une ligne de commande.
@@ -235,4 +235,105 @@ $ echo
     ```bash
     $ echo $(echo $(echo $(echo $(echo))))
     ```
+
+## Compilation de programme C
+
+!!! tip "Le compilateur C de Linux"
+    `gcc` est le compilateur C de Linux. Il permet de compiler du code C. Il est très utilisé par les développeurs. Il est très complet et possède de nombreuses fonctionnalités. Nous allons voir un aperçu de son utilisation.
+
+    La compilation d'un programme en C passe par plusieurs étapes, qui sont essentiellement les suivantes:
+    
+    - La précompilation : elle permet de transformer le code source en un code intermédiaire.
+    - La compilation : elle permet de transformer le code intermédiaire en code machine.
+    - L'édition des liens : elle permet de lier le code machine avec les bibliothèques utilisées.
+    - La création de l'exécutable : elle permet de créer l'exécutable.
+
+---
+
+### Exercice 9 - Le compilateur `gcc`
+
+1. Créer un fichier `hello.c` dont le contenu est le suivant:
+    ```c
+    #include <stdio.h>
+
+    int main()
+    {
+        printf("Hello world !\n");
+        return 0;
+    }
+    ```
+2. Placez-vous ensuite dans le répertoire contenant votre fichier `hello.c` et tapez la commande `gcc hello.c`. Cette commande va compiler votre programme et créer un fichier `a.out` qui est l'exécutable de votre programme. Tapez enfin la commande `./a.out` pour exécuter votre programme.
+    
+    !!! warning "Attention"
+        - Si vous avez déjà un fichier `a.out` dans votre répertoire, il sera écrasé par la commande `gcc hello.c`.
+        - `a.out` est le nom par défaut de l'exécutable créé par `gcc`. Vous pouvez changer ce nom en utilisant l'option `-o` de `gcc`. Par exemple, `gcc hello.c -o hello` va créer un exécutable `hello` au lieu de `a.out`.
+
+3. Récupérez ensuite cette archive [hello.tar.gz](../assets/files/hello.tar.gz).
+4. Extraire les fichiers de cet archive et déplacez vos dans le répertoire `hello` qui en sera extrait. Vous pouvez le faire grace à la commande suivate:
+```bash
+$ tar -xvf hello.tar.gz
+```
+5. Tapez la commande 
+```bash
+$ gcc main.c hello.c -o run
+```
+pour compiler votre programme. Cette commande va compiler votre programme et créer un fichier `run` qui est l'exécutable de votre programme. Exécutez enfin votre programme avec la commande `./run`. 
+6. Supprimer le fichier `run` et modifier ensuite le fichier `hello.c` de tel sorte à avoir volontairement une erreur : supprimer l'accolade fermante de la fonction `void hello()`. Réexécutez ensuite les commandes de la question 5. Que remarquez-vous ?
+7. Remodifier ensuite le fichier `hello.c` en remettant l'accolade fermante mais rajouter un `return 1` dans la définition de la fonction (avant l'accolade fermante). Réexécutez ensuite les commandes de la question 5. Que remarquez-vous ?
+8. Conclure sur la gestion des erreurs et des warnings sur `gcc`.
+
+### Exercice 10 - Compilation séparée et édition des liens
+
+!!! tip
+    Pour compiler un programme en C, il est possible de le faire en plusieurs étapes. On peut d'abord compiler chaque fichier source en un fichier objet, puis éditer les liens pour créer l'exécutable. Cela permet de gagner du temps lors de la compilation de gros projets.
+
+    En effet si un seul fichier source est modifié, il n'est pas nécessaire de recompiler tous les fichiers sources. Il suffit de recompiler le fichier source modifié et de rééditer les liens.
+
+    - L'option `-c` de `gcc` permet de compiler un fichier source en un fichier objet. L'option `-o` permet de spécifier le nom du fichier objet à créer.
+    - L'édition des liens se fait avec la commande `gcc` en spécifiant les fichiers objets à lier. L'option `-o` permet de spécifier le nom de l'exécutable à créer.
+    
+    Dans cette configuration, imaginons que nous avons un fichier `main.c` qui contient la fonction `main` et un fichier `hello.c` qui contient la fonction `hello`. Pour compiler ces deux fichiers en un exécutable `run`, on peut procéder comme suit:
+    ```bash
+    $ gcc -c main.c -o main.o # Compilation du fichier main.c en main.o
+    $ gcc -c hello.c -o hello.o # Compilation du fichier hello.c en hello.o
+    $ gcc main.o hello.o -o run # Edition des liens pour créer l'exécutable run
+    ```
+
+1. Dans le répertoire `hello`, de l'exercice précédent, créer deux fichiers `bye.c` et `bye.h`, **en utilisant l'extension de l'accolade**, dont les contenus sont les suivants:
+    - `bye.h`:
+    ```c
+    #ifndef BYE_H
+    #define BYE_H
+
+    void bye();
+
+    #endif
+    ```
+    - `bye.c`:
+    ```c
+    #include <stdio.h>
+    #include "bye.h"
+
+    void bye()
+    {
+        printf("I'm done, bye !\n");
+    }
+    ```
+2. Toujours en utilisant l'extension de l'accolade, compiler les deux fichiers `hello.c` et `bye.c` en deux fichiers objets `hello.o` et `bye.o`. Assurez-vous que le compilateur ne renvoie pas d'erreurs. (**Par défaut si on ne spécifie pas le nom du fichier de sortie, les fichiers `.c` sont compilés en des fichiers objets de même nom**)
+3. Modifier ensuite le fichier `main.c` pour afin d'inclure le fichier `bye.h` et appeler la fonction `bye` à la fin de la fonction `main`. Le contenu du fichier `main.c` doit être le suivant:
+    ```c
+    #include <stdio.h>
+    #include "hello.h"
+    #include "bye.h"
+
+    int main()
+    {
+        hello();
+        bye();
+        return 0;
+    }
+    ```
+4. Compiler le fichier `main.c` en un fichier objet `main.o`. Assurez-vous que le compilateur ne renvoie pas d'erreurs.
+5. En utilisant l'extention de chemin avec le caractère `*`, éditer les liens pour tous vos fichiers objets afin créer l'exécutable `run`. Exécutez ensuite votre programme avec la commande `./run`.
+ 
 
