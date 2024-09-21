@@ -1,8 +1,8 @@
 ---
-title: TP4 - Canaux standards et redirections | Processus et tâches | Signaux
+title: TP4 - Filtres textuels, redirections et tubes
 ---
 
-# TP4 - Canaux standards et redirections | Processus et tâches | Signaux
+# TP4 - Filtres textuels, redirection et tubes
 
 !!! info "Instructions"
 
@@ -174,132 +174,125 @@ Nous allons refaire le même exercice que l'exercice 2 mais cette fois-ci en uti
 4. À votre avis pourquoi le résultat de la dernière commande est-il différent de celui de la question 1 ?
 ---
 
-## Processus et tâches
+## Filtre textuels
 
-!!! tip "Processus et tâches"
+!!! tip "Qu'est ce que c'est ?"
+    Les *filtres textuel* sont des commandes qui lisent ou peuvent lire depuis leur entrée standard et écrivent des données modifiées sur leur sortie standard. 
 
-    Un *processus* est une unité de travail sur un système d'exploitation. Il peut s'agir d'un programme, d'un script, ou d'un service. Chaque programme que vous exécutez représente un ou plusieurs processus.
-    Chaque processus est identifié par un numéro unique appelé *PID* (Process IDentifier). 
-    
-    Linux nous offre plusieurs commandes pour visualiser les processus en cours d'exécution.
+    En voici quelques-uns parmi les plus courants :
 
-    - `ps` permet d'afficher les processus en cours d'exécution. Par défaut, `ps` n'affiche que les processus lancés par l'utilisateur courant. Pour afficher tous les processus, on utilise l'option `-e` (ou `-A`).
-    - `top` permet d'afficher les processus en cours d'exécution. Il peut s'utiliser de manière interactive notamment les trier par utilisation du CPU. On peut quitter `top` avec la touche `q`.
+     - `head` : affiche les premières lignes de son entrée ;
+     - `tail` : affiche les dernières lignes de son entrée. Avec l’option -f (pour follow, continuer à afficher la fin du fichier quand il est mis à jour) c’est l’une des commandes préférées des administrateurs systèmes ;
+     - `grep` : une des commandes les plus connues, affiche des lignes correspondant à une chaîne, ou plus généralement une expression rationnelle dans son entrée ;
+     - `cut` : sélectionne des champs ou des caractères dans chaque ligne de l’entrée standard ;
+     - `sort` : trie son entrée standard suivant des critères.
+     - `tr` : remplace des caractères dans son entrée standard.
+     - `uniq` : supprime les lignes consécutives identiques dans son entrée standard.
+  
+  ---
 
-    Une *tâche* par contre est une unité de travail du shell. Une tâche peut être un processus, ou un groupe de processus mais il faut qu'il ait été lancé par le shell. Le shell a un système de contrôle de tâches : c'est la capacité à exécuter plusieurs commandes en même temps. On peut lancer une commande en arrière-plan et en avant-plan. 
+### Exercice 7 : Frère Jacques
 
-    La commande `jobs` permet d'afficher les tâches en cours d'exécution.
-
-    !!! warning "En somme"
-        Une tâche est un processus, mais un processus n'est pas forcément une tâche.
-
----
-
-
-### Exercice 7 - Processus et tâches
-1. Dans cet exercice nous allons simuler l'exécution d'un processus long. Pour cela, nous allons utiliser la commande `sleep` qui permet de mettre en pause l'exécution d'un script pendant un certain temps. Tapez la commande `sleep 10` et observez ce qu'il se passe.
-
-    !!! info "Informations de la commande `ps`"
-        
-            La commande `ps` retourne la liste des processus en cours d'exécution. Cette liste contient quatre colonnes par défaut.
-
-            - La première colonne correspond au *PID* (Process IDentifier) du processus.
-            - La deuxième colonne correspond au *TTY* (TeleTYpewriter) sur lequel le processus est lancé. C'est le type de terminal utilisé pour lancer le processus. Ici `pts/1` (pseudo-terminal slave) signifie que le processus a été lancé dans un pseudo-terminal. Le chiffre renseigné correspond au numéro du terminal (par exemple si vous avez plusieurs instances du terminal ouverts).
-            - La troisième colonne correspond au *TIME* (temps) d'exécution du processus.
-            - La quatrième colonne correspond à la *CMD* (CoMmanDe) qui a lancé le processus.
-
-2. Ensuite testez les commandes suivantes et commentez les résultats:
+1. Créer un fichier `fj` contenant ces lignes :
     ```bash
-    $ ps
-    $ sleep 240
-    $ C-z # Control + z
-    $ ps
-    $ fg %1 # fg %<numéro de la tâche>
-    $ C-c # Control + c
-    $ ps
-    ``` 
-      
-      - À votre avis que fait le raccourci clavier `C-z` ? et le raccourci clavier `C-c` ?
-      - Refaites les commandes en tapant des commandes (ou tout autre chose dans le terminal) entre le `sleep 240` et le `C-z`. Que remarquez-vous ?
-      - Sans passer par `help fg`, pouvez-vous deviner ce que fait la commande `fg %1` ? et la commande `fg` de manière générale ?
-      - Refaites les commandes en notant à chaque fois le PID du processus `sleep 240` dans les sorties de `ps`. Que remarquez-vous ?
-
-3. Ecrire un programme en C qui incrémente indéfiniment une variable `i`, et affiche sa valeur sur la sortie standard à chaque fois que `i` est un multiple de 100. Pensez à utiliser la commande `sleep` pour ralentir l'exécution du programme et voir quelque chose sur le terminal. 
-
-    !!! info "Où est sleep ?"
-        Tapez la commande `man 3 sleep` pour voir où se trouve la fonction `sleep` dans la bibliothèque standard de C.
-
-4. Compilez le programme et nommer votre exécutable `compteur`. Puis testez les commandes suivantes et commentez les résultats:
-    
-    ```bash
-    $ ./compteur
-    $ C-z
-    $ jobs 
-    $ jobs -p # Notez le PID 
-    $ ps
-    $ fg %1
-    $ C-z
-    $ bg %1
-    $ fg %1 # Ne vous inquiétez pas, tapez tout simplement la commande correctement
-    $ C-z
-    $ jobs
-    % fg %1
-    $ C-c
-    $ jobs
+    Frère Jaques, 
+    Frère Jacques,                    
+    Dormez-vous,
+    Dormez-vous,
+    Sonnez les matines,
+    Sonnez les matines !
+    Ding !
+    Ding ! 
+    Dong !
     ```
-    
-    - Quels procédés permettent de placer un processus en arrière-plan ? et en avant-plan ?
-    - Quelle est la différence entre `C-z` et `C-c` ?
-    - À quoi sert l'option `-p` de la commande `jobs` ?
-    - Sans passer par `help bg`, pouvez-vous deviner ce que fait la commande `bg` de manière générale ?
-    - Quels sont les différents états des tâches que vous avez observé ?
-
----
-## Envoyer des signaux à un processus
-
-!!! tip "Communiquer avec les processus"
-    Lorsque des processus ont été lancés, nous avons remarqué qu'ils peuvent être arrêtes, redémarrés et tués. Pour cela, nous avons utilisé les commandes `C-z`, `C-c`, `fg` et `bg`. Ces commandes permettent de communiquer avec les processus en cours d'exécution. En réalité, ces dernières envoient ce qu'on appelle des *signaux* aux processus. Un *signal* est un message envoyé à un processus pour lui demander de faire quelque chose. 
-    
-    La commande qui permet d'envoyer des signaux à un processus est `kill`. Cette commande nécessite le PID du processus à qui envoyer le signal (ou son numéro de tâche si c'en est une). Ainsi `C-z`, `C-c`, `fg` et `bg` font donc appel à la commande `kill` pour envoyer des signaux aux processus.
-
-    Il existe plusieurs signaux, les plus courants sont les suivants:
-
-    - `SIGINT` : signal envoyé par la combinaison de touches `C-c`. Il demande au processus de s'arrêter.
-    - `SIGTSTP` : signal envoyé par la combinaison de touches `C-z`. Il demande au processus de se mettre en pause.
-    - `SIGCONT` : signal envoyé par les commandes `bg` et `fg`. Il demande au processus de reprendre son exécution.
-    - `SIGTERM` : signal envoyé par la commande `kill` par défaut. Il demande au processus de s'arrêter.
-    - `SIGKILL` : Il demande au processus de s'arrêter immédiatement et provoque son arrêt brutal, comprenez par là que le processus n'a pas le temps de se terminer correctement. Il est donc déconseillé d'utiliser ce signal.
-
-    La liste exhaustive des signaux est disponible est obtenu avec commande `kill -L`.
-
-    !!! warning "Qui a le droit d'envoyer des signaux à un processus ?"
-        Pour pouvoir affecter un processus, vous devez biensur en être le prorpiétaire ou être *root*.
-
-### Exercice 8 - La commande `kill`
-1. Tapez la commande `kill -L` et notez les numéros associés aux signaux `SIGINT`, `SIGTSTP`, `SIGCONT`, `SIGTERM` et `SIGKILL`.
-
-2. On peut utiliser le caractère `&` à la fin de la commande pour directement lancer les tâches en arrière-plan. Lancez alors 3 processus `./compteur` en arrière-plan et testez les commandes suivantes:
-
+    avec la commande `echo` (**le caractère `<newline>` correspond à la touche entrée de votre clavier**):
     ```bash
-    $ ./compteur 1 & # ce sera notre processus 1
-    $ ./compteur 2 & # ce sera notre processus 2
-    $ ./compteur 3 & # ce sera notre processus 3
-    $ jobs -p # notez les PID des processus, mais ils ont dû être affichés à l'écran lors de leur lancement
-    $ kill -SIGTSTP <PID du processus 1>
-    $ jobs
-    $ kill -SIGINT %2
-    $ jobs
-    $ jobs # oui une deuxième fois
-    $ kill -SIGCONT %1
-    $ jobs
-    $ kill -s SIGTERM <PID processus 1>
-    $ jobs
-    $ kill -9 <PID du processus 3>
-    $ jobs
-    $ jobs # pour voir disparaître la tâche [3]
+    $ echo 'Frère Jaques,<newline> 
+    > Frère Jacques,<newline>                     
+    > Dormez-vous,<newline> 
+    > Dormez-vous,<newline> 
+    > Sonnez les matines,<newline> 
+    > Sonnez les matines !<newline> 
+    > Ding !<newline> 
+    > Ding !<newline> 
+    > Dong !' > fj
     ```
+2. Testez ensuite les commandes suivantes et observez leur résultats:
+    ```bash
+    $ cat fj 
+    $ head fj
+    $ tail fj
+    $ head -n 2 fj
+    $ tail -n 3 fj
+    $ grep "Dormez" fj
+    $ grep -v "Dormez" fj
+    $ grep "dormez" fj
+    $ grep -i "dormez" fj
+    $ sort fj 
+    $ uniq fj
+    $ cut -c 1 fj
+    $ cut -c 2 fj
+    $ cut -c 1-3 fj
+    $ cut -d ' ' -f 1 fj
+    $ cut -d ' ' -f 1,2 fj
+    ```
+    - Où sont affichés les résultats ?
+    - À quoi servent les options `-n` de `head` et `tail` ? 
+    - À quoi sert l'option `-v` de `grep` ? À quoi sert l'option `-i` de `grep` ?
+    - À quoi servent les options `-c` et `-d` de `cut` ?
 
-1. Selon vous quel est la différence entre `SIGINT` et `SIGTSTP` ? et entre `SIGTSTP` et `SIGTERM` ?
-2. D'après vos observations sur les résultats de la question 2, de combien de manière différente peut-on utiliser la commande `kill` pour arriver au même résultat ?
+3. Testez ensuite la commande 
+    ```bash
+    $ tr a-z A-Z fj
+    ```
+    À votre avis pourquoi la commande échoue ? 
+4. Tapez ensuite les commandes suivantes et commentez son résultat :
+    ```bash
+    $ tr a-z A-Z < fj
+    $ tr S D < fj
+    $ tail -n 3 fj | tr D B >> fj
+    $ cat fj
+    ```
+    Que pouvez-vous conclure sur la commande `tr` ?
 
+### Exercice 8 : Trier les fichiers
 
+!!! tip "Nom de base"
+    Le nom de base d'un fichier est le nom du fichier sans son extension. Par exemple le nom de base du fichier `/usr/include/stdio.h` est `stdio`.
+
+Dans cet exercice, nous voudrions afficher sur le terminal le nom de base des 10 fichiers les plus légers (en taille en octets) parmi les fichier `.h ` du répertoire `/usr/include`.
+
+En utilisant les commandes `wc`, `sort`, `cut`, `head` (ou éventuellement `tail`), et les redirections par tube, écrivez une commande qui affiche le nom de base des 10 fichiers les plus légers parmi les fichiers `.h` du répertoire `/usr/include`.
+
+!!! info "Indication"
+
+    - L'option `-c` de `wc` vous donne le nombre d'octets d'un fichier.
+    - L'option `-n` de `sort` vous permet de trier les lignes d'un fichier par ordre numérique.
+    - L'option `-d` de `tr` supprime les caractères reçus en premiers argument au lieu de les remplacer.
+
+Si vous avez installé `gcc`, vous devriez avoir :
+```bash
+pool
+wait
+syslog
+syscall
+lastlog
+termio
+stab
+memory
+re_comp
+alloca
+```
+### Exercice 9 : Plus sur `grep`
+
+!!! tip "Passer un répertoire en argument de `grep`"
+    
+    - L'option `-r` de `grep` permet de passer un répertoire en argument. Et lui demande de chercher dans tous les fichiers de ce répertoire.
+    - L'option `-l` de `grep` permet de n'afficher que le nom des fichiers qui contiennent la chaîne recherchée.
+
+En utilisant `grep` et éventuellement d'autres commandes, trouvez une ligne de commande qui permet de:
+
+1. Afficher la valeur de `RAND_MAX` (c'est une constante de la librairie standard de C). 
+2. Afficher le chemin absolu des fichiers qui contiennent de la chaîne `127.0.0.1` dans les fichiers de `/etc`.
+3. Afficher uniquement le nom des fichiers qui contiennent de la chaîne `127.0.0.1` dans les fichiers de `/etc`. (indice : il existe une commande qui s'appelle `rev`).
+4. Affiche le chemin du répertoire personnel de l'utilisateur `games`.

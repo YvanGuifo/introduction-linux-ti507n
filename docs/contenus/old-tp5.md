@@ -2,7 +2,7 @@
 title: TP5 - Processus, et autres commandes
 ---
 
-# TP5 - Processus, et autres commandes
+# TP5 - Processus
 
 !!! info "Instructions"
 

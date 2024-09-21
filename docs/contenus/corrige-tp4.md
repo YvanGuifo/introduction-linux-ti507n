@@ -44,24 +44,52 @@ $ echo "Je veux vider le fichier" 1> fichier.txt
 $ cat fichier.txt
 $ echo "Je m'ajoute en fin de ligne" 1>> fichier.txt
 ```
+
+    !!! success "Réponses"
+        L'idée ici c'est de leur montrer où sont "affiché" le résultat de la commande `echo`.
+    
 2. Rappeler ce que fait la commande `cat` (man `cat`) puis à partir des résultats des commandes précédentes:
 
     - Quelle est la différence entre `>` et `>>` ?
     - Quelle est la différence entre `1>` et `>` ?
     - Quelle est la différence entre `1>>` et `>>` ?
+    
+    !!! success "Réponses"
+        * `cat` sans argument va lire l'entrée standard, et va ensuite afficher ce qu'il a lu.
+
+        * `>` écrase le contenu du ficher dans lequel est redirigé la sortie standard, tandis que `>>` va écrire sur la dernière ligne du fichier.
+        * `1>` et `>`, `1>>` et `>>` font exactement la même chose. Le chiffre `1` est optionnel, c'est le descripteur de fichier associé à la sortie standard (`stdout` en anglais).
 
 3. Placez-vous dans votre répertoire personnel et exécutez la commande suivante :
     ```bash
     $ ls > list_files.txt; cat list_files.txt
     ```
     - Que fait cette commande ?
+        
+        !!! success "La commande redirige la sortie standard de `ls` dans `list_files.txt`"
+    
     - Pouvez-vous expliquer pourquoi la chaîne `list_files.txt` apparaît dans le fichier `list_files.txt` ?
+
+        !!! success "Ici la chaîne `list_files.txt` apparaît dans le fichier car le fichier est d'abord créé avant l'exécution de la commande `ls`."
 
 ### Exercice 2 : Compter les entêtes (1)
 
 1. En vous aidant de la redirection de la sortie standard, créer un fichier `include_files.txt` qui liste tous les fichiers du répertoire `/usr/include` dont le nom se termine par `.h`.
+
+    !!! success "`$ ls /usr/include/*.h > include_files.txt`"
+
 2. Compter le nombre de fichiers `.h` dans le répertoire `/usr/include` (indice : `wc`).
+
+    !!! success "`$ wc -l include_files.txt`"
+
 3. Enfin ajouter la phrase `Il y a <nombre> fichiers .h dans le répertoire /usr/include` à la fin du fichier `include_files.txt`.
+
+    !!! success "Réponses"
+        
+        ```bash
+        $ echo "Il y a $(wc -l include_files.txt) fichiers .h dans le répertoire /usr/include" >> include_files.txt
+        ```
+        Il faut passer par la substitution de commande et rediriger la sortie standard de `echo` à la fin du fichier `include_files.txt`.
 
 ### Exercice 3 : Redirection de l'erreur standard
 
@@ -72,12 +100,31 @@ $ echo "Je m'ajoute en fin de ligne" 1>> fichier.txt
     $ cat file-1.txt file-2.txt file-3.txt
     ```
 4. Quelles commande a réussi ? et quelles commandes ont échoué et pourquoi ?
+
+    !!! success "Réponses"
+        - La commande `cat file-1.txt` a réussi.
+        - La commande `cat file-2.txt` a échoué car le fichier `file-2.txt` n'a pas la permission `read`.
+        - La commande `cat file-3.txt` a échoué car le fichier `file-3.txt` n'existe pas.
+
 5. Faites ensuite une redirection de la sortie standard de la commande précédente vers un fichier `result.txt`. Observez le ce qui est affiché sur le terminal, et observer le contenu du fichier `result.txt`.
+
+    !!! success "Réponses"
+        
+        ```bash
+        $ cat file-1.txt file-2.txt file-3.txt > result.txt
+        ```
+        
+        Les erreurs restent affichés sur le terminal. Il existe un autre canal pour les erreurs : c'est l'erreur standard (*stderr* en anglais).
+
 6. Tapez ensuite la commande suivante et notez les résultats :
     ```bash
     $ cat file-1.txt file-2.txt file-3.txt 1> result.txt 2> error.txt
     ```
 7. Observez les contenus de `result.txt` et `error.txt`. Que contiennent-ils ? À votre avis que signifie `1>` et `2>` ? Tirez-en une conclusion sur la différence entre la sortie standard et l'erreur standard.
+
+    !!! success "Réponses"
+        - La sortie standard est redirigée vers `result.txt` et l'erreur standard est redirigée vers le fichier `error.txt`.
+        - Le chiffre `2` ici n'est pas optionnel, il faut le marquer pour signifier que l'on redirige l'erreur standard.
 
 ---
 
@@ -108,6 +155,11 @@ $ echo "Je m'ajoute en fin de ligne" 1>> fichier.txt
    ```
     Combien d'argument la commande `cat` a-t-elle reçu ? Qu'a-t-elle affiché ? Pourquoi ?
 
+    !!! success "Réponses"
+        `cat` ici n'a pas d'argument. Comme indiqué dans l'exo précédent `cat` sans argument lit sur l'entrée stadard. Elle va donc lire tous les caractères tapé au clavier avant que l'on appuie sur la touche entrée (pour le caractère `<newline>`). Directement après `<newline>`, les caractères lus sont affichés sur le terminal.
+    **Vous pouvez leur dire que pour que `cat` arrête de lire, on tape sur `C-D` qui correspond au caractère `EOF` (end of file)**.
+
+
 3. Testez ensuite la commande suivante:
    ```bash
    $ cat > catout.txt
@@ -116,6 +168,9 @@ $ echo "Je m'ajoute en fin de ligne" 1>> fichier.txt
    C-d # appuyer sur la touche Ctrl et la touche d en même temps
    ```
     Puis affichez le contenu du fichier `catout.txt`. Que contient-il ? Pourquoi ?
+
+    !!! success "Le fichier `catout.txt` va récupérer les résultats de la commande `cat` qui a lu sur l'entrée standard."
+
 4. Tapez enfin la commande suivante :
     ```bash
     $ cat < catout.txt
@@ -124,20 +179,38 @@ $ echo "Je m'ajoute en fin de ligne" 1>> fichier.txt
     - Combien d'argument la commande `cat` a-t-elle reçu ? Qu'a-t-elle affiché ?
     - Quelle est la différence entre `<` et `0<` ?
 
+    !!! success "Réponses"
+
+        1.  Ici aussi la commande `cat` n'a pas d'arguments, et lit donc sur l'entrée standard. Sauf que cette fois-ci, l'entrée standard est redirigé vers le fichier `catout.txt`. En d'autres terme `cat` va lire le contenu de `catout.txt` comme si on les avait tapé au clavier sur le terminal. La commande va donc afficher le contenu de `caout.txt`. 
+        2. L'utilisation de `<` et `0<` produisent exactement le même résultat. **`0` est le chiffre correspondant au descripteur de fichier de l'entrée standard, et il est optionnel**.
+
 ### Exercice 5 : Compter les entêtes (2)
 
 Nous allons refaire le même exercice que l'exercice 2 mais cette fois-ci en utilisant la redirection de l'entrée standard.
 
 1. Créer un fichier `include_files.txt` qui liste tous les fichiers du répertoire `/usr/include` dont le nom se termine par `.h`.
+
+    !!! success "`$ ls /usr/include/*.h > include_files.txt`"
+
 2. Tapez ensuite la commande suivante et commentez son résultat:
     ```bash
     $ wc -l < include_files.txt
     ```
+
+    !!! success "Réponses"
+
+        - `wc -l` compte le nombre de lignes du ou des fichiers passés en argument. Elle lit également sur l'entrée standard sans argument. Ici, on a une redirection de l'entrée standard. Cette commande va afficher le nombre de lignes du fichier `include_files.txt`.
+    
+        - `wc -l < include_files.txt` et `wc -l include_files.txt` produisent exactement le même résultat.
+  
 3. Entrez ensuite la commande suivante et commentez son résultat:
     ```bash
     $ wc -l < include_files.txt >> include_files.txt
     ```
     et observez la dernière ligne du fichier `include_files.txt`.
+
+    !!! success "On a ici une double redirection, redirection de stdin, et redirection de stdout (en mode `append`)."
+
 4. Nous voudrions enfin que la dernière ligne du fichier `include_files.txt` soit la phrase `Il y a <nombre> fichiers .h dans le répertoire /usr/include`. Où `<nombre>` est le résultat de `wc -l < include_files.txt`.
 
     Trouvez une commande qui permet de faire cela en utilisant à la fois la redirection de la sortie standard et de l'entrée standard.
@@ -146,6 +219,14 @@ Nous allons refaire le même exercice que l'exercice 2 mais cette fois-ci en uti
 
         - Pour retirer la dernière ligne, on peut refaire la commande de la première question.
         - Ensuite pensez à la commande `echo` et la subsutitution de commande.
+    
+    !!! success "Réponses"
+        
+        ```bash
+        $ ls /usr/include/*.h > include_files.txt
+        $ echo "Il y a $(wc -l include_files.txt) fichiers .h dans le répertoire /usr/include." >> include_files.txt
+        ```
+
 
 ## Les tubes
 
@@ -166,12 +247,25 @@ Nous allons refaire le même exercice que l'exercice 2 mais cette fois-ci en uti
     $ ls /usr/include/*.h | wc -l
     ```
     Où est redirigé le résultat de la commande `ls` ? Où est redirigé l'entrée standard de la commande `wc` ? Où est affiché le résultat de `wc`?
+
+    !!! success "On a connecté le stdout de la commande `ls` au stdin de la commande `wc`. Vous pouvez faire remarquer que le résultat de la commande `ls` n'est pas affiché dans le terminal, et `wc`n'a pas d'argument. "
+
 2. Affichez ensuite sur le terminal la phrase `Il y a <nombre> fichiers .h dans le répertoire /usr/include` en utilisant la commande `echo` et la substitution de commande (indice la commande à utiliser et celle de la question 1).    
+
+    !!! success "Réponses"
+        
+        ```bash
+        $ echo "Il y a $(ls /usr/include/*.h | wc -l) fichiers .h dans le répertoire /usr/include" 
+        ```
+
 3. Enfin, entrez la commande suivante et commentez son résultat :
     ```bash
     wc -l $(ls /usr/include/*.h)
     ```
 4. À votre avis pourquoi le résultat de la dernière commande est-il différent de celui de la question 1 ?
+
+    !!! success "Réponses"
+        `wc -l $(ls /usr/include/*.h)` affiche le nombre de ligne de **CHACUN** des fichiers affiché par la commande `ls`. Le résultat n'est pas le même que celle de la question 1, car la substitution de commande est efféctuée *avant* l'exécution de la commande `wc`. Elle se comporte donc comme si chaque fichier affiché par le `ls` est donné en argument à `wc`.
 ---
 
 ## Processus et tâches
@@ -195,8 +289,26 @@ Nous allons refaire le même exercice que l'exercice 2 mais cette fois-ci en uti
 
 ---
 
-
 ### Exercice 7 - Processus et tâches
+
+!!! success "Correction globale"
+
+    ### Correction globale
+      1. Il est important de leur faire comprendre qu'on peut faire tourner des processus en avant et en arrière plan dans le shell.
+          - Les processus en avant plan, bloquent l'interpréteur de commande tant qu'ils ne terminent pas.
+          - Ceux qui tournent en arrière plan ne bloquent pas l'interpréteur de commande, qu'il ait terminé ou non.
+
+
+      2. On peut aussi leur rappeler la distinction entre processus et tâches. Ici tous les processus sont des tâches car nous les lançons dans le shell.
+
+
+      3. `C-z` et `C-c` permettent d'interagir avec les processus en **avant-plan**. En plus, `C-z` fait directement apparaître le numéro de tâche et le PID du processus sur la sortie standard.
+
+      4. Les commandes `fg` et `bg` sont des commandes internes du shell qui permette de mettre respéctivement en avant et en arrière plan des tâche en leur passant le numéro de la tâche en argument avec `%<numéro tâche>`. Pour un processus arrêté, `fg` et `bg` permet de le relancer, respectivement en avant et arrière plan.
+
+      5. Normalement, il doivent voir `Running`, `Stopped` et `Done` comme états des tâches dans cet exo.
+
+
 1. Dans cet exercice nous allons simuler l'exécution d'un processus long. Pour cela, nous allons utiliser la commande `sleep` qui permet de mettre en pause l'exécution d'un script pendant un certain temps. Tapez la commande `sleep 10` et observez ce qu'il se passe.
 
     !!! info "Informations de la commande `ps`"
@@ -276,6 +388,26 @@ Nous allons refaire le même exercice que l'exercice 2 mais cette fois-ci en uti
         Pour pouvoir affecter un processus, vous devez biensur en être le prorpiétaire ou être *root*.
 
 ### Exercice 8 - La commande `kill`
+
+!!! success "Correction globale"
+
+      1. `kill` peut s'utiliser de 4 façons différentes et fonctionne également avec le numéro de tâche. Par exemple pour `SIGINT` dont le numéro est `2`:
+          ```bash
+          $ kill -s SIGINT <PID>
+          $ kill -SIGINT <PID>
+          $ kill -2 <PID>
+          $ kill -s INT <PID> # je ne leur ai pas montré cette dernière
+          ```
+      2. Dans cet exercice `$ kill -SIGINT <PID>` ne marche pas si le processus est en arrière plan c'est pour ça qu'on donne directement à `kill` le numéro de tâche.
+
+      3. On a:
+          - `SIGINT` permet d'interrompre puis tuer un processus. Statut dans `jobs`: `Interrupted`.
+          - `SIGKILL` arrête de manière brutale un pricessus (aucun incidence dans notre exemple, mais vous pouvez leur expliquer qu'un programme peut allouer différentes ressources, et lui envoyer un `SIGKILL` le force à s'arrêter sans terminer proprement). Statut dans `jobs`: `Killed`.
+          - `SIGTERM` interompt et arrête un processus. Statut dans `jobs`: `Terminated`.
+          - `SIGTSTP` interompt un processus mais ne le tue pas. Statut dans `jobs`: `Stopped`.
+          - `SIGCONT` relance un processus arrêté. Après `SIGCONT` le statut dans `jobs` devient `Running`.
+
+
 1. Tapez la commande `kill -L` et notez les numéros associés aux signaux `SIGINT`, `SIGTSTP`, `SIGCONT`, `SIGTERM` et `SIGKILL`.
 
 2. On peut utiliser le caractère `&` à la fin de la commande pour directement lancer les tâches en arrière-plan. Lancez alors 3 processus `./compteur` en arrière-plan et testez les commandes suivantes:

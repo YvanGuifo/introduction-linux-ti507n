@@ -47,8 +47,7 @@ Ce module se déroulera en 15 heures de cours sous forme de Cours - TP.
 3. [TP1 - Premières commandes](./contenus/tp1.md)
 4. [TP2 - Système de fichiers et permissions](./contenus/tp2.md)
 5. [TP3 - Environnement de travail et Compilateur C](./contenus/tp3.md)
-6. [TP4 - Filtres textuel, redirections et tubes](#)
-7. [TP5 - Processus et autres commandes](#)
+6. [TP4 - TP4 - Canaux standards et redirections | Processus et tâches | Signaux](./contenus/tp4.md)
 
 <!-- 4. [TP2 - Système de fichiers et permissions](./contenus/tp2.md)
 6. [TP4 - Filtres textuel, redirections et tubes](./contenus/tp4.md)
