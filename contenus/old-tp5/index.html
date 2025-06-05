@@ -1,0 +1,937 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../old-tp4/">
+      
+      
+        <link rel="next" href="../preliminary-reading/">
+      
+      
+      <link rel="icon" href="../../assets/img/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+    
+    
+      
+        <title>TP5 - Processus, et autres commandes - TI307 - Introduction au système Linux</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35e1ed30.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M1 7.775V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 0 1 0 2.474l-5.026 5.026a1.75 1.75 0 0 1-2.474 0l-6.25-6.25A1.752 1.752 0 0 1 1 7.775Zm1.5 0c0 .066.026.13.073.177l6.25 6.25a.25.25 0 0 0 .354 0l5.025-5.025a.25.25 0 0 0 0-.354l-6.25-6.25a.25.25 0 0 0-.177-.073H2.75a.25.25 0 0 0-.25.25ZM6 5a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M2.5 1.75v11.5c0 .138.112.25.25.25h3.17a.75.75 0 0 1 0 1.5H2.75A1.75 1.75 0 0 1 1 13.25V1.75C1 .784 1.784 0 2.75 0h8.5C12.216 0 13 .784 13 1.75v7.736a.75.75 0 0 1-1.5 0V1.75a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25Zm13.274 9.537v-.001l-4.557 4.45a.75.75 0 0 1-1.055-.008l-1.943-1.95a.75.75 0 0 1 1.062-1.058l1.419 1.425 4.026-3.932a.75.75 0 1 1 1.048 1.074ZM4.75 4h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM4 7.75A.75.75 0 0 1 4.75 7h2a.75.75 0 0 1 0 1.5h-2A.75.75 0 0 1 4 7.75Z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m11.294.984 3.722 3.722a1.75 1.75 0 0 1-.504 2.826l-1.327.613a3.089 3.089 0 0 0-1.707 2.084l-.584 2.454c-.317 1.332-1.972 1.8-2.94.832L5.75 11.311 1.78 15.28a.749.749 0 1 1-1.06-1.06l3.969-3.97-2.204-2.204c-.968-.968-.5-2.623.832-2.94l2.454-.584a3.08 3.08 0 0 0 2.084-1.707l.613-1.327a1.75 1.75 0 0 1 2.826-.504ZM6.283 9.723l2.732 2.731a.25.25 0 0 0 .42-.119l.584-2.454a4.586 4.586 0 0 1 2.537-3.098l1.328-.613a.25.25 0 0 0 .072-.404l-3.722-3.722a.25.25 0 0 0-.404.072l-.613 1.328a4.584 4.584 0 0 1-3.098 2.537l-2.454.584a.25.25 0 0 0-.119.42l2.731 2.732Z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M2.344 2.343h-.001a8 8 0 0 1 11.314 11.314A8.002 8.002 0 0 1 .234 10.089a8 8 0 0 1 2.11-7.746Zm1.06 10.253a6.5 6.5 0 1 0 9.108-9.275 6.5 6.5 0 0 0-9.108 9.275ZM6.03 4.97 8 6.94l1.97-1.97a.749.749 0 0 1 1.275.326.749.749 0 0 1-.215.734L9.06 8l1.97 1.97a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L8 9.06l-1.97 1.97a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L6.94 8 4.97 6.03a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018Z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M9.504.43a1.516 1.516 0 0 1 2.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.249 1.249 0 0 1-.871.354h-.302a1.25 1.25 0 0 1-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429Zm1.047 1.074L3.286 8.571A.25.25 0 0 0 3.462 9H6.75a.75.75 0 0 1 .694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0 0 12.538 7H9.25a.75.75 0 0 1-.683-1.06l2.008-4.418.003-.006a.036.036 0 0 0-.004-.009l-.006-.006-.008-.001c-.003 0-.006.002-.009.004Z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4.72.22a.75.75 0 0 1 1.06 0l1 .999a3.488 3.488 0 0 1 2.441 0l.999-1a.748.748 0 0 1 1.265.332.75.75 0 0 1-.205.729l-.775.776c.616.63.995 1.493.995 2.444v.327c0 .1-.009.197-.025.292.408.14.764.392 1.029.722l1.968-.787a.75.75 0 0 1 .556 1.392L13 7.258V9h2.25a.75.75 0 0 1 0 1.5H13v.5c0 .409-.049.806-.141 1.186l2.17.868a.75.75 0 0 1-.557 1.392l-2.184-.873A4.997 4.997 0 0 1 8 16a4.997 4.997 0 0 1-4.288-2.427l-2.183.873a.75.75 0 0 1-.558-1.392l2.17-.868A5.036 5.036 0 0 1 3 11v-.5H.75a.75.75 0 0 1 0-1.5H3V7.258L.971 6.446a.75.75 0 0 1 .558-1.392l1.967.787c.265-.33.62-.583 1.03-.722a1.677 1.677 0 0 1-.026-.292V4.5c0-.951.38-1.814.995-2.444L4.72 1.28a.75.75 0 0 1 0-1.06Zm.53 6.28a.75.75 0 0 0-.75.75V11a3.5 3.5 0 1 0 7 0V7.25a.75.75 0 0 0-.75-.75ZM6.173 5h3.654A.172.172 0 0 0 10 4.827V4.5a2 2 0 1 0-4 0v.327c0 .096.077.173.173.173Z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M5 5.782V2.5h-.25a.75.75 0 0 1 0-1.5h6.5a.75.75 0 0 1 0 1.5H11v3.282l3.666 5.76C15.619 13.04 14.543 15 12.767 15H3.233c-1.776 0-2.852-1.96-1.899-3.458Zm-2.4 6.565a.75.75 0 0 0 .633 1.153h9.534a.75.75 0 0 0 .633-1.153L12.225 10.5h-8.45ZM9.5 2.5h-3V6c0 .143-.04.283-.117.403L4.73 9h6.54L9.617 6.403A.746.746 0 0 1 9.5 6Z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M1.75 2.5h10.5a.75.75 0 0 1 0 1.5H1.75a.75.75 0 0 1 0-1.5Zm4 5h8.5a.75.75 0 0 1 0 1.5h-8.5a.75.75 0 0 1 0-1.5Zm0 5h8.5a.75.75 0 0 1 0 1.5h-8.5a.75.75 0 0 1 0-1.5ZM2.5 7.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 1.5 0Z"/></svg>');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:300,300i,400,400i,700,700i%7CFira+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans";--md-code-font:"Fira Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tp5-processus" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="TI307 - Introduction au système Linux" class="md-header__button md-logo" aria-label="TI307 - Introduction au système Linux" data-md-component="logo">
+      
+  <img src="../../assets/img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TI307 - Introduction au système Linux
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TP5 - Processus, et autres commandes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/YvanGuifo/introduction-linux-fr" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="TI307 - Introduction au système Linux" class="md-nav__button md-logo" aria-label="TI307 - Introduction au système Linux" data-md-component="logo">
+      
+  <img src="../../assets/img/logo.png" alt="logo">
+
+    </a>
+    TI307 - Introduction au système Linux
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/YvanGuifo/introduction-linux-fr" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Contenus
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Contenus
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation-wsl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation d'une distribution Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preliminary-reading/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture préliminaire
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tp1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TP1 - Premières commandes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tp2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TP2 - Système de fichiers et permissions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tp3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TP3 - Environnement de travail et Compilateur C
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tp4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TP4 - Canaux standards et redirections | Processus et tâches | Signaux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tp4-exo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices en plus (TP4)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="tp5-processus">TP5 - Processus</h1>
+<div class="admonition info">
+<p class="admonition-title">Instructions</p>
+<ul>
+<li>On rappelle que dans tous les exercices le <code>$</code> en début de commande représente le prompt, il n'est pas à saisir lorsque vous écrivez une ligne de commande.</li>
+<li>Pour chaque nouvelle commande, n'hésitez pas à consulter sa page de manuel avec la commande <code>man</code>, ou à utiliser l'option <code>--help</code> (si elle est disponible) pour savoir ce qu'elle fait.</li>
+<li>N'hésitez pas à reconsulter les anciens TP pour vous aider.</li>
+<li>Les exercices 1, 2, 3 et 4 sont <strong>obligatoires</strong>. Le reste est optionnel, mais à finir si vous avez le temps.</li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Dernière séance</p>
+<p>Comme il s'agit de la dernière séance du module, prennez le temps de répondre au questionnaire d'évaluation du cours :) N'hésitez pas à nous faire part de ce que vous avez trouvé de bien et de moins bien. Vos réponses sont anonymes et nous permettront d'améliorer le cours pour les prochaines années. Merci d'avance !</p>
+</div>
+<h2 id="processus-et-taches">Processus et tâches</h2>
+<div class="admonition tip">
+<p class="admonition-title">Processus et tâches</p>
+<p>Un <em>processus</em> est une unité de travail sur un système d'exploitation. Il peut s'agir d'un programme, d'un script, ou d'un service. Chaque programme que vous exécutez représente un ou plusieurs processus.
+Chaque processus est identifié par un numéro unique appelé <em>PID</em> (Process IDentifier). </p>
+<p>Linux nous offre plusieurs commandes pour visualiser les processus en cours d'exécution.</p>
+<ul>
+<li><code>ps</code> permet d'afficher les processus en cours d'exécution. Par défaut, <code>ps</code> n'affiche que les processus lancés par l'utilisateur courant. Pour afficher tous les processus, on utilise l'option <code>-e</code> (ou <code>-A</code>).</li>
+<li><code>top</code> permet d'afficher les processus en cours d'exécution. Il peut s'utiliser de manière interactive notamment les trier par utilisation du CPU. On peut quitter <code>top</code> avec la touche <code>q</code>.</li>
+</ul>
+<p>Une <em>tâche</em> par contre est une unité de travail du shell. Une tâche peut être un processus, ou un groupe de processus mais il faut qu'il ait été lancé par le shell. Le shell a un système de contrôle de tâches : c'est la capacité à exécuter plusieurs commandes en même temps. On peut lancer une commande en arrière-plan et en avant-plan. </p>
+<p>La commande <code>jobs</code> permet d'afficher les tâches en cours d'exécution.</p>
+<div class="admonition warning">
+<p class="admonition-title">En somme</p>
+<p>Une tâche est un processus, mais un processus n'est pas forcément une tâche.</p>
+</div>
+</div>
+<hr />
+<h3 id="exercice-1-visualisation-des-processus">Exercice 1 - Visualisation des processus</h3>
+<ol>
+<li>Testez les commandes suivantes et observez leurs résultats. Aidez-vous de <code>man ps</code> pour comprendre les options utilisées.
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span>ps
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>$<span class="w"> </span>ps<span class="w"> </span>-f
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>$<span class="w"> </span>ps<span class="w"> </span>-u
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>$<span class="w"> </span>ps<span class="w"> </span>-T
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>$<span class="w"> </span>ps<span class="w"> </span>-e
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>$<span class="w"> </span>ps<span class="w"> </span>-U<span class="w"> </span>root
+</code></pre></div></li>
+<li>
+<p>La commande <code>ps</code> retourne la liste des processus en cours d'exécution. Cette liste contient quatre colonnes par défaut.</p>
+<div class="admonition info">
+<p class="admonition-title">Informations de la commande <code>ps</code></p>
+<ul>
+<li>La première colonne correspond au <em>PID</em> (Process IDentifier) du processus.</li>
+<li>La deuxième colonne correspond au <em>TTY</em> (TeleTYpewriter) sur lequel le processus est lancé. C'est le type de terminal utilisé pour lancer le processus. Ici <code>pts/1</code> (pseudo-terminal slave) signifie que le processus a été lancé dans un pseudo-terminal. Le chiffre renseigné correspond au numéro du terminal (par exemple si vous avez plusieurs instances du terminal ouverts).</li>
+<li>La troisième colonne correspond au <em>TIME</em> (temps) d'exécution du processus.</li>
+<li>La quatrième colonne correspond à la <em>CMD</em> (CoMmanDe) qui a lancé le processus.</li>
+</ul>
+</div>
+</li>
+<li>
+<p>La sortie standard de la commande <code>ps</code> peut être redirigée. En utilisant la commande <code>grep</code> et/ou <code>wc</code> :</p>
+<ul>
+<li>Affichez le nombre de processus lancés par l'utilisateur courant.</li>
+<li>Affichez le nombre de processus lancés par l'utilisateur <code>root</code>.</li>
+<li>Affichez les nombre de processus lancés par l'utilisateur courant et dont la commande est <code>bash</code>.</li>
+</ul>
+</li>
+<li>
+<p>(Optionnel) La commande <code>top</code> permet d'afficher les processus en cours d'exécution. Une fois lancée, elle s'exécute en continu et affiche les processus en temps réel. La touche <code>h</code> permet d'afficher l'aide et de visualiser les fonctionnalités disponible, la touche <code>q</code> permet de quitter <code>top</code>. Testez la commande <code>top</code>, afficher l'aide puis:</p>
+<ul>
+<li>Filtrer les processus en cours d'exécution pour n'afficher que ceux lancés par l'utilisateur courant.</li>
+<li>Filtrer les processus en cours d'exécution pour n'afficher que ceux lancés par l'utilisateur <code>root</code>.</li>
+<li>Filtrer les processus en cours d'exécution pour n'afficher que ceux dont la commande est <code>bash</code>.</li>
+</ul>
+</li>
+</ol>
+<h3 id="exercice-2-processus-et-taches">Exercice 2 - Processus et tâches</h3>
+<ol>
+<li>Dans cet exercice nous allons simuler l'exécution d'un processus long. Pour cela, nous allons utiliser la commande <code>sleep</code> qui permet de mettre en pause l'exécution d'un script pendant un certain temps. Tapez la commande <code>sleep 10</code> et observez ce qu'il se passe.</li>
+<li>
+<p>Ensuite testez les commandes suivantes et commentez les résultats:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span>ps
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>$<span class="w"> </span>sleep<span class="w"> </span><span class="m">240</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>$<span class="w"> </span>C-z<span class="w"> </span><span class="c1"># Control + z</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>$<span class="w"> </span>ps
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>$<span class="w"> </span><span class="nb">fg</span><span class="w"> </span>%1<span class="w"> </span><span class="c1"># fg %&lt;numéro de la tâche&gt;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>$<span class="w"> </span>C-c<span class="w"> </span><span class="c1"># Control + c</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>$<span class="w"> </span>ps
+</code></pre></div></p>
+<ul>
+<li>À votre avis que fait le raccourci clavier <code>C-z</code> ? et le raccourci clavier <code>C-c</code> ?</li>
+<li>Refaites les commandes en tapant des commandes (ou tout autre chose dans le terminal) entre le <code>sleep 240</code> et le <code>C-z</code>. Que remarquez-vous ?</li>
+<li>Sans passer par <code>help fg</code>, pouvez-vous deviner ce que fait la commande <code>fg %1</code> ? et la commande <code>fg</code> de manière générale ?</li>
+<li>Refaites les commandes en notant à chaque fois le PID du processus <code>sleep 240</code> dans les sorties de <code>ps</code>. Que remarquez-vous ?</li>
+</ul>
+</li>
+<li>
+<p>Créer un ficher <code>gros_processus</code> dont le contenu est le suivant:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>sleep<span class="w"> </span><span class="m">120</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;Terminé&#39;</span>
+</code></pre></div></p>
+</li>
+<li>Modifier les droits du fichier <code>gros_processus</code> pour qu'il soit exécutable. Puis exécutez les commandes suivantes et observez attentivement les résultats:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span>./gros_processus<span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>$<span class="w"> </span>C-z
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>$<span class="w"> </span>./gros_processus<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>$<span class="w"> </span><span class="nb">jobs</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>$<span class="w"> </span><span class="nb">jobs</span><span class="w"> </span>-p
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>$<span class="w"> </span>ps
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>$<span class="w"> </span><span class="nb">fg</span><span class="w"> </span>%1
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>$<span class="w"> </span>C-z
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>$<span class="w"> </span><span class="nb">bg</span><span class="w"> </span>%1
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>$<span class="w"> </span><span class="nb">jobs</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>$<span class="w"> </span><span class="nb">fg</span><span class="w"> </span>%2
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>$<span class="w"> </span>C-z
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>$<span class="w"> </span><span class="nb">bg</span><span class="w"> </span>%2<span class="w"> </span><span class="c1"># puis attendre que les processus se terminent</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>$<span class="w"> </span><span class="nb">jobs</span>
+</code></pre></div><ul>
+<li>Quels procédés permettent de placer un processus en arrière-plan ? et en avant-plan ?</li>
+<li>Quelle différence remarquez-vous entre <code>./gros_processus 1</code> puis <code>C-z</code> et directement <code>./gros_processus 2 &amp;</code> ? (À part 1 et 2 bien-sûr) ?</li>
+<li>À quoi sert l'option <code>-p</code> de la commande <code>jobs</code> ?</li>
+<li>Sans passer par <code>help bg</code>, pouvez-vous deviner ce que fait les commandes <code>bg %1</code> et <code>bg %2</code>? et la commande <code>bg</code> de manière générale ?</li>
+<li>Quels sont les différents états des tâches que vous avez observé ?</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2 id="envoyer-des-signaux-a-un-processus">Envoyer des signaux à un processus</h2>
+<div class="admonition tip">
+<p class="admonition-title">Communiquer avec les processus</p>
+<p>Lorsque des processus ont été lancés, nous avons remarqué qu'ils peuvent être arrêtes, redémarrés et tués. Pour cela, nous avons utilisé les commandes <code>C-z</code>, <code>C-c</code>, <code>fg</code> et <code>bg</code>. Ces commandes permettent de communiquer avec les processus en cours d'exécution. En réalité, ces dernières envoient ce qu'on appelle des <em>signaux</em> aux processus. Un <em>signal</em> est un message envoyé à un processus pour lui demander de faire quelque chose. </p>
+<p>La commande qui permet d'envoyer des signaux à un processus est <code>kill</code>. Cette commande nécessite le PID du processus à qui envoyer le signal (ou son numéro de tâche si c'en est une). Ainsi <code>C-z</code>, <code>C-c</code>, <code>fg</code> et <code>bg</code> font donc appel à la commande <code>kill</code> pour envoyer des signaux aux processus.</p>
+<p>Il existe plusieurs signaux, les plus courants sont les suivants:</p>
+<ul>
+<li><code>SIGINT</code> : signal envoyé par la combinaison de touches <code>C-c</code>. Il demande au processus de s'arrêter.</li>
+<li><code>SIGTSTP</code> : signal envoyé par la combinaison de touches <code>C-z</code>. Il demande au processus de se mettre en pause.</li>
+<li><code>SIGCONT</code> : signal envoyé par les commandes <code>bg</code> et <code>fg</code>. Il demande au processus de reprendre son exécution.</li>
+<li><code>SIGTERM</code> : signal envoyé par la commande <code>kill</code> par défaut. Il demande au processus de s'arrêter.</li>
+<li><code>SIGKILL</code> : Il demande au processus de s'arrêter immédiatement et provoque son arrêt brutal, comprenez par là que le processus n'a pas le temps de se terminer correctement. Il est donc déconseillé d'utiliser ce signal.</li>
+</ul>
+<p>La liste exhaustive des signaux est disponible est obtenu avec commande <code>kill -L</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Qui a le droit d'envoyer des signaux à un processus ?</p>
+<p>Pour pouvoir affecter un processus, vous devez biensur en être le prorpiétaire ou être <em>root</em>.</p>
+</div>
+</div>
+<h3 id="exercice-3-la-commande-kill">Exercice 3 - La commande <code>kill</code></h3>
+<ol>
+<li>Tapez la commande <code>kill -L</code> et notez les numéros associés aux signaux <code>SIGINT</code>, <code>SIGTSTP</code>, <code>SIGCONT</code>, <code>SIGTERM</code> et <code>SIGKILL</code>.</li>
+<li>Reprenez ensuite le script <code>gros_processus</code> de l'exercice précédent et testez les commandes suivantes. Et commentez les résultats.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>./gros_processus<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c1"># ce sera notre processus 1</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>$<span class="w"> </span>./gros_processus<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c1"># ce sera notre processus 2</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>$<span class="w"> </span>./gros_processus<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span><span class="c1"># ce sera notre processus 3</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>$<span class="w"> </span><span class="nb">jobs</span><span class="w"> </span>-p<span class="w"> </span><span class="c1"># notez les PID des processus, mais ils ont dû être affichés à l&#39;écran lors de leur lancement</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>$<span class="w"> </span><span class="nb">kill</span><span class="w"> </span>-SIGTSTP<span class="w"> </span>&lt;PID<span class="w"> </span>du<span class="w"> </span>processus<span class="w"> </span><span class="m">1</span>&gt;
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>$<span class="w"> </span><span class="nb">jobs</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>$<span class="w"> </span><span class="nb">kill</span><span class="w"> </span>-SIGINT<span class="w"> </span>%2
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>$<span class="w"> </span><span class="nb">jobs</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>$<span class="w"> </span><span class="nb">jobs</span><span class="w"> </span><span class="c1"># oui une deuxième fois</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>$<span class="w"> </span><span class="nb">kill</span><span class="w"> </span>-SIGCONT<span class="w"> </span>%1
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>$<span class="w"> </span><span class="nb">jobs</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>$<span class="w"> </span><span class="nb">kill</span><span class="w"> </span>-s<span class="w"> </span>SIGTERM<span class="w"> </span>&lt;PID<span class="w"> </span>processus<span class="w"> </span><span class="m">1</span>&gt;
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>$<span class="w"> </span><span class="nb">jobs</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>$<span class="w"> </span><span class="nb">kill</span><span class="w"> </span>-9<span class="w"> </span>&lt;PID<span class="w"> </span>du<span class="w"> </span>processus<span class="w"> </span><span class="m">3</span>&gt;
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>$<span class="w"> </span><span class="nb">jobs</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>$<span class="w"> </span><span class="nb">jobs</span><span class="w"> </span><span class="c1"># pour voir disparaître la tâche [3]</span>
+</code></pre></div></li>
+<li>Selon vous quel est la différence entre <code>SIGINT</code> et <code>SIGTSTP</code> ? et entre <code>SIGTSTP</code> et <code>SIGTERM</code> ?</li>
+<li>D'après vos observations sur les résultats de la question 2, de combien de manière différente peut-on utiliser la commande <code>kill</code> pour arriver au même résultat ?</li>
+</ol>
+<hr />
+<h2 id="autres-commandes">Autres commandes</h2>
+<h3 id="exercice-4-archiver-des-fichiers-et-extraire-des-archives">Exercice 4 - Archiver des fichiers et extraire des archives</h3>
+<div class="admonition tip">
+<p class="admonition-title">Compression de fichiers et archivage</p>
+<p>Archiver un ensemble de fichiers consiste à les regrouper dans un seul fichier. Cela permet de les stocker ou de les transférer plus facilement. Tandis que compresser un fichier consiste à réduire sa taille en supprimant les informations redondantes. Cela permet de gagner de l'espace de stockage et éventuellement de réduire le temps de transfert.</p>
+<p>Ces deux procédés vont souvent de paire. En effet, on va souvent compresser un fichier avant de l'archiver. Il existe plusieurs outils pour compresser et archiver des fichiers.</p>
+<ul>
+<li><code>gzip</code> (<em>GNU zip</em>): permet de compresser un fichier et dont les fichiers ont l'extension <code>.gz</code>.</li>
+<li><code>bzip2</code> (<em>block-sorting zip</em>): permet de compresser un fichier et dont les fichiers ont l'extension <code>.bz2</code>.</li>
+<li><code>zip</code>: permet de compresser et d'archiver un ensemble de fichiers et dont les fichiers ont l'extension <code>.zip</code> (format standard des archives Windows)</li>
+<li><code>tar</code> (<em>tape archive</em>): permet d'archiver un ensemble de fichiers et dont les fichiers ont l'extension <code>.tar</code>.</li>
+</ul>
+<p>On décompresse ensuite un fichier en fonction de son format de compréssion et d'archivage. </p>
+<ul>
+<li><code>gunzip</code> : permet de décompresser un fichier compressé avec <code>gzip</code>.</li>
+<li><code>bunzip2</code> : permet de décompresser un fichier compressé avec <code>bzip2</code>.</li>
+<li><code>unzip</code> : permet de décompresser et d'extraire un fichier archivé avec <code>zip</code>.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Remarque</p>
+<p><code>tar</code> permet à la fois la compression et l'archivage</p>
+<ul>
+<li>L'option <code>-c</code> de <code>tar</code> permet de créer une archive.</li>
+<li>L'option <code>-x</code> de <code>tar</code> permet d'extraire une archive.</li>
+<li>L'option <code>-f</code> de <code>tar</code> permet de spécifier le nom de l'archive.</li>
+</ul>
+</div>
+</div>
+<ol>
+<li>Dans un répertoire <code>dir</code> créer l'arborescence suivante :
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>dir
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>├──<span class="w"> </span>files
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>│<span class="w">   </span>├──<span class="w"> </span>file-a.md
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>│<span class="w">   </span>├──<span class="w"> </span>file-b.md
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>│<span class="w">   </span>├──<span class="w"> </span>file-c.md
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>│<span class="w">   </span>├──<span class="w"> </span>file-d.md
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>│<span class="w">   </span>└──<span class="w"> </span>file-e.md
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>└──<span class="w"> </span>imgs
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span>├──<span class="w"> </span>img001.png
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span>├──<span class="w"> </span>img002.png
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span>├──<span class="w"> </span>img003.png
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">    </span>├──<span class="w"> </span>img004.png
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span>└──<span class="w"> </span>img005.png
+</code></pre></div></li>
+<li>On se place dans le répertoire <code>dir</code>. Tapez ensuite la commande suivante pour créer une archive <code>files.tar</code> contenant les fichiers du répertoire <code>files</code>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span>tar<span class="w"> </span>-cvf<span class="w"> </span>files.tar<span class="w"> </span>files
+</code></pre></div>
+    Listez ensuite les fichiers de <code>dir</code>.</li>
+<li>Toujours dans <code>dir</code>. Tapez la commande suivante pour créer une archive <code>imgs.tar</code> contenant les images du répertoire <code>imgs</code>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$<span class="w"> </span>tar<span class="w"> </span>-cf<span class="w"> </span>imgs.tar<span class="w"> </span>imgs
+</code></pre></div>
+    Listez ensuite les fichiers de <code>dir</code>.</li>
+<li>Que pouvez vous dire sur l'option <code>-v</code> de <code>tar</code> ?</li>
+<li>Déplacer vous ensuite dans le répertoire parent de <code>dir</code> et tapez les commandes suivantes:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>tar<span class="w"> </span>-czvf<span class="w"> </span>dir.tar.gz<span class="w"> </span>dir
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>$<span class="w"> </span>ls
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>$<span class="w"> </span>gunzip<span class="w"> </span>dir.tar.gz
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>$<span class="w"> </span>ls
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>$<span class="w"> </span>tar<span class="w"> </span>-xvf<span class="w"> </span>dir.tar
+</code></pre></div><ul>
+<li>Après la commande <code>gunzip</code>, qu'est devenu le fichier <code>dir.tar.gz</code> ?</li>
+<li>Selon vous à quoi sert l'option <code>-z</code> de tar ?</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h3 id="exercice-5-un-apercu-de-vim">Exercice 5 - Un aperçu de <code>vim</code></h3>
+<div class="admonition tip">
+<p class="admonition-title">Un éditeur de texte dans la console</p>
+<p><code>vim</code>  est un éditeur de texte en mode console. Il permet de créer, modifier et visualiser des fichiers textes. Il est très puissant et très utilisé par les développeurs. Il est très complet et possède de nombreuses fonctionnalités. Il est donc assez difficile de le maîtriser. Nous allons voir quelques commandes de base pour pouvoir l'utiliser.</p>
+<p>Dans <code>vim</code> il existe plusieurs <em>modes</em> (il est renseigné en bas à gauche de la fenêtre):</p>
+<ul>
+<li>Le mode <em>normal</em> : c'est le mode par défaut. Il permet de naviguer dans le fichier, de copier, coller, supprimer, etc.</li>
+<li>Le mode <em>insertion</em> : il permet d'insérer du texte dans le fichier.</li>
+<li>Le mode <em>commande</em> : il permet d'entrer des commandes pour effectuer des actions sur le fichier.</li>
+</ul>
+<p>De manière générale, pour revenir dans le mode <em>normal</em> il faut appuyer sur la touche <code>ESC</code>.</p>
+<ul>
+<li>Pour passer du mode <em>normal</em> au mode <em>insertion</em> il faut appuyer sur la touche <code>i</code>.  </li>
+<li>Pour passer du mode <em>normal</em> au mode <em>commande</em> il faut appuyer sur la touche <code>:</code>. </li>
+</ul>
+<p>En mode <em>commande</em>, nous allons voir ensemble quelques commandes de base:</p>
+<ul>
+<li><code>:q</code> : quitter <code>vim</code>.</li>
+<li><code>:w</code> : enregistrer le fichier.</li>
+<li><code>:wq</code> : enregistrer le fichier et quitter <code>vim</code>.</li>
+<li><code>:q!</code> : quitter <code>vim</code> sans enregistrer le fichier.</li>
+</ul>
+<p>Si vous voulez en apprendre plus, vous pouvez faire un tour <a href="https://vim-adventures.com/">ici</a> et <a href="http://www.vimgenius.com/">ici</a>.</p>
+</div>
+<hr />
+<ol>
+<li>Tapez la commande <code>vim hellovim</code> pour créer un fichier <code>hellovim</code> avec <code>vim</code>.</li>
+<li>Une fois dans l'éditeur, passer en mode insertion en tapant sur la touche <code>i</code>. Puis écrivez le texte suivant:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Hello vim !
+</code></pre></div></li>
+<li>Revenez en mode normal en appuyant sur la touche <code>ESC</code>. Puis enregistrez le fichier en tapant <code>:w</code> et quittez <code>vim</code> en tapant <code>:q</code>.</li>
+<li>Affichez ensuite le contenu de <code>hellovim</code> avec la commande <code>cat</code>.</li>
+</ol>
+<hr />
+<h3 id="exercice-6-compiler-et-executer-un-programme-c">Exercice 6 - Compiler et exécuter un programme C</h3>
+<div class="admonition tip">
+<p class="admonition-title">Le compilateur C de Linux</p>
+<p><code>gcc</code> est le compilateur C de Linux. Il permet de compiler du code C. Il est très utilisé par les développeurs. Il est très complet et possède de nombreuses fonctionnalités. Nous allons voir un aperçu de son utilisation.</p>
+<p>La compilation d'un programme en C passe par plusieurs étapes, qui sont essentiellement les suivantes:</p>
+<ul>
+<li>La précompilation : elle permet de transformer le code source en un code intermédiaire.</li>
+<li>La compilation : elle permet de transformer le code intermédiaire en code machine.</li>
+<li>L'édition des liens : elle permet de lier le code machine avec les bibliothèques utilisées.</li>
+<li>La création de l'exécutable : elle permet de créer l'exécutable.</li>
+</ul>
+</div>
+<ol>
+<li>Créer un fichier <code>hello.c</code> dont le contenu est le suivant:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="p">{</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello world !</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="p">}</span>
+</code></pre></div></li>
+<li>
+<p>Placez-vous ensuite dans le répertoire contenant votre fichier <code>hello.c</code> et tapez la commande <code>gcc hello.c</code>. Cette commande va compiler votre programme et créer un fichier <code>a.out</code> qui est l'exécutable de votre programme. Tapez enfin la commande <code>./a.out</code> pour exécuter votre programme.</p>
+<div class="admonition warning">
+<p class="admonition-title">Attention</p>
+<ul>
+<li>Si vous avez déjà un fichier <code>a.out</code> dans votre répertoire, il sera écrasé par la commande <code>gcc hello.c</code>.</li>
+<li><code>a.out</code> est le nom par défaut de l'exécutable créé par <code>gcc</code>. Vous pouvez changer ce nom en utilisant l'option <code>-o</code> de <code>gcc</code>. Par exemple, <code>gcc hello.c -o hello</code> va créer un exécutable <code>hello</code> au lieu de <code>a.out</code>.</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Récupérez ensuite cette archive <a href="../../assets/files/hello.tar.gz">hello.tar.gz</a>.</p>
+</li>
+<li>Extraire les fichiers de cet archive et déplacez vos dans le répertoire <code>hello</code>.</li>
+<li>Tapez la commande 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>$<span class="w"> </span>gcc<span class="w"> </span>main.c<span class="w"> </span>hello.c<span class="w"> </span>-o<span class="w"> </span>run
+</code></pre></div>
+pour compiler votre programme. Cette commande va compiler votre programme et créer un fichier <code>run</code> qui est l'exécutable de votre programme. Exécutez enfin votre programme avec la commande <code>./run</code>. </li>
+<li>Supprimer le fichier <code>run</code> et modifier ensuite le fichier <code>hello.c</code> de tel sorte à avoir volontairement une erreur : supprimer l'accolade fermante de la fonction <code>void hello()</code>. Réexécutez ensuite les commandes de la question 5. Que remarquez-vous ?</li>
+<li>Remodifier ensuite le fichier <code>hello.c</code> en remettant l'accolade fermante mais rajouter un <code>return 1</code> dans la définition de la fonction (avant l'accolade fermante). Réexécutez ensuite les commandes de la question 5. Que remarquez-vous ?</li>
+<li>Conclure sur la gestion des erreurs et des warnings sur <code>gcc</code>.</li>
+</ol>
+<hr />
+<h3 id="exercice-7-la-commande-trap">Exercice 7 - La commande <code>trap</code></h3>
+<div class="admonition tip">
+<p class="admonition-title">Intercepter les signaux</p>
+<p>La commande <code>trap</code> permet d'intercepter les signaux envoyés à un processus. Elle permet donc de définir des actions à effectuer lorsqu'un signal est envoyé à un processus. Sa syntaxe est la suivante:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">trap</span><span class="w"> </span><span class="s1">&#39;commande1;commande2;...&#39;</span><span class="w"> </span>signal1<span class="w"> </span>signal2<span class="w"> </span>...
+</code></pre></div>
+Ici <code>commande1;commande2;...</code> est la lite des <em>actions</em> à effectuer à la réception du ou des signaux de la liste <code>signal1 signal2 ...</code>.</p>
+<p>À la réception d'un <code>SIGINT</code>, par exemple, on voudrait terminer proprement notre processus. On peut dans ce cas désallouer toutes les ressources avant de terminer notre processus. (Ça s'appelle un <em>graceful shutdown</em>).</p>
+</div>
+<ol>
+<li>Créer un fichier <code>graceful_shutdown</code> dont le contenu est le suivant:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="k">function</span><span class="w"> </span>cmd1<span class="o">()</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="o">{</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">    </span><span class="nb">echo</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Ok, c&#39;est bon je m&#39;arrête...&quot;</span><span class="w"> </span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="o">}</span><span class="w"> </span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="k">function</span><span class="w"> </span>cmd2<span class="o">()</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="o">{</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">    </span><span class="nb">echo</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;...mais dans la grâce&quot;</span><span class="w"> </span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="o">}</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="nb">trap</span><span class="w"> </span><span class="s1">&#39;cmd1;cmd2;exit&#39;</span><span class="w"> </span>SIGINT<span class="w"> </span>SIGTERM
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="k">while</span><span class="w"> </span><span class="nb">true</span>
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="k">do</span>
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Personne ne peut m&#39;arrêter&quot;</span>
+<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a><span class="w">    </span>sleep<span class="w"> </span><span class="m">10</span>
+<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a><span class="k">done</span>
+</code></pre></div></li>
+<li>Faîtes en sorte que le fichier <code>graceful_shutdown</code> soit exécutable puis exécutez-le.</li>
+<li>Tapez ensuite les commandes suivantes et commentez les résultats:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>$<span class="w"> </span>./graceful_shutdown
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>$<span class="w"> </span>C-c
+</code></pre></div></li>
+<li>À votre avis, que fait la commande <code>exit</code> ?</li>
+<li>Relancez le script <code>graceful_shutdown</code> mais cette fois-ci en arrière-plan. Puis tapez les commandes suivantes et commentez les résultats:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$<span class="w"> </span>./graceful_shutdown<span class="w"> </span><span class="p">&amp;</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>$<span class="w"> </span>C-c
+</code></pre></div><ul>
+<li>Que remarquez-vous ? Dès que vous avez la main sur le terminal envoyer un <code>SIGTERM</code> au processus <code>graceful_shutdown</code>.</li>
+<li>Quelle conclusion pouvez-vous tirer sur <code>C-c</code> et les processus en arrière plan ?</li>
+</ul>
+</li>
+</ol>
+<hr />
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      TI307 - Introduction au système Linux - Efrei Paris | Yvan GUIFO 2025 suite du travil de Rado Rakotonarivo 2024.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/YvanGuifo/introduction-linux-fr" target="_blank" rel="noopener" title="Github repo of this course" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "header.autohide", "toc.integrate"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+    
+  </body>
+</html>
