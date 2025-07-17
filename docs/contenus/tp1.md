@@ -33,10 +33,10 @@ hide:
 
 !!! tip "Barème d’interprétation des exercices"
 
-    > `(*)` = Facile, `(**)` = Moyenne, `(***)` = Élevée
+    > 📚 = Facile, 📚📚 = Moyenne, 📚📚📚 = Élevée 
 
 
-### Exercice 1 : Premières commandes (*)
+### Exercice 1 : Premières commandes 📚
 
 !!! tip "Qu'est-ce qu'une commande ?"
 
@@ -72,7 +72,7 @@ $ echo       Hello,        world!
 8. Ouvrez de nouveau un terminal Debian et appuyez plusieurs fois sur <kbd>Ctrl</kbd> + <kbd>P</kbd>. Qu'observez-vous ?
 9. Fermez le terminal avec un raccourci clavier.
 
-### Exercice 2 : Répertoires et fichiers (**)
+### Exercice 2 : Répertoires et fichiers 📚📚
 
 1. Ouvrez un terminal Debian et tapez la commande suivante, en respectant sa syntaxe :
 ```bash
@@ -90,7 +90,7 @@ PS1='$ '
 11. Le caractère `~` (qui se lit *tilde*) est entré au clavier avec la combinaison de touches `Alt Gr-2`. Entrez la commande `echo ~`, puis la commande `cd ~`. Que fait le shell au caractère `~` ?
 12. Représentez les répertoires et fichiers mentionnés dans l'Exercice sous la forme d'un arbre (c'est-à-dire comme un arbre généalogique).
 
-### Exercice 3 : Gestion de répertoires et de fichiers (1) (**)
+### Exercice 3 : Gestion de répertoires et de fichiers (1) 📚📚
 
 !!! tip "Chemin d'accès"
     
@@ -164,7 +164,7 @@ Essayez de décrire les opérations de la commande `cp` en fonction que son dern
     ```
 2.  Supprimez tous les fichiers et répertoires créés lors de cet Exercice.
 
-### Exercice 4 : Gestion de répertoires et de fichiers (2) (***)
+### Exercice 4 : Gestion de répertoires et de fichiers (2) 📚📚📚
 
 Créez l'arborescence suivante. Le `~` représente le répertoire personnel de l'utilisateur. Seuls `rapport.txt` et `index.html` sont des fichiers normaux, les autres sont tous des répertoires. Les répertoires **Mail**, **Rapport** et **Web** seront créés en une seule commande à l'aide de `mkdir`.
 
@@ -191,7 +191,7 @@ Depuis votre répertoire personnel, exécutez les opératiorns suivantes (plusie
 6. Sans changer de répertoire, listez le contenu du répertoire `Web`.
 7. Revenez dans `~` et supprimez toute l'arborescence de cet Exercice.
 
-### Exercice 5 : Commandes internes et commandes externes (*)
+### Exercice 5 : Commandes internes et commandes externes 📚
 
 !!! tip "Differents types de commandes"
 
@@ -206,7 +206,7 @@ Depuis votre répertoire personnel, exécutez les opératiorns suivantes (plusie
 1. Pour chacune des commandes utilsées dans les Exercices précédents, dire avec la commande `type` à quelle catégorie elle appartient (n'oubliez pas `type`).
 2. Pouvez-vous deviner dans quels répertoires se trouvent la plupart des programmes installés sur le système ?
 
-### Exercice 6 : Obtenir l'aide (**)
+### Exercice 6 : Obtenir l'aide 📚📚
 
 !!! warning "Si vous êtes sur Windows et que vous utilisez WSL"
 
@@ -236,7 +236,7 @@ Depuis votre répertoire personnel, exécutez les opératiorns suivantes (plusie
     ```
 6. Dans la page de manuel de `mv`, observer les deux premières lignes de la partie « SYNOPSIS ». Que signifient les crochets ? les points de suspension ? Si besoin, se reporter au manuel de `man`.
 
-### Exercice 7 : Caractères joker (***)
+### Exercice 7 : Caractères joker 📚📚📚
 
 !!! tip "Caractères joker"
 
