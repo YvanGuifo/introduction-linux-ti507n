@@ -439,49 +439,49 @@
       
         <li class="md-nav__item">
   <a href="#exercice-1-premieres-commandes" class="md-nav__link">
-    Exercice 1 : Premières commandes
+    Exercice 1 : Premières commandes (*)
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#exercice-2-repertoires-et-fichiers" class="md-nav__link">
-    Exercice 2 : Répertoires et fichiers
+    Exercice 2 : Répertoires et fichiers (**)
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#exercice-3-gestion-de-repertoires-et-de-fichiers-1" class="md-nav__link">
-    Exercice 3 : Gestion de répertoires et de fichiers (1)
+    Exercice 3 : Gestion de répertoires et de fichiers (1) (**)
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#exercice-4-gestion-de-repertoires-et-de-fichiers-2" class="md-nav__link">
-    Exercice 4 : Gestion de répertoires et de fichiers (2)
+    Exercice 4 : Gestion de répertoires et de fichiers (2) (***)
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#exercice-5-commandes-internes-et-commandes-externes" class="md-nav__link">
-    Exercice 5 : Commandes internes et commandes externes
+    Exercice 5 : Commandes internes et commandes externes (*)
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#exercice-6-obtenir-laide" class="md-nav__link">
-    Exercice 6 : Obtenir l'aide
+    Exercice 6 : Obtenir l'aide (**)
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#exercice-7-caracteres-joker" class="md-nav__link">
-    Exercice 7 : Caractères joker
+    Exercice 7 : Caractères joker (***)
   </a>
   
 </li>
@@ -599,6 +599,21 @@
 
 <h1 id="tp1-premieres-commandes">TP1 - Premières commandes</h1>
 <div class="admonition info">
+<p class="admonition-title">Objectifs pédagogiques</p>
+<p>À l’issue de ce TP, l’étudiant sera capable de :</p>
+<ul>
+<li>Se repérer dans l’arborescence du système de fichiers Linux</li>
+<li>Comprendre et utiliser les commandes de base du shell (naviguer, créer, déplacer, supprimer)</li>
+<li>Utiliser les raccourcis clavier essentiels du terminal</li>
+<li>Comprendre la distinction entre commandes internes et externes</li>
+<li>Consulter l’aide en ligne (man, help) et lire un synopsis de commande</li>
+<li>Comprendre la différence entre chemins absolus et relatifs</li>
+<li>Manipuler les répertoires et les fichiers en ligne de commande</li>
+<li>Utiliser les caractères jokers (wildcards) pour rechercher ou manipuler des fichiers</li>
+<li>Appliquer la complétion automatique et les raccourcis utiles pour gagner en efficacité</li>
+</ul>
+</div>
+<div class="admonition info">
 <p class="admonition-title">Instructions</p>
 <ul>
 <li>Dans tous les exercices, la chaîne <code>$</code> au début de la ligne représente l'invite de commande et ne doit pas être saisie.</li>
@@ -607,7 +622,15 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span><span class="nv">PS1</span><span class="o">=</span><span class="s1">&#39;$ &#39;</span>
 </code></pre></div>
 </div>
-<h3 id="exercice-1-premieres-commandes">Exercice 1 : Premières commandes</h3>
+<div class="admonition tip">
+<p class="admonition-title">Barème d’interprétation des exercices</p>
+<ul>
+<li><code>(*)</code> = Facile : compréhension ou manipulation simple, sans logique complexe</li>
+<li><code>(**)</code> = Moyenne : nécessite réflexion ou combinaison de plusieurs commandes</li>
+<li><code>(***)</code> = Élevée : implique de structurer des répertoires/fichiers, comprendre les syntaxes avancées ou manipuler des motifs complexes</li>
+</ul>
+</div>
+<h3 id="exercice-1-premieres-commandes">Exercice 1 : Premières commandes (*)</h3>
 <div class="admonition tip">
 <p class="admonition-title">Qu'est-ce qu'une commande ?</p>
 <p>Une <em>commande</em> est une séquence de mots se terminant par un caractère de nouvelle ligne. Autrement dit, une commande est une séquence de caractères qui se termine par la touche <kbd>⏎ Entrée</kbd>. Le premier mot est le nom de la commande, les autres sont ses <em>arguments</em>. La commande est exécutée par le shell, qui est un programme qui interprète la ligne de commande.</p>
@@ -639,7 +662,7 @@ Ici la commande est <code>touch</code> et son argument est <code>file.txt</code>
 <li>Ouvrez de nouveau un terminal Debian et appuyez plusieurs fois sur <kbd>Ctrl</kbd> + <kbd>P</kbd>. Qu'observez-vous ?</li>
 <li>Fermez le terminal avec un raccourci clavier.</li>
 </ol>
-<h3 id="exercice-2-repertoires-et-fichiers">Exercice 2 : Répertoires et fichiers</h3>
+<h3 id="exercice-2-repertoires-et-fichiers">Exercice 2 : Répertoires et fichiers (**)</h3>
 <ol>
 <li>Ouvrez un terminal Debian et tapez la commande suivante, en respectant sa syntaxe :
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">PS1</span><span class="o">=</span><span class="s1">&#39;$ &#39;</span>
@@ -656,7 +679,7 @@ Ici la commande est <code>touch</code> et son argument est <code>file.txt</code>
 <li>Le caractère <code>~</code> (qui se lit <em>tilde</em>) est entré au clavier avec la combinaison de touches <code>Alt Gr-2</code>. Entrez la commande <code>echo ~</code>, puis la commande <code>cd ~</code>. Que fait le shell au caractère <code>~</code> ?</li>
 <li>Représentez les répertoires et fichiers mentionnés dans l'Exercice sous la forme d'un arbre (c'est-à-dire comme un arbre généalogique).</li>
 </ol>
-<h3 id="exercice-3-gestion-de-repertoires-et-de-fichiers-1">Exercice 3 : Gestion de répertoires et de fichiers (1)</h3>
+<h3 id="exercice-3-gestion-de-repertoires-et-de-fichiers-1">Exercice 3 : Gestion de répertoires et de fichiers (1) (**)</h3>
 <div class="admonition tip">
 <p class="admonition-title">Chemin d'accès</p>
 <p>La référence à une ressource (fichier ou répertoire) s'appelle un chemin d'accès (en anglais : path). Dans ce chemin, sous Linux, les noms des répertoires et éventuel fichier sont séparés par un slash <code>/</code> (alors qu'on utilise un antislash <code>\</code> sous Windows).</p>
@@ -722,7 +745,7 @@ Essayez de décrire les opérations de la commande <code>cp</code> en fonction q
 </code></pre></div></li>
 <li>Supprimez tous les fichiers et répertoires créés lors de cet Exercice.</li>
 </ol>
-<h3 id="exercice-4-gestion-de-repertoires-et-de-fichiers-2">Exercice 4 : Gestion de répertoires et de fichiers (2)</h3>
+<h3 id="exercice-4-gestion-de-repertoires-et-de-fichiers-2">Exercice 4 : Gestion de répertoires et de fichiers (2) (***)</h3>
 <p>Créez l'arborescence suivante. Le <code>~</code> représente le répertoire personnel de l'utilisateur. Seuls <code>rapport.txt</code> et <code>index.html</code> sont des fichiers normaux, les autres sont tous des répertoires. Les répertoires <strong>Mail</strong>, <strong>Rapport</strong> et <strong>Web</strong> seront créés en une seule commande à l'aide de <code>mkdir</code>.</p>
 <p><pre class="mermaid"><code>stateDiagram-v2
     ~ --&gt; Mail
@@ -744,7 +767,7 @@ Utilisez la commande <code>touch</code> pour créer les fichiers normaux et un �
 <li>Sans changer de répertoire, listez le contenu du répertoire <code>Web</code>.</li>
 <li>Revenez dans <code>~</code> et supprimez toute l'arborescence de cet Exercice.</li>
 </ol>
-<h3 id="exercice-5-commandes-internes-et-commandes-externes">Exercice 5 : Commandes internes et commandes externes</h3>
+<h3 id="exercice-5-commandes-internes-et-commandes-externes">Exercice 5 : Commandes internes et commandes externes (*)</h3>
 <div class="admonition tip">
 <p class="admonition-title">Differents types de commandes</p>
 <p>Il existe plusieurs types de commandes : les <strong>commandes externes</strong>, les <strong>commandes internes</strong>, les <strong>fonctions du shell</strong> et les <strong>alias</strong>. Les commandes externes sont des programmes compilés ou des scripts installés sur le système. Les commandes internes (aussi appelées <em>commandes intégrées</em>) sont des commandes intégrées au shell. Les fonctions du shell sont des fonctions définies par l'utilisateur. Les alias sont des raccourcis pour des commandes définis par l'utilisateur.</p>
@@ -757,7 +780,7 @@ Utilisez la commande <code>touch</code> pour créer les fichiers normaux et un �
 <li>Pour chacune des commandes utilsées dans les Exercices précédents, dire avec la commande <code>type</code> à quelle catégorie elle appartient (n'oubliez pas <code>type</code>).</li>
 <li>Pouvez-vous deviner dans quels répertoires se trouvent la plupart des programmes installés sur le système ?</li>
 </ol>
-<h3 id="exercice-6-obtenir-laide">Exercice 6 : Obtenir l'aide</h3>
+<h3 id="exercice-6-obtenir-laide">Exercice 6 : Obtenir l'aide (**)</h3>
 <div class="admonition warning">
 <p class="admonition-title">Si vous êtes sur Windows et que vous utilisez WSL</p>
 <p>Il se peut que <code>man</code> ne soit pas installé sur votre Debian. Vous pouvez installer <code>man</code> avec la commande <code>sudo apt install manpages man-db</code>.</p>
@@ -784,7 +807,7 @@ Utilisez la commande <code>touch</code> pour créer les fichiers normaux et un �
 </code></pre></div></li>
 <li>Dans la page de manuel de <code>mv</code>, observer les deux premières lignes de la partie « SYNOPSIS ». Que signifient les crochets ? les points de suspension ? Si besoin, se reporter au manuel de <code>man</code>.</li>
 </ol>
-<h3 id="exercice-7-caracteres-joker">Exercice 7 : Caractères joker</h3>
+<h3 id="exercice-7-caracteres-joker">Exercice 7 : Caractères joker (***)</h3>
 <div class="admonition tip">
 <p class="admonition-title">Caractères joker</p>
 <p><strong>Les caractères joker</strong> (<em>wildcards</em> en anglais) sont des caractères qui sont utilisés pour représenter un ou plusieurs autres caractères. Ils servent à spécifier des motifs dans les commandes.</p>
