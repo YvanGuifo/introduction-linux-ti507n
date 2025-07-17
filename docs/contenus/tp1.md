@@ -7,7 +7,7 @@ hide:
 
 # TP1 - Premières commandes
 
-!!! info "Objectifs pédagogiques"
+!!! objectifs "Objectifs pédagogiques"
 
     À l’issue de ce TP, l’étudiant sera capable de :
 
