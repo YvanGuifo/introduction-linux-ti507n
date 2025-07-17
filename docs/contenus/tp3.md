@@ -4,9 +4,26 @@ title: TP3 - Environnement de travail et Compilateur C
 
 # TP3 - Environnement de travail et Compilateur C
 
+!!! objectifs "Objectifs pédagogiques"
+
+    À l’issue de ce TP, l’étudiant sera capable de :
+
+    - Comprendre la notion de **variables dans un shell** et manipuler leur affectation et leur développement
+    - Identifier et utiliser les **caractères spéciaux** du shell et les **mécanismes d’inhibition** (`\`, `'`, `"`)
+    - Utiliser des **expressions avec jokers (wildcards)** et les extensions de chemins pour manipuler efficacement des ensembles de fichiers
+    - Manipuler l’**extension d’accolades** dans des expressions shell
+    - Utiliser la **substitution de commande** pour capturer dynamiquement le résultat d'une commande
+    - Savoir compiler un programme en C avec `gcc` et identifier les **erreurs de compilation** et les interpréter
+
+
 !!! info "Instructions"
     - On rappelle que dans tous les exercices le `$` en début de commande représente le prompt, il n'est pas à saisir lorsque vous écrivez une ligne de commande.
     - Pour chaque nouvelle commande, n'hésitez pas à consulter sa page de manuel avec la commande `man`, ou à utiliser l'option `--help` (si elle est disponible) pour savoir ce qu'elle fait.
+
+
+!!! tip "Barème d’interprétation des exercices"
+
+    > 📚 = Facile, 📚📚 = Moyenne, 📚📚📚 = Élevée 
 
 
 ## Les variables du shell
@@ -21,7 +38,7 @@ title: TP3 - Environnement de travail et Compilateur C
     
     Les variables du shell sont des variables d’environnement. Elles sont accessibles à tous les processus lancés par le shell. On peut les lister avec la commande `env` ou `printenv`. On peut également les lister avec la commande `set` qui liste également les variables internes du shell (voir la page de manuel de `set` pour plus de détails).
 ---
-### Exercice 1 : Les variables du Shell
+### Exercice 1 : Les variables du Shell 📚
 1. Tapez les commandes suivantes dans un terminal:
 ```bash
 $ nom_fich=hello.c
@@ -67,7 +84,7 @@ $ echo "$sujet $verbe la $cod."
     - `%` Pour le contrôle des tâches (job control).
 ---
 
-### Exercice 2 : Inhibition de caractères spéciaux (la contre-oblique `\`)
+### Exercice 2 : Inhibition de caractères spéciaux (la contre-oblique `\`) 📚
 1. Testez les commandes suivantes.
 ```bash
 $ echo a b
@@ -91,7 +108,7 @@ $ echo \\
     - À quoi sert la chaîne de caractères `\<newline>` ?
     - Comment peut-on obtenir un caractère `\` littéral ? Comment afficher `\\` à l'aide de la commande `echo` ?
 
-### Exercice 3 : L’inhibition des caractères spéciaux (l'apostrophe `'`)
+### Exercice 3 : L’inhibition des caractères spéciaux (l'apostrophe `'`) 📚📚
 !!! info "Remarque"
     L'option `-i` de la commande `rm` permet de demander une confirmation avant la suppression.
 
@@ -115,7 +132,7 @@ $ echo 'le seul caractère spécial entre apostrophes n'est-il pas apostrophe ?'
     Un développement de variable (comme $var) peut-il s'inhiber; par exemple entre apostrophes ?
     ```
 
-### Exercice 4 : L’inhibition des caractères spéciaux (les guillemets anglais `"`)
+### Exercice 4 : L’inhibition des caractères spéciaux (les guillemets anglais `"`) 📚📚
 
 1. Tester les commandes suivantes et notez vos observation:
 ```bash
@@ -155,7 +172,7 @@ $ echo "$mavar font plein de choses"
     L’extension de chemin est effectuée par le shell, avant que la commande ne soit exécutée. Si aucun fichier ne correspond à l’expression régulière, le shell laisse le chemin tel quel.
 ---
 
-### Exercice 5 : Des fichiers et des images
+### Exercice 5 : Des fichiers et des images 📚📚
 1. Créer un répertoire `dir` et y créer les fichiers vides `file-1.txt`, `file-2.txt`, `file-3.txt`, `file-4.txt`, `file-5.txt`, `file-6.txt`, `file-7.txt`, `file-8.txt`, `file-9.txt`, `config-a.txt`, `file-b.txt`.
 2. Créer également dans `dir` les fichiers vides suivants `img-1.png`, `img-2.png`, `img-3.png`, `img-4.png`, `img-5.png`, `img-6.png`, `img-7.png`, `img-8.png`, `img-9.png`.
 3. Créer ensuite dans `dir` deux sous-répertoires `files` et `imgs`. 
@@ -163,7 +180,7 @@ $ echo "$mavar font plein de choses"
 5. Donnez l'expression qui reconnais les fichiers `config-a.txt` et `file-b.txt`. Puis supprimez les fichiers correspondants à cette expression. (Grâce à l'extension de chemin, vous pouvez le faire en une seule commande).
 6. Supprimez le répertoire `dir` et son contenu.
 
-### Exercice 6 : Extension de l'accolade
+### Exercice 6 : Extension de l'accolade 📚📚
 1. Testez les commandes suivantes
 ```bash
 $ echo {a,b,c,d}
@@ -194,7 +211,7 @@ $ echo {a..d}.txt
     
     Il existe deux syntaxes pour la substitution de commande : la syntaxe ancienne avec les accents graves (`` ` ``) et la syntaxe moderne avec les parenthèses `$(...)`. L'ancienne syntaxe est déconseillée car elle ne permet pas d’imbriquer les substitutions de commande. Nous ne la présenterons donc pas ici.
 ---
-### Exercice 7 : Substitution de commande simple
+### Exercice 7 : Substitution de commande simple 📚
 1. Testez les commandes suivantes et observez leur résultat:
 ```bash
 $ date
@@ -219,7 +236,7 @@ $ echo "$phrase"
 4. Pouvez-vous déduire le rôle des guillemets anglais dans la substitution de commande ?
 5. Quelle est la différence entre `$(...)` et `${...}` ?
 
-### Exercice 8 : Substitution de commande imbriquée
+### Exercice 8 : Substitution de commande imbriquée 📚📚📚
 1. Testez les commandes suivantes et observez leur résultat:
 ```bash
 $ echo $(echo $(date))
@@ -250,7 +267,7 @@ $ echo
 
 ---
 
-### Exercice 9 - Le compilateur `gcc`
+### Exercice 9 - Le compilateur `gcc` 📚📚
 
 1. Créer un fichier `hello.c` dont le contenu est le suivant:
     ```c
@@ -282,7 +299,7 @@ pour compiler votre programme. Cette commande va compiler votre programme et cr�
 7. Remodifier ensuite le fichier `hello.c` en remettant l'accolade fermante mais rajouter un `return 1` dans la définition de la fonction (avant l'accolade fermante). Réexécutez ensuite les commandes de la question 5. Que remarquez-vous ?
 8. Conclure sur la gestion des erreurs et des warnings sur `gcc`.
 
-### Exercice 10 - Compilation séparée et édition des liens
+### Exercice 10 - Compilation séparée et édition des liens 📚📚📚
 
 !!! tip
     Pour compiler un programme en C, il est possible de le faire en plusieurs étapes. On peut d'abord compiler chaque fichier source en un fichier objet, puis éditer les liens pour créer l'exécutable. Cela permet de gagner du temps lors de la compilation de gros projets.
