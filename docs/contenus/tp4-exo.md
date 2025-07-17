@@ -2,8 +2,25 @@
 title: Exercices en plus (TP4)
 ---
 
+!!! info "Objectifs pédagogiques"
+
+    À l’issue de ce TP, l’étudiant sera capable de :
+    
+    - Renforcer la maîtrise des redirections et tubes dans le shell.
+    - Utiliser les filtres textuels classiques (`grep`, `sort`, `cut`, `uniq`, `tr`, `head`, `tail`, etc.).
+    - Enchaîner plusieurs commandes avec des redirections et des tubes.
+    - Appliquer des filtres sur des fichiers textuels en combinant des options.
+    - Manipuler efficacement les entrées/sorties dans des scénarios concrets.
+    - Approfondir l’utilisation de `grep` pour rechercher dans des arborescences de fichiers.
+    - Apprendre à extraire des informations spécifiques de fichiers système (`/etc`, `/usr/include`, etc.).
+
+
 !!! info "Indications"
     Les exercices suivants sont des exercices supplémentaires pour vous entraîner et voir d'autres utilisations des tubes et des redirections. 
+
+!!! tip "Barème d’interprétation des exercices"
+
+    > 📚 = Facile, 📚📚 = Moyenne, 📚📚📚 = Élevée 
 
 !!! tip "Filtres textuels"
     Les *filtres textuel* sont des commandes qui lisent ou peuvent lire depuis leur entrée standard et écrivent des données modifiées sur leur sortie standard. 
@@ -20,7 +37,7 @@ title: Exercices en plus (TP4)
   
   ---
 
-### Exercice 1 : Frère Jacques
+### Exercice 1 : Frère Jacques 📚
 
 1. Créer un fichier `fj` contenant ces lignes :
     ```bash
@@ -71,7 +88,7 @@ title: Exercices en plus (TP4)
     - À quoi servent les options `-c` et `-d` de `cut` ?
 
 
-### Exercice 2 : Trier les fichiers
+### Exercice 2 : Trier les fichiers 📚📚📚
 
 !!! tip "Nom de base"
     Le nom de base d'un fichier est le nom du fichier sans son extension. Par exemple le nom de base du fichier `/usr/include/stdio.h` est `stdio`.
@@ -99,7 +116,7 @@ memory
 re_comp
 alloca
 ```
-### Exercice 3 : Plus sur `grep`
+### Exercice 3 : Plus sur `grep` 📚📚
 
 !!! tip "Passer un répertoire en argument de `grep`"
     
