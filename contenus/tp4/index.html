@@ -505,35 +505,35 @@
         
           <li class="md-nav__item">
   <a href="#exercice-1-redirection-de-la-sortie-standard" class="md-nav__link">
-    Exercice 1 : Redirection de la sortie standard
+    Exercice 1 : Redirection de la sortie standard 📚
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#exercice-2-compter-les-entetes-1" class="md-nav__link">
-    Exercice 2 : Compter les entêtes (1)
+    Exercice 2 : Compter les entêtes (1) 📚📚
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#exercice-3-redirection-de-lerreur-standard" class="md-nav__link">
-    Exercice 3 : Redirection de l'erreur standard
+    Exercice 3 : Redirection de l'erreur standard 📚📚
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#exercice-4-retour-sur-la-commande-cat" class="md-nav__link">
-    Exercice 4 : Retour sur la commande cat
+    Exercice 4 : Retour sur la commande cat 📚📚
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#exercice-5-compter-les-entetes-2" class="md-nav__link">
-    Exercice 5 : Compter les entêtes (2)
+    Exercice 5 : Compter les entêtes (2) 📚📚📚
   </a>
   
 </li>
@@ -553,7 +553,7 @@
         
           <li class="md-nav__item">
   <a href="#exercice-6-compter-les-entetes-promis-cest-la-derniere-fois" class="md-nav__link">
-    Exercice 6 : Compter les entêtes (promis c'est la dernière fois)
+    Exercice 6 : Compter les entêtes (promis c'est la dernière fois) 📚📚
   </a>
   
 </li>
@@ -573,7 +573,7 @@
         
           <li class="md-nav__item">
   <a href="#exercice-7-processus-et-taches" class="md-nav__link">
-    Exercice 7 - Processus et tâches
+    Exercice 7 - Processus et tâches 📚📚📚
   </a>
   
 </li>
@@ -593,7 +593,7 @@
         
           <li class="md-nav__item">
   <a href="#exercice-8-la-commande-kill" class="md-nav__link">
-    Exercice 8 - La commande kill
+    Exercice 8 - La commande kill 📚📚📚
   </a>
   
 </li>
@@ -655,6 +655,21 @@
 
 
 <h1 id="tp4-canaux-standards-et-redirections-processus-et-taches-signaux">TP4 - Canaux standards et redirections | Processus et tâches | Signaux</h1>
+<div class="admonition objectifs">
+<p class="admonition-title">Objectifs pédagogiques</p>
+<p>À l’issue de ce TP, l’étudiant sera capable de :</p>
+<ul>
+<li><strong>Rediriger les flux standards</strong> (entrée, sortie, erreur) d’un programme via les opérateurs <code>&gt;</code>, <code>&gt;&gt;</code>, <code>&lt;</code>, <code>1&gt;</code>, <code>2&gt;</code>, <code>0&lt;</code></li>
+<li><strong>Combiner les redirections</strong> pour manipuler finement les données entrantes/sortantes dans le terminal et les fichiers</li>
+<li>Utiliser les <strong>tubes (<code>|</code>)</strong> pour enchaîner les commandes et automatiser des traitements</li>
+<li><strong>Observer et analyser les processus</strong> via les commandes <code>ps</code>, <code>jobs</code>, <code>top</code>, <code>fg</code>, <code>bg</code>, <code>kill</code>, et comprendre la notion de tâche dans un shell</li>
+<li>Distinguer les <strong>processus en avant-plan et en arrière-plan</strong>, les interrompre temporairement ou définitivement</li>
+<li>Comprendre la notion de <strong>signal envoyé à un processus</strong>, son rôle, son effet, et les différences entre <code>SIGINT</code>, <code>SIGTERM</code>, <code>SIGTSTP</code>, <code>SIGCONT</code>, <code>SIGKILL</code></li>
+<li>Identifier un <strong>processus à partir de son PID</strong> ou de son identifiant de tâche pour interagir avec lui via <code>kill</code></li>
+<li>Connaître les bonnes pratiques pour <strong>terminer proprement ou forcer l’arrêt d’un processus</strong></li>
+<li>Développer un petit <strong>programme en C réactif aux signaux</strong> (via <code>ctrl+C</code>, <code>ctrl+Z</code>, etc.) pour observer en pratique l’effet de ces signaux système</li>
+</ul>
+</div>
 <div class="admonition info">
 <p class="admonition-title">Instructions</p>
 <ul>
@@ -662,6 +677,12 @@
 <li>Pour chaque nouvelle commande, n'hésitez pas à consulter sa page de manuel avec la commande <code>man</code>, ou à utiliser l'option <code>--help</code> (si elle est disponible) pour savoir ce qu'elle fait.</li>
 <li>N'hésitez pas à reconsulter les anciens TP pour vous aider.</li>
 </ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Barème d’interprétation des exercices</p>
+<blockquote>
+<p>📚 = Facile, 📚📚 = Moyenne, 📚📚📚 = Élevée </p>
+</blockquote>
 </div>
 <h2 id="canaux-standards-et-redirections">Canaux standards et redirections</h2>
 <div class="admonition tip">
@@ -678,7 +699,7 @@
 </div>
 </div>
 <hr />
-<h3 id="exercice-1-redirection-de-la-sortie-standard">Exercice 1 : Redirection de la sortie standard</h3>
+<h3 id="exercice-1-redirection-de-la-sortie-standard">Exercice 1 : Redirection de la sortie standard 📚</h3>
 <ol>
 <li>Testez les commandes suivantes et observez leur résultats.
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Est-ce que j&#39;apparais sur le terminal ?&quot;</span>
@@ -710,13 +731,13 @@
 </ul>
 </li>
 </ol>
-<h3 id="exercice-2-compter-les-entetes-1">Exercice 2 : Compter les entêtes (1)</h3>
+<h3 id="exercice-2-compter-les-entetes-1">Exercice 2 : Compter les entêtes (1) 📚📚</h3>
 <ol>
 <li>En vous aidant de la redirection de la sortie standard, créer un fichier <code>include_files.txt</code> qui liste tous les fichiers du répertoire <code>/usr/include</code> dont le nom se termine par <code>.h</code>.</li>
 <li>Compter le nombre de fichiers <code>.h</code> dans le répertoire <code>/usr/include</code> (indice : <code>wc</code>).</li>
 <li>Enfin ajouter la phrase <code>Il y a &lt;nombre&gt; fichiers .h dans le répertoire /usr/include</code> à la fin du fichier <code>include_files.txt</code>.</li>
 </ol>
-<h3 id="exercice-3-redirection-de-lerreur-standard">Exercice 3 : Redirection de l'erreur standard</h3>
+<h3 id="exercice-3-redirection-de-lerreur-standard">Exercice 3 : Redirection de l'erreur standard 📚📚</h3>
 <ol>
 <li>Dans un répertoire <code>dir</code> créer un fichier <code>file-1.txt</code> dont le contenu est <code>Hello world !</code>.</li>
 <li>Créer ensuite une copie de <code>file-1.txt</code> nommée <code>file-2.txt</code>. Retirez toutes les permissions de lecture sur <code>file-2.txt</code>.</li>
@@ -745,7 +766,7 @@ Cette commande affiche le contenu du fichier <code>fichier.txt</code> sur la sor
 </div>
 </div>
 <hr />
-<h3 id="exercice-4-retour-sur-la-commande-cat">Exercice 4 : Retour sur la commande <code>cat</code></h3>
+<h3 id="exercice-4-retour-sur-la-commande-cat">Exercice 4 : Retour sur la commande <code>cat</code> 📚📚</h3>
 <ol>
 <li>Revoyez le manuel de la commande <code>cat</code> et trouvez comment elle fonctionne lorsque l'on ne lui donne pas de fichier en argument.</li>
 <li>
@@ -775,7 +796,7 @@ Cette commande affiche le contenu du fichier <code>fichier.txt</code> sur la sor
 </ul>
 </li>
 </ol>
-<h3 id="exercice-5-compter-les-entetes-2">Exercice 5 : Compter les entêtes (2)</h3>
+<h3 id="exercice-5-compter-les-entetes-2">Exercice 5 : Compter les entêtes (2) 📚📚📚</h3>
 <p>Nous allons refaire le même exercice que l'exercice 2 mais cette fois-ci en utilisant la redirection de l'entrée standard.</p>
 <ol>
 <li>Créer un fichier <code>include_files.txt</code> qui liste tous les fichiers du répertoire <code>/usr/include</code> dont le nom se termine par <code>.h</code>.</li>
@@ -808,7 +829,7 @@ Cette commande affiche le contenu du fichier <code>fichier.txt</code> sur la sor
 La sortie standard de <code>cmd1</code> est connectée à l'entrée standard de <code>cmd2</code>.</p>
 </div>
 <hr />
-<h3 id="exercice-6-compter-les-entetes-promis-cest-la-derniere-fois">Exercice 6 : Compter les entêtes (promis c'est la dernière fois)</h3>
+<h3 id="exercice-6-compter-les-entetes-promis-cest-la-derniere-fois">Exercice 6 : Compter les entêtes (promis c'est la dernière fois) 📚📚</h3>
 <ol>
 <li>Testez la commande suivante et commentez son résultat :
     <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$<span class="w"> </span>ls<span class="w"> </span>/usr/include/*.h<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
@@ -839,7 +860,7 @@ Chaque processus est identifié par un numéro unique appelé <em>PID</em> (Proc
 </div>
 </div>
 <hr />
-<h3 id="exercice-7-processus-et-taches">Exercice 7 - Processus et tâches</h3>
+<h3 id="exercice-7-processus-et-taches">Exercice 7 - Processus et tâches 📚📚📚</h3>
 <ol>
 <li>
 <p>Dans cet exercice nous allons simuler l'exécution d'un processus long. Pour cela, nous allons utiliser la commande <code>sleep</code> qui permet de mettre en pause l'exécution d'un script pendant un certain temps. Tapez la commande <code>sleep 10</code> et observez ce qu'il se passe.</p>
@@ -924,7 +945,7 @@ Chaque processus est identifié par un numéro unique appelé <em>PID</em> (Proc
 <p>Pour pouvoir affecter un processus, vous devez biensur en être le prorpiétaire ou être <em>root</em>.</p>
 </div>
 </div>
-<h3 id="exercice-8-la-commande-kill">Exercice 8 - La commande <code>kill</code></h3>
+<h3 id="exercice-8-la-commande-kill">Exercice 8 - La commande <code>kill</code> 📚📚📚</h3>
 <ol>
 <li>
 <p>Tapez la commande <code>kill -L</code> et notez les numéros associés aux signaux <code>SIGINT</code>, <code>SIGTSTP</code>, <code>SIGCONT</code>, <code>SIGTERM</code> et <code>SIGKILL</code>.</p>
