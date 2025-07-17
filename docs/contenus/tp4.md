@@ -4,11 +4,30 @@ title: TP4 - Canaux standards et redirections | Processus et tâches | Signaux
 
 # TP4 - Canaux standards et redirections | Processus et tâches | Signaux
 
+!!! objectifs "Objectifs pédagogiques"
+
+    À l’issue de ce TP, l’étudiant sera capable de :
+
+    - **Rediriger les flux standards** (entrée, sortie, erreur) d’un programme via les opérateurs `>`, `>>`, `<`, `1>`, `2>`, `0<`
+    - **Combiner les redirections** pour manipuler finement les données entrantes/sortantes dans le terminal et les fichiers
+    - Utiliser les **tubes (`|`)** pour enchaîner les commandes et automatiser des traitements
+    - **Observer et analyser les processus** via les commandes `ps`, `jobs`, `top`, `fg`, `bg`, `kill`, et comprendre la notion de tâche dans un shell
+    - Distinguer les **processus en avant-plan et en arrière-plan**, les interrompre temporairement ou définitivement
+    - Comprendre la notion de **signal envoyé à un processus**, son rôle, son effet, et les différences entre `SIGINT`, `SIGTERM`, `SIGTSTP`, `SIGCONT`, `SIGKILL`
+    - Identifier un **processus à partir de son PID** ou de son identifiant de tâche pour interagir avec lui via `kill`
+    -  Connaître les bonnes pratiques pour **terminer proprement ou forcer l’arrêt d’un processus**
+    - Développer un petit **programme en C réactif aux signaux** (via `ctrl+C`, `ctrl+Z`, etc.) pour observer en pratique l’effet de ces signaux système
+
+
 !!! info "Instructions"
 
     - On rappelle que dans tous les exercices le `$` en début de commande représente le prompt, il n'est pas à saisir lorsque vous écrivez une ligne de commande.
     - Pour chaque nouvelle commande, n'hésitez pas à consulter sa page de manuel avec la commande `man`, ou à utiliser l'option `--help` (si elle est disponible) pour savoir ce qu'elle fait.
     - N'hésitez pas à reconsulter les anciens TP pour vous aider.
+
+!!! tip "Barème d’interprétation des exercices"
+
+    > 📚 = Facile, 📚📚 = Moyenne, 📚📚📚 = Élevée 
 
 
 ## Canaux standards et redirections
@@ -29,7 +48,7 @@ title: TP4 - Canaux standards et redirections | Processus et tâches | Signaux
         La redirection écrase le contenu d'un fichier existant. Si on veut ajouter le résultat à la fin du fichier, on utilise le caractère `>>`.
 
 ---
-###  Exercice 1 : Redirection de la sortie standard
+###  Exercice 1 : Redirection de la sortie standard 📚
 
 1. Testez les commandes suivantes et observez leur résultats.
 ```bash
@@ -57,13 +76,13 @@ $ echo "Je m'ajoute en fin de ligne" 1>> fichier.txt
     - Que fait cette commande ?
     - Pouvez-vous expliquer pourquoi la chaîne `list_files.txt` apparaît dans le fichier `list_files.txt` ?
 
-### Exercice 2 : Compter les entêtes (1)
+### Exercice 2 : Compter les entêtes (1) 📚📚
 
 1. En vous aidant de la redirection de la sortie standard, créer un fichier `include_files.txt` qui liste tous les fichiers du répertoire `/usr/include` dont le nom se termine par `.h`.
 2. Compter le nombre de fichiers `.h` dans le répertoire `/usr/include` (indice : `wc`).
 3. Enfin ajouter la phrase `Il y a <nombre> fichiers .h dans le répertoire /usr/include` à la fin du fichier `include_files.txt`.
 
-### Exercice 3 : Redirection de l'erreur standard
+### Exercice 3 : Redirection de l'erreur standard 📚📚
 
 1. Dans un répertoire `dir` créer un fichier `file-1.txt` dont le contenu est `Hello world !`.
 2. Créer ensuite une copie de `file-1.txt` nommée `file-2.txt`. Retirez toutes les permissions de lecture sur `file-2.txt`.
@@ -97,7 +116,8 @@ $ echo "Je m'ajoute en fin de ligne" 1>> fichier.txt
         Il faut que le fichier `fichier.txt` existe et qu'on ait la permission `read` sinon la commande `cat` va échouer.
 ---
 
-### Exercice 4 : Retour sur la commande `cat`
+### Exercice 4 : Retour sur la commande `cat` 📚📚
+
 1. Revoyez le manuel de la commande `cat` et trouvez comment elle fonctionne lorsque l'on ne lui donne pas de fichier en argument.
 2. Testez ensuite la commande suivante:
    ```bash
@@ -124,7 +144,7 @@ $ echo "Je m'ajoute en fin de ligne" 1>> fichier.txt
     - Combien d'argument la commande `cat` a-t-elle reçu ? Qu'a-t-elle affiché ?
     - Quelle est la différence entre `<` et `0<` ?
 
-### Exercice 5 : Compter les entêtes (2)
+### Exercice 5 : Compter les entêtes (2) 📚📚📚
 
 Nous allons refaire le même exercice que l'exercice 2 mais cette fois-ci en utilisant la redirection de l'entrée standard.
 
@@ -147,7 +167,7 @@ Nous allons refaire le même exercice que l'exercice 2 mais cette fois-ci en uti
         - Pour retirer la dernière ligne, on peut refaire la commande de la première question.
         - Ensuite pensez à la commande `echo` et la subsutitution de commande.
 
-## Les tubes
+## Les tubes 
 
 !!! tip "Tubes"
     Un *tube* (*pipe* en anglais) est un mécanisme qui permet de connecter la sortie standard d'une commande à l'entrée standard d'une autre commande. On utilise le caractère `|` pour créer un tube.
@@ -159,7 +179,7 @@ Nous allons refaire le même exercice que l'exercice 2 mais cette fois-ci en uti
     La sortie standard de `cmd1` est connectée à l'entrée standard de `cmd2`.
 ---
 
-### Exercice 6 : Compter les entêtes (promis c'est la dernière fois)
+### Exercice 6 : Compter les entêtes (promis c'est la dernière fois) 📚📚
 
 1. Testez la commande suivante et commentez son résultat :
     ```bash
@@ -196,7 +216,8 @@ Nous allons refaire le même exercice que l'exercice 2 mais cette fois-ci en uti
 ---
 
 
-### Exercice 7 - Processus et tâches
+### Exercice 7 - Processus et tâches 📚📚📚
+
 1. Dans cet exercice nous allons simuler l'exécution d'un processus long. Pour cela, nous allons utiliser la commande `sleep` qui permet de mettre en pause l'exécution d'un script pendant un certain temps. Tapez la commande `sleep 10` et observez ce qu'il se passe.
 
     !!! info "Informations de la commande `ps`"
@@ -275,7 +296,7 @@ Nous allons refaire le même exercice que l'exercice 2 mais cette fois-ci en uti
     !!! warning "Qui a le droit d'envoyer des signaux à un processus ?"
         Pour pouvoir affecter un processus, vous devez biensur en être le prorpiétaire ou être *root*.
 
-### Exercice 8 - La commande `kill`
+### Exercice 8 - La commande `kill` 📚📚📚
 1. Tapez la commande `kill -L` et notez les numéros associés aux signaux `SIGINT`, `SIGTSTP`, `SIGCONT`, `SIGTERM` et `SIGKILL`.
 
 2. On peut utiliser le caractère `&` à la fin de la commande pour directement lancer les tâches en arrière-plan. Lancez alors 3 processus `./compteur` en arrière-plan et testez les commandes suivantes:
