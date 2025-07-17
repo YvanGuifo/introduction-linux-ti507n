@@ -33,9 +33,7 @@ hide:
 
 !!! tip "Barème d’interprétation des exercices"
 
-    - `(*)` = Facile : compréhension ou manipulation simple, sans logique complexe
-    - `(**)` = Moyenne : nécessite réflexion ou combinaison de plusieurs commandes
-    - `(***)` = Élevée : implique de structurer des répertoires/fichiers, comprendre les syntaxes avancées ou manipuler des motifs complexes
+    > `(*)` = Facile, `(**)` = Moyenne, `(***)` = Élevée
 
 
 ### Exercice 1 : Premières commandes (*)
