@@ -28,7 +28,7 @@ title: TP2 - Système de fichiers et permissions
 
 !!! tip "Barème d’interprétation des exercices"
 
-    > `(*)` = Facile, `(**)` = Moyenne, `(***)` = Élevée 
+    > 📚 = Facile, 📚📚 = Moyenne, 📚📚📚 = Élevée  
 
 
 ## Système de fichiers
@@ -72,7 +72,7 @@ title: TP2 - Système de fichiers et permissions
 
 ---
 
-### Exercice 1 : `id` et `/etc/passwd` (*)
+### Exercice 1 : `id` et `/etc/passwd` 📚
 
 1. Entrez les commandes suivantes dans un terminal et notez les résultats :
    ```bash
@@ -134,7 +134,7 @@ title: TP2 - Système de fichiers et permissions
     | octale | 6 | 4 | 4 |
 ---
 
-### Exercice 2 : Permissions associées aux fichiers (*)
+### Exercice 2 : Permissions associées aux fichiers 📚
 
 1. Créez un répertoire vide et un fichier vide (ces deux derniers doivent être au même niveau). Utilisez la commande `ls` et les options `-l` et `-d` sur chacun de ces deux nouveaux fichiers pour déterminer les permissions que vous (respectivement votre groupe et les autres) avez sur ces fichiers. Comment reconnaissez-vous un répertoire ?
 
@@ -150,7 +150,7 @@ title: TP2 - Système de fichiers et permissions
 3. Pour chacun des fichiers ci-dessus, donnez les permissions associées à chacun des utilisateurs (propriétaire, groupe propriétaire et autres utilisateurs) en utilisant la représentation symbolique et la représentation octale.
 4. Donnez la représentation symbolique et la représentation octale des permissions associées au fichier `/etc/passwd`, à la commande `ls` et à votre répertoire personnel.
 
-### Exercice 3 : Modification des permissions `chmod` (**)
+### Exercice 3 : Modification des permissions `chmod` 📚📚
 
 1. Testez les commandes suivantes dans un terminal et essayez de comprendre comment fonctionne la commande `chmod` (avec la représentation symbolique).
     ```bash
@@ -169,7 +169,7 @@ title: TP2 - Système de fichiers et permissions
     - toutes les permissions pour tous, pas d'écriture pour les autres.
     - lecture et écriture pour le propriétaire, exécution pour le groupe et aucune pour les autres.
 
-### Exercice 4 : Permissions associées aux fichiers normaux (**)
+### Exercice 4 : Permissions associées aux fichiers normaux 📚📚
 
 1. Dans un répertoire de votre choix, créer deux fichiers `f` et `g`. Puis entrer (par exemple avec un éditeur de texte) du texte dans ces fichiers.
 2. Pour vous (propriétaire), retirer la permission de lire dans le fichier `f` et la permission d'écrire dans le fichier `g`.
@@ -213,7 +213,7 @@ title: TP2 - Système de fichiers et permissions
       - **execute** `x`: permet d'ouvrir le répertoire (avec la commande `cd` par exemple).
 ---
 
-### Exercice 5 : Permissions associées aux répertoires (***)
+### Exercice 5 : Permissions associées aux répertoires 📚📚📚
 
 1. Créez un répertoire `rep` et deux fichiers normaux `a` et `b` à l'intérieur de ce répertoire.
 2. Retirez toutes les permissions sur le répertoire `rep` et essayez les commandes suivantes :
@@ -244,7 +244,7 @@ title: TP2 - Système de fichiers et permissions
       - supprimer le fichier `d`
 
 
-### Exercice 6 : Les répertoires du `PATH` (***)
+### Exercice 6 : Les répertoires du `PATH` 📚📚📚
 
 !!! warning "Attention"
     
@@ -293,7 +293,7 @@ title: TP2 - Système de fichiers et permissions
 
 ## Récapitulatif sur permissions et permissions par défaut
 
-### Exercice 7: On lache le clavier (**)
+### Exercice 7: On lache le clavier 📚📚
 
 !!! info "Consigne"
     
@@ -312,7 +312,7 @@ $ chmod u+w /usr/include/stdio.h
 $ /usr/bin/uname
 ```
 
-### Exercice 8 : Permissions par défaut et `umask` (optionnel) (***)
+### Exercice 8 : Permissions par défaut et `umask` (optionnel) 📚📚📚
 
 !!! tip 
 
