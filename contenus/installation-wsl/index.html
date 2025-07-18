@@ -459,15 +459,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#etape-9-terminer-linstallation" class="md-nav__link">
-    Étape 9 : Terminer l’installation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#etape-10-premier-test" class="md-nav__link">
-    Étape 10 : Premier test
+  <a href="#etape-9-verification-finale-et-test" class="md-nav__link">
+    Étape 9 : Vérification finale et test
   </a>
   
 </li>
@@ -639,8 +632,8 @@
 <p>Il est essentiel de suivre attentivement les instructions, certaines étapes étant spécifiques à Windows, à macOS, ou aux deux. Veillez donc à respecter scrupuleusement les indications correspondant à votre système.</p>
 <p>Pour l'installation de :</p>
 <ul>
-<li><strong>Windows :</strong> suivre les étapes 1, 2, 3, 4, 5, 6, 7, 9, 10</li>
-<li><strong>MacOs :</strong>.  suivre les étapes 1, 2, 3, 5, 6, 8, 9, 10</li>
+<li><strong>Windows :</strong> suivre les étapes 1, 2, 3, 4, 5, 6, 7, 9</li>
+<li><strong>MacOs :</strong>.  suivre les étapes 1, 2, 3, 5, 6, 8, 9</li>
 </ul>
 </div>
 <h2 id="etape-1-telecharger-virtualbox">Étape 1 : Télécharger VirtualBox</h2>
@@ -747,15 +740,22 @@
 <p>Toutes les données seront effacées sur le disque virtuel — ce n’est pas grave, c’est une machine isolée.</p>
 </div>
 <hr />
-<h2 id="etape-9-terminer-linstallation">Étape 9 : Terminer l’installation</h2>
+<h2 id="etape-9-verification-finale-et-test">Étape 9 : Vérification finale et test</h2>
+<div class="admonition info">
+<p class="admonition-title">À faire</p>
 <ol>
-<li>Une fois l’installation terminée, Debian redémarre.</li>
-<li>Pensez à retirer l’ISO de l’installation :<ul>
+<li>Une fois l’installation terminée, pensez à retirer l’ISO de l’installation :<ul>
 <li>Allez dans "<strong>Périphériques</strong>" &gt; "<strong>Lecteurs optiques</strong>"</li>
 <li>Si l'image iso n'est pas retirer (<strong>debian-12.11.0-amd64-netinst.iso</strong>), cliquer sur "<strong>Retirer le disque</strong>"</li>
 </ul>
 </li>
+<li>Testez quelques commandes :
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w">    </span>whoami
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span>ls<span class="w"> </span>/
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span>uname<span class="w"> </span>-a
+</code></pre></div></li>
 </ol>
+</div>
 <!--
 ![Retirer ISO](../../assets/img/vbox-remove-iso.png)
 
@@ -763,19 +763,6 @@
 -->
 
 <hr />
-<h2 id="etape-10-premier-test">Étape 10 : Premier test</h2>
-<ol>
-<li>
-<p>Connectez-vous avec votre nom d’utilisateur/mot de passe.</p>
-</li>
-<li>
-<p>Testez quelques commandes :
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>whoami
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>ls<span class="w"> </span>/
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>uname<span class="w"> </span>-a
-</code></pre></div></p>
-</li>
-</ol>
 
 
 
