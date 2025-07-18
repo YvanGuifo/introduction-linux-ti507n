@@ -424,43 +424,50 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#etape-4-allouer-de-la-memoire-vive-ram" class="md-nav__link">
-    Étape 4 : Allouer de la mémoire vive (RAM)
+  <a href="#etape-4-configuration-des-parametres-utilisateurs" class="md-nav__link">
+    Étape 4 : Configuration des paramètres utilisateurs
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#etape-5-creer-un-disque-dur-virtuel" class="md-nav__link">
-    Étape 5 : Créer un disque dur virtuel
+  <a href="#etape-5-allouer-de-la-memoire-vive-ram" class="md-nav__link">
+    Étape 5 : Allouer de la mémoire vive (RAM)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#etape-6-inserer-limage-iso" class="md-nav__link">
-    Étape 6 : Insérer l’image ISO
+  <a href="#etape-6-creer-un-disque-dur-virtuel" class="md-nav__link">
+    Étape 6 : Créer un disque dur virtuel
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#etape-7-demarrer-linstallation-de-debian" class="md-nav__link">
-    Étape 7 : Démarrer l’installation de Debian
+  <a href="#etape-7-finalisation-de-linstallation-sous-windows" class="md-nav__link">
+    Étape 7 : Finalisation de l'installation sous Windows
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#etape-8-terminer-linstallation" class="md-nav__link">
-    Étape 8 : Terminer l’installation
+  <a href="#etape-8-verifier-que-limage-iso-a-bien-ete-insere-et-demarrage-sous-macos" class="md-nav__link">
+    Étape 8 : Vérifier que l’image ISO a bien été inséré et demarrage sous MacOS
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#etape-9-premier-test" class="md-nav__link">
-    Étape 9 : Premier test
+  <a href="#etape-9-terminer-linstallation" class="md-nav__link">
+    Étape 9 : Terminer l’installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etape-10-premier-test" class="md-nav__link">
+    Étape 10 : Premier test
   </a>
   
 </li>
@@ -623,16 +630,17 @@
 <ul>
 <li>Une connexion internet stable</li>
 <li>Au moins <strong>10 Go d’espace libre</strong></li>
-<li><strong>VirtualBox</strong> installé sur votre système (Windows/macOS/Linux)</li>
+<li><strong>VirtualBox</strong> installé sur votre système (Windows ou MacOS)</li>
 <li>Le fichier <strong>ISO</strong> de Debian (image disque)</li>
 </ul>
 <hr />
 <div class="admonition info">
 <p class="admonition-title">Instructions</p>
+<p>Il est essentiel de suivre attentivement les instructions, certaines étapes étant spécifiques à Windows, à macOS, ou aux deux. Veillez donc à respecter scrupuleusement les indications correspondant à votre système.</p>
 <p>Pour l'installation de :</p>
 <ul>
-<li><strong>Windows :</strong> suivre les étapes </li>
-<li><strong>MacOs :</strong>.  suivre les étapes </li>
+<li><strong>Windows :</strong> suivre les étapes 1, 2, 3, 4, 5, 6, 7, 9, 10</li>
+<li><strong>MacOs :</strong>.  suivre les étapes 1, 2, 3, 5, 6, 8, 9, 10</li>
 </ul>
 </div>
 <h2 id="etape-1-telecharger-virtualbox">Étape 1 : Télécharger VirtualBox</h2>
@@ -658,25 +666,33 @@
 <hr />
 <h2 id="etape-3-creer-une-machine-virtuelle">Étape 3 : Créer une machine virtuelle</h2>
 <ol>
-<li>Lancez VirtualBox et cliquez sur <strong>"Nouvelle"</strong>.</li>
-</ol>
-<p><img alt="Créer nouvelle VM" src="../../assets/img/vbox-new.png" /></p>
-<ol>
-<li>
-<p>Donnez un nom à votre machine virtuelle (par exemple "<strong>Debian12</strong>").</p>
-</li>
-<li>
-<p>Choisissez :</p>
-</li>
+<li>Lancez VirtualBox et cliquez sur <strong>"Nouvelle"</strong>.
+<img alt="Créer nouvelle VM" src="../../assets/img/vbox-new.png" /></li>
+<li>Donnez un nom à votre machine virtuelle (par exemple "<strong>Debian12</strong>").</li>
+<li>Choisissez :<ul>
 <li><strong>Type :</strong> Linux</li>
 <li><strong>Version :</strong> Debian (64-bit)</li>
-</ol>
-<p><img alt="Paramètres VM" src="../../assets/img/vbox-settings.png" /></p>
-<ol>
-<li>Cliquez sur <strong>"Suivant"</strong>.</li>
+</ul>
+</li>
+<li>Cliquez ensuite sur <strong>"Suivant"</strong>. <br />
+<img alt="Paramètres VM" src="../../assets/img/vbox-settings.png" /></li>
 </ol>
 <hr />
-<h2 id="etape-4-allouer-de-la-memoire-vive-ram">Étape 4 : Allouer de la mémoire vive (RAM)</h2>
+<h2 id="etape-4-configuration-des-parametres-utilisateurs">Étape 4 : Configuration des paramètres utilisateurs</h2>
+<div class="admonition info">
+<p class="admonition-title">Notez bien</p>
+<p><strong>Cette étape concerne exclusivement l'installation sous Windows.</strong></p>
+<p>Assurez-vous que le nom d'utilisateur soit entièrement en minuscules. </p>
+<ul>
+<li><strong>Exemple :</strong> yvan</li>
+<li>Vous pouvez également conserver le nom d'utilisateur par défaut qui vous est proposé</li>
+</ul>
+</div>
+<!--  
+![Congiguration paramètres utilisateurs VMWindows](../../assets/img/Mot_passe_Windows.png)
+-->
+
+<h2 id="etape-5-allouer-de-la-memoire-vive-ram">Étape 5 : Allouer de la mémoire vive (RAM)</h2>
 <ol>
 <li>Allouez au moins <strong>2048 Mo</strong> (2 Go) si vous avez assez de RAM.</li>
 </ol>
@@ -686,7 +702,7 @@
 </div>
 <p><img alt="RAM VM" src="../../assets/img/RAMs.png" /></p>
 <hr />
-<h2 id="etape-5-creer-un-disque-dur-virtuel">Étape 5 : Créer un disque dur virtuel</h2>
+<h2 id="etape-6-creer-un-disque-dur-virtuel">Étape 6 : Créer un disque dur virtuel</h2>
 <ol>
 <li>Choisissez <strong>"Créer un disque dur virtuel maintenant"</strong>.</li>
 <li>Laissez le type <strong>VDI</strong> (VirtualBox Disk Image) par défaut.</li>
@@ -697,25 +713,23 @@
 <li>Ensuite cliquer sur "<strong>Finish</strong>"
 <img alt="Configuration VM" src="../../assets/img/vbox-config.png" /></li>
 </ol>
-<h2 id="etape-6-inserer-limage-iso">Étape 6 : Insérer l’image ISO</h2>
+<h2 id="etape-7-finalisation-de-linstallation-sous-windows">Étape 7 : Finalisation de l'installation sous Windows</h2>
 <ol>
-<li>Une fois la VM créée, sélectionnez-la et cliquez sur <strong>"Configuration"</strong>.</li>
+<li>Une fois l'installation terminée, entrer vos paramètres de connexion
+<img alt="Paramètre de connexion VM" src="../../assets/img/connexion_Windows.png" /> </li>
+<li>Fermez les différentes fenêtres qui vont s'afficher.</li>
+<li>Ensuite cliquer sur "<strong>Show Applications</strong>"</li>
+<li>Vous pouvez ensuite ouvrir le "<strong>Terminal</strong>"
+<img alt="Terminal" src="../../assets/img/terminal.png" /> </li>
 </ol>
-<p><img alt="Configurations VM" src="../../assets/img/vbox-configs.png" /></p>
+<h2 id="etape-8-verifier-que-limage-iso-a-bien-ete-insere-et-demarrage-sous-macos">Étape 8 : Vérifier que l’image ISO a bien été inséré et demarrage sous MacOS</h2>
 <ol>
-<li>
-<p>Allez dans l’onglet <strong>"Stockage"</strong>.</p>
-</li>
-<li>
-<p>Cliquez sur le lecteur vide et sélectionnez <strong>"Choisir un fichier disque"</strong>.</p>
-</li>
-<li>
-<p>Sélectionnez l’ISO Debian téléchargé.</p>
-</li>
-</ol>
-<p><img alt="Choixs ISO Debian" src="../../assets/img/vbox-isos.png" /></p>
-<h2 id="etape-7-demarrer-linstallation-de-debian">Étape 7 : Démarrer l’installation de Debian</h2>
-<ol>
+<li>Une fois la VM créée, sélectionnez-la et cliquez sur <strong>"Configuration"</strong>.
+<img alt="Configurations VM" src="../../assets/img/vbox-configs.png" /></li>
+<li>Allez dans l’onglet <strong>"Stockage"</strong>.</li>
+<li>Cliquez sur le lecteur vide et sélectionnez <strong>"Choisir un fichier disque"</strong>.</li>
+<li>Sélectionnez l’ISO Debian téléchargé.
+<img alt="Choixs ISO Debian" src="../../assets/img/vbox-isos.png" /></li>
 <li>Cliquez sur <strong>"Démarrer"</strong> pour lancer la VM.</li>
 <li>L’installateur Debian va apparaître. Choisissez <strong>Install</strong>.
 <img alt="Écran install Debian" src="../../assets/img/debian-install-start.png" /></li>
@@ -733,16 +747,14 @@
 <p>Toutes les données seront effacées sur le disque virtuel — ce n’est pas grave, c’est une machine isolée.</p>
 </div>
 <hr />
-<h2 id="etape-8-terminer-linstallation">Étape 8 : Terminer l’installation</h2>
+<h2 id="etape-9-terminer-linstallation">Étape 9 : Terminer l’installation</h2>
 <ol>
 <li>Une fois l’installation terminée, Debian redémarre.</li>
-<li>
-<p>Pensez à retirer l’ISO de l’installation :</p>
+<li>Pensez à retirer l’ISO de l’installation :<ul>
+<li>Allez dans "<strong>Périphériques</strong>" &gt; "<strong>Lecteurs optiques</strong>"</li>
+<li>Si l'image iso n'est pas retirer (<strong>debian-12.11.0-amd64-netinst.iso</strong>), cliquer sur "<strong>Retirer le disque</strong>"</li>
+</ul>
 </li>
-<li>
-<p>Allez dans **"Périphériques" &gt; "Lecteurs optiques"</p>
-</li>
-<li>Si l'image iso n'est pas retirer ("<strong>debian-12.11.0-amd64-netinst.iso</strong>"), cliquer sur "Retirer le disque"**</li>
 </ol>
 <!--
 ![Retirer ISO](../../assets/img/vbox-remove-iso.png)
@@ -751,7 +763,7 @@
 -->
 
 <hr />
-<h2 id="etape-9-premier-test">Étape 9 : Premier test</h2>
+<h2 id="etape-10-premier-test">Étape 10 : Premier test</h2>
 <ol>
 <li>
 <p>Connectez-vous avec votre nom d’utilisateur/mot de passe.</p>
