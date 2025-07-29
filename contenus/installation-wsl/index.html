@@ -529,8 +529,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#etape-6-installation-de-debian-standard" class="md-nav__link">
-    Étape 6 : Installation de Debian (standard)
+  <a href="#etape-6-premiere-utilisation" class="md-nav__link">
+    Étape 6 : Première utilisation
   </a>
   
 </li>
@@ -905,6 +905,12 @@
 <li>Allez sur : <a href="https://cdimage.debian.org/debian-cd/current/arm64/iso-cd/">https://cdimage.debian.org/debian-cd/current/arm64/iso-cd/</a></li>
 <li>Téléchargez la version netinst (cliquez par exemple sur <strong>debian-12.11.0-arm64-netinst.iso</strong>).
 <img alt="ARM" src="../../assets/img/ARM_Netinst.png" /></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>N’utiliser pas d’image “<strong>x86_64</strong>”, car elle est incompatible avec les puces M1/M2/M3 sans émulation lente.</p>
+</div>
+<ol>
 <li>Enregistrez le fichier dans un endroit accessible (par exemple <strong>Téléchargements</strong>).</li>
 </ol>
 <h3 id="etape-3-creer-une-nouvelle-machine-virtuelle-dans-utm">Étape 3 : Créer une nouvelle machine virtuelle dans UTM</h3>
@@ -930,9 +936,33 @@
 <li>Cliquez sur la VM dans la liste (ex. : <strong>Debian-UTM-M1</strong>).</li>
 <li>Cliquez sur Play. 
 <img alt="ImageUTM" src="../../assets/img/ImageUTM.png" /></li>
-<li>L’installateur Debian se lance. <strong>Choisissez Graphical Install</strong>.</li>
+<li>Cliquer sur "<strong>Install</strong>". Ensuite suivez les instructions d'installation de la distribution :<ul>
+<li>Choix de la langue;</li>
+<li>Partition automatique;</li>
+<li>Création de l'utilisateur;</li>
+<li>Mot de passe root</li>
+</ul>
+</li>
+<li>Redémarre une fois l'installation terminée.</li>
 </ol>
-<h3 id="etape-6-installation-de-debian-standard">Étape 6 : Installation de Debian (standard)</h3>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Si tu vois un écran noir au redémarrage, éteins la VM, va dans <strong>Settings --&gt; Drives</strong> et retire l’ISO.
+Ensuite redémarre à nouveau la machine virtuelle. </p>
+</div>
+<h3 id="etape-6-premiere-utilisation">Étape 6 : Première utilisation</h3>
+<ol>
+<li>Connexion avec vos paramètres utilisateurs</li>
+<li>Lancer le terminal (<code>Ctrl + Alt + T</code> ou via le menu).</li>
+<li>Taper les commandes suivantes :
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>uname<span class="w"> </span>-a
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>lscpu
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>lsblk
+</code></pre></div></li>
+<li>Mise à jour de la distribution :
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade
+</code></pre></div></li>
+</ol>
 
 
 
