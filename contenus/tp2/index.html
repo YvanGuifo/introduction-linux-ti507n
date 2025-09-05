@@ -12,8 +12,6 @@
         <link rel="prev" href="../tp1/">
       
       
-        <link rel="next" href="../tp3/">
-      
       
       <link rel="icon" href="../../assets/img/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
@@ -424,6 +422,174 @@
 
               
             
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    TP2 - Système de fichiers et permissions
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    TP2 - Système de fichiers et permissions
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#systeme-de-fichiers" class="md-nav__link">
+    Système de fichiers
+  </a>
+  
+    <nav class="md-nav" aria-label="Système de fichiers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercice-1-id-et-etcpasswd" class="md-nav__link">
+    Exercice 1 : id et /etc/passwd 📚
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permissions-associees-aux-fichiers" class="md-nav__link">
+    Permissions associées aux fichiers
+  </a>
+  
+    <nav class="md-nav" aria-label="Permissions associées aux fichiers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercice-2-permissions-associees-aux-fichiers" class="md-nav__link">
+    Exercice 2 : Permissions associées aux fichiers 📚
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-3-modification-des-permissions-chmod" class="md-nav__link">
+    Exercice 3 : Modification des permissions chmod 📚📚
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-4-permissions-associees-aux-fichiers-normaux" class="md-nav__link">
+    Exercice 4 : Permissions associées aux fichiers normaux 📚📚
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permissions-associees-aux-repertoires" class="md-nav__link">
+    Permissions associées aux répertoires
+  </a>
+  
+    <nav class="md-nav" aria-label="Permissions associées aux répertoires">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercice-5-permissions-associees-aux-repertoires" class="md-nav__link">
+    Exercice 5 : Permissions associées aux répertoires 📚📚📚
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-6-les-repertoires-du-path" class="md-nav__link">
+    Exercice 6 : Les répertoires du PATH 📚📚📚
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recapitulatif-sur-permissions-et-permissions-par-defaut" class="md-nav__link">
+    Récapitulatif sur permissions et permissions par défaut
+  </a>
+  
+    <nav class="md-nav" aria-label="Récapitulatif sur permissions et permissions par défaut">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercice-7-on-lache-le-clavier" class="md-nav__link">
+    Exercice 7: On lache le clavier 📚📚
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-8-permissions-par-defaut-et-umask-optionnel" class="md-nav__link">
+    Exercice 8 : Permissions par défaut et umask (optionnel) 📚📚📚
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -468,6 +634,26 @@
 <li>On rappelle que dans tous les exercices le <code>$</code> en début de commande représente le prompt, il n'est pas à saisir lorsque vous écrivez une ligne de commande.</li>
 <li>Pour chaque nouvelle commande, n'hésitez pas à consulter sa page de manuel avec la commande <code>man</code>, ou à utiliser l'option <code>--help</code> (si elle est disponible) pour savoir ce qu'elle fait.</li>
 </ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">À propos des réponses du TP</p>
+<p>Avant de commencer le TP, vous devez créer un fichier nommé <strong><code>resultat_commande_TP2_NomPrenomEtudiant.txt</code></strong>.<br />
+Dans ce fichier, vous consignerez progressivement les résultats des commandes exécutées au fil des exercices.  </p>
+<blockquote>
+<p><strong>Création du fichier</strong></p>
+</blockquote>
+<ol>
+<li>Clic droit dans votre répertoire de travail  </li>
+<li>Créer un document → Fichier vide </li>
+<li>Nommer le fichier : <code>resultat_commande_TP2_NomPrenomEtudiant.txt</code>  </li>
+</ol>
+<blockquote>
+<p><strong>Notez bien :</strong>  </p>
+<blockquote>
+<p><span style="color:blue"> Votre enseignant doit pouvoir consulter ce fichier à tout moment afin d’évaluer votre progression. </span>
+<span style="color:orange"> Rassurez vous de sauvegarder ce fichier resultat en local à votre machine. Pour en garder une copie </span></p>
+</blockquote>
+</blockquote>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Barème d’interprétation des exercices</p>
