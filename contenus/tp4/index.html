@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../tp4-exo/">
+        <link rel="prev" href="../tp3/">
       
       
       
@@ -462,6 +462,174 @@
 
               
             
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    TP4 - Canaux standards et redirections | Processus et tâches | Signaux
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    TP4 - Canaux standards et redirections | Processus et tâches | Signaux
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#canaux-standards-et-redirections" class="md-nav__link">
+    Canaux standards et redirections
+  </a>
+  
+    <nav class="md-nav" aria-label="Canaux standards et redirections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercice-1-redirection-de-la-sortie-standard" class="md-nav__link">
+    Exercice 1 : Redirection de la sortie standard 📚
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-2-compter-les-entetes-1" class="md-nav__link">
+    Exercice 2 : Compter les entêtes (1) 📚📚
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-3-redirection-de-lerreur-standard" class="md-nav__link">
+    Exercice 3 : Redirection de l'erreur standard 📚📚
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-4-retour-sur-la-commande-cat" class="md-nav__link">
+    Exercice 4 : Retour sur la commande cat 📚📚
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-5-compter-les-entetes-2" class="md-nav__link">
+    Exercice 5 : Compter les entêtes (2) 📚📚📚
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-tubes" class="md-nav__link">
+    Les tubes
+  </a>
+  
+    <nav class="md-nav" aria-label="Les tubes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercice-6-compter-les-entetes-promis-cest-la-derniere-fois" class="md-nav__link">
+    Exercice 6 : Compter les entêtes (promis c'est la dernière fois) 📚📚
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processus-et-taches" class="md-nav__link">
+    Processus et tâches
+  </a>
+  
+    <nav class="md-nav" aria-label="Processus et tâches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercice-7-processus-et-taches" class="md-nav__link">
+    Exercice 7 - Processus et tâches 📚📚📚
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#envoyer-des-signaux-a-un-processus" class="md-nav__link">
+    Envoyer des signaux à un processus
+  </a>
+  
+    <nav class="md-nav" aria-label="Envoyer des signaux à un processus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercice-8-la-commande-kill" class="md-nav__link">
+    Exercice 8 - La commande kill 📚📚📚
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -499,6 +667,41 @@
 <li>Connaître les bonnes pratiques pour <strong>terminer proprement ou forcer l’arrêt d’un processus</strong></li>
 <li>Développer un petit <strong>programme en C réactif aux signaux</strong> (via <code>ctrl+C</code>, <code>ctrl+Z</code>, etc.) pour observer en pratique l’effet de ces signaux système</li>
 </ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">À propos des réponses du TP</p>
+<p>Avant de commencer le TP, vous devez créer un fichier nommé <strong><code>resultat_commande_TP4_NomPrenomEtudiant.txt</code></strong>.<br />
+Dans ce fichier, vous consignerez progressivement les résultats des commandes exécutées au fil des exercices.  </p>
+<blockquote>
+<p><strong>Création du fichier</strong></p>
+</blockquote>
+<ol>
+<li>Clic droit dans votre répertoire de travail  </li>
+<li>Créer un document → Fichier vide </li>
+<li>Nommer le fichier : <code>resultat_commande_TP4_NomPrenomEtudiant.txt</code>  </li>
+</ol>
+<blockquote>
+<p><strong>Notez bien :</strong>  </p>
+<blockquote>
+<ul>
+<li>
+<p><span style="color:blue"> Votre enseignant doit pouvoir consulter ce fichier à tout moment afin d’évaluer votre progression. </span></p>
+</li>
+<li>
+<p><span style="color:red"> Pour garder une copie de votre travail, rassurez vous de sauvegarder ce fichier résultat avant la fin de la séance en local à votre machine. </span></p>
+<blockquote>
+<p><strong>Procédure de sauvegarde en local</strong> : </p>
+</blockquote>
+<ol>
+<li>Cliquez sur le <strong>presse papier</strong> (c'est à gauche du Bureau de votre machine virtuelle Debian).
+<img alt="PressePapier" src="../../assets/img/PressePapier.png" />    </li>
+<li>Ensuite selectionner le contenu de votre fichier résultat et copier.</li>
+<li>Puis collez le contenu copier dans un nouveau fichier sur votre machine.</li>
+</ol>
+</li>
+</ul>
+</blockquote>
+</blockquote>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Instructions</p>
