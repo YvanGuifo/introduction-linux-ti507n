@@ -356,7 +356,7 @@
         
   
   <span class="md-ellipsis">
-    Installation d'une distribution Linux
+    Installation wsl
   </span>
   
 
@@ -486,8 +486,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#exercice-1-premieres-commandes" class="md-nav__link">
+    Exercice 1 : Premières commandes 📚
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#exercice-1-premieres-commandes-et-raccourcis-clavier" class="md-nav__link">
     Exercice 1 — Premières commandes et raccourcis clavier 📚
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-2-repertoires-et-fichiers" class="md-nav__link">
+    Exercice 2 : Répertoires et fichiers 📚📚
   </a>
   
 </li>
@@ -498,12 +512,26 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    =======
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#2-repertoires-et-fichiers-se-reperer" class="md-nav__link">
     2. Répertoires et fichiers : se repérer
   </a>
   
     <nav class="md-nav" aria-label="2. Répertoires et fichiers : se repérer">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercice-3-gestion-de-repertoires-et-de-fichiers-1" class="md-nav__link">
+    Exercice 3 : Gestion de répertoires et de fichiers (1) 📚📚
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#exercice-2-se-reperer-dans-larborescence" class="md-nav__link">
@@ -533,8 +561,22 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#exercice-4-gestion-de-repertoires-et-de-fichiers-2" class="md-nav__link">
+    Exercice 4 : Gestion de répertoires et de fichiers (2) 📚📚📚
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#exercice-4-construire-une-arborescence-structuree" class="md-nav__link">
     Exercice 4 — Construire une arborescence structurée 📚📚📚
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-5-commandes-internes-et-commandes-externes" class="md-nav__link">
+    Exercice 5 : Commandes internes et commandes externes 📚
   </a>
   
 </li>
@@ -553,6 +595,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#exercice-6-obtenir-laide" class="md-nav__link">
+    Exercice 6 : Obtenir l'aide 📚📚
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#exercice-5-internes-vs-externes" class="md-nav__link">
     Exercice 5 — Internes vs externes 📚
   </a>
@@ -560,7 +609,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#exercice-6-obtenir-laide" class="md-nav__link">
+  <a href="#exercice-6-obtenir-laide_1" class="md-nav__link">
     Exercice 6 — Obtenir l’aide 📚📚
   </a>
   
@@ -607,35 +656,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exercice-8-compiler-un-premier-programme-c" class="md-nav__link">
-    Exercice 8 — Compiler un premier programme C ⭐
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exercice-9-arguments-en-ligne-de-commande" class="md-nav__link">
-    Exercice 9 — Arguments en ligne de commande ⭐
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exercice-10-premier-appel-systeme-lire-etcpasswd" class="md-nav__link">
-    Exercice 10 — Premier appel système : lire /etc/passwd ⭐
+  <a href="#exercice-7-caracteres-joker" class="md-nav__link">
+    Exercice 7 : Caractères joker 📚📚📚
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pour-aller-plus-loin-lectures-recommandees" class="md-nav__link">
-    Pour aller plus loin (lectures recommandées)
-  </a>
   
 </li>
       
@@ -837,27 +865,82 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 </div>
 <hr />
 <h2 id="1-anatomie-dune-commande-raccourcis-clavier">1. Anatomie d’une commande, raccourcis clavier</h2>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
+<div class="admonition objectifs">
+<p class="admonition-title">Objectifs pédagogiques</p>
+<p>À l’issue de ce TP, l’étudiant sera capable de :</p>
+<ul>
+<li>Se repérer dans l’arborescence du système de fichiers Linux</li>
+<li>Comprendre et utiliser les commandes de base du shell (naviguer, créer, déplacer, supprimer)</li>
+<li>Utiliser les raccourcis clavier essentiels du terminal</li>
+<li>Comprendre la distinction entre commandes internes et externes</li>
+<li>Consulter l’aide en ligne (man, help) et lire un synopsis de commande</li>
+<li>Comprendre la différence entre chemins absolus et relatifs</li>
+<li>Manipuler les répertoires et les fichiers en ligne de commande</li>
+<li>Utiliser les caractères jokers (wildcards) pour rechercher ou manipuler des fichiers</li>
+<li>Appliquer la complétion automatique et les raccourcis utiles pour gagner en efficacité</li>
+</ul>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Instructions</p>
+<ul>
+<li>Dans tous les exercices, la chaîne <code>$</code> au début de la ligne représente l'invite de commande et ne doit pas être saisie.</li>
+<li>Pour l'instant, à chaque fois que vous ouvrez un terminal, vous êtes invité à saisir la commande suivante, (suivie, comme toujours, de la touche entrée), pour des raisons pédagogiques :</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span><span class="nv">PS1</span><span class="o">=</span><span class="s1">&#39;$ &#39;</span>
+</code></pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Barème d’interprétation des exercices</p>
+<blockquote>
+<p>📚 = Facile, 📚📚 = Moyenne, 📚📚📚 = Élevée </p>
+</blockquote>
+</div>
+<h3 id="exercice-1-premieres-commandes">Exercice 1 : Premières commandes 📚</h3>
+<div class="admonition tip">
+<p class="admonition-title">Qu'est-ce qu'une commande ?</p>
+<p>Une <em>commande</em> est une séquence de mots se terminant par un caractère de nouvelle ligne. Autrement dit, une commande est une séquence de caractères qui se termine par la touche <kbd>⏎ Entrée</kbd>. Le premier mot est le nom de la commande, les autres sont ses <em>arguments</em>. La commande est exécutée par le shell, qui est un programme qui interprète la ligne de commande.</p>
+</div>
+<p>=======</p>
 <div class="admonition tip">
 <p class="admonition-title">Qu’est-ce qu’une commande ?</p>
 <p>Une <strong>commande</strong> est une séquence de mots terminée par <kbd>Entrée</kbd>. Le premier mot est le <strong>nom</strong> de la commande, les autres sont ses <strong>arguments</strong>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span>touch<span class="w"> </span>file.txt
-</code></pre></div>
-<p>Ici, <code>touch</code> est la commande et <code>file.txt</code> son unique argument. Les mots sont séparés par un ou plusieurs espaces ; le shell interprète les espaces comme des séparateurs, et le caractère <em>nouvelle ligne</em> comme la fin de la commande.</p>
 </div>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>3428ab9 (Ajout page tutoriel GitHub Codespaces + ignore .venv)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<div class="highlight"><pre><span></span><code>```bash
+$ touch file.txt
+```
+
+Ici, `touch` est la commande et `file.txt` son unique argument. Les mots sont séparés par un ou plusieurs espaces ; le shell interprète les espaces comme des séparateurs, et le caractère *nouvelle ligne* comme la fin de la commande.
+</code></pre></div>
 <h3 id="exercice-1-premieres-commandes-et-raccourcis-clavier">Exercice 1 — Premières commandes et raccourcis clavier 📚</h3>
 <ol>
 <li>Essayez les commandes suivantes dans un terminal. Pour chacune, décrivez en une phrase son utilité, indiquez son nom, son nombre d’arguments et ses arguments. <em>Exemple</em> : la commande <code>date</code> n’a pas d’argument et affiche la date et l’heure.
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>date
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>$<span class="w"> </span>cal
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>$<span class="w"> </span>cal<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">2022</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>$<span class="w"> </span>who
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>$<span class="w"> </span>who<span class="w"> </span>am<span class="w"> </span>i
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>$<span class="w">   </span>who<span class="w">  </span>am<span class="w">   </span>i
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>$<span class="w"> </span>uname
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>$<span class="w"> </span>uname<span class="w"> </span>-m<span class="w"> </span>-r
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>$<span class="w"> </span>uname<span class="w"> </span>-mrs
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>Hello,<span class="w"> </span>world!
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w">       </span>Hello,<span class="w">        </span>world!
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span>date
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>$<span class="w"> </span>cal
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>$<span class="w"> </span>cal<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">2022</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>$<span class="w"> </span>who
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>$<span class="w"> </span>who<span class="w"> </span>am<span class="w"> </span>i
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>$<span class="w">   </span>who<span class="w">  </span>am<span class="w">   </span>i
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>$<span class="w"> </span>uname
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>$<span class="w"> </span>uname<span class="w"> </span>-m<span class="w"> </span>-r
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>$<span class="w"> </span>uname<span class="w"> </span>-mrs
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>Hello,<span class="w"> </span>world!
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w">       </span>Hello,<span class="w">        </span>world!
 </code></pre></div></li>
 <li>Appuyez sur <kbd>↑</kbd> (ou <kbd>Ctrl-P</kbd>) plusieurs fois jusqu’à ce que la commande <code>who</code> s’affiche. Appuyez maintenant sur <kbd>↓</kbd> (ou <kbd>Ctrl-N</kbd>) jusqu’à revenir sur <code>uname -m -r</code>, puis exécutez. Notez à quoi servent ces raccourcis.</li>
 <li>Appuyez sur <kbd>Ctrl-L</kbd>. Notez à quoi sert ce raccourci.</li>
@@ -868,21 +951,56 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <li>Ouvrez un nouveau terminal Debian et appuyez plusieurs fois sur <kbd>Ctrl-P</kbd>. Qu’observez-vous ?</li>
 <li>Fermez le terminal avec un raccourci clavier.</li>
 </ol>
-<hr />
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
+<h3 id="exercice-2-repertoires-et-fichiers">Exercice 2 : Répertoires et fichiers 📚📚</h3>
+<h2 id="_1">=======</h2>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>3428ab9 (Ajout page tutoriel GitHub Codespaces + ignore .venv)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 <h2 id="2-repertoires-et-fichiers-se-reperer">2. Répertoires et fichiers : se repérer</h2>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
+<h3 id="exercice-3-gestion-de-repertoires-et-de-fichiers-1">Exercice 3 : Gestion de répertoires et de fichiers (1) 📚📚</h3>
+<p>=======</p>
 <div class="admonition tip">
 <p class="admonition-title">Le shell dans son environnement</p>
 <p>Chaque terminal se trouve <strong>dans</strong> un répertoire : son <em>répertoire courant</em> (ou <em>répertoire de travail</em>). Trois commandes essentielles :</p>
-<ul>
-<li><code>pwd</code> (<em>print working directory</em>) : affiche le chemin absolu du répertoire courant.</li>
-<li><code>cd &lt;chemin&gt;</code> (<em>change directory</em>) : se déplace.</li>
-<li><code>cd</code> seul → répertoire personnel.</li>
-<li><code>cd ..</code> → répertoire parent.</li>
-<li><code>cd -</code> → répertoire précédent.</li>
-<li><code>ls [&lt;chemin&gt;]</code> : liste le contenu d’un répertoire.</li>
-</ul>
-<p>Le caractère <code>~</code> (<em>tilde</em>) est un raccourci pour le répertoire personnel de l’utilisateur.</p>
 </div>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>3428ab9 (Ajout page tutoriel GitHub Codespaces + ignore .venv)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<div class="highlight"><pre><span></span><code>- `pwd` (*print working directory*) : affiche le chemin absolu du répertoire courant.
+- `cd &lt;chemin&gt;` (*change directory*) : se déplace.
+  - `cd` seul → répertoire personnel.
+  - `cd ..` → répertoire parent.
+  - `cd -` → répertoire précédent.
+- `ls [&lt;chemin&gt;]` : liste le contenu d’un répertoire.
+
+Le caractère `~` (*tilde*) est un raccourci pour le répertoire personnel de l’utilisateur.
+</code></pre></div>
 <h3 id="exercice-2-se-reperer-dans-larborescence">Exercice 2 — Se repérer dans l’arborescence 📚📚</h3>
 <ol>
 <li>Ouvrez un terminal et tapez <code>PS1='$ '</code>.</li>
@@ -925,46 +1043,64 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <li>Créez un répertoire <code>tp_shell</code> avec <code>mkdir</code>. Listez le contenu du répertoire personnel et de <code>tp_shell</code>.</li>
 <li>Entrez <code>mkdir abeilles tp_shell/tp1 ~/arbres</code>. Quels arguments sont absolus, lesquels sont relatifs ?</li>
 <li>Que fait la commande suivante ?
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>vivant/plante/fleur<span class="w"> </span>tp_shell/tp1/exos/ex1/
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>vivant/plante/fleur<span class="w"> </span>tp_shell/tp1/exos/ex1/
 </code></pre></div></li>
 <li>Testez la <strong>complétion automatique</strong> avec la touche <kbd>Tab</kbd> :
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>mkd&lt;Tab&gt;<span class="w"> </span>vi&lt;Tab&gt;&lt;Tab&gt;&lt;Tab&gt;roses
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span>mkd&lt;Tab&gt;<span class="w"> </span>vi&lt;Tab&gt;&lt;Tab&gt;&lt;Tab&gt;roses
 </code></pre></div>
    Puis :
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span>ls<span class="w"> </span>a&lt;Tab&gt;&lt;Tab&gt;
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span>ls<span class="w"> </span>a&lt;Tab&gt;&lt;Tab&gt;
 </code></pre></div></li>
 <li>Supprimez des répertoires vides avec <code>rmdir</code> :
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span>rmdir<span class="w"> </span>vivant<span class="w"> </span>tp_shell/tp1/exos/ex1
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$<span class="w"> </span>rmdir<span class="w"> </span>vivant<span class="w"> </span>tp_shell/tp1/exos/ex1
 </code></pre></div>
    Supprimez également le sous-répertoire <code>tp1</code> de <code>tp_shell</code>.</li>
 <li>Créez des fichiers vides avec <code>touch</code> :
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$<span class="w"> </span>touch<span class="w"> </span>~/arbres/hello.c<span class="w"> </span>abeilles/truc.txt<span class="w"> </span>bidule
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>$<span class="w"> </span>ls<span class="w"> </span>~/arbres<span class="w"> </span>abeilles/<span class="w"> </span>.
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>touch<span class="w"> </span>~/arbres/hello.c<span class="w"> </span>abeilles/truc.txt<span class="w"> </span>bidule
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>$<span class="w"> </span>ls<span class="w"> </span>~/arbres<span class="w"> </span>abeilles/<span class="w"> </span>.
 </code></pre></div></li>
 <li>Déplacez / renommez avec <code>mv</code> :
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>mv<span class="w"> </span>arbres/hello.c<span class="w"> </span>arbres/bonjour.c
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>$<span class="w"> </span>mv<span class="w"> </span>abeilles<span class="w"> </span>arbres<span class="w"> </span>vivant/
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>$<span class="w"> </span>mv<span class="w"> </span>bidule<span class="w"> </span>vivant
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>$<span class="w"> </span>mv<span class="w"> </span>vivant<span class="w"> </span>vie
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$<span class="w"> </span>mv<span class="w"> </span>arbres/hello.c<span class="w"> </span>arbres/bonjour.c
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>$<span class="w"> </span>mv<span class="w"> </span>abeilles<span class="w"> </span>arbres<span class="w"> </span>vivant/
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>$<span class="w"> </span>mv<span class="w"> </span>bidule<span class="w"> </span>vivant
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>$<span class="w"> </span>mv<span class="w"> </span>vivant<span class="w"> </span>vie
 </code></pre></div></li>
 <li>Copiez avec <code>cp</code> :
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$<span class="w"> </span>cp<span class="w"> </span>vie/arbres/bonjour.c<span class="w"> </span>salut.c
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>$<span class="w"> </span>mkdir<span class="w"> </span>copies
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>$<span class="w"> </span>cp<span class="w"> </span>salut.c<span class="w"> </span>vie/abeilles/truc.txt<span class="w"> </span>copies
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>$<span class="w"> </span>cp<span class="w"> </span>-R<span class="w"> </span>vie<span class="w"> </span>copie_vie
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$<span class="w"> </span>cp<span class="w"> </span>vie/arbres/bonjour.c<span class="w"> </span>salut.c
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>$<span class="w"> </span>mkdir<span class="w"> </span>copies
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>$<span class="w"> </span>cp<span class="w"> </span>salut.c<span class="w"> </span>vie/abeilles/truc.txt<span class="w"> </span>copies
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>$<span class="w"> </span>cp<span class="w"> </span>-R<span class="w"> </span>vie<span class="w"> </span>copie_vie
 </code></pre></div>
    Décrivez le comportement de <code>cp</code> selon que son dernier argument est un répertoire existant ou non, avec/sans <code>-R</code>.</li>
 <li>Supprimez avec <code>rm</code> :
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$<span class="w"> </span>rm<span class="w"> </span>vie/bidule
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>$<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>copies
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>$<span class="w"> </span>rm<span class="w"> </span>-R<span class="w"> </span>copie_vie
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>$<span class="w"> </span>rm<span class="w"> </span>vie/bidule
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>$<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>copies
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>$<span class="w"> </span>rm<span class="w"> </span>-R<span class="w"> </span>copie_vie
 </code></pre></div>
     Nettoyez tous les fichiers et répertoires créés dans cet exercice.</li>
 </ol>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
+<h3 id="exercice-4-gestion-de-repertoires-et-de-fichiers-2">Exercice 4 : Gestion de répertoires et de fichiers (2) 📚📚📚</h3>
+<p>=======</p>
 <div class="admonition warning">
 <p class="admonition-title"><code>rm</code> est définitif</p>
 <p>En ligne de commande sous Linux, <strong>il n’y a pas de corbeille</strong>. Avant <code>rm -r</code>, vérifiez <code>pwd</code> et <code>ls</code>.</p>
 </div>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>3428ab9 (Ajout page tutoriel GitHub Codespaces + ignore .venv)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 <h3 id="exercice-4-construire-une-arborescence-structuree">Exercice 4 — Construire une arborescence structurée 📚📚📚</h3>
 <p>Créez l’arborescence suivante depuis votre répertoire personnel. Seuls <code>rapport.txt</code> et <code>index.html</code> sont des fichiers normaux. Les répertoires <strong>Mail</strong>, <strong>Rapport</strong> et <strong>Web</strong> seront créés <strong>en une seule commande</strong> <code>mkdir</code>.</p>
 <pre class="mermaid"><code>stateDiagram-v2
@@ -987,9 +1123,27 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <li><strong>Sans changer</strong> de répertoire, listez le contenu du répertoire <code>Web</code>.</li>
 <li>Revenez dans <code>~</code> et supprimez toute l’arborescence de cet exercice.</li>
 </ol>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
+<h3 id="exercice-5-commandes-internes-et-commandes-externes">Exercice 5 : Commandes internes et commandes externes 📚</h3>
+<p>=======</p>
 <div class="admonition info">
 <p class="admonition-title">Cet exercice est représentatif d’un item type <strong>DE S42 (QCM)</strong>.</p>
 </div>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>3428ab9 (Ajout page tutoriel GitHub Codespaces + ignore .venv)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 <hr />
 <h2 id="4-types-de-commandes-et-aide-en-ligne">4. Types de commandes et aide en ligne</h2>
 <div class="admonition tip">
@@ -1002,11 +1156,29 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <li><strong>alias</strong> : raccourcis pour des commandes.</li>
 </ul>
 <p>La commande <code>type</code> indique le type. Exemple :</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>$<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="nb">type</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nb">type</span><span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span>shell<span class="w"> </span><span class="nb">builtin</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="nb">type</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nb">type</span><span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span>shell<span class="w"> </span><span class="nb">builtin</span>
 </code></pre></div>
 </div>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
+<h3 id="exercice-6-obtenir-laide">Exercice 6 : Obtenir l'aide 📚📚</h3>
+<p>=======</p>
 <h3 id="exercice-5-internes-vs-externes">Exercice 5 — Internes vs externes 📚</h3>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>3428ab9 (Ajout page tutoriel GitHub Codespaces + ignore .venv)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 <ol>
 <li>Pour chaque commande utilisée dans les exercices précédents (y compris <code>type</code>), dites avec <code>type</code> à quelle catégorie elle appartient.</li>
 <li>Devinez dans quels répertoires se trouvent la plupart des programmes installés.</li>
@@ -1014,7 +1186,7 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <div class="admonition warning">
 <p class="admonition-title">Si <code>man</code> n’est pas installé (Debian / WSL)</p>
 <p>Installez avec :
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>manpages<span class="w"> </span>man-db
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>manpages<span class="w"> </span>man-db
 </code></pre></div></p>
 </div>
 <div class="admonition tip">
@@ -1028,15 +1200,15 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <li>éventuellement <strong>EXAMPLES</strong>.</li>
 </ul>
 </div>
-<h3 id="exercice-6-obtenir-laide">Exercice 6 — Obtenir l’aide 📚📚</h3>
+<h3 id="exercice-6-obtenir-laide_1">Exercice 6 — Obtenir l’aide 📚📚</h3>
 <ol>
 <li>Entrez <code>man ls</code>. Quelles sont les options <code>-l</code> et <code>-a</code> ? Quittez avec <kbd>q</kbd> et testez-les.</li>
 <li>À l’aide du manuel, dites à quoi sert l’option <code>-f</code> de <code>rm</code> et comment supprimer un fichier dont le nom commence par un tiret (par exemple <code>-f</code>).</li>
 <li>Avec <code>help</code>, affichez les pages d’aide des commandes internes <code>echo</code> et <code>type</code>.</li>
 <li>Avec <code>man touch</code>, quelle est l’utilité de <code>touch</code> si ce n’est pas seulement de créer des fichiers vides ?</li>
 <li>Avec <code>man man</code>, trouvez la partie qui parle des commandes internes. Dans quelle section les librairies sont-elles documentées (par exemple la libc) ? Quelle est la différence entre :
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>$<span class="w"> </span>man<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="nb">printf</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>$<span class="w"> </span>man<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="nb">printf</span>
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>$<span class="w"> </span>man<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="nb">printf</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>$<span class="w"> </span>man<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="nb">printf</span>
 </code></pre></div></li>
 <li>Dans le SYNOPSIS de <code>mv</code>, que signifient les crochets <code>[ ]</code> et les points de suspension <code>...</code> ? Consultez <code>man man</code> si besoin.</li>
 </ol>
@@ -1057,12 +1229,12 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <li>Créez un répertoire <code>tp_joker</code> dans votre home. Placez-vous dedans. Créez les fichiers <strong>vides</strong> suivants :
    <code>annee1  Annee2  annee4  annee45  annee41  annee510  annee_saucisse  annee_banane  bonbon</code></li>
 <li>Sans les exécuter, prédisez le résultat des commandes suivantes, puis testez :
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>*
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>*_*
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="o">[</span>ab<span class="o">]</span>*
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="o">[</span>^ab<span class="o">]</span>*
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>c*
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>??????
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>*
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>*_*
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="o">[</span>ab<span class="o">]</span>*
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="o">[</span>^ab<span class="o">]</span>*
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>c*
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>??????
 </code></pre></div></li>
 <li>Avec <code>ls</code>, listez tous les fichiers qui :</li>
 <li>se terminent par <code>5</code> ;</li>
@@ -1099,23 +1271,75 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <p class="admonition-title">À qui s’adressent les exercices 8, 9, 10 ?</p>
 <p>Vous avez terminé les exercices 1 à 7 avant la fin de la séance ? Cette section vous <strong>introduit à la programmation système en C</strong>, en anticipation des TP3 et TP4.</p>
 <p>Ces exercices utilisent le compilateur <code>gcc</code>. Vérifiez d’abord :
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$<span class="w"> </span>gcc<span class="w"> </span>--version
-</code></pre></div>
-Si la commande échoue :
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>build-essential
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>$<span class="w"> </span>gcc<span class="w"> </span>--version
 </code></pre></div></p>
-<p>Ces exercices sont <strong>optionnels</strong> et <strong>non évalués</strong>.</p>
 </div>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+6. Dans la page de manuel de <code>mv</code>, observer les deux premières lignes de la partie « SYNOPSIS ». Que signifient les crochets ? les points de suspension ? Si besoin, se reporter au manuel de <code>man</code>.</p>
+<h3 id="exercice-7-caracteres-joker">Exercice 7 : Caractères joker 📚📚📚</h3>
+<div class="admonition tip">
+<p class="admonition-title">Caractères joker</p>
+<p><strong>Les caractères joker</strong> (<em>wildcards</em> en anglais) sont des caractères qui sont utilisés pour représenter un ou plusieurs autres caractères. Ils servent à spécifier des motifs dans les commandes.</p>
+<p>Les caractères joker sont interprétés par le shell avant l'exécution de la commande. Le shell remplace le caractère joker par la liste des fichiers qui correspondent au motif. C'est ce qu'on appelle l'<em>expansion des chemins</em>.</p>
+<p>Il existe plusieurs types de caractères joker, mais nous n'utiliserons que les plus courants : <code>*</code>, <code>?</code> et <code>[ ]</code>.</p>
+<ul>
+<li><code>*</code> sert à représenter une chaîne de caractères éventuellement vide, sauf si c'est le premier caractère de la chaîne et que la chaîne commence par un point (<code>.</code>);</li>
+<li><code>[ ]</code> représente un seul caractère qui est dans l'intervalle de caractères spécifié entre les crochets. Vous pouvez utiliser des intervalles, comme dans <code>[a-z]</code> qui représente une seule lettre minuscule ou dans <code>[0-5]</code> qui représente un seul chiffre entre <code>0</code> et <code>5</code>. Vous pouvez inverser la recherche en commençant l'intervalle par <code>^</code> : par exemple <code>[^0-9]</code> représente un seul caractère qui est tout sauf un chiffre.</li>
+<li><code>?</code> représente un seul caractère quelconque;</li>
+<li>Vous pouvez retrouver la liste des caractères joker dans le manuel de bash, à la section <em>Pathname Expansion</em>.</li>
+</ul>
+</div>
+<ol>
+<li>Créez un répertoire <code>tp_joker</code> dans votre répertoire personnel. Déplacez-vous dans ce répertoire. Créez les fichiers (vides) suivants : <code>annee1</code> <code>Annee2</code> <code>annee4</code> <code>annee45</code> <code>annee41</code> <code>annee510</code> <code>annee_saucisse</code> <code>annee_banane</code> <code>bonbon</code>.</li>
+<li>
+<h1 id="dans-un-premier-temps-sans-les-executer-essayez-de-predire-le-resultat-des-commandes-suivantes">Dans un premier temps, sans les exécuter, essayez de prédire le résultat des commandes suivantes :</h1>
+<p>Si la commande échoue :</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>3428ab9 (Ajout page tutoriel GitHub Codespaces + ignore .venv)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>build-essential
+</code></pre></div>
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+Puis testez les.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>En utilisant la commande <code>ls</code>, listez tous les fichiers qui :<ul>
+<li>se terminent par <code>5</code></li>
+<li>commencent par <code>annee4</code></li>
+<li>commencent par <code>annee4</code> et ont au maximum 7 lettres</li>
+<li>commencent par <code>annee</code> et dont le sixième caractère n'est pas un chiffre</li>
+<li>contiennent la chaîne <code>ana</code></li>
+<li>commencent par <code>a</code> ou <code>A</code></li>
+<li>dont l'avant-dernier caractère est <code>4</code> ou <code>1</code></li>
+</ul>
+</li>
+<li>Listez tous les fichiers cachés de votre répertoire personnel (les fichiers dont le nom commence par un point).</li>
+<li>
+<h1 id="listez-tous-les-fichiers-dont-le-nom-commence-par-std-et-se-termine-par-h-dans-le-repertoire-usrinclude-et-ses-sous-repertoires">Listez tous les fichiers dont le nom commence par <code>std</code> et se termine par <code>.h</code> dans le répertoire <code>/usr/include</code> et ses sous-répertoires.</h1>
+<p>Ces exercices sont <strong>optionnels</strong> et <strong>non évalués</strong>.</p>
+</li>
+</ol>
 <h3 id="exercice-8-compiler-un-premier-programme-c">Exercice 8 — Compiler un premier programme C ⭐</h3>
 <ol>
 <li>Dans <code>~</code>, créez un répertoire <code>c/</code> et placez-vous dedans.</li>
 <li>Avec un éditeur (<code>nano</code>, <code>gedit</code>, <code>vim</code>…), créez <code>hello.c</code> :
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello, Linux !</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="p">}</span>
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello, Linux !</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="p">}</span>
 </code></pre></div></li>
 <li>Compilez : <code>gcc -Wall -o hello hello.c</code>.</li>
 <li>Exécutez : <code>./hello</code>.</li>
@@ -1130,21 +1354,21 @@ Si la commande échoue :
 <h3 id="exercice-9-arguments-en-ligne-de-commande">Exercice 9 — Arguments en ligne de commande ⭐</h3>
 <ol>
 <li>Modifiez <code>hello.c</code> :
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
-<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">argv</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">argc</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Bonjour, %s !</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
-<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Bonjour, le monde !</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="p">}</span>
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">argv</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">argc</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Bonjour, %s !</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Bonjour, le monde !</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="p">}</span>
 </code></pre></div></li>
 <li>Recompilez et testez :
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>$<span class="w"> </span>./hello
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>$<span class="w"> </span>./hello<span class="w"> </span>Yvan
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>$<span class="w"> </span>./hello<span class="w"> </span><span class="s2">&quot;Yvan GUIFO&quot;</span>
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>$<span class="w"> </span>./hello
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>$<span class="w"> </span>./hello<span class="w"> </span>Yvan
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>$<span class="w"> </span>./hello<span class="w"> </span><span class="s2">&quot;Yvan GUIFO&quot;</span>
 </code></pre></div></li>
 <li><strong>Questions</strong> :</li>
 <li>Que représentent <code>argc</code> et <code>argv</code> ?</li>
@@ -1156,22 +1380,22 @@ Si la commande échoue :
 <ol>
 <li>Consultez la page de manuel <strong>section 2</strong> (appels système) : <code>man 2 read</code>.</li>
 <li>Créez <code>show-passwd.c</code> :
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fcntl.h&gt;</span><span class="c1">     /* open       */</span>
-<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unistd.h&gt;</span><span class="c1">    /* read, write, close */</span>
-<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="c1">     /* perror     */</span>
-<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>
-<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">open</span><span class="p">(</span><span class="s">&quot;/etc/passwd&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">O_RDONLY</span><span class="p">);</span>
-<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fd</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">perror</span><span class="p">(</span><span class="s">&quot;open&quot;</span><span class="p">);</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>
-<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">buf</span><span class="p">[</span><span class="mi">1024</span><span class="p">];</span>
-<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">    </span><span class="kt">ssize_t</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
-<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">((</span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">read</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="n">buf</span><span class="p">))</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="w">        </span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w">   </span><span class="cm">/* 1 = STDOUT_FILENO */</span>
-<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="w">    </span><span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span>
-<a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="p">}</span>
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fcntl.h&gt;</span><span class="c1">     /* open       */</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unistd.h&gt;</span><span class="c1">    /* read, write, close */</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="c1">     /* perror     */</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">open</span><span class="p">(</span><span class="s">&quot;/etc/passwd&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">O_RDONLY</span><span class="p">);</span>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fd</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">perror</span><span class="p">(</span><span class="s">&quot;open&quot;</span><span class="p">);</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">buf</span><span class="p">[</span><span class="mi">1024</span><span class="p">];</span>
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="w">    </span><span class="kt">ssize_t</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">((</span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">read</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="n">buf</span><span class="p">))</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a><span class="w">        </span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w">   </span><span class="cm">/* 1 = STDOUT_FILENO */</span>
+<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="w">    </span><span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span>
+<a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="p">}</span>
 </code></pre></div></li>
 <li>Compilez : <code>gcc -Wall -o show-passwd show-passwd.c</code>.</li>
 <li>Exécutez et comparez avec <code>cat /etc/passwd</code>.</li>
@@ -1193,7 +1417,22 @@ Si la commande échoue :
 <li><em>The Linux Documentation Project</em> : <a href="https://tldp.org/">https://tldp.org/</a></li>
 <li>Robbins, A., Hannah, E., &amp; Lamb, L. (2008). <em>Learning the bash Shell</em>, 3rd ed. O’Reilly. ISBN 978-0596009656.</li>
 <li>Kernighan, B. W., &amp; Ritchie, D. M. (1988). <em>The C Programming Language</em>, 2nd ed. Prentice Hall. ISBN 978-0131103627.</li>
-<li>Kerrisk, M. (2010). <em>The Linux Programming Interface</em>. No Starch Press. ISBN 978-1593272203.</li>
+<li>Kerrisk, M. (2010). <em>The Linux Programming Interface</em>. No Starch Press. ISBN 978-1593272203.<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>3428ab9 (Ajout page tutoriel GitHub Codespaces + ignore .venv)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
 </ul>
 
 
