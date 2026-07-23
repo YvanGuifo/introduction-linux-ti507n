@@ -1,398 +1,240 @@
 /* ==========================================================================
    TI307 & TI307B & TI307P — Introduction au système Linux
-   Style « Material You » — Vif, arrondi, unique
+   Style turquoise / Didot — Sobre, classe, professionnel
    ========================================================================== */
 
-/* --- Polices Google Sans + JetBrains Mono --- */
-@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap');
-
-/* =========================
-   MODE CLAIR
-   ========================= */
+/* --- Palette turquoise / indigo --- */
 :root {
-  /* Couleurs Material You — Indigo + Rose */
-  --md-primary-fg-color:        #3f51b5;
-  --md-primary-fg-color--light: #7986cb;
-  --md-primary-fg-color--dark:  #283593;
-  --md-accent-fg-color:         #e91e63;
-
-  /* Surfaces Material You */
-  --my-surface:        #f5f0ff;     /* fond légèrement violet pastel */
-  --my-surface-card:   #ffffff;
-  --my-surface-code:   #f0edff;
-  --my-border-radius:  16px;
-  --my-shadow:         0 1px 3px rgba(0,0,0,.08), 0 4px 12px rgba(0,0,0,.04);
-  --my-shadow-hover:   0 2px 8px rgba(0,0,0,.12), 0 8px 24px rgba(0,0,0,.06);
+  --md-primary-fg-color: #00838f;
+  --md-accent-fg-color:  #3f51b5;
 }
 
-/* =========================
-   MODE SOMBRE
-   ========================= */
 [data-md-color-scheme="slate"] {
-  --md-primary-fg-color:        #b39ddb;
-  --md-primary-fg-color--light: #d1c4e9;
-  --md-primary-fg-color--dark:  #7e57c2;
-  --md-accent-fg-color:         #f48fb1;
-  --md-default-bg-color:        #1c1b2e;
-
-  --my-surface:        #252438;
-  --my-surface-card:   #2d2b42;
-  --my-surface-code:   #322f4a;
-  --my-shadow:         0 1px 3px rgba(0,0,0,.3), 0 4px 12px rgba(0,0,0,.2);
-  --my-shadow-hover:   0 2px 8px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.25);
+  --md-primary-fg-color: #26c6da;
+  --md-accent-fg-color:  #7986cb;
 }
 
-/* =========================
-   FOND GLOBAL
-   ========================= */
-.md-main {
-  background: var(--my-surface);
+/* --- Typographie --- */
+.md-typeset {
+  font-size: 0.82rem;
+  line-height: 1.7;
 }
 
-/* =========================
-   EN-TÊTE — dégradé vibrant
-   ========================= */
+/* --- En-tête bleu ciel --- */
 .md-header {
-  background: linear-gradient(135deg, #3f51b5 0%, #7c4dff 50%, #e040fb 100%);
-  box-shadow: 0 2px 12px rgba(63, 81, 181, 0.3);
+  background: linear-gradient(135deg, #4fc3f7 0%, #0288d1 100%);
 }
 
 [data-md-color-scheme="slate"] .md-header {
-  background: linear-gradient(135deg, #1c1b2e 0%, #311b92 50%, #4a148c 100%);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(135deg, #1a1a2e 0%, #0d1117 100%);
 }
 
-/* =========================
-   ONGLETS NAV
-   ========================= */
+/* --- Onglets de navigation --- */
 .md-tabs {
-  background: rgba(40, 53, 147, 0.9);
-  backdrop-filter: blur(8px);
+  background-color: #0288d1;
 }
 
 [data-md-color-scheme="slate"] .md-tabs {
-  background: rgba(28, 27, 46, 0.95);
+  background-color: #0d1117;
 }
 
-.md-tabs__link--active {
-  border-bottom: 3px solid var(--md-accent-fg-color);
+/* --- Titres --- */
+.md-typeset h1 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #00363a;
+}
+
+.md-typeset h2 {
+  font-weight: 600;
+  color: #004d40;
+  border-bottom: 1px solid rgba(0, 131, 143, 0.15);
+  padding-bottom: 0.3em;
+}
+
+.md-typeset h3 {
   font-weight: 500;
+  color: #00695c;
 }
 
-/* =========================
-   BARRE DE RECHERCHE — pilule Material You
-   ========================= */
-.md-search__form {
-  border-radius: 28px !important;
-  overflow: hidden;
+[data-md-color-scheme="slate"] .md-typeset h1 {
+  color: #e0f7fa;
 }
 
-.md-search__input {
-  border-radius: 28px;
-  font-family: 'Google Sans', 'Noto Sans', sans-serif;
+[data-md-color-scheme="slate"] .md-typeset h2 {
+  color: #b2ebf2;
+  border-bottom-color: rgba(38, 198, 218, 0.15);
 }
 
-/* =========================
-   CONTENU — zone surélevée
-   ========================= */
-.md-content {
-  background: var(--my-surface-card);
-  border-radius: var(--my-border-radius);
-  box-shadow: var(--my-shadow);
-  margin: 1rem;
-  padding: 0.5rem;
+[data-md-color-scheme="slate"] .md-typeset h3 {
+  color: #80deea;
 }
 
-/* =========================
-   BLOCS DE CODE — Material You
-   ========================= */
-.md-typeset pre {
-  border-radius: 12px !important;
-  overflow: hidden;
-  box-shadow: var(--my-shadow);
-  border: 1px solid rgba(63, 81, 181, 0.15);
-}
-
-.md-typeset pre > code {
-  background: var(--my-surface-code);
-  border-radius: 12px;
-  font-family: 'JetBrains Mono', 'Fira Mono', monospace;
-  font-size: 0.85rem;
-}
-
-[data-md-color-scheme="slate"] .md-typeset pre {
-  border-color: rgba(179, 157, 219, 0.2);
-}
-
-/* Bouton copier — pilule */
+/* --- Bouton copier le code --- */
 .md-clipboard {
+  color: var(--md-accent-fg-color);
+}
+
+/* --- Blocs de code : bordure turquoise à gauche --- */
+.md-typeset pre > code {
+  border-left: 3px solid #4dd0e1;
+  border-radius: 4px;
+}
+
+[data-md-color-scheme="slate"] .md-typeset pre > code {
+  border-left-color: #00838f;
+}
+
+/* --- Liens --- */
+.md-typeset a {
+  color: var(--md-accent-fg-color);
+}
+
+.md-typeset a:hover {
+  color: #00838f;
+}
+
+[data-md-color-scheme="slate"] .md-typeset a:hover {
+  color: #4dd0e1;
+}
+
+/* --- Footer --- */
+.md-footer {
+  border-top: 2px solid #b2ebf2;
+}
+
+[data-md-color-scheme="slate"] .md-footer {
+  border-top-color: #00838f;
+}
+
+/* --- Table des matières : indicateur actif --- */
+.md-nav__link--active {
+  font-weight: 600;
+  border-left: 3px solid var(--md-accent-fg-color);
+  padding-left: 8px;
+}
+
+/* --- Tableaux : en-tête turquoise --- */
+.md-typeset table:not([class]) {
   border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
 }
 
-/* Code inline */
-.md-typeset code {
-  border-radius: 6px;
-  padding: 0.15em 0.4em;
-  font-family: 'JetBrains Mono', 'Fira Mono', monospace;
-  font-size: 0.85em;
-  background: var(--my-surface-code);
+.md-typeset table:not([class]) thead {
+  background-color: #00838f;
+  color: white;
 }
 
-/* =========================
-   ADMONITIONS — Material You cards
-   ========================= */
+.md-typeset table:not([class]) tbody tr:nth-child(even) {
+  background-color: rgba(0, 131, 143, 0.04);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) thead {
+  background-color: #006064;
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) tbody tr:nth-child(even) {
+  background-color: rgba(38, 198, 218, 0.06);
+}
+
+/* --- Admonitions : coins arrondis + ombre douce --- */
 .md-typeset .admonition,
 .md-typeset details {
-  border-radius: 12px;
-  border-width: 0 0 0 4px;
-  box-shadow: var(--my-shadow);
-  overflow: hidden;
-  transition: box-shadow 0.2s ease;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
 }
 
-.md-typeset .admonition:hover,
-.md-typeset details:hover {
-  box-shadow: var(--my-shadow-hover);
-}
-
-.md-typeset .admonition-title,
-.md-typeset details > summary {
-  border-radius: 12px 12px 0 0;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-}
-
-/* --- Admonition : objectifs (style personnalisé turquoise) --- */
+/* --- Admonition personnalisée : objectifs --- */
 .md-typeset .admonition.objectifs,
 .md-typeset details.objectifs {
-  border-color: #00bfa5;
+  border-color: #00838f;
 }
 
 .md-typeset .objectifs > .admonition-title,
 .md-typeset .objectifs > summary {
-  background-color: rgba(0, 191, 165, 0.08);
+  background-color: rgba(0, 131, 143, 0.08);
 }
 
 .md-typeset .objectifs > .admonition-title::before,
 .md-typeset .objectifs > summary::before {
-  background-color: #00bfa5;
+  background-color: #00838f;
   -webkit-mask-image: var(--md-admonition-icon--abstract);
           mask-image: var(--md-admonition-icon--abstract);
 }
 
 [data-md-color-scheme="slate"] .md-typeset .objectifs > .admonition-title,
 [data-md-color-scheme="slate"] .md-typeset .objectifs > summary {
-  background-color: rgba(0, 191, 165, 0.15);
+  background-color: rgba(0, 131, 143, 0.15);
 }
 
-/* --- Admonition : star (exercices groupe étoile) --- */
+/* --- Admonition personnalisée : star (exercices groupe étoile) --- */
 :root {
   --md-admonition-icon--star: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>');
 }
 
 .md-typeset .admonition.star,
 .md-typeset details.star {
-  border-color: #ff9800;
+  border-color: #f59e0b;
 }
 
 .md-typeset .star > .admonition-title,
 .md-typeset .star > summary {
-  background-color: rgba(255, 152, 0, 0.08);
+  background-color: rgba(245, 158, 11, 0.08);
 }
 
 .md-typeset .star > .admonition-title::before,
 .md-typeset .star > summary::before {
-  background-color: #ff9800;
+  background-color: #f59e0b;
   -webkit-mask-image: var(--md-admonition-icon--star);
           mask-image: var(--md-admonition-icon--star);
 }
 
 [data-md-color-scheme="slate"] .md-typeset .star > .admonition-title,
 [data-md-color-scheme="slate"] .md-typeset .star > summary {
-  background-color: rgba(255, 152, 0, 0.15);
+  background-color: rgba(245, 158, 11, 0.15);
 }
 
-/* =========================
-   TABLEAUX — Material You
-   ========================= */
-.md-typeset table:not([class]) {
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: var(--my-shadow);
-  border-collapse: separate;
-  border-spacing: 0;
+/* --- Bouton retour en haut --- */
+.md-top {
+  border-radius: 50%;
 }
 
-.md-typeset table:not([class]) thead {
-  background: linear-gradient(135deg, var(--md-primary-fg-color), var(--md-primary-fg-color--dark));
-  color: white;
-}
-
-.md-typeset table:not([class]) thead th {
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  padding: 12px 16px;
-}
-
-.md-typeset table:not([class]) tbody td {
-  padding: 10px 16px;
-}
-
-.md-typeset table:not([class]) tbody tr {
-  transition: background-color 0.15s ease;
-}
-
-.md-typeset table:not([class]) tbody tr:nth-child(even) {
-  background-color: rgba(63, 81, 181, 0.04);
-}
-
-.md-typeset table:not([class]) tbody tr:hover {
-  background-color: rgba(63, 81, 181, 0.08);
-}
-
-[data-md-color-scheme="slate"] .md-typeset table:not([class]) tbody tr:nth-child(even) {
-  background-color: rgba(179, 157, 219, 0.06);
-}
-
-[data-md-color-scheme="slate"] .md-typeset table:not([class]) tbody tr:hover {
-  background-color: rgba(179, 157, 219, 0.1);
-}
-
-/* =========================
-   LIENS — transition douce
-   ========================= */
-.md-typeset a {
-  transition: color 0.15s ease, text-decoration 0.15s ease;
-}
-
-.md-typeset a:hover {
-  color: var(--md-accent-fg-color);
-}
-
-/* =========================
-   NAVIGATION LATÉRALE
-   ========================= */
-.md-nav__link--active {
-  font-weight: 600;
-  color: var(--md-accent-fg-color) !important;
-  background: rgba(233, 30, 99, 0.06);
+/* --- Barre de recherche --- */
+.md-search__input {
   border-radius: 8px;
-  padding-left: 12px;
 }
 
-[data-md-color-scheme="slate"] .md-nav__link--active {
-  background: rgba(244, 143, 177, 0.08);
+/* --- Tags : style pilule --- */
+.md-typeset .md-tag {
+  border-radius: 16px;
+  padding: 2px 12px;
+  font-size: 0.75rem;
 }
 
-/* =========================
-   FOOTER
-   ========================= */
-.md-footer {
-  border-top: 3px solid;
-  border-image: linear-gradient(90deg, #3f51b5, #e040fb, #e91e63) 1;
-}
-
-[data-md-color-scheme="slate"] .md-footer {
-  border-image: linear-gradient(90deg, #7e57c2, #e040fb, #f48fb1) 1;
-}
-
-/* =========================
-   SÉPARATEURS — dégradé vibrant
-   ========================= */
+/* --- Séparateurs horizontaux --- */
 .md-typeset hr {
   border: none;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--md-primary-fg-color), var(--md-accent-fg-color), transparent);
-  margin: 2.5em 0;
-  border-radius: 2px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #4dd0e1, transparent);
+  margin: 2em 0;
 }
 
-/* =========================
-   BOUTON RETOUR EN HAUT — FAB Material
-   ========================= */
-.md-top {
-  border-radius: 16px;
-  box-shadow: var(--my-shadow);
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+[data-md-color-scheme="slate"] .md-typeset hr {
+  background: linear-gradient(90deg, transparent, #00838f, transparent);
 }
 
-.md-top:hover {
-  box-shadow: var(--my-shadow-hover);
-  transform: translateY(-2px);
-}
-
-/* =========================
-   KBD — touches clavier stylisées
-   ========================= */
+/* --- Touches clavier --- */
 .md-typeset kbd {
-  border-radius: 6px;
-  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.08);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.8em;
-  padding: 0.15em 0.5em;
-}
-
-/* =========================
-   TAGS — pilules colorées
-   ========================= */
-.md-typeset .md-tag {
-  border-radius: 20px;
-  padding: 3px 14px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-}
-
-/* =========================
-   CHECKLIST — Material You
-   ========================= */
-.md-typeset .task-list-indicator::before {
   border-radius: 4px;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.12);
 }
 
-/* =========================
-   SCROLLBAR personnalisée (Webkit)
-   ========================= */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+/* --- Navigation sidebar --- */
+.md-nav__item {
+  padding: 0.05rem 0;
 }
 
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--md-primary-fg-color--light);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--md-primary-fg-color);
-}
-
-/* =========================
-   BARRE DE PROGRESSION (navigation.instant.progress)
-   ========================= */
-.md-progress {
-  background: linear-gradient(90deg, var(--md-primary-fg-color), var(--md-accent-fg-color));
-}
-
-/* =========================
-   ANIMATIONS SUBTILES
-   ========================= */
-.md-typeset .admonition,
-.md-typeset details,
-.md-typeset table:not([class]),
-.md-typeset pre {
-  transition: box-shadow 0.2s ease, transform 0.1s ease;
-}
-
-.md-content {
-  animation: fadeIn 0.3s ease-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to   { opacity: 1; transform: translateY(0); }
+.md-nav__link {
+  font-size: 0.78rem;
 }
