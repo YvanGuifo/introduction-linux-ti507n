@@ -47,7 +47,7 @@ title: TP3 - Environnement de travail et Compilateur C
     >> - <span style="color:red"> Sauvegardez ce fichier **en local** avant la fin de la séance. </span>
     >>> **Procédure de sauvegarde en local** :
         1. Cliquez sur le **presse-papier** (à gauche du Bureau de la VM).
-    ![PressePapier](../../assets/img/PressePapier.png)
+    ![PressePapier](../assets/img/PressePapier.png)
         2. Sélectionnez le contenu et copiez.
         3. Collez sur votre machine hôte.
 

@@ -2,7 +2,7 @@
 title: Accueil
 ---
 
-# TI307 & TI307B & TI307P - Introduction au système Linux
+# TI307 & TI307B & TI307I & TI307P  - Introduction au système Linux
 
 ### Description
 
@@ -32,8 +32,6 @@ Ce module se déroulera en 15 heures de cours sous forme de Cours - TP.
 | BDX       | Mikaël Valot              | mikael.valot@efrei.fr       |
 | INT1, INT2      | Yaovi Soglo           | yaovi.soglo@efrei.fr       |
 | SC1, INT3  | Maroua Tikat         | maroua.tikat@efrei.fr      |
-
-
 
 
 ### Contenu du cours

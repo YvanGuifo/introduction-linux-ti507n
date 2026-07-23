@@ -44,7 +44,7 @@ title: TP4 - Canaux standards et redirections | Processus et tâches | Signaux
     >> - <span style="color:red"> Pour garder une copie de votre travail, rassurez-vous de sauvegarder ce fichier résultat avant la fin de la séance en local à votre machine. </span>
     >>> **Procédure de sauvegarde en local** :
         1. Cliquez sur le **presse-papier** (à gauche du Bureau de votre machine virtuelle Debian).
-    ![PressePapier](../../assets/img/PressePapier.png)
+    ![PressePapier](../assets/img/PressePapier.png)
         2. Sélectionnez le contenu de votre fichier résultat et copiez.
         3. Collez le contenu copié dans un nouveau fichier sur votre machine.
 

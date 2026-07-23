@@ -18,7 +18,7 @@ UNIX est un système d'exploitation (SE) développé à l'origine par Ken Thomps
 
 ### Qu'est ce que Linux et GNU/Linux ?
 
-<img src="../../assets/img/gnulinux-logo.png" alt="" width="250"/>
+<img src="../assets/img/gnulinux-logo.png" alt="" width="250"/>
 
 Linux est un système d'exploitation (SE) gratuit et performant similaire à UNIX. Linus Torvalds a commencé Linux (une concaténation de Linus et UNIX) en 1991, dans le but de créer une alternative UNIX gratuite en raison de son insatisfaction à l'égard de MS-DOS. Il est rapidement devenu un projet mondial, attirant des développeurs du monde entier [^1], ce qui a conduit à des améliorations continues des performances et à une adoption généralisée par les particuliers, les entreprises, les établissements d'enseignement et les gouvernements.
 
@@ -38,7 +38,7 @@ Dans ce module nous allons commencer notre découverte Linux avec Debian.
 
 ### Qu'est-ce que Debian
 
-<img src="../../assets/img/debian-logo.jpg" alt="" width="250"/>
+<img src="../assets/img/debian-logo.jpg" alt="" width="250"/>
 
 
 Debian est un système d'exploitation (SE) gratuit basé sur un noyau de type UNIX (Linux ou FreeBSD) qui peut être téléchargé [ici](https://www.debian.org/download). Vous pouvez trouver plus d'informations sur Debian [ici](https://www.debian.org/intro/about).

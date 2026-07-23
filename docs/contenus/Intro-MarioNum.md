@@ -30,14 +30,14 @@ MarioNUM a été construit autour des objectifs suivants :
 
 1. Ouvrir un navigateur (Firefox, Chrome, Edge…).
 2. Accéder au site MarioNum via le lien qui vous sera fourni et aller en bas de la page et vous verrez l'image ci-dessous. Cliquer sur **"Efrei"** 
-![MarioNumEFREI](../../assets/img/MarioNumEfrei.png)
+![MarioNumEFREI](../assets/img/MarioNumEfrei.png)
 3. Entrer vos paramètres d'authetification de myEFREI (Login + mot de passe)
 4. Ensuite cliquer sur "**Rejoindre le TP**".
-![RejoindreTPMarioNumEFREI](../../assets/img/MarioNumTPs.png)
+![RejoindreTPMarioNumEFREI](../assets/img/MarioNumTPs.png)
 5. Vous obtiendrez la page ci-dessous. Cliquer sur connecter et introduisez le mot de passe qui vous a été fourni en début de TP.
-![RejoindreTP](../../assets/img/Interface1.png)
+![RejoindreTP](../assets/img/Interface1.png)
 6. L'interface suivante s'affichera 
-![RejoindreTP2](../../assets/img/Interface2.png)
+![RejoindreTP2](../assets/img/Interface2.png)
 7. Faites un clic sur "**Applications**" --> "**Émulateur de terminal**" --> Puis tapez les commandes suivantes 
 ```bash
    whoami

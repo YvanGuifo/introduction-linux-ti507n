@@ -52,7 +52,6 @@ theme:
     - navigation.sections
     - navigation.expand
     - navigation.top
-    - navigation.instant
     - navigation.tracking
     - header.autohide
     - toc.follow
@@ -100,11 +99,56 @@ markdown_extensions:
 
 plugins:
   - search:
-      lang: fr
+      lang:
+        - fr
+        - en
+  - i18n:
+      docs_structure: suffix
+      languages:
+        - locale: fr
+          default: true
+          name: Français
+          build: true
+        - locale: en
+          default: false
+          name: English
+          build: true
+          site_name: "TI307 & TI307B & TI307I & TI307P - Introduction to Linux"
+          nav_translations:
+            Accueil: Home
+            Contenus: Contents
+            Installation d'une distribution Linux: Installing a Linux distribution
+            Lecture préliminaire: Preliminary reading
+            Introduction à MarioNum: Introduction to MarioNum
+            "Vous n'avez pas de système Linux installé ? Pas grave, Codespace à la rescousse !": "No Linux installed? No worries — Codespace to the rescue!"
+            "TP1 - Premières commandes": "Lab 1 - First commands"
+            "TP2 — Système de fichiers et permissions": "Lab 2 — File system and permissions"
+            "TP3 — Environnement de travail et Compilateur C": "Lab 3 — Working environment and C Compiler"
+            "TP4 — Canaux standards et redirections, Processus et tâches, Signaux": "Lab 4 — Standard channels & redirections, Processes & jobs, Signals"
+            "Quelques commandes supplémentaires": "Additional commands"
   - tags
-  - awesome-pages
+
+nav:
+  - Accueil: index.md
+  - Contenus:
+    - contenus/installation-wsl.md
+    - contenus/preliminary-reading.md
+    - contenus/Intro-MarioNum.md
+    - contenus/codespace.md
+    - contenus/tp1.md
+    - contenus/tp2.md
+    - contenus/tp3.md
+    - contenus/tp4.md
+    - contenus/tp4-exo.md
 
 extra:
+  alternate:
+    - name: Français
+      link: /introduction-linux-fr/
+      lang: fr
+    - name: English
+      link: /introduction-linux-fr/en/
+      lang: en
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/YvanGuifo/introduction-linux-fr
@@ -114,4 +158,4 @@ extra:
       name: "Contacter l'enseignant"
 
 copyright: >
-  TI307 & TI307B & TI307P - Introduction au système Linux - Efrei Paris 
+  TI307 & TI307B & TI307I & TI307P - Introduction au système Linux - Efrei Paris 

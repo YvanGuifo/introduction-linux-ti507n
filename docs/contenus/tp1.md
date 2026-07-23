@@ -48,7 +48,7 @@ hide:
     >> - <span style="color:red"> Sauvegardez ce fichier résultat **en local** avant la fin de la séance. </span>
     >>> **Procédure de sauvegarde en local** :
         1. Cliquez sur le **presse-papier** (à gauche du Bureau de la machine virtuelle).
-    ![PressePapier](../../assets/img/PressePapier.png)
+    ![PressePapier](../assets/img/PressePapier.png)
         2. Sélectionnez le contenu et copiez.
         3. Collez dans un nouveau fichier sur votre machine hôte.
 
@@ -482,34 +482,33 @@ Depuis votre répertoire personnel, exécutez :
    $ ./info-systeme.sh
    ```
 4. **Exercice de création** : écrivez un script `creer-arbo.sh` qui :
-
     - Prend un **argument** : le nom d’un projet (ex. `mon_projet`).
     - Crée l’arborescence suivante :
-     ```
-     mon_projet/
-     ├── src/
-     ├── docs/
-     ├── tests/
-     └── README.txt    (contient "Projet : mon_projet")
-     ```
-   - Affiche un message de confirmation.
-
-     **Indice** : pour accéder au premier argument dans un script, utilisez `$1`. Pour vérifier qu’un argument a été fourni :
-      ```bash
-      if [ -z "$1" ]; then
-          echo "Usage : $0 <nom-du-projet>"
-          exit 1
-      fi
       ```
-
-   6. Testez votre script :
-      ```bash
-      $ ./creer-arbo.sh tp_linux
-      $ ls -R tp_linux
-      $ cat tp_linux/README.txt
+      mon_projet/
+      ├── src/
+      ├── docs/
+      ├── tests/
+      └── README.txt    (contient "Projet : mon_projet")
       ```
+    - Affiche un message de confirmation.
 
-   7. **Question d’évaluation** : pourquoi est-il préférable de tester `[ -z "$1" ]` plutôt que de laisser le script échouer silencieusement sans argument ?
+    5. *Indice* : pour accéder au premier argument dans un script, utilisez `$1`. Pour vérifier qu’un argument a été fourni :
+       ```bash
+       if [ -z "$1" ]; then
+           echo "Usage : $0 <nom-du-projet>"
+           exit 1
+       fi
+       ```
+
+    6. Testez votre script :
+       ```bash
+       $ ./creer-arbo.sh tp_linux
+       $ ls -R tp_linux
+       $ cat tp_linux/README.txt
+       ```
+
+    7. **Question d’évaluation** : pourquoi est-il préférable de tester `[ -z "$1" ]` plutôt que de laisser le script échouer silencieusement sans argument ?
 
 !!! info "Vers le TP2"
     Vous venez de découvrir `find`, les liens (`ln`, `ln -s`) et l’écriture de scripts shell. Au **TP2**, vous approfondirez les **permissions** et comprendrez ce que signifie `chmod +x` que vous avez utilisé ici.

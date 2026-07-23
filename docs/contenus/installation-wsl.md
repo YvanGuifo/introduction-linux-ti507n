@@ -41,9 +41,9 @@ title: Installation d'une distribution Linux
 
 1. Allez sur le site officiel : [https://www.virtualbox.org](https://www.virtualbox.org)
 2. Cliquez sur le bouton **Download VirtualBox**.
-![Téléchargement VirtualBox](../../assets/img/vbox-download.png)
+![Téléchargement VirtualBox](../assets/img/vbox-download.png)
 3. Choisissez la version adaptée à votre système d’exploitation (Windows, macOS, Linux).
-![Version VirtualBox](../../assets/img/OSVirtualBox-download.png)
+![Version VirtualBox](../assets/img/OSVirtualBox-download.png)
 4. Une fois le fichier téléchargé, **installez VirtualBox** en suivant l’assistant d’installation.
 
 !!! info "Extension Pack"
@@ -56,20 +56,20 @@ title: Installation d'une distribution Linux
 1. Rendez-vous sur : [https://www.debian.org/](https://www.debian.org/)
 2. Téléchargez la version 64 bits (amd64) : **debian-12.11.0-amd64-netinst.iso**
 
-![Téléchargement Debian](../../assets/img/debian-download.png)
+![Téléchargement Debian](../assets/img/debian-download.png)
 
 ---
 
 ### Étape 3 : Créer une machine virtuelle
 
 1. Lancez VirtualBox et cliquez sur **"Nouvelle"**.
-![Créer nouvelle VM](../../assets/img/vbox-new.png)
+![Créer nouvelle VM](../assets/img/vbox-new.png)
 2. Donnez un nom à votre machine virtuelle (par exemple "**Debian12**").
 3. Choisissez :
      - **Type :** Linux
      - **Version :** Debian (64-bit)
 4. Cliquez ensuite sur **"Suivant"**.   
-![Paramètres VM](../../assets/img/vbox-settings.png)
+![Paramètres VM](../assets/img/vbox-settings.png)
 
 
 ---
@@ -85,7 +85,7 @@ title: Installation d'une distribution Linux
     - **Exemple :** yvan
     - Vous pouvez également conserver le nom d'utilisateur par défaut qui vous est proposé
 <!--  
-![Congiguration paramètres utilisateurs VMWindows](../../assets/img/Mot_passe_Windows.png)
+![Congiguration paramètres utilisateurs VMWindows](../assets/img/Mot_passe_Windows.png)
 -->
 
 ### Étape 5 : Allouer de la mémoire vive (RAM)
@@ -94,7 +94,7 @@ Allouez au moins **2048 Mo** (2 Go) si vous avez assez de RAM.
 
 !!! tip "Recommandation"
     Ne dépassez pas 50 % de votre mémoire totale.
-![RAM VM](../../assets/img/RAMs.png)
+![RAM VM](../assets/img/RAMs.png)
 
 
 
@@ -107,31 +107,31 @@ Allouez au moins **2048 Mo** (2 Go) si vous avez assez de RAM.
 2. Laissez le type **VDI** (VirtualBox Disk Image) par défaut.
 3. Choisissez **allocation dynamique**.
 4. Définissez une taille de disque de **10 Go ou plus**.
-![Disque dur virtuel VM](../../assets/img/VirtualDisks.png)
+![Disque dur virtuel VM](../assets/img/VirtualDisks.png)
 5. Vérifier les paramètres de vos **"Configurations"**.
 6. Ensuite cliquer sur "**Finish**"
-![Configuration VM](../../assets/img/vbox-config.png)
+![Configuration VM](../assets/img/vbox-config.png)
 
 ### Étape 7 : Finalisation de l'installation sous Windows
 
 1. Une fois l'installation terminée, entrer vos paramètres de connexion
-![Paramètre de connexion VM](../../assets/img/connexion_Windows.png) 
+![Paramètre de connexion VM](../assets/img/connexion_Windows.png) 
 2. Fermez les différentes fenêtres qui vont s'afficher.
 3. Ensuite cliquer sur "**Show Applications**"
 4. Vous pouvez ensuite ouvrir le "**Terminal**"
-![Terminal](../../assets/img/terminal.png) 
+![Terminal](../assets/img/terminal.png) 
 
 ### Étape 8 : Vérifier que l’image ISO a bien été inséré et finalisation de l'installation sous MacOS
 
 1. Une fois la VM créée, sélectionnez-la et cliquez sur **"Configuration"**.
-![Configurations VM](../../assets/img/vbox-configs.png)
+![Configurations VM](../assets/img/vbox-configs.png)
 2. Allez dans l’onglet **"Stockage"**.
 3. Cliquez sur le lecteur vide et sélectionnez **"Choisir un fichier disque"**.
 4. Sélectionnez l’ISO Debian téléchargé.
-![Choixs ISO Debian](../../assets/img/vbox-isos.png)
+![Choixs ISO Debian](../assets/img/vbox-isos.png)
 5. Cliquez sur **"Démarrer"** pour lancer la VM.
 6. L’installateur Debian va apparaître. Choisissez **Install** ou **Graphical Install**.
-![Écran install Debian](../../assets/img/debian-install-start.png)
+![Écran install Debian](../assets/img/debian-install-start.png)
 7. Suivez les étapes :
     - Choisissez la langue, la localisation, le clavier
     - Définition du nom de l’ordinateur.
@@ -161,7 +161,7 @@ Allouez au moins **2048 Mo** (2 Go) si vous avez assez de RAM.
         uname -a
     ```
 <!--
-![Retirer ISO](../../assets/img/vbox-remove-iso.png)
+![Retirer ISO](../assets/img/vbox-remove-iso.png)
 
 3. Vous devriez arriver sur l’écran de connexion de Debian 🎉
 -->
@@ -185,7 +185,7 @@ Avant de commencer, assurez-vous de disposer :
 
 1. Rendez-vous sur le site officiel : [https://mac.getutm.app/](https://mac.getutm.app/)
 2. Cliquez sur Download
-![UTM](../../assets/img/UTM.png)
+![UTM](../assets/img/UTM.png)
 3. Ouvrez le fichier .dmg puis glissez UTM.app dans votre dossier Applications.
 
 ### Étape 2 : Télécharger Debian pour ARM64
@@ -195,7 +195,7 @@ Avant de commencer, assurez-vous de disposer :
     
 1. Allez sur : [https://cdimage.debian.org/debian-cd/current/arm64/iso-cd/](https://cdimage.debian.org/debian-cd/current/arm64/iso-cd/)
 2. Téléchargez la version netinst (cliquez par exemple sur **debian-12.11.0-arm64-netinst.iso**).
-![ARM](../../assets/img/ARM_Netinst.png)
+![ARM](../assets/img/ARM_Netinst.png)
 3. Enregistrez le fichier dans un endroit accessible (par exemple **Téléchargements**).
 
 
@@ -205,7 +205,7 @@ Avant de commencer, assurez-vous de disposer :
 2. Cliquez sur + pour créer une nouvelle VM.
 3. Cliquez sur **Virtualize** (et non Emulate).
 4. Choisissez l’option Linux, puis selectionner le fichier precedemment téléchargé.
-<img src="../../assets/img/UtmLinux.png" alt="Installation de Linux sur UTM" width="500"/>
+<img src="../assets/img/UtmLinux.png" alt="Installation de Linux sur UTM" width="500"/>
 5. Cliquez sur Continuer.
 
 
@@ -214,7 +214,7 @@ Avant de commencer, assurez-vous de disposer :
 
 1. Allouez 4 Go de RAM (4096 Mo).
 2. Allouez 2 CPU minimum.
-<img src="../../assets/img/Materiel.png" alt="UTM" width="500"/>
+<img src="../assets/img/Materiel.png" alt="UTM" width="500"/>
 
 3. Allouez 20 Go de stockage minimum.
 4. Donnez un nom (ex. : **Debian-UTM-M1**).
@@ -224,7 +224,7 @@ Avant de commencer, assurez-vous de disposer :
 
 1. Cliquez sur la VM dans la liste (ex. : **Debian-UTM-M1**).
 2. Cliquez sur Play. 
-<img src="../../assets/img/ImageUTM.png" alt="UTM" width="500"/>
+<img src="../assets/img/ImageUTM.png" alt="UTM" width="500"/>
 3. Cliquer sur "**Install**". Ensuite suivez les instructions d'installation de la distribution :
      - Choix de la langue;
      - Partition automatique;
