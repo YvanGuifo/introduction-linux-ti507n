@@ -7,21 +7,24 @@ edit_uri: ""
 extra_css:
   - assets/stylesheets/extra.css
 
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js
+
 theme:
   name: material
+  language: fr
   favicon: assets/img/favicon.png
   logo: assets/img/logo.png
   font:
-    text: Noto Sans
-    code: Fira Mono
-  # adding icons for blockquote
+    text: Inter
+    code: JetBrains Mono
   icon:
     repo: fontawesome/brands/git-alt
     admonition:
       note: octicons/tag-16
       abstract: octicons/checklist-16
       info: octicons/info-16
-      tip: octicons/pin-16
+      tip: octicons/squirrel-16
       success: octicons/check-16
       question: fontawesome/solid/bullhorn
       warning: octicons/alert-16
@@ -30,71 +33,86 @@ theme:
       bug: octicons/bug-16
       example: octicons/beaker-16
       quote: octicons/quote-16
-  # enable switching from light to dark mode
   palette:
     - scheme: default
+      primary: light blue
+      accent: indigo
       toggle:
-        icon: material/toggle-switch
-        name: Switch to dark mode
+        icon: material/weather-night
+        name: Passer en mode sombre
     - scheme: slate
+      primary: light blue
+      accent: blue
       toggle:
-        icon: material/toggle-switch-off-outline
-        name: Switch to light mode
-  # enable navigation tabs
+        icon: material/weather-sunny
+        name: Passer en mode clair
   features:
-    # - navigation.tabs
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
     - navigation.top
+    - navigation.instant
+    - navigation.tracking
     - header.autohide
-    - toc.integrate
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
 
 markdown_extensions:
-  # code highlighting
   - pymdownx.highlight:
       anchor_linenums: true
-  # use icon and emoji
-  # - attr_list
-  # - pymdownx.emoji:
-      # emoji_index: !!python/name:materialx.emoji.twemoji
-      # emoji_generator: !!python/name:materialx.emoji.to_svg
+      line_spans: __span
+      pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  # create beautiful blockquote (said for sponsor only lul)
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
   - footnotes
-  # formatting
   - pymdownx.critic
   - pymdownx.caret
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.tilde
-  # card grids
   - md_in_html
-  # add mathjax.js
+  - attr_list
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.arithmatex:
       generic: true
-  # use mermaid
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          # format: !!python/name:pymdownx.superfences.fence_code_format
-
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
 
 plugins:
-  # enable site search
-  - search
-  # enable tags in posts
+  - search:
+      lang: fr
   - tags
-  # enable hidden pages for the corrige
   - awesome-pages
-
 
 extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/YvanGuifo/introduction-linux-fr
-      name: Github repo of this course
+      name: "Dépôt GitHub du cours"
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:yvan.guifo-fodjo@efrei.fr
+      name: "Contacter l'enseignant"
 
-copyright:  TI307 & TI307BT & I307P - Introduction au système Linux - Efrei Paris 
+copyright: >
+  TI307 & TI307B & TI307P - Introduction au système Linux - Efrei Paris |
+  Yvan GUIFO &copy; 2025 — suite et continuité du travail de Rado Rakotonarivo 2024

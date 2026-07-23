@@ -1,70 +1,398 @@
-/* Changing color to match EFREI's graphical chart*/
-:root > * {
-    --md-primary-fg-color: #377fbc;
-}
-/* ============================================================================
-   TI307 & TI307P — Style pour l'admonition "star" (exercices ⭐ groupe étoile)
-   À ajouter dans : docs/assets/stylesheets/extra.css
-   Compatible avec mkdocs-material (utilise les variables CSS officielles)
-   ============================================================================ */
+/* ==========================================================================
+   TI307 & TI307B & TI307P — Introduction au système Linux
+   Style « Material You » — Vif, arrondi, unique
+   ========================================================================== */
 
-/* Mode clair */
+/* --- Polices Google Sans + JetBrains Mono --- */
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* =========================
+   MODE CLAIR
+   ========================= */
+:root {
+  /* Couleurs Material You — Indigo + Rose */
+  --md-primary-fg-color:        #3f51b5;
+  --md-primary-fg-color--light: #7986cb;
+  --md-primary-fg-color--dark:  #283593;
+  --md-accent-fg-color:         #e91e63;
+
+  /* Surfaces Material You */
+  --my-surface:        #f5f0ff;     /* fond légèrement violet pastel */
+  --my-surface-card:   #ffffff;
+  --my-surface-code:   #f0edff;
+  --my-border-radius:  16px;
+  --my-shadow:         0 1px 3px rgba(0,0,0,.08), 0 4px 12px rgba(0,0,0,.04);
+  --my-shadow-hover:   0 2px 8px rgba(0,0,0,.12), 0 8px 24px rgba(0,0,0,.06);
+}
+
+/* =========================
+   MODE SOMBRE
+   ========================= */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:        #b39ddb;
+  --md-primary-fg-color--light: #d1c4e9;
+  --md-primary-fg-color--dark:  #7e57c2;
+  --md-accent-fg-color:         #f48fb1;
+  --md-default-bg-color:        #1c1b2e;
+
+  --my-surface:        #252438;
+  --my-surface-card:   #2d2b42;
+  --my-surface-code:   #322f4a;
+  --my-shadow:         0 1px 3px rgba(0,0,0,.3), 0 4px 12px rgba(0,0,0,.2);
+  --my-shadow-hover:   0 2px 8px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.25);
+}
+
+/* =========================
+   FOND GLOBAL
+   ========================= */
+.md-main {
+  background: var(--my-surface);
+}
+
+/* =========================
+   EN-TÊTE — dégradé vibrant
+   ========================= */
+.md-header {
+  background: linear-gradient(135deg, #3f51b5 0%, #7c4dff 50%, #e040fb 100%);
+  box-shadow: 0 2px 12px rgba(63, 81, 181, 0.3);
+}
+
+[data-md-color-scheme="slate"] .md-header {
+  background: linear-gradient(135deg, #1c1b2e 0%, #311b92 50%, #4a148c 100%);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* =========================
+   ONGLETS NAV
+   ========================= */
+.md-tabs {
+  background: rgba(40, 53, 147, 0.9);
+  backdrop-filter: blur(8px);
+}
+
+[data-md-color-scheme="slate"] .md-tabs {
+  background: rgba(28, 27, 46, 0.95);
+}
+
+.md-tabs__link--active {
+  border-bottom: 3px solid var(--md-accent-fg-color);
+  font-weight: 500;
+}
+
+/* =========================
+   BARRE DE RECHERCHE — pilule Material You
+   ========================= */
+.md-search__form {
+  border-radius: 28px !important;
+  overflow: hidden;
+}
+
+.md-search__input {
+  border-radius: 28px;
+  font-family: 'Google Sans', 'Noto Sans', sans-serif;
+}
+
+/* =========================
+   CONTENU — zone surélevée
+   ========================= */
+.md-content {
+  background: var(--my-surface-card);
+  border-radius: var(--my-border-radius);
+  box-shadow: var(--my-shadow);
+  margin: 1rem;
+  padding: 0.5rem;
+}
+
+/* =========================
+   BLOCS DE CODE — Material You
+   ========================= */
+.md-typeset pre {
+  border-radius: 12px !important;
+  overflow: hidden;
+  box-shadow: var(--my-shadow);
+  border: 1px solid rgba(63, 81, 181, 0.15);
+}
+
+.md-typeset pre > code {
+  background: var(--my-surface-code);
+  border-radius: 12px;
+  font-family: 'JetBrains Mono', 'Fira Mono', monospace;
+  font-size: 0.85rem;
+}
+
+[data-md-color-scheme="slate"] .md-typeset pre {
+  border-color: rgba(179, 157, 219, 0.2);
+}
+
+/* Bouton copier — pilule */
+.md-clipboard {
+  border-radius: 8px;
+}
+
+/* Code inline */
+.md-typeset code {
+  border-radius: 6px;
+  padding: 0.15em 0.4em;
+  font-family: 'JetBrains Mono', 'Fira Mono', monospace;
+  font-size: 0.85em;
+  background: var(--my-surface-code);
+}
+
+/* =========================
+   ADMONITIONS — Material You cards
+   ========================= */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 12px;
+  border-width: 0 0 0 4px;
+  box-shadow: var(--my-shadow);
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+}
+
+.md-typeset .admonition:hover,
+.md-typeset details:hover {
+  box-shadow: var(--my-shadow-hover);
+}
+
+.md-typeset .admonition-title,
+.md-typeset details > summary {
+  border-radius: 12px 12px 0 0;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+/* --- Admonition : objectifs (style personnalisé turquoise) --- */
+.md-typeset .admonition.objectifs,
+.md-typeset details.objectifs {
+  border-color: #00bfa5;
+}
+
+.md-typeset .objectifs > .admonition-title,
+.md-typeset .objectifs > summary {
+  background-color: rgba(0, 191, 165, 0.08);
+}
+
+.md-typeset .objectifs > .admonition-title::before,
+.md-typeset .objectifs > summary::before {
+  background-color: #00bfa5;
+  -webkit-mask-image: var(--md-admonition-icon--abstract);
+          mask-image: var(--md-admonition-icon--abstract);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .objectifs > .admonition-title,
+[data-md-color-scheme="slate"] .md-typeset .objectifs > summary {
+  background-color: rgba(0, 191, 165, 0.15);
+}
+
+/* --- Admonition : star (exercices groupe étoile) --- */
 :root {
   --md-admonition-icon--star: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>');
 }
 
 .md-typeset .admonition.star,
 .md-typeset details.star {
-  border-color: #f59e0b;            /* amber-500 */
+  border-color: #ff9800;
 }
 
 .md-typeset .star > .admonition-title,
 .md-typeset .star > summary {
-  background-color: rgba(245, 158, 11, 0.10);
+  background-color: rgba(255, 152, 0, 0.08);
 }
 
 .md-typeset .star > .admonition-title::before,
 .md-typeset .star > summary::before {
-  background-color: #f59e0b;
+  background-color: #ff9800;
   -webkit-mask-image: var(--md-admonition-icon--star);
           mask-image: var(--md-admonition-icon--star);
 }
 
-/* Mode sombre (slate) — harmonisation */
 [data-md-color-scheme="slate"] .md-typeset .star > .admonition-title,
 [data-md-color-scheme="slate"] .md-typeset .star > summary {
-  background-color: rgba(245, 158, 11, 0.18);
-}
-/* ============================================================================
-   TI307 & TI307P — Style pour l'admonition "star" (exercices ⭐ groupe étoile)
-   À ajouter dans : docs/assets/stylesheets/extra.css
-   Compatible avec mkdocs-material (utilise les variables CSS officielles)
-   ============================================================================ */
-
-/* Mode clair */
-:root {
-  --md-admonition-icon--star: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>');
+  background-color: rgba(255, 152, 0, 0.15);
 }
 
-.md-typeset .admonition.star,
-.md-typeset details.star {
-  border-color: #f59e0b;            /* amber-500 */
+/* =========================
+   TABLEAUX — Material You
+   ========================= */
+.md-typeset table:not([class]) {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--my-shadow);
+  border-collapse: separate;
+  border-spacing: 0;
 }
 
-.md-typeset .star > .admonition-title,
-.md-typeset .star > summary {
-  background-color: rgba(245, 158, 11, 0.10);
+.md-typeset table:not([class]) thead {
+  background: linear-gradient(135deg, var(--md-primary-fg-color), var(--md-primary-fg-color--dark));
+  color: white;
 }
 
-.md-typeset .star > .admonition-title::before,
-.md-typeset .star > summary::before {
-  background-color: #f59e0b;
-  -webkit-mask-image: var(--md-admonition-icon--star);
-          mask-image: var(--md-admonition-icon--star);
+.md-typeset table:not([class]) thead th {
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding: 12px 16px;
 }
 
-/* Mode sombre (slate) — harmonisation */
-[data-md-color-scheme="slate"] .md-typeset .star > .admonition-title,
-[data-md-color-scheme="slate"] .md-typeset .star > summary {
-  background-color: rgba(245, 158, 11, 0.18);
+.md-typeset table:not([class]) tbody td {
+  padding: 10px 16px;
+}
+
+.md-typeset table:not([class]) tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.md-typeset table:not([class]) tbody tr:nth-child(even) {
+  background-color: rgba(63, 81, 181, 0.04);
+}
+
+.md-typeset table:not([class]) tbody tr:hover {
+  background-color: rgba(63, 81, 181, 0.08);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) tbody tr:nth-child(even) {
+  background-color: rgba(179, 157, 219, 0.06);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) tbody tr:hover {
+  background-color: rgba(179, 157, 219, 0.1);
+}
+
+/* =========================
+   LIENS — transition douce
+   ========================= */
+.md-typeset a {
+  transition: color 0.15s ease, text-decoration 0.15s ease;
+}
+
+.md-typeset a:hover {
+  color: var(--md-accent-fg-color);
+}
+
+/* =========================
+   NAVIGATION LATÉRALE
+   ========================= */
+.md-nav__link--active {
+  font-weight: 600;
+  color: var(--md-accent-fg-color) !important;
+  background: rgba(233, 30, 99, 0.06);
+  border-radius: 8px;
+  padding-left: 12px;
+}
+
+[data-md-color-scheme="slate"] .md-nav__link--active {
+  background: rgba(244, 143, 177, 0.08);
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+.md-footer {
+  border-top: 3px solid;
+  border-image: linear-gradient(90deg, #3f51b5, #e040fb, #e91e63) 1;
+}
+
+[data-md-color-scheme="slate"] .md-footer {
+  border-image: linear-gradient(90deg, #7e57c2, #e040fb, #f48fb1) 1;
+}
+
+/* =========================
+   SÉPARATEURS — dégradé vibrant
+   ========================= */
+.md-typeset hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--md-primary-fg-color), var(--md-accent-fg-color), transparent);
+  margin: 2.5em 0;
+  border-radius: 2px;
+}
+
+/* =========================
+   BOUTON RETOUR EN HAUT — FAB Material
+   ========================= */
+.md-top {
+  border-radius: 16px;
+  box-shadow: var(--my-shadow);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.md-top:hover {
+  box-shadow: var(--my-shadow-hover);
+  transform: translateY(-2px);
+}
+
+/* =========================
+   KBD — touches clavier stylisées
+   ========================= */
+.md-typeset kbd {
+  border-radius: 6px;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8em;
+  padding: 0.15em 0.5em;
+}
+
+/* =========================
+   TAGS — pilules colorées
+   ========================= */
+.md-typeset .md-tag {
+  border-radius: 20px;
+  padding: 3px 14px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* =========================
+   CHECKLIST — Material You
+   ========================= */
+.md-typeset .task-list-indicator::before {
+  border-radius: 4px;
+}
+
+/* =========================
+   SCROLLBAR personnalisée (Webkit)
+   ========================= */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--md-primary-fg-color--light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--md-primary-fg-color);
+}
+
+/* =========================
+   BARRE DE PROGRESSION (navigation.instant.progress)
+   ========================= */
+.md-progress {
+  background: linear-gradient(90deg, var(--md-primary-fg-color), var(--md-accent-fg-color));
+}
+
+/* =========================
+   ANIMATIONS SUBTILES
+   ========================= */
+.md-typeset .admonition,
+.md-typeset details,
+.md-typeset table:not([class]),
+.md-typeset pre {
+  transition: box-shadow 0.2s ease, transform 0.1s ease;
+}
+
+.md-content {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
