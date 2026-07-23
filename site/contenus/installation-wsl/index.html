@@ -20,7 +20,7 @@
     
     
       
-        <title>Installation d'une distribution Linux via VirtualBox - TI307 & TI307P - Introduction au système Linux</title>
+        <title>Installation d'une distribution Linux - TI307 & TI307P - Introduction au système Linux</title>
       
     
     
@@ -118,7 +118,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#installation-dune-distribution-linux-via-virtualbox" class="md-skip">
+        <a href="#installation-dune-distribution-linux" class="md-skip">
           Skip to content
         </a>
       
@@ -153,7 +153,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Installation d'une distribution Linux via VirtualBox
+              Installation d'une distribution Linux
             
           </span>
         </div>
@@ -363,7 +363,7 @@
           
   
   <span class="md-ellipsis">
-    Installation d'une distribution Linux via VirtualBox
+    Installation d'une distribution Linux
   </span>
   
 
@@ -374,7 +374,7 @@
         
   
   <span class="md-ellipsis">
-    Installation d'une distribution Linux via VirtualBox
+    Installation d'une distribution Linux
   </span>
   
 
@@ -396,72 +396,140 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequis" class="md-nav__link">
-    Prérequis
+  <a href="#installation-dune-distribution-linux-via-virtualbox-sur-windows-et-macos" class="md-nav__link">
+    Installation d'une distribution Linux via VirtualBox sur Windows et MacOS
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Installation d'une distribution Linux via VirtualBox sur Windows et MacOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#etape-1-telecharger-virtualbox" class="md-nav__link">
     Étape 1 : Télécharger VirtualBox
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#etape-2-telecharger-limage-iso-de-debian" class="md-nav__link">
     Étape 2 : Télécharger l’image ISO de Debian
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#etape-3-creer-une-machine-virtuelle" class="md-nav__link">
     Étape 3 : Créer une machine virtuelle
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#etape-4-allouer-de-la-memoire-vive-ram" class="md-nav__link">
-    Étape 4 : Allouer de la mémoire vive (RAM)
+        
+          <li class="md-nav__item">
+  <a href="#etape-4-configuration-des-parametres-utilisateurs" class="md-nav__link">
+    Étape 4 : Configuration des paramètres utilisateurs
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etape-5-allouer-de-la-memoire-vive-ram" class="md-nav__link">
+    Étape 5 : Allouer de la mémoire vive (RAM)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etape-6-creer-un-disque-dur-virtuel" class="md-nav__link">
+    Étape 6 : Créer un disque dur virtuel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etape-7-finalisation-de-linstallation-sous-windows" class="md-nav__link">
+    Étape 7 : Finalisation de l'installation sous Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etape-8-verifier-que-limage-iso-a-bien-ete-insere-et-finalisation-de-linstallation-sous-macos" class="md-nav__link">
+    Étape 8 : Vérifier que l’image ISO a bien été inséré et finalisation de l'installation sous MacOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etape-9-verification-finale-et-test" class="md-nav__link">
+    Étape 9 : Vérification finale et test
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#etape-5-creer-un-disque-dur-virtuel" class="md-nav__link">
-    Étape 5 : Créer un disque dur virtuel
+  <a href="#installation-dune-distribution-linux-via-utm-sur-macos-puces-m1m2m3" class="md-nav__link">
+    Installation d'une distribution Linux via UTM sur MacOS (Puces M1/M2/M3)
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation d'une distribution Linux via UTM sur MacOS (Puces M1/M2/M3)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequis" class="md-nav__link">
+    Prérequis
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#etape-6-inserer-limage-iso" class="md-nav__link">
-    Étape 6 : Insérer l’image ISO
+        
+          <li class="md-nav__item">
+  <a href="#etape-1-telecharger-et-installer-utm" class="md-nav__link">
+    Étape 1 : Télécharger et installer UTM
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#etape-7-demarrer-linstallation-de-debian" class="md-nav__link">
-    Étape 7 : Démarrer l’installation de Debian
+        
+          <li class="md-nav__item">
+  <a href="#etape-2-telecharger-debian-pour-arm64" class="md-nav__link">
+    Étape 2 : Télécharger Debian pour ARM64
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#etape-8-terminer-linstallation" class="md-nav__link">
-    Étape 8 : Terminer l’installation
+        
+          <li class="md-nav__item">
+  <a href="#etape-3-creer-une-nouvelle-machine-virtuelle-dans-utm" class="md-nav__link">
+    Étape 3 : Créer une nouvelle machine virtuelle dans UTM
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#etape-9-premier-test" class="md-nav__link">
-    Étape 9 : Premier test
+        
+          <li class="md-nav__item">
+  <a href="#etape-4-definir-la-memoire-le-stockage-et-creer-la-vm" class="md-nav__link">
+    Étape 4 : Définir la mémoire, le stockage et créer la VM
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etape-5-lancer-la-machine-virtuelle" class="md-nav__link">
+    Étape 5 : Lancer la machine virtuelle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etape-6-premiere-utilisation" class="md-nav__link">
+    Étape 6 : Première utilisation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -656,18 +724,44 @@
                   
 
 
-<h1 id="installation-dune-distribution-linux-via-virtualbox">Installation d'une distribution Linux via VirtualBox</h1>
+<h1 id="installation-dune-distribution-linux">Installation d'une distribution Linux</h1>
+<h2 id="installation-dune-distribution-linux-via-virtualbox-sur-windows-et-macos">Installation d'une distribution Linux via VirtualBox sur Windows et MacOS</h2>
+<div class="admonition objectifs">
+<p class="admonition-title">Objectif pédagogique</p>
 <p>Dans ce tutoriel, vous allez apprendre à installer une distribution Linux (Debian 12) dans une machine virtuelle à l’aide du logiciel <strong>VirtualBox</strong>.</p>
-<h2 id="prerequis">Prérequis</h2>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Prérequis</p>
 <p>Avant de commencer, assurez-vous d’avoir :</p>
 <ul>
 <li>Une connexion internet stable</li>
 <li>Au moins <strong>10 Go d’espace libre</strong></li>
-<li><strong>VirtualBox</strong> installé sur votre système (Windows/macOS/Linux)</li>
-<li>Le fichier <strong>ISO</strong> de Debian (image disque)</li>
+<li>
+<p><strong>VirtualBox</strong> installé sur votre système :</p>
+<blockquote>
+<p><strong>Windows</strong> </p>
+<p>ou <strong>MacOS (Sur des processeurs Intel)</strong></p>
+</blockquote>
+</li>
+<li>
+<p>Le fichier <strong>ISO</strong> de Debian (image disque)</p>
+</li>
 </ul>
-<hr />
-<h2 id="etape-1-telecharger-virtualbox">Étape 1 : Télécharger VirtualBox</h2>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Attention à la puce Apple Silicon (M1/M2/M3)</p>
+<p>VirtualBox ne prend pas encore pleinement en charge les puces Apple Silicon. Pour ces machines, privilégiez UTM </p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Instructions</p>
+<p>Il est essentiel de suivre attentivement les instructions, certaines étapes étant spécifiques à Windows, à macOS (processeur Intel), ou aux deux. Veillez donc à respecter scrupuleusement les indications correspondant à votre système.</p>
+<p>Pour l'installation de :</p>
+<ul>
+<li><strong>Windows :</strong> suivre les étapes 1, 2, 3, 4, 5, 6, 7, 9</li>
+<li><strong>MacOs :</strong>.  suivre les étapes 1, 2, 3, 5, 6, 8, 9</li>
+</ul>
+</div>
+<h3 id="etape-1-telecharger-virtualbox">Étape 1 : Télécharger VirtualBox</h3>
 <ol>
 <li>Allez sur le site officiel : <a href="https://www.virtualbox.org">https://www.virtualbox.org</a></li>
 <li>Cliquez sur le bouton <strong>Download VirtualBox</strong>.
@@ -681,44 +775,50 @@
 <p>Il est recommandé d’installer le "VirtualBox Extension Pack" pour bénéficier de fonctions supplémentaires comme le copier-coller entre hôte et invité.</p>
 </div>
 <hr />
-<h2 id="etape-2-telecharger-limage-iso-de-debian">Étape 2 : Télécharger l’image ISO de Debian</h2>
+<h3 id="etape-2-telecharger-limage-iso-de-debian">Étape 2 : Télécharger l’image ISO de Debian</h3>
 <ol>
 <li>Rendez-vous sur : <a href="https://www.debian.org/">https://www.debian.org/</a></li>
 <li>Téléchargez la version 64 bits (amd64) : <strong>debian-12.11.0-amd64-netinst.iso</strong></li>
 </ol>
 <p><img alt="Téléchargement Debian" src="../../assets/img/debian-download.png" /></p>
 <hr />
-<h2 id="etape-3-creer-une-machine-virtuelle">Étape 3 : Créer une machine virtuelle</h2>
+<h3 id="etape-3-creer-une-machine-virtuelle">Étape 3 : Créer une machine virtuelle</h3>
 <ol>
-<li>Lancez VirtualBox et cliquez sur <strong>"Nouvelle"</strong>.</li>
-</ol>
-<p><img alt="Créer nouvelle VM" src="../../assets/img/vbox-new.png" /></p>
-<ol>
-<li>
-<p>Donnez un nom à votre machine virtuelle (par exemple "<strong>Debian12</strong>").</p>
-</li>
-<li>
-<p>Choisissez :</p>
-</li>
+<li>Lancez VirtualBox et cliquez sur <strong>"Nouvelle"</strong>.
+<img alt="Créer nouvelle VM" src="../../assets/img/vbox-new.png" /></li>
+<li>Donnez un nom à votre machine virtuelle (par exemple "<strong>Debian12</strong>").</li>
+<li>Choisissez :<ul>
 <li><strong>Type :</strong> Linux</li>
 <li><strong>Version :</strong> Debian (64-bit)</li>
-</ol>
-<p><img alt="Paramètres VM" src="../../assets/img/vbox-settings.png" /></p>
-<ol>
-<li>Cliquez sur <strong>"Suivant"</strong>.</li>
+</ul>
+</li>
+<li>Cliquez ensuite sur <strong>"Suivant"</strong>. <br />
+<img alt="Paramètres VM" src="../../assets/img/vbox-settings.png" /></li>
 </ol>
 <hr />
-<h2 id="etape-4-allouer-de-la-memoire-vive-ram">Étape 4 : Allouer de la mémoire vive (RAM)</h2>
-<ol>
-<li>Allouez au moins <strong>2048 Mo</strong> (2 Go) si vous avez assez de RAM.</li>
-</ol>
+<h3 id="etape-4-configuration-des-parametres-utilisateurs">Étape 4 : Configuration des paramètres utilisateurs</h3>
+<div class="admonition info">
+<p class="admonition-title">Notez bien</p>
+<p><strong>Cette étape concerne exclusivement l'installation sous Windows.</strong></p>
+<p>Assurez-vous que le nom d'utilisateur soit entièrement en minuscules. </p>
+<ul>
+<li><strong>Exemple :</strong> yvan</li>
+<li>Vous pouvez également conserver le nom d'utilisateur par défaut qui vous est proposé</li>
+</ul>
+</div>
+<!--  
+![Congiguration paramètres utilisateurs VMWindows](../../assets/img/Mot_passe_Windows.png)
+-->
+
+<h3 id="etape-5-allouer-de-la-memoire-vive-ram">Étape 5 : Allouer de la mémoire vive (RAM)</h3>
+<p>Allouez au moins <strong>2048 Mo</strong> (2 Go) si vous avez assez de RAM.</p>
 <div class="admonition tip">
 <p class="admonition-title">Recommandation</p>
 <p>Ne dépassez pas 50 % de votre mémoire totale.</p>
 </div>
 <p><img alt="RAM VM" src="../../assets/img/RAMs.png" /></p>
 <hr />
-<h2 id="etape-5-creer-un-disque-dur-virtuel">Étape 5 : Créer un disque dur virtuel</h2>
+<h3 id="etape-6-creer-un-disque-dur-virtuel">Étape 6 : Créer un disque dur virtuel</h3>
 <ol>
 <li>Choisissez <strong>"Créer un disque dur virtuel maintenant"</strong>.</li>
 <li>Laissez le type <strong>VDI</strong> (VirtualBox Disk Image) par défaut.</li>
@@ -729,48 +829,64 @@
 <li>Ensuite cliquer sur "<strong>Finish</strong>"
 <img alt="Configuration VM" src="../../assets/img/vbox-config.png" /></li>
 </ol>
-<h2 id="etape-6-inserer-limage-iso">Étape 6 : Insérer l’image ISO</h2>
+<h3 id="etape-7-finalisation-de-linstallation-sous-windows">Étape 7 : Finalisation de l'installation sous Windows</h3>
 <ol>
-<li>Une fois la VM créée, sélectionnez-la et cliquez sur <strong>"Configuration"</strong>.</li>
+<li>Une fois l'installation terminée, entrer vos paramètres de connexion
+<img alt="Paramètre de connexion VM" src="../../assets/img/connexion_Windows.png" /> </li>
+<li>Fermez les différentes fenêtres qui vont s'afficher.</li>
+<li>Ensuite cliquer sur "<strong>Show Applications</strong>"</li>
+<li>Vous pouvez ensuite ouvrir le "<strong>Terminal</strong>"
+<img alt="Terminal" src="../../assets/img/terminal.png" /> </li>
 </ol>
-<p><img alt="Configurations VM" src="../../assets/img/vbox-configs.png" /></p>
+<h3 id="etape-8-verifier-que-limage-iso-a-bien-ete-insere-et-finalisation-de-linstallation-sous-macos">Étape 8 : Vérifier que l’image ISO a bien été inséré et finalisation de l'installation sous MacOS</h3>
 <ol>
-<li>
-<p>Allez dans l’onglet <strong>"Stockage"</strong>.</p>
-</li>
-<li>
-<p>Cliquez sur le lecteur vide et sélectionnez <strong>"Choisir un fichier disque"</strong>.</p>
-</li>
-<li>
-<p>Sélectionnez l’ISO Debian téléchargé.</p>
-</li>
-</ol>
-<p><img alt="Choixs ISO Debian" src="../../assets/img/vbox-isos.png" /></p>
-<h2 id="etape-7-demarrer-linstallation-de-debian">Étape 7 : Démarrer l’installation de Debian</h2>
-<ol>
+<li>Une fois la VM créée, sélectionnez-la et cliquez sur <strong>"Configuration"</strong>.
+<img alt="Configurations VM" src="../../assets/img/vbox-configs.png" /></li>
+<li>Allez dans l’onglet <strong>"Stockage"</strong>.</li>
+<li>Cliquez sur le lecteur vide et sélectionnez <strong>"Choisir un fichier disque"</strong>.</li>
+<li>Sélectionnez l’ISO Debian téléchargé.
+<img alt="Choixs ISO Debian" src="../../assets/img/vbox-isos.png" /></li>
 <li>Cliquez sur <strong>"Démarrer"</strong> pour lancer la VM.</li>
-<li>L’installateur Debian va apparaître. Choisissez <strong>Install</strong>.
+<li>L’installateur Debian va apparaître. Choisissez <strong>Install</strong> ou <strong>Graphical Install</strong>.
 <img alt="Écran install Debian" src="../../assets/img/debian-install-start.png" /></li>
 <li>Suivez les étapes :<ul>
 <li>Choisissez la langue, la localisation, le clavier</li>
-<li>Configurez le réseau (vous pouvez laisser DHCP par défaut)</li>
-<li>Créez un compte utilisateur + mot de passe</li>
-<li>Choisissez <strong>Utiliser le disque entier</strong> pour le partitionnement</li>
-<li>Confirmez l’installation</li>
+<li>Définition du nom de l’ordinateur.</li>
+<li><strong>Création du compte utilisateur + mot de passe</strong> (utilisez un nom simple en minuscules et ne contenant pas d'espace.) </li>
+</ul>
+</li>
+<li>Partitionner le disque<ul>
+<li>Choisissez  <strong>Guided – use entire disk</strong></li>
+<li>Choisissez le disque proposé (<strong>sda</strong> en général)</li>
+<li>Choisissez <strong>All files in one partition</strong></li>
+<li>Confirmez avec <strong>Finish partitioning and write changes to disk</strong></li>
+</ul>
+</li>
+<li>Installation du système<ul>
+<li>L'installation démarre, attendez la fin</li>
+<li>Acceptez l’installation du <strong>GRUB bootloader</strong> si demandé.</li>
+<li>Terminez et redémarrez la machine virtuelle.</li>
 </ul>
 </li>
 </ol>
-<div class="admonition warning">
-<p class="admonition-title">Attention</p>
-<p>Toutes les données seront effacées sur le disque virtuel — ce n’est pas grave, c’est une machine isolée.</p>
-</div>
 <hr />
-<h2 id="etape-8-terminer-linstallation">Étape 8 : Terminer l’installation</h2>
+<h3 id="etape-9-verification-finale-et-test">Étape 9 : Vérification finale et test</h3>
+<div class="admonition info">
+<p class="admonition-title">À faire</p>
 <ol>
-<li>Une fois l’installation terminée, Debian redémarre.</li>
-<li>Pensez à retirer l’ISO de l’installation :</li>
-<li>Allez dans <strong>"Périphériques" &gt; "Lecteurs optiques" &gt; "Retirer le disque"</strong></li>
+<li>Une fois l’installation terminée, pensez à retirer l’ISO de l’installation :<ul>
+<li>Allez dans "<strong>Périphériques</strong>" &gt; "<strong>Lecteurs optiques</strong>"</li>
+<li>Si l'image iso n'est pas retirer (<strong>debian-12.11.0-amd64-netinst.iso</strong>), cliquer sur "<strong>Retirer le disque</strong>"</li>
+</ul>
+</li>
+<li>Testez quelques commandes :
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w">    </span>whoami
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span>hostname
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span>ls<span class="w"> </span>/
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span>uname<span class="w"> </span>-a
+</code></pre></div></li>
 </ol>
+</div>
 <!--
 ![Retirer ISO](../../assets/img/vbox-remove-iso.png)
 
@@ -778,18 +894,89 @@
 -->
 
 <hr />
-<h2 id="etape-9-premier-test">Étape 9 : Premier test</h2>
+<h2 id="installation-dune-distribution-linux-via-utm-sur-macos-puces-m1m2m3">Installation d'une distribution Linux via UTM sur MacOS (Puces M1/M2/M3)</h2>
+<div class="admonition objectifs">
+<p class="admonition-title">Objectif pédagogique</p>
+<p>Permettre aux étudiants d’installer un système GNU/Linux Debian dans un environnement virtualisé adapté aux Mac équipés de puces  Apple Silicon (M1/M2/M3), afin de découvrir un OS libre et pratiquer en toute sécurité.</p>
+</div>
+<h3 id="prerequis">Prérequis</h3>
+<p>Avant de commencer, assurez-vous de disposer : </p>
+<ul>
+<li>D’un <strong>Mac avec une puce Apple Silicon (M1 ou M2 ou M3)</strong>.</li>
+<li>D’au moins <strong>8 Go de RAM</strong> et <strong>20 Go d’espace libre.</strong></li>
+<li>D'une bonne connexion internet</li>
+</ul>
+<h3 id="etape-1-telecharger-et-installer-utm">Étape 1 : Télécharger et installer UTM</h3>
 <ol>
+<li>Rendez-vous sur le site officiel : <a href="https://mac.getutm.app/">https://mac.getutm.app/</a></li>
+<li>Cliquez sur Download
+<img alt="UTM" src="../../assets/img/UTM.png" /></li>
+<li>Ouvrez le fichier .dmg puis glissez UTM.app dans votre dossier Applications.</li>
+</ol>
+<h3 id="etape-2-telecharger-debian-pour-arm64">Étape 2 : Télécharger Debian pour ARM64</h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>N’utiliser pas d’image “<strong>x86_64</strong>”, car elle est incompatible avec les puces M1/M2/M3 sans émulation lente.</p>
+</div>
+<ol>
+<li>Allez sur : <a href="https://cdimage.debian.org/debian-cd/current/arm64/iso-cd/">https://cdimage.debian.org/debian-cd/current/arm64/iso-cd/</a></li>
+<li>Téléchargez la version netinst (cliquez par exemple sur <strong>debian-12.11.0-arm64-netinst.iso</strong>).
+<img alt="ARM" src="../../assets/img/ARM_Netinst.png" /></li>
+<li>Enregistrez le fichier dans un endroit accessible (par exemple <strong>Téléchargements</strong>).</li>
+</ol>
+<h3 id="etape-3-creer-une-nouvelle-machine-virtuelle-dans-utm">Étape 3 : Créer une nouvelle machine virtuelle dans UTM</h3>
+<ol>
+<li>Ouvrez UTM.</li>
+<li>Cliquez sur + pour créer une nouvelle VM.</li>
+<li>Cliquez sur <strong>Virtualize</strong> (et non Emulate).</li>
+<li>Choisissez l’option Linux, puis selectionner le fichier precedemment téléchargé.
+<img src="../../assets/img/UtmLinux.png" alt="Installation de Linux sur UTM" width="500"/></li>
+<li>Cliquez sur Continuer.</li>
+</ol>
+<h3 id="etape-4-definir-la-memoire-le-stockage-et-creer-la-vm">Étape 4 : Définir la mémoire, le stockage et créer la VM</h3>
+<ol>
+<li>Allouez 4 Go de RAM (4096 Mo).</li>
 <li>
-<p>Connectez-vous avec votre nom d’utilisateur/mot de passe.</p>
+<p>Allouez 2 CPU minimum.
+<img src="../../assets/img/Materiel.png" alt="UTM" width="500"/></p>
 </li>
 <li>
-<p>Testez quelques commandes :
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>whoami
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>ls<span class="w"> </span>/
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>uname<span class="w"> </span>-a
-</code></pre></div></p>
+<p>Allouez 20 Go de stockage minimum.</p>
 </li>
+<li>Donnez un nom (ex. : <strong>Debian-UTM-M1</strong>).</li>
+<li>Cliquez sur <strong>Enregistrer</strong></li>
+</ol>
+<h3 id="etape-5-lancer-la-machine-virtuelle">Étape 5 : Lancer la machine virtuelle</h3>
+<ol>
+<li>Cliquez sur la VM dans la liste (ex. : <strong>Debian-UTM-M1</strong>).</li>
+<li>Cliquez sur Play. 
+<img src="../../assets/img/ImageUTM.png" alt="UTM" width="500"/></li>
+<li>Cliquer sur "<strong>Install</strong>". Ensuite suivez les instructions d'installation de la distribution :<ul>
+<li>Choix de la langue;</li>
+<li>Partition automatique;</li>
+<li>Création de l'utilisateur;</li>
+<li>Mot de passe root</li>
+</ul>
+</li>
+<li>Redémarre une fois l'installation terminée.</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Si tu vois un écran noir au redémarrage, éteins la VM, va dans <strong>Settings --&gt; Drives</strong> et retire l’ISO.
+Ensuite redémarrer à nouveau la machine virtuelle. </p>
+</div>
+<h3 id="etape-6-premiere-utilisation">Étape 6 : Première utilisation</h3>
+<ol>
+<li>Connexion avec vos paramètres utilisateurs</li>
+<li>Lancer le terminal (<code>Ctrl + Alt + T</code> ou via le menu).</li>
+<li>Taper les commandes suivantes :
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>uname<span class="w"> </span>-a
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>lscpu
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>lsblk
+</code></pre></div></li>
+<li>Mise à jour de la distribution :
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade
+</code></pre></div></li>
 </ol>
 
 

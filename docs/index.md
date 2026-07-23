@@ -2,7 +2,7 @@
 title: Accueil
 ---
 
-# TI307 & TI307B &TI307P - Introduction au système Linux
+# TI307 & TI307B & TI307P - Introduction au système Linux
 
 ### Description
 
@@ -25,15 +25,13 @@ Ce module se déroulera en 15 heures de cours sous forme de Cours - TP.
 
 | Groupe    | Enseignant                | Contact    |
 |-----------|---------------------------|------------|
-| 2, 3, 6        | Michel Landschoot         | mlandsnet@yahoo.fr      |
-| 4, INT4     | Walid Gaaloul           | walid.gaaloul@intervenants.efrei.net           |
-| 7 + BN         | Nadim El-Sakaan         |  nadim.el-sakaan@efrei.fr         |
-| 1, 5         | Nathalie Xiaodan Chin     | nathalie.xiaodan-chin@intervenants.efrei.net       |
-| PP        | Yvan Guifo          | yvan.guifo-fodjo@efrei.fr      |
-| PM        | Lofti Gaaloul         | lotfi.gaaloul@intervenants.efrei.net     |
+| SC3, SC4, SC6        | Michel Landschoot         | mlandsnet@yahoo.fr      |
+| SC5         | Halim Djerroud        |  halim.djerroud@efrei.fr         |
+| PLUS2        | Nathalie Xiaodan Chin     | nathalie.xiaodan-chin@intervenants.efrei.net       |
+| SC2, PLUS1        | Yvan Guifo          | yvan.guifo-fodjo@efrei.fr      |
 | BDX       | Mikaël Valot              | mikael.valot@efrei.fr       |
 | INT1, INT2      | Yaovi Soglo           | yaovi.soglo@efrei.fr       |
-| INT3  | Maroua Tikat         | maroua.tikat@efrei.fr      |
+| SC1, INT3  | Maroua Tikat         | maroua.tikat@efrei.fr      |
 
 
 
