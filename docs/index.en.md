@@ -2,7 +2,7 @@
 title: Home
 ---
 
-# TI307 & TI307B & TI307P - Introduction to Linux
+# TI307 & TI307B & TI307I & TI307P - Introduction to Linux
 
 ### Description
 

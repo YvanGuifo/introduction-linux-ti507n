@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="fr" class="no-js">
+<html lang="en" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -15,19 +15,19 @@
         <link rel="next" href="../tp3/">
       
       
-      <link rel="icon" href="../../assets/img/favicon.png">
+      <link rel="icon" href="../../../assets/img/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
     
     
       
-        <title>TP2 - Système de fichiers et permissions - TI307 & TI307B & TI307P - Introduction au système Linux</title>
+        <title>Lab 2 - File system and permissions - TI307 & TI307B & TI307I & TI307P - Introduction to Linux</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.35e1ed30.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35e1ed30.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.356b1318.min.css">
       
       
   
@@ -87,9 +87,9 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -118,8 +118,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#tp2-systeme-de-fichiers-et-permissions" class="md-skip">
-          Aller au contenu
+        <a href="#lab-2-file-system-and-permissions" class="md-skip">
+          Skip to content
         </a>
       
     </div>
@@ -133,10 +133,10 @@
   
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="En-tête">
-    <a href="../.." title="TI307 &amp; TI307B &amp; TI307P - Introduction au système Linux" class="md-header__button md-logo" aria-label="TI307 & TI307B & TI307P - Introduction au système Linux" data-md-component="logo">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../" title="TI307 &amp; TI307B &amp; TI307I &amp; TI307P - Introduction to Linux" class="md-header__button md-logo" aria-label="TI307 & TI307B & TI307I & TI307P - Introduction to Linux" data-md-component="logo">
       
-  <img src="../../assets/img/logo.png" alt="logo">
+  <img src="../../../assets/img/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -147,13 +147,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            TI307 & TI307B & TI307P - Introduction au système Linux
+            TI307 & TI307B & TI307I & TI307P - Introduction to Linux
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              TP2 - Système de fichiers et permissions
+              Lab 2 - File system and permissions
             
           </span>
         </div>
@@ -190,20 +190,20 @@
       <div class="md-header__option">
   <div class="md-select">
     
-    <button class="md-header__button md-icon" aria-label="Sélectionner la langue">
+    <button class="md-header__button md-icon" aria-label="Select language">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
     </button>
     <div class="md-select__inner">
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="./" hreflang="fr" class="md-select__link">
+            <a href="../../../contenus/tp2/" hreflang="fr" class="md-select__link">
               Français
             </a>
           </li>
         
           <li class="md-select__item">
-            <a href="../../en/contenus/tp2/" hreflang="en" class="md-select__link">
+            <a href="./" hreflang="en" class="md-select__link">
               English
             </a>
           </li>
@@ -222,21 +222,21 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Recherche">
+      <nav class="md-search__options" aria-label="Search">
         
-          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Partager" aria-label="Partager" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
           </a>
         
-        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
@@ -249,7 +249,7 @@
       <div class="md-search__scrollwrap" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Initialisation de la recherche
+            Initializing search
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -260,7 +260,7 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/YvanGuifo/introduction-linux-fr" title="Aller au dépôt" class="md-source" data-md-component="source">
+        <a href="https://github.com/YvanGuifo/introduction-linux-fr" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -275,7 +275,7 @@
   
     
       
-<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
       
@@ -284,12 +284,12 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../" class="md-tabs__link">
         
   
     
   
-  Accueil
+  Home
 
       </a>
     </li>
@@ -308,7 +308,7 @@
         <a href="../installation-wsl/" class="md-tabs__link">
           
   
-  Contenus
+  Contents
 
         </a>
       </li>
@@ -344,16 +344,16 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="TI307 &amp; TI307B &amp; TI307P - Introduction au système Linux" class="md-nav__button md-logo" aria-label="TI307 & TI307B & TI307P - Introduction au système Linux" data-md-component="logo">
+    <a href="../../" title="TI307 &amp; TI307B &amp; TI307I &amp; TI307P - Introduction to Linux" class="md-nav__button md-logo" aria-label="TI307 & TI307B & TI307I & TI307P - Introduction to Linux" data-md-component="logo">
       
-  <img src="../../assets/img/logo.png" alt="logo">
+  <img src="../../../assets/img/logo.png" alt="logo">
 
     </a>
-    TI307 & TI307B & TI307P - Introduction au système Linux
+    TI307 & TI307B & TI307I & TI307P - Introduction to Linux
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/YvanGuifo/introduction-linux-fr" title="Aller au dépôt" class="md-source" data-md-component="source">
+      <a href="https://github.com/YvanGuifo/introduction-linux-fr" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -372,11 +372,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Accueil
+    Home
   </span>
   
 
@@ -412,7 +412,7 @@
             
   
   <span class="md-ellipsis">
-    Contenus
+    Contents
   </span>
   
 
@@ -422,7 +422,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Contenus
+            Contents
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -436,7 +436,7 @@
         
   
   <span class="md-ellipsis">
-    Installation d'une distribution Linux
+    Installing a Linux distribution
   </span>
   
 
@@ -456,7 +456,7 @@
         
   
   <span class="md-ellipsis">
-    Lecture préliminaire
+    Preliminary reading
   </span>
   
 
@@ -476,7 +476,7 @@
         
   
   <span class="md-ellipsis">
-    Introduction à MarioNum
+    Introduction to MarioNum
   </span>
   
 
@@ -496,7 +496,7 @@
         
   
   <span class="md-ellipsis">
-    Vous n'avez pas de système Linux installé ? Pas grave, Codespace à la rescousse !
+    No Linux installed? No worries — Codespace to the rescue!
   </span>
   
 
@@ -516,7 +516,7 @@
         
   
   <span class="md-ellipsis">
-    TP1 - Premières commandes
+    Lab 1 - First commands
   </span>
   
 
@@ -545,7 +545,7 @@
           
   
   <span class="md-ellipsis">
-    TP2 - Système de fichiers et permissions
+    Lab 2 - File system and permissions
   </span>
   
 
@@ -556,7 +556,7 @@
         
   
   <span class="md-ellipsis">
-    TP2 - Système de fichiers et permissions
+    Lab 2 - File system and permissions
   </span>
   
 
@@ -564,7 +564,7 @@
       
         
 
-<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -573,21 +573,21 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table des matières
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-systeme-de-fichiers-linux" class="md-nav__link">
-    1. Système de fichiers Linux
+  <a href="#1-linux-file-system" class="md-nav__link">
+    1. Linux file system
   </a>
   
-    <nav class="md-nav" aria-label="1. Système de fichiers Linux">
+    <nav class="md-nav" aria-label="1. Linux file system">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exercice-1-id-et-etcpasswd" class="md-nav__link">
-    Exercice 1 — id et /etc/passwd 📚
+  <a href="#exercise-1-id-and-etcpasswd" class="md-nav__link">
+    Exercise 1 — id and /etc/passwd 📚
   </a>
   
 </li>
@@ -598,30 +598,30 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-permissions-associees-aux-fichiers" class="md-nav__link">
-    2. Permissions associées aux fichiers
+  <a href="#2-permissions-associated-with-files" class="md-nav__link">
+    2. Permissions associated with files
   </a>
   
-    <nav class="md-nav" aria-label="2. Permissions associées aux fichiers">
+    <nav class="md-nav" aria-label="2. Permissions associated with files">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exercice-2-lire-les-permissions" class="md-nav__link">
-    Exercice 2 — Lire les permissions 📚
+  <a href="#exercise-2-reading-permissions" class="md-nav__link">
+    Exercise 2 — Reading permissions 📚
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#exercice-3-modification-des-permissions-chmod" class="md-nav__link">
-    Exercice 3 — Modification des permissions chmod 📚📚
+  <a href="#exercise-3-modifying-permissions-with-chmod" class="md-nav__link">
+    Exercise 3 — Modifying permissions with chmod 📚📚
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#exercice-4-effet-des-permissions-sur-les-operations" class="md-nav__link">
-    Exercice 4 — Effet des permissions sur les opérations 📚📚
+  <a href="#exercise-4-effect-of-permissions-on-operations" class="md-nav__link">
+    Exercise 4 — Effect of permissions on operations 📚📚
   </a>
   
 </li>
@@ -632,16 +632,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-permissions-associees-aux-repertoires" class="md-nav__link">
-    3. Permissions associées aux répertoires
+  <a href="#3-permissions-associated-with-directories" class="md-nav__link">
+    3. Permissions associated with directories
   </a>
   
-    <nav class="md-nav" aria-label="3. Permissions associées aux répertoires">
+    <nav class="md-nav" aria-label="3. Permissions associated with directories">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exercice-5-permissions-sur-les-repertoires" class="md-nav__link">
-    Exercice 5 — Permissions sur les répertoires 📚📚📚
+  <a href="#exercise-5-permissions-on-directories" class="md-nav__link">
+    Exercise 5 — Permissions on directories 📚📚📚
   </a>
   
 </li>
@@ -652,16 +652,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-le-path" class="md-nav__link">
-    4. Le PATH
+  <a href="#4-the-path" class="md-nav__link">
+    4. The PATH
   </a>
   
-    <nav class="md-nav" aria-label="4. Le PATH">
+    <nav class="md-nav" aria-label="4. The PATH">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exercice-6-les-repertoires-du-path" class="md-nav__link">
-    Exercice 6 — Les répertoires du PATH 📚📚📚
+  <a href="#exercise-6-the-path-directories" class="md-nav__link">
+    Exercise 6 — The PATH directories 📚📚📚
   </a>
   
 </li>
@@ -672,16 +672,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-recapitulatif-sur-les-permissions" class="md-nav__link">
-    5. Récapitulatif sur les permissions
+  <a href="#5-permissions-recap" class="md-nav__link">
+    5. Permissions recap
   </a>
   
-    <nav class="md-nav" aria-label="5. Récapitulatif sur les permissions">
+    <nav class="md-nav" aria-label="5. Permissions recap">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exercice-7-on-lache-le-clavier" class="md-nav__link">
-    Exercice 7 — On lâche le clavier 📚📚📚
+  <a href="#exercise-7-hands-off-the-keyboard" class="md-nav__link">
+    Exercise 7 — Hands off the keyboard 📚📚📚
   </a>
   
 </li>
@@ -692,37 +692,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#synthese-ce-que-vous-devez-savoir-faire" class="md-nav__link">
-    Synthèse — Ce que vous devez savoir faire
+  <a href="#summary-what-you-should-be-able-to-do" class="md-nav__link">
+    Summary — What you should be able to do
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#exercices-supplementaires" class="md-nav__link">
-    ⭐ Exercices supplémentaires
+  <a href="#supplementary-exercises" class="md-nav__link">
+    ⭐ Supplementary exercises
   </a>
   
-    <nav class="md-nav" aria-label="⭐ Exercices supplémentaires">
+    <nav class="md-nav" aria-label="⭐ Supplementary exercises">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exercice-8-comprendre-et-manipuler-umask" class="md-nav__link">
-    Exercice 8 — Comprendre et manipuler umask ⭐
+  <a href="#exercise-8-understanding-and-manipulating-umask" class="md-nav__link">
+    Exercise 8 — Understanding and manipulating umask ⭐
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#exercice-9-permissions-speciales-suid-sgid-sticky-bit" class="md-nav__link">
-    Exercice 9 — Permissions spéciales : SUID, SGID, sticky bit ⭐
+  <a href="#exercise-9-special-permissions-suid-sgid-sticky-bit" class="md-nav__link">
+    Exercise 9 — Special permissions: SUID, SGID, sticky bit ⭐
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#exercice-10-script-daudit-de-permissions" class="md-nav__link">
-    Exercice 10 — Script d’audit de permissions ⭐
+  <a href="#exercise-10-permissions-audit-script" class="md-nav__link">
+    Exercise 10 — Permissions audit script ⭐
   </a>
   
 </li>
@@ -733,8 +733,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pour-aller-plus-loin-lectures-recommandees" class="md-nav__link">
-    Pour aller plus loin (lectures recommandées)
+  <a href="#further-reading-recommended" class="md-nav__link">
+    Further reading (recommended)
   </a>
   
 </li>
@@ -758,7 +758,7 @@
         
   
   <span class="md-ellipsis">
-    TP3 - Environnement de travail et Compilateur C
+    Lab 3 - Working Environment and C Compiler
   </span>
   
 
@@ -778,7 +778,7 @@
         
   
   <span class="md-ellipsis">
-    TP4 - Canaux standards et redirections | Processus et tâches | Signaux
+    Lab 4 - Standard Channels and Redirections | Processes and Jobs | Signals
   </span>
   
 
@@ -798,7 +798,7 @@
         
   
   <span class="md-ellipsis">
-    Quelques commandes supplémentaires
+    Additional Commands
   </span>
   
 
@@ -828,7 +828,7 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -837,21 +837,21 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Table des matières
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-systeme-de-fichiers-linux" class="md-nav__link">
-    1. Système de fichiers Linux
+  <a href="#1-linux-file-system" class="md-nav__link">
+    1. Linux file system
   </a>
   
-    <nav class="md-nav" aria-label="1. Système de fichiers Linux">
+    <nav class="md-nav" aria-label="1. Linux file system">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exercice-1-id-et-etcpasswd" class="md-nav__link">
-    Exercice 1 — id et /etc/passwd 📚
+  <a href="#exercise-1-id-and-etcpasswd" class="md-nav__link">
+    Exercise 1 — id and /etc/passwd 📚
   </a>
   
 </li>
@@ -862,30 +862,30 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-permissions-associees-aux-fichiers" class="md-nav__link">
-    2. Permissions associées aux fichiers
+  <a href="#2-permissions-associated-with-files" class="md-nav__link">
+    2. Permissions associated with files
   </a>
   
-    <nav class="md-nav" aria-label="2. Permissions associées aux fichiers">
+    <nav class="md-nav" aria-label="2. Permissions associated with files">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exercice-2-lire-les-permissions" class="md-nav__link">
-    Exercice 2 — Lire les permissions 📚
+  <a href="#exercise-2-reading-permissions" class="md-nav__link">
+    Exercise 2 — Reading permissions 📚
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#exercice-3-modification-des-permissions-chmod" class="md-nav__link">
-    Exercice 3 — Modification des permissions chmod 📚📚
+  <a href="#exercise-3-modifying-permissions-with-chmod" class="md-nav__link">
+    Exercise 3 — Modifying permissions with chmod 📚📚
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#exercice-4-effet-des-permissions-sur-les-operations" class="md-nav__link">
-    Exercice 4 — Effet des permissions sur les opérations 📚📚
+  <a href="#exercise-4-effect-of-permissions-on-operations" class="md-nav__link">
+    Exercise 4 — Effect of permissions on operations 📚📚
   </a>
   
 </li>
@@ -896,16 +896,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-permissions-associees-aux-repertoires" class="md-nav__link">
-    3. Permissions associées aux répertoires
+  <a href="#3-permissions-associated-with-directories" class="md-nav__link">
+    3. Permissions associated with directories
   </a>
   
-    <nav class="md-nav" aria-label="3. Permissions associées aux répertoires">
+    <nav class="md-nav" aria-label="3. Permissions associated with directories">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exercice-5-permissions-sur-les-repertoires" class="md-nav__link">
-    Exercice 5 — Permissions sur les répertoires 📚📚📚
+  <a href="#exercise-5-permissions-on-directories" class="md-nav__link">
+    Exercise 5 — Permissions on directories 📚📚📚
   </a>
   
 </li>
@@ -916,16 +916,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-le-path" class="md-nav__link">
-    4. Le PATH
+  <a href="#4-the-path" class="md-nav__link">
+    4. The PATH
   </a>
   
-    <nav class="md-nav" aria-label="4. Le PATH">
+    <nav class="md-nav" aria-label="4. The PATH">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exercice-6-les-repertoires-du-path" class="md-nav__link">
-    Exercice 6 — Les répertoires du PATH 📚📚📚
+  <a href="#exercise-6-the-path-directories" class="md-nav__link">
+    Exercise 6 — The PATH directories 📚📚📚
   </a>
   
 </li>
@@ -936,16 +936,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-recapitulatif-sur-les-permissions" class="md-nav__link">
-    5. Récapitulatif sur les permissions
+  <a href="#5-permissions-recap" class="md-nav__link">
+    5. Permissions recap
   </a>
   
-    <nav class="md-nav" aria-label="5. Récapitulatif sur les permissions">
+    <nav class="md-nav" aria-label="5. Permissions recap">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exercice-7-on-lache-le-clavier" class="md-nav__link">
-    Exercice 7 — On lâche le clavier 📚📚📚
+  <a href="#exercise-7-hands-off-the-keyboard" class="md-nav__link">
+    Exercise 7 — Hands off the keyboard 📚📚📚
   </a>
   
 </li>
@@ -956,37 +956,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#synthese-ce-que-vous-devez-savoir-faire" class="md-nav__link">
-    Synthèse — Ce que vous devez savoir faire
+  <a href="#summary-what-you-should-be-able-to-do" class="md-nav__link">
+    Summary — What you should be able to do
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#exercices-supplementaires" class="md-nav__link">
-    ⭐ Exercices supplémentaires
+  <a href="#supplementary-exercises" class="md-nav__link">
+    ⭐ Supplementary exercises
   </a>
   
-    <nav class="md-nav" aria-label="⭐ Exercices supplémentaires">
+    <nav class="md-nav" aria-label="⭐ Supplementary exercises">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exercice-8-comprendre-et-manipuler-umask" class="md-nav__link">
-    Exercice 8 — Comprendre et manipuler umask ⭐
+  <a href="#exercise-8-understanding-and-manipulating-umask" class="md-nav__link">
+    Exercise 8 — Understanding and manipulating umask ⭐
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#exercice-9-permissions-speciales-suid-sgid-sticky-bit" class="md-nav__link">
-    Exercice 9 — Permissions spéciales : SUID, SGID, sticky bit ⭐
+  <a href="#exercise-9-special-permissions-suid-sgid-sticky-bit" class="md-nav__link">
+    Exercise 9 — Special permissions: SUID, SGID, sticky bit ⭐
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#exercice-10-script-daudit-de-permissions" class="md-nav__link">
-    Exercice 10 — Script d’audit de permissions ⭐
+  <a href="#exercise-10-permissions-audit-script" class="md-nav__link">
+    Exercise 10 — Permissions audit script ⭐
   </a>
   
 </li>
@@ -997,8 +997,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pour-aller-plus-loin-lectures-recommandees" class="md-nav__link">
-    Pour aller plus loin (lectures recommandées)
+  <a href="#further-reading-recommended" class="md-nav__link">
+    Further reading (recommended)
   </a>
   
 </li>
@@ -1018,67 +1018,67 @@
                   
 
 
-<h1 id="tp2-systeme-de-fichiers-et-permissions">TP2 — Système de fichiers et permissions<a class="headerlink" href="#tp2-systeme-de-fichiers-et-permissions" title="Permanent link">&para;</a></h1>
+<h1 id="lab-2-file-system-and-permissions">Lab 2 — File system and permissions<a class="headerlink" href="#lab-2-file-system-and-permissions" title="Permanent link">&para;</a></h1>
 <div class="admonition objectifs">
-<p class="admonition-title">Objectifs pédagogiques (taxonomie de Bloom révisée)</p>
-<p>À l’issue de ce TP, vous serez capable de :</p>
+<p class="admonition-title">Learning objectives (revised Bloom's taxonomy)</p>
+<p>By the end of this lab, you will be able to:</p>
 <ul>
-<li><strong>[Comprendre]</strong> la structure hiérarchique du système de fichiers Linux (répertoires standards, <code>/etc/passwd</code>, notion d’utilisateur et de groupe).</li>
-<li><strong>[Appliquer]</strong> lire les permissions d’un fichier ou d’un répertoire (<code>ls -l</code>, <code>ls -ld</code>) en notations symbolique et octale.</li>
-<li><strong>[Appliquer]</strong> modifier les permissions avec <code>chmod</code> (notations symbolique et octale).</li>
-<li><strong>[Analyser]</strong> distinguer les permissions sur fichiers vs sur répertoires (<code>r</code>, <code>w</code>, <code>x</code>).</li>
-<li><strong>[Analyser]</strong> comprendre le rôle de la variable <code>PATH</code> dans la résolution des commandes.</li>
-<li><strong>[Évaluer]</strong> déterminer les permissions <strong>minimales</strong> nécessaires à une opération donnée.</li>
-<li><strong>[Analyser]</strong> comprendre et manipuler le masque <code>umask</code>.</li>
+<li><strong>[Understand]</strong> the hierarchical structure of the Linux file system (standard directories, <code>/etc/passwd</code>, notion of user and group).</li>
+<li><strong>[Apply]</strong> read the permissions of a file or directory (<code>ls -l</code>, <code>ls -ld</code>) in symbolic and octal notations.</li>
+<li><strong>[Apply]</strong> modify permissions with <code>chmod</code> (symbolic and octal notations).</li>
+<li><strong>[Analyze]</strong> distinguish permissions on files vs. directories (<code>r</code>, <code>w</code>, <code>x</code>).</li>
+<li><strong>[Analyze]</strong> understand the role of the <code>PATH</code> variable in command resolution.</li>
+<li><strong>[Evaluate]</strong> determine the <strong>minimum</strong> permissions required for a given operation.</li>
+<li><strong>[Analyze]</strong> understand and manipulate the <code>umask</code> mask.</li>
 </ul>
 <blockquote>
-<p><strong>Référence</strong> : Anderson, L. W., &amp; Krathwohl, D. R. (2001). <em>A Taxonomy for Learning, Teaching, and Assessing</em>. Longman. ISBN 978-0801319037.</p>
+<p><strong>Reference</strong>: Anderson, L. W., &amp; Krathwohl, D. R. (2001). <em>A Taxonomy for Learning, Teaching, and Assessing</em>. Longman. ISBN 978-0801319037.</p>
 </blockquote>
 </div>
 <div class="admonition tip">
-<p class="admonition-title">Prérequis</p>
+<p class="admonition-title">Prerequisites</p>
 <ul>
-<li><strong>TP1 terminé</strong> : navigation, création/manipulation de fichiers, consultation de <code>man</code>.</li>
-<li>Distribution Debian 12 installée <strong>ou</strong> session MarioNum active.</li>
-<li>Terminal ouvert et prompt <code>$</code> visible.</li>
+<li><strong>Lab 1 completed</strong>: navigation, file creation/manipulation, use of <code>man</code>.</li>
+<li>Debian 12 distribution installed <strong>or</strong> active MarioNum session.</li>
+<li>Terminal open and <code>$</code> prompt visible.</li>
 </ul>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Instructions</p>
 <ul>
-<li>Le <code>$</code> en début de commande représente le prompt et ne doit pas être saisi.</li>
-<li>Pour chaque nouvelle commande, consultez <code>man</code> ou <code>--help</code>.</li>
+<li>The <code>$</code> at the beginning of a command represents the prompt and should not be typed.</li>
+<li>For each new command, consult <code>man</code> or <code>--help</code>.</li>
 </ul>
 </div>
 <div class="admonition warning">
-<p class="admonition-title">À propos des réponses du TP</p>
-<p>Avant de commencer, créez un fichier nommé <strong><code>resultat_commande_TP2_NomPrenomEtudiant.txt</code></strong>.
-Vous y consignerez progressivement les résultats des commandes.</p>
+<p class="admonition-title">About lab answers</p>
+<p>Before you begin, create a file named <strong><code>resultat_commande_TP2_StudentLastnameFirstname.txt</code></strong>.
+You will progressively record your command results there.</p>
 <blockquote>
-<p><strong>Création du fichier</strong></p>
+<p><strong>Creating the file</strong></p>
 </blockquote>
 <ol>
-<li>Clic droit dans votre répertoire de travail</li>
-<li>Créer un document → Fichier vide</li>
-<li>Nommez : <code>resultat_commande_TP2_NomPrenomEtudiant.txt</code></li>
+<li>Right-click in your working directory</li>
+<li>Create a document → Empty file</li>
+<li>Name it: <code>resultat_commande_TP2_StudentLastnameFirstname.txt</code></li>
 </ol>
 <blockquote>
-<p><strong>Notez bien :</strong></p>
+<p><strong>Please note:</strong></p>
 <blockquote>
 <ul>
 <li>
-<p><span style="color:blue"> Votre enseignant doit pouvoir consulter ce fichier à tout moment. </span></p>
+<p><span style="color:blue"> Your instructor must be able to view this file at any time. </span></p>
 </li>
 <li>
-<p><span style="color:red"> Sauvegardez ce fichier <strong>en local</strong> avant la fin de la séance. </span></p>
+<p><span style="color:red"> Save this file <strong>locally</strong> before the end of the session. </span></p>
 <blockquote>
-<p><strong>Procédure de sauvegarde en local</strong> :</p>
+<p><strong>Local backup procedure</strong>:</p>
 </blockquote>
 <ol>
-<li>Cliquez sur le <strong>presse-papier</strong> (à gauche du Bureau de la VM).
-<img alt="PressePapier" src="../../assets/img/PressePapier.png" /></li>
-<li>Sélectionnez le contenu et copiez.</li>
-<li>Collez sur votre machine hôte.</li>
+<li>Click on the <strong>clipboard</strong> (to the left of the VM Desktop).
+<img alt="PressePapier" src="../../../assets/img/PressePapier.png" /></li>
+<li>Select the content and copy it.</li>
+<li>Paste it on your host machine.</li>
 </ol>
 </li>
 </ul>
@@ -1086,146 +1086,146 @@ Vous y consignerez progressivement les résultats des commandes.</p>
 </blockquote>
 </div>
 <div class="admonition tip">
-<p class="admonition-title">Barème d’interprétation des exercices</p>
+<p class="admonition-title">Exercise difficulty scale</p>
 <blockquote>
-<p>📚 = Facile · 📚📚 = Moyenne · 📚📚📚 = Élevée</p>
-<p>Les exercices <strong>1 à 7</strong> constituent le <strong>tronc commun</strong>, exigible pour tous.
-Les exercices <strong>8, 9, 10</strong> sont des <strong>exercices supplémentaires</strong> (⭐).</p>
+<p>📚 = Easy · 📚📚 = Medium · 📚📚📚 = Advanced</p>
+<p>Exercises <strong>1 to 7</strong> form the <strong>core curriculum</strong>, required for everyone.
+Exercises <strong>8, 9, 10</strong> are <strong>supplementary exercises</strong> (⭐).</p>
 </blockquote>
 </div>
 <div class="admonition info">
-<p class="admonition-title">Alignement avec les évaluations (Biggs, 1996)</p>
-<p>Les exercices 📚 et 📚📚 préparent au <strong>CC S38</strong> et au <strong>TP noté S40</strong>.
-Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur dimension d’analyse et de justification.</p>
+<p class="admonition-title">Alignment with assessments (Biggs, 1996)</p>
+<p>The 📚 and 📚📚 exercises prepare for the <strong>CC S38</strong> and the <strong>graded lab S40</strong>.
+The 📚📚📚 exercises prepare for the <strong>DE S42 (MCQ)</strong> through their analysis and justification dimension.</p>
 <blockquote>
-<p><strong>Référence</strong> : Biggs, J. (1996). Enhancing teaching through constructive alignment. <em>Higher Education</em>, 32(3), 347–364. DOI : <a href="https://doi.org/10.1007/BF00138871">10.1007/BF00138871</a>.</p>
+<p><strong>Reference</strong>: Biggs, J. (1996). Enhancing teaching through constructive alignment. <em>Higher Education</em>, 32(3), 347–364. DOI: <a href="https://doi.org/10.1007/BF00138871">10.1007/BF00138871</a>.</p>
 </blockquote>
 </div>
 <hr />
-<h2 id="1-systeme-de-fichiers-linux">1. Système de fichiers Linux<a class="headerlink" href="#1-systeme-de-fichiers-linux" title="Permanent link">&para;</a></h2>
+<h2 id="1-linux-file-system">1. Linux file system<a class="headerlink" href="#1-linux-file-system" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
-<p class="admonition-title">Une arborescence unique</p>
-<p>Le système de fichiers Linux est une <strong>hiérarchie</strong> partant de la racine <code>/</code>. Tous les répertoires sont des sous-répertoires de <code>/</code>. Contrairement à Windows, il n’y a pas de lettre de lecteur : disques et partitions sont <strong>montés</strong> dans l’arborescence unique.</p>
-<p>Un système Linux typique comporte des <strong>dizaines de milliers</strong> de fichiers système. La plupart ne sont utilisés que par le noyau ou les services. En pratique, ce qui vous concerne se trouve dans <code>/home</code> (fichiers personnels), <code>/tmp</code> (fichiers temporaires) et <code>/etc</code> (configuration).</p>
+<p class="admonition-title">A single tree structure</p>
+<p>The Linux file system is a <strong>hierarchy</strong> starting from the root <code>/</code>. All directories are subdirectories of <code>/</code>. Unlike Windows, there are no drive letters: disks and partitions are <strong>mounted</strong> within the single tree structure.</p>
+<p>A typical Linux system contains <strong>tens of thousands</strong> of system files. Most are only used by the kernel or services. In practice, what concerns you is found in <code>/home</code> (personal files), <code>/tmp</code> (temporary files), and <code>/etc</code> (configuration).</p>
 <table>
 <thead>
 <tr>
-<th>Répertoire</th>
+<th>Directory</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>/</code></td>
-<td>Racine de l’arborescence</td>
+<td>Root of the tree structure</td>
 </tr>
 <tr>
 <td><code>/bin</code></td>
-<td>Programmes essentiels au fonctionnement du système</td>
+<td>Essential programs for system operation</td>
 </tr>
 <tr>
 <td><code>/boot</code></td>
-<td>Fichiers nécessaires au démarrage</td>
+<td>Files needed for booting</td>
 </tr>
 <tr>
 <td><code>/dev</code></td>
-<td>Fichiers spéciaux représentant les périphériques</td>
+<td>Special files representing devices</td>
 </tr>
 <tr>
 <td><code>/etc</code></td>
-<td>Fichiers de configuration du système</td>
+<td>System configuration files</td>
 </tr>
 <tr>
 <td><code>/home</code></td>
-<td>Répertoires personnels des utilisateurs</td>
+<td>Users' personal directories</td>
 </tr>
 <tr>
 <td><code>/lib</code></td>
-<td>Bibliothèques partagées, modules du noyau</td>
+<td>Shared libraries, kernel modules</td>
 </tr>
 <tr>
 <td><code>/media</code>, <code>/mnt</code></td>
-<td>Points de montage de systèmes de fichiers</td>
+<td>File system mount points</td>
 </tr>
 <tr>
 <td><code>/opt</code></td>
-<td>Logiciels additionnels</td>
+<td>Additional software</td>
 </tr>
 <tr>
 <td><code>/proc</code></td>
-<td>Système de fichiers virtuel : infos sur processus</td>
+<td>Virtual file system: process information</td>
 </tr>
 <tr>
 <td><code>/root</code></td>
-<td>Répertoire personnel de l’administrateur</td>
+<td>Administrator's personal directory</td>
 </tr>
 <tr>
 <td><code>/sbin</code></td>
-<td>Programmes d’administration système</td>
+<td>System administration programs</td>
 </tr>
 <tr>
 <td><code>/tmp</code></td>
-<td>Fichiers temporaires</td>
+<td>Temporary files</td>
 </tr>
 <tr>
 <td><code>/usr</code></td>
-<td>Programmes et bibliothèques (<code>/usr/bin</code>, <code>/usr/lib</code>…)</td>
+<td>Programs and libraries (<code>/usr/bin</code>, <code>/usr/lib</code>…)</td>
 </tr>
 <tr>
 <td><code>/var</code></td>
-<td>Fichiers variables (journaux, mails, bases…)</td>
+<td>Variable files (logs, mail, databases…)</td>
 </tr>
 </tbody>
 </table>
 <blockquote>
-<p><strong>Référence</strong> : <em>Filesystem Hierarchy Standard</em>, v3.0, The Linux Foundation, 2015. <a href="https://refspecs.linuxfoundation.org/fhs.shtml">https://refspecs.linuxfoundation.org/fhs.shtml</a></p>
+<p><strong>Reference</strong>: <em>Filesystem Hierarchy Standard</em>, v3.0, The Linux Foundation, 2015. <a href="https://refspecs.linuxfoundation.org/fhs.shtml">https://refspecs.linuxfoundation.org/fhs.shtml</a></p>
 </blockquote>
 </div>
-<h3 id="exercice-1-id-et-etcpasswd">Exercice 1 — <code>id</code> et <code>/etc/passwd</code> 📚<a class="headerlink" href="#exercice-1-id-et-etcpasswd" title="Permanent link">&para;</a></h3>
+<h3 id="exercise-1-id-and-etcpasswd">Exercise 1 — <code>id</code> and <code>/etc/passwd</code> 📚<a class="headerlink" href="#exercise-1-id-and-etcpasswd" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Entrez la commande suivante et notez le résultat :
+<li>Enter the following command and note the result:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span>id
 </span></code></pre></div></li>
-<li>Tapez la même commande avec l’argument <code>root</code> :
+<li>Type the same command with the argument <code>root</code>:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span>id<span class="w"> </span>root
 </span></code></pre></div></li>
-<li>Affichez le contenu de <code>/etc/passwd</code> avec <code>cat</code>.</li>
-<li>Recherchez les lignes correspondant à votre nom d’utilisateur et à <code>root</code>. Quelles sont les différences ?</li>
-<li>Pouvez-vous déduire à quoi sert le fichier <code>/etc/passwd</code> ?</li>
+<li>Display the contents of <code>/etc/passwd</code> using <code>cat</code>.</li>
+<li>Find the lines corresponding to your username and to <code>root</code>. What are the differences?</li>
+<li>Can you deduce what the <code>/etc/passwd</code> file is used for?</li>
 </ol>
 <hr />
-<h2 id="2-permissions-associees-aux-fichiers">2. Permissions associées aux fichiers<a class="headerlink" href="#2-permissions-associees-aux-fichiers" title="Permanent link">&para;</a></h2>
+<h2 id="2-permissions-associated-with-files">2. Permissions associated with files<a class="headerlink" href="#2-permissions-associated-with-files" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
-<p class="admonition-title">Protection des fichiers</p>
-<p>Un système Linux permet à plusieurs utilisateurs d’accéder aux fichiers. Pour les protéger, Linux utilise un système de <strong>permissions</strong> associées à trois catégories :</p>
+<p class="admonition-title">File protection</p>
+<p>A Linux system allows multiple users to access files. To protect them, Linux uses a <strong>permissions</strong> system associated with three categories:</p>
 <ul>
-<li>le <strong>propriétaire</strong> (<code>u</code> — <em>user</em>) : généralement le créateur du fichier ;</li>
-<li>le <strong>groupe</strong> propriétaire (<code>g</code> — <em>group</em>) ;</li>
-<li>les <strong>autres</strong> utilisateurs (<code>o</code> — <em>others</em>).</li>
+<li>the <strong>owner</strong> (<code>u</code> — <em>user</em>): generally the file's creator;</li>
+<li>the <strong>owning group</strong> (<code>g</code> — <em>group</em>);</li>
+<li><strong>others</strong> (<code>o</code> — <em>others</em>).</li>
 </ul>
-<p>Pour un <strong>fichier ordinaire</strong> :</p>
+<p>For a <strong>regular file</strong>:</p>
 <ul>
-<li><strong><code>r</code></strong> (<em>read</em>) : lecture du contenu ;</li>
-<li><strong><code>w</code></strong> (<em>write</em>) : modification du contenu ;</li>
-<li><strong><code>x</code></strong> (<em>execute</em>) : exécution (si programme ou script).</li>
+<li><strong><code>r</code></strong> (<em>read</em>): reading the content;</li>
+<li><strong><code>w</code></strong> (<em>write</em>): modifying the content;</li>
+<li><strong><code>x</code></strong> (<em>execute</em>): execution (if program or script).</li>
 </ul>
-<p>L’option <code>-l</code> de <code>ls</code> affiche les métadonnées :</p>
+<p>The <code>-l</code> option of <code>ls</code> displays metadata:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>fichier
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>user<span class="w"> </span>group<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">2024</span>-09-09<span class="w"> </span><span class="m">10</span>:00<span class="w"> </span>fichier
 </span></code></pre></div>
-<p>La chaîne <code>-rw-r--r--</code> se lit :</p>
+<p>The string <code>-rw-r--r--</code> is read as:</p>
 <ul>
-<li><strong>1er caractère</strong> : type (<code>-</code> fichier ordinaire, <code>d</code> répertoire, <code>l</code> lien symbolique…).</li>
-<li><strong>caractères 2–4</strong> : permissions du propriétaire.</li>
-<li><strong>caractères 5–7</strong> : permissions du groupe.</li>
-<li><strong>caractères 8–10</strong> : permissions des autres.</li>
+<li><strong>1st character</strong>: type (<code>-</code> regular file, <code>d</code> directory, <code>l</code> symbolic link…).</li>
+<li><strong>characters 2–4</strong>: owner permissions.</li>
+<li><strong>characters 5–7</strong>: group permissions.</li>
+<li><strong>characters 8–10</strong>: others' permissions.</li>
 </ul>
-<p>Correspondance octale ↔ symbolique :</p>
+<p>Octal ↔ symbolic correspondence:</p>
 <table>
 <thead>
 <tr>
-<th>Chiffre</th>
-<th>Lettre</th>
+<th>Digit</th>
+<th>Letters</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -1233,63 +1233,63 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <tr>
 <td>0</td>
 <td><code>---</code></td>
-<td>Aucune permission</td>
+<td>No permission</td>
 </tr>
 <tr>
 <td>1</td>
 <td><code>--x</code></td>
-<td>Exécution</td>
+<td>Execute</td>
 </tr>
 <tr>
 <td>2</td>
 <td><code>-w-</code></td>
-<td>Écriture</td>
+<td>Write</td>
 </tr>
 <tr>
 <td>3</td>
 <td><code>-wx</code></td>
-<td>Écriture et exécution</td>
+<td>Write and execute</td>
 </tr>
 <tr>
 <td>4</td>
 <td><code>r--</code></td>
-<td>Lecture</td>
+<td>Read</td>
 </tr>
 <tr>
 <td>5</td>
 <td><code>r-x</code></td>
-<td>Lecture et exécution</td>
+<td>Read and execute</td>
 </tr>
 <tr>
 <td>6</td>
 <td><code>rw-</code></td>
-<td>Lecture et écriture</td>
+<td>Read and write</td>
 </tr>
 <tr>
 <td>7</td>
 <td><code>rwx</code></td>
-<td>Lecture, écriture et exécution</td>
+<td>Read, write, and execute</td>
 </tr>
 </tbody>
 </table>
 </div>
-<h3 id="exercice-2-lire-les-permissions">Exercice 2 — Lire les permissions 📚<a class="headerlink" href="#exercice-2-lire-les-permissions" title="Permanent link">&para;</a></h3>
+<h3 id="exercise-2-reading-permissions">Exercise 2 — Reading permissions 📚<a class="headerlink" href="#exercise-2-reading-permissions" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Créez un répertoire vide et un fichier vide, au même niveau. Avec <code>ls -l</code> et <code>ls -ld</code>, déterminez les permissions du propriétaire, du groupe et des autres. Comment reconnaissez-vous un répertoire ?</li>
-<li>Les lignes suivantes donnent la réponse de <code>ls -ld</code> sur différents fichiers :
+<li>Create an empty directory and an empty file, at the same level. Using <code>ls -l</code> and <code>ls -ld</code>, determine the permissions of the owner, the group, and others. How do you recognize a directory?</li>
+<li>The following lines show the output of <code>ls -ld</code> on different files:
    <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>drwxr-xr-x a
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>dr-xr--r-- b
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>-rw-r--r-- c.txt
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>--w--w-r-- d.c
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>-rwxr-xr-x op
 </span></code></pre></div>
-   Parmi ces fichiers, lesquels sont des <strong>répertoires</strong> ?</li>
-<li>Pour chacun des fichiers ci-dessus, donnez les permissions en représentations <strong>symbolique</strong> et <strong>octale</strong>.</li>
-<li>Donnez les représentations symbolique et octale des permissions de <code>/etc/passwd</code>, de la commande <code>ls</code> et de votre répertoire personnel.</li>
+   Among these files, which ones are <strong>directories</strong>?</li>
+<li>For each of the files above, give the permissions in <strong>symbolic</strong> and <strong>octal</strong> representations.</li>
+<li>Give the symbolic and octal representations of the permissions of <code>/etc/passwd</code>, of the <code>ls</code> command, and of your home directory.</li>
 </ol>
-<h3 id="exercice-3-modification-des-permissions-chmod">Exercice 3 — Modification des permissions <code>chmod</code> 📚📚<a class="headerlink" href="#exercice-3-modification-des-permissions-chmod" title="Permanent link">&para;</a></h3>
+<h3 id="exercise-3-modifying-permissions-with-chmod">Exercise 3 — Modifying permissions with <code>chmod</code> 📚📚<a class="headerlink" href="#exercise-3-modifying-permissions-with-chmod" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Testez les commandes suivantes et essayez de comprendre <code>chmod</code> en notation <strong>symbolique</strong> :
+<li>Test the following commands and try to understand <code>chmod</code> in <strong>symbolic</strong> notation:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>touch<span class="w"> </span>f<span class="p">;</span><span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>f
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>$<span class="w"> </span>chmod<span class="w"> </span><span class="nv">a</span><span class="o">=</span><span class="w"> </span>f<span class="p">;</span><span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>f
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>$<span class="w"> </span>chmod<span class="w"> </span>o+rw<span class="w"> </span>f<span class="p">;</span><span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>f
@@ -1298,69 +1298,69 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 </span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>$<span class="w"> </span>chmod<span class="w"> </span>g+u<span class="w"> </span>f<span class="p">;</span><span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>f
 </span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>$<span class="w"> </span>chmod<span class="w"> </span>a+x,g-w<span class="w"> </span>f<span class="p">;</span><span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>f
 </span></code></pre></div></li>
-<li>Testez <code>chmod 644 f; ls -l f</code>. Que fait cette commande ?</li>
-<li>Avec les <strong>deux notations</strong> (octale et symbolique), modifiez les permissions de <code>f</code> pour obtenir :</li>
-<li>exécution pour tous, lecture et écriture uniquement pour le propriétaire ;</li>
-<li>lecture et exécution pour tous, personne ne peut écrire ;</li>
-<li>toutes les permissions pour tous, pas d’écriture pour les autres ;</li>
-<li>lecture et écriture pour le propriétaire, exécution pour le groupe, aucune pour les autres.</li>
+<li>Test <code>chmod 644 f; ls -l f</code>. What does this command do?</li>
+<li>Using <strong>both notations</strong> (octal and symbolic), modify the permissions of <code>f</code> to obtain:</li>
+<li>execute for all, read and write only for the owner;</li>
+<li>read and execute for all, no one can write;</li>
+<li>all permissions for all, no write for others;</li>
+<li>read and write for the owner, execute for the group, none for others.</li>
 </ol>
-<h3 id="exercice-4-effet-des-permissions-sur-les-operations">Exercice 4 — Effet des permissions sur les opérations 📚📚<a class="headerlink" href="#exercice-4-effet-des-permissions-sur-les-operations" title="Permanent link">&para;</a></h3>
+<h3 id="exercise-4-effect-of-permissions-on-operations">Exercise 4 — Effect of permissions on operations 📚📚<a class="headerlink" href="#exercise-4-effect-of-permissions-on-operations" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Dans un répertoire de votre choix, créez deux fichiers <code>f</code> et <code>g</code>. Entrez du texte dans chacun avec un éditeur.</li>
-<li>Pour vous (propriétaire) :</li>
-<li>retirez la permission de <strong>lire</strong> dans <code>f</code> ;</li>
-<li>retirez la permission d’<strong>écrire</strong> dans <code>g</code>.</li>
-<li>Testez et notez les résultats :
+<li>In a directory of your choice, create two files <code>f</code> and <code>g</code>. Enter some text in each using an editor.</li>
+<li>For yourself (owner):</li>
+<li>remove the <strong>read</strong> permission on <code>f</code>;</li>
+<li>remove the <strong>write</strong> permission on <code>g</code>.</li>
+<li>Test and note the results:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span>cat<span class="w"> </span>f
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>$<span class="w"> </span>cat<span class="w"> </span>g
 </span></code></pre></div></li>
-<li>Essayez de modifier <code>g</code> avec un éditeur de texte. Que se passe-t-il ?</li>
-<li>Testez :
+<li>Try to modify <code>g</code> with a text editor. What happens?</li>
+<li>Test:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span>cp<span class="w"> </span>f<span class="w"> </span>h
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>$<span class="w"> </span>cp<span class="w"> </span>g<span class="w"> </span>h
 </span></code></pre></div>
-   Puis observez le contenu de <code>h</code> et ses permissions.</li>
-<li>La commande suivante ajoute la chaîne <code>toto</code> à la fin de <code>f</code> (vu au TP4) :
+   Then observe the contents of <code>h</code> and its permissions.</li>
+<li>The following command appends the string <code>toto</code> to the end of <code>f</code> (seen in Lab 4):
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;toto&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>f
 </span></code></pre></div>
-   Testez, puis redonnez-vous la lecture sur <code>f</code>, et affichez son contenu avec <code>cat</code>.</li>
-<li>Testez :
+   Test it, then give yourself back read permission on <code>f</code>, and display its contents with <code>cat</code>.</li>
+<li>Test:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>rm<span class="w"> </span>g
 </span></code></pre></div>
-   <strong>Tapez <code>n</code> pour refuser</strong>. Puis testez :
+   <strong>Type <code>n</code> to refuse</strong>. Then test:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>g
 </span></code></pre></div>
-   La commande a-t-elle réussi ? Qu’en déduisez-vous ?</li>
+   Did the command succeed? What can you conclude?</li>
 </ol>
 <hr />
-<h2 id="3-permissions-associees-aux-repertoires">3. Permissions associées aux répertoires<a class="headerlink" href="#3-permissions-associees-aux-repertoires" title="Permanent link">&para;</a></h2>
+<h2 id="3-permissions-associated-with-directories">3. Permissions associated with directories<a class="headerlink" href="#3-permissions-associated-with-directories" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
-<p class="admonition-title">Qu’est-ce qu’un répertoire ?</p>
-<p>Un <strong>répertoire</strong> est une table associant des noms de fichiers à un numéro d’index appelé <strong>inode</strong>. L’inode contient les métadonnées (taille, permissions, horodatage, emplacement du contenu).</p>
-<p>Pour un <strong>répertoire</strong>, la sémantique des permissions diffère de celle d’un fichier :</p>
+<p class="admonition-title">What is a directory?</p>
+<p>A <strong>directory</strong> is a table associating file names with an index number called an <strong>inode</strong>. The inode contains metadata (size, permissions, timestamp, content location).</p>
+<p>For a <strong>directory</strong>, the semantics of permissions differ from those of a file:</p>
 <ul>
-<li><strong><code>r</code></strong> : permet de <strong>lister</strong> le contenu du répertoire.</li>
-<li><strong><code>w</code></strong> : permet de <strong>modifier</strong> le contenu (créer ou supprimer des fichiers).</li>
-<li><strong><code>x</code></strong> : permet d’<strong>entrer</strong> dans le répertoire (avec <code>cd</code>) et de traverser vers ses fichiers.</li>
+<li><strong><code>r</code></strong>: allows <strong>listing</strong> the contents of the directory.</li>
+<li><strong><code>w</code></strong>: allows <strong>modifying</strong> the contents (creating or deleting files).</li>
+<li><strong><code>x</code></strong>: allows <strong>entering</strong> the directory (with <code>cd</code>) and traversing to its files.</li>
 </ul>
 <blockquote>
-<p><strong>Référence</strong> : Bach, M. J. (1986). <em>The Design of the UNIX Operating System</em>. Prentice Hall. ISBN 978-0132017992. Chapitre 4 (Internal Representation of Files).</p>
+<p><strong>Reference</strong>: Bach, M. J. (1986). <em>The Design of the UNIX Operating System</em>. Prentice Hall. ISBN 978-0132017992. Chapter 4 (Internal Representation of Files).</p>
 </blockquote>
 </div>
-<h3 id="exercice-5-permissions-sur-les-repertoires">Exercice 5 — Permissions sur les répertoires 📚📚📚<a class="headerlink" href="#exercice-5-permissions-sur-les-repertoires" title="Permanent link">&para;</a></h3>
+<h3 id="exercise-5-permissions-on-directories">Exercise 5 — Permissions on directories 📚📚📚<a class="headerlink" href="#exercise-5-permissions-on-directories" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Créez un répertoire <code>rep</code> et deux fichiers normaux <code>a</code> et <code>b</code> à l’intérieur.</li>
-<li>Retirez <strong>toutes</strong> les permissions sur <code>rep</code> et essayez :
+<li>Create a directory <code>rep</code> and two regular files <code>a</code> and <code>b</code> inside it.</li>
+<li>Remove <strong>all</strong> permissions on <code>rep</code> and try:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>rep
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>$<span class="w"> </span>ls<span class="w"> </span>rep
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>$<span class="w"> </span>cat<span class="w"> </span>rep/a
 </span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>$<span class="w"> </span>touch<span class="w"> </span>rep/c
 </span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>$<span class="w"> </span>rm<span class="w"> </span>rep/a
 </span></code></pre></div></li>
-<li>Redonnez uniquement la permission <code>r</code> sur <code>rep</code> et refaites les commandes. Notez les différences.</li>
-<li>Même question avec uniquement <code>w</code> sur <code>rep</code>. Notez les différences.</li>
-<li>Uniquement <code>x</code> sur <code>rep</code> :
+<li>Give back only the <code>r</code> permission on <code>rep</code> and redo the commands. Note the differences.</li>
+<li>Same question with only <code>w</code> on <code>rep</code>. Note the differences.</li>
+<li>Only <code>x</code> on <code>rep</code>:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>rep
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>$<span class="w"> </span>ls<span class="w"> </span>rep
 </span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;toto&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>rep/a
@@ -1369,75 +1369,75 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 </span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>$<span class="w"> </span>touch<span class="w"> </span>rep/c
 </span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>$<span class="w"> </span>rm<span class="w"> </span>rep/a
 </span></code></pre></div></li>
-<li>Avec <code>-wx</code> sur <code>rep</code> pour tous, essayez de :</li>
-<li>créer un fichier <code>d</code> dans <code>rep</code> ;</li>
-<li>renommer <code>b</code> ;</li>
-<li>retirer toutes les permissions sur <code>d</code> ;</li>
-<li>supprimer <code>d</code>.</li>
+<li>With <code>-wx</code> on <code>rep</code> for all, try to:</li>
+<li>create a file <code>d</code> in <code>rep</code>;</li>
+<li>rename <code>b</code>;</li>
+<li>remove all permissions on <code>d</code>;</li>
+<li>delete <code>d</code>.</li>
 </ol>
 <div class="admonition info">
-<p class="admonition-title">Cet exercice est représentatif d’un item type <strong>DE S42 (QCM)</strong>.</p>
+<p class="admonition-title">This exercise is representative of a typical <strong>DE S42 (MCQ)</strong> item.</p>
 </div>
 <hr />
-<h2 id="4-le-path">4. Le <code>PATH</code><a class="headerlink" href="#4-le-path" title="Permanent link">&para;</a></h2>
+<h2 id="4-the-path">4. The <code>PATH</code><a class="headerlink" href="#4-the-path" title="Permanent link">&para;</a></h2>
 <div class="admonition tip">
-<p class="admonition-title">La variable d’environnement <code>PATH</code></p>
-<p>Quand vous tapez une commande sans chemin (par exemple <code>ls</code>), le shell la cherche dans une liste de répertoires stockée dans la variable <strong><code>PATH</code></strong>. Les répertoires sont séparés par <code>:</code>.</p>
-<p>L’ordre compte : le shell prend la <strong>première</strong> correspondance trouvée.</p>
+<p class="admonition-title">The <code>PATH</code> environment variable</p>
+<p>When you type a command without a path (for example <code>ls</code>), the shell looks for it in a list of directories stored in the <strong><code>PATH</code></strong> variable. The directories are separated by <code>:</code>.</p>
+<p>The order matters: the shell takes the <strong>first</strong> match found.</p>
 </div>
-<h3 id="exercice-6-les-repertoires-du-path">Exercice 6 — Les répertoires du <code>PATH</code> 📚📚📚<a class="headerlink" href="#exercice-6-les-repertoires-du-path" title="Permanent link">&para;</a></h3>
+<h3 id="exercise-6-the-path-directories">Exercise 6 — The <code>PATH</code> directories 📚📚📚<a class="headerlink" href="#exercise-6-the-path-directories" title="Permanent link">&para;</a></h3>
 <div class="admonition warning">
-<p class="admonition-title">Attention — exercice d’expérimentation</p>
-<p>Cet exercice est délicat et important. Prenez votre temps.</p>
+<p class="admonition-title">Caution — experimentation exercise</p>
+<p>This exercise is delicate and important. Take your time.</p>
 </div>
 <ol>
-<li>Dans un nouveau terminal :
+<li>In a new terminal:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$PATH</span>
 </span></code></pre></div>
-   Observez. À votre avis, à quoi correspondent les éléments séparés par <code>:</code> ?</li>
-<li>Créez un répertoire <code>bin</code> dans votre home et modifiez <code>PATH</code> :
+   Observe. In your opinion, what do the elements separated by <code>:</code> correspond to?</li>
+<li>Create a <code>bin</code> directory in your home and modify <code>PATH</code>:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>$<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>~/bin
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>$<span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>~/bin:<span class="nv">$PATH</span>
 </span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$PATH</span>
 </span></code></pre></div>
-   Quelle est la différence avec l’affichage de la question 1 ?</li>
-<li>Avec <code>type</code>, cherchez les chemins absolus de <code>cat</code> et <code>rm</code> et notez-les.</li>
-<li>Copiez <code>cat</code> dans <code>~/bin</code> en le renommant <code>rm</code>.</li>
-<li>Créez un fichier <code>fic</code> avec quelques caractères, et deux copies <code>fic2</code>, <code>fic3</code>.</li>
-<li>Essayez de détruire <code>fic</code> avec <code>rm</code>. Que s’est-il passé ?</li>
-<li>Entrez <code>type rm</code>.</li>
-<li>Lancez :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>$<span class="w"> </span>&lt;chemin<span class="w"> </span>absolu<span class="w"> </span>vers<span class="w"> </span>rm&gt;<span class="w"> </span>fic
+   What is the difference compared to the output from question 1?</li>
+<li>Using <code>type</code>, find the absolute paths of <code>cat</code> and <code>rm</code> and note them.</li>
+<li>Copy <code>cat</code> into <code>~/bin</code> renaming it <code>rm</code>.</li>
+<li>Create a file <code>fic</code> with a few characters, and two copies <code>fic2</code>, <code>fic3</code>.</li>
+<li>Try to delete <code>fic</code> using <code>rm</code>. What happened?</li>
+<li>Enter <code>type rm</code>.</li>
+<li>Run:
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>$<span class="w"> </span>&lt;absolute<span class="w"> </span>path<span class="w"> </span>to<span class="w"> </span>rm&gt;<span class="w"> </span>fic
 </span></code></pre></div>
-   <em>(en remplaçant <code>&lt;chemin absolu vers rm&gt;</code> par le chemin noté à la question 3)</em>. Que s’est-il passé ?</li>
-<li>Enlevez la permission <code>x</code> sur <code>~/bin/rm</code> et essayez de supprimer <code>fic2</code>.</li>
-<li>Demandez au shell d’oublier les emplacements cachés :
+   <em>(replacing <code>&lt;absolute path to rm&gt;</code> with the path noted in question 3)</em>. What happened?</li>
+<li>Remove the <code>x</code> permission on <code>~/bin/rm</code> and try to delete <code>fic2</code>.</li>
+<li>Ask the shell to forget cached locations:
     <div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$<span class="w"> </span><span class="nb">hash</span><span class="w"> </span>-r
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>$<span class="w"> </span><span class="nb">type</span><span class="w"> </span>rm
 </span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>$<span class="w"> </span>rm<span class="w"> </span>fic2
 </span></code></pre></div></li>
-<li>Remettez la permission <code>x</code> sur <code>~/bin/rm</code> et testez :
+<li>Restore the <code>x</code> permission on <code>~/bin/rm</code> and test:
     <div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>$<span class="w"> </span>~/bin/rm<span class="w"> </span>fic3
 </span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/bin
 </span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>$<span class="w"> </span>./rm<span class="w"> </span>fic3
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>$<span class="w"> </span>&lt;chemin<span class="w"> </span>absolu<span class="w"> </span>vers<span class="w"> </span>rm&gt;<span class="w"> </span>rm
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>$<span class="w"> </span>&lt;absolute<span class="w"> </span>path<span class="w"> </span>to<span class="w"> </span>rm&gt;<span class="w"> </span>rm
 </span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>$<span class="w"> </span>rm<span class="w"> </span>fic3
 </span></code></pre></div></li>
-<li><strong>Bilan</strong> — répondez :<ul>
-<li>Qu’est-ce qui est contenu dans <code>PATH</code> ?</li>
-<li>Dans quel cas un nom de commande est-il cherché dans les répertoires du <code>PATH</code> ?</li>
-<li>S’il y a plusieurs programmes correspondants, lequel est choisi ?</li>
+<li><strong>Summary</strong> — answer:<ul>
+<li>What is contained in <code>PATH</code>?</li>
+<li>In which case is a command name searched in the <code>PATH</code> directories?</li>
+<li>If there are multiple matching programs, which one is chosen?</li>
 </ul>
 </li>
 </ol>
 <hr />
-<h2 id="5-recapitulatif-sur-les-permissions">5. Récapitulatif sur les permissions<a class="headerlink" href="#5-recapitulatif-sur-les-permissions" title="Permanent link">&para;</a></h2>
-<h3 id="exercice-7-on-lache-le-clavier">Exercice 7 — On lâche le clavier 📚📚📚<a class="headerlink" href="#exercice-7-on-lache-le-clavier" title="Permanent link">&para;</a></h3>
+<h2 id="5-permissions-recap">5. Permissions recap<a class="headerlink" href="#5-permissions-recap" title="Permanent link">&para;</a></h2>
+<h3 id="exercise-7-hands-off-the-keyboard">Exercise 7 — Hands off the keyboard 📚📚📚<a class="headerlink" href="#exercise-7-hands-off-the-keyboard" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
-<p class="admonition-title">Consigne</p>
-<p>Cet exercice se fait <strong>à l’écrit</strong> — on lâche le clavier.</p>
+<p class="admonition-title">Instructions</p>
+<p>This exercise is done <strong>in writing</strong> — hands off the keyboard.</p>
 </div>
-<p>Pour chacune des commandes suivantes, dites <strong>quelles permissions sont nécessaires</strong> pour qu’elle réussisse (on suppose que tous les répertoires et fichiers existent, sauf ceux qu’on veut créer).</p>
+<p>For each of the following commands, state <strong>which permissions are required</strong> for it to succeed (assume that all directories and files exist, except those we want to create).</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>$<span class="w"> </span>cat<span class="w"> </span>/usr/include/stdio.h
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/usr/include/
 </span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>$<span class="w"> </span>ls<span class="w"> </span>/usr/include/
@@ -1448,139 +1448,139 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 </span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>$<span class="w"> </span>/usr/bin/uname
 </span></code></pre></div>
 <div class="admonition info">
-<p class="admonition-title">Cet exercice est représentatif d’un item type <strong>DE S42 (QCM)</strong>.</p>
+<p class="admonition-title">This exercise is representative of a typical <strong>DE S42 (MCQ)</strong> item.</p>
 </div>
 <hr />
-<h2 id="synthese-ce-que-vous-devez-savoir-faire">Synthèse — Ce que vous devez savoir faire<a class="headerlink" href="#synthese-ce-que-vous-devez-savoir-faire" title="Permanent link">&para;</a></h2>
+<h2 id="summary-what-you-should-be-able-to-do">Summary — What you should be able to do<a class="headerlink" href="#summary-what-you-should-be-able-to-do" title="Permanent link">&para;</a></h2>
 <div class="admonition success">
-<p class="admonition-title">Auto-évaluation rapide (tronc commun)</p>
-<p>Avant de quitter la séance, vérifiez que vous savez :</p>
+<p class="admonition-title">Quick self-assessment (core curriculum)</p>
+<p>Before leaving the session, verify that you can:</p>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Citer le rôle des principaux répertoires (<code>/etc</code>, <code>/home</code>, <code>/usr</code>, <code>/var</code>, <code>/bin</code>, <code>/tmp</code>).</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Interpréter <code>id</code> et le format de <code>/etc/passwd</code>.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Lire les 9 caractères de permissions et identifier propriétaire / groupe / autres.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Modifier les permissions avec <code>chmod</code> en notations <strong>symbolique</strong> et <strong>octale</strong>.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Expliquer la différence de sémantique de <code>r</code>, <code>w</code>, <code>x</code> entre <strong>fichiers</strong> et <strong>répertoires</strong>.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Décrire ce que contient <code>PATH</code> et comment le shell résout une commande.</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Déterminer les permissions minimales pour une opération donnée.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Name the role of the main directories (<code>/etc</code>, <code>/home</code>, <code>/usr</code>, <code>/var</code>, <code>/bin</code>, <code>/tmp</code>).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Interpret <code>id</code> and the format of <code>/etc/passwd</code>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Read the 9 permission characters and identify owner / group / others.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Modify permissions with <code>chmod</code> in <strong>symbolic</strong> and <strong>octal</strong> notations.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Explain the difference in semantics of <code>r</code>, <code>w</code>, <code>x</code> between <strong>files</strong> and <strong>directories</strong>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Describe what <code>PATH</code> contains and how the shell resolves a command.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Determine the minimum permissions for a given operation.</li>
 </ul>
-<p>Si un item n’est pas coché, <strong>revenez sur l’exercice correspondant</strong> avant le TP3.</p>
+<p>If an item is not checked, <strong>go back to the corresponding exercise</strong> before Lab 3.</p>
 </div>
 <hr />
-<h2 id="exercices-supplementaires">⭐ Exercices supplémentaires<a class="headerlink" href="#exercices-supplementaires" title="Permanent link">&para;</a></h2>
+<h2 id="supplementary-exercises">⭐ Supplementary exercises<a class="headerlink" href="#supplementary-exercises" title="Permanent link">&para;</a></h2>
 <div class="admonition star">
-<p class="admonition-title">À qui s’adressent les exercices 8, 9, 10 ?</p>
-<p>Vous avez terminé les exercices 1 à 7 ? Ces trois exercices <strong>approfondissent les concepts de permissions du TP2</strong> : masque de création (<code>umask</code>), permissions spéciales (<code>SUID</code>, <code>SGID</code>, <em>sticky bit</em>), et écriture d’un script d’audit de sécurité.</p>
-<p>Les niveaux taxonomiques visés sont <strong>[Analyser]</strong>, <strong>[Évaluer]</strong> et <strong>[Créer]</strong> (Bloom révisé).</p>
-<p>Ces exercices sont <strong>optionnels</strong> et <strong>non évalués</strong>.</p>
+<p class="admonition-title">Who are exercises 8, 9, 10 for?</p>
+<p>Have you completed exercises 1 to 7? These three exercises <strong>deepen the permission concepts from Lab 2</strong>: creation mask (<code>umask</code>), special permissions (<code>SUID</code>, <code>SGID</code>, <em>sticky bit</em>), and writing a security audit script.</p>
+<p>The targeted taxonomic levels are <strong>[Analyze]</strong>, <strong>[Evaluate]</strong>, and <strong>[Create]</strong> (revised Bloom).</p>
+<p>These exercises are <strong>optional</strong> and <strong>not graded</strong>.</p>
 </div>
-<h3 id="exercice-8-comprendre-et-manipuler-umask">Exercice 8 — Comprendre et manipuler <code>umask</code> ⭐<a class="headerlink" href="#exercice-8-comprendre-et-manipuler-umask" title="Permanent link">&para;</a></h3>
+<h3 id="exercise-8-understanding-and-manipulating-umask">Exercise 8 — Understanding and manipulating <code>umask</code> ⭐<a class="headerlink" href="#exercise-8-understanding-and-manipulating-umask" title="Permanent link">&para;</a></h3>
 <div class="admonition tip">
 <p class="admonition-title"><code>umask</code></p>
-<p><code>umask</code> définit les permissions <strong>retirées par défaut</strong> des fichiers et répertoires que vous créez. La valeur est octale : elle est <strong>soustraite</strong> des permissions par défaut (666 pour les fichiers, 777 pour les répertoires).</p>
-<p>Exemple : si <code>umask</code> vaut <code>022</code>, un fichier créé aura <code>644</code> (= <code>666 − 022</code>) et un répertoire <code>755</code> (= <code>777 − 022</code>).</p>
+<p><code>umask</code> defines the permissions <strong>removed by default</strong> from the files and directories you create. The value is octal: it is <strong>subtracted</strong> from the default permissions (666 for files, 777 for directories).</p>
+<p>Example: if <code>umask</code> is <code>022</code>, a created file will have <code>644</code> (= <code>666 − 022</code>) and a directory <code>755</code> (= <code>777 − 022</code>).</p>
 </div>
 <ol>
-<li>Tapez <code>umask</code> et notez le résultat.</li>
-<li>Créez un répertoire <code>rep</code> et un fichier <code>f</code> au même niveau. Affichez leurs permissions avec <code>ls -ld rep f</code>. Convertissez en octal et notez.</li>
-<li>Changez le masque :
+<li>Type <code>umask</code> and note the result.</li>
+<li>Create a directory <code>rep</code> and a file <code>f</code> at the same level. Display their permissions with <code>ls -ld rep f</code>. Convert to octal and note.</li>
+<li>Change the mask:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>$<span class="w"> </span><span class="nb">umask</span><span class="w"> </span><span class="m">240</span>
 </span></code></pre></div>
-   Refaites la question 2.</li>
-<li>Idem avec :
+   Redo question 2.</li>
+<li>Same with:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>$<span class="w"> </span><span class="nb">umask</span><span class="w"> </span><span class="m">121</span>
 </span></code></pre></div></li>
-<li>Idem avec :
+<li>Same with:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>$<span class="w"> </span><span class="nb">umask</span><span class="w"> </span><span class="m">666</span>
 </span></code></pre></div></li>
-<li>Pouvez-vous déduire comment <code>umask</code> agit ?</li>
-<li>Restaurez la valeur initiale de <code>umask</code>.</li>
+<li>Can you deduce how <code>umask</code> works?</li>
+<li>Restore the initial value of <code>umask</code>.</li>
 </ol>
-<h3 id="exercice-9-permissions-speciales-suid-sgid-sticky-bit">Exercice 9 — Permissions spéciales : SUID, SGID, sticky bit ⭐<a class="headerlink" href="#exercice-9-permissions-speciales-suid-sgid-sticky-bit" title="Permanent link">&para;</a></h3>
+<h3 id="exercise-9-special-permissions-suid-sgid-sticky-bit">Exercise 9 — Special permissions: SUID, SGID, sticky bit ⭐<a class="headerlink" href="#exercise-9-special-permissions-suid-sgid-sticky-bit" title="Permanent link">&para;</a></h3>
 <div class="admonition tip">
-<p class="admonition-title">Au-delà des 9 bits classiques</p>
-<p>En plus de <code>rwxrwxrwx</code>, Linux définit <strong>trois bits spéciaux</strong> :</p>
+<p class="admonition-title">Beyond the classic 9 bits</p>
+<p>In addition to <code>rwxrwxrwx</code>, Linux defines <strong>three special bits</strong>:</p>
 <table>
 <thead>
 <tr>
 <th>Bit</th>
 <th>Octal</th>
-<th>Sur un fichier</th>
-<th>Sur un répertoire</th>
+<th>On a file</th>
+<th>On a directory</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>SUID</strong> (Set User ID)</td>
 <td><code>4000</code></td>
-<td>Le programme s’exécute avec les droits de son <strong>propriétaire</strong></td>
+<td>The program runs with the <strong>owner's</strong> privileges</td>
 <td>—</td>
 </tr>
 <tr>
 <td><strong>SGID</strong> (Set Group ID)</td>
 <td><code>2000</code></td>
-<td>Le programme s’exécute avec les droits du <strong>groupe</strong></td>
-<td>Les fichiers créés héritent du groupe du répertoire</td>
+<td>The program runs with the <strong>group's</strong> privileges</td>
+<td>Created files inherit the directory's group</td>
 </tr>
 <tr>
 <td><strong>Sticky bit</strong></td>
 <td><code>1000</code></td>
 <td>—</td>
-<td>Seul le propriétaire d’un fichier peut le supprimer</td>
+<td>Only the owner of a file can delete it</td>
 </tr>
 </tbody>
 </table>
-<p>Ces bits apparaissent dans <code>ls -l</code> à la place du <code>x</code> : <code>s</code> (SUID/SGID) et <code>t</code> (sticky).</p>
+<p>These bits appear in <code>ls -l</code> in place of the <code>x</code>: <code>s</code> (SUID/SGID) and <code>t</code> (sticky).</p>
 </div>
 <ol>
 <li>
-<p>Examinez les permissions de la commande <code>passwd</code> :
+<p>Examine the permissions of the <code>passwd</code> command:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span><span class="k">$(</span>which<span class="w"> </span>passwd<span class="k">)</span>
 </span></code></pre></div>
-   Vous devriez voir un <code>s</code> à la place du <code>x</code> propriétaire. Que signifie ce <code>s</code> ?</p>
+   You should see an <code>s</code> in place of the owner's <code>x</code>. What does this <code>s</code> mean?</p>
 </li>
 <li>
-<p><strong>Question d’analyse</strong> : pourquoi la commande <code>passwd</code> a-t-elle besoin du bit SUID ? Quel fichier doit-elle modifier et à qui appartient-il ?
+<p><strong>Analysis question</strong>: why does the <code>passwd</code> command need the SUID bit? Which file does it need to modify, and who owns it?
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>/etc/shadow
 </span></code></pre></div></p>
 </li>
 <li>
-<p>Cherchez tous les fichiers SUID sur le système :
+<p>Search for all SUID files on the system:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>$<span class="w"> </span>find<span class="w"> </span>/<span class="w"> </span>-perm<span class="w"> </span>-4000<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span><span class="m">2</span>&gt;/dev/null
 </span></code></pre></div>
-   Pourquoi redirige-t-on <code>stderr</code> vers <code>/dev/null</code> ? Combien de fichiers SUID trouvez-vous ?</p>
+   Why do we redirect <code>stderr</code> to <code>/dev/null</code>? How many SUID files do you find?</p>
 </li>
 <li>
-<p>Examinez le répertoire <code>/tmp</code> :
+<p>Examine the <code>/tmp</code> directory:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>$<span class="w"> </span>ls<span class="w"> </span>-ld<span class="w"> </span>/tmp
 </span></code></pre></div>
-   Que signifie le <code>t</code> à la fin des permissions ? Pourquoi est-il indispensable pour <code>/tmp</code> ?</p>
+   What does the <code>t</code> at the end of the permissions mean? Why is it essential for <code>/tmp</code>?</p>
 </li>
 <li>
-<p><strong>Mise en pratique</strong> : créez un répertoire <code>partage/</code> avec le sticky bit et testez :
+<p><strong>Hands-on</strong>: create a <code>partage/</code> directory with the sticky bit and test:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>$<span class="w"> </span>mkdir<span class="w"> </span>partage
 </span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>$<span class="w"> </span>chmod<span class="w"> </span><span class="m">1777</span><span class="w"> </span>partage
 </span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>$<span class="w"> </span>ls<span class="w"> </span>-ld<span class="w"> </span>partage
 </span></code></pre></div>
-   Décomposez <code>1777</code> : que vaut chaque chiffre ?</p>
+   Break down <code>1777</code>: what does each digit represent?</p>
 </li>
 <li>
-<p><strong>Mise en pratique SGID</strong> sur un répertoire :
+<p><strong>SGID hands-on</strong> on a directory:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>$<span class="w"> </span>mkdir<span class="w"> </span>equipe
 </span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>$<span class="w"> </span>chmod<span class="w"> </span><span class="m">2775</span><span class="w"> </span>equipe
 </span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>$<span class="w"> </span>ls<span class="w"> </span>-ld<span class="w"> </span>equipe
 </span></code></pre></div>
-   Créez un fichier dans <code>equipe/</code>. À quel groupe appartient-il ? Comparez avec un fichier créé dans un répertoire sans SGID.</p>
+   Create a file inside <code>equipe/</code>. Which group does it belong to? Compare with a file created in a directory without SGID.</p>
 </li>
 <li>
-<p><strong>Question d’évaluation</strong> : un administrateur trouve un fichier SUID appartenant à root dans <code>/tmp</code>. Pourquoi est-ce un <strong>risque de sécurité</strong> critique ?</p>
+<p><strong>Evaluation question</strong>: an administrator finds a SUID file owned by root in <code>/tmp</code>. Why is this a <strong>critical security risk</strong>?</p>
 </li>
 </ol>
-<h3 id="exercice-10-script-daudit-de-permissions">Exercice 10 — Script d’audit de permissions ⭐<a class="headerlink" href="#exercice-10-script-daudit-de-permissions" title="Permanent link">&para;</a></h3>
-<p>Cet exercice combine tout ce que vous avez appris dans ce TP pour écrire un script d’<strong>audit de sécurité</strong>.</p>
+<h3 id="exercise-10-permissions-audit-script">Exercise 10 — Permissions audit script ⭐<a class="headerlink" href="#exercise-10-permissions-audit-script" title="Permanent link">&para;</a></h3>
+<p>This exercise combines everything you have learned in this lab to write a <strong>security audit</strong> script.</p>
 <ol>
 <li>
-<p>Créez le script <code>audit-permissions.sh</code> :
+<p>Create the script <code>audit-permissions.sh</code>:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="ch">#!/bin/bash</span>
 </span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="c1"># Audit de permissions — TP2 étoile</span>
 </span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="c1"># Vérifie les points de sécurité courants liés aux permissions</span>
@@ -1610,36 +1610,36 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 </span><span id="__span-27-27"><a id="__codelineno-27-27" name="__codelineno-27-27" href="#__codelineno-27-27"></a>find<span class="w"> </span>/home<span class="w"> </span>-nouser<span class="w"> </span>-o<span class="w"> </span>-nogroup<span class="w"> </span><span class="m">2</span>&gt;/dev/null
 </span><span id="__span-27-28"><a id="__codelineno-27-28" name="__codelineno-27-28" href="#__codelineno-27-28"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
 </span><span id="__span-27-29"><a id="__codelineno-27-29" name="__codelineno-27-29" href="#__codelineno-27-29"></a>
-</span><span id="__span-27-30"><a id="__codelineno-27-30" name="__codelineno-27-30" href="#__codelineno-27-30"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;=== FIN DE L’AUDIT ===&quot;</span>
+</span><span id="__span-27-30"><a id="__codelineno-27-30" name="__codelineno-27-30" href="#__codelineno-27-30"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;=== FIN DE L&#39;AUDIT ===&quot;</span>
 </span></code></pre></div></p>
 </li>
 <li>
-<p>Rendez-le exécutable et lancez-le :
+<p>Make it executable and run it:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>$<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>audit-permissions.sh
 </span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>$<span class="w"> </span>./audit-permissions.sh
 </span></code></pre></div></p>
 </li>
 <li>
-<p><strong>Question d’analyse</strong> : pour chacune des 5 vérifications, expliquez en une phrase <strong>pourquoi</strong> c’est un problème de sécurité potentiel.</p>
+<p><strong>Analysis question</strong>: for each of the 5 checks, explain in one sentence <strong>why</strong> it is a potential security problem.</p>
 </li>
 <li>
-<p><strong>Amélioration</strong> : ajoutez une 6ᵉ vérification qui liste les fichiers de <code>/etc</code> lisibles par « others » (<code>o=r</code>) et dont le nom contient <code>shadow</code> ou <code>secret</code>. <em>(Indice : combinez <code>find</code> avec <code>-name</code>.)</em></p>
+<p><strong>Improvement</strong>: add a 6th check that lists files in <code>/etc</code> readable by "others" (<code>o=r</code>) whose name contains <code>shadow</code> or <code>secret</code>. <em>(Hint: combine <code>find</code> with <code>-name</code>.)</em></p>
 </li>
 <li>
-<p><strong>Question d’évaluation</strong> : votre script utilise <code>head -20</code> et <code>head -10</code> pour limiter la sortie. En contexte réel d’audit, comment adapteriez-vous le script pour enregistrer les résultats complets dans un fichier de log tout en affichant un résumé à l’écran ? <em>(Indice : pensez à la redirection <code>&gt;&gt;</code> pour écrire dans un fichier de log, et à la commande <code>tee</code> que vous découvrirez au TP4.)</em></p>
+<p><strong>Evaluation question</strong>: your script uses <code>head -20</code> and <code>head -10</code> to limit the output. In a real audit context, how would you adapt the script to save the complete results to a log file while displaying a summary on screen? <em>(Hint: think about the <code>&gt;&gt;</code> redirection to write to a log file, and the <code>tee</code> command that you will discover in Lab 4.)</em></p>
 </li>
 </ol>
 <div class="admonition info">
-<p class="admonition-title">Vers le TP3</p>
-<p>Au TP3 vous découvrirez la <strong>compilation C</strong> et les variables d’environnement. Les exercices étoile du TP3 approfondiront la programmation système en C — vous aurez alors toutes les bases nécessaires.</p>
+<p class="admonition-title">Looking ahead to Lab 3</p>
+<p>In Lab 3 you will discover <strong>C compilation</strong> and environment variables. The bonus exercises in Lab 3 will delve deeper into C system programming — by then you will have all the necessary foundations.</p>
 </div>
 <hr />
-<h2 id="pour-aller-plus-loin-lectures-recommandees">Pour aller plus loin (lectures recommandées)<a class="headerlink" href="#pour-aller-plus-loin-lectures-recommandees" title="Permanent link">&para;</a></h2>
+<h2 id="further-reading-recommended">Further reading (recommended)<a class="headerlink" href="#further-reading-recommended" title="Permanent link">&para;</a></h2>
 <ul>
-<li><em>Filesystem Hierarchy Standard</em> v3.0 : <a href="https://refspecs.linuxfoundation.org/fhs.shtml">https://refspecs.linuxfoundation.org/fhs.shtml</a></li>
-<li><em>Debian Reference</em> : <a href="https://www.debian.org/doc/manuals/debian-reference/">https://www.debian.org/doc/manuals/debian-reference/</a></li>
+<li><em>Filesystem Hierarchy Standard</em> v3.0: <a href="https://refspecs.linuxfoundation.org/fhs.shtml">https://refspecs.linuxfoundation.org/fhs.shtml</a></li>
+<li><em>Debian Reference</em>: <a href="https://www.debian.org/doc/manuals/debian-reference/">https://www.debian.org/doc/manuals/debian-reference/</a></li>
 <li>Shotts, W. (2019). <em>The Linux Command Line</em>, 2nd ed. No Starch Press. ISBN 978-1593279523. Chap. 9 (<em>Permissions</em>).</li>
-<li>Garfinkel, S., Spafford, G., &amp; Schwartz, A. (2003). <em>Practical Unix and Internet Security</em>, 3rd ed. O’Reilly. ISBN 978-0596003234.</li>
+<li>Garfinkel, S., Spafford, G., &amp; Schwartz, A. (2003). <em>Practical Unix and Internet Security</em>, 3rd ed. O'Reilly. ISBN 978-0596003234.</li>
 <li>Kerrisk, M. (2010). <em>The Linux Programming Interface</em>. No Starch Press. ISBN 978-1593272203, chap. 15 (<em>File Attributes</em>).</li>
 </ul>
 
@@ -1657,7 +1657,7 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
-  Retour en haut de la page
+  Back to top
 </button>
         
       </main>
@@ -1711,10 +1711,10 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "header.autohide", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "header.autohide", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.aecac24b.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
       
