@@ -693,11 +693,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exercices-supplementaires-groupe-etoile" class="md-nav__link">
-    ⭐ Exercices supplémentaires — Groupe étoile
+  <a href="#exercices-supplementaires" class="md-nav__link">
+    ⭐ Exercices supplémentaires
   </a>
   
-    <nav class="md-nav" aria-label="⭐ Exercices supplémentaires — Groupe étoile">
+    <nav class="md-nav" aria-label="⭐ Exercices supplémentaires">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -937,11 +937,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exercices-supplementaires-groupe-etoile" class="md-nav__link">
-    ⭐ Exercices supplémentaires — Groupe étoile
+  <a href="#exercices-supplementaires" class="md-nav__link">
+    ⭐ Exercices supplémentaires
   </a>
   
-    <nav class="md-nav" aria-label="⭐ Exercices supplémentaires — Groupe étoile">
+    <nav class="md-nav" aria-label="⭐ Exercices supplémentaires">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1365,16 +1365,12 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <p>Si un item n’est pas coché, <strong>revenez sur l’exercice correspondant</strong> avant le TP4.</p>
 </div>
 <hr />
-<h2 id="exercices-supplementaires-groupe-etoile">⭐ Exercices supplémentaires — Groupe étoile<a class="headerlink" href="#exercices-supplementaires-groupe-etoile" title="Permanent link">&para;</a></h2>
+<h2 id="exercices-supplementaires">⭐ Exercices supplémentaires<a class="headerlink" href="#exercices-supplementaires" title="Permanent link">&para;</a></h2>
 <div class="admonition star">
 <p class="admonition-title">À qui s’adressent les exercices 8, 9, 10 ?</p>
-<p>Vous avez terminé les exercices 1 à 7 ? Cette section prolonge la progression C amorcée aux TP1–TP2 vers les <strong>redirections au niveau système</strong>. Vous allez réimplémenter en C ce que le shell fait quand vous tapez <code>commande &gt; fichier</code>.</p>
-<p><strong>Rappel</strong> des appels système déjà utilisés :</p>
-<ul>
-<li><strong>TP1 ⭐</strong> : <code>open(O_RDONLY)</code>, <code>read</code>, <code>write</code>, <code>close</code>, <code>perror</code>.</li>
-<li><strong>TP2 ⭐</strong> : <code>open(O_WRONLY|O_CREAT|O_TRUNC, mode)</code>, <code>lseek</code>.</li>
-<li><strong>TP3 ⭐</strong> : <strong><code>STDIN/STDOUT/STDERR_FILENO</code></strong>, <strong><code>dup</code></strong>, <strong><code>dup2</code></strong> — fondement technique des redirections.</li>
-</ul>
+<p>Vous avez terminé les exercices 1 à 7 ? Le TP3 a introduit la <strong>compilation C</strong> — ces exercices étoile l’approfondissent vers la <strong>programmation système</strong>. Vous allez découvrir la compilation séparée, les descripteurs de fichiers standards, et réimplémenter en C ce que le shell fait quand vous tapez <code>commande &gt; fichier</code>.</p>
+<p><strong>Appels système utilisés</strong> : <code>open</code>, <code>read</code>, <code>write</code>, <code>close</code>, <code>perror</code>, <code>dup</code>, <code>dup2</code>.</p>
+<p>Les niveaux taxonomiques visés sont <strong>[Analyser]</strong>, <strong>[Évaluer]</strong> et <strong>[Créer]</strong> (Bloom révisé).</p>
 <p>Ces exercices sont <strong>optionnels</strong> et <strong>non évalués</strong>.</p>
 </div>
 <h3 id="exercice-8-compilation-separee-et-edition-de-liens">Exercice 8 — Compilation séparée et édition de liens 📚📚📚 ⭐<a class="headerlink" href="#exercice-8-compilation-separee-et-edition-de-liens" title="Permanent link">&para;</a></h3>
