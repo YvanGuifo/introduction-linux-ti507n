@@ -655,30 +655,30 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exercices-supplementaires-groupe-etoile" class="md-nav__link">
-    ⭐ Exercices supplémentaires — Groupe étoile
+  <a href="#exercices-supplementaires" class="md-nav__link">
+    ⭐ Exercices supplémentaires
   </a>
   
-    <nav class="md-nav" aria-label="⭐ Exercices supplémentaires — Groupe étoile">
+    <nav class="md-nav" aria-label="⭐ Exercices supplémentaires">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exercice-8-compiler-un-premier-programme-c" class="md-nav__link">
-    Exercice 8 — Compiler un premier programme C ⭐
+  <a href="#exercice-8-recherche-avancee-avec-find" class="md-nav__link">
+    Exercice 8 — Recherche avancée avec find ⭐
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#exercice-9-arguments-en-ligne-de-commande" class="md-nav__link">
-    Exercice 9 — Arguments en ligne de commande ⭐
+  <a href="#exercice-9-liens-symboliques-et-liens-physiques" class="md-nav__link">
+    Exercice 9 — Liens symboliques et liens physiques ⭐
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#exercice-10-premier-appel-systeme-lire-etcpasswd" class="md-nav__link">
-    Exercice 10 — Premier appel système : lire /etc/passwd ⭐
+  <a href="#exercice-10-premier-script-shell" class="md-nav__link">
+    Exercice 10 — Premier script shell ⭐
   </a>
   
 </li>
@@ -941,30 +941,30 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exercices-supplementaires-groupe-etoile" class="md-nav__link">
-    ⭐ Exercices supplémentaires — Groupe étoile
+  <a href="#exercices-supplementaires" class="md-nav__link">
+    ⭐ Exercices supplémentaires
   </a>
   
-    <nav class="md-nav" aria-label="⭐ Exercices supplémentaires — Groupe étoile">
+    <nav class="md-nav" aria-label="⭐ Exercices supplémentaires">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exercice-8-compiler-un-premier-programme-c" class="md-nav__link">
-    Exercice 8 — Compiler un premier programme C ⭐
+  <a href="#exercice-8-recherche-avancee-avec-find" class="md-nav__link">
+    Exercice 8 — Recherche avancée avec find ⭐
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#exercice-9-arguments-en-ligne-de-commande" class="md-nav__link">
-    Exercice 9 — Arguments en ligne de commande ⭐
+  <a href="#exercice-9-liens-symboliques-et-liens-physiques" class="md-nav__link">
+    Exercice 9 — Liens symboliques et liens physiques ⭐
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#exercice-10-premier-appel-systeme-lire-etcpasswd" class="md-nav__link">
-    Exercice 10 — Premier appel système : lire /etc/passwd ⭐
+  <a href="#exercice-10-premier-script-shell" class="md-nav__link">
+    Exercice 10 — Premier script shell ⭐
   </a>
   
 </li>
@@ -1340,109 +1340,176 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <p>Si un item n’est pas coché, <strong>revenez sur l’exercice correspondant</strong> avant le TP2.</p>
 </div>
 <hr />
-<h2 id="exercices-supplementaires-groupe-etoile">⭐ Exercices supplémentaires — Groupe étoile<a class="headerlink" href="#exercices-supplementaires-groupe-etoile" title="Permanent link">&para;</a></h2>
+<h2 id="exercices-supplementaires">⭐ Exercices supplémentaires<a class="headerlink" href="#exercices-supplementaires" title="Permanent link">&para;</a></h2>
 <div class="admonition star">
 <p class="admonition-title">À qui s’adressent les exercices 8, 9, 10 ?</p>
-<p>Vous avez terminé les exercices 1 à 7 avant la fin de la séance ? Cette section vous <strong>introduit à la programmation système en C</strong>, en anticipation des TP3 et TP4.</p>
-<p>Ces exercices utilisent le compilateur <code>gcc</code>. Vérifiez d’abord :
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$<span class="w"> </span>gcc<span class="w"> </span>--version
-</span></code></pre></div>
-Si la commande échoue :
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>build-essential
-</span></code></pre></div></p>
+<p>Vous avez terminé les exercices 1 à 7 avant la fin de la séance ? Ces trois exercices <strong>approfondissent les concepts du TP1</strong> en vous faisant découvrir des commandes avancées de recherche, les pipelines shell et l’écriture de votre premier script.</p>
+<p>Les niveaux taxonomiques visés sont <strong>[Analyser]</strong>, <strong>[Évaluer]</strong> et <strong>[Créer]</strong> (Bloom révisé).</p>
 <p>Ces exercices sont <strong>optionnels</strong> et <strong>non évalués</strong>.</p>
 </div>
-<h3 id="exercice-8-compiler-un-premier-programme-c">Exercice 8 — Compiler un premier programme C ⭐<a class="headerlink" href="#exercice-8-compiler-un-premier-programme-c" title="Permanent link">&para;</a></h3>
+<h3 id="exercice-8-recherche-avancee-avec-find">Exercice 8 — Recherche avancée avec <code>find</code> ⭐<a class="headerlink" href="#exercice-8-recherche-avancee-avec-find" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">La commande <code>find</code></p>
+<p><code>find</code> parcourt récursivement une arborescence et sélectionne les fichiers selon des <strong>critères</strong> : nom, type, taille, date de modification, etc. Contrairement aux jokers (exercice 7), <code>find</code> descend dans les sous-répertoires.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$<span class="w"> </span>find<span class="w"> </span>&lt;chemin&gt;<span class="w"> </span>&lt;critères&gt;<span class="w"> </span><span class="o">[</span>&lt;action&gt;<span class="o">]</span>
+</span></code></pre></div>
+<p>Consultez <code>man find</code> pour la liste complète des critères.</p>
+</div>
 <ol>
-<li>Dans <code>~</code>, créez un répertoire <code>c/</code> et placez-vous dedans.</li>
-<li>Avec un éditeur (<code>nano</code>, <code>gedit</code>, <code>vim</code>…), créez <code>hello.c</code> :
-   <div class="language-c highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello, Linux !</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="p">}</span>
-</span></code></pre></div></li>
-<li>Compilez : <code>gcc -Wall -o hello hello.c</code></li>
-<li>Exécutez : <code>./hello</code></li>
 <li>
-<p><strong>Questions</strong> :</p>
-<ul>
-<li>À quoi sert l’option <code>-o</code> ? Que se passe-t-il si vous l’omettez ?</li>
-<li>À quoi sert <code>-Wall</code> ?</li>
-<li>Quel est le type du fichier <code>hello</code> ? <em>(Utilisez <code>file hello</code>.)</em></li>
-</ul>
+<p>Listez <strong>tous les fichiers</strong> (pas les répertoires) présents sous <code>/etc</code> :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>$<span class="w"> </span>find<span class="w"> </span>/etc<span class="w"> </span>-type<span class="w"> </span>f
+</span></code></pre></div>
+   Combien y en a-t-il ? <em>(Indice : combinez avec <code>wc -l</code>.)</em></p>
+</li>
+<li>
+<p>Trouvez tous les fichiers dont le nom se termine par <code>.conf</code> sous <code>/etc</code> :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>$<span class="w"> </span>find<span class="w"> </span>/etc<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.conf&quot;</span>
+</span></code></pre></div>
+   Pourquoi les guillemets autour de <code>"*.conf"</code> sont-ils indispensables ?</p>
+</li>
+<li>
+<p>Trouvez tous les répertoires sous <code>/usr</code> dont le nom contient <code>bin</code>.</p>
+</li>
+<li>
+<p>Trouvez dans <code>/var/log</code> les fichiers modifiés il y a <strong>moins de 24 heures</strong> :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>$<span class="w"> </span>find<span class="w"> </span>/var/log<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-mtime<span class="w"> </span>-1
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Combinaison de critères</strong> : trouvez sous <code>/etc</code> les fichiers réguliers dont le nom commence par <code>host</code> et qui font plus de 100 octets :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>$<span class="w"> </span>find<span class="w"> </span>/etc<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;host*&quot;</span><span class="w"> </span>-size<span class="w"> </span>+100c
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Question d’analyse</strong> : quelle différence fondamentale y a-t-il entre <code>ls /etc/*.conf</code> et <code>find /etc -name "*.conf"</code> ? Testez les deux et comparez le résultat.</p>
 </li>
 </ol>
+<h3 id="exercice-9-liens-symboliques-et-liens-physiques">Exercice 9 — Liens symboliques et liens physiques ⭐<a class="headerlink" href="#exercice-9-liens-symboliques-et-liens-physiques" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Deux types de liens sous Linux</p>
+<p>La commande <code>ln</code> crée des <strong>liens</strong> vers des fichiers existants :</p>
+<ul>
+<li><strong>Lien physique</strong> (<em>hard link</em>) : <code>ln fichier lien</code> — crée un second nom pour le <strong>même contenu</strong> sur le disque. Les deux noms sont équivalents ; supprimer l’un ne supprime pas l’autre.</li>
+<li><strong>Lien symbolique</strong> (<em>symlink</em>) : <code>ln -s cible lien</code> — crée un fichier spécial qui <strong>pointe vers</strong> un chemin. Si la cible est supprimée, le lien est « cassé ».</li>
+</ul>
+<p>Chaque fichier possède un <strong>numéro d’inode</strong> (identifiant interne). <code>ls -i</code> l’affiche.</p>
 <blockquote>
-<p><strong>Référence</strong> : Kernighan, B. W., &amp; Ritchie, D. M. (1988). <em>The C Programming Language</em>, 2nd ed. Prentice Hall. ISBN 978-0131103627.</p>
+<p><strong>Référence</strong> : Kerrisk, M. (2010). <em>The Linux Programming Interface</em>. No Starch Press. ISBN 978-1593272203, chap. 18 (<em>Directories and Links</em>).</p>
 </blockquote>
-<h3 id="exercice-9-arguments-en-ligne-de-commande">Exercice 9 — Arguments en ligne de commande ⭐<a class="headerlink" href="#exercice-9-arguments-en-ligne-de-commande" title="Permanent link">&para;</a></h3>
+</div>
 <ol>
-<li>Modifiez <code>hello.c</code> :
-   <div class="language-c highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
-</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">argv</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">argc</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Bonjour, %s !</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
-</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Bonjour, le monde !</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="p">}</span>
-</span></code></pre></div></li>
-<li>Recompilez et testez :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>$<span class="w"> </span>./hello
-</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>$<span class="w"> </span>./hello<span class="w"> </span>Yvan
-</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>$<span class="w"> </span>./hello<span class="w"> </span><span class="s2">&quot;Yvan GUIFO&quot;</span>
-</span></code></pre></div></li>
 <li>
-<p><strong>Questions</strong> :</p>
-<ul>
-<li>Que représentent <code>argc</code> et <code>argv</code> ?</li>
-<li>Que contient <code>argv[0]</code> ? Affichez-le pour vérifier.</li>
-<li>Pourquoi les guillemets sont-ils nécessaires dans <code>./hello "Yvan GUIFO"</code> ?</li>
-</ul>
+<p>Dans <code>~</code>, créez un répertoire <code>tp_liens/</code> et placez-vous dedans. Créez un fichier <code>original.txt</code> contenant quelques lignes (utilisez <code>echo</code> ou un éditeur).</p>
+</li>
+<li>
+<p>Créez un <strong>lien physique</strong> :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>$<span class="w"> </span>ln<span class="w"> </span>original.txt<span class="w"> </span>lien_physique.txt
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>$<span class="w"> </span>ls<span class="w"> </span>-li
+</span></code></pre></div>
+   Comparez les numéros d’inode de <code>original.txt</code> et <code>lien_physique.txt</code>. Que constatez-vous ?</p>
+</li>
+<li>
+<p>Modifiez le contenu de <code>lien_physique.txt</code> (avec <code>echo "nouvelle ligne" &gt;&gt; lien_physique.txt</code>). Affichez <code>original.txt</code>. Le contenu a-t-il changé ? Pourquoi ?</p>
+</li>
+<li>
+<p>Créez un <strong>lien symbolique</strong> :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>$<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>original.txt<span class="w"> </span>lien_symbo.txt
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>$<span class="w"> </span>ls<span class="w"> </span>-li
+</span></code></pre></div>
+   Comparez les numéros d’inode. En quoi diffèrent-ils de ceux du lien physique ?</p>
+</li>
+<li>
+<p>Observez la différence avec <code>ls -l</code> :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>lien_physique.txt<span class="w"> </span>lien_symbo.txt
+</span></code></pre></div>
+   Que montre la colonne de gauche pour le lien symbolique ? Que signifie la flèche <code>-&gt;</code> ?</p>
+</li>
+<li>
+<p>Supprimez le fichier original :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>$<span class="w"> </span>rm<span class="w"> </span>original.txt
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>$<span class="w"> </span>cat<span class="w"> </span>lien_physique.txt
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>$<span class="w"> </span>cat<span class="w"> </span>lien_symbo.txt
+</span></code></pre></div>
+   Que se passe-t-il pour chacun des deux liens ? Expliquez la différence.</p>
+</li>
+<li>
+<p><strong>Question d’analyse</strong> : essayez de créer un lien physique vers un répertoire (<code>ln tp_liens/ lien_rep</code>). Que se passe-t-il ? Pourquoi Linux interdit-il cela ? <em>(Indice : pensez aux boucles dans l’arborescence.)</em></p>
+</li>
+<li>
+<p>Trouvez des exemples de liens symboliques sur le système :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>/usr/bin/python*
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>/etc/alternatives/
+</span></code></pre></div>
+   Pourquoi les distributions Linux utilisent-elles autant de liens symboliques ?</p>
 </li>
 </ol>
-<h3 id="exercice-10-premier-appel-systeme-lire-etcpasswd">Exercice 10 — Premier appel système : lire <code>/etc/passwd</code> ⭐<a class="headerlink" href="#exercice-10-premier-appel-systeme-lire-etcpasswd" title="Permanent link">&para;</a></h3>
-<p>Un <strong>appel système</strong> est une fonction du noyau Linux appelée par votre programme pour demander un service (ouvrir un fichier, lire des données…).</p>
+<h3 id="exercice-10-premier-script-shell">Exercice 10 — Premier script shell ⭐<a class="headerlink" href="#exercice-10-premier-script-shell" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Qu’est-ce qu’un script shell ?</p>
+<p>Un <strong>script</strong> est un fichier texte contenant une séquence de commandes exécutées par le shell. La première ligne, le <strong>shebang</strong>, indique quel interpréteur utiliser :</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="ch">#!/bin/bash</span>
+</span></code></pre></div>
+<p>Pour rendre un script exécutable : <code>chmod +x mon_script.sh</code></p>
+<blockquote>
+<p><strong>Référence</strong> : Robbins, A., Hannah, E., &amp; Lamb, L. (2008). <em>Learning the bash Shell</em>, 3rd ed. O’Reilly. ISBN 978-0596009656, chap. 1-2.</p>
+</blockquote>
+</div>
 <ol>
-<li>Consultez la page de manuel <strong>section 2</strong> (appels système) : <code>man 2 read</code></li>
-<li>Créez <code>show-passwd.c</code> 
-   <div class="language-c highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fcntl.h&gt;</span><span class="c1">     /* open       */</span>
-</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unistd.h&gt;</span><span class="c1">    /* read, write, close */</span>
-</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="c1">     /* perror     */</span>
-</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>
-</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">open</span><span class="p">(</span><span class="s">&quot;/etc/passwd&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">O_RDONLY</span><span class="p">);</span>
-</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fd</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">perror</span><span class="p">(</span><span class="s">&quot;open&quot;</span><span class="p">);</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>
-</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">buf</span><span class="p">[</span><span class="mi">1024</span><span class="p">];</span>
-</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">    </span><span class="kt">ssize_t</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
-</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">((</span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">read</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="n">buf</span><span class="p">))</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="w">        </span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w">   </span><span class="cm">/* 1 = STDOUT_FILENO */</span>
-</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="w">    </span><span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span>
-</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="p">}</span>
+<li>Dans <code>~</code>, créez un répertoire <code>scripts/</code> et placez-vous dedans.</li>
+<li>Avec un éditeur (<code>nano</code>, <code>vim</code>…), créez <code>info-systeme.sh</code> :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="ch">#!/bin/bash</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="c1"># Script d’information système — TP1 étoile</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;=== Informations système ===&quot;</span>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Date et heure  : </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Utilisateur    : </span><span class="k">$(</span>whoami<span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Machine        : </span><span class="k">$(</span>hostname<span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Noyau          : </span><span class="k">$(</span>uname<span class="w"> </span>-r<span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Répertoire     : </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-26-10"><a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-26-11"><a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;=== Contenu du répertoire courant ===&quot;</span>
+</span><span id="__span-26-12"><a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a>ls<span class="w"> </span>-la
+</span><span id="__span-26-13"><a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-26-14"><a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;=== Espace disque ===&quot;</span>
+</span><span id="__span-26-15"><a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a>df<span class="w"> </span>-h<span class="w"> </span>/
 </span></code></pre></div></li>
-<li>Compilez : <code>gcc -Wall -o show-passwd show-passwd.c</code></li>
-<li>Exécutez et comparez avec <code>cat /etc/passwd</code></li>
+<li>Rendez le script exécutable et lancez-le :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>$<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>info-systeme.sh
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>$<span class="w"> </span>./info-systeme.sh
+</span></code></pre></div></li>
+<li><strong>Exercice de création</strong> : écrivez un script <code>creer-arbo.sh</code> qui :</li>
+<li>Prend un <strong>argument</strong> : le nom d’un projet (ex. <code>mon_projet</code>).</li>
+<li>Crée l’arborescence suivante :
+     <div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>mon_projet/
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>├── src/
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>├── docs/
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>├── tests/
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>└── README.txt    (contient &quot;Projet : mon_projet&quot;)
+</span></code></pre></div></li>
+<li>Affiche un message de confirmation.</li>
+</ol>
+<p><em>Indice</em> : pour accéder au premier argument dans un script, utilisez <code>$1</code>. Pour vérifier qu’un argument a été fourni :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Usage : </span><span class="nv">$0</span><span class="s2"> &lt;nom-du-projet&gt;&quot;</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="k">fi</span>
+</span></code></pre></div></p>
+<ol>
 <li>
-<p><strong>Questions</strong> :</p>
-<ul>
-<li>Que vaut <code>fd</code> lorsque <code>open</code> réussit ?</li>
-<li>À quoi sert <code>perror</code> ? <em>(Indice : <code>man 3 perror</code>)</em></li>
-</ul>
+<p>Testez votre script :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>$<span class="w"> </span>./creer-arbo.sh<span class="w"> </span>tp_linux
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>$<span class="w"> </span>ls<span class="w"> </span>-R<span class="w"> </span>tp_linux
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>$<span class="w"> </span>cat<span class="w"> </span>tp_linux/README.txt
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Question d’évaluation</strong> : pourquoi est-il préférable de tester <code>[ -z "$1" ]</code> plutôt que de laisser le script échouer silencieusement sans argument ?</p>
 </li>
 </ol>
 <div class="admonition info">
-<p class="admonition-title">Vers les TP suivants</p>
-<p>Vous venez d’utiliser les appels système <code>open</code>, <code>read</code>, <code>write</code>, <code>close</code>. Ils seront approfondis au <strong>TP3</strong> et étendus au <strong>TP4</strong>.</p>
-<blockquote>
-<p><strong>Référence canonique</strong> : Kerrisk, M. (2010). <em>The Linux Programming Interface</em>. No Starch Press. ISBN 978-1593272203, chap. 4.</p>
-</blockquote>
+<p class="admonition-title">Vers le TP2</p>
+<p>Vous venez de découvrir <code>find</code>, les liens (<code>ln</code>, <code>ln -s</code>) et l’écriture de scripts shell. Au <strong>TP2</strong>, vous approfondirez les <strong>permissions</strong> et comprendrez ce que signifie <code>chmod +x</code> que vous avez utilisé ici.</p>
 </div>
 <hr />
 <h2 id="pour-aller-plus-loin-lectures-recommandees">Pour aller plus loin (lectures recommandées)<a class="headerlink" href="#pour-aller-plus-loin-lectures-recommandees" title="Permanent link">&para;</a></h2>
@@ -1450,8 +1517,7 @@ Si la commande échoue :
 <li><em>Debian Reference</em> : <a href="https://www.debian.org/doc/manuals/debian-reference/">https://www.debian.org/doc/manuals/debian-reference/</a></li>
 <li><em>The Linux Documentation Project</em> : <a href="https://tldp.org/">https://tldp.org/</a></li>
 <li>Robbins, A., Hannah, E., &amp; Lamb, L. (2008). <em>Learning the bash Shell</em>, 3rd ed. O’Reilly. ISBN 978-0596009656.</li>
-<li>Kernighan, B. W., &amp; Ritchie, D. M. (1988). <em>The C Programming Language</em>, 2nd ed. Prentice Hall. ISBN 978-0131103627.</li>
-<li>Kerrisk, M. (2010). <em>The Linux Programming Interface</em>. No Starch Press. ISBN 978-1593272203.</li>
+<li>Shotts, W. (2019). <em>The Linux Command Line</em>, 2nd ed. No Starch Press. ISBN 978-1593279523. Disponible gratuitement : <a href="https://linuxcommand.org/tlcl.php">https://linuxcommand.org/tlcl.php</a>.</li>
 </ul>
 
 

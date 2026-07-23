@@ -20,7 +20,7 @@ title: TP4 - Canaux standards et redirections | Processus et tâches | Signaux
 !!! tip "Prérequis"
     - **TP1, TP2 et TP3 terminés** : navigation, permissions, variables shell, compilation `gcc`.
     - Distribution Debian 12 ou session MarioNum active.
-    - Connaissances C minimales (le compteur écrit au TP3 sera réutilisé).
+    - Connaissances C minimales (compilation avec `gcc`, vue au TP3).
 
 !!! info "Instructions"
     - Le `$` en début de ligne représente le prompt — ne le tapez pas.
@@ -52,7 +52,7 @@ title: TP4 - Canaux standards et redirections | Processus et tâches | Signaux
     > 📚 = Facile · 📚📚 = Moyenne · 📚📚📚 = Élevée
     >
     > Les exercices **1 à 7** constituent le **tronc commun**, exigible pour tous.
-    > Les exercices **8, 9, 10** sont des **exercices supplémentaires** réservés au **groupe étoile**.
+    > Les exercices **8, 9, 10** sont des **exercices supplémentaires** (⭐).
 
 !!! info "Alignement avec les évaluations (Biggs, 1996)"
     Les exercices 📚 et 📚📚 préparent au **CC S38** et au **TP noté S40**.
@@ -198,7 +198,7 @@ Cet exercice consolide redirections **et** tubes. Vous travaillerez sur les fich
    Où est redirigé le résultat de `ls` ? Où va l’entrée standard de `wc` ? Où est affiché le résultat de `wc` ?
 3. Affichez sur le terminal la phrase
    `Il y a <nombre> fichiers .h dans le répertoire /usr/include`
-   en utilisant `echo` et la **substitution de commande** `$(...)` (vue au TP3, exercice 7).
+   en utilisant `echo` et la **substitution de commande** `$(...)` (vue au TP3, exercice 6).
 4. Entrez la commande suivante et commentez :
    ```bash
    $ wc -l $(ls /usr/include/*.h)
@@ -264,7 +264,7 @@ Cet exercice consolide redirections **et** tubes. Vous travaillerez sur les fich
 
 ### Exercice 6 — Avant-plan, arrière-plan, bascule 📚📚📚
 
-Cet exercice reprend votre compteur du TP3 (ou demande de l’écrire si vous ne l’aviez pas fait).
+Cet exercice vous demande d’écrire un petit programme C utilisant les acquis du TP3.
 
 1. Écrivez un programme C `compteur.c` qui incrémente indéfiniment une variable `i` et affiche sa valeur **sur la sortie standard à chaque multiple de 100**. Utilisez `sleep` pour ralentir l’exécution et observer la sortie.
 

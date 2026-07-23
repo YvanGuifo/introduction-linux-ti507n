@@ -56,7 +56,7 @@ hide:
     > 📚 = Facile · 📚📚 = Moyenne · 📚📚📚 = Élevée
     >
     > Les exercices **1 à 7** constituent le **tronc commun**, exigible pour tous.
-    > Les exercices **8, 9, 10** sont des **exercices supplémentaires** réservés au **groupe étoile**.
+    > Les exercices **8, 9, 10** sont des **exercices supplémentaires** (⭐).
 
 !!! info "Alignement avec les évaluations (Biggs, 1996)"
     Les exercices 📚 et 📚📚 préparent au **CC S38** et au **TP noté S40**.
@@ -348,7 +348,7 @@ Depuis votre répertoire personnel, exécutez :
 ## ⭐ Exercices supplémentaires
 
 !!! star "À qui s’adressent les exercices 8, 9, 10 ?"
-    Vous avez terminé les exercices 1 à 7 avant la fin de la séance ? Ces trois exercices **approfondissent les concepts du TP1** en vous faisant découvrir des commandes avancées de recherche, les pipelines shell et l’écriture de votre premier script.
+    Vous avez terminé les exercices 1 à 7 avant la fin de la séance ? Ces trois exercices **approfondissent les concepts du TP1** en vous faisant découvrir la recherche avancée avec `find`, les liens symboliques et physiques, et l’écriture de votre premier script shell.
 
     Les niveaux taxonomiques visés sont **[Analyser]**, **[Évaluer]** et **[Créer]** (Bloom révisé).
 
@@ -369,7 +369,7 @@ Depuis votre répertoire personnel, exécutez :
    ```bash
    $ find /etc -type f
    ```
-   Combien y en a-t-il ? *(Indice : combinez avec `wc -l`.)*
+   Estimez combien il y en a en observant la sortie.
 
 2. Trouvez tous les fichiers dont le nom se termine par `.conf` sous `/etc` :
    ```bash
@@ -482,8 +482,9 @@ Depuis votre répertoire personnel, exécutez :
    $ ./info-systeme.sh
    ```
 4. **Exercice de création** : écrivez un script `creer-arbo.sh` qui :
-   - Prend un **argument** : le nom d’un projet (ex. `mon_projet`).
-   - Crée l’arborescence suivante :
+
+       - Prend un **argument** : le nom d’un projet (ex. `mon_projet`).
+       - Crée l’arborescence suivante :
      ```
      mon_projet/
      ├── src/
@@ -491,15 +492,15 @@ Depuis votre répertoire personnel, exécutez :
      ├── tests/
      └── README.txt    (contient "Projet : mon_projet")
      ```
-   - Affiche un message de confirmation.
+      - Affiche un message de confirmation.
 
-   *Indice* : pour accéder au premier argument dans un script, utilisez `$1`. Pour vérifier qu’un argument a été fourni :
-   ```bash
-   if [ -z "$1" ]; then
-       echo "Usage : $0 <nom-du-projet>"
+     *Indice* : pour accéder au premier argument dans un script, utilisez `$1`. Pour vérifier qu’un argument a été fourni :
+     ```bash
+        if [ -z "$1" ]; then
+            echo "Usage : $0 <nom-du-projet>"
        exit 1
    fi
-   ```
+    ```
 
 5. Testez votre script :
    ```bash

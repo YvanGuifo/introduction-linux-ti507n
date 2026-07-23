@@ -673,11 +673,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exercices-supplementaires-groupe-etoile" class="md-nav__link">
-    ⭐ Exercices supplémentaires — Groupe étoile
+  <a href="#exercices-supplementaires" class="md-nav__link">
+    ⭐ Exercices supplémentaires
   </a>
   
-    <nav class="md-nav" aria-label="⭐ Exercices supplémentaires — Groupe étoile">
+    <nav class="md-nav" aria-label="⭐ Exercices supplémentaires">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -688,15 +688,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#exercice-9-creer-un-fichier-en-c-avec-open-et-write" class="md-nav__link">
-    Exercice 9 — Créer un fichier en C avec open() et write() ⭐
+  <a href="#exercice-9-permissions-speciales-suid-sgid-sticky-bit" class="md-nav__link">
+    Exercice 9 — Permissions spéciales : SUID, SGID, sticky bit ⭐
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#exercice-10-naviguer-dans-un-fichier-avec-lseek" class="md-nav__link">
-    Exercice 10 — Naviguer dans un fichier avec lseek() ⭐
+  <a href="#exercice-10-script-daudit-de-permissions" class="md-nav__link">
+    Exercice 10 — Script d’audit de permissions ⭐
   </a>
   
 </li>
@@ -937,11 +937,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exercices-supplementaires-groupe-etoile" class="md-nav__link">
-    ⭐ Exercices supplémentaires — Groupe étoile
+  <a href="#exercices-supplementaires" class="md-nav__link">
+    ⭐ Exercices supplémentaires
   </a>
   
-    <nav class="md-nav" aria-label="⭐ Exercices supplémentaires — Groupe étoile">
+    <nav class="md-nav" aria-label="⭐ Exercices supplémentaires">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -952,15 +952,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#exercice-9-creer-un-fichier-en-c-avec-open-et-write" class="md-nav__link">
-    Exercice 9 — Créer un fichier en C avec open() et write() ⭐
+  <a href="#exercice-9-permissions-speciales-suid-sgid-sticky-bit" class="md-nav__link">
+    Exercice 9 — Permissions spéciales : SUID, SGID, sticky bit ⭐
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#exercice-10-naviguer-dans-un-fichier-avec-lseek" class="md-nav__link">
-    Exercice 10 — Naviguer dans un fichier avec lseek() ⭐
+  <a href="#exercice-10-script-daudit-de-permissions" class="md-nav__link">
+    Exercice 10 — Script d’audit de permissions ⭐
   </a>
   
 </li>
@@ -1441,12 +1441,11 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <p>Si un item n’est pas coché, <strong>revenez sur l’exercice correspondant</strong> avant le TP3.</p>
 </div>
 <hr />
-<h2 id="exercices-supplementaires-groupe-etoile">⭐ Exercices supplémentaires — Groupe étoile<a class="headerlink" href="#exercices-supplementaires-groupe-etoile" title="Permanent link">&para;</a></h2>
+<h2 id="exercices-supplementaires">⭐ Exercices supplémentaires<a class="headerlink" href="#exercices-supplementaires" title="Permanent link">&para;</a></h2>
 <div class="admonition star">
 <p class="admonition-title">À qui s’adressent les exercices 8, 9, 10 ?</p>
-<p>Vous avez terminé les exercices 1 à 7 ? Ces trois exercices prolongent la progression C entamée au TP1.</p>
-<p><strong>Rappel TP1 ⭐</strong> : vous avez utilisé <code>open(O_RDONLY)</code>, <code>read()</code>, <code>write()</code>, <code>close()</code>, <code>perror()</code>.
-<strong>TP2 ⭐</strong> : vous allez <strong>créer</strong> des fichiers en C avec <code>open(O_WRONLY|O_CREAT, mode)</code>, naviguer dedans avec <code>lseek()</code>, puis combiner pour écrire votre propre <code>cp</code>.</p>
+<p>Vous avez terminé les exercices 1 à 7 ? Ces trois exercices <strong>approfondissent les concepts de permissions du TP2</strong> : masque de création (<code>umask</code>), permissions spéciales (<code>SUID</code>, <code>SGID</code>, <em>sticky bit</em>), et écriture d’un script d’audit de sécurité.</p>
+<p>Les niveaux taxonomiques visés sont <strong>[Analyser]</strong>, <strong>[Évaluer]</strong> et <strong>[Créer]</strong> (Bloom révisé).</p>
 <p>Ces exercices sont <strong>optionnels</strong> et <strong>non évalués</strong>.</p>
 </div>
 <h3 id="exercice-8-comprendre-et-manipuler-umask">Exercice 8 — Comprendre et manipuler <code>umask</code> ⭐<a class="headerlink" href="#exercice-8-comprendre-et-manipuler-umask" title="Permanent link">&para;</a></h3>
@@ -1471,87 +1470,151 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <li>Pouvez-vous déduire comment <code>umask</code> agit ?</li>
 <li>Restaurez la valeur initiale de <code>umask</code>.</li>
 </ol>
-<h3 id="exercice-9-creer-un-fichier-en-c-avec-open-et-write">Exercice 9 — Créer un fichier en C avec <code>open()</code> et <code>write()</code> ⭐<a class="headerlink" href="#exercice-9-creer-un-fichier-en-c-avec-open-et-write" title="Permanent link">&para;</a></h3>
+<h3 id="exercice-9-permissions-speciales-suid-sgid-sticky-bit">Exercice 9 — Permissions spéciales : SUID, SGID, sticky bit ⭐<a class="headerlink" href="#exercice-9-permissions-speciales-suid-sgid-sticky-bit" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Au-delà des 9 bits classiques</p>
+<p>En plus de <code>rwxrwxrwx</code>, Linux définit <strong>trois bits spéciaux</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Bit</th>
+<th>Octal</th>
+<th>Sur un fichier</th>
+<th>Sur un répertoire</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SUID</strong> (Set User ID)</td>
+<td><code>4000</code></td>
+<td>Le programme s’exécute avec les droits de son <strong>propriétaire</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>SGID</strong> (Set Group ID)</td>
+<td><code>2000</code></td>
+<td>Le programme s’exécute avec les droits du <strong>groupe</strong></td>
+<td>Les fichiers créés héritent du groupe du répertoire</td>
+</tr>
+<tr>
+<td><strong>Sticky bit</strong></td>
+<td><code>1000</code></td>
+<td>—</td>
+<td>Seul le propriétaire d’un fichier peut le supprimer</td>
+</tr>
+</tbody>
+</table>
+<p>Ces bits apparaissent dans <code>ls -l</code> à la place du <code>x</code> : <code>s</code> (SUID/SGID) et <code>t</code> (sticky).</p>
+</div>
 <ol>
-<li>Lisez <code>man 2 open</code>. Identifiez les flags <code>O_WRONLY</code>, <code>O_CREAT</code>, <code>O_TRUNC</code> et le rôle du <strong>3ᵉ argument</strong> (<code>mode</code>).</li>
-<li>Dans <code>~/c/</code>, créez <code>write-hello.c</code> :
-   <div class="language-c highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fcntl.h&gt;</span><span class="c1">     /* open, O_WRONLY, O_CREAT, O_TRUNC */</span>
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unistd.h&gt;</span><span class="c1">    /* write, close */</span>
-</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="c1">     /* perror */</span>
-</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span><span class="c1">    /* strlen */</span>
-</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>
-</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">open</span><span class="p">(</span><span class="s">&quot;hello.txt&quot;</span><span class="p">,</span>
-</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="w">                  </span><span class="n">O_WRONLY</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">O_CREAT</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">O_TRUNC</span><span class="p">,</span>
-</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="w">                  </span><span class="mo">0644</span><span class="p">);</span><span class="w">          </span><span class="cm">/* permissions : rw-r--r-- */</span>
-</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fd</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">perror</span><span class="p">(</span><span class="s">&quot;open&quot;</span><span class="p">);</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>
-</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Écrit depuis un programme C.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
-</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="w">    </span><span class="n">write</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="p">,</span><span class="w"> </span><span class="n">strlen</span><span class="p">(</span><span class="n">msg</span><span class="p">));</span>
-</span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>
-</span><span id="__span-21-15"><a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a><span class="w">    </span><span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span>
-</span><span id="__span-21-16"><a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-21-17"><a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a><span class="p">}</span>
-</span></code></pre></div></li>
-<li>Compilez : <code>gcc -Wall -o write-hello write-hello.c</code>.</li>
-<li>Exécutez : <code>./write-hello</code>.</li>
-<li>Vérifiez :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>$<span class="w"> </span>cat<span class="w"> </span>hello.txt
-</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>hello.txt
-</span></code></pre></div></li>
-<li><strong>Questions</strong> :</li>
-<li>Quel rôle joue chacun des trois flags ?</li>
-<li>Pourquoi le mode <code>0644</code> ? Reliez à ce que vous avez vu dans ce TP.</li>
-<li>Que se passe-t-il si vous remplacez <code>O_TRUNC</code> par <code>O_APPEND</code> et relancez plusieurs fois ?</li>
+<li>
+<p>Examinez les permissions de la commande <code>passwd</code> :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span><span class="k">$(</span>which<span class="w"> </span>passwd<span class="k">)</span>
+</span></code></pre></div>
+   Vous devriez voir un <code>s</code> à la place du <code>x</code> propriétaire. Que signifie ce <code>s</code> ?</p>
+</li>
+<li>
+<p><strong>Question d’analyse</strong> : pourquoi la commande <code>passwd</code> a-t-elle besoin du bit SUID ? Quel fichier doit-elle modifier et à qui appartient-il ?
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>/etc/shadow
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Cherchez tous les fichiers SUID sur le système :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>$<span class="w"> </span>find<span class="w"> </span>/<span class="w"> </span>-perm<span class="w"> </span>-4000<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span><span class="m">2</span>&gt;/dev/null
+</span></code></pre></div>
+   Pourquoi redirige-t-on <code>stderr</code> vers <code>/dev/null</code> ? Combien de fichiers SUID trouvez-vous ?</p>
+</li>
+<li>
+<p>Examinez le répertoire <code>/tmp</code> :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>$<span class="w"> </span>ls<span class="w"> </span>-ld<span class="w"> </span>/tmp
+</span></code></pre></div>
+   Que signifie le <code>t</code> à la fin des permissions ? Pourquoi est-il indispensable pour <code>/tmp</code> ?</p>
+</li>
+<li>
+<p><strong>Mise en pratique</strong> : créez un répertoire <code>partage/</code> avec le sticky bit et testez :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>$<span class="w"> </span>mkdir<span class="w"> </span>partage
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>$<span class="w"> </span>chmod<span class="w"> </span><span class="m">1777</span><span class="w"> </span>partage
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>$<span class="w"> </span>ls<span class="w"> </span>-ld<span class="w"> </span>partage
+</span></code></pre></div>
+   Décomposez <code>1777</code> : que vaut chaque chiffre ?</p>
+</li>
+<li>
+<p><strong>Mise en pratique SGID</strong> sur un répertoire :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>$<span class="w"> </span>mkdir<span class="w"> </span>equipe
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>$<span class="w"> </span>chmod<span class="w"> </span><span class="m">2775</span><span class="w"> </span>equipe
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>$<span class="w"> </span>ls<span class="w"> </span>-ld<span class="w"> </span>equipe
+</span></code></pre></div>
+   Créez un fichier dans <code>equipe/</code>. À quel groupe appartient-il ? Comparez avec un fichier créé dans un répertoire sans SGID.</p>
+</li>
+<li>
+<p><strong>Question d’évaluation</strong> : un administrateur trouve un fichier SUID appartenant à root dans <code>/tmp</code>. Pourquoi est-ce un <strong>risque de sécurité</strong> critique ?</p>
+</li>
 </ol>
-<h3 id="exercice-10-naviguer-dans-un-fichier-avec-lseek">Exercice 10 — Naviguer dans un fichier avec <code>lseek()</code> ⭐<a class="headerlink" href="#exercice-10-naviguer-dans-un-fichier-avec-lseek" title="Permanent link">&para;</a></h3>
-<p><code>lseek()</code> positionne le <strong>curseur</strong> de lecture/écriture dans un fichier, permettant l’accès aléatoire.</p>
+<h3 id="exercice-10-script-daudit-de-permissions">Exercice 10 — Script d’audit de permissions ⭐<a class="headerlink" href="#exercice-10-script-daudit-de-permissions" title="Permanent link">&para;</a></h3>
+<p>Cet exercice combine tout ce que vous avez appris dans ce TP pour écrire un script d’<strong>audit de sécurité</strong>.</p>
 <ol>
-<li>Lisez <code>man 2 lseek</code>. Notez les constantes <code>SEEK_SET</code>, <code>SEEK_CUR</code>, <code>SEEK_END</code>.</li>
-<li>Créez <code>read-skip.c</code> :
-   <div class="language-c highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fcntl.h&gt;</span>
-</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unistd.h&gt;</span>
-</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
-</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>
-</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">open</span><span class="p">(</span><span class="s">&quot;/etc/passwd&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">O_RDONLY</span><span class="p">);</span>
-</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fd</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">perror</span><span class="p">(</span><span class="s">&quot;open&quot;</span><span class="p">);</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>
-</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lseek</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="n">SEEK_SET</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="p">(</span><span class="kt">off_t</span><span class="p">)</span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="w">        </span><span class="n">perror</span><span class="p">(</span><span class="s">&quot;lseek&quot;</span><span class="p">);</span><span class="w"> </span><span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-</span><span id="__span-23-11"><a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-23-12"><a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a>
-</span><span id="__span-23-13"><a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">buf</span><span class="p">[</span><span class="mi">50</span><span class="p">];</span>
-</span><span id="__span-23-14"><a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a><span class="w">    </span><span class="kt">ssize_t</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">read</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="n">buf</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
-</span><span id="__span-23-15"><a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-23-16"><a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a><span class="w">        </span><span class="n">buf</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;\0&#39;</span><span class="p">;</span>
-</span><span id="__span-23-17"><a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Octets 100 à %ld :</span><span class="se">\n</span><span class="s">%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">long</span><span class="p">)(</span><span class="mi">100</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">n</span><span class="p">),</span><span class="w"> </span><span class="n">buf</span><span class="p">);</span>
-</span><span id="__span-23-18"><a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-23-19"><a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a>
-</span><span id="__span-23-20"><a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a><span class="w">    </span><span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span>
-</span><span id="__span-23-21"><a id="__codelineno-23-21" name="__codelineno-23-21" href="#__codelineno-23-21"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-23-22"><a id="__codelineno-23-22" name="__codelineno-23-22" href="#__codelineno-23-22"></a><span class="p">}</span>
-</span></code></pre></div></li>
-<li>Compilez et exécutez. Comparez avec <code>head -c 150 /etc/passwd | tail -c 50</code>.</li>
-<li><strong>Questions</strong> :</li>
-<li>Que fait <code>lseek(fd, 0, SEEK_END)</code> ?</li>
-<li>Modifiez le programme pour afficher la <strong>taille en octets</strong> du fichier <code>/etc/passwd</code>. Comparez avec <code>wc -c /etc/passwd</code>.</li>
+<li>
+<p>Créez le script <code>audit-permissions.sh</code> :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="ch">#!/bin/bash</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="c1"># Audit de permissions — TP2 étoile</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="c1"># Vérifie les points de sécurité courants liés aux permissions</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;=== AUDIT DE PERMISSIONS ===&quot;</span>
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Date : </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Utilisateur : </span><span class="k">$(</span>whoami<span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a>
+</span><span id="__span-27-10"><a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;--- 1. Fichiers SUID appartenant à root ---&quot;</span>
+</span><span id="__span-27-11"><a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a>find<span class="w"> </span>/<span class="w"> </span>-user<span class="w"> </span>root<span class="w"> </span>-perm<span class="w"> </span>-4000<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-20
+</span><span id="__span-27-12"><a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-27-13"><a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a>
+</span><span id="__span-27-14"><a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;--- 2. Fichiers SGID ---&quot;</span>
+</span><span id="__span-27-15"><a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a>find<span class="w"> </span>/<span class="w"> </span>-perm<span class="w"> </span>-2000<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-10
+</span><span id="__span-27-16"><a id="__codelineno-27-16" name="__codelineno-27-16" href="#__codelineno-27-16"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-27-17"><a id="__codelineno-27-17" name="__codelineno-27-17" href="#__codelineno-27-17"></a>
+</span><span id="__span-27-18"><a id="__codelineno-27-18" name="__codelineno-27-18" href="#__codelineno-27-18"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;--- 3. Fichiers accessibles en écriture par tous (world-writable) ---&quot;</span>
+</span><span id="__span-27-19"><a id="__codelineno-27-19" name="__codelineno-27-19" href="#__codelineno-27-19"></a>find<span class="w"> </span>/home<span class="w"> </span>-perm<span class="w"> </span>-o<span class="o">=</span>w<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span><span class="m">2</span>&gt;/dev/null
+</span><span id="__span-27-20"><a id="__codelineno-27-20" name="__codelineno-27-20" href="#__codelineno-27-20"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-27-21"><a id="__codelineno-27-21" name="__codelineno-27-21" href="#__codelineno-27-21"></a>
+</span><span id="__span-27-22"><a id="__codelineno-27-22" name="__codelineno-27-22" href="#__codelineno-27-22"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;--- 4. Répertoires sans sticky bit accessibles en écriture par tous ---&quot;</span>
+</span><span id="__span-27-23"><a id="__codelineno-27-23" name="__codelineno-27-23" href="#__codelineno-27-23"></a>find<span class="w"> </span>/<span class="w"> </span>-perm<span class="w"> </span>-o<span class="o">=</span>w<span class="w"> </span>!<span class="w"> </span>-perm<span class="w"> </span>-1000<span class="w"> </span>-type<span class="w"> </span>d<span class="w"> </span><span class="m">2</span>&gt;/dev/null
+</span><span id="__span-27-24"><a id="__codelineno-27-24" name="__codelineno-27-24" href="#__codelineno-27-24"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-27-25"><a id="__codelineno-27-25" name="__codelineno-27-25" href="#__codelineno-27-25"></a>
+</span><span id="__span-27-26"><a id="__codelineno-27-26" name="__codelineno-27-26" href="#__codelineno-27-26"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;--- 5. Fichiers sans propriétaire ou sans groupe ---&quot;</span>
+</span><span id="__span-27-27"><a id="__codelineno-27-27" name="__codelineno-27-27" href="#__codelineno-27-27"></a>find<span class="w"> </span>/home<span class="w"> </span>-nouser<span class="w"> </span>-o<span class="w"> </span>-nogroup<span class="w"> </span><span class="m">2</span>&gt;/dev/null
+</span><span id="__span-27-28"><a id="__codelineno-27-28" name="__codelineno-27-28" href="#__codelineno-27-28"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-27-29"><a id="__codelineno-27-29" name="__codelineno-27-29" href="#__codelineno-27-29"></a>
+</span><span id="__span-27-30"><a id="__codelineno-27-30" name="__codelineno-27-30" href="#__codelineno-27-30"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;=== FIN DE L’AUDIT ===&quot;</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Rendez-le exécutable et lancez-le :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>$<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>audit-permissions.sh
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>$<span class="w"> </span>./audit-permissions.sh
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Question d’analyse</strong> : pour chacune des 5 vérifications, expliquez en une phrase <strong>pourquoi</strong> c’est un problème de sécurité potentiel.</p>
+</li>
+<li>
+<p><strong>Amélioration</strong> : ajoutez une 6ᵉ vérification qui liste les fichiers de <code>/etc</code> lisibles par « others » (<code>o=r</code>) et dont le nom contient <code>shadow</code> ou <code>secret</code>. <em>(Indice : combinez <code>find</code> avec <code>-name</code>.)</em></p>
+</li>
+<li>
+<p><strong>Question d’évaluation</strong> : votre script utilise <code>head -20</code> et <code>head -10</code> pour limiter la sortie. En contexte réel d’audit, comment adapteriez-vous le script pour enregistrer les résultats complets dans un fichier de log tout en affichant un résumé à l’écran ? <em>(Indice : pensez à la commande <code>tee</code> vue au TP1 étoile via les pipelines.)</em></p>
+</li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">Vers le TP3</p>
-<p>Au TP3 vous approfondirez la compilation C et manipulerez les <strong>descripteurs de fichiers</strong> (stdin/stdout/stderr, <code>dup</code>, <code>dup2</code>).</p>
-<blockquote>
-<p><strong>Référence</strong> : Kerrisk, M. (2010). <em>The Linux Programming Interface</em>. No Starch Press. ISBN 978-1593272203, chapitres 4 (File I/O) et 15 (File Attributes).</p>
-</blockquote>
+<p>Au TP3 vous découvrirez la <strong>compilation C</strong> et les variables d’environnement. Les exercices étoile du TP3 approfondiront la programmation système en C — vous aurez alors toutes les bases nécessaires.</p>
 </div>
 <hr />
 <h2 id="pour-aller-plus-loin-lectures-recommandees">Pour aller plus loin (lectures recommandées)<a class="headerlink" href="#pour-aller-plus-loin-lectures-recommandees" title="Permanent link">&para;</a></h2>
 <ul>
 <li><em>Filesystem Hierarchy Standard</em> v3.0 : <a href="https://refspecs.linuxfoundation.org/fhs.shtml">https://refspecs.linuxfoundation.org/fhs.shtml</a></li>
 <li><em>Debian Reference</em> : <a href="https://www.debian.org/doc/manuals/debian-reference/">https://www.debian.org/doc/manuals/debian-reference/</a></li>
-<li>Bach, M. J. (1986). <em>The Design of the UNIX Operating System</em>. Prentice Hall. ISBN 978-0132017992.</li>
-<li>Kerrisk, M. (2010). <em>The Linux Programming Interface</em>. No Starch Press. ISBN 978-1593272203.</li>
-<li>Stevens, W. R., &amp; Rago, S. A. (2013). <em>Advanced Programming in the UNIX Environment</em>, 3rd ed. Addison-Wesley. ISBN 978-0321637734.</li>
+<li>Shotts, W. (2019). <em>The Linux Command Line</em>, 2nd ed. No Starch Press. ISBN 978-1593279523. Chap. 9 (<em>Permissions</em>).</li>
+<li>Garfinkel, S., Spafford, G., &amp; Schwartz, A. (2003). <em>Practical Unix and Internet Security</em>, 3rd ed. O’Reilly. ISBN 978-0596003234.</li>
+<li>Kerrisk, M. (2010). <em>The Linux Programming Interface</em>. No Starch Press. ISBN 978-1593272203, chap. 15 (<em>File Attributes</em>).</li>
 </ul>
 
 

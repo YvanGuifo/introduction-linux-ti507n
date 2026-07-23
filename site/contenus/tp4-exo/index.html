@@ -626,6 +626,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#exercices-supplementaires" class="md-nav__link">
+    ⭐ Exercices supplémentaires
+  </a>
+  
+    <nav class="md-nav" aria-label="⭐ Exercices supplémentaires">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercice-4-transformations-avec-sed" class="md-nav__link">
+    Exercice 4 — Transformations avec sed ⭐
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-5-extraction-structuree-avec-awk" class="md-nav__link">
+    Exercice 5 — Extraction structurée avec awk ⭐
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-6-script-danalyse-de-etcpasswd" class="md-nav__link">
+    Exercice 6 — Script d'analyse de /etc/passwd ⭐
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -684,6 +718,40 @@
   <a href="#exercice-3-plus-sur-grep" class="md-nav__link">
     Exercice 3 : Plus sur grep 📚📚
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercices-supplementaires" class="md-nav__link">
+    ⭐ Exercices supplémentaires
+  </a>
+  
+    <nav class="md-nav" aria-label="⭐ Exercices supplémentaires">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercice-4-transformations-avec-sed" class="md-nav__link">
+    Exercice 4 — Transformations avec sed ⭐
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-5-extraction-structuree-avec-awk" class="md-nav__link">
+    Exercice 5 — Extraction structurée avec awk ⭐
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-6-script-danalyse-de-etcpasswd" class="md-nav__link">
+    Exercice 6 — Script d'analyse de /etc/passwd ⭐
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -832,6 +900,183 @@
 <li>Afficher le chemin absolu des fichiers qui contiennent de la chaîne <code>127.0.0.1</code> dans les fichiers de <code>/etc</code>.</li>
 <li>Afficher uniquement le nom des fichiers qui contiennent de la chaîne <code>127.0.0.1</code> dans les fichiers de <code>/etc</code>. (indice : il existe une commande qui s'appelle <code>rev</code>).</li>
 <li>Affiche le chemin du répertoire personnel de l'utilisateur <code>games</code>.</li>
+</ol>
+<hr />
+<h2 id="exercices-supplementaires">⭐ Exercices supplémentaires<a class="headerlink" href="#exercices-supplementaires" title="Permanent link">&para;</a></h2>
+<div class="admonition star">
+<p class="admonition-title">À qui s'adressent les exercices 4, 5, 6 ?</p>
+<p>Vous avez terminé les exercices 1 à 3 ? Ces trois exercices approfondissent les <strong>filtres textuels</strong> et les <strong>tubes</strong> en vous faisant découvrir <code>sed</code>, <code>awk</code> et l'écriture d'un script d'extraction de données complet.</p>
+<p>Les niveaux taxonomiques visés sont <strong>[Analyser]</strong>, <strong>[Évaluer]</strong> et <strong>[Créer]</strong> (Bloom révisé).</p>
+<p>Ces exercices sont <strong>optionnels</strong> et <strong>non évalués</strong>.</p>
+</div>
+<h3 id="exercice-4-transformations-avec-sed">Exercice 4 — Transformations avec <code>sed</code> ⭐<a class="headerlink" href="#exercice-4-transformations-avec-sed" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">L'éditeur de flux <code>sed</code></p>
+<p><code>sed</code> (<em>stream editor</em>) applique des transformations ligne par ligne sur un flux de texte. La syntaxe la plus courante est la substitution :</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/motif/remplacement/&#39;</span><span class="w"> </span>fichier
+</span></code></pre></div>
+<ul>
+<li><code>s</code> = substitution ; <code>g</code> en fin = remplacer <strong>toutes</strong> les occurrences sur la ligne.</li>
+<li><code>sed</code> ne modifie pas le fichier original (sauf avec <code>-i</code>).</li>
+</ul>
+<blockquote>
+<p><strong>Référence</strong> : Dale Dougherty &amp; Arnold Robbins (1997). <em>sed &amp; awk</em>, 2nd ed. O'Reilly. ISBN 978-1565922259.</p>
+</blockquote>
+</div>
+<ol>
+<li>
+<p>Créez un fichier <code>utilisateurs.txt</code> :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span>cut<span class="w"> </span>-d:<span class="w"> </span>-f1,3,6<span class="w"> </span>/etc/passwd<span class="w"> </span>&gt;<span class="w"> </span>utilisateurs.txt
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>$<span class="w"> </span>cat<span class="w"> </span>utilisateurs.txt
+</span></code></pre></div>
+   Ce fichier contient <code>nom:UID:home</code> pour chaque utilisateur.</p>
+</li>
+<li>
+<p>Remplacez les <code>:</code> par des espaces pour une lecture plus facile :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/:/ /g&#39;</span><span class="w"> </span>utilisateurs.txt
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Affichez uniquement les lignes dont l'UID (2ᵉ champ) est supérieur ou égal à 1000 (utilisateurs humains) :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$<span class="w"> </span>awk<span class="w"> </span>-F:<span class="w"> </span><span class="s1">&#39;$2 &gt;= 1000&#39;</span><span class="w"> </span>utilisateurs.txt
+</span></code></pre></div>
+   <em>(Aperçu de <code>awk</code> — détaillé à l'exercice 5.)</em></p>
+</li>
+<li>
+<p>Supprimez les lignes contenant <code>nologin</code> :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;/nologin/d&#39;</span><span class="w"> </span>/etc/passwd
+</span></code></pre></div>
+   Que fait le <code>d</code> ? Combien de lignes restent par rapport à l'original ?</p>
+</li>
+<li>
+<p><strong>Substitution avancée</strong> : dans le fichier <code>fj</code> (exercice 1), remplacez toutes les occurrences de <code>Frère</code> par <code>Sœur</code> et redirigez le résultat dans <code>fj2</code> :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$<span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/Frère/Sœur/g&#39;</span><span class="w"> </span>fj<span class="w"> </span>&gt;<span class="w"> </span>fj2
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>$<span class="w"> </span>cat<span class="w"> </span>fj2
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Question d'analyse</strong> : quelle différence y a-t-il entre <code>sed 's/Dormez/Réveillez/' fj</code> et <code>sed 's/Dormez/Réveillez/g' fj</code> ? Testez les deux sur le fichier <code>fj</code>.</p>
+</li>
+</ol>
+<h3 id="exercice-5-extraction-structuree-avec-awk">Exercice 5 — Extraction structurée avec <code>awk</code> ⭐<a class="headerlink" href="#exercice-5-extraction-structuree-avec-awk" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Le langage <code>awk</code></p>
+<p><code>awk</code> traite des fichiers structurés <strong>champ par champ</strong>. Il découpe chaque ligne selon un séparateur (espace par défaut, <code>-F</code> pour changer) et rend les champs accessibles via <code>$1</code>, <code>$2</code>, etc. (<code>$0</code> = la ligne entière).</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$<span class="w"> </span>awk<span class="w"> </span>-F:<span class="w"> </span><span class="s1">&#39;{ print $1, $3 }&#39;</span><span class="w"> </span>/etc/passwd
+</span></code></pre></div>
+<p><code>awk</code> peut aussi faire des calculs, des conditions et des boucles.</p>
+<blockquote>
+<p><strong>Référence</strong> : Aho, A. V., Kernighan, B. W., &amp; Weinberger, P. J. (1988). <em>The AWK Programming Language</em>. Addison-Wesley. ISBN 978-0201079814.</p>
+</blockquote>
+</div>
+<ol>
+<li>
+<p>Affichez le nom d'utilisateur et le shell de connexion (champs 1 et 7) de <code>/etc/passwd</code> :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>$<span class="w"> </span>awk<span class="w"> </span>-F:<span class="w"> </span><span class="s1">&#39;{ print $1, $7 }&#39;</span><span class="w"> </span>/etc/passwd
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Affichez uniquement les utilisateurs dont le shell est <code>/bin/bash</code> :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$<span class="w"> </span>awk<span class="w"> </span>-F:<span class="w"> </span><span class="s1">&#39;$7 == &quot;/bin/bash&quot; { print $1 }&#39;</span><span class="w"> </span>/etc/passwd
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Comptez le nombre d'utilisateurs dont l'UID (champ 3) est supérieur ou égal à 1000 :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>$<span class="w"> </span>awk<span class="w"> </span>-F:<span class="w"> </span><span class="s1">&#39;$3 &gt;= 1000 { count++ } END { print count }&#39;</span><span class="w"> </span>/etc/passwd
+</span></code></pre></div>
+   Que font <code>count++</code> et le bloc <code>END</code> ?</p>
+</li>
+<li>
+<p>Affichez un tableau formaté des utilisateurs humains (UID ≥ 1000) avec en-tête :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>$<span class="w"> </span>awk<span class="w"> </span>-F:<span class="w"> </span><span class="s1">&#39;BEGIN { printf &quot;%-15s %-6s %s\n&quot;, &quot;NOM&quot;, &quot;UID&quot;, &quot;HOME&quot; }</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="s1">           $3 &gt;= 1000 { printf &quot;%-15s %-6s %s\n&quot;, $1, $3, $6 }&#39;</span><span class="w"> </span>/etc/passwd
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Analyse de logs</strong> : créez un fichier <code>acces.log</code> simulé :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;2025-01-15 alice connexion</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="s2">2025-01-15 bob connexion</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="s2">2025-01-15 alice déconnexion</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="s2">2025-01-16 alice connexion</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="s2">2025-01-16 charlie connexion</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="s2">2025-01-16 bob connexion</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="s2">2025-01-16 alice déconnexion&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>acces.log
+</span></code></pre></div>
+   Avec <code>awk</code>, comptez le nombre de connexions par utilisateur :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>$<span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;$3 == &quot;connexion&quot; { c[$2]++ } END { for (u in c) print u, c[u] }&#39;</span><span class="w"> </span>acces.log
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Question d'évaluation</strong> : dans quel cas préférez-vous <code>cut</code> à <code>awk</code> ? Et inversement ? Donnez un exemple concret pour chaque.</p>
+</li>
+</ol>
+<h3 id="exercice-6-script-danalyse-de-etcpasswd">Exercice 6 — Script d'analyse de <code>/etc/passwd</code> ⭐<a class="headerlink" href="#exercice-6-script-danalyse-de-etcpasswd" title="Permanent link">&para;</a></h3>
+<p>Cet exercice combine <code>grep</code>, <code>cut</code>, <code>sort</code>, <code>wc</code>, <code>awk</code> et <code>sed</code> dans un script complet.</p>
+<ol>
+<li>
+<p>Créez le script <code>analyse-passwd.sh</code> :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="ch">#!/bin/bash</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="c1"># Analyse du fichier /etc/passwd — Commandes supplémentaires étoile</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="nv">FICHIER</span><span class="o">=</span><span class="s2">&quot;/etc/passwd&quot;</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;=========================================&quot;</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;  ANALYSE DE </span><span class="nv">$FICHIER</span><span class="s2">&quot;</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;  Date : </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;=========================================&quot;</span>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>
+</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="c1"># 1. Nombre total d&#39;utilisateurs</span>
+</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="nv">total</span><span class="o">=</span><span class="k">$(</span>wc<span class="w"> </span>-l<span class="w"> </span>&lt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$FICHIER</span><span class="s2">&quot;</span><span class="k">)</span>
+</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;1. Nombre total d&#39;utilisateurs : </span><span class="nv">$total</span><span class="s2">&quot;</span>
+</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-17-16"><a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>
+</span><span id="__span-17-17"><a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="c1"># 2. Utilisateurs humains (UID &gt;= 1000)</span>
+</span><span id="__span-17-18"><a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;2. Utilisateurs humains (UID &gt;= 1000) :&quot;</span>
+</span><span id="__span-17-19"><a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a>awk<span class="w"> </span>-F:<span class="w"> </span><span class="s1">&#39;$3 &gt;= 1000 { printf &quot;   - %-15s (UID: %s, home: %s)\n&quot;, $1, $3, $6 }&#39;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$FICHIER</span><span class="s2">&quot;</span>
+</span><span id="__span-17-20"><a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a><span class="nv">humains</span><span class="o">=</span><span class="k">$(</span>awk<span class="w"> </span>-F:<span class="w"> </span><span class="s1">&#39;$3 &gt;= 1000&#39;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$FICHIER</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l<span class="k">)</span>
+</span><span id="__span-17-21"><a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;   Total : </span><span class="nv">$humains</span><span class="s2">&quot;</span>
+</span><span id="__span-17-22"><a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-17-23"><a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a>
+</span><span id="__span-17-24"><a id="__codelineno-17-24" name="__codelineno-17-24" href="#__codelineno-17-24"></a><span class="c1"># 3. Répartition des shells de connexion</span>
+</span><span id="__span-17-25"><a id="__codelineno-17-25" name="__codelineno-17-25" href="#__codelineno-17-25"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;3. Répartition des shells :&quot;</span>
+</span><span id="__span-17-26"><a id="__codelineno-17-26" name="__codelineno-17-26" href="#__codelineno-17-26"></a>cut<span class="w"> </span>-d:<span class="w"> </span>-f7<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$FICHIER</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq<span class="w"> </span>-c<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-rn
+</span><span id="__span-17-27"><a id="__codelineno-17-27" name="__codelineno-17-27" href="#__codelineno-17-27"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-17-28"><a id="__codelineno-17-28" name="__codelineno-17-28" href="#__codelineno-17-28"></a>
+</span><span id="__span-17-29"><a id="__codelineno-17-29" name="__codelineno-17-29" href="#__codelineno-17-29"></a><span class="c1"># 4. Utilisateurs sans shell de connexion (nologin ou false)</span>
+</span><span id="__span-17-30"><a id="__codelineno-17-30" name="__codelineno-17-30" href="#__codelineno-17-30"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;4. Utilisateurs sans shell interactif :&quot;</span>
+</span><span id="__span-17-31"><a id="__codelineno-17-31" name="__codelineno-17-31" href="#__codelineno-17-31"></a>grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">&quot;nologin|/bin/false&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$FICHIER</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d:<span class="w"> </span>-f1<span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span><span class="s1">&#39;\n&#39;</span><span class="w"> </span><span class="s1">&#39;, &#39;</span>
+</span><span id="__span-17-32"><a id="__codelineno-17-32" name="__codelineno-17-32" href="#__codelineno-17-32"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-17-33"><a id="__codelineno-17-33" name="__codelineno-17-33" href="#__codelineno-17-33"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-17-34"><a id="__codelineno-17-34" name="__codelineno-17-34" href="#__codelineno-17-34"></a>
+</span><span id="__span-17-35"><a id="__codelineno-17-35" name="__codelineno-17-35" href="#__codelineno-17-35"></a><span class="c1"># 5. Comptes système (UID &lt; 100)</span>
+</span><span id="__span-17-36"><a id="__codelineno-17-36" name="__codelineno-17-36" href="#__codelineno-17-36"></a><span class="nv">systeme</span><span class="o">=</span><span class="k">$(</span>awk<span class="w"> </span>-F:<span class="w"> </span><span class="s1">&#39;$3 &lt; 100&#39;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$FICHIER</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l<span class="k">)</span>
+</span><span id="__span-17-37"><a id="__codelineno-17-37" name="__codelineno-17-37" href="#__codelineno-17-37"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;5. Comptes système (UID &lt; 100) : </span><span class="nv">$systeme</span><span class="s2">&quot;</span>
+</span><span id="__span-17-38"><a id="__codelineno-17-38" name="__codelineno-17-38" href="#__codelineno-17-38"></a>
+</span><span id="__span-17-39"><a id="__codelineno-17-39" name="__codelineno-17-39" href="#__codelineno-17-39"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-17-40"><a id="__codelineno-17-40" name="__codelineno-17-40" href="#__codelineno-17-40"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;=========================================&quot;</span>
+</span><span id="__span-17-41"><a id="__codelineno-17-41" name="__codelineno-17-41" href="#__codelineno-17-41"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;  FIN DE L&#39;ANALYSE&quot;</span>
+</span><span id="__span-17-42"><a id="__codelineno-17-42" name="__codelineno-17-42" href="#__codelineno-17-42"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;=========================================&quot;</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Rendez-le exécutable et lancez-le :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>$<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>analyse-passwd.sh
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>$<span class="w"> </span>./analyse-passwd.sh
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Amélioration 1</strong> : ajoutez une section qui détecte les utilisateurs ayant le même shell que <code>root</code>. <em>(Indice : récupérez d'abord le shell de root avec <code>grep</code>, puis cherchez les autres utilisateurs ayant ce même shell.)</em></p>
+</li>
+<li>
+<p><strong>Amélioration 2</strong> : modifiez le script pour qu'il accepte un fichier en argument (<code>$1</code>) au lieu de toujours analyser <code>/etc/passwd</code>. Si aucun argument n'est fourni, utilisez <code>/etc/passwd</code> par défaut :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nv">FICHIER</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">1</span><span class="k">:-</span><span class="p">/etc/passwd</span><span class="si">}</span><span class="s2">&quot;</span>
+</span></code></pre></div>
+   Que signifie la syntaxe <code>${1:-valeur}</code> ?</p>
+</li>
+<li>
+<p><strong>Question d'évaluation</strong> : dans la section 4 du script, pourquoi utilise-t-on <code>tr '\n' ','</code> ? Que se passerait-il sans cette commande ? Proposez une alternative avec <code>paste</code>.</p>
+</li>
 </ol>
 
 

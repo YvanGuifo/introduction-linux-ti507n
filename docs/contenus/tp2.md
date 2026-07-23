@@ -51,7 +51,7 @@ title: TP2 - Système de fichiers et permissions
     > 📚 = Facile · 📚📚 = Moyenne · 📚📚📚 = Élevée
     >
     > Les exercices **1 à 7** constituent le **tronc commun**, exigible pour tous.
-    > Les exercices **8, 9, 10** sont des **exercices supplémentaires** réservés au **groupe étoile**.
+    > Les exercices **8, 9, 10** sont des **exercices supplémentaires** (⭐).
 
 !!! info "Alignement avec les évaluations (Biggs, 1996)"
     Les exercices 📚 et 📚📚 préparent au **CC S38** et au **TP noté S40**.
@@ -494,7 +494,7 @@ Cet exercice combine tout ce que vous avez appris dans ce TP pour écrire un scr
 
 4. **Amélioration** : ajoutez une 6ᵉ vérification qui liste les fichiers de `/etc` lisibles par « others » (`o=r`) et dont le nom contient `shadow` ou `secret`. *(Indice : combinez `find` avec `-name`.)*
 
-5. **Question d’évaluation** : votre script utilise `head -20` et `head -10` pour limiter la sortie. En contexte réel d’audit, comment adapteriez-vous le script pour enregistrer les résultats complets dans un fichier de log tout en affichant un résumé à l’écran ? *(Indice : pensez à la commande `tee` vue au TP1 étoile via les pipelines.)*
+5. **Question d’évaluation** : votre script utilise `head -20` et `head -10` pour limiter la sortie. En contexte réel d’audit, comment adapteriez-vous le script pour enregistrer les résultats complets dans un fichier de log tout en affichant un résumé à l’écran ? *(Indice : pensez à la redirection `>>` pour écrire dans un fichier de log, et à la commande `tee` que vous découvrirez au TP4.)*
 
 !!! info "Vers le TP3"
     Au TP3 vous découvrirez la **compilation C** et les variables d’environnement. Les exercices étoile du TP3 approfondiront la programmation système en C — vous aurez alors toutes les bases nécessaires.

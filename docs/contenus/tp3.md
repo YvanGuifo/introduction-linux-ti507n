@@ -55,7 +55,7 @@ title: TP3 - Environnement de travail et Compilateur C
     > 📚 = Facile · 📚📚 = Moyenne · 📚📚📚 = Élevée
     >
     > Les exercices **1 à 7** constituent le **tronc commun**, exigible pour tous.
-    > Les exercices **8, 9, 10** sont des **exercices supplémentaires** réservés au **groupe étoile**.
+    > Les exercices **8, 9, 10** sont des **exercices supplémentaires** (⭐).
 
 !!! info "Alignement avec les évaluations (Biggs, 1996)"
     Les exercices 📚 et 📚📚 préparent au **CC S38** et au **TP noté S40**.
