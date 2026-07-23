@@ -127,10 +127,12 @@ hide:
 5. Enter `cd /`, then `pwd` and `ls`. What does `ls` do?
 6. Enter `cd /usr/include` then `ls`. What does this directory seem to be used for?
 7. Reminders:
-   - `cat` *(concatenate)* displays the files given as arguments.
-   - `wc` *(word count)* displays the number of lines, words, and characters.
 
-   Display the contents of the file `stdlib.h` and its number of lines.
+    - `cat` *(concatenate)* displays the files given as arguments.
+    - `wc` *(word count)* displays the number of lines, words, and characters.
+
+    Display the contents of the file `stdlib.h` and its number of lines.
+
 8. Enter `cd ..`, `pwd` and `ls`.
 9. Enter `cd share/man`, then `pwd` and `ls`. What do some of the results refer to?
 10. Enter `ls /bin`. Are some of the names familiar?

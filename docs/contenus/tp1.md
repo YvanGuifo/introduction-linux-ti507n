@@ -127,10 +127,12 @@ hide:
 5. Entrez `cd /`, puis `pwd` et `ls`. À quoi sert `ls` ?
 6. Entrez `cd /usr/include` puis `ls`. À quoi semble servir ce répertoire ?
 7. Rappels :
-   - `cat` *(concatenate)* affiche les fichiers donnés en arguments.
-   - `wc` *(word count)* affiche les nombres de lignes, mots, caractères.
 
-   Affichez le contenu du fichier `stdlib.h` et son nombre de lignes.
+    - `cat` *(concatenate)* affiche les fichiers donnés en arguments.
+    - `wc` *(word count)* affiche les nombres de lignes, mots, caractères.
+    
+    Affichez le contenu du fichier `stdlib.h` et son nombre de lignes.
+
 8. Entrez `cd ..`, `pwd` et `ls`.
 9. Entrez `cd share/man`, puis `pwd` et `ls`. À quoi se réfèrent certains résultats ?
 10. Entrez `ls /bin`. Certains noms vous sont-ils familiers ?
