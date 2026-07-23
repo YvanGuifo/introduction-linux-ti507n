@@ -2,325 +2,561 @@
 title: TP4 - Canaux standards et redirections | Processus et tâches | Signaux
 ---
 
-# TP4 - Canaux standards et redirections | Processus et tâches | Signaux
+# TP4 — Canaux standards et redirections, processus et tâches, signaux
 
-!!! objectifs "Objectifs pédagogiques"
+!!! objectifs "Objectifs pédagogiques (taxonomie de Bloom révisée)"
+    À l’issue de ce TP, vous serez capable de :
 
-    À l’issue de ce TP, l’étudiant sera capable de :
+    - **[Appliquer]** rediriger les flux standards d’une commande avec `>`, `>>`, `<`, `1>`, `2>`, `0<`.
+    - **[Appliquer]** combiner plusieurs commandes avec des tubes (`|`) pour automatiser un traitement.
+    - **[Appliquer]** observer et contrôler les processus avec `ps`, `top`, `jobs`, `fg`, `bg`.
+    - **[Analyser]** distinguer un **processus** d’une **tâche** ; distinguer avant-plan et arrière-plan.
+    - **[Appliquer]** envoyer des signaux à un processus avec `kill` (`SIGINT`, `SIGTSTP`, `SIGCONT`, `SIGTERM`, `SIGKILL`).
+    - **[Évaluer]** choisir entre terminaison propre (`SIGTERM`) et terminaison forcée (`SIGKILL`).
+    - **[Créer]** *(optionnel — ⭐)* écrire un programme C réactif aux signaux et fork un processus fils.
 
-    - **Rediriger les flux standards** (entrée, sortie, erreur) d’un programme via les opérateurs `>`, `>>`, `<`, `1>`, `2>`, `0<`
-    - **Combiner les redirections** pour manipuler finement les données entrantes/sortantes dans le terminal et les fichiers
-    - Utiliser les **tubes (`|`)** pour enchaîner les commandes et automatiser des traitements
-    - **Observer et analyser les processus** via les commandes `ps`, `jobs`, `top`, `fg`, `bg`, `kill`, et comprendre la notion de tâche dans un shell
-    - Distinguer les **processus en avant-plan et en arrière-plan**, les interrompre temporairement ou définitivement
-    - Comprendre la notion de **signal envoyé à un processus**, son rôle, son effet, et les différences entre `SIGINT`, `SIGTERM`, `SIGTSTP`, `SIGCONT`, `SIGKILL`
-    - Identifier un **processus à partir de son PID** ou de son identifiant de tâche pour interagir avec lui via `kill`
-    -  Connaître les bonnes pratiques pour **terminer proprement ou forcer l’arrêt d’un processus**
-    - Développer un petit **programme en C réactif aux signaux** (via `ctrl+C`, `ctrl+Z`, etc.) pour observer en pratique l’effet de ces signaux système
+    > **Référence** : Anderson, L. W., & Krathwohl, D. R. (2001). *A Taxonomy for Learning, Teaching, and Assessing*. Longman. ISBN 978-0801319037.
 
+!!! tip "Prérequis"
+    - **TP1, TP2 et TP3 terminés** : navigation, permissions, variables shell, compilation `gcc`.
+    - Distribution Debian 12 ou session MarioNum active.
+    - Connaissances C minimales (le compteur écrit au TP3 sera réutilisé).
 
 !!! info "Instructions"
+    - Le `$` en début de ligne représente le prompt — ne le tapez pas.
+    - Pour chaque nouvelle commande, consultez la page de manuel avec `man` ou l’option `--help`.
+    - N’hésitez pas à reconsulter les anciens TP pour vous aider.
 
-    - On rappelle que dans tous les exercices le `$` en début de commande représente le prompt, il n'est pas à saisir lorsque vous écrivez une ligne de commande.
-    - Pour chaque nouvelle commande, n'hésitez pas à consulter sa page de manuel avec la commande `man`, ou à utiliser l'option `--help` (si elle est disponible) pour savoir ce qu'elle fait.
-    - N'hésitez pas à reconsulter les anciens TP pour vous aider.
+!!! warning "À propos des réponses du TP"
+
+    Avant de commencer le TP, vous devez créer un fichier nommé **`resultat_commande_TP4_NomPrenomEtudiant.txt`**.
+    Dans ce fichier, vous consignerez progressivement les résultats des commandes exécutées au fil des exercices.
+
+    > **Création du fichier**
+
+    1. Clic droit dans votre répertoire de travail
+    2. Créer un document → Fichier vide
+    3. Nommer le fichier : `resultat_commande_TP4_NomPrenomEtudiant.txt`
+
+    > **Notez bien :**
+    >> - <span style="color:blue"> Votre enseignant doit pouvoir consulter ce fichier à tout moment afin d’évaluer votre progression. </span>
+
+    >> - <span style="color:red"> Pour garder une copie de votre travail, rassurez-vous de sauvegarder ce fichier résultat avant la fin de la séance en local à votre machine. </span>
+    >>> **Procédure de sauvegarde en local** :
+        1. Cliquez sur le **presse-papier** (à gauche du Bureau de votre machine virtuelle Debian).
+    ![PressePapier](../../assets/img/PressePapier.png)
+        2. Sélectionnez le contenu de votre fichier résultat et copiez.
+        3. Collez le contenu copié dans un nouveau fichier sur votre machine.
 
 !!! tip "Barème d’interprétation des exercices"
+    > 📚 = Facile · 📚📚 = Moyenne · 📚📚📚 = Élevée
+    >
+    > Les exercices **1 à 7** constituent le **tronc commun**, exigible pour tous.
+    > Les exercices **8, 9, 10** sont des **exercices supplémentaires** réservés au **groupe étoile**.
 
-    > 📚 = Facile, 📚📚 = Moyenne, 📚📚📚 = Élevée 
+!!! info "Alignement avec les évaluations (Biggs, 1996)"
+    Les exercices 📚 et 📚📚 préparent au **CC S38** et au **TP noté S40**.
+    Les exercices 📚📚📚 préparent au **DE S42 (QCM)** par leur dimension d’analyse et de justification.
 
+    > **Référence** : Biggs, J. (1996). Enhancing teaching through constructive alignment. *Higher Education*, 32(3), 347–364. DOI : [10.1007/BF00138871](https://doi.org/10.1007/BF00138871).
 
-## Canaux standards et redirections
+---
+
+## 1. Canaux standards et redirections
+
+!!! tip "Les trois canaux standards"
+    Tout processus Unix dispose, dès son démarrage, de **trois canaux** ouverts :
+
+    | Numéro | Nom | Rôle par défaut |
+    |---|---|---|
+    | `0` | **stdin** (entrée standard) | lit depuis le clavier |
+    | `1` | **stdout** (sortie standard) | écrit sur le terminal |
+    | `2` | **stderr** (erreur standard) | écrit sur le terminal (messages d’erreur) |
+
+    Le shell permet de **rediriger** ces canaux vers un fichier (ou un autre canal).
 
 !!! tip "Redirection de la sortie standard"
+    `>` redirige `stdout` vers un fichier ; `>>` ajoute en fin de fichier.
 
-    La plupart des commandes que nous avons étudiées écrivent leur résultat sur le terminal. Par exemple `ls, echo, cat,...`. On dit que ces commandes écrivent sur la *sortie standard* (qui est *connectée* au terminal) 
-    
-    Il est possible de *rediriger* la sortie standard vers un fichier en utilisant le caractère `>`. Par exemple :
     ```bash
-    $ ls ~ # affiche le contenu du répertoire personnel sur la sortie standard
-    $ ls ~ > list_files.txt # redirige la sortie standard vers le fichier list_files
+    $ ls ~ > list_files.txt    # crée ou écrase list_files.txt
+    $ ls ~ >> list_files.txt   # ajoute en fin de list_files.txt
     ```
 
     !!! warning "Attention"
-        La redirection de la sortie standard va créer le fichier `list_files.txt` s'il n'existe pas.
+        `>` **écrase** sans demander confirmation. Pour préserver le contenu existant, utilisez `>>`.
 
-        La redirection écrase le contenu d'un fichier existant. Si on veut ajouter le résultat à la fin du fichier, on utilise le caractère `>>`.
+### Exercice 1 — Redirection de la sortie standard 📚
 
----
-###  Exercice 1 : Redirection de la sortie standard 📚
-
-1. Testez les commandes suivantes et observez leur résultats.
-```bash
-$ echo "Est-ce que j'apparais sur le terminal ?"
-$ echo "Ou bien dans le fichier ?" > fichier.txt
-$ cat fichier.txt
-$ echo "Et moi ?" > fichier.txt
-$ cat fichier.txt
-$ echo "Je ne veux pas vider le fichier" >> fichier.txt
-$ cat fichier.txt
-$ echo "Je veux vider le fichier" 1> fichier.txt
-$ cat fichier.txt
-$ echo "Je m'ajoute en fin de ligne" 1>> fichier.txt
-```
-2. Rappeler ce que fait la commande `cat` (man `cat`) puis à partir des résultats des commandes précédentes:
-
+1. Testez les commandes suivantes et observez leurs résultats :
+   ```bash
+   $ echo "Est-ce que j'apparais sur le terminal ?"
+   $ echo "Ou bien dans le fichier ?" > fichier.txt
+   $ cat fichier.txt
+   $ echo "Et moi ?" > fichier.txt
+   $ cat fichier.txt
+   $ echo "Je ne veux pas vider le fichier" >> fichier.txt
+   $ cat fichier.txt
+   $ echo "Je veux vider le fichier" 1> fichier.txt
+   $ cat fichier.txt
+   $ echo "Je m'ajoute en fin de ligne" 1>> fichier.txt
+   ```
+2. Rappelez ce que fait la commande `cat` (`man cat`), puis répondez :
     - Quelle est la différence entre `>` et `>>` ?
     - Quelle est la différence entre `1>` et `>` ?
     - Quelle est la différence entre `1>>` et `>>` ?
-
-3. Placez-vous dans votre répertoire personnel et exécutez la commande suivante :
-    ```bash
-    $ ls > list_files.txt; cat list_files.txt
-    ```
-    - Que fait cette commande ?
-    - Pouvez-vous expliquer pourquoi la chaîne `list_files.txt` apparaît dans le fichier `list_files.txt` ?
-
-### Exercice 2 : Compter les entêtes (1) 📚📚
-
-1. En vous aidant de la redirection de la sortie standard, créer un fichier `include_files.txt` qui liste tous les fichiers du répertoire `/usr/include` dont le nom se termine par `.h`.
-2. Compter le nombre de fichiers `.h` dans le répertoire `/usr/include` (indice : `wc`).
-3. Enfin ajouter la phrase `Il y a <nombre> fichiers .h dans le répertoire /usr/include` à la fin du fichier `include_files.txt`.
-
-### Exercice 3 : Redirection de l'erreur standard 📚📚
-
-1. Dans un répertoire `dir` créer un fichier `file-1.txt` dont le contenu est `Hello world !`.
-2. Créer ensuite une copie de `file-1.txt` nommée `file-2.txt`. Retirez toutes les permissions de lecture sur `file-2.txt`.
-3. Tapez ensuite la commande suivante et notez les résultats (on va avoir des erreur !) :
-    ```bash
-    $ cat file-1.txt file-2.txt file-3.txt
-    ```
-4. Quelles commande a réussi ? et quelles commandes ont échoué et pourquoi ?
-5. Faites ensuite une redirection de la sortie standard de la commande précédente vers un fichier `result.txt`. Observez le ce qui est affiché sur le terminal, et observer le contenu du fichier `result.txt`.
-6. Tapez ensuite la commande suivante et notez les résultats :
-    ```bash
-    $ cat file-1.txt file-2.txt file-3.txt 1> result.txt 2> error.txt
-    ```
-7. Observez les contenus de `result.txt` et `error.txt`. Que contiennent-ils ? À votre avis que signifie `1>` et `2>` ? Tirez-en une conclusion sur la différence entre la sortie standard et l'erreur standard.
+3. Placez-vous dans votre répertoire personnel et exécutez :
+   ```bash
+   $ ls > list_files.txt; cat list_files.txt
+   ```
+   - Que fait cette commande ?
+   - Pouvez-vous expliquer pourquoi la chaîne `list_files.txt` apparaît dans le fichier `list_files.txt` ?
 
 ---
 
-!!! tip "Redirection de l'entrée standard"
+### Exercice 2 — Redirection de l’erreur standard 📚📚
 
-    Certaines commandes *lisent* des informations sur le terminal. Par exemple `tr, read,...`. On dit que ces commandes lisent sur l'entrée standard (qui est aussi *connectée* au terminal).
+1. Dans un répertoire `dir`, créez un fichier `file-1.txt` dont le contenu est `Hello world !`.
+2. Créez une copie de `file-1.txt` nommée `file-2.txt`. Retirez **toutes les permissions de lecture** sur `file-2.txt`.
+3. Tapez la commande suivante et notez les résultats (vous aurez des erreurs) :
+   ```bash
+   $ cat file-1.txt file-2.txt file-3.txt
+   ```
+4. Quelle commande a réussi ? Quelles commandes ont échoué et pourquoi ?
+5. Redirigez la sortie standard de la commande précédente vers un fichier `result.txt`. Observez ce qui est affiché sur le terminal **et** ce qui est dans `result.txt`.
+6. Tapez ensuite :
+   ```bash
+   $ cat file-1.txt file-2.txt file-3.txt 1> result.txt 2> error.txt
+   ```
+7. Observez les contenus de `result.txt` et `error.txt`. À votre avis que signifient `1>` et `2>` ? Tirez-en une conclusion sur la différence entre la sortie standard et l’erreur standard.
 
-    Mais beaucoup de commandes lisent également sue le terminal si aucun nom de fichier leur est donné en argument. Par exemple `cat, grep, sort,...`.
+---
 
-    Il est possible de rediriger l'entrée standard d'une commande vers un fichier en utilisant le caractère `<`. Par exemple :
+!!! tip "Redirection de l’entrée standard"
+    Certaines commandes *lisent* depuis le terminal (`tr`, `read`, etc.). Beaucoup d’autres lisent depuis le terminal **si aucun fichier ne leur est donné en argument** (`cat`, `grep`, `sort`…).
+
+    On redirige l’entrée standard avec `<` :
     ```bash
     $ cat < fichier.txt
     ```
-    Cette commande affiche le contenu du fichier `fichier.txt` sur la sortie standard. On dit que le fichier `fichier.txt` est *connecté* à l'entrée standard de la commande `cat`.
+    Le fichier `fichier.txt` est alors *connecté* à l’entrée standard de `cat`.
 
     !!! warning "Attention"
-        Il faut que le fichier `fichier.txt` existe et qu'on ait la permission `read` sinon la commande `cat` va échouer.
----
+        Il faut que `fichier.txt` existe et soit lisible, sinon la commande échoue.
 
-### Exercice 4 : Retour sur la commande `cat` 📚📚
+### Exercice 3 — Redirection de l’entrée standard et retour sur `cat` 📚📚
 
-1. Revoyez le manuel de la commande `cat` et trouvez comment elle fonctionne lorsque l'on ne lui donne pas de fichier en argument.
-2. Testez ensuite la commande suivante:
+1. Consultez le manuel de `cat` et trouvez comment elle se comporte lorsqu’on **ne lui donne pas** de fichier en argument.
+2. Testez :
    ```bash
    $ cat
-   hello<newline>
-   world<newline>
-   C-d # appuyer sur la touche Ctrl et la touche d en même temps
+   hello<Entrée>
+   world<Entrée>
+   <Ctrl-d>
    ```
-    Combien d'argument la commande `cat` a-t-elle reçu ? Qu'a-t-elle affiché ? Pourquoi ?
-
-3. Testez ensuite la commande suivante:
+   Combien d’arguments `cat` a-t-elle reçus ? Qu’a-t-elle affiché ? Pourquoi ?
+3. Testez maintenant :
    ```bash
    $ cat > catout.txt
-   hello<newline>
-   world<newline>
-   C-d # appuyer sur la touche Ctrl et la touche d en même temps
+   hello<Entrée>
+   world<Entrée>
+   <Ctrl-d>
    ```
-    Puis affichez le contenu du fichier `catout.txt`. Que contient-il ? Pourquoi ?
-4. Tapez enfin la commande suivante :
-    ```bash
-    $ cat < catout.txt
-    $ cat 0< catout.txt
-    ```
-    - Combien d'argument la commande `cat` a-t-elle reçu ? Qu'a-t-elle affiché ?
-    - Quelle est la différence entre `<` et `0<` ?
+   Affichez le contenu de `catout.txt`. Que contient-il ? Pourquoi ?
+4. Tapez enfin :
+   ```bash
+   $ cat < catout.txt
+   $ cat 0< catout.txt
+   ```
+   - Combien d’arguments `cat` a-t-elle reçus ? Qu’a-t-elle affiché ?
+   - Quelle est la différence entre `<` et `0<` ?
 
-### Exercice 5 : Compter les entêtes (2) 📚📚📚
-
-Nous allons refaire le même exercice que l'exercice 2 mais cette fois-ci en utilisant la redirection de l'entrée standard.
-
-1. Créer un fichier `include_files.txt` qui liste tous les fichiers du répertoire `/usr/include` dont le nom se termine par `.h`.
-2. Tapez ensuite la commande suivante et commentez son résultat:
-    ```bash
-    $ wc -l < include_files.txt
-    ```
-3. Entrez ensuite la commande suivante et commentez son résultat:
-    ```bash
-    $ wc -l < include_files.txt >> include_files.txt
-    ```
-    et observez la dernière ligne du fichier `include_files.txt`.
-4. Nous voudrions enfin que la dernière ligne du fichier `include_files.txt` soit la phrase `Il y a <nombre> fichiers .h dans le répertoire /usr/include`. Où `<nombre>` est le résultat de `wc -l < include_files.txt`.
-
-    Trouvez une commande qui permet de faire cela en utilisant à la fois la redirection de la sortie standard et de l'entrée standard.
-
-    !!! info "Indice"
-
-        - Pour retirer la dernière ligne, on peut refaire la commande de la première question.
-        - Ensuite pensez à la commande `echo` et la subsutitution de commande.
-
-## Les tubes 
-
-!!! tip "Tubes"
-    Un *tube* (*pipe* en anglais) est un mécanisme qui permet de connecter la sortie standard d'une commande à l'entrée standard d'une autre commande. On utilise le caractère `|` pour créer un tube.
-
-    C'est-à-dire que pour
-    ```bash
-    $ cmd1 | cmd2
-    ```
-    La sortie standard de `cmd1` est connectée à l'entrée standard de `cmd2`.
 ---
 
-### Exercice 6 : Compter les entêtes (promis c'est la dernière fois) 📚📚
+## 2. Les tubes (`pipes`)
 
-1. Testez la commande suivante et commentez son résultat :
+!!! tip "Définition"
+    Un **tube** (*pipe* en anglais) connecte la sortie standard d’une commande à l’entrée standard d’une autre. On utilise le caractère `|`.
+
+    Pour `cmd1 | cmd2`, la sortie standard de `cmd1` devient l’entrée standard de `cmd2`. On peut enchaîner :
     ```bash
-    $ ls /usr/include/*.h | wc -l
+    $ cmd1 | cmd2 | cmd3
     ```
-    Où est redirigé le résultat de la commande `ls` ? Où est redirigé l'entrée standard de la commande `wc` ? Où est affiché le résultat de `wc`?
-2. Affichez ensuite sur le terminal la phrase `Il y a <nombre> fichiers .h dans le répertoire /usr/include` en utilisant la commande `echo` et la substitution de commande (indice la commande à utiliser et celle de la question 1).    
-3. Enfin, entrez la commande suivante et commentez son résultat :
-    ```bash
-    wc -l $(ls /usr/include/*.h)
-    ```
-4. À votre avis pourquoi le résultat de la dernière commande est-il différent de celui de la question 1 ?
+
+### Exercice 4 — Compter les entêtes : tout en un 📚📚
+
+Cet exercice consolide redirections **et** tubes. Vous travaillerez sur les fichiers `.h` du répertoire `/usr/include` (en-têtes de la bibliothèque C).
+
+1. Avec **uniquement une redirection de sortie**, créez un fichier `include_files.txt` listant tous les fichiers `.h` de `/usr/include` :
+   ```bash
+   $ ls /usr/include/*.h > include_files.txt
+   ```
+2. Testez la commande suivante et commentez :
+   ```bash
+   $ ls /usr/include/*.h | wc -l
+   ```
+   Où est redirigé le résultat de `ls` ? Où va l’entrée standard de `wc` ? Où est affiché le résultat de `wc` ?
+3. Affichez sur le terminal la phrase
+   `Il y a <nombre> fichiers .h dans le répertoire /usr/include`
+   en utilisant `echo` et la **substitution de commande** `$(...)` (vue au TP3, exercice 7).
+4. Entrez la commande suivante et commentez :
+   ```bash
+   $ wc -l $(ls /usr/include/*.h)
+   ```
+5. **Question d’analyse** : pourquoi le résultat de la question 4 diffère-t-il de celui de la question 2 ? *(Indice : `wc -l` reçoit-il les noms de fichiers ou leur contenu ?)*
+6. **Question de justification** : écrivez une commande qui ajoute en **fin** de `include_files.txt` la phrase de la question 3, en utilisant `>>` et la substitution de commande.
+
+!!! info "Cet exercice est représentatif d’un item type **DE S42 (QCM)**."
+
 ---
 
-## Processus et tâches
+## 3. Processus et tâches
 
 !!! tip "Processus et tâches"
+    Un **processus** est une unité de travail du système d’exploitation : un programme en cours d’exécution. Chaque processus est identifié par un **PID** (*Process IDentifier*).
 
-    Un *processus* est une unité de travail sur un système d'exploitation. Il peut s'agir d'un programme, d'un script, ou d'un service. Chaque programme que vous exécutez représente un ou plusieurs processus.
-    Chaque processus est identifié par un numéro unique appelé *PID* (Process IDentifier). 
-    
-    Linux nous offre plusieurs commandes pour visualiser les processus en cours d'exécution.
+    Une **tâche** est une unité de travail du **shell** : un processus (ou groupe de processus) lancé depuis ce shell. Le shell offre un système de **contrôle des tâches** (*job control*) permettant d’exécuter plusieurs commandes simultanément et de basculer entre avant-plan et arrière-plan.
 
-    - `ps` permet d'afficher les processus en cours d'exécution. Par défaut, `ps` n'affiche que les processus lancés par l'utilisateur courant. Pour afficher tous les processus, on utilise l'option `-e` (ou `-A`).
-    - `top` permet d'afficher les processus en cours d'exécution. Il peut s'utiliser de manière interactive notamment les trier par utilisation du CPU. On peut quitter `top` avec la touche `q`.
+    > Une tâche est un processus, mais un processus n’est pas forcément une tâche.
 
-    Une *tâche* par contre est une unité de travail du shell. Une tâche peut être un processus, ou un groupe de processus mais il faut qu'il ait été lancé par le shell. Le shell a un système de contrôle de tâches : c'est la capacité à exécuter plusieurs commandes en même temps. On peut lancer une commande en arrière-plan et en avant-plan. 
+    Principales commandes :
 
-    La commande `jobs` permet d'afficher les tâches en cours d'exécution.
+    - `ps` : liste les processus de l’utilisateur courant. Option `-e` (ou `-A`) : tous les processus du système.
+    - `top` : afficheur interactif des processus, triés notamment par utilisation CPU. Quittez avec `q`.
+    - `jobs` : liste les tâches du shell courant. Option `-p` : affiche les PID.
+    - `fg %<n>` : ramène la tâche `n` au premier plan.
+    - `bg %<n>` : reprend la tâche `n` en arrière-plan.
 
-    !!! warning "En somme"
-        Une tâche est un processus, mais un processus n'est pas forcément une tâche.
+!!! tip "Raccourcis clavier essentiels"
+    - <kbd>Ctrl</kbd>+<kbd>Z</kbd> : suspend la tâche courante (signal `SIGTSTP`).
+    - <kbd>Ctrl</kbd>+<kbd>C</kbd> : interrompt la tâche courante (signal `SIGINT`).
+    - <kbd>Ctrl</kbd>+<kbd>D</kbd> : envoie une fin de fichier (EOF) sur l’entrée standard.
+
+### Exercice 5 — Observer un processus avec `sleep` 📚📚
+
+1. Lancez `sleep 10` et observez : le prompt revient-il immédiatement ?
+2. Testez la séquence suivante en notant à chaque fois la sortie de `ps` :
+   ```bash
+   $ ps
+   $ sleep 240
+   ```
+   Pendant que `sleep 240` tourne, appuyez sur <kbd>Ctrl</kbd>+<kbd>Z</kbd>, puis :
+   ```bash
+   $ ps
+   $ fg %1
+   ```
+   Puis <kbd>Ctrl</kbd>+<kbd>C</kbd>, puis :
+   ```bash
+   $ ps
+   ```
+3. **Questions** :
+   - Que fait <kbd>Ctrl</kbd>+<kbd>Z</kbd> ? Et <kbd>Ctrl</kbd>+<kbd>C</kbd> ?
+   - Refaites la séquence en tapant des commandes (par exemple `pwd`, `ls`) **entre** `sleep 240` et <kbd>Ctrl</kbd>+<kbd>Z</kbd>. Que remarquez-vous ?
+   - Que fait `fg %1` de manière générale ?
+
+!!! info "Informations sur la sortie de `ps`"
+    Par défaut, `ps` retourne quatre colonnes :
+
+    - **PID** : identifiant unique du processus.
+    - **TTY** : terminal associé. `pts/N` désigne un pseudo-terminal n° N.
+    - **TIME** : temps CPU consommé par le processus.
+    - **CMD** : commande qui a lancé le processus.
+
+### Exercice 6 — Avant-plan, arrière-plan, bascule 📚📚📚
+
+Cet exercice reprend votre compteur du TP3 (ou demande de l’écrire si vous ne l’aviez pas fait).
+
+1. Écrivez un programme C `compteur.c` qui incrémente indéfiniment une variable `i` et affiche sa valeur **sur la sortie standard à chaque multiple de 100**. Utilisez `sleep` pour ralentir l’exécution et observer la sortie.
+
+   !!! info "Où est `sleep` en C ?"
+       Tapez `man 3 sleep` pour voir la signature de la fonction `sleep` dans la bibliothèque standard (`<unistd.h>`).
+
+2. Compilez avec `gcc -Wall -o compteur compteur.c`. Testez :
+   ```bash
+   $ ./compteur
+   <Ctrl-z>
+   $ jobs
+   $ jobs -p          # note le PID
+   $ ps
+   $ fg %1
+   <Ctrl-z>
+   $ bg %1
+   $ fg %1
+   <Ctrl-z>
+   $ jobs
+   $ fg %1
+   <Ctrl-c>
+   $ jobs
+   ```
+3. **Questions d’analyse** :
+   - Quels procédés permettent de placer un processus en arrière-plan ? En avant-plan ?
+   - Quelle est la différence entre <kbd>Ctrl</kbd>+<kbd>Z</kbd> et <kbd>Ctrl</kbd>+<kbd>C</kbd> ?
+   - À quoi sert l’option `-p` de `jobs` ?
+   - Que fait `bg` de manière générale ?
+   - Quels **états** des tâches avez-vous observés ? *(Indice : `Running`, `Stopped`, `Terminated`…)*
+
+!!! info "Cet exercice est représentatif d’un item type **DE S42 (QCM)**."
 
 ---
 
+## 4. Envoyer des signaux à un processus
 
-### Exercice 7 - Processus et tâches 📚📚📚
+!!! tip "Les signaux : communiquer avec les processus"
+    Les raccourcis <kbd>Ctrl</kbd>+<kbd>C</kbd>, <kbd>Ctrl</kbd>+<kbd>Z</kbd>, et les commandes `fg` / `bg`, envoient en réalité des **signaux** au processus. Un signal est un **message asynchrone** envoyé à un processus pour lui demander d’agir.
 
-1. Dans cet exercice nous allons simuler l'exécution d'un processus long. Pour cela, nous allons utiliser la commande `sleep` qui permet de mettre en pause l'exécution d'un script pendant un certain temps. Tapez la commande `sleep 10` et observez ce qu'il se passe.
+    La commande `kill` envoie un signal à un processus identifié par son PID (ou son numéro de tâche `%n`).
 
-    !!! info "Informations de la commande `ps`"
-        
-            La commande `ps` retourne la liste des processus en cours d'exécution. Cette liste contient quatre colonnes par défaut.
+    Principaux signaux :
 
-            - La première colonne correspond au *PID* (Process IDentifier) du processus.
-            - La deuxième colonne correspond au *TTY* (TeleTYpewriter) sur lequel le processus est lancé. C'est le type de terminal utilisé pour lancer le processus. Ici `pts/1` (pseudo-terminal slave) signifie que le processus a été lancé dans un pseudo-terminal. Le chiffre renseigné correspond au numéro du terminal (par exemple si vous avez plusieurs instances du terminal ouverts).
-            - La troisième colonne correspond au *TIME* (temps) d'exécution du processus.
-            - La quatrième colonne correspond à la *CMD* (CoMmanDe) qui a lancé le processus.
+    | Signal | Origine usuelle | Sémantique |
+    |---|---|---|
+    | `SIGINT` (2) | <kbd>Ctrl</kbd>+<kbd>C</kbd> | demande l’**interruption** du processus |
+    | `SIGTSTP` (20) | <kbd>Ctrl</kbd>+<kbd>Z</kbd> | demande la **suspension** du processus |
+    | `SIGCONT` (18) | `fg`, `bg` | demande la **reprise** d’un processus suspendu |
+    | `SIGTERM` (15) | `kill` par défaut | demande l’arrêt **propre** du processus |
+    | `SIGKILL` (9) | `kill -9` | **arrêt forcé**, le processus **ne peut pas** s’y opposer |
 
-2. Ensuite testez les commandes suivantes et commentez les résultats:
-    ```bash
-    $ ps
-    $ sleep 240
-    $ C-z # Control + z
-    $ ps
-    $ fg %1 # fg %<numéro de la tâche>
-    $ C-c # Control + c
-    $ ps
-    ``` 
-      
-      - À votre avis que fait le raccourci clavier `C-z` ? et le raccourci clavier `C-c` ?
-      - Refaites les commandes en tapant des commandes (ou tout autre chose dans le terminal) entre le `sleep 240` et le `C-z`. Que remarquez-vous ?
-      - Sans passer par `help fg`, pouvez-vous deviner ce que fait la commande `fg %1` ? et la commande `fg` de manière générale ?
-      - Refaites les commandes en notant à chaque fois le PID du processus `sleep 240` dans les sorties de `ps`. Que remarquez-vous ?
+    La liste exhaustive : `kill -L`.
 
-3. Ecrire un programme en C qui incrémente indéfiniment une variable `i`, et affiche sa valeur sur la sortie standard à chaque fois que `i` est un multiple de 100. Pensez à utiliser la commande `sleep` pour ralentir l'exécution du programme et voir quelque chose sur le terminal. 
+    !!! warning "Qui peut envoyer un signal ?"
+        Vous ne pouvez envoyer un signal qu’aux processus dont vous êtes le propriétaire — sauf si vous êtes `root`.
 
-    !!! info "Où est sleep ?"
-        Tapez la commande `man 3 sleep` pour voir où se trouve la fonction `sleep` dans la bibliothèque standard de C.
+    !!! warning "`SIGKILL` est à utiliser en dernier recours"
+        `SIGKILL` ne laisse pas le processus se terminer proprement (pas de libération de mémoire, pas de sauvegarde de fichiers ouverts). Préférez `SIGTERM`.
 
-4. Compilez le programme et nommer votre exécutable `compteur`. Puis testez les commandes suivantes et commentez les résultats:
-    
-    ```bash
-    $ ./compteur
-    $ C-z
-    $ jobs 
-    $ jobs -p # Notez le PID 
-    $ ps
-    $ fg %1
-    $ C-z
-    $ bg %1
-    $ fg %1 # Ne vous inquiétez pas, tapez tout simplement la commande correctement
-    $ C-z
-    $ jobs
-    % fg %1
-    $ C-c
-    $ jobs
-    ```
-    
-    - Quels procédés permettent de placer un processus en arrière-plan ? et en avant-plan ?
-    - Quelle est la différence entre `C-z` et `C-c` ?
-    - À quoi sert l'option `-p` de la commande `jobs` ?
-    - Sans passer par `help bg`, pouvez-vous deviner ce que fait la commande `bg` de manière générale ?
-    - Quels sont les différents états des tâches que vous avez observé ?
+    > **Référence** : *POSIX.1-2017, Volume 1: Base Definitions*, chapitre 2 §2.4 *Signal Concepts*, IEEE/Open Group, 2018. <https://pubs.opengroup.org/onlinepubs/9699919799/>
+
+### Exercice 7 — Manipuler les signaux avec `kill` 📚📚📚
+
+1. Tapez `kill -L` et notez les numéros associés à `SIGINT`, `SIGTSTP`, `SIGCONT`, `SIGTERM`, `SIGKILL`.
+2. Le caractère `&` à la fin d’une commande la lance en arrière-plan. Lancez **trois** processus `./compteur` en arrière-plan :
+   ```bash
+   $ ./compteur &           # processus 1
+   $ ./compteur &           # processus 2
+   $ ./compteur &           # processus 3
+   $ jobs -p                # note les PID
+   ```
+3. Manipulez les signaux :
+   ```bash
+   $ kill -SIGTSTP <PID du processus 1>
+   $ jobs
+   $ kill -SIGINT %2
+   $ jobs
+   $ jobs                   # une seconde fois pour voir la disparition
+   $ kill -SIGCONT %1
+   $ jobs
+   $ kill -s SIGTERM <PID processus 1>
+   $ jobs
+   $ kill -9 <PID du processus 3>
+   $ jobs
+   ```
+4. **Questions** :
+   - Quelle est la différence entre `SIGINT` et `SIGTSTP` ? Entre `SIGTSTP` et `SIGTERM` ?
+   - D’après vos observations, **combien de syntaxes différentes** de `kill` produisent le même effet ? Listez-les.
+5. **Question d’évaluation** — pour chacun des cas suivants, indiquez **le signal le plus approprié et justifiez** :
+   - (a) un utilisateur veut interrompre un programme qu’il vient de lancer dans son terminal ;
+   - (b) un administrateur veut arrêter proprement un service système ;
+   - (c) un processus est figé et ne répond plus à aucune commande ;
+   - (d) un développeur veut suspendre temporairement un long calcul sans le perdre.
 
 ---
-## Envoyer des signaux à un processus
 
-!!! tip "Communiquer avec les processus"
-    Lorsque des processus ont été lancés, nous avons remarqué qu'ils peuvent être arrêtes, redémarrés et tués. Pour cela, nous avons utilisé les commandes `C-z`, `C-c`, `fg` et `bg`. Ces commandes permettent de communiquer avec les processus en cours d'exécution. En réalité, ces dernières envoient ce qu'on appelle des *signaux* aux processus. Un *signal* est un message envoyé à un processus pour lui demander de faire quelque chose. 
-    
-    La commande qui permet d'envoyer des signaux à un processus est `kill`. Cette commande nécessite le PID du processus à qui envoyer le signal (ou son numéro de tâche si c'en est une). Ainsi `C-z`, `C-c`, `fg` et `bg` font donc appel à la commande `kill` pour envoyer des signaux aux processus.
+## Synthèse — Ce que vous devez savoir faire
 
-    Il existe plusieurs signaux, les plus courants sont les suivants:
+!!! success "Auto-évaluation rapide (tronc commun)"
+    Avant de quitter la séance, vérifiez que vous savez :
 
-    - `SIGINT` : signal envoyé par la combinaison de touches `C-c`. Il demande au processus de s'arrêter.
-    - `SIGTSTP` : signal envoyé par la combinaison de touches `C-z`. Il demande au processus de se mettre en pause.
-    - `SIGCONT` : signal envoyé par les commandes `bg` et `fg`. Il demande au processus de reprendre son exécution.
-    - `SIGTERM` : signal envoyé par la commande `kill` par défaut. Il demande au processus de s'arrêter.
-    - `SIGKILL` : Il demande au processus de s'arrêter immédiatement et provoque son arrêt brutal, comprenez par là que le processus n'a pas le temps de se terminer correctement. Il est donc déconseillé d'utiliser ce signal.
+    - [ ] Rediriger `stdout` (`>`, `>>`), `stderr` (`2>`), `stdin` (`<`).
+    - [ ] Différencier `>` et `>>`, `1>` et `2>`.
+    - [ ] Enchaîner des commandes avec des tubes `|`.
+    - [ ] Observer les processus avec `ps`, `top`, `jobs`.
+    - [ ] Suspendre, reprendre et terminer une tâche (<kbd>Ctrl</kbd>+<kbd>Z</kbd>, `fg`, `bg`, <kbd>Ctrl</kbd>+<kbd>C</kbd>).
+    - [ ] Distinguer **processus** et **tâche**, **avant-plan** et **arrière-plan**.
+    - [ ] Envoyer un signal avec `kill` en utilisant les différentes syntaxes (`-SIGTERM`, `-s SIGTERM`, `-15`).
+    - [ ] Choisir entre `SIGTERM` (propre) et `SIGKILL` (forcé) selon le contexte.
 
-    La liste exhaustive des signaux est disponible est obtenu avec commande `kill -L`.
+    Si un item n’est pas coché, **revenez sur l’exercice correspondant**.
 
-    !!! warning "Qui a le droit d'envoyer des signaux à un processus ?"
-        Pour pouvoir affecter un processus, vous devez biensur en être le prorpiétaire ou être *root*.
+---
 
-### Exercice 8 - La commande `kill` 📚📚📚
-1. Tapez la commande `kill -L` et notez les numéros associés aux signaux `SIGINT`, `SIGTSTP`, `SIGCONT`, `SIGTERM` et `SIGKILL`.
+## ⭐ Exercices supplémentaires — Groupe étoile
 
-2. On peut utiliser le caractère `&` à la fin de la commande pour directement lancer les tâches en arrière-plan. Lancez alors 3 processus `./compteur` en arrière-plan et testez les commandes suivantes:
+!!! star "À qui s’adressent les exercices 8, 9, 10 ?"
+    Vous avez terminé les exercices 1 à 7 ? Ces trois exercices closent la progression en C amorcée depuis le TP1 et vous font écrire un **mini-shell**.
 
-    ```bash
-    $ ./compteur 1 & # ce sera notre processus 1
-    $ ./compteur 2 & # ce sera notre processus 2
-    $ ./compteur 3 & # ce sera notre processus 3
-    $ jobs -p # notez les PID des processus, mais ils ont dû être affichés à l'écran lors de leur lancement
-    $ kill -SIGTSTP <PID du processus 1>
-    $ jobs
-    $ kill -SIGINT %2
-    $ jobs
-    $ jobs # oui une deuxième fois
-    $ kill -SIGCONT %1
-    $ jobs
-    $ kill -s SIGTERM <PID processus 1>
-    $ jobs
-    $ kill -9 <PID du processus 3>
-    $ jobs
-    $ jobs # pour voir disparaître la tâche [3]
-    ```
+    **Rappel** des appels système maîtrisés jusqu’ici :
 
-1. Selon vous quel est la différence entre `SIGINT` et `SIGTSTP` ? et entre `SIGTSTP` et `SIGTERM` ?
-2. D'après vos observations sur les résultats de la question 2, de combien de manière différente peut-on utiliser la commande `kill` pour arriver au même résultat ?
+    - **TP1 ⭐** : `open(O_RDONLY)`, `read`, `write`, `close`, `perror`.
+    - **TP2 ⭐** : `O_CREAT`, `O_TRUNC`, modes octaux, `lseek`.
+    - **TP3 ⭐** : `STDIN/STDOUT/STDERR_FILENO`, `dup`, `dup2`.
+    - **TP4 ⭐** : **`signal`**, **`fork`**, **`exec*`**, **`wait`** — le cœur du multitâche Unix.
 
+    Ces exercices sont **optionnels** et **non évalués**.
 
+### Exercice 8 — Capturer un signal en C avec `signal()` ⭐
+
+L’appel système `signal()` permet d’installer un **gestionnaire** (*handler*) qui sera appelé chaque fois que le processus reçoit un signal donné.
+
+1. Lisez la page de manuel : `man 2 signal`. Notez la signature.
+2. Créez `catch-sigint.c` :
+   ```c
+   #include <stdio.h>      /* printf */
+   #include <signal.h>     /* signal, SIGINT */
+   #include <unistd.h>     /* sleep */
+
+   static volatile int compteur_sigint = 0;
+
+   void handler(int sig) {
+       compteur_sigint++;
+       printf("\n[Signal %d reçu — total : %d]\n", sig, compteur_sigint);
+   }
+
+   int main(void) {
+       signal(SIGINT, handler);
+
+       printf("PID = %d. Appuyez sur Ctrl-C plusieurs fois...\n", (int)getpid());
+       while (compteur_sigint < 3) {
+           sleep(1);
+       }
+       printf("Trois SIGINT reçus, je m'arrête proprement.\n");
+       return 0;
+   }
+   ```
+3. Compilez : `gcc -Wall -o catch-sigint catch-sigint.c`.
+4. Exécutez `./catch-sigint`, puis appuyez **3 fois** sur <kbd>Ctrl</kbd>+<kbd>C</kbd>.
+5. **Questions** :
+   - Pourquoi <kbd>Ctrl</kbd>+<kbd>C</kbd> **n’interrompt-il plus** le programme ?
+   - Essayez d’envoyer `SIGTERM` depuis un autre terminal : `kill <PID>`. Que se passe-t-il ?
+   - Essayez ensuite `kill -9 <PID>`. Que se passe-t-il ? Pourquoi ?
+
+!!! info "Note importante"
+    `signal()` a une sémantique historiquement variable selon les systèmes. En production, on lui préfère `sigaction()` (cf. `man 2 sigaction`) qui offre un comportement plus déterministe.
+
+    > **Référence** : Kerrisk, M. (2010). *The Linux Programming Interface*. No Starch Press. ISBN 978-1593272203. Chapitres 20 (Signals: Fundamental Concepts) et 22 (Signals: Advanced Features).
+
+### Exercice 9 — Créer un processus fils avec `fork()` ⭐
+
+`fork()` est l’appel système qui **duplique** le processus appelant : à la sortie de `fork()`, **deux** processus identiques s’exécutent en parallèle. La valeur de retour permet de les distinguer :
+
+- `> 0` (PID du fils) → on est dans le **parent**.
+- `== 0` → on est dans le **fils**.
+- `< 0` → échec.
+
+1. Lisez : `man 2 fork` puis `man 2 wait`.
+2. Créez `fork-demo.c` :
+   ```c
+   #include <stdio.h>
+   #include <unistd.h>     /* fork, getpid, getppid */
+   #include <sys/wait.h>   /* wait */
+   #include <stdlib.h>     /* exit */
+
+   int main(void) {
+       printf("Avant fork : PID = %d\n", getpid());
+
+       pid_t pid = fork();
+       if (pid < 0) {
+           perror("fork");
+           return 1;
+       }
+
+       if (pid == 0) {
+           /* --- Code du processus fils --- */
+           printf("[FILS]   PID = %d, parent = %d\n",
+                  getpid(), getppid());
+           sleep(2);
+           printf("[FILS]   Je termine.\n");
+           exit(0);
+       } else {
+           /* --- Code du processus parent --- */
+           printf("[PARENT] PID = %d, fils créé = %d\n",
+                  getpid(), pid);
+           int status;
+           wait(&status);     /* attend la fin du fils */
+           printf("[PARENT] Le fils %d s'est terminé.\n", pid);
+       }
+
+       return 0;
+   }
+   ```
+3. Compilez et exécutez plusieurs fois. Observez les PID.
+4. **Questions** :
+   - Pourquoi voit-on un message « Avant fork » suivi de **deux** suites distinctes ?
+   - Pourquoi appeler `wait()` côté parent ? *(Que devient un fils dont le parent ne fait pas `wait` ? Cherchez « processus zombie » dans `man 2 wait`.)*
+   - Modifiez le programme pour créer **deux fils** (deux `fork()` successifs côté parent). Le parent doit attendre les deux fils avant de se terminer.
+
+### Exercice 10 — Mini-projet : un mini-shell qui exécute une commande ⭐
+
+Quand vous tapez `ls /tmp` dans `bash`, le shell fait en réalité :
+
+1. `fork()` → crée un processus fils.
+2. Côté fils : `exec*()` → remplace l’image mémoire du fils par celle de `ls`.
+3. Côté parent : `wait()` → attend la fin du fils.
+
+Vous allez reproduire ce mécanisme.
+
+1. Créez `mysh.c` dans `~/ti307/c/` :
+   ```c
+   #include <stdio.h>
+   #include <unistd.h>     /* fork, execvp */
+   #include <sys/wait.h>   /* wait */
+   #include <stdlib.h>     /* exit */
+
+   int main(int argc, char **argv) {
+       if (argc < 2) {
+           fprintf(stderr,
+                   "Usage: %s <commande> [arguments...]\n", argv[0]);
+           return 1;
+       }
+
+       pid_t pid = fork();
+       if (pid < 0) {
+           perror("fork");
+           return 1;
+       }
+
+       if (pid == 0) {
+           /* Fils : remplace son image mémoire */
+           execvp(argv[1], &argv[1]);
+           /* execvp ne revient que s'il a échoué */
+           perror("execvp");
+           exit(127);
+       } else {
+           /* Parent : attend le fils */
+           int status;
+           waitpid(pid, &status, 0);
+           if (WIFEXITED(status)) {
+               printf("\n[mysh] Le fils a terminé avec code %d.\n",
+                      WEXITSTATUS(status));
+           }
+       }
+
+       return 0;
+   }
+   ```
+2. Compilez : `gcc -Wall -o mysh mysh.c`.
+3. Testez :
+   ```bash
+   $ ./mysh ls -l /tmp
+   $ ./mysh date
+   $ ./mysh echo Hello from mysh
+   $ ./mysh /commande/inexistante
+   ```
+4. **Questions d’analyse** :
+   - Pourquoi `execvp` ne revient-il **jamais** si tout se passe bien ?
+   - Quelle est la différence entre `execv`, `execvp` et `execve` ? *(Indice : `man 3 exec`.)*
+   - Combinez les acquis : modifiez `mysh.c` pour que la sortie de la commande exécutée soit **redirigée** vers un fichier `mysh.out`. *(Indice : avant l’`exec*`, faites `dup2` comme à l’exercice 10 du TP3.)*
+
+!!! success "Félicitations"
+    Vous venez d’implémenter le cœur de fonctionnement d’un shell Unix : `fork` + `exec` + `wait` + redirection via `dup2`. Toutes ces briques sont ce que `bash` lui-même fait en interne à chaque commande que vous tapez.
+
+    > **Référence** : Kerrisk, M. (2010). *The Linux Programming Interface*. No Starch Press. ISBN 978-1593272203. Chapitres 24 (Process Creation), 27 (Program Execution), 26 (Monitoring Child Processes).
+
+---
+
+## Pour aller plus loin (lectures recommandées)
+
+- *POSIX.1-2017, Base Specifications Issue 7* : <https://pubs.opengroup.org/onlinepubs/9699919799/>
+- Kerrisk, M. (2010). *The Linux Programming Interface*. No Starch Press. ISBN 978-1593272203. *(Référence canonique pour les exercices ⭐.)*
+- Stevens, W. R., & Rago, S. A. (2013). *Advanced Programming in the UNIX Environment*, 3rd ed. Addison-Wesley. ISBN 978-0321637734.
+- Robbins, A., Hannah, E., & Lamb, L. (2008). *Learning the bash Shell*, 3rd ed. O’Reilly. ISBN 978-0596009656.
+- Tanenbaum, A. S., & Bos, H. (2014). *Modern Operating Systems*, 4th ed. Pearson. ISBN 978-0133591620. *(Chapitre 2 — Processes and Threads.)*
