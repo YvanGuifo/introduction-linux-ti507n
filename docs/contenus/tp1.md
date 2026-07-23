@@ -482,8 +482,9 @@ Depuis votre répertoire personnel, exécutez :
    $ ./info-systeme.sh
    ```
 4. **Exercice de création** : écrivez un script `creer-arbo.sh` qui :
-   - Prend un **argument** : le nom d’un projet (ex. `mon_projet`).
-   - Crée l’arborescence suivante :
+
+    - Prend un **argument** : le nom d’un projet (ex. `mon_projet`).
+    - Crée l’arborescence suivante :
      ```
      mon_projet/
      ├── src/
@@ -493,22 +494,22 @@ Depuis votre répertoire personnel, exécutez :
      ```
    - Affiche un message de confirmation.
 
-   *Indice* : pour accéder au premier argument dans un script, utilisez `$1`. Pour vérifier qu’un argument a été fourni :
-   ```bash
-   if [ -z "$1" ]; then
-       echo "Usage : $0 <nom-du-projet>"
-       exit 1
-   fi
-   ```
+     **Indice** : pour accéder au premier argument dans un script, utilisez `$1`. Pour vérifier qu’un argument a été fourni :
+      ```bash
+      if [ -z "$1" ]; then
+          echo "Usage : $0 <nom-du-projet>"
+          exit 1
+      fi
+      ```
 
-5. Testez votre script :
-   ```bash
-   $ ./creer-arbo.sh tp_linux
-   $ ls -R tp_linux
-   $ cat tp_linux/README.txt
-   ```
+   6. Testez votre script :
+      ```bash
+      $ ./creer-arbo.sh tp_linux
+      $ ls -R tp_linux
+      $ cat tp_linux/README.txt
+      ```
 
-6. **Question d’évaluation** : pourquoi est-il préférable de tester `[ -z "$1" ]` plutôt que de laisser le script échouer silencieusement sans argument ?
+   7. **Question d’évaluation** : pourquoi est-il préférable de tester `[ -z "$1" ]` plutôt que de laisser le script échouer silencieusement sans argument ?
 
 !!! info "Vers le TP2"
     Vous venez de découvrir `find`, les liens (`ln`, `ln -s`) et l’écriture de scripts shell. Au **TP2**, vous approfondirez les **permissions** et comprendrez ce que signifie `chmod +x` que vous avez utilisé ici.
