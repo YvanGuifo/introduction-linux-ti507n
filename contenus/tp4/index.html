@@ -988,7 +988,7 @@
 <ul>
 <li><strong>TP1, TP2 et TP3 terminés</strong> : navigation, permissions, variables shell, compilation <code>gcc</code>.</li>
 <li>Distribution Debian 12 ou session MarioNum active.</li>
-<li>Connaissances C minimales (le compteur écrit au TP3 sera réutilisé).</li>
+<li>Connaissances C minimales (compilation avec <code>gcc</code>, vue au TP3).</li>
 </ul>
 </div>
 <div class="admonition info">
@@ -1039,7 +1039,7 @@ Dans ce fichier, vous consignerez progressivement les résultats des commandes e
 <blockquote>
 <p>📚 = Facile · 📚📚 = Moyenne · 📚📚📚 = Élevée</p>
 <p>Les exercices <strong>1 à 7</strong> constituent le <strong>tronc commun</strong>, exigible pour tous.
-Les exercices <strong>8, 9, 10</strong> sont des <strong>exercices supplémentaires</strong> réservés au <strong>groupe étoile</strong>.</p>
+Les exercices <strong>8, 9, 10</strong> sont des <strong>exercices supplémentaires</strong> (⭐).</p>
 </blockquote>
 </div>
 <div class="admonition info">
@@ -1193,7 +1193,7 @@ Le fichier <code>fichier.txt</code> est alors <em>connecté</em> à l’entrée 
    Où est redirigé le résultat de <code>ls</code> ? Où va l’entrée standard de <code>wc</code> ? Où est affiché le résultat de <code>wc</code> ?</li>
 <li>Affichez sur le terminal la phrase
    <code>Il y a &lt;nombre&gt; fichiers .h dans le répertoire /usr/include</code>
-   en utilisant <code>echo</code> et la <strong>substitution de commande</strong> <code>$(...)</code> (vue au TP3, exercice 7).</li>
+   en utilisant <code>echo</code> et la <strong>substitution de commande</strong> <code>$(...)</code> (vue au TP3, exercice 6).</li>
 <li>Entrez la commande suivante et commentez :
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$<span class="w"> </span>wc<span class="w"> </span>-l<span class="w"> </span><span class="k">$(</span>ls<span class="w"> </span>/usr/include/*.h<span class="k">)</span>
 </span></code></pre></div></li>
@@ -1259,7 +1259,7 @@ Le fichier <code>fichier.txt</code> est alors <em>connecté</em> à l’entrée 
 </ul>
 </div>
 <h3 id="exercice-6-avant-plan-arriere-plan-bascule">Exercice 6 — Avant-plan, arrière-plan, bascule 📚📚📚<a class="headerlink" href="#exercice-6-avant-plan-arriere-plan-bascule" title="Permanent link">&para;</a></h3>
-<p>Cet exercice reprend votre compteur du TP3 (ou demande de l’écrire si vous ne l’aviez pas fait).</p>
+<p>Cet exercice vous demande d’écrire un petit programme C utilisant les acquis du TP3.</p>
 <ol>
 <li>Écrivez un programme C <code>compteur.c</code> qui incrémente indéfiniment une variable <code>i</code> et affiche sa valeur <strong>sur la sortie standard à chaque multiple de 100</strong>. Utilisez <code>sleep</code> pour ralentir l’exécution et observer la sortie.</li>
 </ol>
