@@ -338,16 +338,14 @@ title: TP3 - Environnement de travail et Compilateur C
 
 ---
 
-## ⭐ Exercices supplémentaires — Groupe étoile
+## ⭐ Exercices supplémentaires
 
 !!! star "À qui s’adressent les exercices 8, 9, 10 ?"
-    Vous avez terminé les exercices 1 à 7 ? Cette section prolonge la progression C amorcée aux TP1–TP2 vers les **redirections au niveau système**. Vous allez réimplémenter en C ce que le shell fait quand vous tapez `commande > fichier`.
+    Vous avez terminé les exercices 1 à 7 ? Le TP3 a introduit la **compilation C** — ces exercices étoile l’approfondissent vers la **programmation système**. Vous allez découvrir la compilation séparée, les descripteurs de fichiers standards, et réimplémenter en C ce que le shell fait quand vous tapez `commande > fichier`.
 
-    **Rappel** des appels système déjà utilisés :
+    **Appels système utilisés** : `open`, `read`, `write`, `close`, `perror`, `dup`, `dup2`.
 
-    - **TP1 ⭐** : `open(O_RDONLY)`, `read`, `write`, `close`, `perror`.
-    - **TP2 ⭐** : `open(O_WRONLY|O_CREAT|O_TRUNC, mode)`, `lseek`.
-    - **TP3 ⭐** : **`STDIN/STDOUT/STDERR_FILENO`**, **`dup`**, **`dup2`** — fondement technique des redirections.
+    Les niveaux taxonomiques visés sont **[Analyser]**, **[Évaluer]** et **[Créer]** (Bloom révisé).
 
     Ces exercices sont **optionnels** et **non évalués**.
 

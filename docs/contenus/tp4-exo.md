@@ -129,3 +129,178 @@ En utilisant `grep` et éventuellement d'autres commandes, trouvez une ligne de 
 2. Afficher le chemin absolu des fichiers qui contiennent de la chaîne `127.0.0.1` dans les fichiers de `/etc`.
 3. Afficher uniquement le nom des fichiers qui contiennent de la chaîne `127.0.0.1` dans les fichiers de `/etc`. (indice : il existe une commande qui s'appelle `rev`).
 4. Affiche le chemin du répertoire personnel de l'utilisateur `games`.
+
+---
+
+## ⭐ Exercices supplémentaires
+
+!!! star "À qui s'adressent les exercices 4, 5, 6 ?"
+    Vous avez terminé les exercices 1 à 3 ? Ces trois exercices approfondissent les **filtres textuels** et les **tubes** en vous faisant découvrir `sed`, `awk` et l'écriture d'un script d'extraction de données complet.
+
+    Les niveaux taxonomiques visés sont **[Analyser]**, **[Évaluer]** et **[Créer]** (Bloom révisé).
+
+    Ces exercices sont **optionnels** et **non évalués**.
+
+### Exercice 4 — Transformations avec `sed` ⭐
+
+!!! tip "L'éditeur de flux `sed`"
+    `sed` (*stream editor*) applique des transformations ligne par ligne sur un flux de texte. La syntaxe la plus courante est la substitution :
+
+    ```bash
+    $ sed 's/motif/remplacement/' fichier
+    ```
+
+    - `s` = substitution ; `g` en fin = remplacer **toutes** les occurrences sur la ligne.
+    - `sed` ne modifie pas le fichier original (sauf avec `-i`).
+
+    > **Référence** : Dale Dougherty & Arnold Robbins (1997). *sed & awk*, 2nd ed. O'Reilly. ISBN 978-1565922259.
+
+1. Créez un fichier `utilisateurs.txt` :
+   ```bash
+   $ cut -d: -f1,3,6 /etc/passwd > utilisateurs.txt
+   $ cat utilisateurs.txt
+   ```
+   Ce fichier contient `nom:UID:home` pour chaque utilisateur.
+
+2. Remplacez les `:` par des espaces pour une lecture plus facile :
+   ```bash
+   $ sed 's/:/ /g' utilisateurs.txt
+   ```
+
+3. Affichez uniquement les lignes dont l'UID (2ᵉ champ) est supérieur ou égal à 1000 (utilisateurs humains) :
+   ```bash
+   $ awk -F: '$2 >= 1000' utilisateurs.txt
+   ```
+   *(Aperçu de `awk` — détaillé à l'exercice 5.)*
+
+4. Supprimez les lignes contenant `nologin` :
+   ```bash
+   $ sed '/nologin/d' /etc/passwd
+   ```
+   Que fait le `d` ? Combien de lignes restent par rapport à l'original ?
+
+5. **Substitution avancée** : dans le fichier `fj` (exercice 1), remplacez toutes les occurrences de `Frère` par `Sœur` et redirigez le résultat dans `fj2` :
+   ```bash
+   $ sed 's/Frère/Sœur/g' fj > fj2
+   $ cat fj2
+   ```
+
+6. **Question d'analyse** : quelle différence y a-t-il entre `sed 's/Dormez/Réveillez/' fj` et `sed 's/Dormez/Réveillez/g' fj` ? Testez les deux sur le fichier `fj`.
+
+### Exercice 5 — Extraction structurée avec `awk` ⭐
+
+!!! tip "Le langage `awk`"
+    `awk` traite des fichiers structurés **champ par champ**. Il découpe chaque ligne selon un séparateur (espace par défaut, `-F` pour changer) et rend les champs accessibles via `$1`, `$2`, etc. (`$0` = la ligne entière).
+
+    ```bash
+    $ awk -F: '{ print $1, $3 }' /etc/passwd
+    ```
+
+    `awk` peut aussi faire des calculs, des conditions et des boucles.
+
+    > **Référence** : Aho, A. V., Kernighan, B. W., & Weinberger, P. J. (1988). *The AWK Programming Language*. Addison-Wesley. ISBN 978-0201079814.
+
+1. Affichez le nom d'utilisateur et le shell de connexion (champs 1 et 7) de `/etc/passwd` :
+   ```bash
+   $ awk -F: '{ print $1, $7 }' /etc/passwd
+   ```
+
+2. Affichez uniquement les utilisateurs dont le shell est `/bin/bash` :
+   ```bash
+   $ awk -F: '$7 == "/bin/bash" { print $1 }' /etc/passwd
+   ```
+
+3. Comptez le nombre d'utilisateurs dont l'UID (champ 3) est supérieur ou égal à 1000 :
+   ```bash
+   $ awk -F: '$3 >= 1000 { count++ } END { print count }' /etc/passwd
+   ```
+   Que font `count++` et le bloc `END` ?
+
+4. Affichez un tableau formaté des utilisateurs humains (UID ≥ 1000) avec en-tête :
+   ```bash
+   $ awk -F: 'BEGIN { printf "%-15s %-6s %s\n", "NOM", "UID", "HOME" }
+              $3 >= 1000 { printf "%-15s %-6s %s\n", $1, $3, $6 }' /etc/passwd
+   ```
+
+5. **Analyse de logs** : créez un fichier `acces.log` simulé :
+   ```bash
+   $ echo "2025-01-15 alice connexion
+   2025-01-15 bob connexion
+   2025-01-15 alice déconnexion
+   2025-01-16 alice connexion
+   2025-01-16 charlie connexion
+   2025-01-16 bob connexion
+   2025-01-16 alice déconnexion" > acces.log
+   ```
+   Avec `awk`, comptez le nombre de connexions par utilisateur :
+   ```bash
+   $ awk '$3 == "connexion" { c[$2]++ } END { for (u in c) print u, c[u] }' acces.log
+   ```
+
+6. **Question d'évaluation** : dans quel cas préférez-vous `cut` à `awk` ? Et inversement ? Donnez un exemple concret pour chaque.
+
+### Exercice 6 — Script d'analyse de `/etc/passwd` ⭐
+
+Cet exercice combine `grep`, `cut`, `sort`, `wc`, `awk` et `sed` dans un script complet.
+
+1. Créez le script `analyse-passwd.sh` :
+   ```bash
+   #!/bin/bash
+   # Analyse du fichier /etc/passwd — Commandes supplémentaires étoile
+
+   FICHIER="/etc/passwd"
+
+   echo "========================================="
+   echo "  ANALYSE DE $FICHIER"
+   echo "  Date : $(date)"
+   echo "========================================="
+   echo ""
+
+   # 1. Nombre total d'utilisateurs
+   total=$(wc -l < "$FICHIER")
+   echo "1. Nombre total d'utilisateurs : $total"
+   echo ""
+
+   # 2. Utilisateurs humains (UID >= 1000)
+   echo "2. Utilisateurs humains (UID >= 1000) :"
+   awk -F: '$3 >= 1000 { printf "   - %-15s (UID: %s, home: %s)\n", $1, $3, $6 }' "$FICHIER"
+   humains=$(awk -F: '$3 >= 1000' "$FICHIER" | wc -l)
+   echo "   Total : $humains"
+   echo ""
+
+   # 3. Répartition des shells de connexion
+   echo "3. Répartition des shells :"
+   cut -d: -f7 "$FICHIER" | sort | uniq -c | sort -rn
+   echo ""
+
+   # 4. Utilisateurs sans shell de connexion (nologin ou false)
+   echo "4. Utilisateurs sans shell interactif :"
+   grep -E "nologin|/bin/false" "$FICHIER" | cut -d: -f1 | tr '\n' ', '
+   echo ""
+   echo ""
+
+   # 5. Comptes système (UID < 100)
+   systeme=$(awk -F: '$3 < 100' "$FICHIER" | wc -l)
+   echo "5. Comptes système (UID < 100) : $systeme"
+
+   echo ""
+   echo "========================================="
+   echo "  FIN DE L'ANALYSE"
+   echo "========================================="
+   ```
+
+2. Rendez-le exécutable et lancez-le :
+   ```bash
+   $ chmod +x analyse-passwd.sh
+   $ ./analyse-passwd.sh
+   ```
+
+3. **Amélioration 1** : ajoutez une section qui détecte les utilisateurs ayant le même shell que `root`. *(Indice : récupérez d'abord le shell de root avec `grep`, puis cherchez les autres utilisateurs ayant ce même shell.)*
+
+4. **Amélioration 2** : modifiez le script pour qu'il accepte un fichier en argument (`$1`) au lieu de toujours analyser `/etc/passwd`. Si aucun argument n'est fourni, utilisez `/etc/passwd` par défaut :
+   ```bash
+   FICHIER="${1:-/etc/passwd}"
+   ```
+   Que signifie la syntaxe `${1:-valeur}` ?
+
+5. **Question d'évaluation** : dans la section 4 du script, pourquoi utilise-t-on `tr '\n' ','` ? Que se passerait-il sans cette commande ? Proposez une alternative avec `paste`.

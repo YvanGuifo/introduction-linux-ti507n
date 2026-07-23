@@ -358,13 +358,12 @@ $ /usr/bin/uname
 
 ---
 
-## ⭐ Exercices supplémentaires — Groupe étoile
+## ⭐ Exercices supplémentaires
 
 !!! star "À qui s’adressent les exercices 8, 9, 10 ?"
-    Vous avez terminé les exercices 1 à 7 ? Ces trois exercices prolongent la progression C entamée au TP1.
+    Vous avez terminé les exercices 1 à 7 ? Ces trois exercices **approfondissent les concepts de permissions du TP2** : masque de création (`umask`), permissions spéciales (`SUID`, `SGID`, *sticky bit*), et écriture d’un script d’audit de sécurité.
 
-    **Rappel TP1 ⭐** : vous avez utilisé `open(O_RDONLY)`, `read()`, `write()`, `close()`, `perror()`.
-    **TP2 ⭐** : vous allez **créer** des fichiers en C avec `open(O_WRONLY|O_CREAT, mode)`, naviguer dedans avec `lseek()`, puis combiner pour écrire votre propre `cp`.
+    Les niveaux taxonomiques visés sont **[Analyser]**, **[Évaluer]** et **[Créer]** (Bloom révisé).
 
     Ces exercices sont **optionnels** et **non évalués**.
 
@@ -393,80 +392,112 @@ $ /usr/bin/uname
 6. Pouvez-vous déduire comment `umask` agit ?
 7. Restaurez la valeur initiale de `umask`.
 
-### Exercice 9 — Créer un fichier en C avec `open()` et `write()` ⭐
+### Exercice 9 — Permissions spéciales : SUID, SGID, sticky bit ⭐
 
-1. Lisez `man 2 open`. Identifiez les flags `O_WRONLY`, `O_CREAT`, `O_TRUNC` et le rôle du **3ᵉ argument** (`mode`).
-2. Dans `~/c/`, créez `write-hello.c` :
-   ```c
-   #include <fcntl.h>     /* open, O_WRONLY, O_CREAT, O_TRUNC */
-   #include <unistd.h>    /* write, close */
-   #include <stdio.h>     /* perror */
-   #include <string.h>    /* strlen */
+!!! tip "Au-delà des 9 bits classiques"
+    En plus de `rwxrwxrwx`, Linux définit **trois bits spéciaux** :
 
-   int main(void) {
-       int fd = open("hello.txt",
-                     O_WRONLY | O_CREAT | O_TRUNC,
-                     0644);          /* permissions : rw-r--r-- */
-       if (fd < 0) { perror("open"); return 1; }
+    | Bit | Octal | Sur un fichier | Sur un répertoire |
+    |---|---|---|---|
+    | **SUID** (Set User ID) | `4000` | Le programme s’exécute avec les droits de son **propriétaire** | — |
+    | **SGID** (Set Group ID) | `2000` | Le programme s’exécute avec les droits du **groupe** | Les fichiers créés héritent du groupe du répertoire |
+    | **Sticky bit** | `1000` | — | Seul le propriétaire d’un fichier peut le supprimer |
 
-       const char *msg = "Écrit depuis un programme C.\n";
-       write(fd, msg, strlen(msg));
+    Ces bits apparaissent dans `ls -l` à la place du `x` : `s` (SUID/SGID) et `t` (sticky).
 
-       close(fd);
-       return 0;
-   }
-   ```
-3. Compilez : `gcc -Wall -o write-hello write-hello.c`.
-4. Exécutez : `./write-hello`.
-5. Vérifiez :
+1. Examinez les permissions de la commande `passwd` :
    ```bash
-   $ cat hello.txt
-   $ ls -l hello.txt
+   $ ls -l $(which passwd)
    ```
-6. **Questions** :
-   - Quel rôle joue chacun des trois flags ?
-   - Pourquoi le mode `0644` ? Reliez à ce que vous avez vu dans ce TP.
-   - Que se passe-t-il si vous remplacez `O_TRUNC` par `O_APPEND` et relancez plusieurs fois ?
+   Vous devriez voir un `s` à la place du `x` propriétaire. Que signifie ce `s` ?
 
-### Exercice 10 — Naviguer dans un fichier avec `lseek()` ⭐
-
-`lseek()` positionne le **curseur** de lecture/écriture dans un fichier, permettant l’accès aléatoire.
-
-1. Lisez `man 2 lseek`. Notez les constantes `SEEK_SET`, `SEEK_CUR`, `SEEK_END`.
-2. Créez `read-skip.c` :
-   ```c
-   #include <fcntl.h>
-   #include <unistd.h>
-   #include <stdio.h>
-
-   int main(void) {
-       int fd = open("/etc/passwd", O_RDONLY);
-       if (fd < 0) { perror("open"); return 1; }
-
-       if (lseek(fd, 100, SEEK_SET) == (off_t)-1) {
-           perror("lseek"); close(fd); return 1;
-       }
-
-       char buf[50];
-       ssize_t n = read(fd, buf, sizeof buf - 1);
-       if (n > 0) {
-           buf[n] = '\0';
-           printf("Octets 100 à %ld :\n%s\n", (long)(100 + n), buf);
-       }
-
-       close(fd);
-       return 0;
-   }
+2. **Question d’analyse** : pourquoi la commande `passwd` a-t-elle besoin du bit SUID ? Quel fichier doit-elle modifier et à qui appartient-il ?
+   ```bash
+   $ ls -l /etc/shadow
    ```
-3. Compilez et exécutez. Comparez avec `head -c 150 /etc/passwd | tail -c 50`.
-4. **Questions** :
-   - Que fait `lseek(fd, 0, SEEK_END)` ?
-   - Modifiez le programme pour afficher la **taille en octets** du fichier `/etc/passwd`. Comparez avec `wc -c /etc/passwd`.
+
+3. Cherchez tous les fichiers SUID sur le système :
+   ```bash
+   $ find / -perm -4000 -type f 2>/dev/null
+   ```
+   Pourquoi redirige-t-on `stderr` vers `/dev/null` ? Combien de fichiers SUID trouvez-vous ?
+
+4. Examinez le répertoire `/tmp` :
+   ```bash
+   $ ls -ld /tmp
+   ```
+   Que signifie le `t` à la fin des permissions ? Pourquoi est-il indispensable pour `/tmp` ?
+
+5. **Mise en pratique** : créez un répertoire `partage/` avec le sticky bit et testez :
+   ```bash
+   $ mkdir partage
+   $ chmod 1777 partage
+   $ ls -ld partage
+   ```
+   Décomposez `1777` : que vaut chaque chiffre ?
+
+6. **Mise en pratique SGID** sur un répertoire :
+   ```bash
+   $ mkdir equipe
+   $ chmod 2775 equipe
+   $ ls -ld equipe
+   ```
+   Créez un fichier dans `equipe/`. À quel groupe appartient-il ? Comparez avec un fichier créé dans un répertoire sans SGID.
+
+7. **Question d’évaluation** : un administrateur trouve un fichier SUID appartenant à root dans `/tmp`. Pourquoi est-ce un **risque de sécurité** critique ?
+
+### Exercice 10 — Script d’audit de permissions ⭐
+
+Cet exercice combine tout ce que vous avez appris dans ce TP pour écrire un script d’**audit de sécurité**.
+
+1. Créez le script `audit-permissions.sh` :
+   ```bash
+   #!/bin/bash
+   # Audit de permissions — TP2 étoile
+   # Vérifie les points de sécurité courants liés aux permissions
+
+   echo "=== AUDIT DE PERMISSIONS ==="
+   echo "Date : $(date)"
+   echo "Utilisateur : $(whoami)"
+   echo ""
+
+   echo "--- 1. Fichiers SUID appartenant à root ---"
+   find / -user root -perm -4000 -type f 2>/dev/null | head -20
+   echo ""
+
+   echo "--- 2. Fichiers SGID ---"
+   find / -perm -2000 -type f 2>/dev/null | head -10
+   echo ""
+
+   echo "--- 3. Fichiers accessibles en écriture par tous (world-writable) ---"
+   find /home -perm -o=w -type f 2>/dev/null
+   echo ""
+
+   echo "--- 4. Répertoires sans sticky bit accessibles en écriture par tous ---"
+   find / -perm -o=w ! -perm -1000 -type d 2>/dev/null
+   echo ""
+
+   echo "--- 5. Fichiers sans propriétaire ou sans groupe ---"
+   find /home -nouser -o -nogroup 2>/dev/null
+   echo ""
+
+   echo "=== FIN DE L’AUDIT ==="
+   ```
+
+2. Rendez-le exécutable et lancez-le :
+   ```bash
+   $ chmod +x audit-permissions.sh
+   $ ./audit-permissions.sh
+   ```
+
+3. **Question d’analyse** : pour chacune des 5 vérifications, expliquez en une phrase **pourquoi** c’est un problème de sécurité potentiel.
+
+4. **Amélioration** : ajoutez une 6ᵉ vérification qui liste les fichiers de `/etc` lisibles par « others » (`o=r`) et dont le nom contient `shadow` ou `secret`. *(Indice : combinez `find` avec `-name`.)*
+
+5. **Question d’évaluation** : votre script utilise `head -20` et `head -10` pour limiter la sortie. En contexte réel d’audit, comment adapteriez-vous le script pour enregistrer les résultats complets dans un fichier de log tout en affichant un résumé à l’écran ? *(Indice : pensez à la commande `tee` vue au TP1 étoile via les pipelines.)*
 
 !!! info "Vers le TP3"
-    Au TP3 vous approfondirez la compilation C et manipulerez les **descripteurs de fichiers** (stdin/stdout/stderr, `dup`, `dup2`).
-
-    > **Référence** : Kerrisk, M. (2010). *The Linux Programming Interface*. No Starch Press. ISBN 978-1593272203, chapitres 4 (File I/O) et 15 (File Attributes).
+    Au TP3 vous découvrirez la **compilation C** et les variables d’environnement. Les exercices étoile du TP3 approfondiront la programmation système en C — vous aurez alors toutes les bases nécessaires.
 
 ---
 
@@ -474,6 +505,6 @@ $ /usr/bin/uname
 
 - *Filesystem Hierarchy Standard* v3.0 : <https://refspecs.linuxfoundation.org/fhs.shtml>
 - *Debian Reference* : <https://www.debian.org/doc/manuals/debian-reference/>
-- Bach, M. J. (1986). *The Design of the UNIX Operating System*. Prentice Hall. ISBN 978-0132017992.
-- Kerrisk, M. (2010). *The Linux Programming Interface*. No Starch Press. ISBN 978-1593272203.
-- Stevens, W. R., & Rago, S. A. (2013). *Advanced Programming in the UNIX Environment*, 3rd ed. Addison-Wesley. ISBN 978-0321637734.
+- Shotts, W. (2019). *The Linux Command Line*, 2nd ed. No Starch Press. ISBN 978-1593279523. Chap. 9 (*Permissions*).
+- Garfinkel, S., Spafford, G., & Schwartz, A. (2003). *Practical Unix and Internet Security*, 3rd ed. O’Reilly. ISBN 978-0596003234.
+- Kerrisk, M. (2010). *The Linux Programming Interface*. No Starch Press. ISBN 978-1593272203, chap. 15 (*File Attributes*).

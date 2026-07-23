@@ -379,17 +379,16 @@ Cet exercice reprend votre compteur du TP3 (ou demande de l’écrire si vous ne
 
 ---
 
-## ⭐ Exercices supplémentaires — Groupe étoile
+## ⭐ Exercices supplémentaires
 
 !!! star "À qui s’adressent les exercices 8, 9, 10 ?"
-    Vous avez terminé les exercices 1 à 7 ? Ces trois exercices closent la progression en C amorcée depuis le TP1 et vous font écrire un **mini-shell**.
+    Vous avez terminé les exercices 1 à 7 ? Ces trois exercices closent la progression en C amorcée au TP3 et vous font écrire un **mini-shell**.
 
-    **Rappel** des appels système maîtrisés jusqu’ici :
+    **Rappel** des appels système vus au **TP3 ⭐** : `open`, `read`, `write`, `close`, `perror`, `dup`, `dup2`.
 
-    - **TP1 ⭐** : `open(O_RDONLY)`, `read`, `write`, `close`, `perror`.
-    - **TP2 ⭐** : `O_CREAT`, `O_TRUNC`, modes octaux, `lseek`.
-    - **TP3 ⭐** : `STDIN/STDOUT/STDERR_FILENO`, `dup`, `dup2`.
-    - **TP4 ⭐** : **`signal`**, **`fork`**, **`exec*`**, **`wait`** — le cœur du multitâche Unix.
+    **TP4 ⭐** : **`signal`**, **`fork`**, **`exec*`**, **`wait`** — le cœur du multitâche Unix.
+
+    Les niveaux taxonomiques visés sont **[Analyser]**, **[Évaluer]** et **[Créer]** (Bloom révisé).
 
     Ces exercices sont **optionnels** et **non évalués**.
 

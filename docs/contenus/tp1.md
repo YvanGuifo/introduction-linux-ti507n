@@ -345,106 +345,173 @@ Depuis votre répertoire personnel, exécutez :
 
 ---
 
-## ⭐ Exercices supplémentaires — Groupe étoile
+## ⭐ Exercices supplémentaires
 
 !!! star "À qui s’adressent les exercices 8, 9, 10 ?"
-    Vous avez terminé les exercices 1 à 7 avant la fin de la séance ? Cette section vous **introduit à la programmation système en C**, en anticipation des TP3 et TP4.
+    Vous avez terminé les exercices 1 à 7 avant la fin de la séance ? Ces trois exercices **approfondissent les concepts du TP1** en vous faisant découvrir des commandes avancées de recherche, les pipelines shell et l’écriture de votre premier script.
 
-    Ces exercices utilisent le compilateur `gcc`. Vérifiez d’abord :
-    ```bash
-    $ gcc --version
-    ```
-    Si la commande échoue :
-    ```bash
-    $ sudo apt update && sudo apt install build-essential
-    ```
+    Les niveaux taxonomiques visés sont **[Analyser]**, **[Évaluer]** et **[Créer]** (Bloom révisé).
 
     Ces exercices sont **optionnels** et **non évalués**.
 
-### Exercice 8 — Compiler un premier programme C ⭐
+### Exercice 8 — Recherche avancée avec `find` ⭐
 
-1. Dans `~`, créez un répertoire `c/` et placez-vous dedans.
-2. Avec un éditeur (`nano`, `gedit`, `vim`…), créez `hello.c` :
-   ```c
-   #include <stdio.h>
+!!! tip "La commande `find`"
+    `find` parcourt récursivement une arborescence et sélectionne les fichiers selon des **critères** : nom, type, taille, date de modification, etc. Contrairement aux jokers (exercice 7), `find` descend dans les sous-répertoires.
 
-   int main(void) {
-       printf("Hello, Linux !\n");
-       return 0;
-   }
-   ```
-3. Compilez : `gcc -Wall -o hello hello.c`
-4. Exécutez : `./hello`
-5. **Questions** :
+    ```bash
+    $ find <chemin> <critères> [<action>]
+    ```
 
-       - À quoi sert l’option `-o` ? Que se passe-t-il si vous l’omettez ?
-      - À quoi sert `-Wall` ?
-   - Quel est le type du fichier `hello` ? *(Utilisez `file hello`.)*
+    Consultez `man find` pour la liste complète des critères.
 
-> **Référence** : Kernighan, B. W., & Ritchie, D. M. (1988). *The C Programming Language*, 2nd ed. Prentice Hall. ISBN 978-0131103627.
-
-### Exercice 9 — Arguments en ligne de commande ⭐
-
-1. Modifiez `hello.c` :
-   ```c
-   #include <stdio.h>
-
-   int main(int argc, char **argv) {
-       if (argc > 1) {
-           printf("Bonjour, %s !\n", argv[1]);
-       } else {
-           printf("Bonjour, le monde !\n");
-       }
-       return 0;
-   }
-   ```
-2. Recompilez et testez :
+1. Listez **tous les fichiers** (pas les répertoires) présents sous `/etc` :
    ```bash
-   $ ./hello
-   $ ./hello Yvan
-   $ ./hello "Yvan GUIFO"
+   $ find /etc -type f
    ```
-3. **Questions** :
+   Combien y en a-t-il ? *(Indice : combinez avec `wc -l`.)*
 
-       - Que représentent `argc` et `argv` ?
-       - Que contient `argv[0]` ? Affichez-le pour vérifier.
-       - Pourquoi les guillemets sont-ils nécessaires dans `./hello "Yvan GUIFO"` ?
-
-### Exercice 10 — Premier appel système : lire `/etc/passwd` ⭐
-
-Un **appel système** est une fonction du noyau Linux appelée par votre programme pour demander un service (ouvrir un fichier, lire des données…).
-
-1. Consultez la page de manuel **section 2** (appels système) : `man 2 read`
-2. Créez `show-passwd.c` 
-   ```c
-   #include <fcntl.h>     /* open       */
-   #include <unistd.h>    /* read, write, close */
-   #include <stdio.h>     /* perror     */
-
-   int main(void) {
-       int fd = open("/etc/passwd", O_RDONLY);
-       if (fd < 0) { perror("open"); return 1; }
-
-       char buf[1024];
-       ssize_t n;
-       while ((n = read(fd, buf, sizeof buf)) > 0) {
-           write(1, buf, n);   /* 1 = STDOUT_FILENO */
-       }
-       close(fd);
-       return 0;
-   }
+2. Trouvez tous les fichiers dont le nom se termine par `.conf` sous `/etc` :
+   ```bash
+   $ find /etc -name "*.conf"
    ```
-3. Compilez : `gcc -Wall -o show-passwd show-passwd.c`
-4. Exécutez et comparez avec `cat /etc/passwd`
-5. **Questions** :
+   Pourquoi les guillemets autour de `"*.conf"` sont-ils indispensables ?
 
-       - Que vaut `fd` lorsque `open` réussit ?
-       - À quoi sert `perror` ? *(Indice : `man 3 perror`)*
+3. Trouvez tous les répertoires sous `/usr` dont le nom contient `bin`.
 
-!!! info "Vers les TP suivants"
-    Vous venez d’utiliser les appels système `open`, `read`, `write`, `close`. Ils seront approfondis au **TP3** et étendus au **TP4**.
+4. Trouvez dans `/var/log` les fichiers modifiés il y a **moins de 24 heures** :
+   ```bash
+   $ find /var/log -type f -mtime -1
+   ```
 
-    > **Référence canonique** : Kerrisk, M. (2010). *The Linux Programming Interface*. No Starch Press. ISBN 978-1593272203, chap. 4.
+5. **Combinaison de critères** : trouvez sous `/etc` les fichiers réguliers dont le nom commence par `host` et qui font plus de 100 octets :
+   ```bash
+   $ find /etc -type f -name "host*" -size +100c
+   ```
+
+6. **Question d’analyse** : quelle différence fondamentale y a-t-il entre `ls /etc/*.conf` et `find /etc -name "*.conf"` ? Testez les deux et comparez le résultat.
+
+### Exercice 9 — Liens symboliques et liens physiques ⭐
+
+!!! tip "Deux types de liens sous Linux"
+    La commande `ln` crée des **liens** vers des fichiers existants :
+
+    - **Lien physique** (*hard link*) : `ln fichier lien` — crée un second nom pour le **même contenu** sur le disque. Les deux noms sont équivalents ; supprimer l’un ne supprime pas l’autre.
+    - **Lien symbolique** (*symlink*) : `ln -s cible lien` — crée un fichier spécial qui **pointe vers** un chemin. Si la cible est supprimée, le lien est « cassé ».
+
+    Chaque fichier possède un **numéro d’inode** (identifiant interne). `ls -i` l’affiche.
+
+    > **Référence** : Kerrisk, M. (2010). *The Linux Programming Interface*. No Starch Press. ISBN 978-1593272203, chap. 18 (*Directories and Links*).
+
+1. Dans `~`, créez un répertoire `tp_liens/` et placez-vous dedans. Créez un fichier `original.txt` contenant quelques lignes (utilisez `echo` ou un éditeur).
+
+2. Créez un **lien physique** :
+   ```bash
+   $ ln original.txt lien_physique.txt
+   $ ls -li
+   ```
+   Comparez les numéros d’inode de `original.txt` et `lien_physique.txt`. Que constatez-vous ?
+
+3. Modifiez le contenu de `lien_physique.txt` (avec `echo "nouvelle ligne" >> lien_physique.txt`). Affichez `original.txt`. Le contenu a-t-il changé ? Pourquoi ?
+
+4. Créez un **lien symbolique** :
+   ```bash
+   $ ln -s original.txt lien_symbo.txt
+   $ ls -li
+   ```
+   Comparez les numéros d’inode. En quoi diffèrent-ils de ceux du lien physique ?
+
+5. Observez la différence avec `ls -l` :
+   ```bash
+   $ ls -l lien_physique.txt lien_symbo.txt
+   ```
+   Que montre la colonne de gauche pour le lien symbolique ? Que signifie la flèche `->` ?
+
+6. Supprimez le fichier original :
+   ```bash
+   $ rm original.txt
+   $ cat lien_physique.txt
+   $ cat lien_symbo.txt
+   ```
+   Que se passe-t-il pour chacun des deux liens ? Expliquez la différence.
+
+7. **Question d’analyse** : essayez de créer un lien physique vers un répertoire (`ln tp_liens/ lien_rep`). Que se passe-t-il ? Pourquoi Linux interdit-il cela ? *(Indice : pensez aux boucles dans l’arborescence.)*
+
+8. Trouvez des exemples de liens symboliques sur le système :
+   ```bash
+   $ ls -l /usr/bin/python*
+   $ ls -l /etc/alternatives/
+   ```
+   Pourquoi les distributions Linux utilisent-elles autant de liens symboliques ?
+
+### Exercice 10 — Premier script shell ⭐
+
+!!! tip "Qu’est-ce qu’un script shell ?"
+    Un **script** est un fichier texte contenant une séquence de commandes exécutées par le shell. La première ligne, le **shebang**, indique quel interpréteur utiliser :
+
+    ```bash
+    #!/bin/bash
+    ```
+
+    Pour rendre un script exécutable : `chmod +x mon_script.sh`
+
+    > **Référence** : Robbins, A., Hannah, E., & Lamb, L. (2008). *Learning the bash Shell*, 3rd ed. O’Reilly. ISBN 978-0596009656, chap. 1-2.
+
+1. Dans `~`, créez un répertoire `scripts/` et placez-vous dedans.
+2. Avec un éditeur (`nano`, `vim`…), créez `info-systeme.sh` :
+   ```bash
+   #!/bin/bash
+   # Script d’information système — TP1 étoile
+
+   echo "=== Informations système ==="
+   echo "Date et heure  : $(date)"
+   echo "Utilisateur    : $(whoami)"
+   echo "Machine        : $(hostname)"
+   echo "Noyau          : $(uname -r)"
+   echo "Répertoire     : $(pwd)"
+   echo ""
+   echo "=== Contenu du répertoire courant ==="
+   ls -la
+   echo ""
+   echo "=== Espace disque ==="
+   df -h /
+   ```
+3. Rendez le script exécutable et lancez-le :
+   ```bash
+   $ chmod +x info-systeme.sh
+   $ ./info-systeme.sh
+   ```
+4. **Exercice de création** : écrivez un script `creer-arbo.sh` qui :
+   - Prend un **argument** : le nom d’un projet (ex. `mon_projet`).
+   - Crée l’arborescence suivante :
+     ```
+     mon_projet/
+     ├── src/
+     ├── docs/
+     ├── tests/
+     └── README.txt    (contient "Projet : mon_projet")
+     ```
+   - Affiche un message de confirmation.
+
+   *Indice* : pour accéder au premier argument dans un script, utilisez `$1`. Pour vérifier qu’un argument a été fourni :
+   ```bash
+   if [ -z "$1" ]; then
+       echo "Usage : $0 <nom-du-projet>"
+       exit 1
+   fi
+   ```
+
+5. Testez votre script :
+   ```bash
+   $ ./creer-arbo.sh tp_linux
+   $ ls -R tp_linux
+   $ cat tp_linux/README.txt
+   ```
+
+6. **Question d’évaluation** : pourquoi est-il préférable de tester `[ -z "$1" ]` plutôt que de laisser le script échouer silencieusement sans argument ?
+
+!!! info "Vers le TP2"
+    Vous venez de découvrir `find`, les liens (`ln`, `ln -s`) et l’écriture de scripts shell. Au **TP2**, vous approfondirez les **permissions** et comprendrez ce que signifie `chmod +x` que vous avez utilisé ici.
 
 ---
 
@@ -453,5 +520,4 @@ Un **appel système** est une fonction du noyau Linux appelée par votre program
 - *Debian Reference* : <https://www.debian.org/doc/manuals/debian-reference/>
 - *The Linux Documentation Project* : <https://tldp.org/>
 - Robbins, A., Hannah, E., & Lamb, L. (2008). *Learning the bash Shell*, 3rd ed. O’Reilly. ISBN 978-0596009656.
-- Kernighan, B. W., & Ritchie, D. M. (1988). *The C Programming Language*, 2nd ed. Prentice Hall. ISBN 978-0131103627.
-- Kerrisk, M. (2010). *The Linux Programming Interface*. No Starch Press. ISBN 978-1593272203.
+- Shotts, W. (2019). *The Linux Command Line*, 2nd ed. No Starch Press. ISBN 978-1593279523. Disponible gratuitement : <https://linuxcommand.org/tlcl.php>.
