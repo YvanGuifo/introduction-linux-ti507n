@@ -376,8 +376,9 @@ Depuis votre répertoire personnel, exécutez :
 3. Compilez : `gcc -Wall -o hello hello.c`
 4. Exécutez : `./hello`
 5. **Questions** :
-   - À quoi sert l’option `-o` ? Que se passe-t-il si vous l’omettez ?
-   - À quoi sert `-Wall` ?
+
+       - À quoi sert l’option `-o` ? Que se passe-t-il si vous l’omettez ?
+      - À quoi sert `-Wall` ?
    - Quel est le type du fichier `hello` ? *(Utilisez `file hello`.)*
 
 > **Référence** : Kernighan, B. W., & Ritchie, D. M. (1988). *The C Programming Language*, 2nd ed. Prentice Hall. ISBN 978-0131103627.
@@ -404,9 +405,10 @@ Depuis votre répertoire personnel, exécutez :
    $ ./hello "Yvan GUIFO"
    ```
 3. **Questions** :
-   - Que représentent `argc` et `argv` ?
-   - Que contient `argv[0]` ? Affichez-le pour vérifier.
-   - Pourquoi les guillemets sont-ils nécessaires dans `./hello "Yvan GUIFO"` ?
+
+       - Que représentent `argc` et `argv` ?
+       - Que contient `argv[0]` ? Affichez-le pour vérifier.
+       - Pourquoi les guillemets sont-ils nécessaires dans `./hello "Yvan GUIFO"` ?
 
 ### Exercice 10 — Premier appel système : lire `/etc/passwd` ⭐
 
