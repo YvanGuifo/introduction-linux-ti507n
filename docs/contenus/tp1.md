@@ -373,8 +373,8 @@ Depuis votre répertoire personnel, exécutez :
        return 0;
    }
    ```
-3. Compilez : `gcc -Wall -o hello hello.c`.
-4. Exécutez : `./hello`.
+3. Compilez : `gcc -Wall -o hello hello.c`
+4. Exécutez : `./hello`
 5. **Questions** :
    - À quoi sert l’option `-o` ? Que se passe-t-il si vous l’omettez ?
    - À quoi sert `-Wall` ?
@@ -412,8 +412,8 @@ Depuis votre répertoire personnel, exécutez :
 
 Un **appel système** est une fonction du noyau Linux appelée par votre programme pour demander un service (ouvrir un fichier, lire des données…).
 
-1. Consultez la page de manuel **section 2** (appels système) : `man 2 read`.
-2. Créez `show-passwd.c` :
+1. Consultez la page de manuel **section 2** (appels système) : `man 2 read`
+2. Créez `show-passwd.c` 
    ```c
    #include <fcntl.h>     /* open       */
    #include <unistd.h>    /* read, write, close */
@@ -432,11 +432,12 @@ Un **appel système** est une fonction du noyau Linux appelée par votre program
        return 0;
    }
    ```
-3. Compilez : `gcc -Wall -o show-passwd show-passwd.c`.
-4. Exécutez et comparez avec `cat /etc/passwd`.
+3. Compilez : `gcc -Wall -o show-passwd show-passwd.c`
+4. Exécutez et comparez avec `cat /etc/passwd`
 5. **Questions** :
-   - Que vaut `fd` lorsque `open` réussit ?
-   - À quoi sert `perror` ? *(Indice : `man 3 perror`.)*
+
+       - Que vaut `fd` lorsque `open` réussit ?
+       - À quoi sert `perror` ? *(Indice : `man 3 perror`)*
 
 !!! info "Vers les TP suivants"
     Vous venez d’utiliser les appels système `open`, `read`, `write`, `close`. Ils seront approfondis au **TP3** et étendus au **TP4**.
