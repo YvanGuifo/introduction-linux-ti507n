@@ -1,8 +1,12 @@
 nav:
     - installation-wsl.md
     - preliminary-reading.md
+    - Intro-MarioNum.md
+    - codespace.md
     - tp1.md
     - tp2.md
     - tp3.md
     - tp4.md
     - tp4-exo.md
+    
+  

@@ -1,162 +1,252 @@
 ---
-title: Installation d'une distribution Linux
+title: Installation d'une distribution Linux 
 ---
 
-# Installation d'une distribution Linux
+# Installation d'une distribution Linux 
 
-## Installation de WSL (pour les utilisateurs Windows)
+## Installation d'une distribution Linux via VirtualBox sur Windows et MacOS 
 
-Dans ce tutoriel nous verrons comment vous pouvez directement avoir un environnement Linux dans Windows en utilisant *Windows Subsystem for Linux* (WSL).
+!!! objectifs "Objectif pédagogique"
+    Dans ce tutoriel, vous allez apprendre à installer une distribution Linux (Debian 12) dans une machine virtuelle à l’aide du logiciel **VirtualBox**.
 
-### Activation de wsl
-1. Dans la barre de recherche de Windows, tapez *"Activer ou désactiver des Fonctionnalités Windows"*.
-![Windows functionnalities](../../assets/img/activate-windows-funtionnalities.png)
-2. Une boîte de dialogue va s'ouvrir dans laquelle nous allons cocher des options.
-3. Assurez-vous que les options **Sous-système Windows pour Linux** et **Plateforme de machine virtuelle** sont cochées et cliquez sur OK.
-![Check wsl and vm](../../assets/img/checked-wsl-vm.png)
-4. Il se peut que vous soyez invité à redémarrer votre ordinateur pour que les changements prennent effet.
+!!! tip "Prérequis"
 
-### Installation de Debian
+    Avant de commencer, assurez-vous d’avoir :
 
-1. Ouvrez le *Microsoft Store* et tapez **debian** dans la barre de recherche. Une fois que **Debian** est proposé dans les suggestions, cliquez dessus.
-2. Cliquez sur **Obtenir**.
-![Debian](../../assets/img/debian.png)
-3. Une fois le téléchargement terminé (environ 80 Mo), recherchez Debian dans la barre de recherche de Windows et cliquez dessus.
-4. Un émulateur de terminal nommé *Debian* va s'ouvrir et finaliser l'installation.
-5. Dans ce terminal, une fois l'installation terminée, on vous demandera de saisir un nom d'utilisateur et un mot de passe. Notez que pour des raisons de sécurité, le mot de passe que vous allez taper n'apparaîtra pas en clair, vous aurez peut-être l'impression de ne rien taper, mais en fait si.
-6. Une fois votre nom d'utilisateur et votre mot de passe saisis, c'est tout ! Vous avez maintenant un système GNU/Linux (ligne de commande) installé dans Windows.
+    - Une connexion internet stable
+    - Au moins **10 Go d’espace libre**
+    - **VirtualBox** installé sur votre système :
 
-### Accéder aux fichiers wsl depuis Windows
+        > **Windows** 
+      
+        > ou **MacOS (Sur des processeurs Intel)**
+     
+    - Le fichier **ISO** de Debian (image disque)
 
-1. Ouvrez un explorateur de fichiers depuis Windows.
-2. Dans la barre d'adresse, tapez: `\\wsl$`, puis appuyez sur entrée.
-![Windows explorer](../../assets/img/wsl.png)
-3. Double cliquez sur Debian. À partir de là, vous pourrez accéder à votre répertoire personnel (dossier personnel) en cliquant sur `home` puis sur le dossier dont le nom est votre `login`.
-4. Vous êtes maintenant en mesure de récupérer vos fichiers debian depuis Windows.
-5. Pour tester que tout va bien, dans le terminal debian saisissez la commande suivante: 
-```bash
-touch file.txt
-```
-ensuite depuis l'explorateur de fichiers Windows vérifiez que le fichier a bien été créé dans votre répertoire personnel (il se peut que vous ayez besoin de rafraîchir la fenêtre avec `F5`).
-6. Éditez le fichier `file.txt` dans un éditeur de texte depuis Windows, puis enregistrez-le.
-![File editing](../../assets/img/fichier.png)
-7. Enfin, retournez dans le terminal debian pour vérifier que le fichier a bien été modifié. Saisissez la commande:
-```bash
-cat file.txt
-```
-8. Vous pourrez observer un petit problème avec la fin des lignes, Windows et Unix les gèrent différemment (nous en reparlerons plus tard).
+!!! warning "Attention à la puce Apple Silicon (M1/M2/M3)"
+    VirtualBox ne prend pas encore pleinement en charge les puces Apple Silicon. Pour ces machines, privilégiez UTM 
 
-## Installation de UTM (pour les utilisateurs MacOS)
+!!! info "Instructions"
 
-Dans ce tutoriel nous verrons comment vous pouvez directement avoir un environnement Linux dans MacOS en utilisant *UTM*.
+    Il est essentiel de suivre attentivement les instructions, certaines étapes étant spécifiques à Windows, à macOS (processeur Intel), ou aux deux. Veillez donc à respecter scrupuleusement les indications correspondant à votre système.
 
-### Installation de UTM et de Debian
+    Pour l'installation de :
+    
+    - **Windows :** suivre les étapes 1, 2, 3, 4, 5, 6, 7, 9
+    - **MacOs :**.  suivre les étapes 1, 2, 3, 5, 6, 8, 9
 
-1. Télécharger l'application UTM depuis l'App Store. Ou directement depuis [ici](https://mac.getutm.app/). C'est un logiciel gratuit.
-2. Une fois le téléchargement terminé, ouvrez l'application. Vous aurez une fenêtre qui ressemble à ceci:
-   ![UTM](../../assets/img/home-utm.png)
-3. Choisissez ensuite *Parcourir la bibliothèque d'UTM*, une liste de systèmes d'exploitation s'affichera.   
-4. Choisissez une des distributions Debian 11 de votre choix (pour ce tuto j'ai choisi celle avec l'environnement graphique Xfce).
-   ![Debian distribution](../../assets/img/debian-distro.png)
-5. Cliquez ensuite sur le bouton *Open in UTM*, cela va télécharger l'image de la distribution Debian et l'installer sur votre ordinateur.
-6. Après l'installation, revenez à l'application UTM, vous verrez la distribution Debian dans la liste des systèmes d'exploitation installés sur la gauche.
-7. Cliquez sur la distribution Debian, puis sur le bouton *Play*.
-8. Une nouvelle fenêtre va s'ouvrir et vous verrez afficher une fenêtre de connexion à Debian. Entrez votre nom d'utilisateur et votre mot de passe (le nom d'utilisateur par défaut est `debian` et le mot de passe par défaut est `debian`).
-9. Faîtes attention au clavier, il peut être différent de celui auquel vous êtes habitué. Il s'agit par défaut du clavier QWERTY. Pour changer le clavier, voir la section suivante.
 
-### Changer de clavier
 
-1. Une fois passée la fenêtre de connexion, cliquez sur le bouton *Applications* en haut à gauche de l'écran. 
-2. Une liste d'applications s'affichera, cliquez sur l'application *Settings*, puis sur *Keyboard*.
-3. Vous aurez une fenêtre avec les paramètres du clavier, cliquez sur l'onglet *Layout*.
-4. De là, modifiez le modèle du clavier en *MacBook/MacBook Pro* et sur l'option *Keyboard layout*, cliquez sur le bouton *Add* choisissez celui auquel vous êtes habitué (pour moi c'est *French (AZERTY)*).
-5. Vous pouvez maintenant supprimer le clavier par défaut qui était le QWERTY.
-6. Après la configuration, vous devriez avoir quelque chose de similaire à ceci:
+### Étape 1 : Télécharger VirtualBox
 
-<img src="../../assets/img/keyboard-setting.png" alt="Keyboard layout configuration" width="250"/>
+1. Allez sur le site officiel : [https://www.virtualbox.org](https://www.virtualbox.org)
+2. Cliquez sur le bouton **Download VirtualBox**.
+![Téléchargement VirtualBox](../../assets/img/vbox-download.png)
+3. Choisissez la version adaptée à votre système d’exploitation (Windows, macOS, Linux).
+![Version VirtualBox](../../assets/img/OSVirtualBox-download.png)
+4. Une fois le fichier téléchargé, **installez VirtualBox** en suivant l’assistant d’installation.
 
-Vous pouvez ensuite fermer la fenêtre, et maintenant vous pouvez utiliser le clavier auquel vous êtes habitué.
+!!! info "Extension Pack"
+    Il est recommandé d’installer le "VirtualBox Extension Pack" pour bénéficier de fonctions supplémentaires comme le copier-coller entre hôte et invité.
 
-!!! warning "Sur l'écran de connexion"
-    Sur l'écran de connexion le clavier restera celui par défaut c'est-à-dire le QWERTY. Vous devrez donc taper votre mot de passe avec le clavier QWERTY.
+---
 
-### Partager un dossier entre MacOS et Debian
+### Étape 2 : Télécharger l’image ISO de Debian
 
-Pour cette étape, vous aurez besoin d'avoir un dossier dans votre MacOS que vous voulez partager avec votre OS Debian. Pour ce tutoriel, j'utiliserai un dossier nommé `ti307-introduction-to-linux`.
+1. Rendez-vous sur : [https://www.debian.org/](https://www.debian.org/)
+2. Téléchargez la version 64 bits (amd64) : **debian-12.11.0-amd64-netinst.iso**
 
-1. Éteignez d'abord l'OS Debian en cliquant sur le bouton *Stop* dans l'application UTM.
-2. Ensuite faîtes un clic droit sur l'OS Debian dans la liste des OS installés, puis cliquez sur le bouton *Modifier*.
-3. Plusieurs options s'afficheront, nous allons nous concentrer sur l'option *Partage*.
-4. Cliquez sur l'option *Partage*, puis au niveau de *Emplacement* cliquez sur le bouton *Parcourir*, selectionnez alors le dossier que vous souhaitez partager.
-5. À la fin de la configuration, vous devriez arriver à un résultat similaire à ceci (avec biensûr le chemin de votre dossier):
+![Téléchargement Debian](../../assets/img/debian-download.png)
 
-    ![Shared folder setting](../../assets/img/shared-folder-setting.png)
+---
 
-6. Vous pouvez maintenant allumer votre OS Debian en cliquant sur le bouton *Play*.
-7. Connectez-vous, puis sur le bureau vous devriez voir un *Disque de volume* nommé `share`. Double-cliquez dessus : ce dossier est désormais celui que vous avez partagé depuis MacOS.
-8. Dans cet explorateur de fichier, faîtes un clic droit dans l'espace vide (du dossier), puis choisissez *Open in Terminal Here*. Ensuite tapez les commandes suivantes:
+### Étape 3 : Créer une machine virtuelle
 
+1. Lancez VirtualBox et cliquez sur **"Nouvelle"**.
+![Créer nouvelle VM](../../assets/img/vbox-new.png)
+2. Donnez un nom à votre machine virtuelle (par exemple "**Debian12**").
+3. Choisissez :
+     - **Type :** Linux
+     - **Version :** Debian (64-bit)
+4. Cliquez ensuite sur **"Suivant"**.   
+![Paramètres VM](../../assets/img/vbox-settings.png)
+
+
+---
+
+### Étape 4 : Configuration des paramètres utilisateurs 
+
+!!! info "Notez bien"
+
+    **Cette étape concerne exclusivement l'installation sous Windows.**
+    
+    Assurez-vous que le nom d'utilisateur soit entièrement en minuscules. 
+    
+    - **Exemple :** yvan
+    - Vous pouvez également conserver le nom d'utilisateur par défaut qui vous est proposé
+<!--  
+![Congiguration paramètres utilisateurs VMWindows](../../assets/img/Mot_passe_Windows.png)
+-->
+
+### Étape 5 : Allouer de la mémoire vive (RAM)
+
+Allouez au moins **2048 Mo** (2 Go) si vous avez assez de RAM.
+
+!!! tip "Recommandation"
+    Ne dépassez pas 50 % de votre mémoire totale.
+![RAM VM](../../assets/img/RAMs.png)
+
+
+
+---
+
+
+### Étape 6 : Créer un disque dur virtuel
+
+1. Choisissez **"Créer un disque dur virtuel maintenant"**.
+2. Laissez le type **VDI** (VirtualBox Disk Image) par défaut.
+3. Choisissez **allocation dynamique**.
+4. Définissez une taille de disque de **10 Go ou plus**.
+![Disque dur virtuel VM](../../assets/img/VirtualDisks.png)
+5. Vérifier les paramètres de vos **"Configurations"**.
+6. Ensuite cliquer sur "**Finish**"
+![Configuration VM](../../assets/img/vbox-config.png)
+
+### Étape 7 : Finalisation de l'installation sous Windows
+
+1. Une fois l'installation terminée, entrer vos paramètres de connexion
+![Paramètre de connexion VM](../../assets/img/connexion_Windows.png) 
+2. Fermez les différentes fenêtres qui vont s'afficher.
+3. Ensuite cliquer sur "**Show Applications**"
+4. Vous pouvez ensuite ouvrir le "**Terminal**"
+![Terminal](../../assets/img/terminal.png) 
+
+### Étape 8 : Vérifier que l’image ISO a bien été inséré et finalisation de l'installation sous MacOS
+
+1. Une fois la VM créée, sélectionnez-la et cliquez sur **"Configuration"**.
+![Configurations VM](../../assets/img/vbox-configs.png)
+2. Allez dans l’onglet **"Stockage"**.
+3. Cliquez sur le lecteur vide et sélectionnez **"Choisir un fichier disque"**.
+4. Sélectionnez l’ISO Debian téléchargé.
+![Choixs ISO Debian](../../assets/img/vbox-isos.png)
+5. Cliquez sur **"Démarrer"** pour lancer la VM.
+6. L’installateur Debian va apparaître. Choisissez **Install** ou **Graphical Install**.
+![Écran install Debian](../../assets/img/debian-install-start.png)
+7. Suivez les étapes :
+    - Choisissez la langue, la localisation, le clavier
+    - Définition du nom de l’ordinateur.
+    - **Création du compte utilisateur + mot de passe** (utilisez un nom simple en minuscules et ne contenant pas d'espace.) 
+8. Partitionner le disque
+    - Choisissez  **Guided – use entire disk**
+    - Choisissez le disque proposé (**sda** en général)
+    - Choisissez **All files in one partition**
+    - Confirmez avec **Finish partitioning and write changes to disk**
+9. Installation du système
+    - L'installation démarre, attendez la fin
+    - Acceptez l’installation du **GRUB bootloader** si demandé.
+    - Terminez et redémarrez la machine virtuelle.
+---
+
+### Étape 9 : Vérification finale et test
+
+!!! info "À faire"
+    1. Une fois l’installation terminée, pensez à retirer l’ISO de l’installation :
+        - Allez dans "**Périphériques**" > "**Lecteurs optiques**"
+        - Si l'image iso n'est pas retirer (**debian-12.11.0-amd64-netinst.iso**), cliquer sur "**Retirer le disque**"
+    2. Testez quelques commandes :
     ```bash
-    cd ..
-    sudo chmod 777 share
-    cd share
-    touch file.txt
-    ``` 
-    !!! note "`sudo` ?"
-        - La commande `sudo` vous permet d'exécuter la commande qui la suit en tant qu'administrateur. On vous demandera votre mot de passe (une fois par session). 
-        - La commande `chmod 777` permet de donner tous les droits sur le dossier `share` à tous les utilisateurs.
-
-9. Revenez dans l'explorateur de fichier MacOS, vous devriez trouver le fichier `file.txt` dans le dossier que vous avez partagé. Éditez ce fichier à l'aide d'un éditeur de texte, puis enregistrez-le.
-10. Revenez dans le terminal Debian, et tapez la commande suivante:
-    ```bash
-    cat file.txt
+        whoami
+        hostname
+        ls /
+        uname -a
     ```
-Si vous voyez le contenu de `file.txt` dans le terminal, tout s'est bien passé et à partir de maintenant vous pouvez partager des fichiers entre MacOS et Debian.
+<!--
+![Retirer ISO](../../assets/img/vbox-remove-iso.png)
 
-    !!! tip "Chemin vers le dossier partagé"
-        Dans l'OS Debian, le chemin vers le dossier partagé est `/media/share`. Assurez-vous de vous en souvenir 😉
+3. Vous devriez arriver sur l’écran de connexion de Debian 🎉
+-->
+
+---
+## Installation d'une distribution Linux via UTM sur MacOS (Puces M1/M2/M3)
+
+
+!!! objectifs "Objectif pédagogique"
+    Permettre aux étudiants d’installer un système GNU/Linux Debian dans un environnement virtualisé adapté aux Mac équipés de puces  Apple Silicon (M1/M2/M3), afin de découvrir un OS libre et pratiquer en toute sécurité.
+
+### Prérequis
+
+Avant de commencer, assurez-vous de disposer : 
+
+- D’un **Mac avec une puce Apple Silicon (M1 ou M2 ou M3)**.
+- D’au moins **8 Go de RAM** et **20 Go d’espace libre.**
+- D'une bonne connexion internet
+
+### Étape 1 : Télécharger et installer UTM
+
+1. Rendez-vous sur le site officiel : [https://mac.getutm.app/](https://mac.getutm.app/)
+2. Cliquez sur Download
+![UTM](../../assets/img/UTM.png)
+3. Ouvrez le fichier .dmg puis glissez UTM.app dans votre dossier Applications.
+
+### Étape 2 : Télécharger Debian pour ARM64
+
+!!! warning
+    N’utiliser pas d’image “**x86_64**”, car elle est incompatible avec les puces M1/M2/M3 sans émulation lente.
+    
+1. Allez sur : [https://cdimage.debian.org/debian-cd/current/arm64/iso-cd/](https://cdimage.debian.org/debian-cd/current/arm64/iso-cd/)
+2. Téléchargez la version netinst (cliquez par exemple sur **debian-12.11.0-arm64-netinst.iso**).
+![ARM](../../assets/img/ARM_Netinst.png)
+3. Enregistrez le fichier dans un endroit accessible (par exemple **Téléchargements**).
+
+
+### Étape 3 : Créer une nouvelle machine virtuelle dans UTM
+
+1. Ouvrez UTM.
+2. Cliquez sur + pour créer une nouvelle VM.
+3. Cliquez sur **Virtualize** (et non Emulate).
+4. Choisissez l’option Linux, puis selectionner le fichier precedemment téléchargé.
+<img src="../../assets/img/UtmLinux.png" alt="Installation de Linux sur UTM" width="500"/>
+5. Cliquez sur Continuer.
 
 
 
-## Installation de paquets Debian avec `apt`
+### Étape 4 : Définir la mémoire, le stockage et créer la VM
 
-La plupart des distributions GNU/Linux permettent d'installer des programmes, des bibliothèques (ensemble de programmes), des logiciels précompilés en passant par des *dépôts* en ligne. Les programmes et bibliothèques présents dans ces dépôts sont appelés *paquets*.
+1. Allouez 4 Go de RAM (4096 Mo).
+2. Allouez 2 CPU minimum.
+<img src="../../assets/img/Materiel.png" alt="UTM" width="500"/>
 
-L'installation de ces paquets est réalisée par un ... *gestionnaire de paquets*. Pour Debian et ses dérivés, le gestionnaire de paquets s'appelle `apt`.
+3. Allouez 20 Go de stockage minimum.
+4. Donnez un nom (ex. : **Debian-UTM-M1**).
+5. Cliquez sur **Enregistrer**
 
-Comme ces paquets sont installés sur le système, pour tous les utilisateurs, seul l'administrateur système est autorisé à les installer, mais vous pourrez prendre ce rôle.
+### Étape 5 : Lancer la machine virtuelle
 
-!!! note "`sudo` ?"
-    La commande `sudo` vous permet d'exécuter la commande qui la suit en tant qu'administrateur. On vous demandera votre mot de passe (une fois par session).
+1. Cliquez sur la VM dans la liste (ex. : **Debian-UTM-M1**).
+2. Cliquez sur Play. 
+<img src="../../assets/img/ImageUTM.png" alt="UTM" width="500"/>
+3. Cliquer sur "**Install**". Ensuite suivez les instructions d'installation de la distribution :
+     - Choix de la langue;
+     - Partition automatique;
+     - Création de l'utilisateur;
+     - Mot de passe root
+4. Redémarre une fois l'installation terminée.
 
-Nous allons donc procéder à l'installation de quelques paquets.
+!!! tip
+    Si tu vois un écran noir au redémarrage, éteins la VM, va dans **Settings --> Drives** et retire l’ISO.
+    Ensuite redémarrer à nouveau la machine virtuelle. 
 
-1. Dans un premier temps, mettez à jour la base de données et les paquets déjà installés en tapant dans votre terminal Debian:
+### Étape 6 : Première utilisation
+
+1. Connexion avec vos paramètres utilisateurs
+2. Lancer le terminal (`Ctrl + Alt + T` ou via le menu).
+3. Taper les commandes suivantes :
 ```bash
-sudo apt update
-sudo apt upgrade
+uname -a
+lscpu
+lsblk
 ```
-Cette étape peut prendre plus ou moins de temps en fonction de votre connexion internet.
-2. Une fois les mises à jour terminées, nous allons installer 4 paquets: les éditeurs de texte `nano` et `vim`, le compilateur c `gcc` et une application de calendrier `ncal` avec la commande suivante:
+4. Mise à jour de la distribution :
 ```bash
-sudo apt install nano vim gcc ncal
+sudo apt update && sudo apt upgrade
 ```
-3. Par exemple, pour vérifier que `gcc` s'est bien installé, vous pouvez taper la commande suivante:
-```bash
-which gcc
-```
-Cette commande va vous retourner le chemin vers l'exécutable `gcc` installé sur votre système.
-4. Il est également possible d'effectuer une recherche de paquets par nom ou mot-clé en utilisant l'action `search` de la commande `apt`. Par exemple,
-``` bash
-sudo apt search firefox
-```
-5. Pour supprimer / désinstaller un paquet, utilisez l'action `remove` de la commande `apt`:
-```bash
-sudo apt remove nano
-```
-6. Enfin, certaines bibliothèques deviennent inutiles une fois que les paquets qui les utilisaient ont été supprimés. L'action `autoremove` permet de faire le ménage en désinstallant les bibliothèques devenues inutiles.
-```bash
-sudo apt autoremove
-```
-
-

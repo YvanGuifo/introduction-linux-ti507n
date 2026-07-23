@@ -1,4 +1,4 @@
-site_name: TI307 - Introduction au système Linux
+site_name: TI307 & TI307P - Introduction au système Linux
 
 repo_url: https://github.com/YvanGuifo/introduction-linux-fr
 
@@ -90,10 +90,11 @@ plugins:
   # enable hidden pages for the corrige
   - awesome-pages
 
+
 extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/YvanGuifo/introduction-linux-fr
       name: Github repo of this course
 
-copyright:  TI307 - Introduction au système Linux - Efrei Paris | Yvan GUIFO 2025 suite du travil de Rado Rakotonarivo 2024.
+copyright:  TI307 & TI307P - Introduction au système Linux - Efrei Paris | Yvan GUIFO 2025 suite et continuité du travail de Rado Rakotonarivo 2024.

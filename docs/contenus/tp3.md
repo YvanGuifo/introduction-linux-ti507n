@@ -2,338 +2,498 @@
 title: TP3 - Environnement de travail et Compilateur C
 ---
 
-# TP3 - Environnement de travail et Compilateur C
+# TP3 — Environnement de travail et compilateur C
+
+!!! objectifs "Objectifs pédagogiques (taxonomie de Bloom révisée)"
+    À l’issue de ce TP, vous serez capable de :
+
+    - **[Comprendre]** la notion de **variable shell** et le mécanisme de **développement** (`$var`, `${var}`).
+    - **[Appliquer]** identifier et inhiber les **caractères spéciaux** du shell (`\`, `'`, `"`).
+    - **[Appliquer]** utiliser l’**expansion d’accolades** (`{a,b,c}`, `{1..10}`) pour générer efficacement des ensembles de chaînes.
+    - **[Appliquer]** utiliser la **substitution de commande** `$(...)` pour capturer dynamiquement le résultat d’une commande.
+    - **[Appliquer]** compiler un programme C avec `gcc`, décomposer les étapes, effectuer une **compilation séparée** (`-c`) et une **édition de liens**.
+    - **[Analyser]** interpréter les **erreurs** et **warnings** du compilateur.
+    - **[Évaluer]** choisir la stratégie de quotation (`'`, `"`, `\`) selon le contenu à protéger.
+
+    > **Référence** : Anderson, L. W., & Krathwohl, D. R. (2001). *A Taxonomy for Learning, Teaching, and Assessing*. Longman. ISBN 978-0801319037.
+
+!!! tip "Prérequis"
+    - **TP1 et TP2 terminés** : navigation, permissions, `chmod`, jokers.
+    - Distribution Debian 12 ou session MarioNum active.
+    - Compilateur `gcc` disponible :
+      ```bash
+      $ gcc --version
+      ```
+      Sinon : `sudo apt update && sudo apt install build-essential`.
 
 !!! info "Instructions"
-    - On rappelle que dans tous les exercices le `$` en début de commande représente le prompt, il n'est pas à saisir lorsque vous écrivez une ligne de commande.
-    - Pour chaque nouvelle commande, n'hésitez pas à consulter sa page de manuel avec la commande `man`, ou à utiliser l'option `--help` (si elle est disponible) pour savoir ce qu'elle fait.
+    - Le `$` en début de commande représente le prompt et ne doit pas être saisi.
+    - Pour chaque nouvelle commande, consultez `man` ou `--help`.
 
+!!! warning "À propos des réponses du TP"
 
-## Les variables du shell
+    Avant de commencer, créez un fichier nommé **`resultat_commande_TP3_NomPrenomEtudiant.txt`**.
+    Vous y consignerez progressivement les résultats des commandes.
 
-!!! tip "Définition et utilisation"
-    
-    Une variable est un nom qui est associé à une valeur. En shell, les variables sont des chaînes de caractères.
-    Le **développement** d’une variable est le remplacement du nom de la variable par sa valeur.
+    > **Création du fichier**
 
-    Par exemple, la variable `PS1` est la variable qui contient le prompt du shell. Lors des TP précédents, quand vous tapiez
-    la commande `PS1='$ '`, vous avez affecté la chaîne `$<space>` à la variable `PS1`. Lorsque le shell affiche le prompt, il développe la variable `PS1` et affiche la chaîne `$<space>`. 
-    
-    Les variables du shell sont des variables d’environnement. Elles sont accessibles à tous les processus lancés par le shell. On peut les lister avec la commande `env` ou `printenv`. On peut également les lister avec la commande `set` qui liste également les variables internes du shell (voir la page de manuel de `set` pour plus de détails).
+    1. Clic droit dans votre répertoire de travail
+    2. Créer un document → Fichier vide
+    3. Nommez : `resultat_commande_TP3_NomPrenomEtudiant.txt`
+
+    > **Notez bien :**
+    >> - <span style="color:blue"> Votre enseignant doit pouvoir consulter ce fichier à tout moment. </span>
+
+    >> - <span style="color:red"> Sauvegardez ce fichier **en local** avant la fin de la séance. </span>
+    >>> **Procédure de sauvegarde en local** :
+        1. Cliquez sur le **presse-papier** (à gauche du Bureau de la VM).
+    ![PressePapier](../../assets/img/PressePapier.png)
+        2. Sélectionnez le contenu et copiez.
+        3. Collez sur votre machine hôte.
+
+!!! tip "Barème d’interprétation des exercices"
+    > 📚 = Facile · 📚📚 = Moyenne · 📚📚📚 = Élevée
+    >
+    > Les exercices **1 à 7** constituent le **tronc commun**, exigible pour tous.
+    > Les exercices **8, 9, 10** sont des **exercices supplémentaires** réservés au **groupe étoile**.
+
+!!! info "Alignement avec les évaluations (Biggs, 1996)"
+    Les exercices 📚 et 📚📚 préparent au **CC S38** et au **TP noté S40**.
+    Les exercices 📚📚📚 préparent au **DE S42 (QCM)** par leur dimension d’analyse et de justification.
+
+    > **Référence** : Biggs, J. (1996). Enhancing teaching through constructive alignment. *Higher Education*, 32(3), 347–364. DOI : [10.1007/BF00138871](https://doi.org/10.1007/BF00138871).
+
 ---
-### Exercice 1 : Les variables du Shell
-1. Tapez les commandes suivantes dans un terminal:
-```bash
-$ nom_fich=hello.c
-$ echo nom_fich
-$ echo $nom_fich
-$ echo ${nom_fich}
-$ touch $nom_fich
-$ echo $nom_fichpp
-$ echo ${nom_fich}pp
-$ rm ${nom_fich}
-```
-1. Rappelez ce que fait la commande `echo`. À votre avis, à quoi sert le caractère `$` devant le nom de la variable `nom_fich`?
-2. Que se passe-t-il si on demande au shell d'afficher le contenu d'une variable qui n'existe pas?
-3. Que se passe-t-il si vous mettez un espace entre le nom de la variable et le signe égal `=`? Et entre le signe égal et la valeur?
-4. Entrez les commandes suivantes et essayez de commenter leur effet:
-```bash
-$ sujet=Alice verbe=aime cod=piscine
-$ phrase="$sujet $verbe la $cod."
-$ echo $phrase
-$ sujet=Bob verbe=mange cod=salade
-$ echo $phrase
-$ echo "$sujet $verbe la $cod."
-```
 
-## Caractères spéciaux et inhibitions
+## 1. Les variables du shell
+
+!!! tip "Définition et développement"
+    Une **variable** shell associe un nom à une chaîne de caractères. Le **développement** est le remplacement de `$nom` par sa valeur.
+
+    Exemple : la variable `PS1` contient le prompt. Quand vous tapez `PS1='$ '`, vous affectez la chaîne `$<espace>` à `PS1`. Le shell développe ensuite `$PS1` pour afficher le prompt.
+
+    Les variables du shell sont des **variables d’environnement** : elles sont accessibles à tous les processus lancés par le shell.
+
+    - `env` ou `printenv` : liste les variables d’environnement.
+    - `set` : liste également les variables internes du shell.
+
+### Exercice 1 — Les variables du shell 📚
+
+1. Tapez :
+   ```bash
+   $ nom_fich=hello.c
+   $ echo nom_fich
+   $ echo $nom_fich
+   $ echo ${nom_fich}
+   $ touch $nom_fich
+   $ echo $nom_fichpp
+   $ echo ${nom_fich}pp
+   $ rm ${nom_fich}
+   ```
+2. Rappelez ce que fait `echo`. À quoi sert le `$` devant le nom de variable ?
+3. Que se passe-t-il si on demande d’afficher une variable qui n’existe pas ?
+4. Que se passe-t-il si vous mettez un espace entre le nom de la variable et le `=` ? Et entre le `=` et la valeur ?
+5. Testez et commentez :
+   ```bash
+   $ sujet=Alice verbe=aime cod=piscine
+   $ phrase="$sujet $verbe la $cod."
+   $ echo $phrase
+   $ sujet=Bob verbe=mange cod=salade
+   $ echo $phrase
+   $ echo "$sujet $verbe la $cod."
+   ```
+
+---
+
+## 2. Caractères spéciaux et inhibitions
+
 !!! tip "Caractères spéciaux du shell"
-    Certains caractères ont une signification particulière pour le shell : on dit qu’ils sont *spéciaux*. À l’inverse, on dit d’un caractère qui n’a pas d’autre signification que lui-même, qu’il a son sens *littéral*. Nous listons ci-dessous les caractères spéciaux ; la plupart d’entre eux seront vus en détail plus tard dans le cours.
-    
-    - `; <newline> | &` ils mettent fin à la commande qui les précède. On a utilisé `<newline>` pour représenter le caractère *nouvelle ligne* qu’on saisit avec la touche Entrée. Le caractère spécial `|` est saisi avec la combinaison de touches `Alt Gr-6` (`Option-Shift-l` sous mac), on l’appelle *pipe* ou *conduite*. Le caractère spécial `&` est saisi avec la combinaison de touches `Alt Gr-8` et sert à lancer des commandes en arrière-plan.
-    - `< >` appelés chevrons, ils permettent les *redirections*.
-    - `( )` pour regrouper des commandes et les lancer dans un sous-shell.
-    - `$` pour le développement de variables, le développement arithmétique et la substitution de commande.
-    - `` ` `` l’accent grave (en anglais, *backtick* ou *backquote*) pour la substitution de commandes (ancienne syntaxe). Il est saisi au clavier avec la combinaison de touches `Alt Gr-7` suivie d’un espace.
-    - `<space> <tab>` délimitent les noms de commandes et arguments.
-    - `\ ' "` la contre-oblique (aussi appelée *backslash* ou *antislash*), l’apostrophe (en anglais *single quote*) et le guillemet anglais (en anglais *double quote*) qui permettent justement d’inhiber les caractères spéciaux, c’est-à-dire leur rendre leur sens littéral.
+    Certains caractères ont une **signification particulière** pour le shell (on dit qu’ils sont *spéciaux*). À l’inverse, un caractère qui n’a que son sens *littéral* est ordinaire.
 
-    Enfin, les caractères suivants ont une signification particulière dans certains contextes et doivent donc parfois être inhibés:
+    Principaux caractères spéciaux :
 
-    -  `* ? ]` Pour le développement de noms de chemins.
-    - `#` Pour écrire des commentaires (sauf s’il est au milieu d’un mot).
-    - `~` Pour le développement du tilde (répertoire personnel).
-    - `=` Pour l’affectation de variables.
-    - `%` Pour le contrôle des tâches (job control).
----
+    - `; <newline> | &` : terminaisons de commande. `|` = *pipe*, `&` = arrière-plan.
+    - `< >` : redirections.
+    - `( )` : groupement / sous-shell.
+    - `$` : développement de variables, substitution de commande, arithmétique.
+    - `` ` `` : substitution de commande (ancienne syntaxe).
+    - `<space> <tab>` : séparateurs.
+    - `\ ' "` : caractères d’**inhibition** — leur donnent leur sens littéral.
 
-### Exercice 2 : Inhibition de caractères spéciaux (la contre-oblique `\`)
-1. Testez les commandes suivantes.
-```bash
-$ echo a b
-$ echo a\ \ \ b
-$ touch fichier\ vide
-$ rm fichier vide
-$ rm fichier\ vide
-$ echo 3$canadiens
-$ echo 3\$canadiens
-$ echo ; echo *
-$ echo \; echo \*
-$ echo "salut"
-$ echo \"salut\"
-$ echo 'salut'
-$ echo \'salut\'
-$ echo \
-$ echo \\
-```
-2. En vous référent aux questions précédentes, répondez aux questions ci dessous:
-    - Que fait le caractère `\` devant un autre caractère que `<newline>` (on rappelle que le caractère `<newline>` est celui qui résulte de l'appui de la touche Entrée du clavier) ?
-    - À quoi sert la chaîne de caractères `\<newline>` ?
-    - Comment peut-on obtenir un caractère `\` littéral ? Comment afficher `\\` à l'aide de la commande `echo` ?
+    Autres caractères spéciaux (dans certains contextes) :
 
-### Exercice 3 : L’inhibition des caractères spéciaux (l'apostrophe `'`)
+    - `* ? [ ]` : expansion des chemins.
+    - `#` : commentaire.
+    - `~` : développement du tilde.
+    - `=` : affectation de variable.
+    - `%` : contrôle de tâches.
+
+### Exercice 2 — La contre-oblique `\` 📚
+
+1. Testez :
+   ```bash
+   $ echo a b
+   $ echo a\ \ \ b
+   $ touch fichier\ vide
+   $ rm fichier vide
+   $ rm fichier\ vide
+   $ echo 3$canadiens
+   $ echo 3\$canadiens
+   $ echo ; echo *
+   $ echo \; echo \*
+   $ echo "salut"
+   $ echo \"salut\"
+   $ echo 'salut'
+   $ echo \'salut\'
+   $ echo \
+   $ echo \\
+   ```
+2. Répondez :
+   - Que fait `\` devant un caractère autre que `<newline>` ?
+   - À quoi sert la séquence `\<newline>` ?
+   - Comment obtenir un `\` littéral ? Comment afficher `\\` avec `echo` ?
+
+### Exercice 3 — L’apostrophe `'` 📚📚
+
 !!! info "Remarque"
-    L'option `-i` de la commande `rm` permet de demander une confirmation avant la suppression.
+    L’option `-i` de `rm` demande une confirmation avant suppression.
 
-1. Tester les commandes suivantes :  
-```bash
-$ touch 'ceci est un horrible nom de fichier'
-$ rm -i ceci est un horrible nom de fichier
-$ rm -i 'ceci est un horrible nom de fichier'
-$ touch p; echo le caractère * est-il spécial ? et ?
-$ echo 'le caractère * est-il spécial ? et ?'
-$ echo 'en fait, même la fin de ligne<newline>est un caractère normal entre<newline>apostrophes'
-$ echo 'le seul caractère spécial entre apostrophes n'est-il pas apostrophe ?'
-```
-    où `<newline>` sera à taper avec la touche Entrée de votre clavier.
+1. Testez :
+   ```bash
+   $ touch 'ceci est un horrible nom de fichier'
+   $ rm -i ceci est un horrible nom de fichier
+   $ rm -i 'ceci est un horrible nom de fichier'
+   $ touch p; echo le caractère * est-il spécial ? et ?
+   $ echo 'le caractère * est-il spécial ? et ?'
+   $ echo 'en fait, même la fin de ligne
+   est un caractère normal entre
+   apostrophes'
+   ```
+2. Répondez :
+   - Quels caractères sont spéciaux **entre apostrophes** ?
+   - Comment obtenir une apostrophe dans une chaîne entre apostrophes ?
 
-2. Au vu des expériences précédentes (et d’autres à inventer si nécessaire), répondre aux questions suivantes :
-    - Quels sont les caractères qui sont spéciaux entre apostrophes ?
-    - Comment obtenir une apostrophe dans une chaîne entre apostrophes (question piège) ?
-    - Comment, avec une combinaison de chaînes entre apostrophes et d’une inhibition par contre-oblique, obtenir avec `echo` l’affichage suivant ?
-    ```bash
-    Un développement de variable (comme $var) peut-il s'inhiber; par exemple entre apostrophes ?
-    ```
+### Exercice 4 — Le guillemet `"` 📚📚
 
-### Exercice 4 : L’inhibition des caractères spéciaux (les guillemets anglais `"`)
+1. Testez et comparez avec l’exercice 3 :
+   ```bash
+   $ x=coucou
+   $ echo "$x"
+   $ echo '$x'
+   $ echo "le prix est de 30$"
+   $ echo "il a dit \"salut\""
+   $ echo "aujourd'hui"
+   ```
+2. Répondez :
+   - Quels caractères **restent spéciaux** entre guillemets ?
+   - Que se passe-t-il si vous mettez `\` devant `$`, `"`, `\` entre guillemets ?
+   - Quand utiliseriez-vous `'...'` plutôt que `"..."` ?
 
-1. Tester les commandes suivantes et notez vos observation:
-```bash
-$ echo "? * et [ sont utilisés pour le développement de chemins"
-$ echo "~ provoque un développement du tilde"
-$ echo " Entre \" , on peut aussi <newline>écrire sur plusieurs<newline> lignes"
-$ nom=Alice
-$ echo '$nom scripte en shell'
-$ echo "$nom scripte en shell"
-$ echo "\$nom scripte en shell"
-$ echo "le chemin absolu du répertoire courant est `pwd`"
-$ echo "le chemin absolu du répertoire courant est \`pwd\`"
-$ echo "le chemin absolu du répertoire courant est $(pwd)"
-$ echo "le chemin absolu du répertoire courant est \$(pwd)"
-$ echo "Aussi sûr que 2 et 2 font $((2 + 2))"
-$ echo "Aussi sûr que 2 et 2 font \$((2 + 2))"
-$ echo "\\\\\"\$\`\*\'"
-```
-2. Testez les commande suivantes et notez vos observations:
-```bash
-$ mavar="Alice<newline> et<newline>Bob"
-$ echo $mavar font plein de choses
-$ echo "$mavar font plein de choses"
-```
-3. Au vu des expériences précédentes (et d’autres à inventer si nécessaire), répondre aux questions suivantes :
-    - Quels sont les caractères qui sont spéciaux entre guillemets anglais ?
-    - Quel est le rôle du caractère `\` entre guillemets anglais ? Dans quel contexte est-il spécial, littéral ?
-    - Quels sont les développements qui n’ont jamais lieu entre guillemets anglais ?
-    - Selon vous, pourquoi avoir créé plusieurs mécanismes d’inhibition ?
-
-## Extensions de chemins
-!!! tip "Extension de chemins"
-    Lorsqu’on saisit un chemin contenant des *wildcards* ou *caractères joker* (Ref. dernier exo du TP1), le shell le développe en remplaçant les caractères spéciaux `*`, `?` et `[` par les noms des fichiers qui correspondent à l’expression régulière qui résulte de l’extension du chemin. On appelle ce mécanisme l’*extension de chemin*.
-
-    Par exemple, si le répertoire courant contient les fichiers `a`, `b`, `c`, `d` et `e`, alors le chemin `a*` est développé en `a`, le chemin `?` en `a b c d e` et le chemin `[a-c]` en `a b c`.
-
-    L’extension de chemin est effectuée par le shell, avant que la commande ne soit exécutée. Si aucun fichier ne correspond à l’expression régulière, le shell laisse le chemin tel quel.
 ---
 
-### Exercice 5 : Des fichiers et des images
-1. Créer un répertoire `dir` et y créer les fichiers vides `file-1.txt`, `file-2.txt`, `file-3.txt`, `file-4.txt`, `file-5.txt`, `file-6.txt`, `file-7.txt`, `file-8.txt`, `file-9.txt`, `config-a.txt`, `file-b.txt`.
-2. Créer également dans `dir` les fichiers vides suivants `img-1.png`, `img-2.png`, `img-3.png`, `img-4.png`, `img-5.png`, `img-6.png`, `img-7.png`, `img-8.png`, `img-9.png`.
-3. Créer ensuite dans `dir` deux sous-répertoires `files` et `imgs`. 
-4. En vous aidant de l'extension de chemin et de la commande `mv`, déplacer les fichiers `.txt` dans le répertoire `files`. Faîtes de même pour les fichiers `.png` dans le répertoire `imgs`.
-5. Donnez l'expression qui reconnais les fichiers `config-a.txt` et `file-b.txt`. Puis supprimez les fichiers correspondants à cette expression. (Grâce à l'extension de chemin, vous pouvez le faire en une seule commande).
-6. Supprimez le répertoire `dir` et son contenu.
+## 3. Expansion d’accolades
 
-### Exercice 6 : Extension de l'accolade
-1. Testez les commandes suivantes
-```bash
-$ echo {a,b,c,d}
-$ echo {a..d}
-$ echo {a..d..2}
-$ echo {1,2,3,4,5,6,7,8,9}
-$ echo {1..9}
-$ echo {1..9..2}
-```
-2. Que fait la commande `echo {a..d}` ? Quel est le rôle de la virgule `,` dans l'extension de l'accolade ?
-3. Que fait la commande `echo {a..d..2}` ? Quel est le rôle du `2` dans l'extension de l'accolade ?
-4. Testez les commandes suivantes, et observez leur résultats.
-```bash
-$ echo {a..d}*
-$ echo {a..d}.*
-$ echo {a..d}.txt
-```
-6. Créer un répertoire `dir`. Déplacez-vous y. En utilisant l'extension de l'accolade, en une seule commande, créer les fichiers vides `file-1.txt`, `file-2.txt`, `file-3.txt`, `file-4.txt`, `file-5.txt`, `file-6.txt`, `file-7.txt`, `file-8.txt`, `file-9.txt`. 
-7. Déplacez tous les fichiers `.txt` dans un répertoire `dir/files`.
-8. Créer un répertoire `dir/imgs`. Déplacez-vous y. En utilisant l'extension de l'accolade, en une seule commande, crééer les fichiers vides `img001.png`, `img002.png`, `img003.png`, `img004.png`, `img005.png`, `img006.png`, `img007.png`, `img008.png`, `img009.png`.
-9. Supprimez le répertoire `dir` et tout son contenu.
+!!! tip "L’expansion d’accolades"
+    L’**expansion d’accolades** est un mécanisme du shell qui génère des chaînes à partir d’un motif.
 
-## Substitution de commande
+    - `{a,b,c}` génère les chaînes `a`, `b`, `c`.
+    - `{1..5}` génère `1 2 3 4 5`.
+    - `{a..e}` génère `a b c d e`.
+    - Combinable avec du texte : `file_{1..3}.txt` → `file_1.txt file_2.txt file_3.txt`.
+
+    Attention : contrairement aux jokers `*`, `?`, `[]`, l’expansion d’accolades **ne dépend pas** des fichiers existants — elle génère les chaînes même si aucun fichier ne correspond.
+
+### Exercice 5 — Extension d’accolades 📚📚
+
+1. Testez et commentez :
+   ```bash
+   $ echo a{b,c,d}e
+   $ echo {1..10}
+   $ echo {a..e}{1..3}
+   $ mkdir -p projet/{src,tests,docs}
+   $ ls -R projet
+   $ touch fichier_{01..05}.txt
+   $ ls fichier_*
+   ```
+2. Utilisez l’expansion d’accolades pour créer, **en une seule commande**, l’arborescence suivante dans votre répertoire personnel :
+   ```
+   ~/labo/
+   ├── donnees/
+   │   ├── brutes/
+   │   └── nettoyees/
+   ├── scripts/
+   └── resultats/
+   ```
+3. **Question** : quelle est la différence fondamentale entre `{a,b,c}` et `[abc]` du point de vue du shell ?
+
+---
+
+## 4. Substitution de commande
+
 !!! tip "Substitution de commande"
-    La substitution de commanande est un mécanisme qui permet d’insérer le résultat d’une commande dans une chaîne de caractères. 
-    
-    La substitution de commandes dans une chaîne de caractères est une autre facilité offerte par le shell. Elle permet de capturer la sortie d'une commande et de l'assigner à une variable ou de l'utiliser comme un argument d'une autre commande. Comme beaucoup de commandes Linux génèrent une sortie, la substitution de commandes peut être très intéressante. 
-    
-    Il existe deux syntaxes pour la substitution de commande : la syntaxe ancienne avec les accents graves (`` ` ``) et la syntaxe moderne avec les parenthèses `$(...)`. L'ancienne syntaxe est déconseillée car elle ne permet pas d’imbriquer les substitutions de commande. Nous ne la présenterons donc pas ici.
----
-### Exercice 7 : Substitution de commande simple
-1. Testez les commandes suivantes et observez leur résultat:
-```bash
-$ date
-$ echo date
-$ echo $(date)
-$ aujourdhui=$(date)
-$ echo $aujourdhui
-$ echo "Nous sommes le $(date)"
-```
-2. Que fait la commande `echo $(date)` ? Quel est le rôle du `$` devant la parenthèse ouvrante `(` ?
-3. Tapez ensuite les commandes suivantes et observez leur résultat:
-```bash
-$ prefix="Nous sommes le"
-$ echo $prefix $(date)
-$ echo $prefix $aujourdhui
-$ echo ${prefix} ${aujourdhui}
-$ phrase=${prefix} ${aujourdhui}
-$ phrase="${prefix} ${aujourdhui}"
-$ echo $phrase
-$ echo "$phrase"
-```
-4. Pouvez-vous déduire le rôle des guillemets anglais dans la substitution de commande ?
+    La **substitution de commande** insère la **sortie d’une commande** dans une ligne de commande. Deux syntaxes existent :
+
+    - **Moderne** : `$(commande)` — recommandée, imbrication facile.
+    - **Ancienne** : `` `commande` `` — déconseillée, imbrication ambiguë.
+
+### Exercice 6 — Substitution simple 📚
+
+1. Testez :
+   ```bash
+   $ date
+   $ echo date
+   $ echo $(date)
+   $ aujourdhui=$(date)
+   $ echo $aujourdhui
+   $ echo "Nous sommes le $(date)"
+   ```
+2. Que fait `echo $(date)` ? Quel est le rôle du `$` devant `(` ?
+3. Testez et commentez :
+   ```bash
+   $ prefix="Nous sommes le"
+   $ echo $prefix $(date)
+   $ echo $prefix $aujourdhui
+   $ echo ${prefix} ${aujourdhui}
+   $ phrase=${prefix} ${aujourdhui}
+   $ phrase="${prefix} ${aujourdhui}"
+   $ echo $phrase
+   $ echo "$phrase"
+   ```
+4. Quel est le rôle des guillemets dans la substitution ?
 5. Quelle est la différence entre `$(...)` et `${...}` ?
 
-### Exercice 8 : Substitution de commande imbriquée
-1. Testez les commandes suivantes et observez leur résultat:
-```bash
-$ echo $(echo $(date))
-$ echo $(echo $(echo $(date)))
-$ echo $(echo $(echo $(echo $(date))))
-$ echo $(echo $(echo $(echo $(echo $(date)))))
-```
-2. Testez ensuite la commande suivante:
-```bash
-$ echo
-```
-    Sans exécuter la commande qui suit saurez vous prédire son résultat ?
-    ```bash
-    $ echo $(echo $(echo $(echo $(echo))))
-    ```
+---
 
-## Compilation de programme C
+## 5. Compilation d’un programme C
 
-!!! tip "Le compilateur C de Linux"
-    `gcc` est le compilateur C de Linux. Il permet de compiler du code C. Il est très utilisé par les développeurs. Il est très complet et possède de nombreuses fonctionnalités. Nous allons voir un aperçu de son utilisation.
+!!! tip "Le compilateur GCC"
+    `gcc` (*GNU Compiler Collection*) est le compilateur C de référence sous Linux. La compilation d’un programme C se décompose en **quatre étapes** :
 
-    La compilation d'un programme en C passe par plusieurs étapes, qui sont essentiellement les suivantes:
-    
-    - La précompilation : elle permet de transformer le code source en un code intermédiaire.
-    - La compilation : elle permet de transformer le code intermédiaire en code machine.
-    - L'édition des liens : elle permet de lier le code machine avec les bibliothèques utilisées.
-    - La création de l'exécutable : elle permet de créer l'exécutable.
+    | Étape | Outil | Entrée → Sortie | Option `gcc` |
+    |---|---|---|---|
+    | 1. Préprocesseur | `cpp` | `.c` → texte étendu | `-E` |
+    | 2. Compilation | `gcc` | texte étendu → assembleur `.s` | `-S` |
+    | 3. Assemblage | `as` | `.s` → objet `.o` | `-c` |
+    | 4. Édition de liens | `ld` | `.o` → exécutable | *(par défaut)* |
+
+    Options utiles :
+
+    - `-o <nom>` : nomme l’exécutable de sortie (sinon `a.out`).
+    - `-Wall` : active la plupart des avertissements courants.
+    - `-Wextra` : active des avertissements supplémentaires.
+    - `-Werror` : transforme les avertissements en erreurs.
+
+    > **Référence** : *GCC User Manual*, Free Software Foundation. <https://gcc.gnu.org/onlinedocs/>
+
+### Exercice 7 — Compilation, erreurs et warnings 📚📚📚
+
+1. Créez `hello.c` :
+   ```c
+   #include <stdio.h>
+
+   int main(void)
+   {
+       printf("Hello world !\n");
+       return 0;
+   }
+   ```
+2. Placez-vous dans le répertoire contenant `hello.c` et compilez avec `gcc hello.c`. Un fichier `a.out` est créé. Exécutez-le avec `./a.out`.
+
+   !!! warning "Attention"
+       - Si `a.out` existait déjà, il est **écrasé** sans avertissement.
+       - Utilisez `-o` pour choisir un autre nom : `gcc hello.c -o hello`.
+3. Récupérez cette archive : [hello.tar.gz](../assets/files/hello.tar.gz).
+4. Extrayez-la et placez-vous dans le répertoire `hello` :
+   ```bash
+   $ tar -xvf hello.tar.gz
+   ```
+5. Compilez le projet :
+   ```bash
+   $ gcc main.c hello.c -o run
+   ```
+   Exécutez avec `./run`.
+6. Supprimez le fichier `run`. Modifiez `hello.c` pour introduire volontairement une erreur : supprimez **l’accolade fermante** de la fonction `void hello()`. Recompilez. Que remarquez-vous ?
+7. Remettez l’accolade et ajoutez un `return 1;` dans la définition de la fonction `hello` (qui est `void`). Recompilez. Que remarquez-vous ?
+8. Recompilez maintenant avec `-Wall -Wextra`. Que voyez-vous ?
+9. **Concluez** sur la différence entre **erreurs** et **warnings**, et sur l’intérêt professionnel des options `-Wall -Wextra -Werror`.
+
+!!! info "Cet exercice est représentatif d’un item type **DE S42 (QCM)**."
 
 ---
 
-### Exercice 9 - Le compilateur `gcc`
+## Synthèse — Ce que vous devez savoir faire
 
-1. Créer un fichier `hello.c` dont le contenu est le suivant:
-    ```c
-    #include <stdio.h>
+!!! success "Auto-évaluation rapide (tronc commun)"
+    Avant de quitter la séance, vérifiez que vous savez :
 
-    int main()
-    {
-        printf("Hello world !\n");
-        return 0;
-    }
-    ```
-2. Placez-vous ensuite dans le répertoire contenant votre fichier `hello.c` et tapez la commande `gcc hello.c`. Cette commande va compiler votre programme et créer un fichier `a.out` qui est l'exécutable de votre programme. Tapez enfin la commande `./a.out` pour exécuter votre programme.
-    
-    !!! warning "Attention"
-        - Si vous avez déjà un fichier `a.out` dans votre répertoire, il sera écrasé par la commande `gcc hello.c`.
-        - `a.out` est le nom par défaut de l'exécutable créé par `gcc`. Vous pouvez changer ce nom en utilisant l'option `-o` de `gcc`. Par exemple, `gcc hello.c -o hello` va créer un exécutable `hello` au lieu de `a.out`.
+    - [ ] Créer, développer et utiliser une variable shell.
+    - [ ] Distinguer et inhiber les caractères spéciaux du shell (`\`, `'`, `"`).
+    - [ ] Comparer `'...'` et `"..."` et choisir la bonne quotation.
+    - [ ] Générer des chaînes avec l’expansion d’accolades (`{a,b,c}`, `{1..N}`).
+    - [ ] Utiliser la substitution de commande `$(...)`.
+    - [ ] Compiler un programme C avec `gcc`, décomposer les 4 étapes, faire une compilation séparée.
+    - [ ] Distinguer erreurs et warnings et interpréter les messages de `gcc`.
 
-3. Récupérez ensuite cette archive [hello.tar.gz](../assets/files/hello.tar.gz).
-4. Extraire les fichiers de cet archive et déplacez vos dans le répertoire `hello` qui en sera extrait. Vous pouvez le faire grace à la commande suivate:
-```bash
-$ tar -xvf hello.tar.gz
-```
-5. Tapez la commande 
-```bash
-$ gcc main.c hello.c -o run
-```
-pour compiler votre programme. Cette commande va compiler votre programme et créer un fichier `run` qui est l'exécutable de votre programme. Exécutez enfin votre programme avec la commande `./run`. 
-6. Supprimer le fichier `run` et modifier ensuite le fichier `hello.c` de tel sorte à avoir volontairement une erreur : supprimer l'accolade fermante de la fonction `void hello()`. Réexécutez ensuite les commandes de la question 5. Que remarquez-vous ?
-7. Remodifier ensuite le fichier `hello.c` en remettant l'accolade fermante mais rajouter un `return 1` dans la définition de la fonction (avant l'accolade fermante). Réexécutez ensuite les commandes de la question 5. Que remarquez-vous ?
-8. Conclure sur la gestion des erreurs et des warnings sur `gcc`.
+    Si un item n’est pas coché, **revenez sur l’exercice correspondant** avant le TP4.
 
-### Exercice 10 - Compilation séparée et édition des liens
+---
 
-!!! tip
-    Pour compiler un programme en C, il est possible de le faire en plusieurs étapes. On peut d'abord compiler chaque fichier source en un fichier objet, puis éditer les liens pour créer l'exécutable. Cela permet de gagner du temps lors de la compilation de gros projets.
+## ⭐ Exercices supplémentaires — Groupe étoile
 
-    En effet si un seul fichier source est modifié, il n'est pas nécessaire de recompiler tous les fichiers sources. Il suffit de recompiler le fichier source modifié et de rééditer les liens.
+!!! star "À qui s’adressent les exercices 8, 9, 10 ?"
+    Vous avez terminé les exercices 1 à 7 ? Cette section prolonge la progression C amorcée aux TP1–TP2 vers les **redirections au niveau système**. Vous allez réimplémenter en C ce que le shell fait quand vous tapez `commande > fichier`.
 
-    - L'option `-c` de `gcc` permet de compiler un fichier source en un fichier objet. L'option `-o` permet de spécifier le nom du fichier objet à créer.
-    - L'édition des liens se fait avec la commande `gcc` en spécifiant les fichiers objets à lier. L'option `-o` permet de spécifier le nom de l'exécutable à créer.
-    
-    Dans cette configuration, imaginons que nous avons un fichier `main.c` qui contient la fonction `main` et un fichier `hello.c` qui contient la fonction `hello`. Pour compiler ces deux fichiers en un exécutable `run`, on peut procéder comme suit:
-    ```bash
-    $ gcc -c main.c -o main.o # Compilation du fichier main.c en main.o
-    $ gcc -c hello.c -o hello.o # Compilation du fichier hello.c en hello.o
-    $ gcc main.o hello.o -o run # Edition des liens pour créer l'exécutable run
-    ```
+    **Rappel** des appels système déjà utilisés :
 
-1. Dans le répertoire `hello`, de l'exercice précédent, créer deux fichiers `bye.c` et `bye.h`, **en utilisant l'extension de l'accolade**, dont les contenus sont les suivants:
-    - `bye.h`:
-    ```c
-    #ifndef BYE_H
-    #define BYE_H
+    - **TP1 ⭐** : `open(O_RDONLY)`, `read`, `write`, `close`, `perror`.
+    - **TP2 ⭐** : `open(O_WRONLY|O_CREAT|O_TRUNC, mode)`, `lseek`.
+    - **TP3 ⭐** : **`STDIN/STDOUT/STDERR_FILENO`**, **`dup`**, **`dup2`** — fondement technique des redirections.
 
-    void bye();
+    Ces exercices sont **optionnels** et **non évalués**.
 
-    #endif
-    ```
-    - `bye.c`:
-    ```c
-    #include <stdio.h>
-    #include "bye.h"
+### Exercice 8 — Compilation séparée et édition de liens 📚📚📚 ⭐
 
-    void bye()
-    {
-        printf("I'm done, bye !\n");
-    }
-    ```
-2. Toujours en utilisant l'extension de l'accolade, compiler les deux fichiers `hello.c` et `bye.c` en deux fichiers objets `hello.o` et `bye.o`. Assurez-vous que le compilateur ne renvoie pas d'erreurs. (**Par défaut si on ne spécifie pas le nom du fichier de sortie, les fichiers `.c` sont compilés en des fichiers objets de même nom**)
-3. Modifier ensuite le fichier `main.c` pour afin d'inclure le fichier `bye.h` et appeler la fonction `bye` à la fin de la fonction `main`. Le contenu du fichier `main.c` doit être le suivant:
-    ```c
-    #include <stdio.h>
-    #include "hello.h"
-    #include "bye.h"
+!!! tip "Compilation séparée"
+    Pour un projet de plusieurs fichiers, il est plus efficace de compiler chaque source en un fichier **objet** (`.o`), puis d’effectuer l’édition de liens **une seule fois**.
 
-    int main()
-    {
-        hello();
-        bye();
-        return 0;
-    }
-    ```
-4. Compiler le fichier `main.c` en un fichier objet `main.o`. Assurez-vous que le compilateur ne renvoie pas d'erreurs.
-5. En utilisant l'extention de chemin avec le caractère `*`, éditer les liens pour tous vos fichiers objets afin créer l'exécutable `run`. Exécutez ensuite votre programme avec la commande `./run`.
- 
+    - `-c` demande à `gcc` de s’arrêter à l’objet (pas d’édition de liens).
+    - Sans `-o`, `gcc -c foo.c` produit `foo.o`.
+    - L’édition de liens se fait ensuite : `gcc a.o b.o -o run`.
 
+1. Dans le répertoire `hello` de l’exercice 7, créez `bye.c` et `bye.h` **en utilisant l’expansion d’accolades** :
+   - `bye.h` :
+     ```c
+     #ifndef BYE_H
+     #define BYE_H
+
+     void bye();
+
+     #endif
+     ```
+   - `bye.c` :
+     ```c
+     #include <stdio.h>
+     #include "bye.h"
+
+     void bye()
+     {
+         printf("I'm done, bye !\n");
+     }
+     ```
+2. **Toujours avec l’expansion d’accolades**, compilez `hello.c` et `bye.c` en `hello.o` et `bye.o`. Vérifiez qu’aucune erreur n’est levée.
+3. Modifiez `main.c` pour inclure `bye.h` et appeler `bye()` :
+   ```c
+   #include <stdio.h>
+   #include "hello.h"
+   #include "bye.h"
+
+   int main()
+   {
+       hello();
+       bye();
+       return 0;
+   }
+   ```
+4. Compilez `main.c` en `main.o`.
+5. Avec l’expansion de chemin `*`, éditez les liens de tous vos `.o` pour créer `run`. Exécutez-le.
+
+### Exercice 9 — Maîtriser les descripteurs standards ⭐
+
+Tout processus Unix dispose au démarrage de **trois descripteurs de fichiers** ouverts :
+
+| Numéro | Nom | Rôle |
+|---|---|---|
+| `0` | `STDIN_FILENO` | entrée standard |
+| `1` | `STDOUT_FILENO` | sortie standard |
+| `2` | `STDERR_FILENO` | erreur standard |
+
+1. Créez `std-fd.c` :
+   ```c
+   #include <unistd.h>    /* write, STDOUT_FILENO, STDERR_FILENO */
+   #include <string.h>    /* strlen */
+
+   int main(void) {
+       const char *msg_out = "Message normal sur stdout.\n";
+       const char *msg_err = "Message d'erreur sur stderr.\n";
+
+       write(STDOUT_FILENO, msg_out, strlen(msg_out));
+       write(STDERR_FILENO, msg_err, strlen(msg_err));
+
+       return 0;
+   }
+   ```
+2. Compilez : `gcc -Wall -o std-fd std-fd.c`.
+3. Testez :
+   ```bash
+   $ ./std-fd                      # les deux à l'écran
+   $ ./std-fd > sortie.txt         # stderr reste à l'écran ; stdout dans sortie.txt
+   $ ./std-fd 2> erreur.txt        # stdout reste à l'écran ; stderr dans erreur.txt
+   $ ./std-fd > out.txt 2> err.txt # les deux redirigés
+   ```
+4. Vérifiez les contenus.
+5. **Question** : pourquoi distinguer `stdout` et `stderr` ? Donnez un cas d’usage.
+
+### Exercice 10 — Réimplémenter `>` en C avec `dup2()` ⭐
+
+Quand vous tapez `./hello > sortie.txt`, le shell fait en interne :
+
+1. Il ouvre `sortie.txt` en écriture (obtient par exemple le descripteur `3`).
+2. Il **redirige** `STDOUT_FILENO` (descripteur 1) vers ce nouveau descripteur via `dup2(3, 1)`.
+3. Il ferme le descripteur 3 (devenu redondant).
+4. Il exécute `./hello`. Tout ce qui va sur `stdout` va maintenant dans `sortie.txt`.
+
+1. Lisez `man 2 dup`. Notez la signature de `dup` et `dup2`.
+2. Créez `myredirect.c` :
+   ```c
+   #include <fcntl.h>
+   #include <unistd.h>
+   #include <stdio.h>
+
+   int main(int argc, char **argv) {
+       if (argc != 2) {
+           fprintf(stderr, "Usage: %s <fichier-sortie>\n", argv[0]);
+           return 1;
+       }
+
+       int fd = open(argv[1], O_WRONLY | O_CREAT | O_TRUNC, 0644);
+       if (fd < 0) { perror("open"); return 1; }
+
+       if (dup2(fd, STDOUT_FILENO) < 0) {
+           perror("dup2"); close(fd); return 1;
+       }
+       close(fd);
+
+       /* À partir d'ici, printf écrit dans le fichier */
+       printf("Ligne 1 redirigée.\n");
+       printf("Ligne 2 redirigée.\n");
+       printf("Ligne 3 redirigée.\n");
+
+       return 0;
+   }
+   ```
+3. Compilez et exécutez :
+   ```bash
+   $ gcc -Wall -o myredirect myredirect.c
+   $ ./myredirect captures.txt
+   $ cat captures.txt
+   ```
+   Les trois lignes doivent être dans `captures.txt` — **rien** dans le terminal.
+4. **Questions d’analyse** :
+   - Pourquoi appelle-t-on `close(fd)` immédiatement après `dup2` ?
+   - Que se passerait-il si vous inversiez les arguments : `dup2(STDOUT_FILENO, fd)` ?
+   - Modifiez le programme pour rediriger **`stderr`** au lieu de `stdout`. Quelle ligne changez-vous ?
+
+!!! info "Vers le TP4"
+    Vous venez de réimplémenter le mécanisme exact que le shell utilise pour `commande > fichier`. Au **TP4** vous verrez le shell exploiter ce mécanisme via `fork` + `dup2` + `exec`, ainsi que les signaux qui interrompent un processus.
+
+    > **Référence** : Kerrisk, M. (2010). *The Linux Programming Interface*. No Starch Press. ISBN 978-1593272203, chapitre 5 (File I/O: Further Details), §5.4 *Duplicating File Descriptors*.
+
+---
+
+## Pour aller plus loin (lectures recommandées)
+
+- *GCC User Manual* : <https://gcc.gnu.org/onlinedocs/>
+- Kernighan, B. W., & Ritchie, D. M. (1988). *The C Programming Language*, 2nd ed. Prentice Hall. ISBN 978-0131103627.
+- Kerrisk, M. (2010). *The Linux Programming Interface*. No Starch Press. ISBN 978-1593272203.
+- Robbins, A., Hannah, E., & Lamb, L. (2008). *Learning the bash Shell*, 3rd ed. O’Reilly. ISBN 978-0596009656.
+- Stevens, W. R., & Rago, S. A. (2013). *Advanced Programming in the UNIX Environment*, 3rd ed. Addison-Wesley. ISBN 978-0321637734.

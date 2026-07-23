@@ -70,3 +70,5 @@ Un shell est un programme qui fournit l'interface utilisateur traditionnelle, un
 Dans ce module nous allons utiliser le shell Bash. Bash est le shell du projet GNU. Bash est le Bourne Again SHell. Bash est un shell compatible sh qui intègre des fonctionnalités utiles du shell Korn (ksh) et du shell C (csh). Il est destiné à se conformer à la norme IEEE POSIX P1003.2/ISO 9945.2 Shell and Tools. Il offre des améliorations fonctionnelles par rapport à sh pour la programmation et l'utilisation interactive. De plus, la plupart des scripts sh peuvent être exécutés par Bash sans modification.
 
 [^1]: Plus tard, Linus Torvalds inventera Git pour gérer le développement du noyau Linux, car son développement s'est répandu dans le monde entier.
+
+
