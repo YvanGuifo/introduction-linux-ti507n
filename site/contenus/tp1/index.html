@@ -1070,7 +1070,7 @@ Vous y consignerez progressivement les résultats des commandes exécutées.</p>
 <blockquote>
 <p>📚 = Facile · 📚📚 = Moyenne · 📚📚📚 = Élevée</p>
 <p>Les exercices <strong>1 à 7</strong> constituent le <strong>tronc commun</strong>, exigible pour tous.
-Les exercices <strong>8, 9, 10</strong> sont des <strong>exercices supplémentaires</strong> réservés au <strong>groupe étoile</strong>.</p>
+Les exercices <strong>8, 9, 10</strong> sont des <strong>exercices supplémentaires</strong> (⭐).</p>
 </blockquote>
 </div>
 <div class="admonition info">
@@ -1343,7 +1343,7 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <h2 id="exercices-supplementaires">⭐ Exercices supplémentaires<a class="headerlink" href="#exercices-supplementaires" title="Permanent link">&para;</a></h2>
 <div class="admonition star">
 <p class="admonition-title">À qui s’adressent les exercices 8, 9, 10 ?</p>
-<p>Vous avez terminé les exercices 1 à 7 avant la fin de la séance ? Ces trois exercices <strong>approfondissent les concepts du TP1</strong> en vous faisant découvrir des commandes avancées de recherche, les pipelines shell et l’écriture de votre premier script.</p>
+<p>Vous avez terminé les exercices 1 à 7 avant la fin de la séance ? Ces trois exercices <strong>approfondissent les concepts du TP1</strong> en vous faisant découvrir la recherche avancée avec <code>find</code>, les liens symboliques et physiques, et l’écriture de votre premier script shell.</p>
 <p>Les niveaux taxonomiques visés sont <strong>[Analyser]</strong>, <strong>[Évaluer]</strong> et <strong>[Créer]</strong> (Bloom révisé).</p>
 <p>Ces exercices sont <strong>optionnels</strong> et <strong>non évalués</strong>.</p>
 </div>
@@ -1360,7 +1360,7 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <p>Listez <strong>tous les fichiers</strong> (pas les répertoires) présents sous <code>/etc</code> :
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>$<span class="w"> </span>find<span class="w"> </span>/etc<span class="w"> </span>-type<span class="w"> </span>f
 </span></code></pre></div>
-   Combien y en a-t-il ? <em>(Indice : combinez avec <code>wc -l</code>.)</em></p>
+   Estimez combien il y en a en observant la sortie.</p>
 </li>
 <li>
 <p>Trouvez tous les fichiers dont le nom se termine par <code>.conf</code> sous <code>/etc</code> :
@@ -1478,29 +1478,31 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>$<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>info-systeme.sh
 </span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>$<span class="w"> </span>./info-systeme.sh
 </span></code></pre></div></li>
-<li><strong>Exercice de création</strong> : écrivez un script <code>creer-arbo.sh</code> qui :</li>
+<li>
+<p><strong>Exercice de création</strong> : écrivez un script <code>creer-arbo.sh</code> qui :</p>
+<ul>
 <li>Prend un <strong>argument</strong> : le nom d’un projet (ex. <code>mon_projet</code>).</li>
 <li>Crée l’arborescence suivante :
-     <div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>mon_projet/
+ <div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>mon_projet/
 </span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>├── src/
 </span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>├── docs/
 </span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>├── tests/
 </span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>└── README.txt    (contient &quot;Projet : mon_projet&quot;)
 </span></code></pre></div></li>
 <li>Affiche un message de confirmation.</li>
-</ol>
+</ul>
 <p><em>Indice</em> : pour accéder au premier argument dans un script, utilisez <code>$1</code>. Pour vérifier qu’un argument a été fourni :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Usage : </span><span class="nv">$0</span><span class="s2"> &lt;nom-du-projet&gt;&quot;</span>
-</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
-</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="k">fi</span>
-</span></code></pre></div></p>
-<ol>
+ <code>bash
+    if [ -z "$1" ]; then
+        echo "Usage : $0 &lt;nom-du-projet&gt;"
+   exit 1
+   fi</code></p>
+</li>
 <li>
 <p>Testez votre script :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>$<span class="w"> </span>./creer-arbo.sh<span class="w"> </span>tp_linux
-</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>$<span class="w"> </span>ls<span class="w"> </span>-R<span class="w"> </span>tp_linux
-</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>$<span class="w"> </span>cat<span class="w"> </span>tp_linux/README.txt
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>$<span class="w"> </span>./creer-arbo.sh<span class="w"> </span>tp_linux
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>$<span class="w"> </span>ls<span class="w"> </span>-R<span class="w"> </span>tp_linux
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>$<span class="w"> </span>cat<span class="w"> </span>tp_linux/README.txt
 </span></code></pre></div></p>
 </li>
 <li>

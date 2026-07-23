@@ -482,9 +482,8 @@ Depuis votre répertoire personnel, exécutez :
    $ ./info-systeme.sh
    ```
 4. **Exercice de création** : écrivez un script `creer-arbo.sh` qui :
-
-       - Prend un **argument** : le nom d’un projet (ex. `mon_projet`).
-       - Crée l’arborescence suivante :
+   - Prend un **argument** : le nom d’un projet (ex. `mon_projet`).
+   - Crée l’arborescence suivante :
      ```
      mon_projet/
      ├── src/
@@ -492,15 +491,15 @@ Depuis votre répertoire personnel, exécutez :
      ├── tests/
      └── README.txt    (contient "Projet : mon_projet")
      ```
-      - Affiche un message de confirmation.
+   - Affiche un message de confirmation.
 
-     *Indice* : pour accéder au premier argument dans un script, utilisez `$1`. Pour vérifier qu’un argument a été fourni :
-     ```bash
-        if [ -z "$1" ]; then
-            echo "Usage : $0 <nom-du-projet>"
+   *Indice* : pour accéder au premier argument dans un script, utilisez `$1`. Pour vérifier qu’un argument a été fourni :
+   ```bash
+   if [ -z "$1" ]; then
+       echo "Usage : $0 <nom-du-projet>"
        exit 1
    fi
-    ```
+   ```
 
 5. Testez votre script :
    ```bash
