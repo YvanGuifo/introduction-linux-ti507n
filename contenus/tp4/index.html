@@ -1396,14 +1396,22 @@ Le fichier <code>fichier.txt</code> est alors <em>connecté</em> à l’entrée 
 </span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>$<span class="w"> </span><span class="nb">kill</span><span class="w"> </span>-9<span class="w"> </span>&lt;PID<span class="w"> </span>du<span class="w"> </span>processus<span class="w"> </span><span class="m">3</span>&gt;
 </span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>$<span class="w"> </span><span class="nb">jobs</span>
 </span></code></pre></div></li>
-<li><strong>Questions</strong> :</li>
+<li>
+<p><strong>Questions</strong> :</p>
+<ul>
 <li>Quelle est la différence entre <code>SIGINT</code> et <code>SIGTSTP</code> ? Entre <code>SIGTSTP</code> et <code>SIGTERM</code> ?</li>
 <li>D’après vos observations, <strong>combien de syntaxes différentes</strong> de <code>kill</code> produisent le même effet ? Listez-les.</li>
-<li><strong>Question d’évaluation</strong> — pour chacun des cas suivants, indiquez <strong>le signal le plus approprié et justifiez</strong> :</li>
+</ul>
+</li>
+<li>
+<p><strong>Question d’évaluation</strong> — pour chacun des cas suivants, indiquez <strong>le signal le plus approprié et justifiez</strong> :</p>
+<ul>
 <li>(a) un utilisateur veut interrompre un programme qu’il vient de lancer dans son terminal ;</li>
 <li>(b) un administrateur veut arrêter proprement un service système ;</li>
 <li>(c) un processus est figé et ne répond plus à aucune commande ;</li>
 <li>(d) un développeur veut suspendre temporairement un long calcul sans le perdre.</li>
+</ul>
+</li>
 </ol>
 <hr />
 <h2 id="synthese-ce-que-vous-devez-savoir-faire">Synthèse — Ce que vous devez savoir faire<a class="headerlink" href="#synthese-ce-que-vous-devez-savoir-faire" title="Permanent link">&para;</a></h2>
@@ -1461,10 +1469,14 @@ Le fichier <code>fichier.txt</code> est alors <em>connecté</em> à l’entrée 
 </span></code></pre></div></li>
 <li>Compilez : <code>gcc -Wall -o catch-sigint catch-sigint.c</code>.</li>
 <li>Exécutez <code>./catch-sigint</code>, puis appuyez <strong>3 fois</strong> sur <kbd>Ctrl</kbd>+<kbd>C</kbd>.</li>
-<li><strong>Questions</strong> :</li>
+<li>
+<p><strong>Questions</strong> :</p>
+<ul>
 <li>Pourquoi <kbd>Ctrl</kbd>+<kbd>C</kbd> <strong>n’interrompt-il plus</strong> le programme ?</li>
 <li>Essayez d’envoyer <code>SIGTERM</code> depuis un autre terminal : <code>kill &lt;PID&gt;</code>. Que se passe-t-il ?</li>
 <li>Essayez ensuite <code>kill -9 &lt;PID&gt;</code>. Que se passe-t-il ? Pourquoi ?</li>
+</ul>
+</li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">Note importante</p>
@@ -1519,10 +1531,14 @@ Le fichier <code>fichier.txt</code> est alors <em>connecté</em> à l’entrée 
 </span><span id="__span-20-32"><a id="__codelineno-20-32" name="__codelineno-20-32" href="#__codelineno-20-32"></a><span class="p">}</span>
 </span></code></pre></div></li>
 <li>Compilez et exécutez plusieurs fois. Observez les PID.</li>
-<li><strong>Questions</strong> :</li>
+<li>
+<p><strong>Questions</strong> :</p>
+<ul>
 <li>Pourquoi voit-on un message « Avant fork » suivi de <strong>deux</strong> suites distinctes ?</li>
 <li>Pourquoi appeler <code>wait()</code> côté parent ? <em>(Que devient un fils dont le parent ne fait pas <code>wait</code> ? Cherchez « processus zombie » dans <code>man 2 wait</code>.)</em></li>
 <li>Modifiez le programme pour créer <strong>deux fils</strong> (deux <code>fork()</code> successifs côté parent). Le parent doit attendre les deux fils avant de se terminer.</li>
+</ul>
+</li>
 </ul>
 <h3 id="exercice-10-mini-projet-un-mini-shell-qui-execute-une-commande">Exercice 10 — Mini-projet : un mini-shell qui exécute une commande ⭐<a class="headerlink" href="#exercice-10-mini-projet-un-mini-shell-qui-execute-une-commande" title="Permanent link">&para;</a></h3>
 <p>Quand vous tapez <code>ls /tmp</code> dans <code>bash</code>, le shell fait en réalité :</p>
@@ -1578,8 +1594,12 @@ Le fichier <code>fichier.txt</code> est alors <em>connecté</em> à l’entrée 
 </span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>$<span class="w"> </span>./mysh<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>Hello<span class="w"> </span>from<span class="w"> </span>mysh
 </span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>$<span class="w"> </span>./mysh<span class="w"> </span>/commande/inexistante
 </span></code></pre></div></li>
-<li><strong>Questions d’analyse</strong> :</li>
-<li>Pourquoi <code>execvp</code> ne revient-il <strong>jamais</strong> si tout se passe bien ?</li>
+<li>
+<p><strong>Questions d’analyse</strong> :</p>
+</li>
+<li>
+<p>Pourquoi <code>execvp</code> ne revient-il <strong>jamais</strong> si tout se passe bien ?</p>
+</li>
 <li>Quelle est la différence entre <code>execv</code>, <code>execvp</code> et <code>execve</code> ? <em>(Indice : <code>man 3 exec</code>.)</em></li>
 <li>Combinez les acquis : modifiez <code>mysh.c</code> pour que la sortie de la commande exécutée soit <strong>redirigée</strong> vers un fichier <code>mysh.out</code>. <em>(Indice : avant l’<code>exec*</code>, faites <code>dup2</code> comme à l’exercice 10 du TP3.)</em></li>
 </ol>
