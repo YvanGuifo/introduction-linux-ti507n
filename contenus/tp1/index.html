@@ -1363,8 +1363,8 @@ Si la commande échoue :
 </span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="p">}</span>
 </span></code></pre></div></li>
-<li>Compilez : <code>gcc -Wall -o hello hello.c</code>.</li>
-<li>Exécutez : <code>./hello</code>.</li>
+<li>Compilez : <code>gcc -Wall -o hello hello.c</code></li>
+<li>Exécutez : <code>./hello</code></li>
 <li><strong>Questions</strong> :</li>
 <li>À quoi sert l’option <code>-o</code> ? Que se passe-t-il si vous l’omettez ?</li>
 <li>À quoi sert <code>-Wall</code> ?</li>
@@ -1400,8 +1400,8 @@ Si la commande échoue :
 <h3 id="exercice-10-premier-appel-systeme-lire-etcpasswd">Exercice 10 — Premier appel système : lire <code>/etc/passwd</code> ⭐<a class="headerlink" href="#exercice-10-premier-appel-systeme-lire-etcpasswd" title="Permanent link">&para;</a></h3>
 <p>Un <strong>appel système</strong> est une fonction du noyau Linux appelée par votre programme pour demander un service (ouvrir un fichier, lire des données…).</p>
 <ol>
-<li>Consultez la page de manuel <strong>section 2</strong> (appels système) : <code>man 2 read</code>.</li>
-<li>Créez <code>show-passwd.c</code> :
+<li>Consultez la page de manuel <strong>section 2</strong> (appels système) : <code>man 2 read</code></li>
+<li>Créez <code>show-passwd.c</code> 
    <div class="language-c highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fcntl.h&gt;</span><span class="c1">     /* open       */</span>
 </span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unistd.h&gt;</span><span class="c1">    /* read, write, close */</span>
 </span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="c1">     /* perror     */</span>
@@ -1419,11 +1419,15 @@ Si la commande échoue :
 </span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="p">}</span>
 </span></code></pre></div></li>
-<li>Compilez : <code>gcc -Wall -o show-passwd show-passwd.c</code>.</li>
-<li>Exécutez et comparez avec <code>cat /etc/passwd</code>.</li>
-<li><strong>Questions</strong> :</li>
+<li>Compilez : <code>gcc -Wall -o show-passwd show-passwd.c</code></li>
+<li>Exécutez et comparez avec <code>cat /etc/passwd</code></li>
+<li>
+<p><strong>Questions</strong> :</p>
+<ul>
 <li>Que vaut <code>fd</code> lorsque <code>open</code> réussit ?</li>
-<li>À quoi sert <code>perror</code> ? <em>(Indice : <code>man 3 perror</code>.)</em></li>
+<li>À quoi sert <code>perror</code> ? <em>(Indice : <code>man 3 perror</code>)</em></li>
+</ul>
+</li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">Vers les TP suivants</p>
