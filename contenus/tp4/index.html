@@ -20,7 +20,7 @@
     
     
       
-        <title>TP4 - Canaux standards et redirections | Processus et tâches | Signaux - TI307 & TI307B &TI307P - Introduction au système Linux</title>
+        <title>TP4 - Canaux standards et redirections | Processus et tâches | Signaux - TI307 & TI307P - Introduction au système Linux</title>
       
     
     
@@ -134,7 +134,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="TI307 &amp; TI307B &amp;TI307P - Introduction au système Linux" class="md-header__button md-logo" aria-label="TI307 & TI307B &TI307P - Introduction au système Linux" data-md-component="logo">
+    <a href="../.." title="TI307 &amp; TI307P - Introduction au système Linux" class="md-header__button md-logo" aria-label="TI307 & TI307P - Introduction au système Linux" data-md-component="logo">
       
   <img src="../../assets/img/logo.png" alt="logo">
 
@@ -147,7 +147,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            TI307 & TI307B &TI307P - Introduction au système Linux
+            TI307 & TI307P - Introduction au système Linux
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -265,12 +265,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="TI307 &amp; TI307B &amp;TI307P - Introduction au système Linux" class="md-nav__button md-logo" aria-label="TI307 & TI307B &TI307P - Introduction au système Linux" data-md-component="logo">
+    <a href="../.." title="TI307 &amp; TI307P - Introduction au système Linux" class="md-nav__button md-logo" aria-label="TI307 & TI307P - Introduction au système Linux" data-md-component="logo">
       
   <img src="../../assets/img/logo.png" alt="logo">
 
     </a>
-    TI307 & TI307B &TI307P - Introduction au système Linux
+    TI307 & TI307P - Introduction au système Linux
   </label>
   
     <div class="md-nav__source">
@@ -545,6 +545,13 @@
         
           <li class="md-nav__item">
   <a href="#exercice-1-redirection-de-la-sortie-standard" class="md-nav__link">
+    Exercice 1 — Redirection de la sortie standard 📚
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-1-redirection-de-la-sortie-standard_1" class="md-nav__link">
     Exercice 1 : Redirection de la sortie standard 📚
   </a>
   
@@ -657,16 +664,16 @@
 <div class="admonition warning">
 <p class="admonition-title">À propos des réponses du TP</p>
 </div>
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+    Avant de commencer le TP, vous devez créer un fichier nommé <strong><code>resultat_commande_TP4_NomPrenomEtudiant.txt</code></strong>.
+    Dans ce fichier, vous consignerez progressivement les résultats des commandes exécutées au fil des exercices.
+=======</p>
 <div class="admonition tip">
 <p class="admonition-title">Barème d’interprétation des exercices</p>
 <blockquote>
 <p>📚 = Facile, 📚📚 = Moyenne, 📚📚📚 = Élevée </p>
 </blockquote>
 </div>
-<p>=======
-    Avant de commencer le TP, vous devez créer un fichier nommé <strong><code>resultat_commande_TP4_NomPrenomEtudiant.txt</code></strong>.
-    Dans ce fichier, vous consignerez progressivement les résultats des commandes exécutées au fil des exercices.</p>
 <blockquote>
 <blockquote>
 <blockquote>
@@ -674,7 +681,7 @@
 <blockquote>
 <blockquote>
 <blockquote>
-<p>3428ab9 (Ajout page tutoriel GitHub Codespaces + ignore .venv)</p>
+<p>6824ff8c51cff2c78b83af33043470b41e8c58fe</p>
 </blockquote>
 </blockquote>
 </blockquote>
@@ -758,10 +765,12 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <p><code>&gt;</code> <strong>écrase</strong> sans demander confirmation. Pour préserver le contenu existant, utilisez <code>&gt;&gt;</code>.</p>
 </div>
 </div>
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
+<h3 id="exercice-1-redirection-de-la-sortie-standard">Exercice 1 — Redirection de la sortie standard 📚</h3>
+<p>=======
         La redirection écrase le contenu d'un fichier existant. Si on veut ajouter le résultat à la fin du fichier, on utilise le caractère <code>&gt;&gt;</code>.</p>
 <hr />
-<h3 id="exercice-1-redirection-de-la-sortie-standard">Exercice 1 : Redirection de la sortie standard 📚</h3>
+<h3 id="exercice-1-redirection-de-la-sortie-standard_1">Exercice 1 : Redirection de la sortie standard 📚</h3>
 <ol>
 <li>Testez les commandes suivantes et observez leur résultats.
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Est-ce que j&#39;apparais sur le terminal ?&quot;</span>
@@ -776,27 +785,25 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Je m&#39;ajoute en fin de ligne&quot;</span><span class="w"> </span><span class="m">1</span>&gt;&gt;<span class="w"> </span>fichier.txt
 </code></pre></div></li>
 <li>
-<h1 id="rappeler-ce-que-fait-la-commande-cat-man-cat-puis-a-partir-des-resultats-des-commandes-precedentes">Rappeler ce que fait la commande <code>cat</code> (man <code>cat</code>) puis à partir des résultats des commandes précédentes:</h1>
+<p>Rappeler ce que fait la commande <code>cat</code> (man <code>cat</code>) puis à partir des résultats des commandes précédentes:</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>6824ff8c51cff2c78b83af33043470b41e8c58fe</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 </li>
-</ol>
-<h3 id="exercice-1-redirection-de-la-sortie-standard_1">Exercice 1 — Redirection de la sortie standard 📚</h3>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>3428ab9 (Ajout page tutoriel GitHub Codespaces + ignore .venv)</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<ol>
-<li>Testez les commandes suivantes et observez leurs résultats :
+<li>
+<p>Testez les commandes suivantes et observez leurs résultats :
    <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Est-ce que j&#39;apparais sur le terminal ?&quot;</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Ou bien dans le fichier ?&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>fichier.txt
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>$<span class="w"> </span>cat<span class="w"> </span>fichier.txt
@@ -807,19 +814,25 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Je veux vider le fichier&quot;</span><span class="w"> </span><span class="m">1</span>&gt;<span class="w"> </span>fichier.txt
 <a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>$<span class="w"> </span>cat<span class="w"> </span>fichier.txt
 <a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Je m&#39;ajoute en fin de ligne&quot;</span><span class="w"> </span><span class="m">1</span>&gt;&gt;<span class="w"> </span>fichier.txt
-</code></pre></div></li>
-<li>
-<p>Rappelez ce que fait la commande <code>cat</code> (<code>man cat</code>), puis répondez :</p>
-<ul>
+</code></pre></div></p>
+</li>
+<li>Rappelez ce que fait la commande <code>cat</code> (<code>man cat</code>), puis répondez :<ul>
 <li>Quelle est la différence entre <code>&gt;</code> et <code>&gt;&gt;</code> ?</li>
 <li>Quelle est la différence entre <code>1&gt;</code> et <code>&gt;</code> ?</li>
 <li>Quelle est la différence entre <code>1&gt;&gt;</code> et <code>&gt;&gt;</code> ?
 &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</li>
 </ul>
 </li>
+<li>Placez-vous dans votre répertoire personnel et exécutez :
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span>ls<span class="w"> </span>&gt;<span class="w"> </span>list_files.txt<span class="p">;</span><span class="w"> </span>cat<span class="w"> </span>list_files.txt
+</code></pre></div></li>
+<li>Que fait cette commande ?</li>
+<li>
+<h1 id="pouvez-vous-expliquer-pourquoi-la-chaine-list_filestxt-apparait-dans-le-fichier-list_filestxt">Pouvez-vous expliquer pourquoi la chaîne <code>list_files.txt</code> apparaît dans le fichier <code>list_files.txt</code> ?</h1>
+</li>
 <li>
 <p>Placez-vous dans votre répertoire personnel et exécutez la commande suivante :
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span>ls<span class="w"> </span>&gt;<span class="w"> </span>list_files.txt<span class="p">;</span><span class="w"> </span>cat<span class="w"> </span>list_files.txt
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>ls<span class="w"> </span>&gt;<span class="w"> </span>list_files.txt<span class="p">;</span><span class="w"> </span>cat<span class="w"> </span>list_files.txt
 </code></pre></div></p>
 <ul>
 <li>Que fait cette commande ?</li>
@@ -838,28 +851,21 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <li>Dans un répertoire <code>dir</code> créer un fichier <code>file-1.txt</code> dont le contenu est <code>Hello world !</code>.</li>
 <li>Créer ensuite une copie de <code>file-1.txt</code> nommée <code>file-2.txt</code>. Retirez toutes les permissions de lecture sur <code>file-2.txt</code>.</li>
 <li>Tapez ensuite la commande suivante et notez les résultats (on va avoir des erreur !) :
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>cat<span class="w"> </span>file-1.txt<span class="w"> </span>file-2.txt<span class="w"> </span>file-3.txt
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span>cat<span class="w"> </span>file-1.txt<span class="w"> </span>file-2.txt<span class="w"> </span>file-3.txt
 </code></pre></div></li>
 <li>Quelles commande a réussi ? et quelles commandes ont échoué et pourquoi ?</li>
 <li>Faites ensuite une redirection de la sortie standard de la commande précédente vers un fichier <code>result.txt</code>. Observez le ce qui est affiché sur le terminal, et observer le contenu du fichier <code>result.txt</code>.</li>
 <li>Tapez ensuite la commande suivante et notez les résultats :
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span>cat<span class="w"> </span>file-1.txt<span class="w"> </span>file-2.txt<span class="w"> </span>file-3.txt<span class="w"> </span><span class="m">1</span>&gt;<span class="w"> </span>result.txt<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>error.txt
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span>cat<span class="w"> </span>file-1.txt<span class="w"> </span>file-2.txt<span class="w"> </span>file-3.txt<span class="w"> </span><span class="m">1</span>&gt;<span class="w"> </span>result.txt<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>error.txt
 </code></pre></div></li>
-<li>
-<h1 id="observez-les-contenus-de-resulttxt-et-errortxt-que-contiennent-ils-a-votre-avis-que-signifie-1-et-2-tirez-en-une-conclusion-sur-la-difference-entre-la-sortie-standard-et-lerreur-standard">Observez les contenus de <code>result.txt</code> et <code>error.txt</code>. Que contiennent-ils ? À votre avis que signifie <code>1&gt;</code> et <code>2&gt;</code> ? Tirez-en une conclusion sur la différence entre la sortie standard et l'erreur standard.</h1>
-</li>
-<li>Placez-vous dans votre répertoire personnel et exécutez :
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span>ls<span class="w"> </span>&gt;<span class="w"> </span>list_files.txt<span class="p">;</span><span class="w"> </span>cat<span class="w"> </span>list_files.txt
-</code></pre></div></li>
-<li>Que fait cette commande ?</li>
-<li>Pouvez-vous expliquer pourquoi la chaîne <code>list_files.txt</code> apparaît dans le fichier <code>list_files.txt</code> ?<blockquote>
+<li>Observez les contenus de <code>result.txt</code> et <code>error.txt</code>. Que contiennent-ils ? À votre avis que signifie <code>1&gt;</code> et <code>2&gt;</code> ? Tirez-en une conclusion sur la différence entre la sortie standard et l'erreur standard.<blockquote>
 <blockquote>
 <blockquote>
 <blockquote>
 <blockquote>
 <blockquote>
 <blockquote>
-<p>3428ab9 (Ajout page tutoriel GitHub Codespaces + ignore .venv)</p>
+<p>6824ff8c51cff2c78b83af33043470b41e8c58fe</p>
 </blockquote>
 </blockquote>
 </blockquote>
@@ -898,24 +904,24 @@ Le fichier <code>fichier.txt</code> est alors <em>connecté</em> à l’entrée 
 </div>
 </div>
 <p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
-<h3 id="exercice-4-retour-sur-la-commande-cat">Exercice 4 : Retour sur la commande <code>cat</code> 📚📚</h3>
-<ol>
-<li>Revoyez le manuel de la commande <code>cat</code> et trouvez comment elle fonctionne lorsque l'on ne lui donne pas de fichier en argument.</li>
-<li>
-<h1 id="testez-ensuite-la-commande-suivante">Testez ensuite la commande suivante:</h1>
-</li>
-</ol>
 <h3 id="exercice-3-redirection-de-lentree-standard-et-retour-sur-cat">Exercice 3 — Redirection de l’entrée standard et retour sur <code>cat</code> 📚📚</h3>
 <ol>
 <li>Consultez le manuel de <code>cat</code> et trouvez comment elle se comporte lorsqu’on <strong>ne lui donne pas</strong> de fichier en argument.</li>
-<li>Testez :<blockquote>
+<li>
+<h1 id="testez">Testez :</h1>
+</li>
+</ol>
+<h3 id="exercice-4-retour-sur-la-commande-cat">Exercice 4 : Retour sur la commande <code>cat</code> 📚📚</h3>
+<ol>
+<li>Revoyez le manuel de la commande <code>cat</code> et trouvez comment elle fonctionne lorsque l'on ne lui donne pas de fichier en argument.</li>
+<li>Testez ensuite la commande suivante:<blockquote>
 <blockquote>
 <blockquote>
 <blockquote>
 <blockquote>
 <blockquote>
 <blockquote>
-<p>3428ab9 (Ajout page tutoriel GitHub Codespaces + ignore .venv)
+<p>6824ff8c51cff2c78b83af33043470b41e8c58fe
    <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$<span class="w"> </span>cat
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>hello&lt;Entrée&gt;
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>world&lt;Entrée&gt;
@@ -944,7 +950,9 @@ Le fichier <code>fichier.txt</code> est alors <em>connecté</em> à l’entrée 
 <li>Combien d’arguments <code>cat</code> a-t-elle reçus ? Qu’a-t-elle affiché ?</li>
 <li>Quelle est la différence entre <code>&lt;</code> et <code>0&lt;</code> ?</li>
 </ol>
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
+<h2 id="head">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</h2>
+<h2 id="2-les-tubes-pipes">2. Les tubes (<code>pipes</code>)</h2>
+<p>=======</p>
 <h3 id="exercice-5-compter-les-entetes-2">Exercice 5 : Compter les entêtes (2) 📚📚📚</h3>
 <p>Nous allons refaire le même exercice que l'exercice 2 mais cette fois-ci en utilisant la redirection de l'entrée standard.</p>
 <ol>
@@ -979,8 +987,6 @@ La sortie standard de <code>cmd1</code> est connectée à l'entrée standard de 
 </div>
 <hr />
 <h3 id="exercice-6-compter-les-entetes-promis-cest-la-derniere-fois">Exercice 6 : Compter les entêtes (promis c'est la dernière fois) 📚📚</h3>
-<h2 id="_1">=======</h2>
-<h2 id="2-les-tubes-pipes">2. Les tubes (<code>pipes</code>)</h2>
 <blockquote>
 <blockquote>
 <blockquote>
@@ -988,7 +994,7 @@ La sortie standard de <code>cmd1</code> est connectée à l'entrée standard de 
 <blockquote>
 <blockquote>
 <blockquote>
-<p>3428ab9 (Ajout page tutoriel GitHub Codespaces + ignore .venv)</p>
+<p>6824ff8c51cff2c78b83af33043470b41e8c58fe</p>
 </blockquote>
 </blockquote>
 </blockquote>
@@ -1117,12 +1123,15 @@ La sortie standard de <code>cmd1</code> est connectée à l'entrée standard de 
 <hr />
 <h2 id="4-envoyer-des-signaux-a-un-processus">4. Envoyer des signaux à un processus</h2>
 <p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
-<h3 id="exercice-7-processus-et-taches">Exercice 7 - Processus et tâches 📚📚📚</h3>
-<h1 id="1-dans-cet-exercice-nous-allons-simuler-lexecution-dun-processus-long-pour-cela-nous-allons-utiliser-la-commande-sleep-qui-permet-de-mettre-en-pause-lexecution-dun-script-pendant-un-certain-temps-tapez-la-commande-sleep-10-et-observez-ce-quil-se-passe">1. Dans cet exercice nous allons simuler l'exécution d'un processus long. Pour cela, nous allons utiliser la commande <code>sleep</code> qui permet de mettre en pause l'exécution d'un script pendant un certain temps. Tapez la commande <code>sleep 10</code> et observez ce qu'il se passe.</h1>
 <div class="admonition tip">
 <p class="admonition-title">Les signaux : communiquer avec les processus</p>
 <p>Les raccourcis <kbd>Ctrl</kbd>+<kbd>C</kbd>, <kbd>Ctrl</kbd>+<kbd>Z</kbd>, et les commandes <code>fg</code> / <code>bg</code>, envoient en réalité des <strong>signaux</strong> au processus. Un signal est un <strong>message asynchrone</strong> envoyé à un processus pour lui demander d’agir.</p>
 </div>
+<p>=======</p>
+<h3 id="exercice-7-processus-et-taches">Exercice 7 - Processus et tâches 📚📚📚</h3>
+<ol>
+<li>
+<p>Dans cet exercice nous allons simuler l'exécution d'un processus long. Pour cela, nous allons utiliser la commande <code>sleep</code> qui permet de mettre en pause l'exécution d'un script pendant un certain temps. Tapez la commande <code>sleep 10</code> et observez ce qu'il se passe.</p>
 <blockquote>
 <blockquote>
 <blockquote>
@@ -1130,7 +1139,7 @@ La sortie standard de <code>cmd1</code> est connectée à l'entrée standard de 
 <blockquote>
 <blockquote>
 <blockquote>
-<p>3428ab9 (Ajout page tutoriel GitHub Codespaces + ignore .venv)</p>
+<p>6824ff8c51cff2c78b83af33043470b41e8c58fe</p>
 </blockquote>
 </blockquote>
 </blockquote>
@@ -1138,28 +1147,58 @@ La sortie standard de <code>cmd1</code> est connectée à l'entrée standard de 
 </blockquote>
 </blockquote>
 </blockquote>
-<div class="highlight"><pre><span></span><code>La commande `kill` envoie un signal à un processus identifié par son PID (ou son numéro de tâche `%n`).
-
-Principaux signaux :
-
-| Signal | Origine usuelle | Sémantique |
-|---|---|---|
-| `SIGINT` (2) | &lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;C&lt;/kbd&gt; | demande l’**interruption** du processus |
-| `SIGTSTP` (20) | &lt;kbd&gt;Ctrl&lt;/kbd&gt;+&lt;kbd&gt;Z&lt;/kbd&gt; | demande la **suspension** du processus |
-| `SIGCONT` (18) | `fg`, `bg` | demande la **reprise** d’un processus suspendu |
-| `SIGTERM` (15) | `kill` par défaut | demande l’arrêt **propre** du processus |
-| `SIGKILL` (9) | `kill -9` | **arrêt forcé**, le processus **ne peut pas** s’y opposer |
-
-La liste exhaustive : `kill -L`.
-
-!!! warning &quot;Qui peut envoyer un signal ?&quot;
-    Vous ne pouvez envoyer un signal qu’aux processus dont vous êtes le propriétaire — sauf si vous êtes `root`.
-
-!!! warning &quot;`SIGKILL` est à utiliser en dernier recours&quot;
-    `SIGKILL` ne laisse pas le processus se terminer proprement (pas de libération de mémoire, pas de sauvegarde de fichiers ouverts). Préférez `SIGTERM`.
-
-&gt; **Référence** : *POSIX.1-2017, Volume 1: Base Definitions*, chapitre 2 §2.4 *Signal Concepts*, IEEE/Open Group, 2018. &lt;https://pubs.opengroup.org/onlinepubs/9699919799/&gt;
-</code></pre></div>
+<p>La commande <code>kill</code> envoie un signal à un processus identifié par son PID (ou son numéro de tâche <code>%n</code>).</p>
+<p>Principaux signaux :</p>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th>Origine usuelle</th>
+<th>Sémantique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SIGINT</code> (2)</td>
+<td><kbd>Ctrl</kbd>+<kbd>C</kbd></td>
+<td>demande l’<strong>interruption</strong> du processus</td>
+</tr>
+<tr>
+<td><code>SIGTSTP</code> (20)</td>
+<td><kbd>Ctrl</kbd>+<kbd>Z</kbd></td>
+<td>demande la <strong>suspension</strong> du processus</td>
+</tr>
+<tr>
+<td><code>SIGCONT</code> (18)</td>
+<td><code>fg</code>, <code>bg</code></td>
+<td>demande la <strong>reprise</strong> d’un processus suspendu</td>
+</tr>
+<tr>
+<td><code>SIGTERM</code> (15)</td>
+<td><code>kill</code> par défaut</td>
+<td>demande l’arrêt <strong>propre</strong> du processus</td>
+</tr>
+<tr>
+<td><code>SIGKILL</code> (9)</td>
+<td><code>kill -9</code></td>
+<td><strong>arrêt forcé</strong>, le processus <strong>ne peut pas</strong> s’y opposer</td>
+</tr>
+</tbody>
+</table>
+<p>La liste exhaustive : <code>kill -L</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Qui peut envoyer un signal ?</p>
+<p>Vous ne pouvez envoyer un signal qu’aux processus dont vous êtes le propriétaire — sauf si vous êtes <code>root</code>.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title"><code>SIGKILL</code> est à utiliser en dernier recours</p>
+<p><code>SIGKILL</code> ne laisse pas le processus se terminer proprement (pas de libération de mémoire, pas de sauvegarde de fichiers ouverts). Préférez <code>SIGTERM</code>.</p>
+</div>
+<blockquote>
+<p><strong>Référence</strong> : <em>POSIX.1-2017, Volume 1: Base Definitions</em>, chapitre 2 §2.4 <em>Signal Concepts</em>, IEEE/Open Group, 2018. <a href="https://pubs.opengroup.org/onlinepubs/9699919799/">https://pubs.opengroup.org/onlinepubs/9699919799/</a></p>
+</blockquote>
+</li>
+</ol>
 <h3 id="exercice-7-manipuler-les-signaux-avec-kill">Exercice 7 — Manipuler les signaux avec <code>kill</code> 📚📚📚</h3>
 <ol>
 <li>Tapez <code>kill -L</code> et notez les numéros associés à <code>SIGINT</code>, <code>SIGTSTP</code>, <code>SIGCONT</code>, <code>SIGTERM</code>, <code>SIGKILL</code>.</li>
@@ -1210,17 +1249,18 @@ La liste exhaustive : `kill -L`.
 </div>
 <hr />
 <p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
-<h3 id="exercice-8-la-commande-kill">Exercice 8 - La commande <code>kill</code> 📚📚📚</h3>
-<h1 id="1-tapez-la-commande-kill-l-et-notez-les-numeros-associes-aux-signaux-sigint-sigtstp-sigcont-sigterm-et-sigkill">1. Tapez la commande <code>kill -L</code> et notez les numéros associés aux signaux <code>SIGINT</code>, <code>SIGTSTP</code>, <code>SIGCONT</code>, <code>SIGTERM</code> et <code>SIGKILL</code>.</h1>
 <h2 id="exercices-supplementaires-groupe-etoile">⭐ Exercices supplémentaires — Groupe étoile</h2>
+<p>=======</p>
+<h3 id="exercice-8-la-commande-kill">Exercice 8 - La commande <code>kill</code> 📚📚📚</h3>
+<ol>
+<li>Tapez la commande <code>kill -L</code> et notez les numéros associés aux signaux <code>SIGINT</code>, <code>SIGTSTP</code>, <code>SIGCONT</code>, <code>SIGTERM</code> et <code>SIGKILL</code>.<blockquote>
 <blockquote>
 <blockquote>
 <blockquote>
 <blockquote>
 <blockquote>
 <blockquote>
-<blockquote>
-<p>3428ab9 (Ajout page tutoriel GitHub Codespaces + ignore .venv)</p>
+<p>6824ff8c51cff2c78b83af33043470b41e8c58fe</p>
 </blockquote>
 </blockquote>
 </blockquote>
@@ -1228,6 +1268,8 @@ La liste exhaustive : `kill -L`.
 </blockquote>
 </blockquote>
 </blockquote>
+</li>
+</ol>
 <div class="admonition star">
 <p class="admonition-title">À qui s’adressent les exercices 8, 9, 10 ?</p>
 <p>Vous avez terminé les exercices 1 à 7 ? Ces trois exercices closent la progression en C amorcée depuis le TP1 et vous font écrire un <strong>mini-shell</strong>.</p>
@@ -1434,7 +1476,7 @@ La liste exhaustive : `kill -L`.
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      TI307 & TI307B &TI307P - Introduction au système Linux - Efrei Paris
+      TI307 & TI307P - Introduction au système Linux - Efrei Paris | Yvan GUIFO 2025 suite et continuité du travail de Rado Rakotonarivo 2024.
     </div>
   
   
