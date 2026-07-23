@@ -351,13 +351,16 @@ This exercise asks you to write a small C program using the skills from Lab 3.
    $ jobs
    ```
 4. **Questions**:
-   - What is the difference between `SIGINT` and `SIGTSTP`? Between `SIGTSTP` and `SIGTERM`?
-   - Based on your observations, **how many different syntaxes** of `kill` produce the same effect? List them.
+
+       - What is the difference between `SIGINT` and `SIGTSTP`? Between `SIGTSTP` and `SIGTERM`?
+       - Based on your observations, **how many different syntaxes** of `kill` produce the same effect? List them.
+       
 5. **Evaluation question** — for each of the following cases, indicate **the most appropriate signal and justify**:
-   - (a) a user wants to interrupt a program they just launched in their terminal;
-   - (b) an administrator wants to gracefully stop a system service;
-   - (c) a process is frozen and no longer responds to any command;
-   - (d) a developer wants to temporarily suspend a long computation without losing it.
+
+      - (a) a user wants to interrupt a program they just launched in their terminal;
+      - (b) an administrator wants to gracefully stop a system service;
+      - (c) a process is frozen and no longer responds to any command;
+      - (d) a developer wants to temporarily suspend a long computation without losing it;
 
 ---
 
@@ -424,7 +427,8 @@ The `signal()` system call allows you to install a **handler** that will be call
 3. Compile: `gcc -Wall -o catch-sigint catch-sigint.c`.
 4. Run `./catch-sigint`, then press <kbd>Ctrl</kbd>+<kbd>C</kbd> **3 times**.
 5. **Questions**:
-   - Why does <kbd>Ctrl</kbd>+<kbd>C</kbd> **no longer interrupt** the program?
+
+    - Why does <kbd>Ctrl</kbd>+<kbd>C</kbd> **no longer interrupt** the program?
    - Try sending `SIGTERM` from another terminal: `kill <PID>`. What happens?
    - Then try `kill -9 <PID>`. What happens? Why?
 
@@ -479,9 +483,10 @@ The `signal()` system call allows you to install a **handler** that will be call
    ```
 3. Compile and run several times. Observe the PIDs.
 4. **Questions**:
-   - Why do we see a "Avant fork" message followed by **two** distinct continuations?
-   - Why call `wait()` on the parent side? *(What happens to a child whose parent does not call `wait`? Search for "zombie process" in `man 2 wait`.)*
-   - Modify the program to create **two children** (two successive `fork()` calls on the parent side). The parent must wait for both children before terminating.
+
+    - Why do we see a "Avant fork" message followed by **two** distinct continuations?
+    - Why call `wait()` on the parent side? *(What happens to a child whose parent does not call `wait`? Search for "zombie process" in `man 2 wait`.)*
+    - Modify the program to create **two children** (two successive `fork()` calls on the parent side). The parent must wait for both children before terminating.
 
 ### Exercise 10 — Mini-project: a mini-shell that executes a command ⭐
 
@@ -541,7 +546,8 @@ You are going to reproduce this mechanism.
    $ ./mysh /commande/inexistante
    ```
 4. **Analysis questions**:
-   - Why does `execvp` **never** return if everything goes well?
+
+    - Why does `execvp` **never** return if everything goes well?
    - What is the difference between `execv`, `execvp` and `execve`? *(Hint: `man 3 exec`.)*
    - Combine what you have learned: modify `mysh.c` so that the output of the executed command is **redirected** to a file `mysh.out`. *(Hint: before the `exec*`, use `dup2` as in exercise 10 of Lab 3.)*
 
