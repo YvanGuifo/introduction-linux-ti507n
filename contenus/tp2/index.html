@@ -354,7 +354,7 @@
         
   
   <span class="md-ellipsis">
-    Installation d'une distribution Linux via VirtualBox
+    Installation d'une distribution Linux
   </span>
   
 
@@ -496,16 +496,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#systeme-de-fichiers" class="md-nav__link">
-    Système de fichiers
+  <a href="#1-systeme-de-fichiers-linux" class="md-nav__link">
+    1. Système de fichiers Linux
   </a>
   
-    <nav class="md-nav" aria-label="Système de fichiers">
+    <nav class="md-nav" aria-label="1. Système de fichiers Linux">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#exercice-1-id-et-etcpasswd" class="md-nav__link">
-    Exercice 1 : id et /etc/passwd 📚
+    Exercice 1 — id et /etc/passwd 📚
   </a>
   
 </li>
@@ -516,30 +516,30 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#permissions-associees-aux-fichiers" class="md-nav__link">
-    Permissions associées aux fichiers
+  <a href="#2-permissions-associees-aux-fichiers" class="md-nav__link">
+    2. Permissions associées aux fichiers
   </a>
   
-    <nav class="md-nav" aria-label="Permissions associées aux fichiers">
+    <nav class="md-nav" aria-label="2. Permissions associées aux fichiers">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exercice-2-permissions-associees-aux-fichiers" class="md-nav__link">
-    Exercice 2 : Permissions associées aux fichiers 📚
+  <a href="#exercice-2-lire-les-permissions" class="md-nav__link">
+    Exercice 2 — Lire les permissions 📚
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#exercice-3-modification-des-permissions-chmod" class="md-nav__link">
-    Exercice 3 : Modification des permissions chmod 📚📚
+    Exercice 3 — Modification des permissions chmod 📚📚
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#exercice-4-permissions-associees-aux-fichiers-normaux" class="md-nav__link">
-    Exercice 4 : Permissions associées aux fichiers normaux 📚📚
+  <a href="#exercice-4-effet-des-permissions-sur-les-operations" class="md-nav__link">
+    Exercice 4 — Effet des permissions sur les opérations 📚📚
   </a>
   
 </li>
@@ -550,23 +550,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#permissions-associees-aux-repertoires" class="md-nav__link">
-    Permissions associées aux répertoires
+  <a href="#3-permissions-associees-aux-repertoires" class="md-nav__link">
+    3. Permissions associées aux répertoires
   </a>
   
-    <nav class="md-nav" aria-label="Permissions associées aux répertoires">
+    <nav class="md-nav" aria-label="3. Permissions associées aux répertoires">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#exercice-5-permissions-associees-aux-repertoires" class="md-nav__link">
-    Exercice 5 : Permissions associées aux répertoires 📚📚📚
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exercice-6-les-repertoires-du-path" class="md-nav__link">
-    Exercice 6 : Les répertoires du PATH 📚📚📚
+  <a href="#exercice-5-permissions-sur-les-repertoires" class="md-nav__link">
+    Exercice 5 — Permissions sur les répertoires 📚📚📚
   </a>
   
 </li>
@@ -577,29 +570,90 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#recapitulatif-sur-permissions-et-permissions-par-defaut" class="md-nav__link">
-    Récapitulatif sur permissions et permissions par défaut
+  <a href="#4-le-path" class="md-nav__link">
+    4. Le PATH
   </a>
   
-    <nav class="md-nav" aria-label="Récapitulatif sur permissions et permissions par défaut">
+    <nav class="md-nav" aria-label="4. Le PATH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercice-6-les-repertoires-du-path" class="md-nav__link">
+    Exercice 6 — Les répertoires du PATH 📚📚📚
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-recapitulatif-sur-les-permissions" class="md-nav__link">
+    5. Récapitulatif sur les permissions
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Récapitulatif sur les permissions">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#exercice-7-on-lache-le-clavier" class="md-nav__link">
-    Exercice 7: On lache le clavier 📚📚
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#exercice-8-permissions-par-defaut-et-umask-optionnel" class="md-nav__link">
-    Exercice 8 : Permissions par défaut et umask (optionnel) 📚📚📚
+    Exercice 7 — On lâche le clavier 📚📚📚
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#synthese-ce-que-vous-devez-savoir-faire" class="md-nav__link">
+    Synthèse — Ce que vous devez savoir faire
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercices-supplementaires-groupe-etoile" class="md-nav__link">
+    ⭐ Exercices supplémentaires — Groupe étoile
+  </a>
+  
+    <nav class="md-nav" aria-label="⭐ Exercices supplémentaires — Groupe étoile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercice-8-comprendre-et-manipuler-umask" class="md-nav__link">
+    Exercice 8 — Comprendre et manipuler umask ⭐
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-9-creer-un-fichier-en-c-avec-open-et-write" class="md-nav__link">
+    Exercice 9 — Créer un fichier en C avec open() et write() ⭐
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-10-naviguer-dans-un-fichier-avec-lseek" class="md-nav__link">
+    Exercice 10 — Naviguer dans un fichier avec lseek() ⭐
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pour-aller-plus-loin-lectures-recommandees" class="md-nav__link">
+    Pour aller plus loin (lectures recommandées)
+  </a>
   
 </li>
       
@@ -694,44 +748,95 @@
                   
 
 
-<h1 id="tp2-systeme-de-fichiers-et-permissions">TP2 - Système de fichiers et permissions</h1>
+<h1 id="tp2-systeme-de-fichiers-et-permissions">TP2 — Système de fichiers et permissions</h1>
 <div class="admonition objectifs">
-<p class="admonition-title">Objectifs pédagogiques</p>
-<p>À l’issue de ce TP, l’étudiant sera capable de :</p>
+<p class="admonition-title">Objectifs pédagogiques (taxonomie de Bloom révisée)</p>
+<p>À l’issue de ce TP, vous serez capable de :</p>
 <ul>
-<li>Comprendre la structure du système de fichiers Linux (hiérarchie, répertoires standards)</li>
-<li>Identifier les utilisateurs, groupes et fichiers système (<code>/etc/passwd</code>, <code>id</code>)</li>
-<li>Lire et interpréter les permissions en notation symbolique et octale</li>
-<li>Modifier les permissions avec <code>chmod</code></li>
-<li>Manipuler les fichiers et répertoires en tenant compte des droits d'accès</li>
-<li>Comprendre la différence entre permissions sur    fichiers et sur répertoires</li>
-<li>Expérimenter les effets du <code>PATH</code> sur la résolution des commandes</li>
-<li>Identifier les permissions nécessaires à l’exécution d’une commande</li>
-<li>Comprendre et manipuler le mécanisme de <code>umask</code></li>
+<li><strong>[Comprendre]</strong> la structure hiérarchique du système de fichiers Linux (répertoires standards, <code>/etc/passwd</code>, notion d’utilisateur et de groupe).</li>
+<li><strong>[Appliquer]</strong> lire les permissions d’un fichier ou d’un répertoire (<code>ls -l</code>, <code>ls -ld</code>) en notations symbolique et octale.</li>
+<li><strong>[Appliquer]</strong> modifier les permissions avec <code>chmod</code> (notations symbolique et octale).</li>
+<li><strong>[Analyser]</strong> distinguer les permissions sur fichiers vs sur répertoires (<code>r</code>, <code>w</code>, <code>x</code>).</li>
+<li><strong>[Analyser]</strong> comprendre le rôle de la variable <code>PATH</code> dans la résolution des commandes.</li>
+<li><strong>[Évaluer]</strong> déterminer les permissions <strong>minimales</strong> nécessaires à une opération donnée.</li>
+<li><strong>[Analyser]</strong> comprendre et manipuler le masque <code>umask</code>.</li>
+</ul>
+<blockquote>
+<p><strong>Référence</strong> : Anderson, L. W., &amp; Krathwohl, D. R. (2001). <em>A Taxonomy for Learning, Teaching, and Assessing</em>. Longman. ISBN 978-0801319037.</p>
+</blockquote>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Prérequis</p>
+<ul>
+<li><strong>TP1 terminé</strong> : navigation, création/manipulation de fichiers, consultation de <code>man</code>.</li>
+<li>Distribution Debian 12 installée <strong>ou</strong> session MarioNum active.</li>
+<li>Terminal ouvert et prompt <code>$</code> visible.</li>
 </ul>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Instructions</p>
 <ul>
-<li>On rappelle que dans tous les exercices le <code>$</code> en début de commande représente le prompt, il n'est pas à saisir lorsque vous écrivez une ligne de commande.</li>
-<li>Pour chaque nouvelle commande, n'hésitez pas à consulter sa page de manuel avec la commande <code>man</code>, ou à utiliser l'option <code>--help</code> (si elle est disponible) pour savoir ce qu'elle fait.</li>
+<li>Le <code>$</code> en début de commande représente le prompt et ne doit pas être saisi.</li>
+<li>Pour chaque nouvelle commande, consultez <code>man</code> ou <code>--help</code>.</li>
 </ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">À propos des réponses du TP</p>
+<p>Avant de commencer, créez un fichier nommé <strong><code>resultat_commande_TP2_NomPrenomEtudiant.txt</code></strong>.
+Vous y consignerez progressivement les résultats des commandes.</p>
+<blockquote>
+<p><strong>Création du fichier</strong></p>
+</blockquote>
+<ol>
+<li>Clic droit dans votre répertoire de travail</li>
+<li>Créer un document → Fichier vide</li>
+<li>Nommez : <code>resultat_commande_TP2_NomPrenomEtudiant.txt</code></li>
+</ol>
+<blockquote>
+<p><strong>Notez bien :</strong></p>
+<blockquote>
+<ul>
+<li>
+<p><span style="color:blue"> Votre enseignant doit pouvoir consulter ce fichier à tout moment. </span></p>
+</li>
+<li>
+<p><span style="color:red"> Sauvegardez ce fichier <strong>en local</strong> avant la fin de la séance. </span></p>
+<blockquote>
+<p><strong>Procédure de sauvegarde en local</strong> :</p>
+</blockquote>
+<ol>
+<li>Cliquez sur le <strong>presse-papier</strong> (à gauche du Bureau de la VM).
+<img alt="PressePapier" src="../../assets/img/PressePapier.png" /></li>
+<li>Sélectionnez le contenu et copiez.</li>
+<li>Collez sur votre machine hôte.</li>
+</ol>
+</li>
+</ul>
+</blockquote>
+</blockquote>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Barème d’interprétation des exercices</p>
 <blockquote>
-<p>📚 = Facile, 📚📚 = Moyenne, 📚📚📚 = Élevée  </p>
+<p>📚 = Facile · 📚📚 = Moyenne · 📚📚📚 = Élevée</p>
+<p>Les exercices <strong>1 à 7</strong> constituent le <strong>tronc commun</strong>, exigible pour tous.
+Les exercices <strong>8, 9, 10</strong> sont des <strong>exercices supplémentaires</strong> réservés au <strong>groupe étoile</strong>.</p>
 </blockquote>
 </div>
-<h2 id="systeme-de-fichiers">Système de fichiers</h2>
+<div class="admonition info">
+<p class="admonition-title">Alignement avec les évaluations (Biggs, 1996)</p>
+<p>Les exercices 📚 et 📚📚 préparent au <strong>CC S38</strong> et au <strong>TP noté S40</strong>.
+Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur dimension d’analyse et de justification.</p>
+<blockquote>
+<p><strong>Référence</strong> : Biggs, J. (1996). Enhancing teaching through constructive alignment. <em>Higher Education</em>, 32(3), 347–364. DOI : <a href="https://doi.org/10.1007/BF00138871">10.1007/BF00138871</a>.</p>
+</blockquote>
+</div>
+<hr />
+<h2 id="1-systeme-de-fichiers-linux">1. Système de fichiers Linux</h2>
 <div class="admonition tip">
-<p class="admonition-title">Le système de fichiers Linux</p>
-<p>Le système de fichiers Linux est une <em>arborescence</em> ou une <em>hiérarchie</em> de fichiers et de répertoires. Le répertoire racine est <code>/</code> et tous les autres répertoires sont des sous-répertoires de celui-ci. Les répertoires sont séparés par des <code>/</code> et les fichiers sont des noms de fichiers. </p>
-<p>Quand vous lancez un shell (i.e. ouvrez un terminal), celui-ci se trouve <em>dans</em> un répertoire. Ce répertoire est appelé votre <em>répertoire courant</em> ou <em>répertoire de travail</em>. </p>
-<p>Un système Linux typique comporte des dixaines de milliers de répertoires système et de fichiers. La plupart de ces répertoires et fichiers sont cachés et ne sont pas visibles par défaut. Ces fichiers et répertoires cachés sont utilisés par le système d'exploitation pour stocker des informations de configuration et d'autres informations système.</p>
-<p>Les sous-répertoires de la racine sont généralement réservés aux fichiers système. Les répertoires <code>/home</code> et <code>/tmp</code> sont utilisés pour stocker des fichiers temporaires et des fichiers personnels.</p>
-<p>À moins d'être un administrateur système, vous n'avez pas besoin de vous soucier de la plupart des fichiers et répertoires système. Toutefois il est important de comprendre comment les répertoires et les fichiers sont organisés afin de pouvoir naviguer dans le système de fichiers et de pouvoir trouver les fichiers dont vous avez besoin.</p>
-<p>Le tableau suivant décrit le contenu des principaux répertoires du système de fichiers Linux.</p>
+<p class="admonition-title">Une arborescence unique</p>
+<p>Le système de fichiers Linux est une <strong>hiérarchie</strong> partant de la racine <code>/</code>. Tous les répertoires sont des sous-répertoires de <code>/</code>. Contrairement à Windows, il n’y a pas de lettre de lecteur : disques et partitions sont <strong>montés</strong> dans l’arborescence unique.</p>
+<p>Un système Linux typique comporte des <strong>dizaines de milliers</strong> de fichiers système. La plupart ne sont utilisés que par le noyau ou les services. En pratique, ce qui vous concerne se trouve dans <code>/home</code> (fichiers personnels), <code>/tmp</code> (fichiers temporaires) et <code>/etc</code> (configuration).</p>
 <table>
 <thead>
 <tr>
@@ -742,118 +847,110 @@
 <tbody>
 <tr>
 <td><code>/</code></td>
-<td>Répertoire racine. Tous les autres répertoires sont des sous-répertoires de celui-ci.</td>
+<td>Racine de l’arborescence</td>
 </tr>
 <tr>
 <td><code>/bin</code></td>
-<td>Contient les programmes essentiels au fonctionnement du système.</td>
+<td>Programmes essentiels au fonctionnement du système</td>
 </tr>
 <tr>
 <td><code>/boot</code></td>
-<td>Contient les fichiers nécessaires au démarrage du système.</td>
+<td>Fichiers nécessaires au démarrage</td>
 </tr>
 <tr>
 <td><code>/dev</code></td>
-<td>Contient les fichiers représentant les périphériques.</td>
+<td>Fichiers spéciaux représentant les périphériques</td>
 </tr>
 <tr>
 <td><code>/etc</code></td>
-<td>Contient les fichiers de configuration du système.</td>
+<td>Fichiers de configuration du système</td>
 </tr>
 <tr>
 <td><code>/home</code></td>
-<td>Contient les répertoires personnels des utilisateurs.</td>
+<td>Répertoires personnels des utilisateurs</td>
 </tr>
 <tr>
 <td><code>/lib</code></td>
-<td>Contient les bibliothèques partagées et les modules du noyau.</td>
+<td>Bibliothèques partagées, modules du noyau</td>
 </tr>
 <tr>
-<td><code>/media</code></td>
-<td>Contient les points de montage des périphériques amovibles.</td>
-</tr>
-<tr>
-<td><code>/mnt</code></td>
-<td>Contient les points de montage des systèmes de fichiers temporaires.</td>
+<td><code>/media</code>, <code>/mnt</code></td>
+<td>Points de montage de systèmes de fichiers</td>
 </tr>
 <tr>
 <td><code>/opt</code></td>
-<td>Contient les logiciels additionnels.</td>
+<td>Logiciels additionnels</td>
 </tr>
 <tr>
 <td><code>/proc</code></td>
-<td>Contient les informations sur les processus et le système.</td>
+<td>Système de fichiers virtuel : infos sur processus</td>
 </tr>
 <tr>
 <td><code>/root</code></td>
-<td>Répertoire personnel de l'administrateur.</td>
-</tr>
-<tr>
-<td><code>/run</code></td>
-<td>Contient les fichiers d'exécution des applications.</td>
+<td>Répertoire personnel de l’administrateur</td>
 </tr>
 <tr>
 <td><code>/sbin</code></td>
-<td>Contient les programmes essentiels au fonctionnement du système.</td>
-</tr>
-<tr>
-<td><code>/srv</code></td>
-<td>Contient les données des services fournis par le système.</td>
-</tr>
-<tr>
-<td><code>/sys</code></td>
-<td>Contient les informations sur les périphériques.</td>
+<td>Programmes d’administration système</td>
 </tr>
 <tr>
 <td><code>/tmp</code></td>
-<td>Contient les fichiers temporaires.</td>
+<td>Fichiers temporaires</td>
 </tr>
 <tr>
 <td><code>/usr</code></td>
-<td>Contient les programmes, les bibliothèques et les fichiers de configuration.</td>
+<td>Programmes et bibliothèques (<code>/usr/bin</code>, <code>/usr/lib</code>…)</td>
 </tr>
 <tr>
 <td><code>/var</code></td>
-<td>Contient les fichiers variables comme les logs, les mails, les bases de données, etc.</td>
-</tr>
-<tr>
-<td><code>/lost+found</code></td>
-<td>Contient les fichiers récupérés lors d'un crash du système.</td>
+<td>Fichiers variables (journaux, mails, bases…)</td>
 </tr>
 </tbody>
 </table>
+<blockquote>
+<p><strong>Référence</strong> : <em>Filesystem Hierarchy Standard</em>, v3.0, The Linux Foundation, 2015. <a href="https://refspecs.linuxfoundation.org/fhs.shtml">https://refspecs.linuxfoundation.org/fhs.shtml</a></p>
+</blockquote>
 </div>
-<hr />
-<h3 id="exercice-1-id-et-etcpasswd">Exercice 1 : <code>id</code> et <code>/etc/passwd</code> 📚</h3>
+<h3 id="exercice-1-id-et-etcpasswd">Exercice 1 — <code>id</code> et <code>/etc/passwd</code> 📚</h3>
 <ol>
-<li>Entrez les commandes suivantes dans un terminal et notez les résultats :
+<li>Entrez la commande suivante et notez le résultat :
    <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span>id
 </code></pre></div></li>
-<li>Ensuite tapez la même commande, mais cette fois-ci avec l'argument <code>root</code>, notez les résultats.
+<li>Tapez la même commande avec l’argument <code>root</code> :
    <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span>id<span class="w"> </span>root
 </code></pre></div></li>
-<li>Affichez ensuite le contenu du fichier <code>/etc/passwd</code> avec la commande <code>cat</code>. </li>
-<li>Recherchez les lignes où apparaîssent votre nom d'utilisateur et celui de l'utilisateur <code>root</code>. Quelles sont les différences ?</li>
+<li>Affichez le contenu de <code>/etc/passwd</code> avec <code>cat</code>.</li>
+<li>Recherchez les lignes correspondant à votre nom d’utilisateur et à <code>root</code>. Quelles sont les différences ?</li>
 <li>Pouvez-vous déduire à quoi sert le fichier <code>/etc/passwd</code> ?</li>
 </ol>
-<h2 id="permissions-associees-aux-fichiers">Permissions associées aux fichiers</h2>
+<hr />
+<h2 id="2-permissions-associees-aux-fichiers">2. Permissions associées aux fichiers</h2>
 <div class="admonition tip">
 <p class="admonition-title">Protection des fichiers</p>
-<p>Un système Linux peut permettre à de nombreux utilisateurs d'accéder aux fichiers et aux répertoires. Pour protéger les fichiers et les répertoires, Linux utilise un système de permissions. Les permissions sont des droits d'accès aux fichiers et aux répertoires. Les permissions sont associées à des utilisateurs et à des groupes. Les utilisateurs sont des personnes qui ont un compte sur le système.</p>
-<p>Pour les fichiers normaux, les permissions sont associées à trois catégories d'utilisateurs : le propriétaire du fichier (généralement celui qui a crée le fichier), le groupe propriétaire du fichier et les autres utilisateurs. </p>
-<p>Les catégories de permissions pour un fichier sont les suivantes :</p>
+<p>Un système Linux permet à plusieurs utilisateurs d’accéder aux fichiers. Pour les protéger, Linux utilise un système de <strong>permissions</strong> associées à trois catégories :</p>
 <ul>
-<li><strong>read</strong> <code>r</code>: permet de lire le contenu du fichier.</li>
-<li><strong>write</strong> <code>w</code>: permet de modifier le contenu du fichier.</li>
-<li><strong>execute</strong> <code>x</code>: permet d'exécuter le fichier (si c'est un programme ou un script).</li>
+<li>le <strong>propriétaire</strong> (<code>u</code> — <em>user</em>) : généralement le créateur du fichier ;</li>
+<li>le <strong>groupe</strong> propriétaire (<code>g</code> — <em>group</em>) ;</li>
+<li>les <strong>autres</strong> utilisateurs (<code>o</code> — <em>others</em>).</li>
 </ul>
-<p>L'option <code>-l</code> de la commande <code>ls</code> affiche les méta-données associées à un fichier, son nom, sa taille, son propriétaire, son groupe, ... et en particuler ses permissions, par exemple :</p>
+<p>Pour un <strong>fichier ordinaire</strong> :</p>
+<ul>
+<li><strong><code>r</code></strong> (<em>read</em>) : lecture du contenu ;</li>
+<li><strong><code>w</code></strong> (<em>write</em>) : modification du contenu ;</li>
+<li><strong><code>x</code></strong> (<em>execute</em>) : exécution (si programme ou script).</li>
+</ul>
+<p>L’option <code>-l</code> de <code>ls</code> affiche les métadonnées :</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>fichier
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>user<span class="w"> </span>group<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">2019</span>-09-09<span class="w"> </span><span class="m">10</span>:00<span class="w"> </span>fichier
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>user<span class="w"> </span>group<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">2024</span>-09-09<span class="w"> </span><span class="m">10</span>:00<span class="w"> </span>fichier
 </code></pre></div>
-<p>La chaîne <code>-rw-r--r--</code> représente les permissions associées au fichier. Le premier caractère désigne le type du fichier, les trois suivants représentent les permissions du propriétaire, les trois suivants celles du groupe propriétaire et les trois derniers celles des autres utilisateurs. Les permissions sont représentées par les caractères <code>r</code>, <code>w</code> et <code>x</code> pour les permissions respectivement en lecture, écriture et exécution. Si la permission n'est pas accordée, le caractère <code>-</code> est utilisé à la place.</p>
-<p>Les permissions peuvent être représentées par des <strong>chiffres (représentation en octal)</strong> ou des <strong>lettres (représentation symbolique)</strong>.</p>
-<p>Le tableau suivant donne la correspondance entre les deux représentations :</p>
+<p>La chaîne <code>-rw-r--r--</code> se lit :</p>
+<ul>
+<li><strong>1er caractère</strong> : type (<code>-</code> fichier ordinaire, <code>d</code> répertoire, <code>l</code> lien symbolique…).</li>
+<li><strong>caractères 2–4</strong> : permissions du propriétaire.</li>
+<li><strong>caractères 5–7</strong> : permissions du groupe.</li>
+<li><strong>caractères 8–10</strong> : permissions des autres.</li>
+</ul>
+<p>Correspondance octale ↔ symbolique :</p>
 <table>
 <thead>
 <tr>
@@ -905,61 +1002,25 @@
 </tr>
 </tbody>
 </table>
-<p>C'est-à-dire que pour la chaîne <code>-rw-r--r--</code> les permissions sont les suivantes :</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Utilisateur</th>
-<th>Groupe</th>
-<th>Autres</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>symbolique</td>
-<td><code>rw-</code></td>
-<td><code>r--</code></td>
-<td><code>r--</code></td>
-</tr>
-<tr>
-<td>binaire</td>
-<td>110</td>
-<td>100</td>
-<td>100</td>
-</tr>
-<tr>
-<td>octale</td>
-<td>6</td>
-<td>4</td>
-<td>4</td>
-</tr>
-</tbody>
-</table>
 </div>
-<hr />
-<h3 id="exercice-2-permissions-associees-aux-fichiers">Exercice 2 : Permissions associées aux fichiers 📚</h3>
+<h3 id="exercice-2-lire-les-permissions">Exercice 2 — Lire les permissions 📚</h3>
 <ol>
-<li>
-<p>Créez un répertoire vide et un fichier vide (ces deux derniers doivent être au même niveau). Utilisez la commande <code>ls</code> et les options <code>-l</code> et <code>-d</code> sur chacun de ces deux nouveaux fichiers pour déterminer les permissions que vous (respectivement votre groupe et les autres) avez sur ces fichiers. Comment reconnaissez-vous un répertoire ?</p>
-</li>
-<li>
-<p>Les lignes suivantes donnent la réponse de la commande <code>ls -ld</code> sur un certain répertoire (pour les besoins de l'exercice nous n'avons reporté que le premier et le dernier champ du résultat de <code>ls -ld</code>).
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>drwxr-xr-x<span class="w"> </span>a
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>dr-xr--r--<span class="w"> </span>b
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>-rw-r--r--<span class="w"> </span>c.txt
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>--w--w-r--<span class="w"> </span>d.c
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>-rwxr-xr-x<span class="w"> </span>op
+<li>Créez un répertoire vide et un fichier vide, au même niveau. Avec <code>ls -l</code> et <code>ls -ld</code>, déterminez les permissions du propriétaire, du groupe et des autres. Comment reconnaissez-vous un répertoire ?</li>
+<li>Les lignes suivantes donnent la réponse de <code>ls -ld</code> sur différents fichiers :
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>drwxr-xr-x a
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>dr-xr--r-- b
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>-rw-r--r-- c.txt
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>--w--w-r-- d.c
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>-rwxr-xr-x op
 </code></pre></div>
-    Parmi ces fichiers, quels sont les répertoires ?</p>
-</li>
-<li>Pour chacun des fichiers ci-dessus, donnez les permissions associées à chacun des utilisateurs (propriétaire, groupe propriétaire et autres utilisateurs) en utilisant la représentation symbolique et la représentation octale.</li>
-<li>Donnez la représentation symbolique et la représentation octale des permissions associées au fichier <code>/etc/passwd</code>, à la commande <code>ls</code> et à votre répertoire personnel.</li>
+   Parmi ces fichiers, lesquels sont des <strong>répertoires</strong> ?</li>
+<li>Pour chacun des fichiers ci-dessus, donnez les permissions en représentations <strong>symbolique</strong> et <strong>octale</strong>.</li>
+<li>Donnez les représentations symbolique et octale des permissions de <code>/etc/passwd</code>, de la commande <code>ls</code> et de votre répertoire personnel.</li>
 </ol>
-<h3 id="exercice-3-modification-des-permissions-chmod">Exercice 3 : Modification des permissions <code>chmod</code> 📚📚</h3>
+<h3 id="exercice-3-modification-des-permissions-chmod">Exercice 3 — Modification des permissions <code>chmod</code> 📚📚</h3>
 <ol>
-<li>Testez les commandes suivantes dans un terminal et essayez de comprendre comment fonctionne la commande <code>chmod</code> (avec la représentation symbolique).
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>touch<span class="w"> </span>f<span class="p">;</span><span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>f
+<li>Testez les commandes suivantes et essayez de comprendre <code>chmod</code> en notation <strong>symbolique</strong> :
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>touch<span class="w"> </span>f<span class="p">;</span><span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>f
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>$<span class="w"> </span>chmod<span class="w"> </span><span class="nv">a</span><span class="o">=</span><span class="w"> </span>f<span class="p">;</span><span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>f
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>$<span class="w"> </span>chmod<span class="w"> </span>o+rw<span class="w"> </span>f<span class="p">;</span><span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>f
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>$<span class="w"> </span>chmod<span class="w"> </span><span class="nv">u</span><span class="o">=</span>o<span class="w"> </span>f<span class="p">;</span><span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>f
@@ -967,67 +1028,70 @@
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>$<span class="w"> </span>chmod<span class="w"> </span>g+u<span class="w"> </span>f<span class="p">;</span><span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>f
 <a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>$<span class="w"> </span>chmod<span class="w"> </span>a+x,g-w<span class="w"> </span>f<span class="p">;</span><span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>f
 </code></pre></div></li>
-<li>Testez la commande <code>chmod 644 f; ls -l f</code>. Que fait cette commande ?</li>
-<li>Avec les deux modes d'utilisation de <code>chmod</code> (octale et symbolique), modifiez les permissions du fichier <code>f</code> de la manière suivante :<ul>
-<li>exécution pour tous, lecture et écriture uniquement pour le propriétaire.</li>
-<li>lecture et exécution pour tous, personne ne peut écrire.</li>
-<li>toutes les permissions pour tous, pas d'écriture pour les autres.</li>
-<li>lecture et écriture pour le propriétaire, exécution pour le groupe et aucune pour les autres.</li>
-</ul>
-</li>
+<li>Testez <code>chmod 644 f; ls -l f</code>. Que fait cette commande ?</li>
+<li>Avec les <strong>deux notations</strong> (octale et symbolique), modifiez les permissions de <code>f</code> pour obtenir :</li>
+<li>exécution pour tous, lecture et écriture uniquement pour le propriétaire ;</li>
+<li>lecture et exécution pour tous, personne ne peut écrire ;</li>
+<li>toutes les permissions pour tous, pas d’écriture pour les autres ;</li>
+<li>lecture et écriture pour le propriétaire, exécution pour le groupe, aucune pour les autres.</li>
 </ol>
-<h3 id="exercice-4-permissions-associees-aux-fichiers-normaux">Exercice 4 : Permissions associées aux fichiers normaux 📚📚</h3>
+<h3 id="exercice-4-effet-des-permissions-sur-les-operations">Exercice 4 — Effet des permissions sur les opérations 📚📚</h3>
 <ol>
-<li>Dans un répertoire de votre choix, créer deux fichiers <code>f</code> et <code>g</code>. Puis entrer (par exemple avec un éditeur de texte) du texte dans ces fichiers.</li>
-<li>Pour vous (propriétaire), retirer la permission de lire dans le fichier <code>f</code> et la permission d'écrire dans le fichier <code>g</code>.</li>
-<li>Testez ensuite les commandes suivantes, puis notez les résultats :
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span>cat<span class="w"> </span>f
+<li>Dans un répertoire de votre choix, créez deux fichiers <code>f</code> et <code>g</code>. Entrez du texte dans chacun avec un éditeur.</li>
+<li>Pour vous (propriétaire) :</li>
+<li>retirez la permission de <strong>lire</strong> dans <code>f</code> ;</li>
+<li>retirez la permission d’<strong>écrire</strong> dans <code>g</code>.</li>
+<li>Testez et notez les résultats :
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span>cat<span class="w"> </span>f
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>$<span class="w"> </span>cat<span class="w"> </span>g
 </code></pre></div></li>
-<li>Essayer de modifier <code>g</code> avec un éditeur de texte. Que se passe-t-il ?</li>
-<li>Tester les commandes:
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span>cp<span class="w"> </span>f<span class="w"> </span>h
+<li>Essayez de modifier <code>g</code> avec un éditeur de texte. Que se passe-t-il ?</li>
+<li>Testez :
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span>cp<span class="w"> </span>f<span class="w"> </span>h
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>$<span class="w"> </span>cp<span class="w"> </span>g<span class="w"> </span>h
 </code></pre></div>
-    Puis observer le contenu du fichier <code>h</code> ainsi que les permissions associées à ce fichier.</li>
-<li>La commande suivante permet d'écrire la chaîne <code>toto</code> à la fin du fichier <code>f</code> (nous la verrons plus en détail dans un prochain TP) :
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;toto&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>f
+   Puis observez le contenu de <code>h</code> et ses permissions.</li>
+<li>La commande suivante ajoute la chaîne <code>toto</code> à la fin de <code>f</code> (vu au TP4) :
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;toto&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>f
 </code></pre></div>
-    Tester cette commande, puis redonnez-vous les droits de lecture sur le fichier <code>f</code>. Enfin affichez le contenu du fichier <code>f</code> grâce à la commande <code>cat</code>.</li>
-<li>Tester la commande:
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>rm<span class="w"> </span>g
+   Testez, puis redonnez-vous la lecture sur <code>f</code>, et affichez son contenu avec <code>cat</code>.</li>
+<li>Testez :
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>rm<span class="w"> </span>g
 </code></pre></div>
-    <strong>Tapez <code>n</code> pour refuser</strong>. Enfin tester la commande suivante:
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>g
+   <strong>Tapez <code>n</code> pour refuser</strong>. Puis testez :
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>g
 </code></pre></div>
-    A-t-elle réussie ? Que pouvez vous en déduire ?</li>
+   La commande a-t-elle réussi ? Qu’en déduisez-vous ?</li>
 </ol>
-<h2 id="permissions-associees-aux-repertoires">Permissions associées aux répertoires</h2>
-<div class="admonition tip">
-<p class="admonition-title">Qu'est-ce qu'un répertoire ?</p>
-<p>Un répertoire est une table de noms de fichiers associés à un numéro d'index appelé <em>numéro d'inode</em> qui permet de connaître les informations (contenues dans l'inode) concernant ce fichier (taille, permissions, horodatage, où trouver le contenu du fichier, ...).</p>
-<p>Dans un répertoire, les permissions ne sont pas associées aux fichiers mais au répertoire lui-même. Les permissions associées à un répertoire sont :</p>
-<ul>
-<li><strong>read</strong> <code>r</code>: permet de lister le contenu du répertoire.</li>
-<li><strong>write</strong> <code>w</code>: permet de modifier le contenu du répertoire (créer ou supprimer des fichiers).</li>
-<li><strong>execute</strong> <code>x</code>: permet d'ouvrir le répertoire (avec la commande <code>cd</code> par exemple).</li>
-</ul>
-</div>
 <hr />
-<h3 id="exercice-5-permissions-associees-aux-repertoires">Exercice 5 : Permissions associées aux répertoires 📚📚📚</h3>
+<h2 id="3-permissions-associees-aux-repertoires">3. Permissions associées aux répertoires</h2>
+<div class="admonition tip">
+<p class="admonition-title">Qu’est-ce qu’un répertoire ?</p>
+<p>Un <strong>répertoire</strong> est une table associant des noms de fichiers à un numéro d’index appelé <strong>inode</strong>. L’inode contient les métadonnées (taille, permissions, horodatage, emplacement du contenu).</p>
+<p>Pour un <strong>répertoire</strong>, la sémantique des permissions diffère de celle d’un fichier :</p>
+<ul>
+<li><strong><code>r</code></strong> : permet de <strong>lister</strong> le contenu du répertoire.</li>
+<li><strong><code>w</code></strong> : permet de <strong>modifier</strong> le contenu (créer ou supprimer des fichiers).</li>
+<li><strong><code>x</code></strong> : permet d’<strong>entrer</strong> dans le répertoire (avec <code>cd</code>) et de traverser vers ses fichiers.</li>
+</ul>
+<blockquote>
+<p><strong>Référence</strong> : Bach, M. J. (1986). <em>The Design of the UNIX Operating System</em>. Prentice Hall. ISBN 978-0132017992. Chapitre 4 (Internal Representation of Files).</p>
+</blockquote>
+</div>
+<h3 id="exercice-5-permissions-sur-les-repertoires">Exercice 5 — Permissions sur les répertoires 📚📚📚</h3>
 <ol>
-<li>Créez un répertoire <code>rep</code> et deux fichiers normaux <code>a</code> et <code>b</code> à l'intérieur de ce répertoire.</li>
-<li>Retirez toutes les permissions sur le répertoire <code>rep</code> et essayez les commandes suivantes :
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>rep
+<li>Créez un répertoire <code>rep</code> et deux fichiers normaux <code>a</code> et <code>b</code> à l’intérieur.</li>
+<li>Retirez <strong>toutes</strong> les permissions sur <code>rep</code> et essayez :
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>rep
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>$<span class="w"> </span>ls<span class="w"> </span>rep
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>$<span class="w"> </span>cat<span class="w"> </span>rep/a
 <a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>$<span class="w"> </span>touch<span class="w"> </span>rep/c
 <a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>$<span class="w"> </span>rm<span class="w"> </span>rep/a
 </code></pre></div></li>
-<li>Redonnez la permission <em>read</em> uniquement sur le répertoire <code>rep</code> et essayez les toutes les commandes de la question 2. Notez les différences.</li>
-<li>Même question mais avec seulement la permission <em>write</em> sur <code>rep</code>. Notez les différences.</li>
-<li>Cette fois-ci avec uniquement la permission <em>execute</em> sur <code>rep</code>. Testez les commandes suivantes :
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>rep
+<li>Redonnez uniquement la permission <code>r</code> sur <code>rep</code> et refaites les commandes. Notez les différences.</li>
+<li>Même question avec uniquement <code>w</code> sur <code>rep</code>. Notez les différences.</li>
+<li>Uniquement <code>x</code> sur <code>rep</code> :
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>rep
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>$<span class="w"> </span>ls<span class="w"> </span>rep
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;toto&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>rep/a
 <a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>$<span class="w"> </span>cat<span class="w"> </span>rep/c
@@ -1035,66 +1099,75 @@
 <a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>$<span class="w"> </span>touch<span class="w"> </span>rep/c
 <a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>$<span class="w"> </span>rm<span class="w"> </span>rep/a
 </code></pre></div></li>
-<li>
-<p>Avec l'ensemble de permissions <code>-wx</code> sur <code>rep</code> pour tous les utilisateurs, essayez de:</p>
-<ul>
-<li>créer un fichier <code>d</code> dans <code>rep</code></li>
-<li>renommer le fichier <code>b</code></li>
-<li>retirer toutes les permissions associées au fichier <code>d</code></li>
-<li>supprimer le fichier <code>d</code></li>
-</ul>
-</li>
+<li>Avec <code>-wx</code> sur <code>rep</code> pour tous, essayez de :</li>
+<li>créer un fichier <code>d</code> dans <code>rep</code> ;</li>
+<li>renommer <code>b</code> ;</li>
+<li>retirer toutes les permissions sur <code>d</code> ;</li>
+<li>supprimer <code>d</code>.</li>
 </ol>
-<h3 id="exercice-6-les-repertoires-du-path">Exercice 6 : Les répertoires du <code>PATH</code> 📚📚📚</h3>
+<div class="admonition info">
+<p class="admonition-title">Cet exercice est représentatif d’un item type <strong>DE S42 (QCM)</strong>.</p>
+</div>
+<hr />
+<h2 id="4-le-path">4. Le <code>PATH</code></h2>
+<div class="admonition tip">
+<p class="admonition-title">La variable d’environnement <code>PATH</code></p>
+<p>Quand vous tapez une commande sans chemin (par exemple <code>ls</code>), le shell la cherche dans une liste de répertoires stockée dans la variable <strong><code>PATH</code></strong>. Les répertoires sont séparés par <code>:</code>.</p>
+<p>L’ordre compte : le shell prend la <strong>première</strong> correspondance trouvée.</p>
+</div>
+<h3 id="exercice-6-les-repertoires-du-path">Exercice 6 — Les répertoires du <code>PATH</code> 📚📚📚</h3>
 <div class="admonition warning">
-<p class="admonition-title">Attention</p>
-<p>Cet exercice de type <em>expérimentation</em> est délicat et important. Il faut le traiter avec un soin particulier et en prenant son temps.</p>
+<p class="admonition-title">Attention — exercice d’expérimentation</p>
+<p>Cet exercice est délicat et important. Prenez votre temps.</p>
 </div>
 <ol>
-<li>Ouvrir un nouveau terminal et entrer la commande suivante :
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$PATH</span>
+<li>Dans un nouveau terminal :
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$PATH</span>
 </code></pre></div>
-    Observer le résultat, à votre avis à quoi correspondent les éléments séparés par des <code>:</code> ?</li>
-<li>Créer un répertoire <code>bin</code> dans votre répertoire personnel et entrer les commandes suivantes:
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>$<span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>~/bin:<span class="nv">$PATH</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$PATH</span>
+   Observez. À votre avis, à quoi correspondent les éléments séparés par <code>:</code> ?</li>
+<li>Créez un répertoire <code>bin</code> dans votre home et modifiez <code>PATH</code> :
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>$<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>~/bin
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>$<span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>~/bin:<span class="nv">$PATH</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$PATH</span>
 </code></pre></div>
-    Quelle est la différence avec d'affichage avec le résultat de la question 1 ?</li>
-<li>À l’aide de la commande <code>type</code>, chercher les chemin absolus des programmes <code>cat</code> et <code>rm</code> et les noter.</li>
-<li>Faire une copie de <code>cat</code> dans <code>~/bin</code> en le renommant <code>rm</code>.</li>
-<li>Créer un fichier <code>fic</code>, y mettre quelques caractères et créer deux copies <code>fic2</code> et <code>fic3</code> de <code>fic</code>.</li>
-<li>Essayer de détruire <code>fic</code> avec la commande <code>rm</code>. Que s’est-il passé ?</li>
-<li>Entrer la commande <code>$ type rm</code>.</li>
-<li>Lancer la commande
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>$<span class="w"> </span>&lt;chemin<span class="w"> </span>vers<span class="w"> </span>rm&gt;<span class="w"> </span>fic
+   Quelle est la différence avec l’affichage de la question 1 ?</li>
+<li>Avec <code>type</code>, cherchez les chemins absolus de <code>cat</code> et <code>rm</code> et notez-les.</li>
+<li>Copiez <code>cat</code> dans <code>~/bin</code> en le renommant <code>rm</code>.</li>
+<li>Créez un fichier <code>fic</code> avec quelques caractères, et deux copies <code>fic2</code>, <code>fic3</code>.</li>
+<li>Essayez de détruire <code>fic</code> avec <code>rm</code>. Que s’est-il passé ?</li>
+<li>Entrez <code>type rm</code>.</li>
+<li>Lancez :
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>$<span class="w"> </span>&lt;chemin<span class="w"> </span>absolu<span class="w"> </span>vers<span class="w"> </span>rm&gt;<span class="w"> </span>fic
 </code></pre></div>
-    en remplaçant <code>&lt;chemin vers rm&gt;</code> par le chemin absolu vers la commande <code>rm</code> noté à la question 3. Que s’est-il passé ?</li>
-<li>Enlever la permission <code>x</code> sur le fichier <code>~/bin/rm</code> et essayer de supprimer <code>fic2</code>.</li>
-<li>Demander au shell d’oublier les emplacements enregistrés (« hachés ») avec la commande <code>$ hash -r</code>, puis entrer les commandes
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$<span class="w"> </span><span class="nb">type</span><span class="w"> </span>rm
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>$<span class="w"> </span>rm<span class="w"> </span>fic2
+   <em>(en remplaçant <code>&lt;chemin absolu vers rm&gt;</code> par le chemin noté à la question 3)</em>. Que s’est-il passé ?</li>
+<li>Enlevez la permission <code>x</code> sur <code>~/bin/rm</code> et essayez de supprimer <code>fic2</code>.</li>
+<li>Demandez au shell d’oublier les emplacements cachés :
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$<span class="w"> </span><span class="nb">hash</span><span class="w"> </span>-r
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>$<span class="w"> </span><span class="nb">type</span><span class="w"> </span>rm
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>$<span class="w"> </span>rm<span class="w"> </span>fic2
 </code></pre></div></li>
-<li>Remettre la permission <code>x</code> sur <code>~/bin/rm</code> puis entrer les commandes suivantes (où <code>&lt;chemin vers rm&gt;</code> désigne le chemin absolu noté à la question 3) :
+<li>Remettez la permission <code>x</code> sur <code>~/bin/rm</code> et testez :
     <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>$<span class="w"> </span>~/bin/rm<span class="w"> </span>fic3
 <a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/bin
 <a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>$<span class="w"> </span>./rm<span class="w"> </span>fic3
-<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>$<span class="w"> </span>&lt;chemin<span class="w"> </span>vers<span class="w"> </span>rm&gt;<span class="w"> </span>rm
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>$<span class="w"> </span>&lt;chemin<span class="w"> </span>absolu<span class="w"> </span>vers<span class="w"> </span>rm&gt;<span class="w"> </span>rm
 <a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>$<span class="w"> </span>rm<span class="w"> </span>fic3
 </code></pre></div></li>
-<li>Faire le bilan de cet exercice en répondant aux questions suivantes :<ul>
-<li>Qu'est-ce qui est contenu dans <code>PATH</code> ?</li>
-<li>Dans quel cas est-ce qu’un nom de commande est cherché dans les répertoires du <code>PATH</code> ?</li>
-<li>S’il y a plusieurs programmes correspondants dans les répertoires du <code>PATH</code>, lequel est choisi ?</li>
+<li><strong>Bilan</strong> — répondez :<ul>
+<li>Qu’est-ce qui est contenu dans <code>PATH</code> ?</li>
+<li>Dans quel cas un nom de commande est-il cherché dans les répertoires du <code>PATH</code> ?</li>
+<li>S’il y a plusieurs programmes correspondants, lequel est choisi ?</li>
 </ul>
 </li>
 </ol>
-<h2 id="recapitulatif-sur-permissions-et-permissions-par-defaut">Récapitulatif sur permissions et permissions par défaut</h2>
-<h3 id="exercice-7-on-lache-le-clavier">Exercice 7: On lache le clavier 📚📚</h3>
+<hr />
+<h2 id="5-recapitulatif-sur-les-permissions">5. Récapitulatif sur les permissions</h2>
+<h3 id="exercice-7-on-lache-le-clavier">Exercice 7 — On lâche le clavier 📚📚📚</h3>
 <div class="admonition info">
 <p class="admonition-title">Consigne</p>
-<p>Cet exercice est à faire à l’écrit, on lâche le clavier !</p>
+<p>Cet exercice se fait <strong>à l’écrit</strong> — on lâche le clavier.</p>
 </div>
-<p>Pour chacune des commandes suivantes, dire quelles permissions sont nécessaires pour qu’elle réussisse (on suppose que tous les répertoires et fichiers existent, sauf ceux qu’on veut créer).</p>
+<p>Pour chacune des commandes suivantes, dites <strong>quelles permissions sont nécessaires</strong> pour qu’elle réussisse (on suppose que tous les répertoires et fichiers existent, sauf ceux qu’on veut créer).</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>$<span class="w"> </span>cat<span class="w"> </span>/usr/include/stdio.h
 <a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/usr/include/
 <a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>$<span class="w"> </span>ls<span class="w"> </span>/usr/include/
@@ -1104,28 +1177,138 @@
 <a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>$<span class="w"> </span>chmod<span class="w"> </span>u+w<span class="w"> </span>/usr/include/stdio.h
 <a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>$<span class="w"> </span>/usr/bin/uname
 </code></pre></div>
-<h3 id="exercice-8-permissions-par-defaut-et-umask-optionnel">Exercice 8 : Permissions par défaut et <code>umask</code> (optionnel) 📚📚📚</h3>
+<div class="admonition info">
+<p class="admonition-title">Cet exercice est représentatif d’un item type <strong>DE S42 (QCM)</strong>.</p>
+</div>
+<hr />
+<h2 id="synthese-ce-que-vous-devez-savoir-faire">Synthèse — Ce que vous devez savoir faire</h2>
+<div class="admonition success">
+<p class="admonition-title">Auto-évaluation rapide (tronc commun)</p>
+<p>Avant de quitter la séance, vérifiez que vous savez :</p>
+<ul>
+<li>[ ] Citer le rôle des principaux répertoires (<code>/etc</code>, <code>/home</code>, <code>/usr</code>, <code>/var</code>, <code>/bin</code>, <code>/tmp</code>).</li>
+<li>[ ] Interpréter <code>id</code> et le format de <code>/etc/passwd</code>.</li>
+<li>[ ] Lire les 9 caractères de permissions et identifier propriétaire / groupe / autres.</li>
+<li>[ ] Modifier les permissions avec <code>chmod</code> en notations <strong>symbolique</strong> et <strong>octale</strong>.</li>
+<li>[ ] Expliquer la différence de sémantique de <code>r</code>, <code>w</code>, <code>x</code> entre <strong>fichiers</strong> et <strong>répertoires</strong>.</li>
+<li>[ ] Décrire ce que contient <code>PATH</code> et comment le shell résout une commande.</li>
+<li>[ ] Déterminer les permissions minimales pour une opération donnée.</li>
+</ul>
+<p>Si un item n’est pas coché, <strong>revenez sur l’exercice correspondant</strong> avant le TP3.</p>
+</div>
+<hr />
+<h2 id="exercices-supplementaires-groupe-etoile">⭐ Exercices supplémentaires — Groupe étoile</h2>
+<div class="admonition star">
+<p class="admonition-title">À qui s’adressent les exercices 8, 9, 10 ?</p>
+<p>Vous avez terminé les exercices 1 à 7 ? Ces trois exercices prolongent la progression C entamée au TP1.</p>
+<p><strong>Rappel TP1 ⭐</strong> : vous avez utilisé <code>open(O_RDONLY)</code>, <code>read()</code>, <code>write()</code>, <code>close()</code>, <code>perror()</code>.
+<strong>TP2 ⭐</strong> : vous allez <strong>créer</strong> des fichiers en C avec <code>open(O_WRONLY|O_CREAT, mode)</code>, naviguer dedans avec <code>lseek()</code>, puis combiner pour écrire votre propre <code>cp</code>.</p>
+<p>Ces exercices sont <strong>optionnels</strong> et <strong>non évalués</strong>.</p>
+</div>
+<h3 id="exercice-8-comprendre-et-manipuler-umask">Exercice 8 — Comprendre et manipuler <code>umask</code> ⭐</h3>
 <div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p><code>umask</code> est une commande qui permet de définir les permissions par défaut des fichiers et des répertoires que vous créez. La valeur de l'umask est une valeur octale qui est <em>soustraite</em> des permissions par défaut. Par exemple, si l'umask vaut 022, les permissions par défaut sont 755 pour les répertoires et 644 pour les fichiers.</p>
+<p class="admonition-title"><code>umask</code></p>
+<p><code>umask</code> définit les permissions <strong>retirées par défaut</strong> des fichiers et répertoires que vous créez. La valeur est octale : elle est <strong>soustraite</strong> des permissions par défaut (666 pour les fichiers, 777 pour les répertoires).</p>
+<p>Exemple : si <code>umask</code> vaut <code>022</code>, un fichier créé aura <code>644</code> (= <code>666 − 022</code>) et un répertoire <code>755</code> (= <code>777 − 022</code>).</p>
 </div>
 <ol>
-<li>Dans un terminal, tapez la commande <code>umask</code> et notez le résultat.</li>
-<li>Créez un répertoire <code>rep</code> et un fichier <code>f</code> au même niveau que <code>rep</code>. Affichez les permissions associées à <code>rep</code> et <code>f</code> avec la commande <code>ls -ld rep f</code>. Convertissez ces permissions en représentation octale et notez-les. Enfin, supprimez <code>rep</code> et <code>f</code>.</li>
-<li>Changez la valeur du masque avec la commande
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>$<span class="w"> </span><span class="nb">umask</span><span class="w"> </span><span class="m">240</span>
+<li>Tapez <code>umask</code> et notez le résultat.</li>
+<li>Créez un répertoire <code>rep</code> et un fichier <code>f</code> au même niveau. Affichez leurs permissions avec <code>ls -ld rep f</code>. Convertissez en octal et notez.</li>
+<li>Changez le masque :
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>$<span class="w"> </span><span class="nb">umask</span><span class="w"> </span><span class="m">240</span>
+</code></pre></div>
+   Refaites la question 2.</li>
+<li>Idem avec :
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>$<span class="w"> </span><span class="nb">umask</span><span class="w"> </span><span class="m">121</span>
 </code></pre></div></li>
-<li>Changez la valeur du masque avec la commande
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>$<span class="w"> </span><span class="nb">umask</span><span class="w"> </span><span class="m">121</span>
-</code></pre></div>
-    puis refaites la question 2.</li>
-<li>Changez la valeur du masque avec la commande
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>$<span class="w"> </span><span class="nb">umask</span><span class="w"> </span><span class="m">666</span>
-</code></pre></div>
-    puis refaites la question 2.</li>
-<li>De toutes les questions précédentes, pouvez-vous déduire comment la valeur de l'umask agit sur les permissions associées aux répertoires et aux fichiers que vous créez ?</li>
-<li>Donnez à l'umask sa valeur initiale.</li>
+<li>Idem avec :
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>$<span class="w"> </span><span class="nb">umask</span><span class="w"> </span><span class="m">666</span>
+</code></pre></div></li>
+<li>Pouvez-vous déduire comment <code>umask</code> agit ?</li>
+<li>Restaurez la valeur initiale de <code>umask</code>.</li>
 </ol>
+<h3 id="exercice-9-creer-un-fichier-en-c-avec-open-et-write">Exercice 9 — Créer un fichier en C avec <code>open()</code> et <code>write()</code> ⭐</h3>
+<ol>
+<li>Lisez <code>man 2 open</code>. Identifiez les flags <code>O_WRONLY</code>, <code>O_CREAT</code>, <code>O_TRUNC</code> et le rôle du <strong>3ᵉ argument</strong> (<code>mode</code>).</li>
+<li>Dans <code>~/c/</code>, créez <code>write-hello.c</code> :
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fcntl.h&gt;</span><span class="c1">     /* open, O_WRONLY, O_CREAT, O_TRUNC */</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unistd.h&gt;</span><span class="c1">    /* write, close */</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="c1">     /* perror */</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span><span class="c1">    /* strlen */</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">open</span><span class="p">(</span><span class="s">&quot;hello.txt&quot;</span><span class="p">,</span>
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="w">                  </span><span class="n">O_WRONLY</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">O_CREAT</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">O_TRUNC</span><span class="p">,</span>
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="w">                  </span><span class="mo">0644</span><span class="p">);</span><span class="w">          </span><span class="cm">/* permissions : rw-r--r-- */</span>
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fd</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">perror</span><span class="p">(</span><span class="s">&quot;open&quot;</span><span class="p">);</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>
+<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Écrit depuis un programme C.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="w">    </span><span class="n">write</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="p">,</span><span class="w"> </span><span class="n">strlen</span><span class="p">(</span><span class="n">msg</span><span class="p">));</span>
+<a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>
+<a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a><span class="w">    </span><span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span>
+<a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a><span class="p">}</span>
+</code></pre></div></li>
+<li>Compilez : <code>gcc -Wall -o write-hello write-hello.c</code>.</li>
+<li>Exécutez : <code>./write-hello</code>.</li>
+<li>Vérifiez :
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>$<span class="w"> </span>cat<span class="w"> </span>hello.txt
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>hello.txt
+</code></pre></div></li>
+<li><strong>Questions</strong> :</li>
+<li>Quel rôle joue chacun des trois flags ?</li>
+<li>Pourquoi le mode <code>0644</code> ? Reliez à ce que vous avez vu dans ce TP.</li>
+<li>Que se passe-t-il si vous remplacez <code>O_TRUNC</code> par <code>O_APPEND</code> et relancez plusieurs fois ?</li>
+</ol>
+<h3 id="exercice-10-naviguer-dans-un-fichier-avec-lseek">Exercice 10 — Naviguer dans un fichier avec <code>lseek()</code> ⭐</h3>
+<p><code>lseek()</code> positionne le <strong>curseur</strong> de lecture/écriture dans un fichier, permettant l’accès aléatoire.</p>
+<ol>
+<li>Lisez <code>man 2 lseek</code>. Notez les constantes <code>SEEK_SET</code>, <code>SEEK_CUR</code>, <code>SEEK_END</code>.</li>
+<li>Créez <code>read-skip.c</code> :
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fcntl.h&gt;</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unistd.h&gt;</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">open</span><span class="p">(</span><span class="s">&quot;/etc/passwd&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">O_RDONLY</span><span class="p">);</span>
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fd</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">perror</span><span class="p">(</span><span class="s">&quot;open&quot;</span><span class="p">);</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lseek</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="n">SEEK_SET</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="p">(</span><span class="kt">off_t</span><span class="p">)</span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="w">        </span><span class="n">perror</span><span class="p">(</span><span class="s">&quot;lseek&quot;</span><span class="p">);</span><span class="w"> </span><span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a>
+<a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">buf</span><span class="p">[</span><span class="mi">50</span><span class="p">];</span>
+<a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a><span class="w">    </span><span class="kt">ssize_t</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">read</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="n">buf</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="n">buf</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a><span class="w">        </span><span class="n">buf</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;\0&#39;</span><span class="p">;</span>
+<a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Octets 100 à %ld :</span><span class="se">\n</span><span class="s">%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">long</span><span class="p">)(</span><span class="mi">100</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">n</span><span class="p">),</span><span class="w"> </span><span class="n">buf</span><span class="p">);</span>
+<a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a>
+<a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a><span class="w">    </span><span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span>
+<a id="__codelineno-23-21" name="__codelineno-23-21" href="#__codelineno-23-21"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-23-22" name="__codelineno-23-22" href="#__codelineno-23-22"></a><span class="p">}</span>
+</code></pre></div></li>
+<li>Compilez et exécutez. Comparez avec <code>head -c 150 /etc/passwd | tail -c 50</code>.</li>
+<li><strong>Questions</strong> :</li>
+<li>Que fait <code>lseek(fd, 0, SEEK_END)</code> ?</li>
+<li>Modifiez le programme pour afficher la <strong>taille en octets</strong> du fichier <code>/etc/passwd</code>. Comparez avec <code>wc -c /etc/passwd</code>.</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Vers le TP3</p>
+<p>Au TP3 vous approfondirez la compilation C et manipulerez les <strong>descripteurs de fichiers</strong> (stdin/stdout/stderr, <code>dup</code>, <code>dup2</code>).</p>
+<blockquote>
+<p><strong>Référence</strong> : Kerrisk, M. (2010). <em>The Linux Programming Interface</em>. No Starch Press. ISBN 978-1593272203, chapitres 4 (File I/O) et 15 (File Attributes).</p>
+</blockquote>
+</div>
+<hr />
+<h2 id="pour-aller-plus-loin-lectures-recommandees">Pour aller plus loin (lectures recommandées)</h2>
+<ul>
+<li><em>Filesystem Hierarchy Standard</em> v3.0 : <a href="https://refspecs.linuxfoundation.org/fhs.shtml">https://refspecs.linuxfoundation.org/fhs.shtml</a></li>
+<li><em>Debian Reference</em> : <a href="https://www.debian.org/doc/manuals/debian-reference/">https://www.debian.org/doc/manuals/debian-reference/</a></li>
+<li>Bach, M. J. (1986). <em>The Design of the UNIX Operating System</em>. Prentice Hall. ISBN 978-0132017992.</li>
+<li>Kerrisk, M. (2010). <em>The Linux Programming Interface</em>. No Starch Press. ISBN 978-1593272203.</li>
+<li>Stevens, W. R., &amp; Rago, S. A. (2013). <em>Advanced Programming in the UNIX Environment</em>, 3rd ed. Addison-Wesley. ISBN 978-0321637734.</li>
+</ul>
 
 
 
