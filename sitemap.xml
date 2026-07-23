@@ -1,3 +1,227 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>None./</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="None"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/"/>
+    </url>
+    <url>
+        <loc>Nonecontenus/Intro-MarioNum/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/Intro-MarioNum/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/Intro-MarioNum/"/>
+    </url>
+    <url>
+        <loc>Nonecontenus/codespace/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/codespace/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/codespace/"/>
+    </url>
+    <url>
+        <loc>Nonecontenus/corrige-tp2/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/corrige-tp2/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/corrige-tp2/"/>
+    </url>
+    <url>
+        <loc>Nonecontenus/corrige-tp3/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/corrige-tp3/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/corrige-tp3/"/>
+    </url>
+    <url>
+        <loc>Nonecontenus/corrige-tp4/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/corrige-tp4/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/corrige-tp4/"/>
+    </url>
+    <url>
+        <loc>Nonecontenus/draft-corrige-tp4/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/draft-corrige-tp4/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/draft-corrige-tp4/"/>
+    </url>
+    <url>
+        <loc>Nonecontenus/installation-wsl/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/installation-wsl/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/installation-wsl/"/>
+    </url>
+    <url>
+        <loc>Nonecontenus/old-tp4/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/old-tp4/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/old-tp4/"/>
+    </url>
+    <url>
+        <loc>Nonecontenus/old-tp5/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/old-tp5/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/old-tp5/"/>
+    </url>
+    <url>
+        <loc>Nonecontenus/preliminary-reading/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/preliminary-reading/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/preliminary-reading/"/>
+    </url>
+    <url>
+        <loc>Nonecontenus/tp1/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/tp1/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/tp1/"/>
+    </url>
+    <url>
+        <loc>Nonecontenus/tp2/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/tp2/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/tp2/"/>
+    </url>
+    <url>
+        <loc>Nonecontenus/tp3/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/tp3/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/tp3/"/>
+    </url>
+    <url>
+        <loc>Nonecontenus/tp4-exo/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/tp4-exo/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/tp4-exo/"/>
+    </url>
+    <url>
+        <loc>Nonecontenus/tp4/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/tp4/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/tp4/"/>
+    </url>
+    <url>
+        <loc>Noneen/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="None"/>
+    </url>
+    <url>
+        <loc>Noneen/contenus/Intro-MarioNum/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/Intro-MarioNum/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/Intro-MarioNum/"/>
+    </url>
+    <url>
+        <loc>Noneen/contenus/codespace/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/codespace/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/codespace/"/>
+    </url>
+    <url>
+        <loc>Noneen/contenus/corrige-tp2/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/corrige-tp2/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/corrige-tp2/"/>
+    </url>
+    <url>
+        <loc>Noneen/contenus/corrige-tp3/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/corrige-tp3/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/corrige-tp3/"/>
+    </url>
+    <url>
+        <loc>Noneen/contenus/corrige-tp4/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/corrige-tp4/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/corrige-tp4/"/>
+    </url>
+    <url>
+        <loc>Noneen/contenus/draft-corrige-tp4/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/draft-corrige-tp4/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/draft-corrige-tp4/"/>
+    </url>
+    <url>
+        <loc>Noneen/contenus/installation-wsl/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/installation-wsl/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/installation-wsl/"/>
+    </url>
+    <url>
+        <loc>Noneen/contenus/old-tp4/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/old-tp4/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/old-tp4/"/>
+    </url>
+    <url>
+        <loc>Noneen/contenus/old-tp5/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/old-tp5/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/old-tp5/"/>
+    </url>
+    <url>
+        <loc>Noneen/contenus/preliminary-reading/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/preliminary-reading/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/preliminary-reading/"/>
+    </url>
+    <url>
+        <loc>Noneen/contenus/tp1/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/tp1/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/tp1/"/>
+    </url>
+    <url>
+        <loc>Noneen/contenus/tp2/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/tp2/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/tp2/"/>
+    </url>
+    <url>
+        <loc>Noneen/contenus/tp3/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/tp3/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/tp3/"/>
+    </url>
+    <url>
+        <loc>Noneen/contenus/tp4-exo/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/tp4-exo/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/tp4-exo/"/>
+    </url>
+    <url>
+        <loc>Noneen/contenus/tp4/</loc>
+        <lastmod>2026-07-23</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/tp4/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/tp4/"/>
+    </url>
 </urlset>
