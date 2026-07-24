@@ -1,0 +1,1682 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../glossaire/">
+      
+      
+      
+      <link rel="icon" href="../../assets/img/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+    
+    
+      
+        <title>FAQ — Problèmes courants - TI507N - Introduction au système Linux</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35e1ed30.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M1 7.775V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 0 1 0 2.474l-5.026 5.026a1.75 1.75 0 0 1-2.474 0l-6.25-6.25A1.752 1.752 0 0 1 1 7.775Zm1.5 0c0 .066.026.13.073.177l6.25 6.25a.25.25 0 0 0 .354 0l5.025-5.025a.25.25 0 0 0 0-.354l-6.25-6.25a.25.25 0 0 0-.177-.073H2.75a.25.25 0 0 0-.25.25ZM6 5a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M2.5 1.75v11.5c0 .138.112.25.25.25h3.17a.75.75 0 0 1 0 1.5H2.75A1.75 1.75 0 0 1 1 13.25V1.75C1 .784 1.784 0 2.75 0h8.5C12.216 0 13 .784 13 1.75v7.736a.75.75 0 0 1-1.5 0V1.75a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25Zm13.274 9.537v-.001l-4.557 4.45a.75.75 0 0 1-1.055-.008l-1.943-1.95a.75.75 0 0 1 1.062-1.058l1.419 1.425 4.026-3.932a.75.75 0 1 1 1.048 1.074ZM4.75 4h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM4 7.75A.75.75 0 0 1 4.75 7h2a.75.75 0 0 1 0 1.5h-2A.75.75 0 0 1 4 7.75Z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.499.75a.75.75 0 0 1 1.5 0v.996C5.9 2.903 6.793 3.65 7.662 4.376l.24.202c-.036-.694.055-1.422.426-2.163C9.1.873 10.794-.045 12.622.26 14.408.558 16 1.94 16 4.25c0 1.278-.954 2.575-2.44 2.734l.146.508.065.22c.203.701.412 1.455.476 2.226.142 1.707-.4 3.03-1.487 3.898C11.714 14.671 10.27 15 8.75 15h-6a.75.75 0 0 1 0-1.5h1.376a4.484 4.484 0 0 1-.563-1.191 3.835 3.835 0 0 1-.05-2.063 4.647 4.647 0 0 1-2.025-.293.75.75 0 0 1 .525-1.406c1.357.507 2.376-.006 2.698-.318l.009-.01a.747.747 0 0 1 1.06 0 .748.748 0 0 1-.012 1.074c-.912.92-.992 1.835-.768 2.586.221.74.745 1.337 1.196 1.621H8.75c1.343 0 2.398-.296 3.074-.836.635-.507 1.036-1.31.928-2.602-.05-.603-.216-1.224-.422-1.93l-.064-.221c-.12-.407-.246-.84-.353-1.29a2.425 2.425 0 0 1-.507-.441 3.075 3.075 0 0 1-.633-1.248.75.75 0 0 1 1.455-.364c.046.185.144.436.31.627.146.168.353.305.712.305.738 0 1.25-.615 1.25-1.25 0-1.47-.95-2.315-2.123-2.51-1.172-.196-2.227.387-2.706 1.345-.46.92-.27 1.774.019 3.062l.042.19a.884.884 0 0 1 .01.05c.348.443.666.949.94 1.553a.75.75 0 1 1-1.365.62c-.553-1.217-1.32-1.94-2.3-2.768L6.7 5.527c-.814-.68-1.75-1.462-2.692-2.619a3.737 3.737 0 0 0-1.023.88c-.406.495-.663 1.036-.722 1.508.116.122.306.21.591.239.388.038.797-.06 1.032-.19a.75.75 0 0 1 .728 1.31c-.515.287-1.23.439-1.906.373-.682-.067-1.473-.38-1.879-1.193L.75 5.677V5.5c0-.984.48-1.94 1.077-2.664.46-.559 1.05-1.055 1.673-1.353V.75Z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M2.344 2.343h-.001a8 8 0 0 1 11.314 11.314A8.002 8.002 0 0 1 .234 10.089a8 8 0 0 1 2.11-7.746Zm1.06 10.253a6.5 6.5 0 1 0 9.108-9.275 6.5 6.5 0 0 0-9.108 9.275ZM6.03 4.97 8 6.94l1.97-1.97a.749.749 0 0 1 1.275.326.749.749 0 0 1-.215.734L9.06 8l1.97 1.97a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L8 9.06l-1.97 1.97a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L6.94 8 4.97 6.03a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018Z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M9.504.43a1.516 1.516 0 0 1 2.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.249 1.249 0 0 1-.871.354h-.302a1.25 1.25 0 0 1-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004L9.503.429Zm1.047 1.074L3.286 8.571A.25.25 0 0 0 3.462 9H6.75a.75.75 0 0 1 .694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0 0 12.538 7H9.25a.75.75 0 0 1-.683-1.06l2.008-4.418.003-.006a.036.036 0 0 0-.004-.009l-.006-.006-.008-.001c-.003 0-.006.002-.009.004Z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4.72.22a.75.75 0 0 1 1.06 0l1 .999a3.488 3.488 0 0 1 2.441 0l.999-1a.748.748 0 0 1 1.265.332.75.75 0 0 1-.205.729l-.775.776c.616.63.995 1.493.995 2.444v.327c0 .1-.009.197-.025.292.408.14.764.392 1.029.722l1.968-.787a.75.75 0 0 1 .556 1.392L13 7.258V9h2.25a.75.75 0 0 1 0 1.5H13v.5c0 .409-.049.806-.141 1.186l2.17.868a.75.75 0 0 1-.557 1.392l-2.184-.873A4.997 4.997 0 0 1 8 16a4.997 4.997 0 0 1-4.288-2.427l-2.183.873a.75.75 0 0 1-.558-1.392l2.17-.868A5.036 5.036 0 0 1 3 11v-.5H.75a.75.75 0 0 1 0-1.5H3V7.258L.971 6.446a.75.75 0 0 1 .558-1.392l1.967.787c.265-.33.62-.583 1.03-.722a1.677 1.677 0 0 1-.026-.292V4.5c0-.951.38-1.814.995-2.444L4.72 1.28a.75.75 0 0 1 0-1.06Zm.53 6.28a.75.75 0 0 0-.75.75V11a3.5 3.5 0 1 0 7 0V7.25a.75.75 0 0 0-.75-.75ZM6.173 5h3.654A.172.172 0 0 0 10 4.827V4.5a2 2 0 1 0-4 0v.327c0 .096.077.173.173.173Z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M5 5.782V2.5h-.25a.75.75 0 0 1 0-1.5h6.5a.75.75 0 0 1 0 1.5H11v3.282l3.666 5.76C15.619 13.04 14.543 15 12.767 15H3.233c-1.776 0-2.852-1.96-1.899-3.458Zm-2.4 6.565a.75.75 0 0 0 .633 1.153h9.534a.75.75 0 0 0 .633-1.153L12.225 10.5h-8.45ZM9.5 2.5h-3V6c0 .143-.04.283-.117.403L4.73 9h6.54L9.617 6.403A.746.746 0 0 1 9.5 6Z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M1.75 2.5h10.5a.75.75 0 0 1 0 1.5H1.75a.75.75 0 0 1 0-1.5Zm4 5h8.5a.75.75 0 0 1 0 1.5h-8.5a.75.75 0 0 1 0-1.5Zm0 5h8.5a.75.75 0 0 1 0 1.5h-8.5a.75.75 0 0 1 0-1.5ZM2.5 7.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 1.5 0Z"/></svg>');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#faq-problemes-courants-et-erreurs-frequentes" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="TI507N - Introduction au système Linux" class="md-header__button md-logo" aria-label="TI507N - Introduction au système Linux" data-md-component="logo">
+      
+  <img src="../../assets/img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TI507N - Introduction au système Linux
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FAQ — Problèmes courants
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="indigo"  aria-label="Passer en mode sombre"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passer en mode sombre" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="blue"  aria-label="Passer en mode clair"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Passer en mode clair" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Sélectionner la langue">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../en/contenus/faq/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Partager" aria-label="Partager" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/YvanGuifo/introduction-linux-ti507n" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../installation-wsl/" class="md-tabs__link">
+          
+  
+  Mise en route
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../tp1/" class="md-tabs__link">
+          
+  
+  Travaux Pratiques
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../Intro-MarioNum/" class="md-tabs__link">
+          
+  
+  Ressources
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="TI507N - Introduction au système Linux" class="md-nav__button md-logo" aria-label="TI507N - Introduction au système Linux" data-md-component="logo">
+      
+  <img src="../../assets/img/logo.png" alt="logo">
+
+    </a>
+    TI507N - Introduction au système Linux
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/YvanGuifo/introduction-linux-ti507n" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Mise en route
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Mise en route
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation-wsl/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation d'une distribution Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preliminary-reading/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lecture préliminaire
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codespace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vous n'avez pas de système Linux installé ? Pas grave, Codespace à la rescousse !
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Travaux Pratiques
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Travaux Pratiques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tp1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TP1 - Premières commandes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tp2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TP2 — Système de fichiers et permissions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tp3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TP3 — Environnement de travail et Compilateur C
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tp4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TP4 — Canaux standards et redirections, Processus et tâches, Signaux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tp4-exo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quelques commandes supplémentaires
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Ressources
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Ressources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Intro-MarioNum/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction à MarioNum
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mémo des commandes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossaire/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossaire
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    FAQ — Problèmes courants
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    FAQ — Problèmes courants
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#erreurs-de-permissions" class="md-nav__link">
+    Erreurs de permissions
+  </a>
+  
+    <nav class="md-nav" aria-label="Erreurs de permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#permission-denied" class="md-nav__link">
+    Permission denied
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permission-denied-sur-un-repertoire" class="md-nav__link">
+    Permission denied sur un répertoire
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operation-not-permitted" class="md-nav__link">
+    Operation not permitted
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erreurs-de-commandes" class="md-nav__link">
+    Erreurs de commandes
+  </a>
+  
+    <nav class="md-nav" aria-label="Erreurs de commandes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#command-not-found" class="md-nav__link">
+    command not found
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-such-file-or-directory" class="md-nav__link">
+    No such file or directory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is-a-directory" class="md-nav__link">
+    Is a directory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#not-a-directory" class="md-nav__link">
+    Not a directory
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erreurs-du-shell" class="md-nav__link">
+    Erreurs du shell
+  </a>
+  
+    <nav class="md-nav" aria-label="Erreurs du shell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#le-terminal-semble-bloque-pas-de-prompt" class="md-nav__link">
+    Le terminal semble bloqué (pas de prompt)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syntax-error-near-unexpected-token" class="md-nav__link">
+    Syntax error near unexpected token
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-du-prompt-a-ete-copie-colle" class="md-nav__link">
+    Le $ du prompt a été copié-collé
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#guillemets-non-fermes-prompt" class="md-nav__link">
+    Guillemets non fermés (prompt &gt;)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erreurs-de-compilation-tp3" class="md-nav__link">
+    Erreurs de compilation (TP3)
+  </a>
+  
+    <nav class="md-nav" aria-label="Erreurs de compilation (TP3)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#undefined-reference-to-main" class="md-nav__link">
+    undefined reference to 'main'
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expected-before" class="md-nav__link">
+    expected ';' before
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implicit-declaration-of-function" class="md-nav__link">
+    implicit declaration of function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erreurs-de-redirections-et-tubes-tp4" class="md-nav__link">
+    Erreurs de redirections et tubes (TP4)
+  </a>
+  
+    <nav class="md-nav" aria-label="Erreurs de redirections et tubes (TP4)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ambiguous-redirect" class="md-nav__link">
+    ambiguous redirect
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-fichier-de-sortie-est-vide-apres" class="md-nav__link">
+    Le fichier de sortie est vide après &gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broken-pipe" class="md-nav__link">
+    Broken pipe
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problemes-courants-avec-wsl" class="md-nav__link">
+    Problèmes courants avec WSL
+  </a>
+  
+    <nav class="md-nav" aria-label="Problèmes courants avec WSL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wsl-ne-demarre-pas" class="md-nav__link">
+    WSL ne démarre pas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pas-dacces-reseau-depuis-wsl" class="md-nav__link">
+    Pas d'accès réseau depuis WSL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-fichiers-windows-sont-ou-dans-wsl" class="md-nav__link">
+    Les fichiers Windows sont où dans WSL ?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonnes-pratiques-pour-eviter-les-erreurs" class="md-nav__link">
+    Bonnes pratiques pour éviter les erreurs
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#erreurs-de-permissions" class="md-nav__link">
+    Erreurs de permissions
+  </a>
+  
+    <nav class="md-nav" aria-label="Erreurs de permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#permission-denied" class="md-nav__link">
+    Permission denied
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permission-denied-sur-un-repertoire" class="md-nav__link">
+    Permission denied sur un répertoire
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operation-not-permitted" class="md-nav__link">
+    Operation not permitted
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erreurs-de-commandes" class="md-nav__link">
+    Erreurs de commandes
+  </a>
+  
+    <nav class="md-nav" aria-label="Erreurs de commandes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#command-not-found" class="md-nav__link">
+    command not found
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-such-file-or-directory" class="md-nav__link">
+    No such file or directory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is-a-directory" class="md-nav__link">
+    Is a directory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#not-a-directory" class="md-nav__link">
+    Not a directory
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erreurs-du-shell" class="md-nav__link">
+    Erreurs du shell
+  </a>
+  
+    <nav class="md-nav" aria-label="Erreurs du shell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#le-terminal-semble-bloque-pas-de-prompt" class="md-nav__link">
+    Le terminal semble bloqué (pas de prompt)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syntax-error-near-unexpected-token" class="md-nav__link">
+    Syntax error near unexpected token
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-du-prompt-a-ete-copie-colle" class="md-nav__link">
+    Le $ du prompt a été copié-collé
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#guillemets-non-fermes-prompt" class="md-nav__link">
+    Guillemets non fermés (prompt &gt;)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erreurs-de-compilation-tp3" class="md-nav__link">
+    Erreurs de compilation (TP3)
+  </a>
+  
+    <nav class="md-nav" aria-label="Erreurs de compilation (TP3)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#undefined-reference-to-main" class="md-nav__link">
+    undefined reference to 'main'
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expected-before" class="md-nav__link">
+    expected ';' before
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implicit-declaration-of-function" class="md-nav__link">
+    implicit declaration of function
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erreurs-de-redirections-et-tubes-tp4" class="md-nav__link">
+    Erreurs de redirections et tubes (TP4)
+  </a>
+  
+    <nav class="md-nav" aria-label="Erreurs de redirections et tubes (TP4)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ambiguous-redirect" class="md-nav__link">
+    ambiguous redirect
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-fichier-de-sortie-est-vide-apres" class="md-nav__link">
+    Le fichier de sortie est vide après &gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#broken-pipe" class="md-nav__link">
+    Broken pipe
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#problemes-courants-avec-wsl" class="md-nav__link">
+    Problèmes courants avec WSL
+  </a>
+  
+    <nav class="md-nav" aria-label="Problèmes courants avec WSL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wsl-ne-demarre-pas" class="md-nav__link">
+    WSL ne démarre pas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pas-dacces-reseau-depuis-wsl" class="md-nav__link">
+    Pas d'accès réseau depuis WSL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-fichiers-windows-sont-ou-dans-wsl" class="md-nav__link">
+    Les fichiers Windows sont où dans WSL ?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonnes-pratiques-pour-eviter-les-erreurs" class="md-nav__link">
+    Bonnes pratiques pour éviter les erreurs
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="faq-problemes-courants-et-erreurs-frequentes">FAQ — Problèmes courants et erreurs fréquentes<a class="headerlink" href="#faq-problemes-courants-et-erreurs-frequentes" title="Permanent link">&para;</a></h1>
+<div class="admonition tip">
+<p class="admonition-title">Comment utiliser cette page</p>
+<p>Utilisez <kbd>Ctrl+F</kbd> pour rechercher le message d'erreur exact que vous rencontrez. Chaque problème est accompagné de son <strong>explication</strong> et de sa <strong>solution</strong>.</p>
+</div>
+<hr />
+<h2 id="erreurs-de-permissions">Erreurs de permissions<a class="headerlink" href="#erreurs-de-permissions" title="Permanent link">&para;</a></h2>
+<h3 id="permission-denied"><code>Permission denied</code><a class="headerlink" href="#permission-denied" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>bash: ./mon_script.sh: Permission denied
+</span></code></pre></div>
+<p><strong>Cause</strong> : le fichier n'a pas le droit d'exécution (<code>x</code>) pour votre utilisateur.</p>
+<p><strong>Solution</strong> :</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span>chmod<span class="w"> </span>u+x<span class="w"> </span>mon_script.sh
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>$<span class="w"> </span>./mon_script.sh
+</span></code></pre></div>
+<p>→ Voir <a href="../tp2/">TP2 — Permissions</a></p>
+<hr />
+<h3 id="permission-denied-sur-un-repertoire"><code>Permission denied</code> sur un répertoire<a class="headerlink" href="#permission-denied-sur-un-repertoire" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>bash: cd: /root: Permission denied
+</span></code></pre></div>
+<p><strong>Cause</strong> : vous n'avez pas le droit de traversée (<code>x</code>) sur ce répertoire, ou pas le droit de lecture (<code>r</code>) pour lister son contenu.</p>
+<p><strong>Solution</strong> : vérifiez les permissions avec <code>ls -ld /chemin/du/repertoire</code>. Si le répertoire appartient à <code>root</code>, utilisez <code>sudo</code> (avec précaution).</p>
+<p>→ Voir <a href="../tp2/">TP2 — Permissions sur les répertoires</a></p>
+<hr />
+<h3 id="operation-not-permitted"><code>Operation not permitted</code><a class="headerlink" href="#operation-not-permitted" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>rm: cannot remove &#39;/etc/hosts&#39;: Operation not permitted
+</span></code></pre></div>
+<p><strong>Cause</strong> : le fichier appartient à <code>root</code> et vous n'avez pas les privilèges suffisants.</p>
+<p><strong>Solution</strong> : utilisez <code>sudo</code> uniquement si vous savez ce que vous faites :</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>rm<span class="w"> </span>/etc/hosts<span class="w">   </span><span class="c1"># ⚠️ Dangereux ! Ne faites pas cela sur un fichier système.</span>
+</span></code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">Attention</p>
+<p><code>sudo</code> exécute la commande avec les droits administrateur. Une erreur avec <code>sudo</code> peut rendre le système inutilisable. Ne l'utilisez que quand c'est nécessaire et en comprenant la commande.</p>
+</div>
+<hr />
+<h2 id="erreurs-de-commandes">Erreurs de commandes<a class="headerlink" href="#erreurs-de-commandes" title="Permanent link">&para;</a></h2>
+<h3 id="command-not-found"><code>command not found</code><a class="headerlink" href="#command-not-found" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>bash: gcc: command not found
+</span></code></pre></div>
+<p><strong>Causes possibles</strong> :</p>
+<ol>
+<li>
+<p><strong>Le programme n'est pas installé.</strong>
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>build-essential<span class="w">   </span><span class="c1"># pour gcc</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Le programme n'est pas dans le <code>$PATH</code>.</strong>
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$PATH</span><span class="w">                    </span><span class="c1"># vérifiez les répertoires listés</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>$<span class="w"> </span>which<span class="w"> </span>mon_programme<span class="w">           </span><span class="c1"># cherchez l&#39;emplacement</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>$<span class="w"> </span><span class="nb">type</span><span class="w"> </span>mon_programme<span class="w">            </span><span class="c1"># distinction interne/externe</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Faute de frappe dans le nom de la commande.</strong>
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>lls<span class="w">                           </span><span class="c1"># ❌ erreur de frappe</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>$<span class="w"> </span>ls<span class="w">                            </span><span class="c1"># ✅ correct</span>
+</span></code></pre></div></p>
+</li>
+</ol>
+<p>→ Voir <a href="../tp2/">TP2 — PATH</a>, <a href="../tp3/">TP3 — Variables</a></p>
+<hr />
+<h3 id="no-such-file-or-directory"><code>No such file or directory</code><a class="headerlink" href="#no-such-file-or-directory" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>bash: cd: mon_dossier: No such file or directory
+</span></code></pre></div>
+<p><strong>Causes possibles</strong> :</p>
+<ol>
+<li><strong>Le fichier ou répertoire n'existe pas.</strong> Vérifiez avec <code>ls</code>.</li>
+<li><strong>Erreur dans le chemin</strong> (relatif vs absolu, faute de frappe).
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$<span class="w"> </span><span class="nb">pwd</span><span class="w">                           </span><span class="c1"># où suis-je ?</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>$<span class="w"> </span>ls<span class="w"> </span>-la<span class="w">                        </span><span class="c1"># qu&#39;y a-t-il ici ?</span>
+</span></code></pre></div></li>
+<li><strong>Casse incorrecte.</strong> Linux distingue majuscules et minuscules : <code>Documents</code> ≠ <code>documents</code>.</li>
+</ol>
+<hr />
+<h3 id="is-a-directory"><code>Is a directory</code><a class="headerlink" href="#is-a-directory" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>cat: tp_shell: Is a directory
+</span></code></pre></div>
+<p><strong>Cause</strong> : vous essayez d'utiliser une commande prévue pour les fichiers sur un répertoire.</p>
+<p><strong>Solution</strong> : utilisez <code>ls</code> pour lister un répertoire, pas <code>cat</code> :</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$<span class="w"> </span>ls<span class="w"> </span>tp_shell/<span class="w">                     </span><span class="c1"># ✅ lister le contenu</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>$<span class="w"> </span>cat<span class="w"> </span>tp_shell/fichier.txt<span class="w">         </span><span class="c1"># ✅ afficher un fichier dedans</span>
+</span></code></pre></div>
+<hr />
+<h3 id="not-a-directory"><code>Not a directory</code><a class="headerlink" href="#not-a-directory" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>bash: cd: fichier.txt: Not a directory
+</span></code></pre></div>
+<p><strong>Cause</strong> : vous essayez de <code>cd</code> dans un fichier au lieu d'un répertoire.</p>
+<p><strong>Solution</strong> : vérifiez le type avec <code>ls -l</code> (la première lettre : <code>d</code> = répertoire, <code>-</code> = fichier).</p>
+<hr />
+<h2 id="erreurs-du-shell">Erreurs du shell<a class="headerlink" href="#erreurs-du-shell" title="Permanent link">&para;</a></h2>
+<h3 id="le-terminal-semble-bloque-pas-de-prompt">Le terminal semble bloqué (pas de prompt)<a class="headerlink" href="#le-terminal-semble-bloque-pas-de-prompt" title="Permanent link">&para;</a></h3>
+<p><strong>Causes possibles</strong> :</p>
+<ol>
+<li><strong>Une commande attend une entrée</strong> (ex. <code>cat</code> sans argument lit stdin).</li>
+<li>
+<p><strong>Solution</strong> : appuyez sur <kbd>Ctrl+D</kbd> (fin de fichier) ou <kbd>Ctrl+C</kbd> (interruption).</p>
+</li>
+<li>
+<p><strong>Un programme tourne en avant-plan</strong> (ex. <code>sleep 1000</code>).</p>
+</li>
+<li>
+<p><strong>Solution</strong> : <kbd>Ctrl+C</kbd> pour l'arrêter, ou <kbd>Ctrl+Z</kbd> puis <code>bg</code> pour le passer en arrière-plan.</p>
+</li>
+<li>
+<p><strong>Vous êtes dans <code>man</code> ou <code>less</code>.</strong></p>
+</li>
+<li><strong>Solution</strong> : appuyez sur <kbd>q</kbd> pour quitter.</li>
+</ol>
+<p>→ Voir <a href="../tp4/">TP4 — Processus et signaux</a></p>
+<hr />
+<h3 id="syntax-error-near-unexpected-token"><code>Syntax error near unexpected token</code><a class="headerlink" href="#syntax-error-near-unexpected-token" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>bash: syntax error near unexpected token `(&#39;
+</span></code></pre></div>
+<p><strong>Cause</strong> : le shell interprète des caractères spéciaux que vous n'avez pas protégés.</p>
+<p><strong>Solution</strong> : utilisez des guillemets ou des antislashs pour inhiber les caractères spéciaux :</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Hello (world)&quot;</span><span class="w">            </span><span class="c1"># ✅ guillemets doubles</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>Hello<span class="w"> </span><span class="se">\(</span>world<span class="se">\)</span><span class="w">            </span><span class="c1"># ✅ antislash</span>
+</span></code></pre></div>
+<p>→ Voir <a href="../tp3/">TP3 — Inhibitions</a></p>
+<hr />
+<h3 id="le-du-prompt-a-ete-copie-colle">Le <code>$</code> du prompt a été copié-collé<a class="headerlink" href="#le-du-prompt-a-ete-copie-colle" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>bash: $: command not found
+</span></code></pre></div>
+<p><strong>Cause</strong> : vous avez copié le <code>$</code> du prompt en même temps que la commande depuis le sujet du TP.</p>
+<p><strong>Solution</strong> : le <code>$</code> dans les énoncés représente le prompt — ne le tapez pas. Tapez uniquement la commande qui suit :</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w">          </span><span class="c1"># ❌ si vous copiez &quot;$ ls -l&quot;</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>ls<span class="w"> </span>-l<span class="w">            </span><span class="c1"># ✅ tapez seulement ceci</span>
+</span></code></pre></div>
+<hr />
+<h3 id="guillemets-non-fermes-prompt">Guillemets non fermés (prompt <code>&gt;</code>)<a class="headerlink" href="#guillemets-non-fermes-prompt" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>$ echo &quot;hello
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>&gt;
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>&gt;
+</span></code></pre></div>
+<p><strong>Cause</strong> : le shell attend la fermeture d'un guillemet (<code>"</code> ou <code>'</code>).</p>
+<p><strong>Solution</strong> : fermez le guillemet manquant, ou annulez avec <kbd>Ctrl+C</kbd> :</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;hello&quot;</span><span class="w">                     </span><span class="c1"># ✅ guillemet fermé</span>
+</span></code></pre></div>
+<hr />
+<h2 id="erreurs-de-compilation-tp3">Erreurs de compilation (TP3)<a class="headerlink" href="#erreurs-de-compilation-tp3" title="Permanent link">&para;</a></h2>
+<h3 id="undefined-reference-to-main"><code>undefined reference to 'main'</code><a class="headerlink" href="#undefined-reference-to-main" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>/usr/bin/ld: undefined reference to `main&#39;
+</span></code></pre></div>
+<p><strong>Cause</strong> : votre programme C n'a pas de fonction <code>main()</code>, ou vous compilez le mauvais fichier.</p>
+<p><strong>Solution</strong> : vérifiez que <code>main()</code> est bien définie dans votre code source :</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">       </span><span class="c1">// ✅ point d&#39;entrée obligatoire</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<hr />
+<h3 id="expected-before"><code>expected ';' before</code><a class="headerlink" href="#expected-before" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>hello.c:5:1: error: expected &#39;;&#39; before &#39;}&#39; token
+</span></code></pre></div>
+<p><strong>Cause</strong> : il manque un point-virgule à la fin d'une instruction.</p>
+<p><strong>Solution</strong> : chaque instruction C se termine par <code>;</code>. Vérifiez la ligne indiquée et la ligne précédente.</p>
+<hr />
+<h3 id="implicit-declaration-of-function"><code>implicit declaration of function</code><a class="headerlink" href="#implicit-declaration-of-function" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>hello.c:4:5: warning: implicit declaration of function &#39;printf&#39;
+</span></code></pre></div>
+<p><strong>Cause</strong> : vous utilisez une fonction sans inclure son fichier d'en-tête.</p>
+<p><strong>Solution</strong> : ajoutez le <code>#include</code> approprié en haut du fichier :</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="c1">     // pour printf, scanf, etc.</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span><span class="c1">    // pour malloc, exit, etc.</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span><span class="c1">    // pour strlen, strcpy, etc.</span>
+</span></code></pre></div>
+<p>→ Voir <a href="../tp3/">TP3 — Compilation</a></p>
+<hr />
+<h2 id="erreurs-de-redirections-et-tubes-tp4">Erreurs de redirections et tubes (TP4)<a class="headerlink" href="#erreurs-de-redirections-et-tubes-tp4" title="Permanent link">&para;</a></h2>
+<h3 id="ambiguous-redirect"><code>ambiguous redirect</code><a class="headerlink" href="#ambiguous-redirect" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>bash: fichier: ambiguous redirect
+</span></code></pre></div>
+<p><strong>Cause</strong> : le nom du fichier de redirection contient des espaces non protégés ou une variable non définie.</p>
+<p><strong>Solution</strong> :</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>hello<span class="w"> </span>&gt;<span class="w"> </span><span class="s2">&quot;mon fichier.txt&quot;</span><span class="w">   </span><span class="c1"># ✅ guillemets autour du nom</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>hello<span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$FICHIER</span><span class="w">            </span><span class="c1"># ❌ si $FICHIER est vide ou contient des espaces</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>hello<span class="w"> </span>&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$FICHIER</span><span class="s2">&quot;</span><span class="w">          </span><span class="c1"># ✅ toujours protéger les variables</span>
+</span></code></pre></div>
+<hr />
+<h3 id="le-fichier-de-sortie-est-vide-apres">Le fichier de sortie est vide après <code>&gt;</code><a class="headerlink" href="#le-fichier-de-sortie-est-vide-apres" title="Permanent link">&para;</a></h3>
+<p><strong>Cause</strong> : <code>&gt;</code> <strong>écrase</strong> le fichier avant d'écrire. Si vous redirigez un fichier vers lui-même, il est d'abord vidé :</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>$<span class="w"> </span>sort<span class="w"> </span>fichier.txt<span class="w"> </span>&gt;<span class="w"> </span>fichier.txt<span class="w">   </span><span class="c1"># ❌ fichier vidé puis trié (résultat : vide !)</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>$<span class="w"> </span>sort<span class="w"> </span>fichier.txt<span class="w"> </span>&gt;<span class="w"> </span>fichier_trié.txt<span class="w">  </span><span class="c1"># ✅ utiliser un fichier différent</span>
+</span></code></pre></div>
+<hr />
+<h3 id="broken-pipe"><code>Broken pipe</code><a class="headerlink" href="#broken-pipe" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>$ commande1 | commande2
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>bash: commande1: Broken pipe
+</span></code></pre></div>
+<p><strong>Cause</strong> : <code>commande2</code> s'est terminée avant que <code>commande1</code> ait fini d'écrire.</p>
+<p><strong>Solution</strong> : ce message est souvent bénin (ex. <code>cat gros_fichier | head -5</code>). Le résultat est généralement correct malgré le message.</p>
+<p>→ Voir <a href="../tp4/">TP4 — Tubes</a></p>
+<hr />
+<h2 id="problemes-courants-avec-wsl">Problèmes courants avec WSL<a class="headerlink" href="#problemes-courants-avec-wsl" title="Permanent link">&para;</a></h2>
+<h3 id="wsl-ne-demarre-pas">WSL ne démarre pas<a class="headerlink" href="#wsl-ne-demarre-pas" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>WslRegisterDistribution failed with error: 0x80370102
+</span></code></pre></div>
+<p><strong>Cause</strong> : la virtualisation n'est pas activée dans le BIOS/UEFI.</p>
+<p><strong>Solution</strong> : redémarrez l'ordinateur, entrez dans le BIOS (souvent <kbd>F2</kbd>, <kbd>F12</kbd> ou <kbd>Suppr</kbd> au démarrage) et activez <strong>Intel VT-x</strong> ou <strong>AMD-V</strong>.</p>
+<p>→ Voir <a href="../installation-wsl/">Installation WSL</a></p>
+<hr />
+<h3 id="pas-dacces-reseau-depuis-wsl">Pas d'accès réseau depuis WSL<a class="headerlink" href="#pas-dacces-reseau-depuis-wsl" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>wget: unable to resolve host address
+</span></code></pre></div>
+<p><strong>Solution</strong> :</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/resolv.conf
+</span></code></pre></div>
+<p>Ajoutez ou modifiez la ligne :</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>nameserver 8.8.8.8
+</span></code></pre></div>
+<hr />
+<h3 id="les-fichiers-windows-sont-ou-dans-wsl">Les fichiers Windows sont où dans WSL ?<a class="headerlink" href="#les-fichiers-windows-sont-ou-dans-wsl" title="Permanent link">&para;</a></h3>
+<p>Les disques Windows sont montés automatiquement :</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/mnt/c/Users/VotreNom/<span class="w">        </span><span class="c1"># accès au disque C:</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>$<span class="w"> </span>ls<span class="w"> </span>/mnt/d/<span class="w">                        </span><span class="c1"># accès au disque D: (si présent)</span>
+</span></code></pre></div>
+<p>Et depuis Windows, les fichiers WSL sont accessibles via : <code>\\wsl$\Debian\home\votre_user\</code></p>
+<div class="admonition warning">
+<p class="admonition-title">Attention aux fins de ligne</p>
+<p>Les fichiers créés sous Windows utilisent <code>\r\n</code> (CRLF), ceux sous Linux <code>\n</code> (LF). Cela peut causer des erreurs avec des scripts shell. Utilisez <code>dos2unix</code> pour convertir :
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>dos2unix
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>$<span class="w"> </span>dos2unix<span class="w"> </span>mon_script.sh
+</span></code></pre></div></p>
+</div>
+<hr />
+<h2 id="bonnes-pratiques-pour-eviter-les-erreurs">Bonnes pratiques pour éviter les erreurs<a class="headerlink" href="#bonnes-pratiques-pour-eviter-les-erreurs" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Réflexes à adopter</p>
+<ol>
+<li><strong>Lisez le message d'erreur en entier</strong> — il indique presque toujours la cause et le fichier/la ligne concernés.</li>
+<li><strong>Utilisez <code>man</code> et <code>--help</code></strong> avant de tenter une commande inconnue.</li>
+<li><strong>Utilisez <kbd>Tab</kbd></strong> pour la complétion — moins de fautes de frappe.</li>
+<li><strong>Testez sur un fichier sans importance</strong> avant de manipuler des données réelles.</li>
+<li><strong>Ne copiez pas le <code>$</code></strong> des énoncés de TP.</li>
+<li><strong>Préférez les chemins absolus</strong> quand vous avez un doute sur le répertoire courant.</li>
+<li><strong><code>sudo</code> n'est pas la solution par défaut</strong> — comprenez d'abord pourquoi la permission est refusée.</li>
+</ol>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
+        
+          
+          <a href="../glossaire/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Glossaire">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              <div class="md-ellipsis">
+                Glossaire
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      TI507N - Introduction au système Linux - Efrei Paris
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/YvanGuifo/introduction-linux-ti507n" target="_blank" rel="noopener" title="Dépôt GitHub du cours" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:yvan.guifo-fodjo@efrei.fr" target="_blank" rel="noopener" title="Contacter l&#39;enseignant" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.7l167.6-182.9c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "navigation.footer", "navigation.instant", "navigation.instant.progress", "header.autohide", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+        <script src="../../assets/javascripts/extra.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
+      
+    
+  </body>
+</html>
