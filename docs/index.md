@@ -23,11 +23,11 @@ Ce module se déroulera en 15 heures de cours sous forme de Cours - TP.
 
 ### Répartition des groupes
 
-| Groupe CTP | Enseignant                | Contact    |
+| Groupe  | Enseignant                | Contact    |
 |------------|---------------------------|------------|
-| CTP 1      | Yvan Guifo Fodjo          | yvan.guifo-fodjo@efrei.fr      |
-| CTP 2      | Halim Djerroud            | halim.djerroud@efrei.fr        |
-| CTP 3      | Maroua Tikat              | maroua.tikat@efrei.fr          |
+| 1, 2      | Yvan Guifo           | yvan.guifo-fodjo@efrei.fr      |
+| 3      | Halim Djerroud            | halim.djerroud@efrei.fr        |
+| 4      | Maroua Tikat              | maroua.tikat@efrei.fr          |
 
 
 ### Contenu du cours
