@@ -1299,22 +1299,32 @@ The 📚📚📚 exercises prepare for the <strong>DE S42 (MCQ)</strong> through
 </span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>$<span class="w"> </span>chmod<span class="w"> </span>a+x,g-w<span class="w"> </span>f<span class="p">;</span><span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>f
 </span></code></pre></div></li>
 <li>Test <code>chmod 644 f; ls -l f</code>. What does this command do?</li>
-<li>Using <strong>both notations</strong> (octal and symbolic), modify the permissions of <code>f</code> to obtain:</li>
+<li>
+<p>Using <strong>both notations</strong> (octal and symbolic), modify the permissions of <code>f</code> to obtain:</p>
+<ul>
 <li>execute for all, read and write only for the owner;</li>
 <li>read and execute for all, no one can write;</li>
 <li>all permissions for all, no write for others;</li>
 <li>read and write for the owner, execute for the group, none for others.</li>
+</ul>
+</li>
 </ol>
 <h3 id="exercise-4-effect-of-permissions-on-operations">Exercise 4 — Effect of permissions on operations 📚📚<a class="headerlink" href="#exercise-4-effect-of-permissions-on-operations" title="Permanent link">&para;</a></h3>
 <ol>
 <li>In a directory of your choice, create two files <code>f</code> and <code>g</code>. Enter some text in each using an editor.</li>
-<li>For yourself (owner):</li>
+<li>
+<p>For yourself (owner):</p>
+<ul>
 <li>remove the <strong>read</strong> permission on <code>f</code>;</li>
 <li>remove the <strong>write</strong> permission on <code>g</code>.</li>
-<li>Test and note the results:
+</ul>
+</li>
+<li>
+<p>Test and note the results:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span>cat<span class="w"> </span>f
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>$<span class="w"> </span>cat<span class="w"> </span>g
-</span></code></pre></div></li>
+</span></code></pre></div></p>
+</li>
 <li>Try to modify <code>g</code> with a text editor. What happens?</li>
 <li>Test:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span>cp<span class="w"> </span>f<span class="w"> </span>h
@@ -1369,11 +1379,15 @@ The 📚📚📚 exercises prepare for the <strong>DE S42 (MCQ)</strong> through
 </span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>$<span class="w"> </span>touch<span class="w"> </span>rep/c
 </span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>$<span class="w"> </span>rm<span class="w"> </span>rep/a
 </span></code></pre></div></li>
-<li>With <code>-wx</code> on <code>rep</code> for all, try to:</li>
+<li>
+<p>With <code>-wx</code> on <code>rep</code> for all, try to:</p>
+<ul>
 <li>create a file <code>d</code> in <code>rep</code>;</li>
 <li>rename <code>b</code>;</li>
 <li>remove all permissions on <code>d</code>;</li>
 <li>delete <code>d</code>.</li>
+</ul>
+</li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">This exercise is representative of a typical <strong>DE S42 (MCQ)</strong> item.</p>

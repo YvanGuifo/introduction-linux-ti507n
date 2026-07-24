@@ -1134,16 +1134,19 @@ Exercises 📚📚📚 prepare for the <strong>DE S42 (MCQ)</strong> through the
 </span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>$<span class="w"> </span>cat<span class="w"> </span>fichier.txt
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Je m&#39;ajoute en fin de ligne&quot;</span><span class="w"> </span><span class="m">1</span>&gt;&gt;<span class="w"> </span>fichier.txt
 </span></code></pre></div></li>
-<li>Recall what the <code>cat</code> command does (<code>man cat</code>), then answer:<ul>
-<li>What is the difference between <code>&gt;</code> and <code>&gt;&gt;</code>?</li>
-<li>What is the difference between <code>1&gt;</code> and <code>&gt;</code>?</li>
-<li>What is the difference between <code>1&gt;&gt;</code> and <code>&gt;&gt;</code>?</li>
-</ul>
+<li>
+<p>Recall what the <code>cat</code> command does (<code>man cat</code>), then answer:</p>
+<div class="language-text highlight"><pre><span></span><code>- What is the difference between `&gt;` and `&gt;&gt;`?
+- What is the difference between `1&gt;` and `&gt;`?
+- What is the difference between `1&gt;&gt;` and `&gt;&gt;`?
+</code></pre></div>
 </li>
-<li>Navigate to your home directory and run:
+<li>
+<p>Navigate to your home directory and run:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>ls<span class="w"> </span>&gt;<span class="w"> </span>list_files.txt<span class="p">;</span><span class="w"> </span>cat<span class="w"> </span>list_files.txt
-</span></code></pre></div></li>
-<li>What does this command do?</li>
+</span></code></pre></div>
+        - What does this command do?</p>
+</li>
 <li>Can you explain why the string <code>list_files.txt</code> appears inside the file <code>list_files.txt</code>?</li>
 </ol>
 <hr />
@@ -1269,10 +1272,14 @@ The file <code>fichier.txt</code> is then <em>connected</em> to the standard inp
    Then <kbd>Ctrl</kbd>+<kbd>C</kbd>, then:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$<span class="w"> </span>ps
 </span></code></pre></div></li>
-<li><strong>Questions</strong>:</li>
+<li>
+<p><strong>Questions</strong>:</p>
+<ul>
 <li>What does <kbd>Ctrl</kbd>+<kbd>Z</kbd> do? And <kbd>Ctrl</kbd>+<kbd>C</kbd>?</li>
 <li>Redo the sequence by typing commands (for example <code>pwd</code>, <code>ls</code>) <strong>between</strong> <code>sleep 240</code> and <kbd>Ctrl</kbd>+<kbd>Z</kbd>. What do you notice?</li>
 <li>What does <code>fg %1</code> do in general?</li>
+</ul>
+</li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">Information about <code>ps</code> output</p>
@@ -1287,12 +1294,15 @@ The file <code>fichier.txt</code> is then <em>connected</em> to the standard inp
 <h3 id="exercise-6-foreground-background-switching">Exercise 6 — Foreground, background, switching 📚📚📚<a class="headerlink" href="#exercise-6-foreground-background-switching" title="Permanent link">&para;</a></h3>
 <p>This exercise asks you to write a small C program using the skills from Lab 3.</p>
 <ol>
-<li>Write a C program <code>compteur.c</code> that indefinitely increments a variable <code>i</code> and displays its value <strong>on standard output every multiple of 100</strong>. Use <code>sleep</code> to slow down execution and observe the output.</li>
-</ol>
-<p>!!! info "Where is <code>sleep</code> in C?"
-       Type <code>man 3 sleep</code> to see the signature of the <code>sleep</code> function in the standard library (<code>&lt;unistd.h&gt;</code>).</p>
-<ol>
-<li>Compile with <code>gcc -Wall -o compteur compteur.c</code>. Test:
+<li>
+<p>Write a C program <code>compteur.c</code> that indefinitely increments a variable <code>i</code> and displays its value <strong>on standard output every multiple of 100</strong>. Use <code>sleep</code> to slow down execution and observe the output.</p>
+<div class="admonition info">
+<p class="admonition-title">Where is <code>sleep</code> in C?</p>
+<p>Type <code>man 3 sleep</code> to see the signature of the <code>sleep</code> function in the standard library (<code>&lt;unistd.h&gt;</code>).</p>
+</div>
+</li>
+<li>
+<p>Compile with <code>gcc -Wall -o compteur compteur.c</code>. Test:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>$<span class="w"> </span>./compteur
 </span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>&lt;Ctrl-z&gt;
 </span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>$<span class="w"> </span><span class="nb">jobs</span>
@@ -1307,13 +1317,18 @@ The file <code>fichier.txt</code> is then <em>connected</em> to the standard inp
 </span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>$<span class="w"> </span><span class="nb">fg</span><span class="w"> </span>%1
 </span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>&lt;Ctrl-c&gt;
 </span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>$<span class="w"> </span><span class="nb">jobs</span>
-</span></code></pre></div></li>
-<li><strong>Analysis questions</strong>:</li>
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Analysis questions</strong>:</p>
+<ul>
 <li>What methods allow you to place a process in the background? In the foreground?</li>
 <li>What is the difference between <kbd>Ctrl</kbd>+<kbd>Z</kbd> and <kbd>Ctrl</kbd>+<kbd>C</kbd>?</li>
 <li>What is the purpose of the <code>-p</code> option of <code>jobs</code>?</li>
 <li>What does <code>bg</code> do in general?</li>
 <li>What <strong>job states</strong> did you observe? <em>(Hint: <code>Running</code>, <code>Stopped</code>, <code>Terminated</code>...)</em></li>
+</ul>
+</li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">This exercise is representative of a typical <strong>DE S42 (MCQ)</strong> item.</p>
@@ -1487,15 +1502,15 @@ The file <code>fichier.txt</code> is then <em>connected</em> to the standard inp
 </div>
 <h3 id="exercise-9-creating-a-child-process-with-fork">Exercise 9 — Creating a child process with <code>fork()</code> ⭐<a class="headerlink" href="#exercise-9-creating-a-child-process-with-fork" title="Permanent link">&para;</a></h3>
 <p><code>fork()</code> is the system call that <strong>duplicates</strong> the calling process: upon returning from <code>fork()</code>, <strong>two</strong> identical processes execute in parallel. The return value allows you to distinguish them:</p>
+<blockquote>
 <ul>
 <li><code>&gt; 0</code> (child's PID) → we are in the <strong>parent</strong>.</li>
 <li><code>== 0</code> → we are in the <strong>child</strong>.</li>
-<li>
-<p><code>&lt; 0</code> → failure.</p>
-</li>
-<li>
-<p>Read: <code>man 2 fork</code> then <code>man 2 wait</code>.</p>
-</li>
+<li><code>&lt; 0</code> → failure.</li>
+</ul>
+</blockquote>
+<ol>
+<li>Read: <code>man 2 fork</code> then <code>man 2 wait</code>.</li>
 <li>Create <code>fork-demo.c</code>:
    <div class="language-c highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 </span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unistd.h&gt;</span><span class="c1">     /* fork, getpid, getppid */</span>
@@ -1539,7 +1554,7 @@ The file <code>fichier.txt</code> is then <em>connected</em> to the standard inp
 <li>Modify the program to create <strong>two children</strong> (two successive <code>fork()</code> calls on the parent side). The parent must wait for both children before terminating.</li>
 </ul>
 </li>
-</ul>
+</ol>
 <h3 id="exercise-10-mini-project-a-mini-shell-that-executes-a-command">Exercise 10 — Mini-project: a mini-shell that executes a command ⭐<a class="headerlink" href="#exercise-10-mini-project-a-mini-shell-that-executes-a-command" title="Permanent link">&para;</a></h3>
 <p>When you type <code>ls /tmp</code> in <code>bash</code>, the shell actually does:</p>
 <ol>
