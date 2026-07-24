@@ -175,7 +175,8 @@ title: TP2 - Système de fichiers et permissions
    ```
 2. Testez `chmod 644 f; ls -l f`. Que fait cette commande ?
 3. Avec les **deux notations** (octale et symbolique), modifiez les permissions de `f` pour obtenir :
-   - exécution pour tous, lecture et écriture uniquement pour le propriétaire ;
+
+      - exécution pour tous, lecture et écriture uniquement pour le propriétaire ;
    - lecture et exécution pour tous, personne ne peut écrire ;
    - toutes les permissions pour tous, pas d’écriture pour les autres ;
    - lecture et écriture pour le propriétaire, exécution pour le groupe, aucune pour les autres.
@@ -184,8 +185,10 @@ title: TP2 - Système de fichiers et permissions
 
 1. Dans un répertoire de votre choix, créez deux fichiers `f` et `g`. Entrez du texte dans chacun avec un éditeur.
 2. Pour vous (propriétaire) :
-   - retirez la permission de **lire** dans `f` ;
-   - retirez la permission d’**écrire** dans `g`.
+
+      - retirez la permission de **lire** dans `f` ;
+      - retirez la permission d’**écrire** dans `g`.
+
 3. Testez et notez les résultats :
    ```bash
    $ cat f
@@ -252,7 +255,8 @@ title: TP2 - Système de fichiers et permissions
    $ rm rep/a
    ```
 6. Avec `-wx` sur `rep` pour tous, essayez de :
-   - créer un fichier `d` dans `rep` ;
+
+      - créer un fichier `d` dans `rep` ;
    - renommer `b` ;
    - retirer toutes les permissions sur `d` ;
    - supprimer `d`.

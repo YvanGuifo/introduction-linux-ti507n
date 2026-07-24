@@ -250,8 +250,9 @@ Cet exercice consolide redirections **et** tubes. Vous travaillerez sur les fich
    $ ps
    ```
 3. **Questions** :
-   - Que fait <kbd>Ctrl</kbd>+<kbd>Z</kbd> ? Et <kbd>Ctrl</kbd>+<kbd>C</kbd> ?
-   - Refaites la séquence en tapant des commandes (par exemple `pwd`, `ls`) **entre** `sleep 240` et <kbd>Ctrl</kbd>+<kbd>Z</kbd>. Que remarquez-vous ?
+
+       - Que fait <kbd>Ctrl</kbd>+<kbd>Z</kbd> ? Et <kbd>Ctrl</kbd>+<kbd>C</kbd> ?
+       - Refaites la séquence en tapant des commandes (par exemple `pwd`, `ls`) **entre** `sleep 240` et <kbd>Ctrl</kbd>+<kbd>Z</kbd>. Que remarquez-vous ?
    - Que fait `fg %1` de manière générale ?
 
 !!! info "Informations sur la sortie de `ps`"
@@ -268,8 +269,9 @@ Cet exercice vous demande d’écrire un petit programme C utilisant les acquis 
 
 1. Écrivez un programme C `compteur.c` qui incrémente indéfiniment une variable `i` et affiche sa valeur **sur la sortie standard à chaque multiple de 100**. Utilisez `sleep` pour ralentir l’exécution et observer la sortie.
 
-   !!! info "Où est `sleep` en C ?"
-       Tapez `man 3 sleep` pour voir la signature de la fonction `sleep` dans la bibliothèque standard (`<unistd.h>`).
+    !!! info "Où est `sleep` en C ?"
+
+        Tapez `man 3 sleep` pour voir la signature de la fonction `sleep` dans la bibliothèque standard (`<unistd.h>`).
 
 2. Compilez avec `gcc -Wall -o compteur compteur.c`. Testez :
    ```bash
@@ -289,9 +291,10 @@ Cet exercice vous demande d’écrire un petit programme C utilisant les acquis 
    $ jobs
    ```
 3. **Questions d’analyse** :
-   - Quels procédés permettent de placer un processus en arrière-plan ? En avant-plan ?
-   - Quelle est la différence entre <kbd>Ctrl</kbd>+<kbd>Z</kbd> et <kbd>Ctrl</kbd>+<kbd>C</kbd> ?
-   - À quoi sert l’option `-p` de `jobs` ?
+
+       - Quels procédés permettent de placer un processus en arrière-plan ? En avant-plan ?
+       - Quelle est la différence entre <kbd>Ctrl</kbd>+<kbd>Z</kbd> et <kbd>Ctrl</kbd>+<kbd>C</kbd> ?
+      - À quoi sert l’option `-p` de `jobs` ?
    - Que fait `bg` de manière générale ?
    - Quels **états** des tâches avez-vous observés ? *(Indice : `Running`, `Stopped`, `Terminated`…)*
 
@@ -430,7 +433,7 @@ L’appel système `signal()` permet d’installer un **gestionnaire** (*handler
 
        - Pourquoi <kbd>Ctrl</kbd>+<kbd>C</kbd> **n’interrompt-il plus** le programme ?
        - Essayez d’envoyer `SIGTERM` depuis un autre terminal : `kill <PID>`. Que se passe-t-il ?
-   - Essayez ensuite `kill -9 <PID>`. Que se passe-t-il ? Pourquoi ?
+       - Essayez ensuite `kill -9 <PID>`. Que se passe-t-il ? Pourquoi ?
 
 !!! info "Note importante"
     `signal()` a une sémantique historiquement variable selon les systèmes. En production, on lui préfère `sigaction()` (cf. `man 2 sigaction`) qui offre un comportement plus déterministe.
@@ -441,6 +444,7 @@ L’appel système `signal()` permet d’installer un **gestionnaire** (*handler
 
 `fork()` est l’appel système qui **duplique** le processus appelant : à la sortie de `fork()`, **deux** processus identiques s’exécutent en parallèle. La valeur de retour permet de les distinguer :
 
+>
 - `> 0` (PID du fils) → on est dans le **parent**.
 - `== 0` → on est dans le **fils**.
 - `< 0` → échec.
@@ -547,9 +551,9 @@ Vous allez reproduire ce mécanisme.
    ```
 4. **Questions d’analyse** :
 
-   - Pourquoi `execvp` ne revient-il **jamais** si tout se passe bien ?
-   - Quelle est la différence entre `execv`, `execvp` et `execve` ? *(Indice : `man 3 exec`.)*
-   - Combinez les acquis : modifiez `mysh.c` pour que la sortie de la commande exécutée soit **redirigée** vers un fichier `mysh.out`. *(Indice : avant l’`exec*`, faites `dup2` comme à l’exercice 10 du TP3.)*
+     - Pourquoi `execvp` ne revient-il **jamais** si tout se passe bien ?
+     - Quelle est la différence entre `execv`, `execvp` et `execve` ? *(Indice : `man 3 exec`.)*
+     - Combinez les acquis : modifiez `mysh.c` pour que la sortie de la commande exécutée soit **redirigée** vers un fichier `mysh.out`. *(Indice : avant l’`exec*`, faites `dup2` comme à l’exercice 10 du TP3.)*
 
 !!! success "Félicitations"
     Vous venez d’implémenter le cœur de fonctionnement d’un shell Unix : `fork` + `exec` + `wait` + redirection via `dup2`. Toutes ces briques sont ce que `bash` lui-même fait en interne à chaque commande que vous tapez.

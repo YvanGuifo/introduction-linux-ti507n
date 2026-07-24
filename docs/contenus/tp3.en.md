@@ -149,7 +149,8 @@ title: Lab 3 - Working Environment and C Compiler
    $ echo \\
    ```
 2. Answer:
-   - What does `\` do before a character other than `<newline>`?
+
+       - What does `\` do before a character other than `<newline>`?
    - What is the purpose of the `\<newline>` sequence?
    - How do you get a literal `\`? How do you display `\\` with `echo`?
 
@@ -170,8 +171,9 @@ title: Lab 3 - Working Environment and C Compiler
    apostrophes'
    ```
 2. Answer:
-   - Which characters are special **inside single quotes**?
-   - How do you include a single quote within a single-quoted string?
+
+       - Which characters are special **inside single quotes**?
+       - How do you include a single quote within a single-quoted string?
 
 ### Exercise 4 — The double quote `"` 📚📚
 
@@ -185,9 +187,10 @@ title: Lab 3 - Working Environment and C Compiler
    $ echo "aujourd'hui"
    ```
 2. Answer:
-   - Which characters **remain special** inside double quotes?
-   - What happens if you put `\` before `$`, `"`, `\` inside double quotes?
-   - When would you use `'...'` rather than `"..."`?
+
+       - Which characters **remain special** inside double quotes?
+       - What happens if you put `\` before `$`, `"`, `\` inside double quotes?
+       - When would you use `'...'` rather than `"..."`?
 
 ---
 
@@ -299,9 +302,11 @@ title: Lab 3 - Working Environment and C Compiler
    ```
 2. Navigate to the directory containing `hello.c` and compile with `gcc hello.c`. A file `a.out` is created. Run it with `./a.out`.
 
-   !!! warning "Warning"
-       - If `a.out` already existed, it is **overwritten** without warning.
-       - Use `-o` to choose a different name: `gcc hello.c -o hello`.
+    !!! Warning "Warning"
+
+            - If `a.out` already existed, it is **overwritten** without warning.
+            - Use `-o` to choose a different name: `gcc hello.c -o hello`.
+
 3. Download this archive: [hello.tar.gz](../assets/files/hello.tar.gz).
 4. Extract it and navigate to the `hello` directory:
    ```bash
@@ -312,6 +317,7 @@ title: Lab 3 - Working Environment and C Compiler
    $ gcc main.c hello.c -o run
    ```
    Run it with `./run`.
+
 6. Delete the file `run`. Modify `hello.c` to deliberately introduce an error: remove the **closing brace** of the `void hello()` function. Recompile. What do you notice?
 7. Put the brace back and add a `return 1;` in the definition of the `hello` function (which is `void`). Recompile. What do you notice?
 8. Now recompile with `-Wall -Wextra`. What do you see?
@@ -477,9 +483,10 @@ When you type `./hello > sortie.txt`, the shell internally:
    ```
    The three lines should be in `captures.txt` — **nothing** in the terminal.
 4. **Analysis questions**:
-   - Why is `close(fd)` called immediately after `dup2`?
-   - What would happen if you reversed the arguments: `dup2(STDOUT_FILENO, fd)`?
-   - Modify the program to redirect **`stderr`** instead of `stdout`. Which line do you change?
+
+       - Why is `close(fd)` called immediately after `dup2`?
+       - What would happen if you reversed the arguments: `dup2(STDOUT_FILENO, fd)`?
+       - Modify the program to redirect **`stderr`** instead of `stdout`. Which line do you change?
 
 !!! info "Looking ahead to Lab 4"
     You have just reimplemented the exact mechanism the shell uses for `command > file`. In **Lab 4** you will see how the shell leverages this mechanism via `fork` + `dup2` + `exec`, as well as the signals that interrupt a process.

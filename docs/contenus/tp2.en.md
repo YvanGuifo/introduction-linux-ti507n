@@ -175,17 +175,20 @@ title: Lab 2 - File system and permissions
    ```
 2. Test `chmod 644 f; ls -l f`. What does this command do?
 3. Using **both notations** (octal and symbolic), modify the permissions of `f` to obtain:
-   - execute for all, read and write only for the owner;
-   - read and execute for all, no one can write;
-   - all permissions for all, no write for others;
+
+      - execute for all, read and write only for the owner;
+      - read and execute for all, no one can write;
+      - all permissions for all, no write for others;
    - read and write for the owner, execute for the group, none for others.
 
 ### Exercise 4 — Effect of permissions on operations 📚📚
 
 1. In a directory of your choice, create two files `f` and `g`. Enter some text in each using an editor.
 2. For yourself (owner):
-   - remove the **read** permission on `f`;
-   - remove the **write** permission on `g`.
+
+      - remove the **read** permission on `f`;
+      - remove the **write** permission on `g`.
+
 3. Test and note the results:
    ```bash
    $ cat f
@@ -252,7 +255,8 @@ title: Lab 2 - File system and permissions
    $ rm rep/a
    ```
 6. With `-wx` on `rep` for all, try to:
-   - create a file `d` in `rep`;
+
+      - create a file `d` in `rep`;
    - rename `b`;
    - remove all permissions on `d`;
    - delete `d`.

@@ -149,9 +149,10 @@ title: TP3 - Environnement de travail et Compilateur C
    $ echo \\
    ```
 2. Répondez :
-   - Que fait `\` devant un caractère autre que `<newline>` ?
-   - À quoi sert la séquence `\<newline>` ?
-   - Comment obtenir un `\` littéral ? Comment afficher `\\` avec `echo` ?
+
+      - Que fait `\` devant un caractère autre que `<newline>` ?
+      - À quoi sert la séquence `\<newline>` ?
+      - Comment obtenir un `\` littéral ? Comment afficher `\\` avec `echo` ?
 
 ### Exercice 3 — L’apostrophe `'` 📚📚
 
@@ -170,8 +171,9 @@ title: TP3 - Environnement de travail et Compilateur C
    apostrophes'
    ```
 2. Répondez :
-   - Quels caractères sont spéciaux **entre apostrophes** ?
-   - Comment obtenir une apostrophe dans une chaîne entre apostrophes ?
+
+      - Quels caractères sont spéciaux **entre apostrophes** ?
+      - Comment obtenir une apostrophe dans une chaîne entre apostrophes ?
 
 ### Exercice 4 — Le guillemet `"` 📚📚
 
@@ -185,7 +187,8 @@ title: TP3 - Environnement de travail et Compilateur C
    $ echo "aujourd'hui"
    ```
 2. Répondez :
-   - Quels caractères **restent spéciaux** entre guillemets ?
+
+     - Quels caractères **restent spéciaux** entre guillemets ?
    - Que se passe-t-il si vous mettez `\` devant `$`, `"`, `\` entre guillemets ?
    - Quand utiliseriez-vous `'...'` plutôt que `"..."` ?
 
@@ -299,9 +302,11 @@ title: TP3 - Environnement de travail et Compilateur C
    ```
 2. Placez-vous dans le répertoire contenant `hello.c` et compilez avec `gcc hello.c`. Un fichier `a.out` est créé. Exécutez-le avec `./a.out`.
 
-   !!! warning "Attention"
-       - Si `a.out` existait déjà, il est **écrasé** sans avertissement.
-       - Utilisez `-o` pour choisir un autre nom : `gcc hello.c -o hello`.
+    !!! Warning "Attention"
+
+        - Si `a.out` existait déjà, il est **écrasé** sans avertissement.
+        - Utilisez `-o` pour choisir un autre nom : `gcc hello.c -o hello`.
+
 3. Récupérez cette archive : [hello.tar.gz](../assets/files/hello.tar.gz).
 4. Extrayez-la et placez-vous dans le répertoire `hello` :
    ```bash
@@ -476,10 +481,12 @@ Quand vous tapez `./hello > sortie.txt`, le shell fait en interne :
    $ cat captures.txt
    ```
    Les trois lignes doivent être dans `captures.txt` — **rien** dans le terminal.
+
 4. **Questions d’analyse** :
-   - Pourquoi appelle-t-on `close(fd)` immédiatement après `dup2` ?
-   - Que se passerait-il si vous inversiez les arguments : `dup2(STDOUT_FILENO, fd)` ?
-   - Modifiez le programme pour rediriger **`stderr`** au lieu de `stdout`. Quelle ligne changez-vous ?
+
+      - Pourquoi appelle-t-on `close(fd)` immédiatement après `dup2` ?
+      - Que se passerait-il si vous inversiez les arguments : `dup2(STDOUT_FILENO, fd)` ?
+      - Modifiez le programme pour rediriger **`stderr`** au lieu de `stdout`. Quelle ligne changez-vous ?
 
 !!! info "Vers le TP4"
     Vous venez de réimplémenter le mécanisme exact que le shell utilise pour `commande > fichier`. Au **TP4** vous verrez le shell exploiter ce mécanisme via `fork` + `dup2` + `exec`, ainsi que les signaux qui interrompent un processus.

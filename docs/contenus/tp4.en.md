@@ -102,14 +102,16 @@ title: Lab 4 - Standard Channels and Redirections | Processes and Jobs | Signals
    $ echo "Je m'ajoute en fin de ligne" 1>> fichier.txt
    ```
 2. Recall what the `cat` command does (`man cat`), then answer:
-    - What is the difference between `>` and `>>`?
-    - What is the difference between `1>` and `>`?
-    - What is the difference between `1>>` and `>>`?
+
+        - What is the difference between `>` and `>>`?
+        - What is the difference between `1>` and `>`?
+        - What is the difference between `1>>` and `>>`?
+    
 3. Navigate to your home directory and run:
    ```bash
    $ ls > list_files.txt; cat list_files.txt
    ```
-   - What does this command do?
+        - What does this command do?
    - Can you explain why the string `list_files.txt` appears inside the file `list_files.txt`?
 
 ---
@@ -250,8 +252,9 @@ This exercise consolidates redirections **and** pipes. You will work with the `.
    $ ps
    ```
 3. **Questions**:
-   - What does <kbd>Ctrl</kbd>+<kbd>Z</kbd> do? And <kbd>Ctrl</kbd>+<kbd>C</kbd>?
-   - Redo the sequence by typing commands (for example `pwd`, `ls`) **between** `sleep 240` and <kbd>Ctrl</kbd>+<kbd>Z</kbd>. What do you notice?
+
+       - What does <kbd>Ctrl</kbd>+<kbd>Z</kbd> do? And <kbd>Ctrl</kbd>+<kbd>C</kbd>?
+       - Redo the sequence by typing commands (for example `pwd`, `ls`) **between** `sleep 240` and <kbd>Ctrl</kbd>+<kbd>Z</kbd>. What do you notice?
    - What does `fg %1` do in general?
 
 !!! info "Information about `ps` output"
@@ -268,8 +271,8 @@ This exercise asks you to write a small C program using the skills from Lab 3.
 
 1. Write a C program `compteur.c` that indefinitely increments a variable `i` and displays its value **on standard output every multiple of 100**. Use `sleep` to slow down execution and observe the output.
 
-   !!! info "Where is `sleep` in C?"
-       Type `man 3 sleep` to see the signature of the `sleep` function in the standard library (`<unistd.h>`).
+    !!! info "Where is `sleep` in C?"
+        Type `man 3 sleep` to see the signature of the `sleep` function in the standard library (`<unistd.h>`).
 
 2. Compile with `gcc -Wall -o compteur compteur.c`. Test:
    ```bash
@@ -289,9 +292,10 @@ This exercise asks you to write a small C program using the skills from Lab 3.
    $ jobs
    ```
 3. **Analysis questions**:
-   - What methods allow you to place a process in the background? In the foreground?
-   - What is the difference between <kbd>Ctrl</kbd>+<kbd>Z</kbd> and <kbd>Ctrl</kbd>+<kbd>C</kbd>?
-   - What is the purpose of the `-p` option of `jobs`?
+
+       - What methods allow you to place a process in the background? In the foreground?
+       - What is the difference between <kbd>Ctrl</kbd>+<kbd>Z</kbd> and <kbd>Ctrl</kbd>+<kbd>C</kbd>?
+       - What is the purpose of the `-p` option of `jobs`?
    - What does `bg` do in general?
    - What **job states** did you observe? *(Hint: `Running`, `Stopped`, `Terminated`...)*
 
@@ -441,9 +445,9 @@ The `signal()` system call allows you to install a **handler** that will be call
 
 `fork()` is the system call that **duplicates** the calling process: upon returning from `fork()`, **two** identical processes execute in parallel. The return value allows you to distinguish them:
 
-- `> 0` (child's PID) → we are in the **parent**.
-- `== 0` → we are in the **child**.
-- `< 0` → failure.
+> - `> 0` (child's PID) → we are in the **parent**.
+> - `== 0` → we are in the **child**.
+> - `< 0` → failure.
 
 1. Read: `man 2 fork` then `man 2 wait`.
 2. Create `fork-demo.c`:
@@ -547,7 +551,7 @@ You are going to reproduce this mechanism.
    ```
 4. **Analysis questions**:
 
-    - Why does `execvp` **never** return if everything goes well?
+       - Why does `execvp` **never** return if everything goes well?
    - What is the difference between `execv`, `execvp` and `execve`? *(Hint: `man 3 exec`.)*
    - Combine what you have learned: modify `mysh.c` so that the output of the executed command is **redirected** to a file `mysh.out`. *(Hint: before the `exec*`, use `dup2` as in exercise 10 of Lab 3.)*
 
