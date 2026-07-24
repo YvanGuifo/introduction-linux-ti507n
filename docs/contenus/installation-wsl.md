@@ -205,7 +205,9 @@ Avant de commencer, assurez-vous de disposer :
 2. Cliquez sur + pour créer une nouvelle VM.
 3. Cliquez sur **Virtualize** (et non Emulate).
 4. Choisissez l’option Linux, puis selectionner le fichier precedemment téléchargé.
-<img src="../assets/img/UtmLinux.png" alt="Installation de Linux sur UTM" width="500"/>
+
+    ![Installation de Linux sur UTM](../assets/img/UtmLinux.png){ width="500" }
+
 5. Cliquez sur Continuer.
 
 
@@ -214,7 +216,8 @@ Avant de commencer, assurez-vous de disposer :
 
 1. Allouez 4 Go de RAM (4096 Mo).
 2. Allouez 2 CPU minimum.
-<img src="../assets/img/Materiel.png" alt="UTM" width="500"/>
+
+    ![Configuration matérielle UTM](../assets/img/Materiel.png){ width="500" }
 
 3. Allouez 20 Go de stockage minimum.
 4. Donnez un nom (ex. : **Debian-UTM-M1**).
@@ -223,8 +226,10 @@ Avant de commencer, assurez-vous de disposer :
 ### Étape 5 : Lancer la machine virtuelle
 
 1. Cliquez sur la VM dans la liste (ex. : **Debian-UTM-M1**).
-2. Cliquez sur Play. 
-<img src="../assets/img/ImageUTM.png" alt="UTM" width="500"/>
+2. Cliquez sur Play.
+
+    ![Lancement de la VM UTM](../assets/img/ImageUTM.png){ width="500" }
+
 3. Cliquer sur "**Install**". Ensuite suivez les instructions d'installation de la distribution :
      - Choix de la langue;
      - Partition automatique;
