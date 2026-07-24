@@ -81,15 +81,22 @@ title: Lab 3 - Working Environment and C Compiler
 
 1. Type:
    ```bash
-   $ nom_fich=hello.c
+   $ nom_fich=hello.c       # (1)
    $ echo nom_fich
-   $ echo $nom_fich
-   $ echo ${nom_fich}
+   $ echo $nom_fich         # (2)
+   $ echo ${nom_fich}       # (3)
    $ touch $nom_fich
-   $ echo $nom_fichpp
-   $ echo ${nom_fich}pp
+   $ echo $nom_fichpp       # (4)
+   $ echo ${nom_fich}pp     # (5)
    $ rm ${nom_fich}
    ```
+
+   1. **Assignment**: no spaces around `=`. The shell creates the variable `nom_fich` with the value `hello.c`.
+   2. The `$` triggers **expansion**: the shell replaces `$nom_fich` with its value (`hello.c`) before executing `echo`.
+   3. `${nom_fich}` is equivalent to `$nom_fich` — the braces explicitly delimit the variable name.
+   4. The shell looks for a variable named `nom_fichpp` (which doesn't exist) → empty string.
+   5. The braces `{}` allow **separating** the variable name from the text that follows: `${nom_fich}` + `pp` = `hello.cpp`.
+
 2. Recall what `echo` does. What is the purpose of `$` before a variable name?
 3. What happens if you try to display a variable that does not exist?
 4. What happens if you put a space between the variable name and `=`? And between `=` and the value?
@@ -269,6 +276,11 @@ title: Lab 3 - Working Environment and C Compiler
 
 ## 5. Compiling a C program
 
+??? saviezvous "Dennis Ritchie, the C language, and 'Hello, World!'"
+    The **C language** was created by **Dennis Ritchie** at Bell Labs between 1969 and 1973, initially to rewrite the Unix kernel (which was in PDP-7 assembly). The famous `"Hello, World!"` program first appeared in the book *The C Programming Language* (1978) by **Brian Kernighan** and Dennis Ritchie — nicknamed the **K&R**, it remains one of the most influential computer science books. Remarkable fact: Unix, the C language, and a good part of the tools you use in this lab (the shell, `cat`, `ls`…) were all born in the same hallway of Building 2 at Bell Labs in Murray Hill, New Jersey.
+
+    > Kernighan, B. W. & Ritchie, D. M. (1978). *The C Programming Language*. Prentice Hall. ISBN 978-0131101630.
+
 !!! tip "The GCC compiler"
     `gcc` (*GNU Compiler Collection*) is the standard C compiler on Linux. Compiling a C program breaks down into **four stages**:
 
@@ -310,12 +322,17 @@ title: Lab 3 - Working Environment and C Compiler
 3. Download this archive: [hello.tar.gz](../assets/files/hello.tar.gz).
 4. Extract it and navigate to the `hello` directory:
    ```bash
-   $ tar -xvf hello.tar.gz
+   $ tar -xvf hello.tar.gz # (1)
    ```
+
+   1. `-x` = e**x**tract, `-v` = **v**erbose (displays extracted files), `-f` = archive **f**ile to process. Option order is flexible.
+
 5. Compile the project:
    ```bash
-   $ gcc main.c hello.c -o run
+   $ gcc main.c hello.c -o run # (1)
    ```
+
+   1. `gcc` compiles **multiple** source files into a single executable. `-o run` names the executable `run` instead of the default `a.out`.
    Run it with `./run`.
 
 6. Delete the file `run`. Modify `hello.c` to deliberately introduce an error: remove the **closing brace** of the `void hello()` function. Recompile. What do you notice?

@@ -68,6 +68,11 @@ hide:
 
 ## 1. Anatomie d’une commande, raccourcis clavier
 
+??? saviezvous "Pourquoi les commandes Unix sont-elles si courtes ?"
+    Les créateurs d’Unix, **Ken Thompson** et **Dennis Ritchie** (Bell Labs, 1969–1971), utilisaient un télétype ASR-33 comme terminal. Ce clavier mécanique était lent et bruyant : chaque frappe comptait. C’est pourquoi les commandes sont devenues `ls` plutôt que `list`, `cp` plutôt que `copy`, `mv` plutôt que `move`. Cette concision, née d’une contrainte matérielle, est devenue un trait culturel d’Unix.
+
+    > Thompson, K. & Ritchie, D. M. (1974). The UNIX Time-Sharing System. *Communications of the ACM*, 17(7), 365–375. DOI : [10.1145/361011.361061](https://doi.org/10.1145/361011.361061)
+
 !!! tip "Qu’est-ce qu’une commande ?"
     Une **commande** est une séquence de mots terminée par <kbd>Entrée</kbd>. Le premier mot est le **nom** de la commande, les autres sont ses **arguments**.
 
@@ -126,6 +131,9 @@ hide:
 4. Entrez `cd` (sans argument), puis `pwd`. Commentez.
 5. Entrez `cd /`, puis `pwd` et `ls`. À quoi sert `ls` ?
 6. Entrez `cd /usr/include` puis `ls`. À quoi semble servir ce répertoire ?
+??? saviezvous "Pourquoi la commande s'appelle `cat` ?"
+    La commande `cat` est l'abréviation de **concatenate** (concaténer). Sa fonction première n'était pas d'afficher un fichier, mais de **concaténer** plusieurs fichiers bout à bout (`cat fichier1 fichier2 > fusion`). L'usage courant `cat fichier` pour *afficher* un fichier est en réalité un cas particulier : la concaténation d'un seul fichier vers la sortie standard. Cette distinction reste importante en TP4 quand on abordera les redirections.
+
 7. Rappels :
 
     - `cat` *(concatenate)* affiche les fichiers donnés en arguments.
@@ -161,8 +169,15 @@ hide:
 3. Entrez `mkdir abeilles tp_shell/tp1 ~/arbres`. Quels arguments sont absolus, lesquels sont relatifs ?
 4. Que fait la commande suivante ?
    ```bash
-   $ mkdir -p vivant/plante/fleur tp_shell/tp1/exos/ex1/
+   $ mkdir -p vivant/plante/fleur tp_shell/tp1/exos/ex1/ # (1)
    ```
+
+   1. `-p` (*parents*) crée tous les répertoires intermédiaires manquants. Sans cette option, `mkdir` échoue si un répertoire parent n'existe pas.
+??? saviezvous "La touche Tab : une révolution dans l'interaction homme-machine"
+    La **complétion automatique** par <kbd>Tab</kbd> a été introduite dans le **C shell** (`csh`) par Bill Joy à l'université de Berkeley en 1978, puis reprise et améliorée par Bash. Avant cela, il fallait taper chaque nom de fichier en entier, lettre par lettre — une source d'erreurs de frappe constante. Aujourd'hui, la complétion « intelligente » va bien au-delà des noms de fichiers : elle complète les options de commandes, les noms d'hôtes SSH, les branches Git, et bien plus.
+
+    > Joy, W. (1979). *An Introduction to the C Shell*. Computer Science Division, University of California, Berkeley.
+
 5. Testez la **complétion automatique** avec la touche <kbd>Tab</kbd> :
    ```bash
    $ mkd<Tab> vi<Tab><Tab><Tab>roses
@@ -193,15 +208,21 @@ hide:
    $ cp vie/arbres/bonjour.c salut.c
    $ mkdir copies
    $ cp salut.c vie/abeilles/truc.txt copies
-   $ cp -R vie copie_vie
+   $ cp -R vie copie_vie # (1)
    ```
+
+   1. `-R` (*recursive*) copie le répertoire et **tout** son contenu (sous-répertoires et fichiers). Sans `-R`, `cp` refuse de copier un répertoire.
+
    Décrivez le comportement de `cp` selon que son dernier argument est un répertoire existant ou non, avec/sans `-R`.
 10. Supprimez avec `rm` :
     ```bash
     $ rm vie/bidule
-    $ rm -r copies
+    $ rm -r copies # (1)
     $ rm -R copie_vie
     ```
+
+    1. `-r` (ou `-R`, *recursive*) supprime le répertoire et **tout** son contenu. Sans cette option, `rm` refuse de supprimer un répertoire.
+
     Nettoyez tous les fichiers et répertoires créés dans cet exercice.
 
 !!! warning "`rm` est définitif"
@@ -309,21 +330,30 @@ Depuis votre répertoire personnel, exécutez :
    `annee1  Annee2  annee4  annee45  annee41  annee510  annee_saucisse  annee_banane  bonbon`
 2. Sans les exécuter, prédisez le résultat des commandes suivantes, puis testez :
    ```bash
-   $ echo *
-   $ echo *_*
-   $ echo [ab]*
-   $ echo [^ab]*
+   $ echo *          # (1)
+   $ echo *_*        # (2)
+   $ echo [ab]*      # (3)
+   $ echo [^ab]*     # (4)
    $ echo c*
-   $ echo ??????
+   $ echo ??????     # (5)
    ```
+ 
+    1. `*` correspond à toute chaîne de caractères (même vide), sauf les fichiers commençant par `.`.
+    2. `*_*` : fichiers contenant un underscore — `*` de chaque côté correspond à n'importe quel préfixe/suffixe.
+    3. `[ab]*` : fichiers commençant par `a` **ou** `b`. Les crochets définissent un ensemble de caractères possibles pour **une** position.
+    4. `[^ab]*` : le `^` **inverse** la classe — ici, fichiers ne commençant **ni** par `a` **ni** par `b`.
+    5. `?` correspond à exactement **un** caractère. Six `?` = fichiers de exactement 6 caractères.
+
 3. Avec `ls`, listez tous les fichiers qui :
-   - se terminent par `5` ;
-   - commencent par `annee4` ;
-   - commencent par `annee4` et ont au maximum 7 lettres ;
-   - commencent par `annee` et dont le sixième caractère n’est **pas** un chiffre ;
-   - contiennent la chaîne `ana` ;
-   - commencent par `a` **ou** `A` ;
-   - dont l’avant-dernier caractère est `4` **ou** `1`.
+
+    - se terminent par `5` ;
+    - commencent par `annee4` ;
+    - commencent par `annee4` et ont au maximum 7 lettres ;
+    - commencent par `annee` et dont le sixième caractère n’est **pas** un chiffre ;
+    - contiennent la chaîne `ana` ;
+    - commencent par `a` **ou** `A` ;
+    - dont l’avant-dernier caractère est `4` **ou** `1`.
+   
 4. Listez tous les fichiers cachés (nom commençant par `.`) de votre répertoire personnel.
 5. Listez tous les fichiers dont le nom commence par `std` et se termine par `.h` dans `/usr/include`.
 

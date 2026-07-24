@@ -30,22 +30,89 @@ Ce module se déroulera en 15 heures de cours sous forme de Cours - TP.
 | 4      | Maroua Tikat              | maroua.tikat@efrei.fr          |
 
 
-### Contenu du cours
-1. [Installation d'une distribution Linux](./contenus/installation-wsl.md)
-2. [Vous n'avez pas de système Linux installé ? Pas grave, Codespace à la rescousse !](./contenus/codespace.md)
-3. [Lecture préliminaire](./contenus/preliminary-reading.md)
-4. [Introduction à MarioNum](./contenus/Intro-MarioNum.md)
-5. [TP1 - Premières commandes](./contenus/tp1.md)
-6. [TP2 - Système de fichiers et permissions](./contenus/tp2.md)
-7. [TP3 - Environnement de travail et Compilateur C](./contenus/tp3.md)
-8. [TP4 - Canaux standards et redirections | Processus et tâches | Signaux](./contenus/tp4.md) 
-9. [Quelques commandes supplémentaires](./contenus/tp4-exo.md) 
+<h3 class="section-header">🔧 Mise en route</h3>
 
+<div class="card-grid">
+<a href="contenus/installation-wsl/" class="card">
+<span class="card-icon">💻</span>
+<span class="card-title">Installation d'une distribution Linux</span>
+<span class="card-desc">Installer Debian 12 via VirtualBox (Windows/Mac Intel) ou UTM (Apple Silicon).</span>
+<span class="card-badge badge-setup">Mise en route</span>
+</a>
+<a href="contenus/codespace/" class="card">
+<span class="card-icon">☁️</span>
+<span class="card-title">Codespace — Linux dans le navigateur</span>
+<span class="card-desc">Pas de VM ? Lancez un environnement Linux complet directement depuis GitHub.</span>
+<span class="card-badge badge-setup">Mise en route</span>
+</a>
+<a href="contenus/preliminary-reading/" class="card">
+<span class="card-icon">📖</span>
+<span class="card-title">Lecture préliminaire</span>
+<span class="card-desc">Comprendre l'histoire, la philosophie et les concepts fondamentaux de GNU/Linux.</span>
+<span class="card-badge badge-setup">Mise en route</span>
+</a>
+<a href="contenus/Intro-MarioNum/" class="card">
+<span class="card-icon">🎮</span>
+<span class="card-title">Introduction à MarioNum</span>
+<span class="card-desc">Découvrir l'environnement MarioNum pour pratiquer Linux en ligne.</span>
+<span class="card-badge badge-resource">Ressource</span>
+</a>
+</div>
 
-<!--
-6. [TP3 - Environnement de travail et Compilateur C](./contenus/tp3.md)
-7. [TP4 - TP4 - Canaux standards et redirections | Processus et tâches | Signaux](./contenus/tp4.md) -->
+<h3 class="section-header">🎓 Travaux Pratiques</h3>
 
-<!-- 4. [TP2 - Système de fichiers et permissions](./contenus/tp2.md)
-6. [TP4 - Filtres textuel, redirections et tubes](./contenus/tp4.md)
-7. [TP5 - Processus et autres commandes](./contenus/tp5.md) -->
+<div class="card-grid">
+<a href="contenus/tp1/" class="card">
+<span class="card-icon">🚀</span>
+<span class="card-title">TP1 — Premières commandes</span>
+<span class="card-desc">Navigation dans l'arborescence, manipulation de fichiers, aide en ligne, jokers.</span>
+<span class="card-badge badge-easy">Débutant</span>
+</a>
+<a href="contenus/tp2/" class="card">
+<span class="card-icon">🔒</span>
+<span class="card-title">TP2 — Système de fichiers et permissions</span>
+<span class="card-desc">Inodes, liens, droits rwx, chmod, chown, umask, bits spéciaux.</span>
+<span class="card-badge badge-medium">Intermédiaire</span>
+</a>
+<a href="contenus/tp3/" class="card">
+<span class="card-icon">⚙️</span>
+<span class="card-title">TP3 — Environnement de travail et Compilateur C</span>
+<span class="card-desc">Variables d'environnement, PATH, alias, scripts shell, compilation avec gcc.</span>
+<span class="card-badge badge-medium">Intermédiaire</span>
+</a>
+<a href="contenus/tp4/" class="card">
+<span class="card-icon">⚡</span>
+<span class="card-title">TP4 — Redirections, processus et signaux</span>
+<span class="card-desc">Canaux stdin/stdout/stderr, pipes, processus, jobs, signaux Unix.</span>
+<span class="card-badge badge-hard">Avancé</span>
+</a>
+<a href="contenus/tp4-exo/" class="card">
+<span class="card-icon">⭐</span>
+<span class="card-title">Commandes supplémentaires</span>
+<span class="card-desc">Exercices complémentaires pour approfondir et consolider vos acquis.</span>
+<span class="card-badge badge-hard">Avancé</span>
+</a>
+</div>
+
+<h3 class="section-header">📚 Ressources</h3>
+
+<div class="card-grid">
+<a href="contenus/cheatsheet/" class="card">
+<span class="card-icon">📋</span>
+<span class="card-title">Mémo des commandes</span>
+<span class="card-desc">Toutes les commandes vues en cours, classées par TP, dans un tableau synthétique.</span>
+<span class="card-badge badge-resource">Référence</span>
+</a>
+<a href="contenus/glossaire/" class="card">
+<span class="card-icon">📖</span>
+<span class="card-title">Glossaire</span>
+<span class="card-desc">Définitions des termes techniques : shell, inode, PID, signal, pipe, etc.</span>
+<span class="card-badge badge-resource">Référence</span>
+</a>
+<a href="contenus/faq/" class="card">
+<span class="card-icon">🩹</span>
+<span class="card-title">FAQ — Problèmes courants</span>
+<span class="card-desc">Solutions aux erreurs classiques : Permission denied, command not found, terminal bloqué…</span>
+<span class="card-badge badge-resource">Aide</span>
+</a>
+</div>

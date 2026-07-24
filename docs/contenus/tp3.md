@@ -81,15 +81,21 @@ title: TP3 - Environnement de travail et Compilateur C
 
 1. Tapez :
    ```bash
-   $ nom_fich=hello.c
+   $ nom_fich=hello.c       # (1)
    $ echo nom_fich
-   $ echo $nom_fich
-   $ echo ${nom_fich}
+   $ echo $nom_fich         # (2)
+   $ echo ${nom_fich}       # (3)
    $ touch $nom_fich
-   $ echo $nom_fichpp
-   $ echo ${nom_fich}pp
+   $ echo $nom_fichpp       # (4)
+   $ echo ${nom_fich}pp     # (5)
    $ rm ${nom_fich}
    ```
+
+   1. **Affectation** : pas d'espace autour du `=`. Le shell crée la variable `nom_fich` avec la valeur `hello.c`.
+   2. Le `$` déclenche le **développement** : le shell remplace `$nom_fich` par sa valeur (`hello.c`) avant d'exécuter `echo`.
+   3. `${nom_fich}` est équivalent à `$nom_fich` — les accolades délimitent explicitement le nom de la variable.
+   4. Le shell cherche la variable `nom_fichpp` (qui n'existe pas) → chaîne vide.
+   5. Les accolades `{}` permettent de **séparer** le nom de variable du texte qui suit : `${nom_fich}` + `pp` = `hello.cpp`.
 2. Rappelez ce que fait `echo`. À quoi sert le `$` devant le nom de variable ?
 3. Que se passe-t-il si on demande d’afficher une variable qui n’existe pas ?
 4. Que se passe-t-il si vous mettez un espace entre le nom de la variable et le `=` ? Et entre le `=` et la valeur ?
@@ -269,6 +275,11 @@ title: TP3 - Environnement de travail et Compilateur C
 
 ## 5. Compilation d’un programme C
 
+??? saviezvous "Dennis Ritchie, le C et « Hello, World! »"
+    Le langage **C** a été créé par **Dennis Ritchie** aux Bell Labs entre 1969 et 1973, initialement pour réécrire le noyau Unix (qui était en assembleur PDP-7). Le célèbre programme `"Hello, World!"` apparaît pour la première fois dans le livre *The C Programming Language* (1978) de **Brian Kernighan** et Dennis Ritchie — surnommé le **K&R**, il reste l’un des livres d’informatique les plus influents. Fait remarquable : Unix, le langage C et une bonne partie des outils que vous utilisez dans ce TP (le shell, `cat`, `ls`…) sont tous nés dans le même couloir du bâtiment 2 des Bell Labs à Murray Hill, New Jersey.
+
+    > Kernighan, B. W. & Ritchie, D. M. (1978). *The C Programming Language*. Prentice Hall. ISBN 978-0131101630.
+
 !!! tip "Le compilateur GCC"
     `gcc` (*GNU Compiler Collection*) est le compilateur C de référence sous Linux. La compilation d’un programme C se décompose en **quatre étapes** :
 
@@ -310,12 +321,17 @@ title: TP3 - Environnement de travail et Compilateur C
 3. Récupérez cette archive : [hello.tar.gz](../assets/files/hello.tar.gz).
 4. Extrayez-la et placez-vous dans le répertoire `hello` :
    ```bash
-   $ tar -xvf hello.tar.gz
+   $ tar -xvf hello.tar.gz # (1)
    ```
+
+   1. `-x` = e**x**traire, `-v` = **v**erbose (affiche les fichiers extraits), `-f` = **f**ichier archive à traiter. L'ordre des options est libre.
+
 5. Compilez le projet :
    ```bash
-   $ gcc main.c hello.c -o run
+   $ gcc main.c hello.c -o run # (1)
    ```
+
+   1. `gcc` compile **plusieurs** fichiers source en un seul exécutable. `-o run` nomme l'exécutable `run` au lieu du défaut `a.out`.
    Exécutez avec `./run`.
 6. Supprimez le fichier `run`. Modifiez `hello.c` pour introduire volontairement une erreur : supprimez **l’accolade fermante** de la fonction `void hello()`. Recompilez. Que remarquez-vous ?
 7. Remettez l’accolade et ajoutez un `return 1;` dans la définition de la fonction `hello` (qui est `void`). Recompilez. Que remarquez-vous ?

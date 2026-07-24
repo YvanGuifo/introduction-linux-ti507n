@@ -8,6 +8,7 @@ extra_css:
   - assets/stylesheets/extra.css
 
 extra_javascript:
+  - assets/javascripts/extra.js
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js
 
 theme:
@@ -53,6 +54,9 @@ theme:
     - navigation.expand
     - navigation.top
     - navigation.tracking
+    - navigation.footer
+    - navigation.instant
+    - navigation.instant.progress
     - header.autohide
     - toc.follow
     - search.suggest
@@ -116,7 +120,10 @@ plugins:
           site_name: "TI507N - Introduction to Linux"
           nav_translations:
             Accueil: Home
-            Contenus: Contents
+            Mise en route: Getting Started
+            Travaux Pratiques: Labs
+            Corrigés: Solutions
+            Ressources: Resources
             Installation d'une distribution Linux: Installing a Linux distribution
             Lecture préliminaire: Preliminary reading
             Introduction à MarioNum: Introduction to MarioNum
@@ -126,20 +133,35 @@ plugins:
             "TP3 — Environnement de travail et Compilateur C": "Lab 3 — Working environment and C Compiler"
             "TP4 — Canaux standards et redirections, Processus et tâches, Signaux": "Lab 4 — Standard channels & redirections, Processes & jobs, Signals"
             "Quelques commandes supplémentaires": "Additional commands"
+            "Corrigé TP2": "Solution Lab 2"
+            "Corrigé TP3": "Solution Lab 3"
+            "Corrigé TP4": "Solution Lab 4"
+            "Mémo des commandes": "Command Cheat Sheet"
+            Glossaire: Glossary
+            "FAQ — Problèmes courants": "FAQ — Common Issues"
   - tags
 
 nav:
   - Accueil: index.md
-  - Contenus:
-    - contenus/installation-wsl.md
-    - contenus/preliminary-reading.md
-    - contenus/Intro-MarioNum.md
-    - contenus/codespace.md
-    - contenus/tp1.md
-    - contenus/tp2.md
-    - contenus/tp3.md
-    - contenus/tp4.md
-    - contenus/tp4-exo.md
+  - Mise en route:
+    - Installation d'une distribution Linux: contenus/installation-wsl.md
+    - Lecture préliminaire: contenus/preliminary-reading.md
+    - "Vous n'avez pas de système Linux installé ? Pas grave, Codespace à la rescousse !": contenus/codespace.md
+  - Travaux Pratiques:
+    - "TP1 - Premières commandes": contenus/tp1.md
+    - "TP2 — Système de fichiers et permissions": contenus/tp2.md
+    - "TP3 — Environnement de travail et Compilateur C": contenus/tp3.md
+    - "TP4 — Canaux standards et redirections, Processus et tâches, Signaux": contenus/tp4.md
+    - "Quelques commandes supplémentaires": contenus/tp4-exo.md
+  #- Corrigés:
+  #  - "Corrigé TP2": contenus/corrige-tp2.md
+  #  - "Corrigé TP3": contenus/corrige-tp3.md
+  #  - "Corrigé TP4": contenus/corrige-tp4.md
+  - Ressources:
+    - Introduction à MarioNum: contenus/Intro-MarioNum.md
+    - "Mémo des commandes": contenus/cheatsheet.md
+    - Glossaire: contenus/glossaire.md
+    - "FAQ — Problèmes courants": contenus/faq.md
 
 extra:
   alternate:

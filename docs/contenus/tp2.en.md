@@ -63,6 +63,11 @@ title: Lab 2 - File system and permissions
 
 ## 1. Linux file system
 
+??? saviezvous "Why is `/etc` called `/etc`?"
+    The directory `/etc` literally means **et cetera** — "and the rest." In early versions of Unix (1971, PDP-11), the file tree had only a few directories: `/bin` for programs, `/dev` for devices, `/usr` for users… and `/etc` for **everything that didn't fit anywhere else**. System configuration files ended up there by default. The name, kept by convention, is sometimes reinterpreted as *Editable Text Configuration*, but this is a **backronym** — the original meaning is indeed "et cetera."
+
+    > Ritchie, D. M., & Thompson, K. (1978). The UNIX Time-Sharing System. *Bell System Technical Journal*, 57(6), 1905–1929. DOI: [10.1002/j.1538-7305.1978.tb02136.x](https://doi.org/10.1002/j.1538-7305.1978.tb02136.x)
+
 !!! tip "A single tree structure"
     The Linux file system is a **hierarchy** starting from the root `/`. All directories are subdirectories of `/`. Unlike Windows, there are no drive letters: disks and partitions are **mounted** within the single tree structure.
 
@@ -123,8 +128,10 @@ title: Lab 2 - File system and permissions
 
     ```bash
     $ ls -l fichier
-    -rw-r--r-- 1 user group 0 2024-09-09 10:00 fichier
+    -rw-r--r-- 1 user group 0 2024-09-09 10:00 fichier # (1)
     ```
+
+    1. From left to right: **type** + permissions (`-rw-r--r--`), number of **links** (`1`), **owner** (`user`), **group** (`group`), **size** in bytes (`0`), last **modification date**, **filename**.
 
     The string `-rw-r--r--` is read as:
 
@@ -166,14 +173,28 @@ title: Lab 2 - File system and permissions
 1. Test the following commands and try to understand `chmod` in **symbolic** notation:
    ```bash
    $ touch f; ls -l f
-   $ chmod a= f; ls -l f
-   $ chmod o+rw f; ls -l f
-   $ chmod u=o f; ls -l f
+   $ chmod a= f; ls -l f           # (1)
+   $ chmod o+rw f; ls -l f         # (2)
+   $ chmod u=o f; ls -l f          # (3)
    $ chmod o-wx f; ls -l f
-   $ chmod g+u f; ls -l f
-   $ chmod a+x,g-w f; ls -l f
+   $ chmod g+u f; ls -l f          # (4)
+   $ chmod a+x,g-w f; ls -l f     # (5)
    ```
-2. Test `chmod 644 f; ls -l f`. What does this command do?
+
+   1. `a` = **all** (u+g+o), `=` **sets** exact permissions. Here `a=` with no right → removes **all** permissions.
+   2. `o` = *others*, `+` **adds** rights. Here: read and write for others.
+   3. `u=o`: the owner (*user*) gets the **same** permissions as others (*others*).
+   4. `g+u`: the group gets the owner's **current** permissions.
+   5. The comma lets you combine multiple modifications in a single command.
+
+2. Test and observe:
+   ```bash
+   $ chmod 644 f; ls -l f # (1)
+   ```
+
+   1. `644` in octal = `rw-r--r--`: read/write for the owner (`6` = `r`+`w`), read only for group (`4` = `r`) and others (`4` = `r`).
+
+   What does this command do?
 3. Using **both notations** (octal and symbolic), modify the permissions of `f` to obtain:
 
       - execute for all, read and write only for the owner;
@@ -219,6 +240,11 @@ title: Lab 2 - File system and permissions
 ---
 
 ## 3. Permissions associated with directories
+
+??? saviezvous "Inodes: the invention that separates name from content"
+    The **inode** concept was invented by Dennis Ritchie and Ken Thompson for the first Unix file system (1971). The key insight: a file's **name** and its **data** are separate things. The name is stored in the parent directory, the metadata (permissions, size, dates) in the inode, and the content in separate disk blocks. This separation makes hard links possible (multiple names → same inode) and explains why renaming a file is instant (only the directory entry changes, not the data).
+
+    > Bach, M. J. (1986). *The Design of the UNIX Operating System*. Prentice Hall. ISBN 978-0132017992. Chapter 4.
 
 !!! tip "What is a directory?"
     A **directory** is a table associating file names with an index number called an **inode**. The inode contains metadata (size, permissions, timestamp, content location).

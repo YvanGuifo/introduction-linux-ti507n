@@ -63,6 +63,11 @@ title: TP2 - Système de fichiers et permissions
 
 ## 1. Système de fichiers Linux
 
+??? saviezvous "Pourquoi `/etc` s'appelle `/etc` ?"
+    Le répertoire `/etc` signifie littéralement **et cetera** — « et le reste ». Dans les premières versions d'Unix (1971, PDP-11), l'arborescence ne comptait que quelques répertoires : `/bin` pour les programmes, `/dev` pour les périphériques, `/usr` pour les utilisateurs… et `/etc` pour **tout ce qui ne rentrait nulle part ailleurs**. Les fichiers de configuration système y ont atterri par défaut. Ce nom, resté par convention, est aujourd'hui souvent réinterprété en *Editable Text Configuration*, mais cette étymologie est un **rétroacronyme** — l'original est bien « et cetera ».
+
+    > Ritchie, D. M., & Thompson, K. (1978). The UNIX Time-Sharing System. *Bell System Technical Journal*, 57(6), 1905–1929. DOI : [10.1002/j.1538-7305.1978.tb02136.x](https://doi.org/10.1002/j.1538-7305.1978.tb02136.x)
+
 !!! tip "Une arborescence unique"
     Le système de fichiers Linux est une **hiérarchie** partant de la racine `/`. Tous les répertoires sont des sous-répertoires de `/`. Contrairement à Windows, il n’y a pas de lettre de lecteur : disques et partitions sont **montés** dans l’arborescence unique.
 
@@ -123,8 +128,10 @@ title: TP2 - Système de fichiers et permissions
 
     ```bash
     $ ls -l fichier
-    -rw-r--r-- 1 user group 0 2024-09-09 10:00 fichier
+    -rw-r--r-- 1 user group 0 2024-09-09 10:00 fichier # (1)
     ```
+
+    1. De gauche à droite : **type** + permissions (`-rw-r--r--`), nombre de **liens** (`1`), **propriétaire** (`user`), **groupe** (`group`), **taille** en octets (`0`), **date** de dernière modification, **nom** du fichier.
 
     La chaîne `-rw-r--r--` se lit :
 
@@ -166,14 +173,28 @@ title: TP2 - Système de fichiers et permissions
 1. Testez les commandes suivantes et essayez de comprendre `chmod` en notation **symbolique** :
    ```bash
    $ touch f; ls -l f
-   $ chmod a= f; ls -l f
-   $ chmod o+rw f; ls -l f
-   $ chmod u=o f; ls -l f
+   $ chmod a= f; ls -l f           # (1)
+   $ chmod o+rw f; ls -l f         # (2)
+   $ chmod u=o f; ls -l f          # (3)
    $ chmod o-wx f; ls -l f
-   $ chmod g+u f; ls -l f
-   $ chmod a+x,g-w f; ls -l f
+   $ chmod g+u f; ls -l f          # (4)
+   $ chmod a+x,g-w f; ls -l f     # (5)
    ```
-2. Testez `chmod 644 f; ls -l f`. Que fait cette commande ?
+
+   1. `a` = **all** (u+g+o), `=` **fixe** les permissions exactes. Ici `a=` sans droit → retire **toutes** les permissions.
+   2. `o` = *others*, `+` **ajoute** des droits. Ici : lecture et écriture pour les autres.
+   3. `u=o` : le propriétaire (*user*) reçoit les **mêmes** permissions que les autres (*others*).
+   4. `g+u` : le groupe reçoit les permissions **actuelles** du propriétaire.
+   5. La virgule permet de combiner plusieurs modifications en une seule commande.
+
+2. Testez et observez :
+   ```bash
+   $ chmod 644 f; ls -l f # (1)
+   ```
+
+   1. `644` en octal = `rw-r--r--` : lecture/écriture pour le propriétaire (`6` = `r`+`w`), lecture seule pour le groupe (`4` = `r`) et les autres (`4` = `r`).
+
+   Que fait cette commande ?
 3. Avec les **deux notations** (octale et symbolique), modifiez les permissions de `f` pour obtenir :
 
       - exécution pour tous, lecture et écriture uniquement pour le propriétaire ;
@@ -219,6 +240,11 @@ title: TP2 - Système de fichiers et permissions
 ---
 
 ## 3. Permissions associées aux répertoires
+
+??? saviezvous "Les inodes : l’invention qui sépare le nom du contenu"
+    Le concept d’**inode** a été inventé par Dennis Ritchie et Ken Thompson pour le premier système de fichiers Unix (1971). L’idée fondamentale : le **nom** d’un fichier et ses **données** sont des choses distinctes. Le nom est stocké dans le répertoire parent, les métadonnées (permissions, taille, dates) dans l’inode, et le contenu dans des blocs disque séparés. Cette séparation rend possibles les liens physiques (plusieurs noms → même inode) et explique pourquoi renommer un fichier est instantané (on ne touche qu’à l’entrée du répertoire, pas aux données).
+
+    > Bach, M. J. (1986). *The Design of the UNIX Operating System*. Prentice Hall. ISBN 978-0132017992. Chapitre 4.
 
 !!! tip "Qu’est-ce qu’un répertoire ?"
     Un **répertoire** est une table associant des noms de fichiers à un numéro d’index appelé **inode**. L’inode contient les métadonnées (taille, permissions, horodatage, emplacement du contenu).

@@ -68,6 +68,11 @@ hide:
 
 ## 1. Anatomy of a command, keyboard shortcuts
 
+??? saviezvous "Why are Unix commands so short?"
+    The creators of Unix, **Ken Thompson** and **Dennis Ritchie** (Bell Labs, 1969–1971), used an ASR-33 teletype as their terminal. This mechanical keyboard was slow and noisy: every keystroke counted. That's why commands became `ls` instead of `list`, `cp` instead of `copy`, `mv` instead of `move`. This brevity, born from a hardware constraint, became a cultural trait of Unix.
+
+    > Thompson, K. & Ritchie, D. M. (1974). The UNIX Time-Sharing System. *Communications of the ACM*, 17(7), 365–375. DOI: [10.1145/361011.361061](https://doi.org/10.1145/361011.361061)
+
 !!! tip "What is a command?"
     A **command** is a sequence of words terminated by <kbd>Enter</kbd>. The first word is the **name** of the command, the others are its **arguments**.
 
@@ -126,6 +131,9 @@ hide:
 4. Enter `cd` (with no argument), then `pwd`. Comment.
 5. Enter `cd /`, then `pwd` and `ls`. What does `ls` do?
 6. Enter `cd /usr/include` then `ls`. What does this directory seem to be used for?
+??? saviezvous "Why is the command called `cat`?"
+    The command `cat` is short for **concatenate**. Its primary purpose was not to display a file, but to **concatenate** multiple files end-to-end (`cat file1 file2 > merged`). The common usage `cat file` to *display* a file is actually a special case: concatenation of a single file to standard output. This distinction becomes important in Lab 4 when we cover redirections.
+
 7. Reminders:
 
     - `cat` *(concatenate)* displays the files given as arguments.
@@ -161,8 +169,15 @@ hide:
 3. Enter `mkdir abeilles tp_shell/tp1 ~/arbres`. Which arguments are absolute and which are relative?
 4. What does the following command do?
    ```bash
-   $ mkdir -p vivant/plante/fleur tp_shell/tp1/exos/ex1/
+   $ mkdir -p vivant/plante/fleur tp_shell/tp1/exos/ex1/ # (1)
    ```
+
+   1. `-p` (*parents*) creates all missing intermediate directories. Without this option, `mkdir` fails if a parent directory doesn't exist.
+??? saviezvous "The Tab key: a revolution in human-computer interaction"
+    **Tab completion** was introduced in the **C shell** (`csh`) by Bill Joy at UC Berkeley in 1978, then adopted and improved by Bash. Before that, every filename had to be typed in full, letter by letter — a constant source of typos. Today, "smart" completion goes far beyond filenames: it completes command options, SSH hostnames, Git branches, and much more.
+
+    > Joy, W. (1979). *An Introduction to the C Shell*. Computer Science Division, University of California, Berkeley.
+
 5. Test **tab completion** with the <kbd>Tab</kbd> key:
    ```bash
    $ mkd<Tab> vi<Tab><Tab><Tab>roses
@@ -193,15 +208,21 @@ hide:
    $ cp vie/arbres/bonjour.c salut.c
    $ mkdir copies
    $ cp salut.c vie/abeilles/truc.txt copies
-   $ cp -R vie copie_vie
+   $ cp -R vie copie_vie # (1)
    ```
+
+   1. `-R` (*recursive*) copies the directory and **all** its contents (subdirectories and files). Without `-R`, `cp` refuses to copy a directory.
+
    Describe the behavior of `cp` depending on whether its last argument is an existing directory or not, with and without `-R`.
 10. Delete with `rm`:
     ```bash
     $ rm vie/bidule
-    $ rm -r copies
+    $ rm -r copies # (1)
     $ rm -R copie_vie
     ```
+
+    1. `-r` (or `-R`, *recursive*) deletes the directory and **all** its contents. Without this option, `rm` refuses to delete a directory.
+
     Clean up all files and directories created in this exercise.
 
 !!! warning "`rm` is permanent"
@@ -309,21 +330,30 @@ From your home directory, execute:
    `annee1  Annee2  annee4  annee45  annee41  annee510  annee_saucisse  annee_banane  bonbon`
 2. Without executing them, predict the result of the following commands, then test:
    ```bash
-   $ echo *
-   $ echo *_*
-   $ echo [ab]*
-   $ echo [^ab]*
+   $ echo *          # (1)
+   $ echo *_*        # (2)
+   $ echo [ab]*      # (3)
+   $ echo [^ab]*     # (4)
    $ echo c*
-   $ echo ??????
+   $ echo ??????     # (5)
    ```
+
+    1. `*` matches any string (even empty), except files starting with `.`.
+    2. `*_*`: files containing an underscore — `*` on each side matches any prefix/suffix.
+    3. `[ab]*`: files starting with `a` **or** `b`. Brackets define a set of possible characters for **one** position.
+   4. `[^ab]*`: the `^` **negates** the class — here, files starting with **neither** `a` **nor** `b`.
+   5. `?` matches exactly **one** character. Six `?` = files with exactly 6 characters.
+
 3. Using `ls`, list all files that:
-   - end with `5`;
-   - start with `annee4`;
-   - start with `annee4` and have at most 7 characters;
-   - start with `annee` and whose sixth character is **not** a digit;
+
+      - end with `5`;
+      - start with `annee4`;
+      - start with `annee4` and have at most 7 characters;
+      - start with `annee` and whose sixth character is **not** a digit;
    - contain the string `ana`;
    - start with `a` **or** `A`;
    - whose second-to-last character is `4` **or** `1`.
+
 4. List all hidden files (names starting with `.`) in your home directory.
 5. List all files whose name starts with `std` and ends with `.h` in `/usr/include`.
 

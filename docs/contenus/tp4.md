@@ -79,9 +79,12 @@ title: TP4 - Canaux standards et redirections | Processus et tâches | Signaux
     `>` redirige `stdout` vers un fichier ; `>>` ajoute en fin de fichier.
 
     ```bash
-    $ ls ~ > list_files.txt    # crée ou écrase list_files.txt
-    $ ls ~ >> list_files.txt   # ajoute en fin de list_files.txt
+    $ ls ~ > list_files.txt    # (1)
+    $ ls ~ >> list_files.txt   # (2)
     ```
+
+    1. `>` redirige `stdout` vers un fichier. Si le fichier existe, il est **écrasé**.
+    2. `>>` redirige `stdout` en **ajoutant** en fin de fichier, sans écraser le contenu existant.
 
     !!! warning "Attention"
         `>` **écrase** sans demander confirmation. Pour préserver le contenu existant, utilisez `>>`.
@@ -126,8 +129,11 @@ title: TP4 - Canaux standards et redirections | Processus et tâches | Signaux
 5. Redirigez la sortie standard de la commande précédente vers un fichier `result.txt`. Observez ce qui est affiché sur le terminal **et** ce qui est dans `result.txt`.
 6. Tapez ensuite :
    ```bash
-   $ cat file-1.txt file-2.txt file-3.txt 1> result.txt 2> error.txt
+   $ cat file-1.txt file-2.txt file-3.txt 1> result.txt 2> error.txt # (1)
    ```
+
+   1. `1>` redirige la **sortie standard** (canal 1) vers `result.txt`, `2>` redirige l'**erreur standard** (canal 2) vers `error.txt`. On sépare ainsi les résultats normaux des messages d'erreur.
+
 7. Observez les contenus de `result.txt` et `error.txt`. À votre avis que signifient `1>` et `2>` ? Tirez-en une conclusion sur la différence entre la sortie standard et l’erreur standard.
 
 ---
@@ -175,6 +181,11 @@ title: TP4 - Canaux standards et redirections | Processus et tâches | Signaux
 
 ## 2. Les tubes (`pipes`)
 
+??? saviezvous "Le pipe `|` : inventé sur un coin de table en 1973"
+    Le concept de **pipe** a été proposé par **Doug McIlroy** (Bell Labs) dès 1964, mais c’est **Ken Thompson** qui l’a implémenté dans Unix en une seule nuit de février 1973. L’idée est d’une élégance rare : plutôt que de créer des programmes monolithiques, on écrit de **petits outils spécialisés** que l’on connecte entre eux. Cette philosophie — *« Do one thing and do it well »* — est devenue le principe fondateur d’Unix et influence encore aujourd’hui l’architecture logicielle (microservices, pipelines CI/CD).
+
+    > McIlroy, M. D. (1978). UNIX Time-Sharing System: Foreword. *The Bell System Technical Journal*, 57(6), 1899–1904. DOI : [10.1002/j.1538-7305.1978.tb02135.x](https://doi.org/10.1002/j.1538-7305.1978.tb02135.x)
+
 !!! tip "Définition"
     Un **tube** (*pipe* en anglais) connecte la sortie standard d’une commande à l’entrée standard d’une autre. On utilise le caractère `|`.
 
@@ -193,8 +204,11 @@ Cet exercice consolide redirections **et** tubes. Vous travaillerez sur les fich
    ```
 2. Testez la commande suivante et commentez :
    ```bash
-   $ ls /usr/include/*.h | wc -l
+   $ ls /usr/include/*.h | wc -l # (1)
    ```
+
+   1. Le `|` (pipe) connecte la sortie de `ls` à l'entrée de `wc`. L'option `-l` de `wc` compte le nombre de **lignes** reçues — ici, le nombre de fichiers `.h`.
+
    Où est redirigé le résultat de `ls` ? Où va l’entrée standard de `wc` ? Où est affiché le résultat de `wc` ?
 3. Affichez sur le terminal la phrase
    `Il y a <nombre> fichiers .h dans le répertoire /usr/include`
@@ -276,9 +290,9 @@ Cet exercice vous demande d’écrire un petit programme C utilisant les acquis 
 2. Compilez avec `gcc -Wall -o compteur compteur.c`. Testez :
    ```bash
    $ ./compteur
-   <Ctrl-z>
+   <Ctrl-z>           # (1)
    $ jobs
-   $ jobs -p          # note le PID
+   $ jobs -p           # (2)
    $ ps
    $ fg %1
    <Ctrl-z>
@@ -290,6 +304,10 @@ Cet exercice vous demande d’écrire un petit programme C utilisant les acquis 
    <Ctrl-c>
    $ jobs
    ```
+
+   1. <kbd>Ctrl+Z</kbd> envoie le signal `SIGTSTP` : le processus est **suspendu** (pas terminé), il reste en mémoire.
+   2. `-p` affiche uniquement le **PID** (identifiant numérique) de chaque tâche, utile pour `kill`.
+
 3. **Questions d’analyse** :
 
        - Quels procédés permettent de placer un processus en arrière-plan ? En avant-plan ?
@@ -303,6 +321,11 @@ Cet exercice vous demande d’écrire un petit programme C utilisant les acquis 
 ---
 
 ## 4. Envoyer des signaux à un processus
+
+??? saviezvous "L'origine du mot « daemon » et pourquoi SIGKILL est incontournable"
+    Le mot **daemon** (démon) vient de la mythologie grecque : un *daimôn* est un esprit intermédiaire qui travaille en arrière-plan, ni dieu ni mortel. En informatique, l'acronyme rétrospectif **D**isk **A**nd **E**xecution **MON**itor est parfois proposé, mais les créateurs d'Unix (notamment Fernando Corbató au MIT, projet CTSS/Multics, ~1963) s'inspiraient bien du concept mythologique. Quant au signal `SIGKILL` (9), il a été conçu **exprès** pour être impossible à intercepter ou ignorer : c'est le noyau qui termine le processus directement, sans lui laisser exécuter de gestionnaire de signal. C'est un choix de conception délibéré — il faut toujours un mécanisme de dernier recours.
+
+    > Corbató, F. J. & Vyssotsky, V. A. (1965). Introduction and overview of the Multics system. *Proceedings AFIPS Fall Joint Computer Conference*, 185–196. DOI : [10.1145/1463891.1463912](https://doi.org/10.1145/1463891.1463912)
 
 !!! tip "Les signaux : communiquer avec les processus"
     Les raccourcis <kbd>Ctrl</kbd>+<kbd>C</kbd>, <kbd>Ctrl</kbd>+<kbd>Z</kbd>, et les commandes `fg` / `bg`, envoient en réalité des **signaux** au processus. Un signal est un **message asynchrone** envoyé à un processus pour lui demander d’agir.

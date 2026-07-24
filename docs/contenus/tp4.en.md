@@ -79,9 +79,12 @@ title: Lab 4 - Standard Channels and Redirections | Processes and Jobs | Signals
     `>` redirects `stdout` to a file; `>>` appends to the end of the file.
 
     ```bash
-    $ ls ~ > list_files.txt    # crée ou écrase list_files.txt
-    $ ls ~ >> list_files.txt   # ajoute en fin de list_files.txt
+    $ ls ~ > list_files.txt    # (1)
+    $ ls ~ >> list_files.txt   # (2)
     ```
+
+    1. `>` redirects `stdout` to a file. If the file exists, it is **overwritten**.
+    2. `>>` redirects `stdout` by **appending** to the end of the file, without overwriting existing content.
 
     !!! warning "Warning"
         `>` **overwrites** without asking for confirmation. To preserve existing content, use `>>`.
@@ -128,8 +131,11 @@ title: Lab 4 - Standard Channels and Redirections | Processes and Jobs | Signals
 5. Redirect the standard output of the previous command to a file `result.txt`. Observe what is displayed on the terminal **and** what is in `result.txt`.
 6. Then type:
    ```bash
-   $ cat file-1.txt file-2.txt file-3.txt 1> result.txt 2> error.txt
+   $ cat file-1.txt file-2.txt file-3.txt 1> result.txt 2> error.txt # (1)
    ```
+
+   1. `1>` redirects **standard output** (channel 1) to `result.txt`, `2>` redirects **standard error** (channel 2) to `error.txt`. This separates normal results from error messages.
+
 7. Observe the contents of `result.txt` and `error.txt`. In your opinion, what do `1>` and `2>` mean? Draw a conclusion about the difference between standard output and standard error.
 
 ---
@@ -177,6 +183,11 @@ title: Lab 4 - Standard Channels and Redirections | Processes and Jobs | Signals
 
 ## 2. Pipes
 
+??? saviezvous "The pipe `|`: invented on a napkin in 1973"
+    The **pipe** concept was proposed by **Doug McIlroy** (Bell Labs) as early as 1964, but it was **Ken Thompson** who implemented it in Unix in a single night in February 1973. The idea is remarkably elegant: rather than creating monolithic programs, you write **small specialized tools** and connect them together. This philosophy — *"Do one thing and do it well"* — became Unix's founding principle and still influences software architecture today (microservices, CI/CD pipelines).
+
+    > McIlroy, M. D. (1978). UNIX Time-Sharing System: Foreword. *The Bell System Technical Journal*, 57(6), 1899–1904. DOI: [10.1002/j.1538-7305.1978.tb02135.x](https://doi.org/10.1002/j.1538-7305.1978.tb02135.x)
+
 !!! tip "Definition"
     A **pipe** connects the standard output of one command to the standard input of another. The `|` character is used.
 
@@ -195,8 +206,11 @@ This exercise consolidates redirections **and** pipes. You will work with the `.
    ```
 2. Test the following command and comment:
    ```bash
-   $ ls /usr/include/*.h | wc -l
+   $ ls /usr/include/*.h | wc -l # (1)
    ```
+
+   1. The `|` (pipe) connects the output of `ls` to the input of `wc`. The `-l` option of `wc` counts the number of **lines** received — here, the number of `.h` files.
+
    Where is the result of `ls` redirected? Where does the standard input of `wc` come from? Where is the result of `wc` displayed?
 3. Display on the terminal the sentence
    `Il y a <nombre> fichiers .h dans le répertoire /usr/include`
@@ -277,9 +291,9 @@ This exercise asks you to write a small C program using the skills from Lab 3.
 2. Compile with `gcc -Wall -o compteur compteur.c`. Test:
    ```bash
    $ ./compteur
-   <Ctrl-z>
+   <Ctrl-z>           # (1)
    $ jobs
-   $ jobs -p          # note le PID
+   $ jobs -p           # (2)
    $ ps
    $ fg %1
    <Ctrl-z>
@@ -291,6 +305,10 @@ This exercise asks you to write a small C program using the skills from Lab 3.
    <Ctrl-c>
    $ jobs
    ```
+
+   1. <kbd>Ctrl+Z</kbd> sends the `SIGTSTP` signal: the process is **suspended** (not terminated), it remains in memory.
+   2. `-p` displays only the **PID** (numeric identifier) of each job, useful for `kill`.
+
 3. **Analysis questions**:
 
        - What methods allow you to place a process in the background? In the foreground?
@@ -304,6 +322,11 @@ This exercise asks you to write a small C program using the skills from Lab 3.
 ---
 
 ## 4. Sending Signals to a Process
+
+??? saviezvous "The origin of 'daemon' and why SIGKILL is unstoppable"
+    The word **daemon** comes from Greek mythology: a *daimōn* is an intermediary spirit working in the background, neither god nor mortal. In computing, the retrospective acronym **D**isk **A**nd **E**xecution **MON**itor is sometimes proposed, but the creators of Unix (notably Fernando Corbató at MIT, CTSS/Multics project, ~1963) were indeed inspired by the mythological concept. As for the `SIGKILL` signal (9), it was **deliberately** designed to be impossible to catch or ignore: the kernel terminates the process directly, without letting it run any signal handler. This is a deliberate design choice — there must always be a last-resort mechanism.
+
+    > Corbató, F. J. & Vyssotsky, V. A. (1965). Introduction and overview of the Multics system. *Proceedings AFIPS Fall Joint Computer Conference*, 185–196. DOI: [10.1145/1463891.1463912](https://doi.org/10.1145/1463891.1463912)
 
 !!! tip "Signals: communicating with processes"
     The shortcuts <kbd>Ctrl</kbd>+<kbd>C</kbd>, <kbd>Ctrl</kbd>+<kbd>Z</kbd>, and the `fg` / `bg` commands, actually send **signals** to the process. A signal is an **asynchronous message** sent to a process to request an action.
