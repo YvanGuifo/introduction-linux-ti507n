@@ -2,7 +2,7 @@
 title: Home
 ---
 
-# TI307 & TI307B & TI307I & TI307P - Introduction to Linux
+# TI507N - Introduction to Linux
 
 ### Description
 
@@ -23,15 +23,11 @@ This module spans 15 hours of integrated Lecture-Lab sessions.
 
 ### Group assignments
 
-| Group    | Instructor                | Contact    |
+| CTP Group | Instructor                | Contact    |
 |-----------|---------------------------|------------|
-| SC3, SC4, SC6        | Michel Landschoot         | mlandsnet@yahoo.fr      |
-| SC5         | Halim Djerroud        |  halim.djerroud@efrei.fr         |
-| PLUS2        | Nathalie Xiaodan Chin     | nathalie.xiaodan-chin@intervenants.efrei.net       |
-| SC2, PLUS1        | Yvan Guifo          | yvan.guifo-fodjo@efrei.fr      |
-| BDX       | Mikaël Valot              | mikael.valot@efrei.fr       |
-| INT1, INT2      | Yaovi Soglo           | yaovi.soglo@efrei.fr       |
-| SC1, INT3  | Maroua Tikat         | maroua.tikat@efrei.fr      |
+| CTP 1     | Yvan Guifo Fodjo          | yvan.guifo-fodjo@efrei.fr      |
+| CTP 2     | Halim Djerroud            | halim.djerroud@efrei.fr        |
+| CTP 3     | Maroua Tikat              | maroua.tikat@efrei.fr          |
 
 
 

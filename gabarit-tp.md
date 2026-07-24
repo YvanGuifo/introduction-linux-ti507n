@@ -4,8 +4,8 @@ title: TP<N> - <Titre court du TP>
 
 <!--
 ================================================================================
- GABARIT PÉDAGOGIQUE - TI307 & TI307P - Introduction au système Linux
- Auteur : Dr. Yvan GUIFO FODJO — EFREI Paris — 2025–2026
+ GABARIT PÉDAGOGIQUE - TI507N - Introduction au système Linux
+ Auteur : Dr. Yvan GUIFO FODJO — EFREI Paris — 2026–2027
  Contact : yvan.guifo-fodjo@efrei.fr
 
  Référentiels :

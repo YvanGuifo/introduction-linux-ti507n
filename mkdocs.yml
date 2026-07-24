@@ -1,6 +1,6 @@
-site_name: TI307 & TI307B & TI307P - Introduction au système Linux
+site_name: TI507N - Introduction au système Linux
 
-repo_url: https://github.com/YvanGuifo/introduction-linux-fr
+repo_url: https://github.com/YvanGuifo/introduction-linux-ti507n
 
 edit_uri: ""
 
@@ -113,7 +113,7 @@ plugins:
           default: false
           name: English
           build: true
-          site_name: "TI307 & TI307B & TI307I & TI307P - Introduction to Linux"
+          site_name: "TI507N - Introduction to Linux"
           nav_translations:
             Accueil: Home
             Contenus: Contents
@@ -144,18 +144,18 @@ nav:
 extra:
   alternate:
     - name: Français
-      link: /introduction-linux-fr/
+      link: /introduction-linux-ti507n/
       lang: fr
     - name: English
-      link: /introduction-linux-fr/en/
+      link: /introduction-linux-ti507n/en/
       lang: en
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/YvanGuifo/introduction-linux-fr
+      link: https://github.com/YvanGuifo/introduction-linux-ti507n
       name: "Dépôt GitHub du cours"
     - icon: fontawesome/solid/paper-plane
       link: mailto:yvan.guifo-fodjo@efrei.fr
       name: "Contacter l'enseignant"
 
 copyright: >
-  TI307 & TI307B & TI307I & TI307P - Introduction au système Linux - Efrei Paris 
+  TI507N - Introduction au système Linux - Efrei Paris

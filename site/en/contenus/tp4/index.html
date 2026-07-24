@@ -1396,14 +1396,22 @@ The file <code>fichier.txt</code> is then <em>connected</em> to the standard inp
 </span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>$<span class="w"> </span><span class="nb">kill</span><span class="w"> </span>-9<span class="w"> </span>&lt;PID<span class="w"> </span>du<span class="w"> </span>processus<span class="w"> </span><span class="m">3</span>&gt;
 </span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>$<span class="w"> </span><span class="nb">jobs</span>
 </span></code></pre></div></li>
-<li><strong>Questions</strong>:</li>
+<li>
+<p><strong>Questions</strong>:</p>
+<ul>
 <li>What is the difference between <code>SIGINT</code> and <code>SIGTSTP</code>? Between <code>SIGTSTP</code> and <code>SIGTERM</code>?</li>
 <li>Based on your observations, <strong>how many different syntaxes</strong> of <code>kill</code> produce the same effect? List them.</li>
-<li><strong>Evaluation question</strong> — for each of the following cases, indicate <strong>the most appropriate signal and justify</strong>:</li>
+</ul>
+</li>
+<li>
+<p><strong>Evaluation question</strong> — for each of the following cases, indicate <strong>the most appropriate signal and justify</strong>:</p>
+<ul>
 <li>(a) a user wants to interrupt a program they just launched in their terminal;</li>
 <li>(b) an administrator wants to gracefully stop a system service;</li>
 <li>(c) a process is frozen and no longer responds to any command;</li>
-<li>(d) a developer wants to temporarily suspend a long computation without losing it.</li>
+<li>(d) a developer wants to temporarily suspend a long computation without losing it;</li>
+</ul>
+</li>
 </ol>
 <hr />
 <h2 id="summary-what-you-should-be-able-to-do">Summary — What You Should Be Able to Do<a class="headerlink" href="#summary-what-you-should-be-able-to-do" title="Permanent link">&para;</a></h2>
@@ -1461,10 +1469,14 @@ The file <code>fichier.txt</code> is then <em>connected</em> to the standard inp
 </span></code></pre></div></li>
 <li>Compile: <code>gcc -Wall -o catch-sigint catch-sigint.c</code>.</li>
 <li>Run <code>./catch-sigint</code>, then press <kbd>Ctrl</kbd>+<kbd>C</kbd> <strong>3 times</strong>.</li>
-<li><strong>Questions</strong>:</li>
+<li>
+<p><strong>Questions</strong>:</p>
+<ul>
 <li>Why does <kbd>Ctrl</kbd>+<kbd>C</kbd> <strong>no longer interrupt</strong> the program?</li>
 <li>Try sending <code>SIGTERM</code> from another terminal: <code>kill &lt;PID&gt;</code>. What happens?</li>
 <li>Then try <code>kill -9 &lt;PID&gt;</code>. What happens? Why?</li>
+</ul>
+</li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">Important note</p>
@@ -1519,10 +1531,14 @@ The file <code>fichier.txt</code> is then <em>connected</em> to the standard inp
 </span><span id="__span-20-32"><a id="__codelineno-20-32" name="__codelineno-20-32" href="#__codelineno-20-32"></a><span class="p">}</span>
 </span></code></pre></div></li>
 <li>Compile and run several times. Observe the PIDs.</li>
-<li><strong>Questions</strong>:</li>
+<li>
+<p><strong>Questions</strong>:</p>
+<ul>
 <li>Why do we see a "Avant fork" message followed by <strong>two</strong> distinct continuations?</li>
 <li>Why call <code>wait()</code> on the parent side? <em>(What happens to a child whose parent does not call <code>wait</code>? Search for "zombie process" in <code>man 2 wait</code>.)</em></li>
 <li>Modify the program to create <strong>two children</strong> (two successive <code>fork()</code> calls on the parent side). The parent must wait for both children before terminating.</li>
+</ul>
+</li>
 </ul>
 <h3 id="exercise-10-mini-project-a-mini-shell-that-executes-a-command">Exercise 10 — Mini-project: a mini-shell that executes a command ⭐<a class="headerlink" href="#exercise-10-mini-project-a-mini-shell-that-executes-a-command" title="Permanent link">&para;</a></h3>
 <p>When you type <code>ls /tmp</code> in <code>bash</code>, the shell actually does:</p>
@@ -1578,10 +1594,14 @@ The file <code>fichier.txt</code> is then <em>connected</em> to the standard inp
 </span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>$<span class="w"> </span>./mysh<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>Hello<span class="w"> </span>from<span class="w"> </span>mysh
 </span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>$<span class="w"> </span>./mysh<span class="w"> </span>/commande/inexistante
 </span></code></pre></div></li>
-<li><strong>Analysis questions</strong>:</li>
+<li>
+<p><strong>Analysis questions</strong>:</p>
+<ul>
 <li>Why does <code>execvp</code> <strong>never</strong> return if everything goes well?</li>
 <li>What is the difference between <code>execv</code>, <code>execvp</code> and <code>execve</code>? <em>(Hint: <code>man 3 exec</code>.)</em></li>
 <li>Combine what you have learned: modify <code>mysh.c</code> so that the output of the executed command is <strong>redirected</strong> to a file <code>mysh.out</code>. <em>(Hint: before the <code>exec*</code>, use <code>dup2</code> as in exercise 10 of Lab 3.)</em></li>
+</ul>
+</li>
 </ol>
 <div class="admonition success">
 <p class="admonition-title">Congratulations</p>
