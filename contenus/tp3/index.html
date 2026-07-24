@@ -1183,10 +1183,14 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 </span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="se">\</span>
 </span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="se">\\</span>
 </span></code></pre></div></li>
-<li>Répondez :</li>
+<li>
+<p>Répondez :</p>
+<ul>
 <li>Que fait <code>\</code> devant un caractère autre que <code>&lt;newline&gt;</code> ?</li>
 <li>À quoi sert la séquence <code>\&lt;newline&gt;</code> ?</li>
 <li>Comment obtenir un <code>\</code> littéral ? Comment afficher <code>\\</code> avec <code>echo</code> ?</li>
+</ul>
+</li>
 </ol>
 <h3 id="exercice-3-lapostrophe">Exercice 3 — L’apostrophe <code>'</code> 📚📚<a class="headerlink" href="#exercice-3-lapostrophe" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
@@ -1204,9 +1208,13 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 </span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="s1">est un caractère normal entre</span>
 </span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="s1">apostrophes&#39;</span>
 </span></code></pre></div></li>
-<li>Répondez :</li>
+<li>
+<p>Répondez :</p>
+<ul>
 <li>Quels caractères sont spéciaux <strong>entre apostrophes</strong> ?</li>
 <li>Comment obtenir une apostrophe dans une chaîne entre apostrophes ?</li>
+</ul>
+</li>
 </ol>
 <h3 id="exercice-4-le-guillemet">Exercice 4 — Le guillemet <code>"</code> 📚📚<a class="headerlink" href="#exercice-4-le-guillemet" title="Permanent link">&para;</a></h3>
 <ol>
@@ -1218,10 +1226,14 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 </span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;il a dit \&quot;salut\&quot;&quot;</span>
 </span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;aujourd&#39;hui&quot;</span>
 </span></code></pre></div></li>
-<li>Répondez :</li>
+<li>
+<p>Répondez :</p>
+<ul>
 <li>Quels caractères <strong>restent spéciaux</strong> entre guillemets ?</li>
 <li>Que se passe-t-il si vous mettez <code>\</code> devant <code>$</code>, <code>"</code>, <code>\</code> entre guillemets ?</li>
 <li>Quand utiliseriez-vous <code>'...'</code> plutôt que <code>"..."</code> ?</li>
+</ul>
+</li>
 </ol>
 <hr />
 <h2 id="3-expansion-daccolades">3. Expansion d’accolades<a class="headerlink" href="#3-expansion-daccolades" title="Permanent link">&para;</a></h2>
@@ -1354,23 +1366,31 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 </span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="p">}</span>
 </span></code></pre></div></li>
-<li>Placez-vous dans le répertoire contenant <code>hello.c</code> et compilez avec <code>gcc hello.c</code>. Un fichier <code>a.out</code> est créé. Exécutez-le avec <code>./a.out</code>.</li>
-</ol>
-<p>!!! warning "Attention"
-       - Si <code>a.out</code> existait déjà, il est <strong>écrasé</strong> sans avertissement.
-       - Utilisez <code>-o</code> pour choisir un autre nom : <code>gcc hello.c -o hello</code>.
-3. Récupérez cette archive : <a href="../../assets/files/hello.tar.gz">hello.tar.gz</a>.
-4. Extrayez-la et placez-vous dans le répertoire <code>hello</code> :
+<li>
+<p>Placez-vous dans le répertoire contenant <code>hello.c</code> et compilez avec <code>gcc hello.c</code>. Un fichier <code>a.out</code> est créé. Exécutez-le avec <code>./a.out</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Attention</p>
+<ul>
+<li>Si <code>a.out</code> existait déjà, il est <strong>écrasé</strong> sans avertissement.</li>
+<li>Utilisez <code>-o</code> pour choisir un autre nom : <code>gcc hello.c -o hello</code>.</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Récupérez cette archive : <a href="../../assets/files/hello.tar.gz">hello.tar.gz</a>.</p>
+</li>
+<li>Extrayez-la et placez-vous dans le répertoire <code>hello</code> :
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>$<span class="w"> </span>tar<span class="w"> </span>-xvf<span class="w"> </span>hello.tar.gz
-</span></code></pre></div>
-5. Compilez le projet :
+</span></code></pre></div></li>
+<li>Compilez le projet :
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$<span class="w"> </span>gcc<span class="w"> </span>main.c<span class="w"> </span>hello.c<span class="w"> </span>-o<span class="w"> </span>run
 </span></code></pre></div>
-   Exécutez avec <code>./run</code>.
-6. Supprimez le fichier <code>run</code>. Modifiez <code>hello.c</code> pour introduire volontairement une erreur : supprimez <strong>l’accolade fermante</strong> de la fonction <code>void hello()</code>. Recompilez. Que remarquez-vous ?
-7. Remettez l’accolade et ajoutez un <code>return 1;</code> dans la définition de la fonction <code>hello</code> (qui est <code>void</code>). Recompilez. Que remarquez-vous ?
-8. Recompilez maintenant avec <code>-Wall -Wextra</code>. Que voyez-vous ?
-9. <strong>Concluez</strong> sur la différence entre <strong>erreurs</strong> et <strong>warnings</strong>, et sur l’intérêt professionnel des options <code>-Wall -Wextra -Werror</code>.</p>
+   Exécutez avec <code>./run</code>.</li>
+<li>Supprimez le fichier <code>run</code>. Modifiez <code>hello.c</code> pour introduire volontairement une erreur : supprimez <strong>l’accolade fermante</strong> de la fonction <code>void hello()</code>. Recompilez. Que remarquez-vous ?</li>
+<li>Remettez l’accolade et ajoutez un <code>return 1;</code> dans la définition de la fonction <code>hello</code> (qui est <code>void</code>). Recompilez. Que remarquez-vous ?</li>
+<li>Recompilez maintenant avec <code>-Wall -Wextra</code>. Que voyez-vous ?</li>
+<li><strong>Concluez</strong> sur la différence entre <strong>erreurs</strong> et <strong>warnings</strong>, et sur l’intérêt professionnel des options <code>-Wall -Wextra -Werror</code>.</li>
+</ol>
 <div class="admonition info">
 <p class="admonition-title">Cet exercice est représentatif d’un item type <strong>DE S42 (QCM)</strong>.</p>
 </div>
@@ -1536,16 +1556,22 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 </span><span id="__span-18-24"><a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </span><span id="__span-18-25"><a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a><span class="p">}</span>
 </span></code></pre></div></li>
-<li>Compilez et exécutez :
+<li>
+<p>Compilez et exécutez :
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>$<span class="w"> </span>gcc<span class="w"> </span>-Wall<span class="w"> </span>-o<span class="w"> </span>myredirect<span class="w"> </span>myredirect.c
 </span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>$<span class="w"> </span>./myredirect<span class="w"> </span>captures.txt
 </span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>$<span class="w"> </span>cat<span class="w"> </span>captures.txt
 </span></code></pre></div>
-   Les trois lignes doivent être dans <code>captures.txt</code> — <strong>rien</strong> dans le terminal.</li>
-<li><strong>Questions d’analyse</strong> :</li>
+   Les trois lignes doivent être dans <code>captures.txt</code> — <strong>rien</strong> dans le terminal.</p>
+</li>
+<li>
+<p><strong>Questions d’analyse</strong> :</p>
+<ul>
 <li>Pourquoi appelle-t-on <code>close(fd)</code> immédiatement après <code>dup2</code> ?</li>
 <li>Que se passerait-il si vous inversiez les arguments : <code>dup2(STDOUT_FILENO, fd)</code> ?</li>
 <li>Modifiez le programme pour rediriger <strong><code>stderr</code></strong> au lieu de <code>stdout</code>. Quelle ligne changez-vous ?</li>
+</ul>
+</li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">Vers le TP4</p>

@@ -1183,10 +1183,14 @@ The 📚📚📚 exercises prepare for the <strong>DE S42 (MCQ)</strong> through
 </span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="se">\</span>
 </span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="se">\\</span>
 </span></code></pre></div></li>
-<li>Answer:</li>
+<li>
+<p>Answer:</p>
+<ul>
 <li>What does <code>\</code> do before a character other than <code>&lt;newline&gt;</code>?</li>
 <li>What is the purpose of the <code>\&lt;newline&gt;</code> sequence?</li>
 <li>How do you get a literal <code>\</code>? How do you display <code>\\</code> with <code>echo</code>?</li>
+</ul>
+</li>
 </ol>
 <h3 id="exercise-3-the-single-quote">Exercise 3 — The single quote <code>'</code> 📚📚<a class="headerlink" href="#exercise-3-the-single-quote" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
@@ -1204,9 +1208,13 @@ The 📚📚📚 exercises prepare for the <strong>DE S42 (MCQ)</strong> through
 </span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="s1">est un caractère normal entre</span>
 </span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="s1">apostrophes&#39;</span>
 </span></code></pre></div></li>
-<li>Answer:</li>
+<li>
+<p>Answer:</p>
+<ul>
 <li>Which characters are special <strong>inside single quotes</strong>?</li>
 <li>How do you include a single quote within a single-quoted string?</li>
+</ul>
+</li>
 </ol>
 <h3 id="exercise-4-the-double-quote">Exercise 4 — The double quote <code>"</code> 📚📚<a class="headerlink" href="#exercise-4-the-double-quote" title="Permanent link">&para;</a></h3>
 <ol>
@@ -1218,10 +1226,14 @@ The 📚📚📚 exercises prepare for the <strong>DE S42 (MCQ)</strong> through
 </span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;il a dit \&quot;salut\&quot;&quot;</span>
 </span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;aujourd&#39;hui&quot;</span>
 </span></code></pre></div></li>
-<li>Answer:</li>
+<li>
+<p>Answer:</p>
+<ul>
 <li>Which characters <strong>remain special</strong> inside double quotes?</li>
 <li>What happens if you put <code>\</code> before <code>$</code>, <code>"</code>, <code>\</code> inside double quotes?</li>
 <li>When would you use <code>'...'</code> rather than <code>"..."</code>?</li>
+</ul>
+</li>
 </ol>
 <hr />
 <h2 id="3-brace-expansion">3. Brace expansion<a class="headerlink" href="#3-brace-expansion" title="Permanent link">&para;</a></h2>
@@ -1354,23 +1366,35 @@ The 📚📚📚 exercises prepare for the <strong>DE S42 (MCQ)</strong> through
 </span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="p">}</span>
 </span></code></pre></div></li>
-<li>Navigate to the directory containing <code>hello.c</code> and compile with <code>gcc hello.c</code>. A file <code>a.out</code> is created. Run it with <code>./a.out</code>.</li>
-</ol>
-<p>!!! warning "Warning"
-       - If <code>a.out</code> already existed, it is <strong>overwritten</strong> without warning.
-       - Use <code>-o</code> to choose a different name: <code>gcc hello.c -o hello</code>.
-3. Download this archive: <a href="../../../assets/files/hello.tar.gz">hello.tar.gz</a>.
-4. Extract it and navigate to the <code>hello</code> directory:
+<li>
+<p>Navigate to the directory containing <code>hello.c</code> and compile with <code>gcc hello.c</code>. A file <code>a.out</code> is created. Run it with <code>./a.out</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning<ul>
+<li>If <code>a.out</code> already existed, it is <strong>overwritten</strong> without warning.</li>
+<li>Use <code>-o</code> to choose a different name: <code>gcc hello.c -o hello</code>.</li>
+</ul>
+</p>
+</div>
+</li>
+<li>
+<p>Download this archive: <a href="../../../assets/files/hello.tar.gz">hello.tar.gz</a>.</p>
+</li>
+<li>Extract it and navigate to the <code>hello</code> directory:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>$<span class="w"> </span>tar<span class="w"> </span>-xvf<span class="w"> </span>hello.tar.gz
-</span></code></pre></div>
-5. Compile the project:
+</span></code></pre></div></li>
+<li>
+<p>Compile the project:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$<span class="w"> </span>gcc<span class="w"> </span>main.c<span class="w"> </span>hello.c<span class="w"> </span>-o<span class="w"> </span>run
 </span></code></pre></div>
-   Run it with <code>./run</code>.
-6. Delete the file <code>run</code>. Modify <code>hello.c</code> to deliberately introduce an error: remove the <strong>closing brace</strong> of the <code>void hello()</code> function. Recompile. What do you notice?
-7. Put the brace back and add a <code>return 1;</code> in the definition of the <code>hello</code> function (which is <code>void</code>). Recompile. What do you notice?
-8. Now recompile with <code>-Wall -Wextra</code>. What do you see?
-9. <strong>Conclude</strong> on the difference between <strong>errors</strong> and <strong>warnings</strong>, and on the professional value of the <code>-Wall -Wextra -Werror</code> options.</p>
+   Run it with <code>./run</code>.</p>
+</li>
+<li>
+<p>Delete the file <code>run</code>. Modify <code>hello.c</code> to deliberately introduce an error: remove the <strong>closing brace</strong> of the <code>void hello()</code> function. Recompile. What do you notice?</p>
+</li>
+<li>Put the brace back and add a <code>return 1;</code> in the definition of the <code>hello</code> function (which is <code>void</code>). Recompile. What do you notice?</li>
+<li>Now recompile with <code>-Wall -Wextra</code>. What do you see?</li>
+<li><strong>Conclude</strong> on the difference between <strong>errors</strong> and <strong>warnings</strong>, and on the professional value of the <code>-Wall -Wextra -Werror</code> options.</li>
+</ol>
 <div class="admonition info">
 <p class="admonition-title">This exercise is representative of a typical <strong>DE S42 (MCQ)</strong> item.</p>
 </div>
@@ -1542,10 +1566,14 @@ The 📚📚📚 exercises prepare for the <strong>DE S42 (MCQ)</strong> through
 </span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>$<span class="w"> </span>cat<span class="w"> </span>captures.txt
 </span></code></pre></div>
    The three lines should be in <code>captures.txt</code> — <strong>nothing</strong> in the terminal.</li>
-<li><strong>Analysis questions</strong>:</li>
+<li>
+<p><strong>Analysis questions</strong>:</p>
+<ul>
 <li>Why is <code>close(fd)</code> called immediately after <code>dup2</code>?</li>
 <li>What would happen if you reversed the arguments: <code>dup2(STDOUT_FILENO, fd)</code>?</li>
 <li>Modify the program to redirect <strong><code>stderr</code></strong> instead of <code>stdout</code>. Which line do you change?</li>
+</ul>
+</li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">Looking ahead to Lab 4</p>

@@ -1269,10 +1269,14 @@ Le fichier <code>fichier.txt</code> est alors <em>connecté</em> à l’entrée 
    Puis <kbd>Ctrl</kbd>+<kbd>C</kbd>, puis :
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$<span class="w"> </span>ps
 </span></code></pre></div></li>
-<li><strong>Questions</strong> :</li>
+<li>
+<p><strong>Questions</strong> :</p>
+<ul>
 <li>Que fait <kbd>Ctrl</kbd>+<kbd>Z</kbd> ? Et <kbd>Ctrl</kbd>+<kbd>C</kbd> ?</li>
 <li>Refaites la séquence en tapant des commandes (par exemple <code>pwd</code>, <code>ls</code>) <strong>entre</strong> <code>sleep 240</code> et <kbd>Ctrl</kbd>+<kbd>Z</kbd>. Que remarquez-vous ?</li>
 <li>Que fait <code>fg %1</code> de manière générale ?</li>
+</ul>
+</li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">Informations sur la sortie de <code>ps</code></p>
@@ -1287,12 +1291,15 @@ Le fichier <code>fichier.txt</code> est alors <em>connecté</em> à l’entrée 
 <h3 id="exercice-6-avant-plan-arriere-plan-bascule">Exercice 6 — Avant-plan, arrière-plan, bascule 📚📚📚<a class="headerlink" href="#exercice-6-avant-plan-arriere-plan-bascule" title="Permanent link">&para;</a></h3>
 <p>Cet exercice vous demande d’écrire un petit programme C utilisant les acquis du TP3.</p>
 <ol>
-<li>Écrivez un programme C <code>compteur.c</code> qui incrémente indéfiniment une variable <code>i</code> et affiche sa valeur <strong>sur la sortie standard à chaque multiple de 100</strong>. Utilisez <code>sleep</code> pour ralentir l’exécution et observer la sortie.</li>
-</ol>
-<p>!!! info "Où est <code>sleep</code> en C ?"
-       Tapez <code>man 3 sleep</code> pour voir la signature de la fonction <code>sleep</code> dans la bibliothèque standard (<code>&lt;unistd.h&gt;</code>).</p>
-<ol>
-<li>Compilez avec <code>gcc -Wall -o compteur compteur.c</code>. Testez :
+<li>
+<p>Écrivez un programme C <code>compteur.c</code> qui incrémente indéfiniment une variable <code>i</code> et affiche sa valeur <strong>sur la sortie standard à chaque multiple de 100</strong>. Utilisez <code>sleep</code> pour ralentir l’exécution et observer la sortie.</p>
+<div class="admonition info">
+<p class="admonition-title">Où est <code>sleep</code> en C ?</p>
+<p>Tapez <code>man 3 sleep</code> pour voir la signature de la fonction <code>sleep</code> dans la bibliothèque standard (<code>&lt;unistd.h&gt;</code>).</p>
+</div>
+</li>
+<li>
+<p>Compilez avec <code>gcc -Wall -o compteur compteur.c</code>. Testez :
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>$<span class="w"> </span>./compteur
 </span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>&lt;Ctrl-z&gt;
 </span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>$<span class="w"> </span><span class="nb">jobs</span>
@@ -1307,13 +1314,18 @@ Le fichier <code>fichier.txt</code> est alors <em>connecté</em> à l’entrée 
 </span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>$<span class="w"> </span><span class="nb">fg</span><span class="w"> </span>%1
 </span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>&lt;Ctrl-c&gt;
 </span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>$<span class="w"> </span><span class="nb">jobs</span>
-</span></code></pre></div></li>
-<li><strong>Questions d’analyse</strong> :</li>
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Questions d’analyse</strong> :</p>
+<ul>
 <li>Quels procédés permettent de placer un processus en arrière-plan ? En avant-plan ?</li>
 <li>Quelle est la différence entre <kbd>Ctrl</kbd>+<kbd>Z</kbd> et <kbd>Ctrl</kbd>+<kbd>C</kbd> ?</li>
 <li>À quoi sert l’option <code>-p</code> de <code>jobs</code> ?</li>
 <li>Que fait <code>bg</code> de manière générale ?</li>
 <li>Quels <strong>états</strong> des tâches avez-vous observés ? <em>(Indice : <code>Running</code>, <code>Stopped</code>, <code>Terminated</code>…)</em></li>
+</ul>
+</li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">Cet exercice est représentatif d’un item type <strong>DE S42 (QCM)</strong>.</p>
@@ -1487,15 +1499,15 @@ Le fichier <code>fichier.txt</code> est alors <em>connecté</em> à l’entrée 
 </div>
 <h3 id="exercice-9-creer-un-processus-fils-avec-fork">Exercice 9 — Créer un processus fils avec <code>fork()</code> ⭐<a class="headerlink" href="#exercice-9-creer-un-processus-fils-avec-fork" title="Permanent link">&para;</a></h3>
 <p><code>fork()</code> est l’appel système qui <strong>duplique</strong> le processus appelant : à la sortie de <code>fork()</code>, <strong>deux</strong> processus identiques s’exécutent en parallèle. La valeur de retour permet de les distinguer :</p>
+<blockquote>
 <ul>
 <li><code>&gt; 0</code> (PID du fils) → on est dans le <strong>parent</strong>.</li>
 <li><code>== 0</code> → on est dans le <strong>fils</strong>.</li>
-<li>
-<p><code>&lt; 0</code> → échec.</p>
-</li>
-<li>
-<p>Lisez : <code>man 2 fork</code> puis <code>man 2 wait</code>.</p>
-</li>
+<li><code>&lt; 0</code> → échec.</li>
+</ul>
+</blockquote>
+<ol>
+<li>Lisez : <code>man 2 fork</code> puis <code>man 2 wait</code>.</li>
 <li>Créez <code>fork-demo.c</code> :
    <div class="language-c highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 </span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unistd.h&gt;</span><span class="c1">     /* fork, getpid, getppid */</span>
@@ -1539,7 +1551,7 @@ Le fichier <code>fichier.txt</code> est alors <em>connecté</em> à l’entrée 
 <li>Modifiez le programme pour créer <strong>deux fils</strong> (deux <code>fork()</code> successifs côté parent). Le parent doit attendre les deux fils avant de se terminer.</li>
 </ul>
 </li>
-</ul>
+</ol>
 <h3 id="exercice-10-mini-projet-un-mini-shell-qui-execute-une-commande">Exercice 10 — Mini-projet : un mini-shell qui exécute une commande ⭐<a class="headerlink" href="#exercice-10-mini-projet-un-mini-shell-qui-execute-une-commande" title="Permanent link">&para;</a></h3>
 <p>Quand vous tapez <code>ls /tmp</code> dans <code>bash</code>, le shell fait en réalité :</p>
 <ol>
@@ -1596,12 +1608,12 @@ Le fichier <code>fichier.txt</code> est alors <em>connecté</em> à l’entrée 
 </span></code></pre></div></li>
 <li>
 <p><strong>Questions d’analyse</strong> :</p>
-</li>
-<li>
-<p>Pourquoi <code>execvp</code> ne revient-il <strong>jamais</strong> si tout se passe bien ?</p>
-</li>
+<ul>
+<li>Pourquoi <code>execvp</code> ne revient-il <strong>jamais</strong> si tout se passe bien ?</li>
 <li>Quelle est la différence entre <code>execv</code>, <code>execvp</code> et <code>execve</code> ? <em>(Indice : <code>man 3 exec</code>.)</em></li>
 <li>Combinez les acquis : modifiez <code>mysh.c</code> pour que la sortie de la commande exécutée soit <strong>redirigée</strong> vers un fichier <code>mysh.out</code>. <em>(Indice : avant l’<code>exec*</code>, faites <code>dup2</code> comme à l’exercice 10 du TP3.)</em></li>
+</ul>
+</li>
 </ol>
 <div class="admonition success">
 <p class="admonition-title">Félicitations</p>
