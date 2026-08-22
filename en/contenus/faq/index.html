@@ -1771,7 +1771,7 @@
 <p>→ See <a href="../tp2/">Lab 2 — Directory permissions</a></p>
 <hr />
 <h3 id="operation-not-permitted"><code>Operation not permitted</code><a class="headerlink" href="#operation-not-permitted" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>rm: cannot remove &#39;/etc/hosts&#39;: Operation not permitted
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>rm: cannot remove '/etc/hosts': Operation not permitted
 </span></code></pre></div>
 <p><strong>Cause</strong>: the file belongs to <code>root</code> and you don't have sufficient privileges.</p>
 <p><strong>Solution</strong>: use <code>sudo</code> only if you know what you're doing:</p>
@@ -1817,7 +1817,7 @@
 <li><strong>The file or directory does not exist.</strong> Check with <code>ls</code>.</li>
 <li><strong>Wrong path</strong> (relative vs absolute, typo).
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$<span class="w"> </span><span class="nb">pwd</span><span class="w">                           </span><span class="c1"># where am I?</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>$<span class="w"> </span>ls<span class="w"> </span>-la<span class="w">                        </span><span class="c1"># what&#39;s here?</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>$<span class="w"> </span>ls<span class="w"> </span>-la<span class="w">                        </span><span class="c1"># what's here?</span>
 </span></code></pre></div></li>
 <li><strong>Wrong case.</strong> Linux is case-sensitive: <code>Documents</code> ≠ <code>documents</code>.</li>
 </ol>
@@ -1859,11 +1859,11 @@
 <p>→ See <a href="../tp4/">Lab 4 — Processes and signals</a></p>
 <hr />
 <h3 id="syntax-error-near-unexpected-token"><code>Syntax error near unexpected token</code><a class="headerlink" href="#syntax-error-near-unexpected-token" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>bash: syntax error near unexpected token `(&#39;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>bash: syntax error near unexpected token `('
 </span></code></pre></div>
 <p><strong>Cause</strong>: the shell is interpreting special characters that you didn't protect.</p>
 <p><strong>Solution</strong>: use quotes or backslashes to inhibit special characters:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Hello (world)&quot;</span><span class="w">            </span><span class="c1"># ✅ double quotes</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Hello (world)"</span><span class="w">            </span><span class="c1"># ✅ double quotes</span>
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>Hello<span class="w"> </span><span class="se">\(</span>world<span class="se">\)</span><span class="w">            </span><span class="c1"># ✅ backslash</span>
 </span></code></pre></div>
 <p>→ See <a href="../tp3/">Lab 3 — Quoting</a></p>
@@ -1873,23 +1873,23 @@
 </span></code></pre></div>
 <p><strong>Cause</strong>: you copied the <code>$</code> prompt along with the command from the lab instructions.</p>
 <p><strong>Solution</strong>: the <code>$</code> in lab instructions represents the prompt — don't type it. Only type the command that follows:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w">          </span><span class="c1"># ❌ if you copy &quot;$ ls -l&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w">          </span><span class="c1"># ❌ if you copy "$ ls -l"</span>
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>ls<span class="w"> </span>-l<span class="w">            </span><span class="c1"># ✅ type only this</span>
 </span></code></pre></div>
 <hr />
 <h3 id="unclosed-quotes-prompt">Unclosed quotes (<code>&gt;</code> prompt)<a class="headerlink" href="#unclosed-quotes-prompt" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>$ echo &quot;hello
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>$ echo "hello
 </span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>&gt;
 </span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>&gt;
 </span></code></pre></div>
 <p><strong>Cause</strong>: the shell is waiting for a closing quote (<code>"</code> or <code>'</code>).</p>
 <p><strong>Solution</strong>: close the missing quote, or cancel with <kbd>Ctrl+C</kbd>:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;hello&quot;</span><span class="w">                     </span><span class="c1"># ✅ quote closed</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"hello"</span><span class="w">                     </span><span class="c1"># ✅ quote closed</span>
 </span></code></pre></div>
 <hr />
 <h2 id="compilation-errors-lab-3">Compilation Errors (Lab 3)<a class="headerlink" href="#compilation-errors-lab-3" title="Permanent link">&para;</a></h2>
 <h3 id="undefined-reference-to-main"><code>undefined reference to 'main'</code><a class="headerlink" href="#undefined-reference-to-main" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>/usr/bin/ld: undefined reference to `main&#39;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>/usr/bin/ld: undefined reference to `main'
 </span></code></pre></div>
 <p><strong>Cause</strong>: your C program has no <code>main()</code> function, or you're compiling the wrong file.</p>
 <p><strong>Solution</strong>: verify that <code>main()</code> is defined in your source code:</p>
@@ -1899,19 +1899,19 @@
 </span></code></pre></div>
 <hr />
 <h3 id="expected-before"><code>expected ';' before</code><a class="headerlink" href="#expected-before" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>hello.c:5:1: error: expected &#39;;&#39; before &#39;}&#39; token
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>hello.c:5:1: error: expected ';' before '}' token
 </span></code></pre></div>
 <p><strong>Cause</strong>: a semicolon is missing at the end of a statement.</p>
 <p><strong>Solution</strong>: every C statement ends with <code>;</code>. Check the indicated line and the line above it.</p>
 <hr />
 <h3 id="implicit-declaration-of-function"><code>implicit declaration of function</code><a class="headerlink" href="#implicit-declaration-of-function" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>hello.c:4:5: warning: implicit declaration of function &#39;printf&#39;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>hello.c:4:5: warning: implicit declaration of function 'printf'
 </span></code></pre></div>
 <p><strong>Cause</strong>: you're using a function without including its header file.</p>
 <p><strong>Solution</strong>: add the appropriate <code>#include</code> at the top of the file:</p>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="c1">     // for printf, scanf, etc.</span>
-</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span><span class="c1">    // for malloc, exit, etc.</span>
-</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span><span class="c1">    // for strlen, strcpy, etc.</span>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="w">     </span><span class="c1">// for printf, scanf, etc.</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span><span class="w">    </span><span class="c1">// for malloc, exit, etc.</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span><span class="w">    </span><span class="c1">// for strlen, strcpy, etc.</span>
 </span></code></pre></div>
 <p>→ See <a href="../tp3/">Lab 3 — Compilation</a></p>
 <hr />
@@ -1921,9 +1921,9 @@
 </span></code></pre></div>
 <p><strong>Cause</strong>: the redirection filename contains unprotected spaces or an undefined variable.</p>
 <p><strong>Solution</strong>:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>hello<span class="w"> </span>&gt;<span class="w"> </span><span class="s2">&quot;my file.txt&quot;</span><span class="w">       </span><span class="c1"># ✅ quotes around the name</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>hello<span class="w"> </span>&gt;<span class="w"> </span><span class="s2">"my file.txt"</span><span class="w">       </span><span class="c1"># ✅ quotes around the name</span>
 </span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>hello<span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$FILE</span><span class="w">               </span><span class="c1"># ❌ if $FILE is empty or contains spaces</span>
-</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>hello<span class="w"> </span>&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$FILE</span><span class="s2">&quot;</span><span class="w">             </span><span class="c1"># ✅ always quote variables</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>hello<span class="w"> </span>&gt;<span class="w"> </span><span class="s2">"</span><span class="nv">$FILE</span><span class="s2">"</span><span class="w">             </span><span class="c1"># ✅ always quote variables</span>
 </span></code></pre></div>
 <hr />
 <h3 id="output-file-is-empty-after">Output file is empty after <code>&gt;</code><a class="headerlink" href="#output-file-is-empty-after" title="Permanent link">&para;</a></h3>

@@ -1337,7 +1337,7 @@
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>Dong<span class="w"> </span>!
 </span></code></pre></div>
     with the <code>echo</code> command (<strong>the <code>&lt;newline&gt;</code> character corresponds to the Enter key on your keyboard</strong>):
-    <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;Frère Jacques,&lt;newline&gt; </span>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">'Frère Jacques,&lt;newline&gt; </span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="s1">&gt; Frère Jacques,&lt;newline&gt;                     </span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="s1">&gt; Dormez-vous,&lt;newline&gt; </span>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="s1">&gt; Dormez-vous,&lt;newline&gt; </span>
@@ -1345,7 +1345,7 @@
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="s1">&gt; Sonnez les matines !&lt;newline&gt; </span>
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="s1">&gt; Ding !&lt;newline&gt; </span>
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="s1">&gt; Ding !&lt;newline&gt; </span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="s1">&gt; Dong !&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>fj
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="s1">&gt; Dong !'</span><span class="w"> </span>&gt;<span class="w"> </span>fj
 </span></code></pre></div></p>
 </li>
 <li>
@@ -1355,17 +1355,17 @@
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>$<span class="w"> </span>tail<span class="w"> </span>fj
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>$<span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">2</span><span class="w"> </span>fj
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>$<span class="w"> </span>tail<span class="w"> </span>-n<span class="w"> </span><span class="m">3</span><span class="w"> </span>fj
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>$<span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;Dormez&quot;</span><span class="w"> </span>fj
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>$<span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;Dormez&quot;</span><span class="w"> </span>fj
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>$<span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;dormez&quot;</span><span class="w"> </span>fj
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>$<span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;dormez&quot;</span><span class="w"> </span>fj
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>$<span class="w"> </span>grep<span class="w"> </span><span class="s2">"Dormez"</span><span class="w"> </span>fj
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>$<span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span><span class="s2">"Dormez"</span><span class="w"> </span>fj
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>$<span class="w"> </span>grep<span class="w"> </span><span class="s2">"dormez"</span><span class="w"> </span>fj
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>$<span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"dormez"</span><span class="w"> </span>fj
 </span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>$<span class="w"> </span>sort<span class="w"> </span>fj<span class="w"> </span>
 </span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>$<span class="w"> </span>uniq<span class="w"> </span>fj
 </span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>$<span class="w"> </span>cut<span class="w"> </span>-c<span class="w"> </span><span class="m">1</span><span class="w"> </span>fj
 </span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>$<span class="w"> </span>cut<span class="w"> </span>-c<span class="w"> </span><span class="m">2</span><span class="w"> </span>fj
 </span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>$<span class="w"> </span>cut<span class="w"> </span>-c<span class="w"> </span><span class="m">1</span>-3<span class="w"> </span>fj
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>$<span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39; &#39;</span><span class="w"> </span>-f<span class="w"> </span><span class="m">1</span><span class="w"> </span>fj
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>$<span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39; &#39;</span><span class="w"> </span>-f<span class="w"> </span><span class="m">1</span>,2<span class="w"> </span>fj
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>$<span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span><span class="s1">' '</span><span class="w"> </span>-f<span class="w"> </span><span class="m">1</span><span class="w"> </span>fj
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>$<span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span><span class="s1">' '</span><span class="w"> </span>-f<span class="w"> </span><span class="m">1</span>,2<span class="w"> </span>fj
 </span></code></pre></div></p>
 <ul>
 <li>Where are the results displayed?</li>
@@ -1436,7 +1436,7 @@ is the <strong>command line</strong>, not the resulting list.</p>
 <div class="admonition tip">
 <p class="admonition-title">The stream editor <code>sed</code></p>
 <p><code>sed</code> (<em>stream editor</em>) applies transformations line by line on a text stream. The most common syntax is substitution:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/motif/remplacement/&#39;</span><span class="w"> </span>fichier
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>sed<span class="w"> </span><span class="s1">'s/motif/remplacement/'</span><span class="w"> </span>fichier
 </span></code></pre></div>
 <ul>
 <li><code>s</code> = substitution; <code>g</code> at the end = replace <strong>all</strong> occurrences on the line.</li>
@@ -1456,24 +1456,24 @@ is the <strong>command line</strong>, not the resulting list.</p>
 </li>
 <li>
 <p>Replace the <code>:</code> with spaces for easier reading:
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/:/ /g&#39;</span><span class="w"> </span>utilisateurs.txt
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span>sed<span class="w"> </span><span class="s1">'s/:/ /g'</span><span class="w"> </span>utilisateurs.txt
 </span></code></pre></div></p>
 </li>
 <li>
 <p>Display only the lines where the UID (2nd field) is greater than or equal to 1000 (human users):
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$<span class="w"> </span>awk<span class="w"> </span>-F:<span class="w"> </span><span class="s1">&#39;$2 &gt;= 1000&#39;</span><span class="w"> </span>utilisateurs.txt
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$<span class="w"> </span>awk<span class="w"> </span>-F:<span class="w"> </span><span class="s1">'$2 &gt;= 1000'</span><span class="w"> </span>utilisateurs.txt
 </span></code></pre></div>
    <em>(Preview of <code>awk</code> — detailed in exercise 5.)</em></p>
 </li>
 <li>
 <p>Delete lines containing <code>nologin</code>:
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;/nologin/d&#39;</span><span class="w"> </span>/etc/passwd
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>sed<span class="w"> </span><span class="s1">'/nologin/d'</span><span class="w"> </span>/etc/passwd
 </span></code></pre></div>
    What does the <code>d</code> do? How many lines remain compared to the original?</p>
 </li>
 <li>
 <p><strong>Advanced substitution</strong>: in the file <code>fj</code> (exercise 1), replace all occurrences of <code>Frère</code> with <code>Sœur</code> and redirect the result to <code>fj2</code>:
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$<span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/Frère/Sœur/g&#39;</span><span class="w"> </span>fj<span class="w"> </span>&gt;<span class="w"> </span>fj2
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$<span class="w"> </span>sed<span class="w"> </span><span class="s1">'s/Frère/Sœur/g'</span><span class="w"> </span>fj<span class="w"> </span>&gt;<span class="w"> </span>fj2
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>$<span class="w"> </span>cat<span class="w"> </span>fj2
 </span></code></pre></div></p>
 </li>
@@ -1485,7 +1485,7 @@ is the <strong>command line</strong>, not the resulting list.</p>
 <div class="admonition tip">
 <p class="admonition-title">The <code>awk</code> language</p>
 <p><code>awk</code> processes structured files <strong>field by field</strong>. It splits each line according to a separator (space by default, <code>-F</code> to change) and makes fields accessible via <code>$1</code>, <code>$2</code>, etc. (<code>$0</code> = the entire line).</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$<span class="w"> </span>awk<span class="w"> </span>-F:<span class="w"> </span><span class="s1">&#39;{ print $1, $3 }&#39;</span><span class="w"> </span>/etc/passwd
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$<span class="w"> </span>awk<span class="w"> </span>-F:<span class="w"> </span><span class="s1">'{ print $1, $3 }'</span><span class="w"> </span>/etc/passwd
 </span></code></pre></div>
 <p><code>awk</code> can also perform calculations, conditions and loops.</p>
 <blockquote>
@@ -1495,38 +1495,38 @@ is the <strong>command line</strong>, not the resulting list.</p>
 <ol>
 <li>
 <p>Display the username and login shell (fields 1 and 7) from <code>/etc/passwd</code>:
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>$<span class="w"> </span>awk<span class="w"> </span>-F:<span class="w"> </span><span class="s1">&#39;{ print $1, $7 }&#39;</span><span class="w"> </span>/etc/passwd
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>$<span class="w"> </span>awk<span class="w"> </span>-F:<span class="w"> </span><span class="s1">'{ print $1, $7 }'</span><span class="w"> </span>/etc/passwd
 </span></code></pre></div></p>
 </li>
 <li>
 <p>Display only users whose shell is <code>/bin/bash</code>:
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$<span class="w"> </span>awk<span class="w"> </span>-F:<span class="w"> </span><span class="s1">&#39;$7 == &quot;/bin/bash&quot; { print $1 }&#39;</span><span class="w"> </span>/etc/passwd
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$<span class="w"> </span>awk<span class="w"> </span>-F:<span class="w"> </span><span class="s1">'$7 == "/bin/bash" { print $1 }'</span><span class="w"> </span>/etc/passwd
 </span></code></pre></div></p>
 </li>
 <li>
 <p>Count the number of users whose UID (field 3) is greater than or equal to 1000:
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>$<span class="w"> </span>awk<span class="w"> </span>-F:<span class="w"> </span><span class="s1">&#39;$3 &gt;= 1000 { count++ } END { print count }&#39;</span><span class="w"> </span>/etc/passwd
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>$<span class="w"> </span>awk<span class="w"> </span>-F:<span class="w"> </span><span class="s1">'$3 &gt;= 1000 { count++ } END { print count }'</span><span class="w"> </span>/etc/passwd
 </span></code></pre></div>
    What do <code>count++</code> and the <code>END</code> block do?</p>
 </li>
 <li>
 <p>Display a formatted table of human users (UID &gt;= 1000) with a header:
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>$<span class="w"> </span>awk<span class="w"> </span>-F:<span class="w"> </span><span class="s1">&#39;BEGIN { printf &quot;%-15s %-6s %s\n&quot;, &quot;NOM&quot;, &quot;UID&quot;, &quot;HOME&quot; }</span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="s1">           $3 &gt;= 1000 { printf &quot;%-15s %-6s %s\n&quot;, $1, $3, $6 }&#39;</span><span class="w"> </span>/etc/passwd
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>$<span class="w"> </span>awk<span class="w"> </span>-F:<span class="w"> </span><span class="s1">'BEGIN { printf "%-15s %-6s %s\n", "NOM", "UID", "HOME" }</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="s1">           $3 &gt;= 1000 { printf "%-15s %-6s %s\n", $1, $3, $6 }'</span><span class="w"> </span>/etc/passwd
 </span></code></pre></div></p>
 </li>
 <li>
 <p><strong>Log analysis</strong>: create a simulated <code>acces.log</code> file:
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;2025-01-15 alice connexion</span>
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"2025-01-15 alice connexion</span>
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="s2">2025-01-15 bob connexion</span>
 </span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="s2">2025-01-15 alice déconnexion</span>
 </span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="s2">2025-01-16 alice connexion</span>
 </span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="s2">2025-01-16 charlie connexion</span>
 </span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="s2">2025-01-16 bob connexion</span>
-</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="s2">2025-01-16 alice déconnexion&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>acces.log
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="s2">2025-01-16 alice déconnexion"</span><span class="w"> </span>&gt;<span class="w"> </span>acces.log
 </span></code></pre></div>
    With <code>awk</code>, count the number of connections per user:
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>$<span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;$3 == &quot;connexion&quot; { c[$2]++ } END { for (u in c) print u, c[u] }&#39;</span><span class="w"> </span>acces.log
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>$<span class="w"> </span>awk<span class="w"> </span><span class="s1">'$3 == "connexion" { c[$2]++ } END { for (u in c) print u, c[u] }'</span><span class="w"> </span>acces.log
 </span></code></pre></div></p>
 </li>
 <li>
@@ -1541,45 +1541,45 @@ is the <strong>command line</strong>, not the resulting list.</p>
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="ch">#!/bin/bash</span>
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="c1"># Analyse du fichier /etc/passwd — Commandes supplémentaires étoile</span>
 </span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
-</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="nv">FICHIER</span><span class="o">=</span><span class="s2">&quot;/etc/passwd&quot;</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="nv">FICHIER</span><span class="o">=</span><span class="s2">"/etc/passwd"</span>
 </span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>
-</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;=========================================&quot;</span>
-</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;  ANALYSE DE </span><span class="nv">$FICHIER</span><span class="s2">&quot;</span>
-</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;  Date : </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span>
-</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;=========================================&quot;</span>
-</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"========================================="</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"  ANALYSE DE </span><span class="nv">$FICHIER</span><span class="s2">"</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"  Date : </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">"</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"========================================="</span>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">""</span>
 </span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>
-</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="c1"># 1. Nombre total d&#39;utilisateurs</span>
-</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="nv">total</span><span class="o">=</span><span class="k">$(</span>wc<span class="w"> </span>-l<span class="w"> </span>&lt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$FICHIER</span><span class="s2">&quot;</span><span class="k">)</span>
-</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;1. Nombre total d&#39;utilisateurs : </span><span class="nv">$total</span><span class="s2">&quot;</span>
-</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="c1"># 1. Nombre total d'utilisateurs</span>
+</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="nv">total</span><span class="o">=</span><span class="k">$(</span>wc<span class="w"> </span>-l<span class="w"> </span>&lt;<span class="w"> </span><span class="s2">"</span><span class="nv">$FICHIER</span><span class="s2">"</span><span class="k">)</span>
+</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"1. Nombre total d'utilisateurs : </span><span class="nv">$total</span><span class="s2">"</span>
+</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">""</span>
 </span><span id="__span-17-16"><a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>
 </span><span id="__span-17-17"><a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="c1"># 2. Utilisateurs humains (UID &gt;= 1000)</span>
-</span><span id="__span-17-18"><a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;2. Utilisateurs humains (UID &gt;= 1000) :&quot;</span>
-</span><span id="__span-17-19"><a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a>awk<span class="w"> </span>-F:<span class="w"> </span><span class="s1">&#39;$3 &gt;= 1000 { printf &quot;   - %-15s (UID: %s, home: %s)\n&quot;, $1, $3, $6 }&#39;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$FICHIER</span><span class="s2">&quot;</span>
-</span><span id="__span-17-20"><a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a><span class="nv">humains</span><span class="o">=</span><span class="k">$(</span>awk<span class="w"> </span>-F:<span class="w"> </span><span class="s1">&#39;$3 &gt;= 1000&#39;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$FICHIER</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l<span class="k">)</span>
-</span><span id="__span-17-21"><a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;   Total : </span><span class="nv">$humains</span><span class="s2">&quot;</span>
-</span><span id="__span-17-22"><a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-17-18"><a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"2. Utilisateurs humains (UID &gt;= 1000) :"</span>
+</span><span id="__span-17-19"><a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a>awk<span class="w"> </span>-F:<span class="w"> </span><span class="s1">'$3 &gt;= 1000 { printf "   - %-15s (UID: %s, home: %s)\n", $1, $3, $6 }'</span><span class="w"> </span><span class="s2">"</span><span class="nv">$FICHIER</span><span class="s2">"</span>
+</span><span id="__span-17-20"><a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a><span class="nv">humains</span><span class="o">=</span><span class="k">$(</span>awk<span class="w"> </span>-F:<span class="w"> </span><span class="s1">'$3 &gt;= 1000'</span><span class="w"> </span><span class="s2">"</span><span class="nv">$FICHIER</span><span class="s2">"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l<span class="k">)</span>
+</span><span id="__span-17-21"><a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"   Total : </span><span class="nv">$humains</span><span class="s2">"</span>
+</span><span id="__span-17-22"><a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">""</span>
 </span><span id="__span-17-23"><a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a>
 </span><span id="__span-17-24"><a id="__codelineno-17-24" name="__codelineno-17-24" href="#__codelineno-17-24"></a><span class="c1"># 3. Répartition des shells de connexion</span>
-</span><span id="__span-17-25"><a id="__codelineno-17-25" name="__codelineno-17-25" href="#__codelineno-17-25"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;3. Répartition des shells :&quot;</span>
-</span><span id="__span-17-26"><a id="__codelineno-17-26" name="__codelineno-17-26" href="#__codelineno-17-26"></a>cut<span class="w"> </span>-d:<span class="w"> </span>-f7<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$FICHIER</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq<span class="w"> </span>-c<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-rn
-</span><span id="__span-17-27"><a id="__codelineno-17-27" name="__codelineno-17-27" href="#__codelineno-17-27"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-17-25"><a id="__codelineno-17-25" name="__codelineno-17-25" href="#__codelineno-17-25"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"3. Répartition des shells :"</span>
+</span><span id="__span-17-26"><a id="__codelineno-17-26" name="__codelineno-17-26" href="#__codelineno-17-26"></a>cut<span class="w"> </span>-d:<span class="w"> </span>-f7<span class="w"> </span><span class="s2">"</span><span class="nv">$FICHIER</span><span class="s2">"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq<span class="w"> </span>-c<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-rn
+</span><span id="__span-17-27"><a id="__codelineno-17-27" name="__codelineno-17-27" href="#__codelineno-17-27"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">""</span>
 </span><span id="__span-17-28"><a id="__codelineno-17-28" name="__codelineno-17-28" href="#__codelineno-17-28"></a>
 </span><span id="__span-17-29"><a id="__codelineno-17-29" name="__codelineno-17-29" href="#__codelineno-17-29"></a><span class="c1"># 4. Utilisateurs sans shell de connexion (nologin ou false)</span>
-</span><span id="__span-17-30"><a id="__codelineno-17-30" name="__codelineno-17-30" href="#__codelineno-17-30"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;4. Utilisateurs sans shell interactif :&quot;</span>
-</span><span id="__span-17-31"><a id="__codelineno-17-31" name="__codelineno-17-31" href="#__codelineno-17-31"></a>grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">&quot;nologin|/bin/false&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$FICHIER</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d:<span class="w"> </span>-f1<span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span><span class="s1">&#39;\n&#39;</span><span class="w"> </span><span class="s1">&#39;,&#39;</span>
-</span><span id="__span-17-32"><a id="__codelineno-17-32" name="__codelineno-17-32" href="#__codelineno-17-32"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
-</span><span id="__span-17-33"><a id="__codelineno-17-33" name="__codelineno-17-33" href="#__codelineno-17-33"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-17-30"><a id="__codelineno-17-30" name="__codelineno-17-30" href="#__codelineno-17-30"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"4. Utilisateurs sans shell interactif :"</span>
+</span><span id="__span-17-31"><a id="__codelineno-17-31" name="__codelineno-17-31" href="#__codelineno-17-31"></a>grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">"nologin|/bin/false"</span><span class="w"> </span><span class="s2">"</span><span class="nv">$FICHIER</span><span class="s2">"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d:<span class="w"> </span>-f1<span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span><span class="s1">'\n'</span><span class="w"> </span><span class="s1">','</span>
+</span><span id="__span-17-32"><a id="__codelineno-17-32" name="__codelineno-17-32" href="#__codelineno-17-32"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">""</span>
+</span><span id="__span-17-33"><a id="__codelineno-17-33" name="__codelineno-17-33" href="#__codelineno-17-33"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">""</span>
 </span><span id="__span-17-34"><a id="__codelineno-17-34" name="__codelineno-17-34" href="#__codelineno-17-34"></a>
 </span><span id="__span-17-35"><a id="__codelineno-17-35" name="__codelineno-17-35" href="#__codelineno-17-35"></a><span class="c1"># 5. Comptes système (UID &lt; 100)</span>
-</span><span id="__span-17-36"><a id="__codelineno-17-36" name="__codelineno-17-36" href="#__codelineno-17-36"></a><span class="nv">systeme</span><span class="o">=</span><span class="k">$(</span>awk<span class="w"> </span>-F:<span class="w"> </span><span class="s1">&#39;$3 &lt; 100&#39;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$FICHIER</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l<span class="k">)</span>
-</span><span id="__span-17-37"><a id="__codelineno-17-37" name="__codelineno-17-37" href="#__codelineno-17-37"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;5. Comptes système (UID &lt; 100) : </span><span class="nv">$systeme</span><span class="s2">&quot;</span>
+</span><span id="__span-17-36"><a id="__codelineno-17-36" name="__codelineno-17-36" href="#__codelineno-17-36"></a><span class="nv">systeme</span><span class="o">=</span><span class="k">$(</span>awk<span class="w"> </span>-F:<span class="w"> </span><span class="s1">'$3 &lt; 100'</span><span class="w"> </span><span class="s2">"</span><span class="nv">$FICHIER</span><span class="s2">"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l<span class="k">)</span>
+</span><span id="__span-17-37"><a id="__codelineno-17-37" name="__codelineno-17-37" href="#__codelineno-17-37"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"5. Comptes système (UID &lt; 100) : </span><span class="nv">$systeme</span><span class="s2">"</span>
 </span><span id="__span-17-38"><a id="__codelineno-17-38" name="__codelineno-17-38" href="#__codelineno-17-38"></a>
-</span><span id="__span-17-39"><a id="__codelineno-17-39" name="__codelineno-17-39" href="#__codelineno-17-39"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
-</span><span id="__span-17-40"><a id="__codelineno-17-40" name="__codelineno-17-40" href="#__codelineno-17-40"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;=========================================&quot;</span>
-</span><span id="__span-17-41"><a id="__codelineno-17-41" name="__codelineno-17-41" href="#__codelineno-17-41"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;  FIN DE L&#39;ANALYSE&quot;</span>
-</span><span id="__span-17-42"><a id="__codelineno-17-42" name="__codelineno-17-42" href="#__codelineno-17-42"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;=========================================&quot;</span>
+</span><span id="__span-17-39"><a id="__codelineno-17-39" name="__codelineno-17-39" href="#__codelineno-17-39"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">""</span>
+</span><span id="__span-17-40"><a id="__codelineno-17-40" name="__codelineno-17-40" href="#__codelineno-17-40"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"========================================="</span>
+</span><span id="__span-17-41"><a id="__codelineno-17-41" name="__codelineno-17-41" href="#__codelineno-17-41"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"  FIN DE L'ANALYSE"</span>
+</span><span id="__span-17-42"><a id="__codelineno-17-42" name="__codelineno-17-42" href="#__codelineno-17-42"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">"========================================="</span>
 </span></code></pre></div></p>
 </li>
 <li>
@@ -1593,7 +1593,7 @@ is the <strong>command line</strong>, not the resulting list.</p>
 </li>
 <li>
 <p><strong>Improvement 2</strong>: modify the script so that it accepts a file as an argument (<code>$1</code>) instead of always analyzing <code>/etc/passwd</code>. If no argument is provided, use <code>/etc/passwd</code> by default:
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nv">FICHIER</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">1</span><span class="k">:-</span><span class="p">/etc/passwd</span><span class="si">}</span><span class="s2">&quot;</span>
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nv">FICHIER</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">1</span><span class="k">:-</span><span class="p">/etc/passwd</span><span class="si">}</span><span class="s2">"</span>
 </span></code></pre></div>
    What does the <code>${1:-value}</code> syntax mean?</p>
 </li>

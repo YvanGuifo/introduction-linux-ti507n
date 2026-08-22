@@ -1771,7 +1771,7 @@
 <p>→ Voir <a href="../tp2/">TP2 — Permissions sur les répertoires</a></p>
 <hr />
 <h3 id="operation-not-permitted"><code>Operation not permitted</code><a class="headerlink" href="#operation-not-permitted" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>rm: cannot remove &#39;/etc/hosts&#39;: Operation not permitted
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>rm: cannot remove '/etc/hosts': Operation not permitted
 </span></code></pre></div>
 <p><strong>Cause</strong> : le fichier appartient à <code>root</code> et vous n'avez pas les privilèges suffisants.</p>
 <p><strong>Solution</strong> : utilisez <code>sudo</code> uniquement si vous savez ce que vous faites :</p>
@@ -1796,7 +1796,7 @@
 <li>
 <p><strong>Le programme n'est pas dans le <code>$PATH</code>.</strong>
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$PATH</span><span class="w">                    </span><span class="c1"># vérifiez les répertoires listés</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>$<span class="w"> </span>which<span class="w"> </span>mon_programme<span class="w">           </span><span class="c1"># cherchez l&#39;emplacement</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>$<span class="w"> </span>which<span class="w"> </span>mon_programme<span class="w">           </span><span class="c1"># cherchez l'emplacement</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>$<span class="w"> </span><span class="nb">type</span><span class="w"> </span>mon_programme<span class="w">            </span><span class="c1"># distinction interne/externe</span>
 </span></code></pre></div></p>
 </li>
@@ -1817,7 +1817,7 @@
 <li><strong>Le fichier ou répertoire n'existe pas.</strong> Vérifiez avec <code>ls</code>.</li>
 <li><strong>Erreur dans le chemin</strong> (relatif vs absolu, faute de frappe).
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$<span class="w"> </span><span class="nb">pwd</span><span class="w">                           </span><span class="c1"># où suis-je ?</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>$<span class="w"> </span>ls<span class="w"> </span>-la<span class="w">                        </span><span class="c1"># qu&#39;y a-t-il ici ?</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>$<span class="w"> </span>ls<span class="w"> </span>-la<span class="w">                        </span><span class="c1"># qu'y a-t-il ici ?</span>
 </span></code></pre></div></li>
 <li><strong>Casse incorrecte.</strong> Linux distingue majuscules et minuscules : <code>Documents</code> ≠ <code>documents</code>.</li>
 </ol>
@@ -1859,11 +1859,11 @@
 <p>→ Voir <a href="../tp4/">TP4 — Processus et signaux</a></p>
 <hr />
 <h3 id="syntax-error-near-unexpected-token"><code>Syntax error near unexpected token</code><a class="headerlink" href="#syntax-error-near-unexpected-token" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>bash: syntax error near unexpected token `(&#39;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>bash: syntax error near unexpected token `('
 </span></code></pre></div>
 <p><strong>Cause</strong> : le shell interprète des caractères spéciaux que vous n'avez pas protégés.</p>
 <p><strong>Solution</strong> : utilisez des guillemets ou des antislashs pour inhiber les caractères spéciaux :</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Hello (world)&quot;</span><span class="w">            </span><span class="c1"># ✅ guillemets doubles</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Hello (world)"</span><span class="w">            </span><span class="c1"># ✅ guillemets doubles</span>
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>Hello<span class="w"> </span><span class="se">\(</span>world<span class="se">\)</span><span class="w">            </span><span class="c1"># ✅ antislash</span>
 </span></code></pre></div>
 <p>→ Voir <a href="../tp3/">TP3 — Inhibitions</a></p>
@@ -1873,45 +1873,45 @@
 </span></code></pre></div>
 <p><strong>Cause</strong> : vous avez copié le <code>$</code> du prompt en même temps que la commande depuis le sujet du TP.</p>
 <p><strong>Solution</strong> : le <code>$</code> dans les énoncés représente le prompt — ne le tapez pas. Tapez uniquement la commande qui suit :</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w">          </span><span class="c1"># ❌ si vous copiez &quot;$ ls -l&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w">          </span><span class="c1"># ❌ si vous copiez "$ ls -l"</span>
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>ls<span class="w"> </span>-l<span class="w">            </span><span class="c1"># ✅ tapez seulement ceci</span>
 </span></code></pre></div>
 <hr />
 <h3 id="guillemets-non-fermes-prompt">Guillemets non fermés (prompt <code>&gt;</code>)<a class="headerlink" href="#guillemets-non-fermes-prompt" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>$ echo &quot;hello
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>$ echo "hello
 </span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>&gt;
 </span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>&gt;
 </span></code></pre></div>
 <p><strong>Cause</strong> : le shell attend la fermeture d'un guillemet (<code>"</code> ou <code>'</code>).</p>
 <p><strong>Solution</strong> : fermez le guillemet manquant, ou annulez avec <kbd>Ctrl+C</kbd> :</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;hello&quot;</span><span class="w">                     </span><span class="c1"># ✅ guillemet fermé</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"hello"</span><span class="w">                     </span><span class="c1"># ✅ guillemet fermé</span>
 </span></code></pre></div>
 <hr />
 <h2 id="erreurs-de-compilation-tp3">Erreurs de compilation (TP3)<a class="headerlink" href="#erreurs-de-compilation-tp3" title="Permanent link">&para;</a></h2>
 <h3 id="undefined-reference-to-main"><code>undefined reference to 'main'</code><a class="headerlink" href="#undefined-reference-to-main" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>/usr/bin/ld: undefined reference to `main&#39;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>/usr/bin/ld: undefined reference to `main'
 </span></code></pre></div>
 <p><strong>Cause</strong> : votre programme C n'a pas de fonction <code>main()</code>, ou vous compilez le mauvais fichier.</p>
 <p><strong>Solution</strong> : vérifiez que <code>main()</code> est bien définie dans votre code source :</p>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">       </span><span class="c1">// ✅ point d&#39;entrée obligatoire</span>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">       </span><span class="c1">// ✅ point d'entrée obligatoire</span>
 </span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="p">}</span>
 </span></code></pre></div>
 <hr />
 <h3 id="expected-before"><code>expected ';' before</code><a class="headerlink" href="#expected-before" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>hello.c:5:1: error: expected &#39;;&#39; before &#39;}&#39; token
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>hello.c:5:1: error: expected ';' before '}' token
 </span></code></pre></div>
 <p><strong>Cause</strong> : il manque un point-virgule à la fin d'une instruction.</p>
 <p><strong>Solution</strong> : chaque instruction C se termine par <code>;</code>. Vérifiez la ligne indiquée et la ligne précédente.</p>
 <hr />
 <h3 id="implicit-declaration-of-function"><code>implicit declaration of function</code><a class="headerlink" href="#implicit-declaration-of-function" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>hello.c:4:5: warning: implicit declaration of function &#39;printf&#39;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>hello.c:4:5: warning: implicit declaration of function 'printf'
 </span></code></pre></div>
 <p><strong>Cause</strong> : vous utilisez une fonction sans inclure son fichier d'en-tête.</p>
 <p><strong>Solution</strong> : ajoutez le <code>#include</code> approprié en haut du fichier :</p>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="c1">     // pour printf, scanf, etc.</span>
-</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span><span class="c1">    // pour malloc, exit, etc.</span>
-</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span><span class="c1">    // pour strlen, strcpy, etc.</span>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="w">     </span><span class="c1">// pour printf, scanf, etc.</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span><span class="w">    </span><span class="c1">// pour malloc, exit, etc.</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span><span class="w">    </span><span class="c1">// pour strlen, strcpy, etc.</span>
 </span></code></pre></div>
 <p>→ Voir <a href="../tp3/">TP3 — Compilation</a></p>
 <hr />
@@ -1921,9 +1921,9 @@
 </span></code></pre></div>
 <p><strong>Cause</strong> : le nom du fichier de redirection contient des espaces non protégés ou une variable non définie.</p>
 <p><strong>Solution</strong> :</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>hello<span class="w"> </span>&gt;<span class="w"> </span><span class="s2">&quot;mon fichier.txt&quot;</span><span class="w">   </span><span class="c1"># ✅ guillemets autour du nom</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>hello<span class="w"> </span>&gt;<span class="w"> </span><span class="s2">"mon fichier.txt"</span><span class="w">   </span><span class="c1"># ✅ guillemets autour du nom</span>
 </span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>hello<span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$FICHIER</span><span class="w">            </span><span class="c1"># ❌ si $FICHIER est vide ou contient des espaces</span>
-</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>hello<span class="w"> </span>&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$FICHIER</span><span class="s2">&quot;</span><span class="w">          </span><span class="c1"># ✅ toujours protéger les variables</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>hello<span class="w"> </span>&gt;<span class="w"> </span><span class="s2">"</span><span class="nv">$FICHIER</span><span class="s2">"</span><span class="w">          </span><span class="c1"># ✅ toujours protéger les variables</span>
 </span></code></pre></div>
 <hr />
 <h3 id="le-fichier-de-sortie-est-vide-apres">Le fichier de sortie est vide après <code>&gt;</code><a class="headerlink" href="#le-fichier-de-sortie-est-vide-apres" title="Permanent link">&para;</a></h3>
