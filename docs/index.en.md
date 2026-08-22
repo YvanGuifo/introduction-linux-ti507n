@@ -25,9 +25,10 @@ This module spans 15 hours of integrated Lecture-Lab sessions.
 
 | Group | Instructor                | Contact    |
 |-----------|---------------------------|------------|
-| 1, 2     | Yvan Guifo Fodjo          | yvan.guifo-fodjo@efrei.fr      |
+| 1 & 2 (coordinator) | Yvan Guifo Fodjo   | yvan.guifo-fodjo@efrei.fr      |
 | 3     | Halim Djerroud            | halim.djerroud@efrei.fr        |
 | 4     | Maroua Tikat              | maroua.tikat@efrei.fr          |
+| Bordeaux | Philippe Rouchaud      | philippe.rouchaud@efrei.fr     |
 
 
 

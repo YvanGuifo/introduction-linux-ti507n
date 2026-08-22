@@ -25,9 +25,10 @@ Ce module se déroulera en 15 heures de cours sous forme de Cours - TP.
 
 | Groupe  | Enseignant                | Contact    |
 |------------|---------------------------|------------|
-| 1, 2      | Yvan Guifo           | yvan.guifo-fodjo@efrei.fr      |
+| 1 & 2 (coordinateur) | Yvan Guifo Fodjo | yvan.guifo-fodjo@efrei.fr      |
 | 3      | Halim Djerroud            | halim.djerroud@efrei.fr        |
 | 4      | Maroua Tikat              | maroua.tikat@efrei.fr          |
+| Bordeaux | Philippe Rouchaud       | philippe.rouchaud@efrei.fr     |
 
 
 <h3 class="section-header">🔧 Mise en route</h3>
