@@ -81,21 +81,21 @@ title: TP3 - Environnement de travail et Compilateur C
 
 1. Tapez :
    ```bash
-   $ nom_fich=hello.c       # (1)
+   $ nom_fich=hello.c       # (i)
    $ echo nom_fich
-   $ echo $nom_fich         # (2)
-   $ echo ${nom_fich}       # (3)
+   $ echo $nom_fich         # (ii)
+   $ echo ${nom_fich}       # (iii)
    $ touch $nom_fich
-   $ echo $nom_fichpp       # (4)
-   $ echo ${nom_fich}pp     # (5)
+   $ echo $nom_fichpp       # (iv)
+   $ echo ${nom_fich}pp     # (v)
    $ rm ${nom_fich}
    ```
 
-   1. **Affectation** : pas d'espace autour du `=`. Le shell crée la variable `nom_fich` avec la valeur `hello.c`.
-   2. Le `$` déclenche le **développement** : le shell remplace `$nom_fich` par sa valeur (`hello.c`) avant d'exécuter `echo`.
-   3. `${nom_fich}` est équivalent à `$nom_fich` — les accolades délimitent explicitement le nom de la variable.
-   4. Le shell cherche la variable `nom_fichpp` (qui n'existe pas) → chaîne vide.
-   5. Les accolades `{}` permettent de **séparer** le nom de variable du texte qui suit : `${nom_fich}` + `pp` = `hello.cpp`.
+    1. **Affectation** : pas d'espace autour du `=`. Le shell crée la variable `nom_fich` avec la valeur `hello.c`.
+    2. Le `$` déclenche le **développement** : le shell remplace `$nom_fich` par sa valeur (`hello.c`) avant d'exécuter `echo`.
+    3. `${nom_fich}` est équivalent à `$nom_fich` — les accolades délimitent explicitement le nom de la variable.
+    4. Le shell cherche la variable `nom_fichpp` (qui n'existe pas) → chaîne vide.
+    5. Les accolades `{}` permettent de **séparer** le nom de variable du texte qui suit : `${nom_fich}` + `pp` = `hello.cpp`.
 2. Rappelez ce que fait `echo`. À quoi sert le `$` devant le nom de variable ?
 3. Que se passe-t-il si on demande d’afficher une variable qui n’existe pas ?
 4. Que se passe-t-il si vous mettez un espace entre le nom de la variable et le `=` ? Et entre le `=` et la valeur ?
@@ -321,18 +321,18 @@ title: TP3 - Environnement de travail et Compilateur C
 3. Récupérez cette archive : [hello.tar.gz](../assets/files/hello.tar.gz).
 4. Extrayez-la et placez-vous dans le répertoire `hello` :
    ```bash
-   $ tar -xvf hello.tar.gz # (1)
+   $ tar -xvf hello.tar.gz # (i)
    ```
 
-   1. `-x` = e**x**traire, `-v` = **v**erbose (affiche les fichiers extraits), `-f` = **f**ichier archive à traiter. L'ordre des options est libre.
+    1. `-x` = e**x**traire, `-v` = **v**erbose (affiche les fichiers extraits), `-f` = **f**ichier archive à traiter. L'ordre des options est libre.
 
 5. Compilez le projet :
    ```bash
-   $ gcc main.c hello.c -o run # (1)
+   $ gcc main.c hello.c -o run # (i)
    ```
 
-   1. `gcc` compile **plusieurs** fichiers source en un seul exécutable. `-o run` nomme l'exécutable `run` au lieu du défaut `a.out`.
-   Exécutez avec `./run`.
+    1. `gcc` compile **plusieurs** fichiers source en un seul exécutable. `-o run` nomme l'exécutable `run` au lieu du défaut `a.out`.
+    Exécutez avec `./run`.
 6. Supprimez le fichier `run`. Modifiez `hello.c` pour introduire volontairement une erreur : supprimez **l’accolade fermante** de la fonction `void hello()`. Recompilez. Que remarquez-vous ?
 7. Remettez l’accolade et ajoutez un `return 1;` dans la définition de la fonction `hello` (qui est `void`). Recompilez. Que remarquez-vous ?
 8. Recompilez maintenant avec `-Wall -Wextra`. Que voyez-vous ?

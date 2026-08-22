@@ -128,7 +128,7 @@ title: TP2 - Système de fichiers et permissions
 
     ```bash
     $ ls -l fichier
-    -rw-r--r-- 1 user group 0 2024-09-09 10:00 fichier # (1)
+    -rw-r--r-- 1 user group 0 2024-09-09 10:00 fichier # (i)
     ```
 
     1. De gauche à droite : **type** + permissions (`-rw-r--r--`), nombre de **liens** (`1`), **propriétaire** (`user`), **groupe** (`group`), **taille** en octets (`0`), **date** de dernière modification, **nom** du fichier.
@@ -173,28 +173,28 @@ title: TP2 - Système de fichiers et permissions
 1. Testez les commandes suivantes et essayez de comprendre `chmod` en notation **symbolique** :
    ```bash
    $ touch f; ls -l f
-   $ chmod a= f; ls -l f           # (1)
-   $ chmod o+rw f; ls -l f         # (2)
-   $ chmod u=o f; ls -l f          # (3)
+   $ chmod a= f; ls -l f           # (i)
+   $ chmod o+rw f; ls -l f         # (ii)
+   $ chmod u=o f; ls -l f          # (iii)
    $ chmod o-wx f; ls -l f
-   $ chmod g+u f; ls -l f          # (4)
-   $ chmod a+x,g-w f; ls -l f     # (5)
+   $ chmod g+u f; ls -l f          # (iv)
+   $ chmod a+x,g-w f; ls -l f     # (v)
    ```
 
-   1. `a` = **all** (u+g+o), `=` **fixe** les permissions exactes. Ici `a=` sans droit → retire **toutes** les permissions.
-   2. `o` = *others*, `+` **ajoute** des droits. Ici : lecture et écriture pour les autres.
-   3. `u=o` : le propriétaire (*user*) reçoit les **mêmes** permissions que les autres (*others*).
-   4. `g+u` : le groupe reçoit les permissions **actuelles** du propriétaire.
-   5. La virgule permet de combiner plusieurs modifications en une seule commande.
+    1. `a` = **all** (u+g+o), `=` **fixe** les permissions exactes. Ici `a=` sans droit → retire **toutes** les permissions.
+    2. `o` = *others*, `+` **ajoute** des droits. Ici : lecture et écriture pour les autres.
+    3. `u=o` : le propriétaire (*user*) reçoit les **mêmes** permissions que les autres (*others*).
+    4. `g+u` : le groupe reçoit les permissions **actuelles** du propriétaire.
+    5. La virgule permet de combiner plusieurs modifications en une seule commande.
 
 2. Testez et observez :
    ```bash
-   $ chmod 644 f; ls -l f # (1)
+   $ chmod 644 f; ls -l f # (i)
    ```
 
-   1. `644` en octal = `rw-r--r--` : lecture/écriture pour le propriétaire (`6` = `r`+`w`), lecture seule pour le groupe (`4` = `r`) et les autres (`4` = `r`).
+    1. `644` en octal = `rw-r--r--` : lecture/écriture pour le propriétaire (`6` = `r`+`w`), lecture seule pour le groupe (`4` = `r`) et les autres (`4` = `r`).
 
-   Que fait cette commande ?
+    Que fait cette commande ?
 3. Avec les **deux notations** (octale et symbolique), modifiez les permissions de `f` pour obtenir :
 
       - exécution pour tous, lecture et écriture uniquement pour le propriétaire ;

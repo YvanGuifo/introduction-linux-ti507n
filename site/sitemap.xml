@@ -15,6 +15,13 @@
         <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/Intro-MarioNum/"/>
     </url>
     <url>
+        <loc>Nonecontenus/cheatsheet/</loc>
+        <lastmod>2026-07-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/cheatsheet/"/>
+    </url>
+    <url>
         <loc>Nonecontenus/codespace/</loc>
         <lastmod>2026-07-24</lastmod>
         <changefreq>daily</changefreq>
@@ -48,6 +55,20 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/draft-corrige-tp4/"/>
         <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/draft-corrige-tp4/"/>
+    </url>
+    <url>
+        <loc>Nonecontenus/faq/</loc>
+        <lastmod>2026-07-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/faq/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/faq/"/>
+    </url>
+    <url>
+        <loc>Nonecontenus/glossaire/</loc>
+        <lastmod>2026-07-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/glossaire/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/glossaire/"/>
     </url>
     <url>
         <loc>Nonecontenus/installation-wsl/</loc>
@@ -127,6 +148,13 @@
         <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/Intro-MarioNum/"/>
     </url>
     <url>
+        <loc>Noneen/contenus/cheatsheet/</loc>
+        <lastmod>2026-07-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/cheatsheet/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/cheatsheet/"/>
+    </url>
+    <url>
         <loc>Noneen/contenus/codespace/</loc>
         <lastmod>2026-07-24</lastmod>
         <changefreq>daily</changefreq>
@@ -160,6 +188,20 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/draft-corrige-tp4/"/>
         <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/draft-corrige-tp4/"/>
+    </url>
+    <url>
+        <loc>Noneen/contenus/faq/</loc>
+        <lastmod>2026-07-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/faq/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/faq/"/>
+    </url>
+    <url>
+        <loc>Noneen/contenus/glossaire/</loc>
+        <lastmod>2026-07-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/glossaire/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/glossaire/"/>
     </url>
     <url>
         <loc>Noneen/contenus/installation-wsl/</loc>

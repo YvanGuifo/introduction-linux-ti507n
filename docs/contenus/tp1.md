@@ -169,10 +169,10 @@ hide:
 3. Entrez `mkdir abeilles tp_shell/tp1 ~/arbres`. Quels arguments sont absolus, lesquels sont relatifs ?
 4. Que fait la commande suivante ?
    ```bash
-   $ mkdir -p vivant/plante/fleur tp_shell/tp1/exos/ex1/ # (1)
+   $ mkdir -p vivant/plante/fleur tp_shell/tp1/exos/ex1/ # (i)
    ```
 
-   1. `-p` (*parents*) crée tous les répertoires intermédiaires manquants. Sans cette option, `mkdir` échoue si un répertoire parent n'existe pas.
+    1. `-p` (*parents*) crée tous les répertoires intermédiaires manquants. Sans cette option, `mkdir` échoue si un répertoire parent n'existe pas.
 ??? saviezvous "La touche Tab : une révolution dans l'interaction homme-machine"
     La **complétion automatique** par <kbd>Tab</kbd> a été introduite dans le **C shell** (`csh`) par Bill Joy à l'université de Berkeley en 1978, puis reprise et améliorée par Bash. Avant cela, il fallait taper chaque nom de fichier en entier, lettre par lettre — une source d'erreurs de frappe constante. Aujourd'hui, la complétion « intelligente » va bien au-delà des noms de fichiers : elle complète les options de commandes, les noms d'hôtes SSH, les branches Git, et bien plus.
 
@@ -208,16 +208,16 @@ hide:
    $ cp vie/arbres/bonjour.c salut.c
    $ mkdir copies
    $ cp salut.c vie/abeilles/truc.txt copies
-   $ cp -R vie copie_vie # (1)
+   $ cp -R vie copie_vie # (i)
    ```
 
-   1. `-R` (*recursive*) copie le répertoire et **tout** son contenu (sous-répertoires et fichiers). Sans `-R`, `cp` refuse de copier un répertoire.
+    1. `-R` (*recursive*) copie le répertoire et **tout** son contenu (sous-répertoires et fichiers). Sans `-R`, `cp` refuse de copier un répertoire.
 
-   Décrivez le comportement de `cp` selon que son dernier argument est un répertoire existant ou non, avec/sans `-R`.
+    Décrivez le comportement de `cp` selon que son dernier argument est un répertoire existant ou non, avec/sans `-R`.
 10. Supprimez avec `rm` :
     ```bash
     $ rm vie/bidule
-    $ rm -r copies # (1)
+    $ rm -r copies # (i)
     $ rm -R copie_vie
     ```
 
@@ -330,12 +330,12 @@ Depuis votre répertoire personnel, exécutez :
    `annee1  Annee2  annee4  annee45  annee41  annee510  annee_saucisse  annee_banane  bonbon`
 2. Sans les exécuter, prédisez le résultat des commandes suivantes, puis testez :
    ```bash
-   $ echo *          # (1)
-   $ echo *_*        # (2)
-   $ echo [ab]*      # (3)
-   $ echo [^ab]*     # (4)
+   $ echo *          # (i)
+   $ echo *_*        # (ii)
+   $ echo [ab]*      # (iii)
+   $ echo [^ab]*     # (iv)
    $ echo c*
-   $ echo ??????     # (5)
+   $ echo ??????     # (v)
    ```
  
     1. `*` correspond à toute chaîne de caractères (même vide), sauf les fichiers commençant par `.`.

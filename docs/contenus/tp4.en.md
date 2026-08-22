@@ -79,8 +79,8 @@ title: Lab 4 - Standard Channels and Redirections | Processes and Jobs | Signals
     `>` redirects `stdout` to a file; `>>` appends to the end of the file.
 
     ```bash
-    $ ls ~ > list_files.txt    # (1)
-    $ ls ~ >> list_files.txt   # (2)
+    $ ls ~ > list_files.txt    # (i)
+    $ ls ~ >> list_files.txt   # (ii)
     ```
 
     1. `>` redirects `stdout` to a file. If the file exists, it is **overwritten**.
@@ -131,10 +131,10 @@ title: Lab 4 - Standard Channels and Redirections | Processes and Jobs | Signals
 5. Redirect the standard output of the previous command to a file `result.txt`. Observe what is displayed on the terminal **and** what is in `result.txt`.
 6. Then type:
    ```bash
-   $ cat file-1.txt file-2.txt file-3.txt 1> result.txt 2> error.txt # (1)
+   $ cat file-1.txt file-2.txt file-3.txt 1> result.txt 2> error.txt # (i)
    ```
 
-   1. `1>` redirects **standard output** (channel 1) to `result.txt`, `2>` redirects **standard error** (channel 2) to `error.txt`. This separates normal results from error messages.
+    1. `1>` redirects **standard output** (channel 1) to `result.txt`, `2>` redirects **standard error** (channel 2) to `error.txt`. This separates normal results from error messages.
 
 7. Observe the contents of `result.txt` and `error.txt`. In your opinion, what do `1>` and `2>` mean? Draw a conclusion about the difference between standard output and standard error.
 
@@ -206,12 +206,12 @@ This exercise consolidates redirections **and** pipes. You will work with the `.
    ```
 2. Test the following command and comment:
    ```bash
-   $ ls /usr/include/*.h | wc -l # (1)
+   $ ls /usr/include/*.h | wc -l # (i)
    ```
 
-   1. The `|` (pipe) connects the output of `ls` to the input of `wc`. The `-l` option of `wc` counts the number of **lines** received — here, the number of `.h` files.
+    1. The `|` (pipe) connects the output of `ls` to the input of `wc`. The `-l` option of `wc` counts the number of **lines** received — here, the number of `.h` files.
 
-   Where is the result of `ls` redirected? Where does the standard input of `wc` come from? Where is the result of `wc` displayed?
+    Where is the result of `ls` redirected? Where does the standard input of `wc` come from? Where is the result of `wc` displayed?
 3. Display on the terminal the sentence
    `Il y a <nombre> fichiers .h dans le répertoire /usr/include`
    using `echo` and **command substitution** `$(...)` (covered in Lab 3, exercise 6).
@@ -291,9 +291,9 @@ This exercise asks you to write a small C program using the skills from Lab 3.
 2. Compile with `gcc -Wall -o compteur compteur.c`. Test:
    ```bash
    $ ./compteur
-   <Ctrl-z>           # (1)
+   <Ctrl-z>           # (i)
    $ jobs
-   $ jobs -p           # (2)
+   $ jobs -p           # (ii)
    $ ps
    $ fg %1
    <Ctrl-z>
@@ -306,8 +306,8 @@ This exercise asks you to write a small C program using the skills from Lab 3.
    $ jobs
    ```
 
-   1. <kbd>Ctrl+Z</kbd> sends the `SIGTSTP` signal: the process is **suspended** (not terminated), it remains in memory.
-   2. `-p` displays only the **PID** (numeric identifier) of each job, useful for `kill`.
+    1. <kbd>Ctrl+Z</kbd> sends the `SIGTSTP` signal: the process is **suspended** (not terminated), it remains in memory.
+    2. `-p` displays only the **PID** (numeric identifier) of each job, useful for `kill`.
 
 3. **Analysis questions**:
 

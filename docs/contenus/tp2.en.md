@@ -128,7 +128,7 @@ title: Lab 2 - File system and permissions
 
     ```bash
     $ ls -l fichier
-    -rw-r--r-- 1 user group 0 2024-09-09 10:00 fichier # (1)
+    -rw-r--r-- 1 user group 0 2024-09-09 10:00 fichier # (i)
     ```
 
     1. From left to right: **type** + permissions (`-rw-r--r--`), number of **links** (`1`), **owner** (`user`), **group** (`group`), **size** in bytes (`0`), last **modification date**, **filename**.
@@ -173,28 +173,28 @@ title: Lab 2 - File system and permissions
 1. Test the following commands and try to understand `chmod` in **symbolic** notation:
    ```bash
    $ touch f; ls -l f
-   $ chmod a= f; ls -l f           # (1)
-   $ chmod o+rw f; ls -l f         # (2)
-   $ chmod u=o f; ls -l f          # (3)
+   $ chmod a= f; ls -l f           # (i)
+   $ chmod o+rw f; ls -l f         # (ii)
+   $ chmod u=o f; ls -l f          # (iii)
    $ chmod o-wx f; ls -l f
-   $ chmod g+u f; ls -l f          # (4)
-   $ chmod a+x,g-w f; ls -l f     # (5)
+   $ chmod g+u f; ls -l f          # (iv)
+   $ chmod a+x,g-w f; ls -l f     # (v)
    ```
 
-   1. `a` = **all** (u+g+o), `=` **sets** exact permissions. Here `a=` with no right → removes **all** permissions.
-   2. `o` = *others*, `+` **adds** rights. Here: read and write for others.
-   3. `u=o`: the owner (*user*) gets the **same** permissions as others (*others*).
-   4. `g+u`: the group gets the owner's **current** permissions.
-   5. The comma lets you combine multiple modifications in a single command.
+    1. `a` = **all** (u+g+o), `=` **sets** exact permissions. Here `a=` with no right → removes **all** permissions.
+    2. `o` = *others*, `+` **adds** rights. Here: read and write for others.
+    3. `u=o`: the owner (*user*) gets the **same** permissions as others (*others*).
+    4. `g+u`: the group gets the owner's **current** permissions.
+    5. The comma lets you combine multiple modifications in a single command.
 
 2. Test and observe:
    ```bash
-   $ chmod 644 f; ls -l f # (1)
+   $ chmod 644 f; ls -l f # (i)
    ```
 
-   1. `644` in octal = `rw-r--r--`: read/write for the owner (`6` = `r`+`w`), read only for group (`4` = `r`) and others (`4` = `r`).
+    1. `644` in octal = `rw-r--r--`: read/write for the owner (`6` = `r`+`w`), read only for group (`4` = `r`) and others (`4` = `r`).
 
-   What does this command do?
+    What does this command do?
 3. Using **both notations** (octal and symbolic), modify the permissions of `f` to obtain:
 
       - execute for all, read and write only for the owner;

@@ -169,10 +169,10 @@ hide:
 3. Enter `mkdir abeilles tp_shell/tp1 ~/arbres`. Which arguments are absolute and which are relative?
 4. What does the following command do?
    ```bash
-   $ mkdir -p vivant/plante/fleur tp_shell/tp1/exos/ex1/ # (1)
+   $ mkdir -p vivant/plante/fleur tp_shell/tp1/exos/ex1/ # (i)
    ```
 
-   1. `-p` (*parents*) creates all missing intermediate directories. Without this option, `mkdir` fails if a parent directory doesn't exist.
+    1. `-p` (*parents*) creates all missing intermediate directories. Without this option, `mkdir` fails if a parent directory doesn't exist.
 ??? saviezvous "The Tab key: a revolution in human-computer interaction"
     **Tab completion** was introduced in the **C shell** (`csh`) by Bill Joy at UC Berkeley in 1978, then adopted and improved by Bash. Before that, every filename had to be typed in full, letter by letter — a constant source of typos. Today, "smart" completion goes far beyond filenames: it completes command options, SSH hostnames, Git branches, and much more.
 
@@ -208,16 +208,16 @@ hide:
    $ cp vie/arbres/bonjour.c salut.c
    $ mkdir copies
    $ cp salut.c vie/abeilles/truc.txt copies
-   $ cp -R vie copie_vie # (1)
+   $ cp -R vie copie_vie # (i)
    ```
 
-   1. `-R` (*recursive*) copies the directory and **all** its contents (subdirectories and files). Without `-R`, `cp` refuses to copy a directory.
+    1. `-R` (*recursive*) copies the directory and **all** its contents (subdirectories and files). Without `-R`, `cp` refuses to copy a directory.
 
-   Describe the behavior of `cp` depending on whether its last argument is an existing directory or not, with and without `-R`.
+    Describe the behavior of `cp` depending on whether its last argument is an existing directory or not, with and without `-R`.
 10. Delete with `rm`:
     ```bash
     $ rm vie/bidule
-    $ rm -r copies # (1)
+    $ rm -r copies # (i)
     $ rm -R copie_vie
     ```
 
@@ -330,12 +330,12 @@ From your home directory, execute:
    `annee1  Annee2  annee4  annee45  annee41  annee510  annee_saucisse  annee_banane  bonbon`
 2. Without executing them, predict the result of the following commands, then test:
    ```bash
-   $ echo *          # (1)
-   $ echo *_*        # (2)
-   $ echo [ab]*      # (3)
-   $ echo [^ab]*     # (4)
+   $ echo *          # (i)
+   $ echo *_*        # (ii)
+   $ echo [ab]*      # (iii)
+   $ echo [^ab]*     # (iv)
    $ echo c*
-   $ echo ??????     # (5)
+   $ echo ??????     # (v)
    ```
 
     1. `*` matches any string (even empty), except files starting with `.`.

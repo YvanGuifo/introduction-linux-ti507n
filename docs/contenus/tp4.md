@@ -79,8 +79,8 @@ title: TP4 - Canaux standards et redirections | Processus et tâches | Signaux
     `>` redirige `stdout` vers un fichier ; `>>` ajoute en fin de fichier.
 
     ```bash
-    $ ls ~ > list_files.txt    # (1)
-    $ ls ~ >> list_files.txt   # (2)
+    $ ls ~ > list_files.txt    # (i)
+    $ ls ~ >> list_files.txt   # (ii)
     ```
 
     1. `>` redirige `stdout` vers un fichier. Si le fichier existe, il est **écrasé**.
@@ -129,10 +129,10 @@ title: TP4 - Canaux standards et redirections | Processus et tâches | Signaux
 5. Redirigez la sortie standard de la commande précédente vers un fichier `result.txt`. Observez ce qui est affiché sur le terminal **et** ce qui est dans `result.txt`.
 6. Tapez ensuite :
    ```bash
-   $ cat file-1.txt file-2.txt file-3.txt 1> result.txt 2> error.txt # (1)
+   $ cat file-1.txt file-2.txt file-3.txt 1> result.txt 2> error.txt # (i)
    ```
 
-   1. `1>` redirige la **sortie standard** (canal 1) vers `result.txt`, `2>` redirige l'**erreur standard** (canal 2) vers `error.txt`. On sépare ainsi les résultats normaux des messages d'erreur.
+    1. `1>` redirige la **sortie standard** (canal 1) vers `result.txt`, `2>` redirige l'**erreur standard** (canal 2) vers `error.txt`. On sépare ainsi les résultats normaux des messages d'erreur.
 
 7. Observez les contenus de `result.txt` et `error.txt`. À votre avis que signifient `1>` et `2>` ? Tirez-en une conclusion sur la différence entre la sortie standard et l’erreur standard.
 
@@ -204,12 +204,12 @@ Cet exercice consolide redirections **et** tubes. Vous travaillerez sur les fich
    ```
 2. Testez la commande suivante et commentez :
    ```bash
-   $ ls /usr/include/*.h | wc -l # (1)
+   $ ls /usr/include/*.h | wc -l # (i)
    ```
 
-   1. Le `|` (pipe) connecte la sortie de `ls` à l'entrée de `wc`. L'option `-l` de `wc` compte le nombre de **lignes** reçues — ici, le nombre de fichiers `.h`.
+    1. Le `|` (pipe) connecte la sortie de `ls` à l'entrée de `wc`. L'option `-l` de `wc` compte le nombre de **lignes** reçues — ici, le nombre de fichiers `.h`.
 
-   Où est redirigé le résultat de `ls` ? Où va l’entrée standard de `wc` ? Où est affiché le résultat de `wc` ?
+    Où est redirigé le résultat de `ls` ? Où va l’entrée standard de `wc` ? Où est affiché le résultat de `wc` ?
 3. Affichez sur le terminal la phrase
    `Il y a <nombre> fichiers .h dans le répertoire /usr/include`
    en utilisant `echo` et la **substitution de commande** `$(...)` (vue au TP3, exercice 6).
@@ -290,9 +290,9 @@ Cet exercice vous demande d’écrire un petit programme C utilisant les acquis 
 2. Compilez avec `gcc -Wall -o compteur compteur.c`. Testez :
    ```bash
    $ ./compteur
-   <Ctrl-z>           # (1)
+   <Ctrl-z>           # (i)
    $ jobs
-   $ jobs -p           # (2)
+   $ jobs -p           # (ii)
    $ ps
    $ fg %1
    <Ctrl-z>
@@ -305,8 +305,8 @@ Cet exercice vous demande d’écrire un petit programme C utilisant les acquis 
    $ jobs
    ```
 
-   1. <kbd>Ctrl+Z</kbd> envoie le signal `SIGTSTP` : le processus est **suspendu** (pas terminé), il reste en mémoire.
-   2. `-p` affiche uniquement le **PID** (identifiant numérique) de chaque tâche, utile pour `kill`.
+    1. <kbd>Ctrl+Z</kbd> envoie le signal `SIGTSTP` : le processus est **suspendu** (pas terminé), il reste en mémoire.
+    2. `-p` affiche uniquement le **PID** (identifiant numérique) de chaque tâche, utile pour `kill`.
 
 3. **Questions d’analyse** :
 

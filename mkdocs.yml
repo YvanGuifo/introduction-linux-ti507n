@@ -55,15 +55,21 @@ theme:
     - navigation.top
     - navigation.tracking
     - navigation.footer
-    - navigation.instant
-    - navigation.instant.progress
+    # navigation.instant est incompatible avec le sélecteur de langue de
+    # mkdocs-static-i18n : en navigation instantanée, les liens contextuels
+    # « même page → autre langue » ne sont pas régénérés (l'interrupteur de
+    # langue basculerait alors vers la mauvaise page). Désactivé volontairement.
+    # - navigation.instant
+    # - navigation.instant.progress
     - header.autohide
     - toc.follow
     - search.suggest
     - search.highlight
     - search.share
     - content.code.copy
-    - content.code.annotate
+    # content.code.annotate retiré : aucune annotation « (n)! » n'est utilisée
+    # (les explications de code sont rendues en notes de bas de page romaines).
+    # - content.code.annotate
 
 markdown_extensions:
   - pymdownx.highlight:
@@ -100,6 +106,17 @@ markdown_extensions:
   - toc:
       permalink: true
       toc_depth: 3
+
+# Pages présentes dans docs/ mais volontairement hors navigation : sans cette
+# exclusion, « mkdocs build --strict » échoue (page hors nav = WARNING). Les
+# corrigés ne sont pas publiés ; les brouillons/anciennes versions non plus.
+exclude_docs: |
+  contenus/corrige-tp2.md
+  contenus/corrige-tp3.md
+  contenus/corrige-tp4.md
+  contenus/draft-corrige-tp4.md
+  contenus/old-tp4.md
+  contenus/old-tp5.md
 
 plugins:
   - search:

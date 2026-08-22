@@ -81,21 +81,21 @@ title: Lab 3 - Working Environment and C Compiler
 
 1. Type:
    ```bash
-   $ nom_fich=hello.c       # (1)
+   $ nom_fich=hello.c       # (i)
    $ echo nom_fich
-   $ echo $nom_fich         # (2)
-   $ echo ${nom_fich}       # (3)
+   $ echo $nom_fich         # (ii)
+   $ echo ${nom_fich}       # (iii)
    $ touch $nom_fich
-   $ echo $nom_fichpp       # (4)
-   $ echo ${nom_fich}pp     # (5)
+   $ echo $nom_fichpp       # (iv)
+   $ echo ${nom_fich}pp     # (v)
    $ rm ${nom_fich}
    ```
 
-   1. **Assignment**: no spaces around `=`. The shell creates the variable `nom_fich` with the value `hello.c`.
-   2. The `$` triggers **expansion**: the shell replaces `$nom_fich` with its value (`hello.c`) before executing `echo`.
-   3. `${nom_fich}` is equivalent to `$nom_fich` — the braces explicitly delimit the variable name.
-   4. The shell looks for a variable named `nom_fichpp` (which doesn't exist) → empty string.
-   5. The braces `{}` allow **separating** the variable name from the text that follows: `${nom_fich}` + `pp` = `hello.cpp`.
+    1. **Assignment**: no spaces around `=`. The shell creates the variable `nom_fich` with the value `hello.c`.
+    2. The `$` triggers **expansion**: the shell replaces `$nom_fich` with its value (`hello.c`) before executing `echo`.
+    3. `${nom_fich}` is equivalent to `$nom_fich` — the braces explicitly delimit the variable name.
+    4. The shell looks for a variable named `nom_fichpp` (which doesn't exist) → empty string.
+    5. The braces `{}` allow **separating** the variable name from the text that follows: `${nom_fich}` + `pp` = `hello.cpp`.
 
 2. Recall what `echo` does. What is the purpose of `$` before a variable name?
 3. What happens if you try to display a variable that does not exist?
@@ -322,18 +322,18 @@ title: Lab 3 - Working Environment and C Compiler
 3. Download this archive: [hello.tar.gz](../assets/files/hello.tar.gz).
 4. Extract it and navigate to the `hello` directory:
    ```bash
-   $ tar -xvf hello.tar.gz # (1)
+   $ tar -xvf hello.tar.gz # (i)
    ```
 
-   1. `-x` = e**x**tract, `-v` = **v**erbose (displays extracted files), `-f` = archive **f**ile to process. Option order is flexible.
+    1. `-x` = e**x**tract, `-v` = **v**erbose (displays extracted files), `-f` = archive **f**ile to process. Option order is flexible.
 
 5. Compile the project:
    ```bash
-   $ gcc main.c hello.c -o run # (1)
+   $ gcc main.c hello.c -o run # (i)
    ```
 
-   1. `gcc` compiles **multiple** source files into a single executable. `-o run` names the executable `run` instead of the default `a.out`.
-   Run it with `./run`.
+    1. `gcc` compiles **multiple** source files into a single executable. `-o run` names the executable `run` instead of the default `a.out`.
+    Run it with `./run`.
 
 6. Delete the file `run`. Modify `hello.c` to deliberately introduce an error: remove the **closing brace** of the `void hello()` function. Recompile. What do you notice?
 7. Put the brace back and add a `return 1;` in the definition of the `hello` function (which is `void`). Recompile. What do you notice?
