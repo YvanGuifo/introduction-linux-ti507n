@@ -21,7 +21,7 @@ hide:
 
 !!! tip "Prérequis"
     - Lecture préliminaire effectuée ([preliminary-reading](./preliminary-reading.md)).
-    - Distribution Debian 12 installée ([installation d’une distribution Linux](./installation-linux.md)) **ou** session MarioNum active ([Intro-MarioNum](./Intro-MarioNum.md)).
+    - Distribution Debian 12 installée ([installation d’une distribution Linux](./installation-wsl.md)) **ou** session MarioNum active ([Intro-MarioNum](./Intro-MarioNum.md)).
     - Terminal ouvert et prompt `$` visible.
 
 !!! info "Instructions"

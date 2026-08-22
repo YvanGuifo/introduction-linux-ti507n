@@ -1577,7 +1577,7 @@
 <p class="admonition-title">Prérequis</p>
 <ul>
 <li>Lecture préliminaire effectuée (<a href="../preliminary-reading/">preliminary-reading</a>).</li>
-<li>Distribution Debian 12 installée (<a href="../installation-wsl/">installation-wsl</a>) <strong>ou</strong> session MarioNum active (<a href="../Intro-MarioNum/">Intro-MarioNum</a>).</li>
+<li>Distribution Debian 12 installée (<a href="./installation-linux.md">installation d’une distribution Linux</a>) <strong>ou</strong> session MarioNum active (<a href="../Intro-MarioNum/">Intro-MarioNum</a>).</li>
 <li>Terminal ouvert et prompt <code>$</code> visible.</li>
 </ul>
 </div>
@@ -1647,7 +1647,7 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <summary>Pourquoi les commandes Unix sont-elles si courtes ?</summary>
 <p>Les créateurs d’Unix, <strong>Ken Thompson</strong> et <strong>Dennis Ritchie</strong> (Bell Labs, 1969–1971), utilisaient un télétype ASR-33 comme terminal. Ce clavier mécanique était lent et bruyant : chaque frappe comptait. C’est pourquoi les commandes sont devenues <code>ls</code> plutôt que <code>list</code>, <code>cp</code> plutôt que <code>copy</code>, <code>mv</code> plutôt que <code>move</code>. Cette concision, née d’une contrainte matérielle, est devenue un trait culturel d’Unix.</p>
 <blockquote>
-<p>Thompson, K. &amp; Ritchie, D. M. (1974). The UNIX Time-Sharing System. <em>Communications of the ACM</em>, 17(7), 365–375. DOI : <a href="https://doi.org/10.1145/361011.361061">10.1145/361011.361061</a></p>
+<p>Ritchie, D. M. &amp; Thompson, K. (1974). The UNIX Time-Sharing System. <em>Communications of the ACM</em>, 17(7), 365–375. DOI : <a href="https://doi.org/10.1145/361011.361061">10.1145/361011.361061</a></p>
 </blockquote>
 </details>
 <div class="admonition tip">
@@ -1659,7 +1659,8 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 </div>
 <h3 id="exercice-1-premieres-commandes-et-raccourcis-clavier">Exercice 1 — Premières commandes et raccourcis clavier 📚<a class="headerlink" href="#exercice-1-premieres-commandes-et-raccourcis-clavier" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Essayez les commandes suivantes dans un terminal. Pour chacune, décrivez en une phrase son utilité, indiquez son nom, son nombre d’arguments et ses arguments. <em>Exemple</em> : la commande <code>date</code> n’a pas d’argument et affiche la date et l’heure.
+<li>
+<p>Essayez les commandes suivantes dans un terminal. Pour chacune, décrivez en une phrase son utilité, indiquez son nom, son nombre d’arguments et ses arguments. <em>Exemple</em> : la commande <code>date</code> n’a pas d’argument et affiche la date et l’heure.
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>date
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>$<span class="w"> </span>cal
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>$<span class="w"> </span>cal<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">2022</span>
@@ -1671,8 +1672,11 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 </span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>$<span class="w"> </span>uname<span class="w"> </span>-mrs
 </span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>Hello,<span class="w"> </span>world!
 </span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w">       </span>Hello,<span class="w">        </span>world!
-</span></code></pre></div></li>
-<li>Appuyez sur <kbd>↑</kbd> (ou <kbd>Ctrl-P</kbd>) plusieurs fois jusqu’à ce que la commande <code>who</code> s’affiche. Appuyez maintenant sur <kbd>↓</kbd> (ou <kbd>Ctrl-N</kbd>) jusqu’à revenir sur <code>uname -m -r</code>, puis exécutez. Notez à quoi servent ces raccourcis.</li>
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Appuyez sur <kbd>↑</kbd> (ou <kbd>Ctrl-P</kbd>) plusieurs fois jusqu’à ce que la commande <code>who</code> s’affiche. Appuyez maintenant sur <kbd>↓</kbd> (ou <kbd>Ctrl-N</kbd>) jusqu’à revenir sur <code>uname -m -r</code>, puis exécutez. Notez à quoi servent ces raccourcis.</p>
+</li>
 <li>Appuyez sur <kbd>Ctrl-L</kbd>. Notez à quoi sert ce raccourci.</li>
 <li>Sans écrire la commande, faites afficher <code>cal 3 2022</code>, <strong>sans l’exécuter</strong>.</li>
 <li>Appuyez sur <kbd>Ctrl-U</kbd>. Notez à quoi sert ce raccourci.</li>
@@ -1703,13 +1707,13 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <li>Entrez <code>cd ..</code> puis <code>pwd</code>. Répétez jusqu’à ce que le résultat reste le même. Que s’est-il passé ?</li>
 <li>Entrez <code>cd</code> (sans argument), puis <code>pwd</code>. Commentez.</li>
 <li>Entrez <code>cd /</code>, puis <code>pwd</code> et <code>ls</code>. À quoi sert <code>ls</code> ?</li>
-<li>Entrez <code>cd /usr/include</code> puis <code>ls</code>. À quoi semble servir ce répertoire ?</li>
-</ol>
+<li>
+<p>Entrez <code>cd /usr/include</code> puis <code>ls</code>. À quoi semble servir ce répertoire ?</p>
 <details class="saviezvous">
 <summary>Pourquoi la commande s'appelle <code>cat</code> ?</summary>
 <p>La commande <code>cat</code> est l'abréviation de <strong>concatenate</strong> (concaténer). Sa fonction première n'était pas d'afficher un fichier, mais de <strong>concaténer</strong> plusieurs fichiers bout à bout (<code>cat fichier1 fichier2 &gt; fusion</code>). L'usage courant <code>cat fichier</code> pour <em>afficher</em> un fichier est en réalité un cas particulier : la concaténation d'un seul fichier vers la sortie standard. Cette distinction reste importante en TP4 quand on abordera les redirections.</p>
 </details>
-<ol>
+</li>
 <li>
 <p>Rappels :</p>
 <ul>
@@ -1751,12 +1755,10 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <li>Entrez <code>mkdir abeilles tp_shell/tp1 ~/arbres</code>. Quels arguments sont absolus, lesquels sont relatifs ?</li>
 <li>
 <p>Que fait la commande suivante ?
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>vivant/plante/fleur<span class="w"> </span>tp_shell/tp1/exos/ex1/<span class="w"> </span><span class="c1"># (i)</span>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>vivant/plante/fleur<span class="w"> </span>tp_shell/tp1/exos/ex1/<span class="w"> </span><span class="c1"># (i)</span>
 </span></code></pre></div></p>
 <ol>
 <li><code>-p</code> (<em>parents</em>) crée tous les répertoires intermédiaires manquants. Sans cette option, <code>mkdir</code> échoue si un répertoire parent n'existe pas.</li>
-</ol>
-</li>
 </ol>
 <details class="saviezvous">
 <summary>La touche Tab : une révolution dans l'interaction homme-machine</summary>
@@ -1765,30 +1767,47 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <p>Joy, W. (1979). <em>An Introduction to the C Shell</em>. Computer Science Division, University of California, Berkeley.</p>
 </blockquote>
 </details>
-<ol>
-<li>Testez la <strong>complétion automatique</strong> avec la touche <kbd>Tab</kbd> :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>mkd&lt;Tab&gt;<span class="w"> </span>vi&lt;Tab&gt;&lt;Tab&gt;&lt;Tab&gt;roses
+</li>
+<li>
+<p>Testez la <strong>complétion automatique</strong> avec la touche <kbd>Tab</kbd> :
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>mkd&lt;Tab&gt;<span class="w"> </span>vi&lt;Tab&gt;&lt;Tab&gt;&lt;Tab&gt;roses
 </span></code></pre></div>
-   Puis :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span>ls<span class="w"> </span>a&lt;Tab&gt;&lt;Tab&gt;
-</span></code></pre></div></li>
-<li>Supprimez des répertoires vides avec <code>rmdir</code> :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span>rmdir<span class="w"> </span>vivant<span class="w"> </span>tp_shell/tp1/exos/ex1
-</span></code></pre></div>
-   Supprimez également le sous-répertoire <code>tp1</code> de <code>tp_shell</code>.</li>
-<li>Créez des fichiers vides avec <code>touch</code> :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$<span class="w"> </span>touch<span class="w"> </span>~/arbres/hello.c<span class="w"> </span>abeilles/truc.txt<span class="w"> </span>bidule
+    Puis :
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span>ls<span class="w"> </span>a&lt;Tab&gt;&lt;Tab&gt;
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Supprimez des répertoires vides avec <code>rmdir</code> :
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span>rmdir<span class="w"> </span>vivant<span class="w"> </span>tp_shell/tp1/exos/ex1
+</span></code></pre></div></p>
+<p><strong>Une des deux suppressions échoue.</strong> Laquelle, et que dit exactement le message
+d'erreur ? Que pouvez-vous en déduire sur <code>rmdir</code> ?</p>
+<p>Essayez maintenant de supprimer le sous-répertoire <code>tp1</code> de <code>tp_shell</code> avec
+<code>rmdir</code> : cela échoue aussi. Trouvez pourquoi (<code>ls -R tp_shell</code>), puis
+supprimez-le réellement, soit en remontant l'arborescence de bas en haut, soit
+avec l'option <code>-p</code> de <code>rmdir</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Ne supprimez pas <code>vivant</code></p>
+<p><code>vivant</code> doit rester en place : il sert de destination à la question 8.</p>
+</div>
+</li>
+<li>
+<p>Créez des fichiers vides avec <code>touch</code> :
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$<span class="w"> </span>touch<span class="w"> </span>~/arbres/hello.c<span class="w"> </span>abeilles/truc.txt<span class="w"> </span>bidule
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>$<span class="w"> </span>ls<span class="w"> </span>~/arbres<span class="w"> </span>abeilles/<span class="w"> </span>.
-</span></code></pre></div></li>
-<li>Déplacez / renommez avec <code>mv</code> :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>mv<span class="w"> </span>arbres/hello.c<span class="w"> </span>arbres/bonjour.c
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Déplacez / renommez avec <code>mv</code> :
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>mv<span class="w"> </span>arbres/hello.c<span class="w"> </span>arbres/bonjour.c
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>$<span class="w"> </span>mv<span class="w"> </span>abeilles<span class="w"> </span>arbres<span class="w"> </span>vivant/
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>$<span class="w"> </span>mv<span class="w"> </span>bidule<span class="w"> </span>vivant
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>$<span class="w"> </span>mv<span class="w"> </span>vivant<span class="w"> </span>vie
-</span></code></pre></div></li>
+</span></code></pre></div></p>
+</li>
 <li>
 <p>Copiez avec <code>cp</code> :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$<span class="w"> </span>cp<span class="w"> </span>vie/arbres/bonjour.c<span class="w"> </span>salut.c
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$<span class="w"> </span>cp<span class="w"> </span>vie/arbres/bonjour.c<span class="w"> </span>salut.c
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>$<span class="w"> </span>mkdir<span class="w"> </span>copies
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>$<span class="w"> </span>cp<span class="w"> </span>salut.c<span class="w"> </span>vie/abeilles/truc.txt<span class="w"> </span>copies
 </span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>$<span class="w"> </span>cp<span class="w"> </span>-R<span class="w"> </span>vie<span class="w"> </span>copie_vie<span class="w"> </span><span class="c1"># (i)</span>
@@ -1796,9 +1815,11 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <ol>
 <li><code>-R</code> (<em>recursive</em>) copie le répertoire et <strong>tout</strong> son contenu (sous-répertoires et fichiers). Sans <code>-R</code>, <code>cp</code> refuse de copier un répertoire.</li>
 </ol>
-<p>Décrivez le comportement de <code>cp</code> selon que son dernier argument est un répertoire existant ou non, avec/sans <code>-R</code>.
-10. Supprimez avec <code>rm</code> :
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$<span class="w"> </span>rm<span class="w"> </span>vie/bidule
+<p>Décrivez le comportement de <code>cp</code> selon que son dernier argument est un répertoire existant ou non, avec/sans <code>-R</code>.</p>
+</li>
+<li>
+<p>Supprimez avec <code>rm</code> :
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$<span class="w"> </span>rm<span class="w"> </span>vie/bidule
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>$<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>copies<span class="w"> </span><span class="c1"># (i)</span>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>$<span class="w"> </span>rm<span class="w"> </span>-R<span class="w"> </span>copie_vie
 </span></code></pre></div></p>
@@ -1814,15 +1835,18 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 </div>
 <h3 id="exercice-4-construire-une-arborescence-structuree">Exercice 4 — Construire une arborescence structurée 📚📚📚<a class="headerlink" href="#exercice-4-construire-une-arborescence-structuree" title="Permanent link">&para;</a></h3>
 <p>Créez l’arborescence suivante depuis votre répertoire personnel. Seuls <code>rapport.txt</code> et <code>index.html</code> sont des fichiers normaux. Les répertoires <strong>Mail</strong>, <strong>Rapport</strong> et <strong>Web</strong> seront créés <strong>en une seule commande</strong> <code>mkdir</code>.</p>
-<pre class="mermaid"><code>stateDiagram-v2
-    ~ --&gt; Mail
-    ~ --&gt; Rapport
-    ~ --&gt; Web
-    Rapport --&gt; rapport.txt
-    Rapport --&gt; Docs
-    Docs --&gt; Afaire
-    Docs --&gt; Fait
-    Web --&gt; index.html</code></pre>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>~
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>├── Mail/
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>├── Rapport/
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>│   ├── rapport.txt
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>│   └── Docs/
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>│       ├── Afaire/
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>│       └── Fait/
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>└── Web/
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>    └── index.html
+</span></code></pre></div>
+<p><em>(Les noms suivis de <code>/</code> sont des répertoires ; <code>rapport.txt</code> et <code>index.html</code> sont
+des fichiers ordinaires. Vous pourrez vérifier votre travail avec <code>ls -R ~</code>.)</em></p>
 <p>Utilisez <code>touch</code> pour créer les fichiers normaux, puis un éditeur de texte pour leur donner un contenu.</p>
 <p>Depuis votre répertoire personnel, exécutez :</p>
 <ol>
@@ -1849,8 +1873,8 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <li><strong>alias</strong> : raccourcis pour des commandes.</li>
 </ul>
 <p>La commande <code>type</code> indique le type. Exemple :</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>$<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="nb">type</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nb">type</span><span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span>shell<span class="w"> </span><span class="nb">builtin</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="nb">type</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nb">type</span><span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span>shell<span class="w"> </span><span class="nb">builtin</span>
 </span></code></pre></div>
 </div>
 <h3 id="exercice-5-internes-vs-externes">Exercice 5 — Internes vs externes 📚<a class="headerlink" href="#exercice-5-internes-vs-externes" title="Permanent link">&para;</a></h3>
@@ -1861,7 +1885,7 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <div class="admonition warning">
 <p class="admonition-title">Si <code>man</code> n’est pas installé (Debian / WSL)</p>
 <p>Installez avec :
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>manpages<span class="w"> </span>man-db
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>$<span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>manpages<span class="w"> </span>man-db
 </span></code></pre></div></p>
 </div>
 <div class="admonition tip">
@@ -1881,11 +1905,15 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <li>À l’aide du manuel, dites à quoi sert l’option <code>-f</code> de <code>rm</code> et comment supprimer un fichier dont le nom commence par un tiret (par exemple <code>-f</code>).</li>
 <li>Avec <code>help</code>, affichez les pages d’aide des commandes internes <code>echo</code> et <code>type</code>.</li>
 <li>Avec <code>man touch</code>, quelle est l’utilité de <code>touch</code> si ce n’est pas seulement de créer des fichiers vides ?</li>
-<li>Avec <code>man man</code>, trouvez la partie qui parle des commandes internes. Dans quelle section les librairies sont-elles documentées (par exemple la libc) ? Quelle est la différence entre :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>$<span class="w"> </span>man<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="nb">printf</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>$<span class="w"> </span>man<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="nb">printf</span>
-</span></code></pre></div></li>
-<li>Dans le SYNOPSIS de <code>mv</code>, que signifient les crochets <code>[ ]</code> et les points de suspension <code>...</code> ? Consultez <code>man man</code> si besoin.</li>
+<li>
+<p>Avec <code>man man</code>, trouvez la partie qui parle des commandes internes. Dans quelle section les librairies sont-elles documentées (par exemple la libc) ? Quelle est la différence entre :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>$<span class="w"> </span>man<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="nb">printf</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>$<span class="w"> </span>man<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="nb">printf</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Dans le SYNOPSIS de <code>mv</code>, que signifient les crochets <code>[ ]</code> et les points de suspension <code>...</code> ? Consultez <code>man man</code> si besoin.</p>
+</li>
 </ol>
 <hr />
 <h2 id="5-caracteres-jokers">5. Caractères jokers<a class="headerlink" href="#5-caracteres-jokers" title="Permanent link">&para;</a></h2>
@@ -1901,16 +1929,18 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 </div>
 <h3 id="exercice-7-jokers">Exercice 7 — Jokers 📚📚📚<a class="headerlink" href="#exercice-7-jokers" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Créez un répertoire <code>tp_joker</code> dans votre home. Placez-vous dedans. Créez les fichiers <strong>vides</strong> suivants :
-   <code>annee1  Annee2  annee4  annee45  annee41  annee510  annee_saucisse  annee_banane  bonbon</code></li>
+<li>
+<p>Créez un répertoire <code>tp_joker</code> dans votre home. Placez-vous dedans. Créez les fichiers <strong>vides</strong> suivants :
+    <code>annee1  Annee2  annee4  annee45  annee41  annee510  annee_saucisse  annee_banane  bonbon</code></p>
+</li>
 <li>
 <p>Sans les exécuter, prédisez le résultat des commandes suivantes, puis testez :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>*<span class="w">          </span><span class="c1"># (i)</span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>*_*<span class="w">        </span><span class="c1"># (ii)</span>
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="o">[</span>ab<span class="o">]</span>*<span class="w">      </span><span class="c1"># (iii)</span>
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="o">[</span>^ab<span class="o">]</span>*<span class="w">     </span><span class="c1"># (iv)</span>
-</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>c*
-</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>??????<span class="w">     </span><span class="c1"># (v)</span>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>*<span class="w">          </span><span class="c1"># (i)</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>*_*<span class="w">        </span><span class="c1"># (ii)</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="o">[</span>ab<span class="o">]</span>*<span class="w">      </span><span class="c1"># (iii)</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="o">[</span>^ab<span class="o">]</span>*<span class="w">     </span><span class="c1"># (iv)</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>c*
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>??????<span class="w">     </span><span class="c1"># (v)</span>
 </span></code></pre></div></p>
 <ol>
 <li><code>*</code> correspond à toute chaîne de caractères (même vide), sauf les fichiers commençant par <code>.</code>.</li>
@@ -1967,20 +1997,20 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <div class="admonition tip">
 <p class="admonition-title">La commande <code>find</code></p>
 <p><code>find</code> parcourt récursivement une arborescence et sélectionne les fichiers selon des <strong>critères</strong> : nom, type, taille, date de modification, etc. Contrairement aux jokers (exercice 7), <code>find</code> descend dans les sous-répertoires.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$<span class="w"> </span>find<span class="w"> </span>&lt;chemin&gt;<span class="w"> </span>&lt;critères&gt;<span class="w"> </span><span class="o">[</span>&lt;action&gt;<span class="o">]</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>$<span class="w"> </span>find<span class="w"> </span>&lt;chemin&gt;<span class="w"> </span>&lt;critères&gt;<span class="w"> </span><span class="o">[</span>&lt;action&gt;<span class="o">]</span>
 </span></code></pre></div>
 <p>Consultez <code>man find</code> pour la liste complète des critères.</p>
 </div>
 <ol>
 <li>
 <p>Listez <strong>tous les fichiers</strong> (pas les répertoires) présents sous <code>/etc</code> :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>$<span class="w"> </span>find<span class="w"> </span>/etc<span class="w"> </span>-type<span class="w"> </span>f
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>$<span class="w"> </span>find<span class="w"> </span>/etc<span class="w"> </span>-type<span class="w"> </span>f
 </span></code></pre></div>
    Estimez combien il y en a en observant la sortie.</p>
 </li>
 <li>
 <p>Trouvez tous les fichiers dont le nom se termine par <code>.conf</code> sous <code>/etc</code> :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>$<span class="w"> </span>find<span class="w"> </span>/etc<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.conf&quot;</span>
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>$<span class="w"> </span>find<span class="w"> </span>/etc<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.conf&quot;</span>
 </span></code></pre></div>
    Pourquoi les guillemets autour de <code>"*.conf"</code> sont-ils indispensables ?</p>
 </li>
@@ -1989,12 +2019,12 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 </li>
 <li>
 <p>Trouvez dans <code>/var/log</code> les fichiers modifiés il y a <strong>moins de 24 heures</strong> :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>$<span class="w"> </span>find<span class="w"> </span>/var/log<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-mtime<span class="w"> </span>-1
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>$<span class="w"> </span>find<span class="w"> </span>/var/log<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-mtime<span class="w"> </span>-1
 </span></code></pre></div></p>
 </li>
 <li>
 <p><strong>Combinaison de critères</strong> : trouvez sous <code>/etc</code> les fichiers réguliers dont le nom commence par <code>host</code> et qui font plus de 100 octets :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>$<span class="w"> </span>find<span class="w"> </span>/etc<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;host*&quot;</span><span class="w"> </span>-size<span class="w"> </span>+100c
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>$<span class="w"> </span>find<span class="w"> </span>/etc<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;host*&quot;</span><span class="w"> </span>-size<span class="w"> </span>+100c
 </span></code></pre></div></p>
 </li>
 <li>
@@ -2020,8 +2050,8 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 </li>
 <li>
 <p>Créez un <strong>lien physique</strong> :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>$<span class="w"> </span>ln<span class="w"> </span>original.txt<span class="w"> </span>lien_physique.txt
-</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>$<span class="w"> </span>ls<span class="w"> </span>-li
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>$<span class="w"> </span>ln<span class="w"> </span>original.txt<span class="w"> </span>lien_physique.txt
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>$<span class="w"> </span>ls<span class="w"> </span>-li
 </span></code></pre></div>
    Comparez les numéros d’inode de <code>original.txt</code> et <code>lien_physique.txt</code>. Que constatez-vous ?</p>
 </li>
@@ -2030,22 +2060,22 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 </li>
 <li>
 <p>Créez un <strong>lien symbolique</strong> :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>$<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>original.txt<span class="w"> </span>lien_symbo.txt
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>$<span class="w"> </span>ls<span class="w"> </span>-li
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>$<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>original.txt<span class="w"> </span>lien_symbo.txt
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>$<span class="w"> </span>ls<span class="w"> </span>-li
 </span></code></pre></div>
    Comparez les numéros d’inode. En quoi diffèrent-ils de ceux du lien physique ?</p>
 </li>
 <li>
 <p>Observez la différence avec <code>ls -l</code> :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>lien_physique.txt<span class="w"> </span>lien_symbo.txt
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>lien_physique.txt<span class="w"> </span>lien_symbo.txt
 </span></code></pre></div>
    Que montre la colonne de gauche pour le lien symbolique ? Que signifie la flèche <code>-&gt;</code> ?</p>
 </li>
 <li>
 <p>Supprimez le fichier original :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>$<span class="w"> </span>rm<span class="w"> </span>original.txt
-</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>$<span class="w"> </span>cat<span class="w"> </span>lien_physique.txt
-</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>$<span class="w"> </span>cat<span class="w"> </span>lien_symbo.txt
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>$<span class="w"> </span>rm<span class="w"> </span>original.txt
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>$<span class="w"> </span>cat<span class="w"> </span>lien_physique.txt
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>$<span class="w"> </span>cat<span class="w"> </span>lien_symbo.txt
 </span></code></pre></div>
    Que se passe-t-il pour chacun des deux liens ? Expliquez la différence.</p>
 </li>
@@ -2054,8 +2084,8 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 </li>
 <li>
 <p>Trouvez des exemples de liens symboliques sur le système :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>/usr/bin/python*
-</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>/etc/alternatives/
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>/usr/bin/python*
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>/etc/alternatives/
 </span></code></pre></div>
    Pourquoi les distributions Linux utilisent-elles autant de liens symboliques ?</p>
 </li>
@@ -2064,7 +2094,7 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <div class="admonition tip">
 <p class="admonition-title">Qu’est-ce qu’un script shell ?</p>
 <p>Un <strong>script</strong> est un fichier texte contenant une séquence de commandes exécutées par le shell. La première ligne, le <strong>shebang</strong>, indique quel interpréteur utiliser :</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="ch">#!/bin/bash</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="ch">#!/bin/bash</span>
 </span></code></pre></div>
 <p>Pour rendre un script exécutable : <code>chmod +x mon_script.sh</code></p>
 <blockquote>
@@ -2073,54 +2103,58 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 </div>
 <ol>
 <li>Dans <code>~</code>, créez un répertoire <code>scripts/</code> et placez-vous dedans.</li>
-<li>Avec un éditeur (<code>nano</code>, <code>vim</code>…), créez <code>info-systeme.sh</code> :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="ch">#!/bin/bash</span>
-</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="c1"># Script d’information système — TP1 étoile</span>
-</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>
-</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;=== Informations système ===&quot;</span>
-</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Date et heure  : </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span>
-</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Utilisateur    : </span><span class="k">$(</span>whoami<span class="k">)</span><span class="s2">&quot;</span>
-</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Machine        : </span><span class="k">$(</span>hostname<span class="k">)</span><span class="s2">&quot;</span>
-</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Noyau          : </span><span class="k">$(</span>uname<span class="w"> </span>-r<span class="k">)</span><span class="s2">&quot;</span>
-</span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Répertoire     : </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span>
-</span><span id="__span-26-10"><a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
-</span><span id="__span-26-11"><a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;=== Contenu du répertoire courant ===&quot;</span>
-</span><span id="__span-26-12"><a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a>ls<span class="w"> </span>-la
-</span><span id="__span-26-13"><a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
-</span><span id="__span-26-14"><a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;=== Espace disque ===&quot;</span>
-</span><span id="__span-26-15"><a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a>df<span class="w"> </span>-h<span class="w"> </span>/
-</span></code></pre></div></li>
-<li>Rendez le script exécutable et lancez-le :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>$<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>info-systeme.sh
-</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>$<span class="w"> </span>./info-systeme.sh
-</span></code></pre></div></li>
+<li>
+<p>Avec un éditeur (<code>nano</code>, <code>vim</code>…), créez <code>info-systeme.sh</code> :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="ch">#!/bin/bash</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="c1"># Script d’information système — TP1 étoile</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;=== Informations système ===&quot;</span>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Date et heure  : </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Utilisateur    : </span><span class="k">$(</span>whoami<span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Machine        : </span><span class="k">$(</span>hostname<span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Noyau          : </span><span class="k">$(</span>uname<span class="w"> </span>-r<span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Répertoire     : </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-27-10"><a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-27-11"><a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;=== Contenu du répertoire courant ===&quot;</span>
+</span><span id="__span-27-12"><a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a>ls<span class="w"> </span>-la
+</span><span id="__span-27-13"><a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-27-14"><a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;=== Espace disque ===&quot;</span>
+</span><span id="__span-27-15"><a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a>df<span class="w"> </span>-h<span class="w"> </span>/
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Rendez le script exécutable et lancez-le :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>$<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>info-systeme.sh
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>$<span class="w"> </span>./info-systeme.sh
+</span></code></pre></div></p>
+</li>
 <li>
 <p><strong>Exercice de création</strong> : écrivez un script <code>creer-arbo.sh</code> qui :</p>
 <ul>
 <li>Prend un <strong>argument</strong> : le nom d’un projet (ex. <code>mon_projet</code>).</li>
 <li>Crée l’arborescence suivante :
-  <div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>mon_projet/
-</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>├── src/
-</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>├── docs/
-</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>├── tests/
-</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>└── README.txt    (contient &quot;Projet : mon_projet&quot;)
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>mon_projet/
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>├── src/
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>├── docs/
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>├── tests/
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>└── README.txt    (contient &quot;Projet : mon_projet&quot;)
 </span></code></pre></div></li>
 <li>
 <p>Affiche un message de confirmation.</p>
 </li>
 <li>
 <p><em>Indice</em> : pour accéder au premier argument dans un script, utilisez <code>$1</code>. Pour vérifier qu’un argument a été fourni :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Usage : </span><span class="nv">$0</span><span class="s2"> &lt;nom-du-projet&gt;&quot;</span>
-</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
-</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="k">fi</span>
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Usage : </span><span class="nv">$0</span><span class="s2"> &lt;nom-du-projet&gt;&quot;</span>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="k">fi</span>
 </span></code></pre></div></p>
 </li>
 <li>
 <p>Testez votre script :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>$<span class="w"> </span>./creer-arbo.sh<span class="w"> </span>tp_linux
-</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>$<span class="w"> </span>ls<span class="w"> </span>-R<span class="w"> </span>tp_linux
-</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>$<span class="w"> </span>cat<span class="w"> </span>tp_linux/README.txt
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>$<span class="w"> </span>./creer-arbo.sh<span class="w"> </span>tp_linux
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>$<span class="w"> </span>ls<span class="w"> </span>-R<span class="w"> </span>tp_linux
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>$<span class="w"> </span>cat<span class="w"> </span>tp_linux/README.txt
 </span></code></pre></div></p>
 </li>
 <li>

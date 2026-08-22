@@ -968,15 +968,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exercices-supplementaires" class="md-nav__link">
+  <a href="#programmation-systeme" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ⭐ Exercices supplémentaires
+        ⭐ Programmation système
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="⭐ Exercices supplémentaires">
+    <nav class="md-nav" aria-label="⭐ Programmation système">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1002,10 +1002,32 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#exercice-9-bis-lire-un-descripteur-avec-read" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercice 9 bis — Lire un descripteur avec read() ⭐
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#exercice-10-reimplementer-en-c-avec-dup2" class="md-nav__link">
     <span class="md-ellipsis">
       
         Exercice 10 — Réimplémenter &gt; en C avec dup2() ⭐
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-10-bis-dup-deux-noms-pour-le-meme-fichier-ouvert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercice 10 bis — dup() : deux noms pour le même fichier ouvert ⭐
       
     </span>
   </a>
@@ -1473,15 +1495,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exercices-supplementaires" class="md-nav__link">
+  <a href="#programmation-systeme" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ⭐ Exercices supplémentaires
+        ⭐ Programmation système
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="⭐ Exercices supplémentaires">
+    <nav class="md-nav" aria-label="⭐ Programmation système">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1507,10 +1529,32 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#exercice-9-bis-lire-un-descripteur-avec-read" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercice 9 bis — Lire un descripteur avec read() ⭐
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#exercice-10-reimplementer-en-c-avec-dup2" class="md-nav__link">
     <span class="md-ellipsis">
       
         Exercice 10 — Réimplémenter &gt; en C avec dup2() ⭐
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-10-bis-dup-deux-noms-pour-le-meme-fichier-ouvert" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercice 10 bis — dup() : deux noms pour le même fichier ouvert ⭐
       
     </span>
   </a>
@@ -1556,6 +1600,7 @@
 <p>À l’issue de ce TP, vous serez capable de :</p>
 <ul>
 <li><strong>[Comprendre]</strong> la notion de <strong>variable shell</strong> et le mécanisme de <strong>développement</strong> (<code>$var</code>, <code>${var}</code>).</li>
+<li><strong>[Analyser]</strong> distinguer une <strong>variable du shell</strong> d'une <strong>variable d'environnement</strong> et justifier le rôle d'<code>export</code>.</li>
 <li><strong>[Appliquer]</strong> identifier et inhiber les <strong>caractères spéciaux</strong> du shell (<code>\</code>, <code>'</code>, <code>"</code>).</li>
 <li><strong>[Appliquer]</strong> utiliser l’<strong>expansion d’accolades</strong> (<code>{a,b,c}</code>, <code>{1..10}</code>) pour générer efficacement des ensembles de chaînes.</li>
 <li><strong>[Appliquer]</strong> utiliser la <strong>substitution de commande</strong> <code>$(...)</code> pour capturer dynamiquement le résultat d’une commande.</li>
@@ -1625,13 +1670,16 @@ Vous y consignerez progressivement les résultats des commandes.</p>
 <blockquote>
 <p>📚 = Facile · 📚📚 = Moyenne · 📚📚📚 = Élevée</p>
 <p>Les exercices <strong>1 à 7</strong> constituent le <strong>tronc commun</strong>, exigible pour tous.
-Les exercices <strong>8, 9, 10</strong> sont des <strong>exercices supplémentaires</strong> (⭐).</p>
+Les exercices <strong>8, 9, 10</strong> (⭐) portent sur la <strong>programmation système en C</strong>.
+<strong>Depuis 2026‑2027, ils font partie du périmètre évalué</strong> : ils couvrent la
+partie « Programmation » du syllabus du module.</p>
 </blockquote>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Alignement avec les évaluations (Biggs, 1996)</p>
 <p>Les exercices 📚 et 📚📚 préparent au <strong>CC S38</strong> et au <strong>TP noté S40</strong>.
-Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur dimension d’analyse et de justification.</p>
+Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur dimension d’analyse et de justification.
+Les exercices ⭐ de ce TP préparent au <strong>DE S42</strong> sur la partie <strong>appels système</strong>.</p>
 <blockquote>
 <p><strong>Référence</strong> : Biggs, J. (1996). Enhancing teaching through constructive alignment. <em>Higher Education</em>, 32(3), 347–364. DOI : <a href="https://doi.org/10.1007/BF00138871">10.1007/BF00138871</a>.</p>
 </blockquote>
@@ -1642,24 +1690,41 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <p class="admonition-title">Définition et développement</p>
 <p>Une <strong>variable</strong> shell associe un nom à une chaîne de caractères. Le <strong>développement</strong> est le remplacement de <code>$nom</code> par sa valeur.</p>
 <p>Exemple : la variable <code>PS1</code> contient le prompt. Quand vous tapez <code>PS1='$ '</code>, vous affectez la chaîne <code>$&lt;espace&gt;</code> à <code>PS1</code>. Le shell développe ensuite <code>$PS1</code> pour afficher le prompt.</p>
-<p>Les variables du shell sont des <strong>variables d’environnement</strong> : elles sont accessibles à tous les processus lancés par le shell.</p>
+<div class="admonition warning">
+<p class="admonition-title">Variable shell ≠ variable d'environnement</p>
+<p>Une variable créée par simple affectation (<code>x=coucou</code>) est une <strong>variable
+du shell</strong> : elle n'existe <strong>que</strong> dans le shell courant et n'est <strong>pas</strong>
+transmise aux processus qu'il lance. Elle ne devient une <strong>variable
+d'environnement</strong> qu'après <code>export x</code>.</p>
+<p>Vérifiez-le :</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span><span class="nv">x</span><span class="o">=</span>coucou
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>$<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;echo &quot;[$x]&quot;&#39;</span><span class="w">      </span><span class="c1"># affiche [] : le fils ne voit rien</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span>x
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>$<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;echo &quot;[$x]&quot;&#39;</span><span class="w">      </span><span class="c1"># affiche [coucou]</span>
+</span></code></pre></div>
+</div>
 <ul>
-<li><code>env</code> ou <code>printenv</code> : liste les variables d’environnement.</li>
-<li><code>set</code> : liste également les variables internes du shell.</li>
+<li><code>env</code> ou <code>printenv</code> : listent les variables <strong>d'environnement</strong> uniquement.</li>
+<li><code>set</code> : liste <strong>toutes</strong> les variables du shell (environnement compris) ainsi
+  que les fonctions.</li>
 </ul>
+<blockquote>
+<p><strong>Référence</strong> : <em>Bash Reference Manual</em>, § 3.7.4 <em>Environment</em>, Free Software
+Foundation. <a href="https://www.gnu.org/software/bash/manual/bash.html#Environment">https://www.gnu.org/software/bash/manual/bash.html#Environment</a></p>
+</blockquote>
 </div>
 <h3 id="exercice-1-les-variables-du-shell">Exercice 1 — Les variables du shell 📚<a class="headerlink" href="#exercice-1-les-variables-du-shell" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>Tapez :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span><span class="nv">nom_fich</span><span class="o">=</span>hello.c<span class="w">       </span><span class="c1"># (i)</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>nom_fich
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$nom_fich</span><span class="w">         </span><span class="c1"># (ii)</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">nom_fich</span><span class="si">}</span><span class="w">       </span><span class="c1"># (iii)</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>$<span class="w"> </span>touch<span class="w"> </span><span class="nv">$nom_fich</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$nom_fichpp</span><span class="w">       </span><span class="c1"># (iv)</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">nom_fich</span><span class="si">}</span>pp<span class="w">     </span><span class="c1"># (v)</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>$<span class="w"> </span>rm<span class="w"> </span><span class="si">${</span><span class="nv">nom_fich</span><span class="si">}</span>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span><span class="nv">nom_fich</span><span class="o">=</span>hello.c<span class="w">       </span><span class="c1"># (i)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>nom_fich
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$nom_fich</span><span class="w">         </span><span class="c1"># (ii)</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">nom_fich</span><span class="si">}</span><span class="w">       </span><span class="c1"># (iii)</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>$<span class="w"> </span>touch<span class="w"> </span><span class="nv">$nom_fich</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$nom_fichpp</span><span class="w">       </span><span class="c1"># (iv)</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">nom_fich</span><span class="si">}</span>pp<span class="w">     </span><span class="c1"># (v)</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>$<span class="w"> </span>rm<span class="w"> </span><span class="si">${</span><span class="nv">nom_fich</span><span class="si">}</span>
 </span></code></pre></div></p>
 <ol>
 <li><strong>Affectation</strong> : pas d'espace autour du <code>=</code>. Le shell crée la variable <code>nom_fich</code> avec la valeur <code>hello.c</code>.</li>
@@ -1667,19 +1732,21 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <li><code>${nom_fich}</code> est équivalent à <code>$nom_fich</code> — les accolades délimitent explicitement le nom de la variable.</li>
 <li>Le shell cherche la variable <code>nom_fichpp</code> (qui n'existe pas) → chaîne vide.</li>
 <li>Les accolades <code>{}</code> permettent de <strong>séparer</strong> le nom de variable du texte qui suit : <code>${nom_fich}</code> + <code>pp</code> = <code>hello.cpp</code>.</li>
-<li>Rappelez ce que fait <code>echo</code>. À quoi sert le <code>$</code> devant le nom de variable ?</li>
+</ol>
+</li>
+<li>
+<p>Rappelez ce que fait <code>echo</code>. À quoi sert le <code>$</code> devant le nom de variable ?</p>
+</li>
 <li>Que se passe-t-il si on demande d’afficher une variable qui n’existe pas ?</li>
 <li>Que se passe-t-il si vous mettez un espace entre le nom de la variable et le <code>=</code> ? Et entre le <code>=</code> et la valeur ?</li>
 <li>Testez et commentez :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span><span class="nv">sujet</span><span class="o">=</span>Alice<span class="w"> </span><span class="nv">verbe</span><span class="o">=</span>aime<span class="w"> </span><span class="nv">cod</span><span class="o">=</span>piscine
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>$<span class="w"> </span><span class="nv">phrase</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$sujet</span><span class="s2"> </span><span class="nv">$verbe</span><span class="s2"> la </span><span class="nv">$cod</span><span class="s2">.&quot;</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$phrase</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>$<span class="w"> </span><span class="nv">sujet</span><span class="o">=</span>Bob<span class="w"> </span><span class="nv">verbe</span><span class="o">=</span>mange<span class="w"> </span><span class="nv">cod</span><span class="o">=</span>salade
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$phrase</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$sujet</span><span class="s2"> </span><span class="nv">$verbe</span><span class="s2"> la </span><span class="nv">$cod</span><span class="s2">.&quot;</span>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span><span class="nv">sujet</span><span class="o">=</span>Alice<span class="w"> </span><span class="nv">verbe</span><span class="o">=</span>aime<span class="w"> </span><span class="nv">cod</span><span class="o">=</span>piscine
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>$<span class="w"> </span><span class="nv">phrase</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$sujet</span><span class="s2"> </span><span class="nv">$verbe</span><span class="s2"> la </span><span class="nv">$cod</span><span class="s2">.&quot;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$phrase</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>$<span class="w"> </span><span class="nv">sujet</span><span class="o">=</span>Bob<span class="w"> </span><span class="nv">verbe</span><span class="o">=</span>mange<span class="w"> </span><span class="nv">cod</span><span class="o">=</span>salade
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$phrase</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$sujet</span><span class="s2"> </span><span class="nv">$verbe</span><span class="s2"> la </span><span class="nv">$cod</span><span class="s2">.&quot;</span>
 </span></code></pre></div></li>
-</ol>
-</li>
 </ol>
 <hr />
 <h2 id="2-caracteres-speciaux-et-inhibitions">2. Caractères spéciaux et inhibitions<a class="headerlink" href="#2-caracteres-speciaux-et-inhibitions" title="Permanent link">&para;</a></h2>
@@ -1707,23 +1774,25 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 </div>
 <h3 id="exercice-2-la-contre-oblique">Exercice 2 — La contre-oblique <code>\</code> 📚<a class="headerlink" href="#exercice-2-la-contre-oblique" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Testez :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>a<span class="w"> </span>b
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>a<span class="se">\ \ \ </span>b
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>$<span class="w"> </span>touch<span class="w"> </span>fichier<span class="se">\ </span>vide
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>$<span class="w"> </span>rm<span class="w"> </span>fichier<span class="w"> </span>vide
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>$<span class="w"> </span>rm<span class="w"> </span>fichier<span class="se">\ </span>vide
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="m">3</span><span class="nv">$canadiens</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="m">3</span><span class="se">\$</span>canadiens
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span>*
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="se">\;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="se">\*</span>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;salut&quot;</span>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="se">\&quot;</span>salut<span class="se">\&quot;</span>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;salut&#39;</span>
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="se">\&#39;</span>salut<span class="se">\&#39;</span>
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="se">\\</span>
-</span></code></pre></div></li>
+<li>
+<p>Testez :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>a<span class="w"> </span>b
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>a<span class="se">\ \ \ </span>b
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>$<span class="w"> </span>touch<span class="w"> </span>fichier<span class="se">\ </span>vide
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>$<span class="w"> </span>rm<span class="w"> </span>fichier<span class="w"> </span>vide
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>$<span class="w"> </span>rm<span class="w"> </span>fichier<span class="se">\ </span>vide
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="m">3</span><span class="nv">$canadiens</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="m">3</span><span class="se">\$</span>canadiens
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span>*
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="se">\;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="se">\*</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;salut&quot;</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="se">\&quot;</span>salut<span class="se">\&quot;</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;salut&#39;</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="se">\&#39;</span>salut<span class="se">\&#39;</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="se">\\</span>
+</span></code></pre></div></p>
+</li>
 <li>
 <p>Répondez :</p>
 <ul>
@@ -1739,16 +1808,18 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <p>L’option <code>-i</code> de <code>rm</code> demande une confirmation avant suppression.</p>
 </div>
 <ol>
-<li>Testez :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>touch<span class="w"> </span><span class="s1">&#39;ceci est un horrible nom de fichier&#39;</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>$<span class="w"> </span>rm<span class="w"> </span>-i<span class="w"> </span>ceci<span class="w"> </span>est<span class="w"> </span>un<span class="w"> </span>horrible<span class="w"> </span>nom<span class="w"> </span>de<span class="w"> </span>fichier
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>$<span class="w"> </span>rm<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;ceci est un horrible nom de fichier&#39;</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>$<span class="w"> </span>touch<span class="w"> </span>p<span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span>le<span class="w"> </span>caractère<span class="w"> </span>*<span class="w"> </span>est-il<span class="w"> </span>spécial<span class="w"> </span>?<span class="w"> </span>et<span class="w"> </span>?
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;le caractère * est-il spécial ? et ?&#39;</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;en fait, même la fin de ligne</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="s1">est un caractère normal entre</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="s1">apostrophes&#39;</span>
-</span></code></pre></div></li>
+<li>
+<p>Testez :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span>touch<span class="w"> </span><span class="s1">&#39;ceci est un horrible nom de fichier&#39;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>$<span class="w"> </span>rm<span class="w"> </span>-i<span class="w"> </span>ceci<span class="w"> </span>est<span class="w"> </span>un<span class="w"> </span>horrible<span class="w"> </span>nom<span class="w"> </span>de<span class="w"> </span>fichier
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>$<span class="w"> </span>rm<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;ceci est un horrible nom de fichier&#39;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>$<span class="w"> </span>touch<span class="w"> </span>p<span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span>le<span class="w"> </span>caractère<span class="w"> </span>*<span class="w"> </span>est-il<span class="w"> </span>spécial<span class="w"> </span>?<span class="w"> </span>et<span class="w"> </span>?
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;le caractère * est-il spécial ? et ?&#39;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;en fait, même la fin de ligne</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="s1">est un caractère normal entre</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="s1">apostrophes&#39;</span>
+</span></code></pre></div></p>
+</li>
 <li>
 <p>Répondez :</p>
 <ul>
@@ -1759,14 +1830,16 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 </ol>
 <h3 id="exercice-4-le-guillemet">Exercice 4 — Le guillemet <code>"</code> 📚📚<a class="headerlink" href="#exercice-4-le-guillemet" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Testez et comparez avec l’exercice 3 :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span><span class="nv">x</span><span class="o">=</span>coucou
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$x</span><span class="s2">&quot;</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;$x&#39;</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;le prix est de 30</span>$<span class="s2">&quot;</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;il a dit \&quot;salut\&quot;&quot;</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;aujourd&#39;hui&quot;</span>
-</span></code></pre></div></li>
+<li>
+<p>Testez et comparez avec l’exercice 3 :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span><span class="nv">x</span><span class="o">=</span>coucou
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$x</span><span class="s2">&quot;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;$x&#39;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;le prix est de 30</span>$<span class="s2">&quot;</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;il a dit \&quot;salut\&quot;&quot;</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;aujourd&#39;hui&quot;</span>
+</span></code></pre></div></p>
+</li>
 <li>
 <p>Répondez :</p>
 <ul>
@@ -1791,24 +1864,30 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 </div>
 <h3 id="exercice-5-extension-daccolades">Exercice 5 — Extension d’accolades 📚📚<a class="headerlink" href="#exercice-5-extension-daccolades" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Testez et commentez :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>a<span class="o">{</span>b,c,d<span class="o">}</span>e
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="o">{</span><span class="m">1</span>..10<span class="o">}</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="o">{</span>a..e<span class="o">}{</span><span class="m">1</span>..3<span class="o">}</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>$<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>projet/<span class="o">{</span>src,tests,docs<span class="o">}</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>$<span class="w"> </span>ls<span class="w"> </span>-R<span class="w"> </span>projet
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>$<span class="w"> </span>touch<span class="w"> </span>fichier_<span class="o">{</span><span class="m">01</span>..05<span class="o">}</span>.txt
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>$<span class="w"> </span>ls<span class="w"> </span>fichier_*
-</span></code></pre></div></li>
-<li>Utilisez l’expansion d’accolades pour créer, <strong>en une seule commande</strong>, l’arborescence suivante dans votre répertoire personnel :
-   <div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>~/labo/
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>├── donnees/
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>│   ├── brutes/
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>│   └── nettoyees/
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>├── scripts/
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>└── resultats/
-</span></code></pre></div></li>
-<li><strong>Question</strong> : quelle est la différence fondamentale entre <code>{a,b,c}</code> et <code>[abc]</code> du point de vue du shell ?</li>
+<li>
+<p>Testez et commentez :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>a<span class="o">{</span>b,c,d<span class="o">}</span>e
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="o">{</span><span class="m">1</span>..10<span class="o">}</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="o">{</span>a..e<span class="o">}{</span><span class="m">1</span>..3<span class="o">}</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>$<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>projet/<span class="o">{</span>src,tests,docs<span class="o">}</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>$<span class="w"> </span>ls<span class="w"> </span>-R<span class="w"> </span>projet
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>$<span class="w"> </span>touch<span class="w"> </span>fichier_<span class="o">{</span><span class="m">01</span>..05<span class="o">}</span>.txt
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>$<span class="w"> </span>ls<span class="w"> </span>fichier_*
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Utilisez l’expansion d’accolades pour créer, <strong>en une seule commande</strong>, l’arborescence suivante dans votre répertoire personnel :
+   <div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>~/labo/
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>├── donnees/
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>│   ├── brutes/
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>│   └── nettoyees/
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>├── scripts/
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>└── resultats/
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Question</strong> : quelle est la différence fondamentale entre <code>{a,b,c}</code> et <code>[abc]</code> du point de vue du shell ?</p>
+</li>
 </ol>
 <hr />
 <h2 id="4-substitution-de-commande">4. Substitution de commande<a class="headerlink" href="#4-substitution-de-commande" title="Permanent link">&para;</a></h2>
@@ -1822,26 +1901,34 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 </div>
 <h3 id="exercice-6-substitution-simple">Exercice 6 — Substitution simple 📚<a class="headerlink" href="#exercice-6-substitution-simple" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Testez :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>date
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>date
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="k">$(</span>date<span class="k">)</span>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>$<span class="w"> </span><span class="nv">aujourdhui</span><span class="o">=</span><span class="k">$(</span>date<span class="k">)</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$aujourdhui</span>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Nous sommes le </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span>
-</span></code></pre></div></li>
-<li>Que fait <code>echo $(date)</code> ? Quel est le rôle du <code>$</code> devant <code>(</code> ?</li>
-<li>Testez et commentez :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$<span class="w"> </span><span class="nv">prefix</span><span class="o">=</span><span class="s2">&quot;Nous sommes le&quot;</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$prefix</span><span class="w"> </span><span class="k">$(</span>date<span class="k">)</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$prefix</span><span class="w"> </span><span class="nv">$aujourdhui</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">prefix</span><span class="si">}</span><span class="w"> </span><span class="si">${</span><span class="nv">aujourdhui</span><span class="si">}</span>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>$<span class="w"> </span><span class="nv">phrase</span><span class="o">=</span><span class="si">${</span><span class="nv">prefix</span><span class="si">}</span><span class="w"> </span><span class="si">${</span><span class="nv">aujourdhui</span><span class="si">}</span>
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>$<span class="w"> </span><span class="nv">phrase</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">prefix</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">aujourdhui</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$phrase</span>
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$phrase</span><span class="s2">&quot;</span>
-</span></code></pre></div></li>
-<li>Quel est le rôle des guillemets dans la substitution ?</li>
+<li>
+<p>Testez :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$<span class="w"> </span>date
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>date
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="k">$(</span>date<span class="k">)</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>$<span class="w"> </span><span class="nv">aujourdhui</span><span class="o">=</span><span class="k">$(</span>date<span class="k">)</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$aujourdhui</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Nous sommes le </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Que fait <code>echo $(date)</code> ? Quel est le rôle du <code>$</code> devant <code>(</code> ?</p>
+</li>
+<li>
+<p>Testez et commentez :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$<span class="w"> </span><span class="nv">prefix</span><span class="o">=</span><span class="s2">&quot;Nous sommes le&quot;</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$prefix</span><span class="w"> </span><span class="k">$(</span>date<span class="k">)</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$prefix</span><span class="w"> </span><span class="nv">$aujourdhui</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">prefix</span><span class="si">}</span><span class="w"> </span><span class="si">${</span><span class="nv">aujourdhui</span><span class="si">}</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>$<span class="w"> </span><span class="nv">phrase</span><span class="o">=</span><span class="si">${</span><span class="nv">prefix</span><span class="si">}</span><span class="w"> </span><span class="si">${</span><span class="nv">aujourdhui</span><span class="si">}</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>$<span class="w"> </span><span class="nv">phrase</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">prefix</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">aujourdhui</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$phrase</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$phrase</span><span class="s2">&quot;</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Quel est le rôle des guillemets dans la substitution ?</p>
+</li>
 <li>Quelle est la différence entre <code>$(...)</code> et <code>${...}</code> ?</li>
 </ol>
 <hr />
@@ -1905,31 +1992,28 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 </div>
 <h3 id="exercice-7-compilation-erreurs-et-warnings">Exercice 7 — Compilation, erreurs et warnings 📚📚📚<a class="headerlink" href="#exercice-7-compilation-erreurs-et-warnings" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Créez <code>hello.c</code> :
-   <div class="language-c highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="p">{</span>
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello world !</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="p">}</span>
-</span></code></pre></div></li>
+<li>
+<p>Créez <code>hello.c</code> :
+    <div class="language-c highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="p">{</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello world !</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="p">}</span>
+</span></code></pre></div></p>
+</li>
 <li>
 <p>Placez-vous dans le répertoire contenant <code>hello.c</code> et compilez avec <code>gcc hello.c</code>. Un fichier <code>a.out</code> est créé. Exécutez-le avec <code>./a.out</code>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Attention</p>
-<ul>
-<li>Si <code>a.out</code> existait déjà, il est <strong>écrasé</strong> sans avertissement.</li>
-<li>Utilisez <code>-o</code> pour choisir un autre nom : <code>gcc hello.c -o hello</code>.</li>
-</ul>
-</div>
+<p>Attention : si <code>a.out</code> existait déjà, il est <strong>écrasé sans avertissement</strong>.
+Utilisez <code>-o</code> pour choisir un autre nom : <code>gcc hello.c -o hello</code>.</p>
 </li>
 <li>
 <p>Récupérez cette archive : <a href="../../assets/files/hello.tar.gz">hello.tar.gz</a>.</p>
 </li>
 <li>
 <p>Extrayez-la et placez-vous dans le répertoire <code>hello</code> :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>$<span class="w"> </span>tar<span class="w"> </span>-xvf<span class="w"> </span>hello.tar.gz<span class="w"> </span><span class="c1"># (i)</span>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$<span class="w"> </span>tar<span class="w"> </span>-xvf<span class="w"> </span>hello.tar.gz<span class="w"> </span><span class="c1"># (i)</span>
 </span></code></pre></div></p>
 <ol>
 <li><code>-x</code> = e<strong>x</strong>traire, <code>-v</code> = <strong>v</strong>erbose (affiche les fichiers extraits), <code>-f</code> = <strong>f</strong>ichier archive à traiter. L'ordre des options est libre.</li>
@@ -1937,16 +2021,31 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 </li>
 <li>
 <p>Compilez le projet :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$<span class="w"> </span>gcc<span class="w"> </span>main.c<span class="w"> </span>hello.c<span class="w"> </span>-o<span class="w"> </span>run<span class="w"> </span><span class="c1"># (i)</span>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>$<span class="w"> </span>gcc<span class="w"> </span>main.c<span class="w"> </span>hello.c<span class="w"> </span>-o<span class="w"> </span>run<span class="w"> </span><span class="c1"># (i)</span>
 </span></code></pre></div></p>
 <ol>
 <li><code>gcc</code> compile <strong>plusieurs</strong> fichiers source en un seul exécutable. <code>-o run</code> nomme l'exécutable <code>run</code> au lieu du défaut <code>a.out</code>.
 Exécutez avec <code>./run</code>.</li>
-<li>Supprimez le fichier <code>run</code>. Modifiez <code>hello.c</code> pour introduire volontairement une erreur : supprimez <strong>l’accolade fermante</strong> de la fonction <code>void hello()</code>. Recompilez. Que remarquez-vous ?</li>
-<li>Remettez l’accolade et ajoutez un <code>return 1;</code> dans la définition de la fonction <code>hello</code> (qui est <code>void</code>). Recompilez. Que remarquez-vous ?</li>
-<li>Recompilez maintenant avec <code>-Wall -Wextra</code>. Que voyez-vous ?</li>
-<li><strong>Concluez</strong> sur la différence entre <strong>erreurs</strong> et <strong>warnings</strong>, et sur l’intérêt professionnel des options <code>-Wall -Wextra -Werror</code>.</li>
 </ol>
+</li>
+<li>
+<p>Supprimez le fichier <code>run</code>. Modifiez <code>hello.c</code> pour introduire volontairement une erreur : supprimez <strong>l’accolade fermante</strong> de la fonction <code>void hello()</code>. Recompilez. Que remarquez-vous ?</p>
+</li>
+<li>Remettez l’accolade et ajoutez un <code>return 1;</code> dans la définition de la fonction <code>hello</code> (qui est <code>void</code>). Recompilez. Que remarquez-vous ?</li>
+<li>
+<p>Recompilez maintenant avec <code>-Wall -Wextra</code>, puis avec <code>-Wall -Wextra -Werror</code>.
+    Que change chaque ajout ?</p>
+<p>!!! info "À observer précisément"
+     Le <code>return 1;</code> de la question 7 déclenche <code>-Wreturn-type</code>, qui est <strong>actif
+     par défaut</strong> : le message apparaît donc <strong>déjà sans <code>-Wall</code></strong>. Ce qui change
+     vraiment, c'est <code>-Werror</code>, qui transforme cet avertissement en <strong>erreur</strong>
+     et fait échouer la compilation. Pour voir un avertissement que seul <code>-Wall</code>
+     révèle, ajoutez dans <code>main()</code> une variable jamais utilisée
+     (<code>int inutilise;</code>) et recompilez avec et sans <code>-Wall</code>.</p>
+</li>
+<li>
+<p><strong>Concluez</strong> sur la différence entre <strong>erreurs</strong> et <strong>warnings</strong>, et sur l'intérêt
+    professionnel des options <code>-Wall -Wextra -Werror</code> en intégration continue.</p>
 </li>
 </ol>
 <div class="admonition info">
@@ -1955,7 +2054,7 @@ Exécutez avec <code>./run</code>.</li>
 <hr />
 <h2 id="synthese-ce-que-vous-devez-savoir-faire">Synthèse — Ce que vous devez savoir faire<a class="headerlink" href="#synthese-ce-que-vous-devez-savoir-faire" title="Permanent link">&para;</a></h2>
 <div class="admonition success">
-<p class="admonition-title">Auto-évaluation rapide (tronc commun)</p>
+<p class="admonition-title">Auto-évaluation rapide</p>
 <p>Avant de quitter la séance, vérifiez que vous savez :</p>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Créer, développer et utiliser une variable shell.</li>
@@ -1966,16 +2065,34 @@ Exécutez avec <code>./run</code>.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Compiler un programme C avec <code>gcc</code>, décomposer les 4 étapes, faire une compilation séparée.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Distinguer erreurs et warnings et interpréter les messages de <code>gcc</code>.</li>
 </ul>
+<p><strong>Programmation système (⭐ — évalué)</strong> :</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Compiler séparément plusieurs sources en <code>.o</code> puis faire l’édition de liens.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Nommer les trois descripteurs standards et leur numéro (<code>0</code>, <code>1</code>, <code>2</code>).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Écrire sur un descripteur avec <code>write()</code> et lire avec <code>read()</code>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Ouvrir un fichier avec <code>open()</code>, tester l’échec et le signaler avec <code>perror()</code>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Rediriger un descripteur avec <code>dup()</code> / <code>dup2()</code> et expliquer le rôle de <code>close()</code>.</li>
+</ul>
 <p>Si un item n’est pas coché, <strong>revenez sur l’exercice correspondant</strong> avant le TP4.</p>
 </div>
 <hr />
-<h2 id="exercices-supplementaires">⭐ Exercices supplémentaires<a class="headerlink" href="#exercices-supplementaires" title="Permanent link">&para;</a></h2>
+<h2 id="programmation-systeme">⭐ Programmation système<a class="headerlink" href="#programmation-systeme" title="Permanent link">&para;</a></h2>
 <div class="admonition star">
-<p class="admonition-title">À qui s’adressent les exercices 8, 9, 10 ?</p>
-<p>Vous avez terminé les exercices 1 à 7 ? Le TP3 a introduit la <strong>compilation C</strong> — ces exercices étoile l’approfondissent vers la <strong>programmation système</strong>. Vous allez découvrir la compilation séparée, les descripteurs de fichiers standards, et réimplémenter en C ce que le shell fait quand vous tapez <code>commande &gt; fichier</code>.</p>
-<p><strong>Appels système utilisés</strong> : <code>open</code>, <code>read</code>, <code>write</code>, <code>close</code>, <code>perror</code>, <code>dup</code>, <code>dup2</code>.</p>
-<p>Les niveaux taxonomiques visés sont <strong>[Analyser]</strong>, <strong>[Évaluer]</strong> et <strong>[Créer]</strong> (Bloom révisé).</p>
-<p>Ces exercices sont <strong>optionnels</strong> et <strong>non évalués</strong>.</p>
+<p class="admonition-title">Les exercices 8, 9 et 10 font partie du programme</p>
+<p>Le TP3 a introduit la <strong>compilation C</strong> ; ces trois exercices la prolongent vers la
+<strong>programmation système</strong>, qui constitue la partie « Programmation » du syllabus du
+module. Vous y découvrirez la compilation séparée, les descripteurs de fichiers
+standards, et vous réimplémenterez en C ce que le shell fait quand vous tapez
+<code>commande &gt; fichier</code>.</p>
+<p><strong>Appels système travaillés</strong> : <code>open</code>, <code>read</code>, <code>write</code>, <code>close</code>, <code>perror</code>, <code>dup</code>, <code>dup2</code>.</p>
+<p>Niveaux taxonomiques visés : <strong>[Analyser]</strong>, <strong>[Évaluer]</strong>, <strong>[Créer]</strong> (Bloom révisé).</p>
+<div class="admonition warning">
+<p class="admonition-title">Changement 2026‑2027</p>
+<p>Ces exercices étaient auparavant présentés comme optionnels. <strong>Ils sont
+désormais évalués</strong> : les appels système font partie du périmètre du
+<strong>DE S42</strong>. Les ⭐ du TP1 et du TP2 (<code>find</code>, <code>ln</code>, <code>umask</code>, SUID/SGID),
+eux, restent optionnels.</p>
+</div>
 </div>
 <h3 id="exercice-8-compilation-separee-et-edition-de-liens">Exercice 8 — Compilation séparée et édition de liens 📚📚📚 ⭐<a class="headerlink" href="#exercice-8-compilation-separee-et-edition-de-liens" title="Permanent link">&para;</a></h3>
 <div class="admonition tip">
@@ -1986,40 +2103,64 @@ Exécutez avec <code>./run</code>.</li>
 <li>Sans <code>-o</code>, <code>gcc -c foo.c</code> produit <code>foo.o</code>.</li>
 <li>L’édition de liens se fait ensuite : <code>gcc a.o b.o -o run</code>.</li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">Deux conventions C à respecter dès maintenant</p>
+<ul>
+<li><strong><code>void f(void)</code> et non <code>void f()</code>.</strong> En C, <code>void f()</code> ne déclare <strong>aucun</strong>
+  prototype : le compilateur ne vérifie alors ni le nombre ni le type des
+  arguments. <code>gcc -Wstrict-prototypes</code> le signale. (Depuis C23 la sémantique
+  change et <code>()</code> devient équivalent à <code>(void)</code> — raison de plus pour écrire
+  explicitement <code>(void)</code>.)</li>
+<li><strong>Gardes d'en-tête : <code>BYE_H</code>, pas <code>_BYE_H_</code>.</strong> Les identifiants commençant
+  par un <code>_</code> suivi d'une majuscule sont <strong>réservés à l'implémentation</strong>
+  (norme C, § 7.1.3). Les utiliser est un comportement indéfini.</li>
+</ul>
+<p>L'archive <code>hello.tar.gz</code> fournie contient encore les anciennes conventions
+(<code>void hello();</code>, <code>_HELLO_H_</code>) : <strong>corrigez-les</strong>, c'est un bon premier
+exercice de lecture critique de code.</p>
+</div>
 </div>
 <ol>
 <li>Dans le répertoire <code>hello</code> de l’exercice 7, créez <code>bye.c</code> et <code>bye.h</code> <strong>en utilisant l’expansion d’accolades</strong> :</li>
 <li><code>bye.h</code> :
-     <div class="language-c highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="cp">#ifndef BYE_H</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="cp">#define BYE_H</span>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="kt">void</span><span class="w"> </span><span class="nf">bye</span><span class="p">();</span>
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>
-</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="cp">#endif</span>
-</span></code></pre></div></li>
-<li><code>bye.c</code> :
-     <div class="language-c highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;bye.h&quot;</span>
+     <div class="language-c highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="cp">#ifndef BYE_H</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="cp">#define BYE_H</span>
 </span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="kt">void</span><span class="w"> </span><span class="nf">bye</span><span class="p">()</span>
-</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="p">{</span>
-</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;I&#39;m done, bye !</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="p">}</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="kt">void</span><span class="w"> </span><span class="nf">bye</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="cp">#endif</span>
 </span></code></pre></div></li>
-<li><strong>Toujours avec l’expansion d’accolades</strong>, compilez <code>hello.c</code> et <code>bye.c</code> en <code>hello.o</code> et <code>bye.o</code>. Vérifiez qu’aucune erreur n’est levée.</li>
-<li>Modifiez <code>main.c</code> pour inclure <code>bye.h</code> et appeler <code>bye()</code> :
-   <div class="language-c highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;hello.h&quot;</span>
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;bye.h&quot;</span>
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
-</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
-</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="p">{</span>
-</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">    </span><span class="n">hello</span><span class="p">();</span>
-</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">    </span><span class="n">bye</span><span class="p">();</span>
-</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="p">}</span>
-</span></code></pre></div></li>
-<li>Compilez <code>main.c</code> en <code>main.o</code>.</li>
+<li>
+<p><code>bye.c</code> :
+     <div class="language-c highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;bye.h&quot;</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="kt">void</span><span class="w"> </span><span class="nf">bye</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="p">{</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;I&#39;m done, bye !</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="p">}</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Toujours avec l’expansion d’accolades</strong>, compilez <code>hello.c</code> et <code>bye.c</code> en <code>hello.o</code> et <code>bye.o</code>. Vérifiez qu’aucune erreur n’est levée.</p>
+</li>
+<li>
+<p>Modifiez <code>main.c</code> pour inclure <code>bye.h</code> et appeler <code>bye()</code> :
+   <div class="language-c highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;hello.h&quot;</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;bye.h&quot;</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="p">{</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">    </span><span class="n">hello</span><span class="p">();</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">    </span><span class="n">bye</span><span class="p">();</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="p">}</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Compilez <code>main.c</code> en <code>main.o</code>.</p>
+</li>
 <li>Avec l’expansion de chemin <code>*</code>, éditez les liens de tous vos <code>.o</code> pour créer <code>run</code>. Exécutez-le.</li>
 </ol>
 <h3 id="exercice-9-maitriser-les-descripteurs-standards">Exercice 9 — Maîtriser les descripteurs standards ⭐<a class="headerlink" href="#exercice-9-maitriser-les-descripteurs-standards" title="Permanent link">&para;</a></h3>
@@ -2051,29 +2192,137 @@ Exécutez avec <code>./run</code>.</li>
 </tbody>
 </table>
 <ol>
-<li>Créez <code>std-fd.c</code> :
-   <div class="language-c highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unistd.h&gt;</span><span class="c1">    /* write, STDOUT_FILENO, STDERR_FILENO */</span>
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span><span class="c1">    /* strlen */</span>
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">msg_out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Message normal sur stdout.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
-</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">msg_err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Message d&#39;erreur sur stderr.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
-</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>
-</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">    </span><span class="n">write</span><span class="p">(</span><span class="n">STDOUT_FILENO</span><span class="p">,</span><span class="w"> </span><span class="n">msg_out</span><span class="p">,</span><span class="w"> </span><span class="n">strlen</span><span class="p">(</span><span class="n">msg_out</span><span class="p">));</span>
-</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">    </span><span class="n">write</span><span class="p">(</span><span class="n">STDERR_FILENO</span><span class="p">,</span><span class="w"> </span><span class="n">msg_err</span><span class="p">,</span><span class="w"> </span><span class="n">strlen</span><span class="p">(</span><span class="n">msg_err</span><span class="p">));</span>
-</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>
-</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="p">}</span>
-</span></code></pre></div></li>
-<li>Compilez : <code>gcc -Wall -o std-fd std-fd.c</code>.</li>
-<li>Testez :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>$<span class="w"> </span>./std-fd<span class="w">                      </span><span class="c1"># les deux à l&#39;écran</span>
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>$<span class="w"> </span>./std-fd<span class="w"> </span>&gt;<span class="w"> </span>sortie.txt<span class="w">         </span><span class="c1"># stderr reste à l&#39;écran ; stdout dans sortie.txt</span>
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>$<span class="w"> </span>./std-fd<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>erreur.txt<span class="w">        </span><span class="c1"># stdout reste à l&#39;écran ; stderr dans erreur.txt</span>
-</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>$<span class="w"> </span>./std-fd<span class="w"> </span>&gt;<span class="w"> </span>out.txt<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>err.txt<span class="w"> </span><span class="c1"># les deux redirigés</span>
-</span></code></pre></div></li>
-<li>Vérifiez les contenus.</li>
+<li>
+<p>Créez <code>std-fd.c</code> :
+   <div class="language-c highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unistd.h&gt;</span><span class="c1">    /* write, STDOUT_FILENO, STDERR_FILENO */</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span><span class="c1">    /* strlen */</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">msg_out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Message normal sur stdout.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">msg_err</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Message d&#39;erreur sur stderr.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">    </span><span class="n">write</span><span class="p">(</span><span class="n">STDOUT_FILENO</span><span class="p">,</span><span class="w"> </span><span class="n">msg_out</span><span class="p">,</span><span class="w"> </span><span class="n">strlen</span><span class="p">(</span><span class="n">msg_out</span><span class="p">));</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="w">    </span><span class="n">write</span><span class="p">(</span><span class="n">STDERR_FILENO</span><span class="p">,</span><span class="w"> </span><span class="n">msg_err</span><span class="p">,</span><span class="w"> </span><span class="n">strlen</span><span class="p">(</span><span class="n">msg_err</span><span class="p">));</span>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="p">}</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Compilez : <code>gcc -Wall -o std-fd std-fd.c</code>.</p>
+</li>
+<li>
+<p>Testez :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>$<span class="w"> </span>./std-fd<span class="w">                      </span><span class="c1"># les deux à l&#39;écran</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>$<span class="w"> </span>./std-fd<span class="w"> </span>&gt;<span class="w"> </span>sortie.txt<span class="w">         </span><span class="c1"># stderr reste à l&#39;écran ; stdout dans sortie.txt</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>$<span class="w"> </span>./std-fd<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>erreur.txt<span class="w">        </span><span class="c1"># stdout reste à l&#39;écran ; stderr dans erreur.txt</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>$<span class="w"> </span>./std-fd<span class="w"> </span>&gt;<span class="w"> </span>out.txt<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>err.txt<span class="w"> </span><span class="c1"># les deux redirigés</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Vérifiez les contenus.</p>
+</li>
 <li><strong>Question</strong> : pourquoi distinguer <code>stdout</code> et <code>stderr</code> ? Donnez un cas d’usage.</li>
+</ol>
+<h3 id="exercice-9-bis-lire-un-descripteur-avec-read">Exercice 9 bis — Lire un descripteur avec <code>read()</code> ⭐<a class="headerlink" href="#exercice-9-bis-lire-un-descripteur-avec-read" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">L'appel système <code>read()</code></p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kt">ssize_t</span><span class="w"> </span><span class="nf">read</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">tampon</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">taille</span><span class="p">);</span>
+</span></code></pre></div>
+<p><code>read()</code> tente de lire au plus <code>taille</code> octets depuis le descripteur <code>fd</code>.
+Sa valeur de retour est <strong>essentielle</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Retour</th>
+<th>Signification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&gt; 0</code></td>
+<td>nombre d'octets <strong>réellement</strong> lus — souvent <strong>moins</strong> que demandé</td>
+</tr>
+<tr>
+<td><code>0</code></td>
+<td>fin de fichier (EOF) — plus rien à lire</td>
+</tr>
+<tr>
+<td><code>-1</code></td>
+<td>erreur ; <code>errno</code> est positionné, <code>perror()</code> l'affiche</td>
+</tr>
+</tbody>
+</table>
+<p>C'est la raison pour laquelle un <code>read()</code> s'utilise <strong>toujours dans une boucle</strong> :
+rien ne garantit qu'un seul appel suffise, en particulier sur un tube ou un
+terminal. Même remarque pour <code>write()</code>, qui peut écrire partiellement.</p>
+<blockquote>
+<p><strong>Référence</strong> : Kerrisk, M. (2010). <em>The Linux Programming Interface</em>.
+No Starch Press. ISBN 978-1593272203, chapitre 4 (<em>File I/O: The Universal I/O Model</em>).</p>
+</blockquote>
+</div>
+<ol>
+<li>
+<p>Lisez <code>man 2 read</code>. Quel est le type de retour, et pourquoi n'est-il pas <code>int</code> ?</p>
+</li>
+<li>
+<p>Créez <code>echo-fd.c</code>, une version minimale de <code>cat</code> sans argument, qui recopie son
+    entrée standard sur sa sortie standard <strong>uniquement</strong> avec <code>read()</code> et <code>write()</code> :</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unistd.h&gt;</span><span class="c1">    /* read, write, STDIN_FILENO, STDOUT_FILENO */</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="c1">     /* perror */</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="cp">#define TAILLE 4096</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">tampon</span><span class="p">[</span><span class="n">TAILLE</span><span class="p">];</span>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="w">    </span><span class="kt">ssize_t</span><span class="w"> </span><span class="n">lus</span><span class="p">;</span>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">((</span><span class="n">lus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">read</span><span class="p">(</span><span class="n">STDIN_FILENO</span><span class="p">,</span><span class="w"> </span><span class="n">tampon</span><span class="p">,</span><span class="w"> </span><span class="n">TAILLE</span><span class="p">))</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="w">        </span><span class="kt">ssize_t</span><span class="w"> </span><span class="n">ecrits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">ecrits</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">lus</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                  </span><span class="c1">// (i)</span>
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="w">            </span><span class="kt">ssize_t</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">write</span><span class="p">(</span><span class="n">STDOUT_FILENO</span><span class="p">,</span><span class="w"> </span><span class="n">tampon</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ecrits</span><span class="p">,</span><span class="w"> </span><span class="n">lus</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">ecrits</span><span class="p">);</span>
+</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">perror</span><span class="p">(</span><span class="s">&quot;write&quot;</span><span class="p">);</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="w">            </span><span class="n">ecrits</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-20-18"><a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lus</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">perror</span><span class="p">(</span><span class="s">&quot;read&quot;</span><span class="p">);</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w">  </span><span class="c1">// (ii)</span>
+</span><span id="__span-20-19"><a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-20-20"><a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a><span class="p">}</span>
+</span></code></pre></div>
+<ol>
+<li>Boucle d'écriture : <code>write()</code> peut n'écrire qu'une <strong>partie</strong> du tampon. Tant
+    que tout n'est pas écrit, on rappelle <code>write()</code> sur ce qu'il reste.</li>
+<li>On distingue la fin de fichier (<code>0</code>, sortie normale de la boucle) de l'erreur
+    (<code>-1</code>), qu'on signale avec <code>perror()</code>.</li>
+</ol>
+</li>
+<li>
+<p>Compilez et testez les trois situations :</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>$<span class="w"> </span>gcc<span class="w"> </span>-Wall<span class="w"> </span>-Wextra<span class="w"> </span>-o<span class="w"> </span>echo-fd<span class="w"> </span>echo-fd.c
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>$<span class="w"> </span><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;ligne A\nligne B\n&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>src.txt
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>$<span class="w"> </span>./echo-fd<span class="w"> </span>&lt;<span class="w"> </span>src.txt
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>$<span class="w"> </span><span class="nb">printf</span><span class="w"> </span><span class="s1">&#39;x\ny\nz\n&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>./echo-fd<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>$<span class="w"> </span>./echo-fd
+</span></code></pre></div>
+<p>Pour la dernière commande, tapez quelques lignes puis <kbd>Ctrl</kbd>+<kbd>D</kbd>.
+Quel <code>read()</code> renvoie alors <code>0</code> ?</p>
+</li>
+<li>
+<p><strong>Vérification sur un gros volume</strong> — la boucle est-elle correcte ?</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>$<span class="w"> </span>head<span class="w"> </span>-c<span class="w"> </span><span class="m">100000</span><span class="w"> </span>/dev/urandom<span class="w"> </span>&gt;<span class="w"> </span>big.bin
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>$<span class="w"> </span>./echo-fd<span class="w"> </span>&lt;<span class="w"> </span>big.bin<span class="w"> </span>&gt;<span class="w"> </span>out.bin
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>$<span class="w"> </span>cmp<span class="w"> </span>big.bin<span class="w"> </span>out.bin<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;copie conforme&quot;</span>
+</span></code></pre></div>
+</li>
+<li>
+<p><strong>Question d'analyse</strong> : que se passerait-il si vous remplaciez la boucle
+    <code>while (ecrits &lt; lus)</code> par un simple <code>write(STDOUT_FILENO, tampon, lus);</code> ?
+    Dans quel cas concret le bug se manifesterait-il ?</p>
+</li>
+<li>
+<p><strong>Question d'évaluation</strong> : <code>TAILLE</code> vaut 4096. Que gagne-t-on à l'augmenter ?
+    Que perd-on ? Quel critère guiderait votre choix en production ?</p>
+</li>
 </ol>
 <h3 id="exercice-10-reimplementer-en-c-avec-dup2">Exercice 10 — Réimplémenter <code>&gt;</code> en C avec <code>dup2()</code> ⭐<a class="headerlink" href="#exercice-10-reimplementer-en-c-avec-dup2" title="Permanent link">&para;</a></h3>
 <p>Quand vous tapez <code>./hello &gt; sortie.txt</code>, le shell fait en interne :</p>
@@ -2081,44 +2330,45 @@ Exécutez avec <code>./run</code>.</li>
 <li>Il ouvre <code>sortie.txt</code> en écriture (obtient par exemple le descripteur <code>3</code>).</li>
 <li>Il <strong>redirige</strong> <code>STDOUT_FILENO</code> (descripteur 1) vers ce nouveau descripteur via <code>dup2(3, 1)</code>.</li>
 <li>Il ferme le descripteur 3 (devenu redondant).</li>
+<li>Il exécute <code>./hello</code>. Tout ce qui va sur <code>stdout</code> va maintenant dans <code>sortie.txt</code>.</li>
+</ol>
+<p><strong>À vous de jouer :</strong></p>
+<ol>
+<li>Lisez <code>man 2 dup</code>. Notez la signature de <code>dup</code> et <code>dup2</code>.</li>
 <li>
-<p>Il exécute <code>./hello</code>. Tout ce qui va sur <code>stdout</code> va maintenant dans <code>sortie.txt</code>.</p>
+<p>Créez <code>myredirect.c</code> :
+   <div class="language-c highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fcntl.h&gt;</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unistd.h&gt;</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">argv</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">argc</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="w">        </span><span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Usage: %s &lt;fichier-sortie&gt;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a>
+</span><span id="__span-23-11"><a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">open</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">O_WRONLY</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">O_CREAT</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">O_TRUNC</span><span class="p">,</span><span class="w"> </span><span class="mo">0644</span><span class="p">);</span>
+</span><span id="__span-23-12"><a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fd</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">perror</span><span class="p">(</span><span class="s">&quot;open&quot;</span><span class="p">);</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-23-13"><a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a>
+</span><span id="__span-23-14"><a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">dup2</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="n">STDOUT_FILENO</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-15"><a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a><span class="w">        </span><span class="n">perror</span><span class="p">(</span><span class="s">&quot;dup2&quot;</span><span class="p">);</span><span class="w"> </span><span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-23-16"><a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-23-17"><a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a><span class="w">    </span><span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span>
+</span><span id="__span-23-18"><a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a>
+</span><span id="__span-23-19"><a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a><span class="w">    </span><span class="cm">/* À partir d&#39;ici, printf écrit dans le fichier */</span>
+</span><span id="__span-23-20"><a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Ligne 1 redirigée.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-23-21"><a id="__codelineno-23-21" name="__codelineno-23-21" href="#__codelineno-23-21"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Ligne 2 redirigée.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-23-22"><a id="__codelineno-23-22" name="__codelineno-23-22" href="#__codelineno-23-22"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Ligne 3 redirigée.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-23-23"><a id="__codelineno-23-23" name="__codelineno-23-23" href="#__codelineno-23-23"></a>
+</span><span id="__span-23-24"><a id="__codelineno-23-24" name="__codelineno-23-24" href="#__codelineno-23-24"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-23-25"><a id="__codelineno-23-25" name="__codelineno-23-25" href="#__codelineno-23-25"></a><span class="p">}</span>
+</span></code></pre></div></p>
 </li>
-<li>
-<p>Lisez <code>man 2 dup</code>. Notez la signature de <code>dup</code> et <code>dup2</code>.</p>
-</li>
-<li>Créez <code>myredirect.c</code> :
-   <div class="language-c highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fcntl.h&gt;</span>
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unistd.h&gt;</span>
-</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
-</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
-</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">argv</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">argc</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">        </span><span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Usage: %s &lt;fichier-sortie&gt;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
-</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>
-</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">open</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">O_WRONLY</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">O_CREAT</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">O_TRUNC</span><span class="p">,</span><span class="w"> </span><span class="mo">0644</span><span class="p">);</span>
-</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fd</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">perror</span><span class="p">(</span><span class="s">&quot;open&quot;</span><span class="p">);</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
-</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>
-</span><span id="__span-18-14"><a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">dup2</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="n">STDOUT_FILENO</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-18-15"><a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="w">        </span><span class="n">perror</span><span class="p">(</span><span class="s">&quot;dup2&quot;</span><span class="p">);</span><span class="w"> </span><span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-</span><span id="__span-18-16"><a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-18-17"><a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a><span class="w">    </span><span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span>
-</span><span id="__span-18-18"><a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a>
-</span><span id="__span-18-19"><a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a><span class="w">    </span><span class="cm">/* À partir d&#39;ici, printf écrit dans le fichier */</span>
-</span><span id="__span-18-20"><a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Ligne 1 redirigée.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span id="__span-18-21"><a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Ligne 2 redirigée.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span id="__span-18-22"><a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Ligne 3 redirigée.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span id="__span-18-23"><a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a>
-</span><span id="__span-18-24"><a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-18-25"><a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a><span class="p">}</span>
-</span></code></pre></div></li>
 <li>
 <p>Compilez et exécutez :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>$<span class="w"> </span>gcc<span class="w"> </span>-Wall<span class="w"> </span>-o<span class="w"> </span>myredirect<span class="w"> </span>myredirect.c
-</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>$<span class="w"> </span>./myredirect<span class="w"> </span>captures.txt
-</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>$<span class="w"> </span>cat<span class="w"> </span>captures.txt
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>$<span class="w"> </span>gcc<span class="w"> </span>-Wall<span class="w"> </span>-o<span class="w"> </span>myredirect<span class="w"> </span>myredirect.c
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>$<span class="w"> </span>./myredirect<span class="w"> </span>captures.txt
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>$<span class="w"> </span>cat<span class="w"> </span>captures.txt
 </span></code></pre></div>
    Les trois lignes doivent être dans <code>captures.txt</code> — <strong>rien</strong> dans le terminal.</p>
 </li>
@@ -2129,6 +2379,78 @@ Exécutez avec <code>./run</code>.</li>
 <li>Que se passerait-il si vous inversiez les arguments : <code>dup2(STDOUT_FILENO, fd)</code> ?</li>
 <li>Modifiez le programme pour rediriger <strong><code>stderr</code></strong> au lieu de <code>stdout</code>. Quelle ligne changez-vous ?</li>
 </ul>
+</li>
+</ol>
+<h3 id="exercice-10-bis-dup-deux-noms-pour-le-meme-fichier-ouvert">Exercice 10 bis — <code>dup()</code> : deux noms pour le même fichier ouvert ⭐<a class="headerlink" href="#exercice-10-bis-dup-deux-noms-pour-le-meme-fichier-ouvert" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title"><code>dup()</code> et la table des descripteurs</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">dup</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">ancien</span><span class="p">);</span><span class="w">          </span><span class="cm">/* renvoie le plus petit descripteur libre */</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="kt">int</span><span class="w"> </span><span class="nf">dup2</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">ancien</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">nouveau</span><span class="p">);</span>
+</span></code></pre></div>
+<p><code>dup()</code> crée une <strong>seconde entrée</strong> dans la table des descripteurs du processus,
+qui désigne <strong>la même description de fichier ouvert</strong> que l'originale. Les deux
+descripteurs partagent donc la <strong>même position de lecture/écriture</strong> (<em>offset</em>) et
+les mêmes drapeaux d'état.</p>
+<p>C'est exactement ce qui distingue <code>dup()</code> d'un second <code>open()</code> sur le même fichier :
+deux <code>open()</code> créent deux descriptions <strong>indépendantes</strong>, avec deux offsets séparés.</p>
+</div>
+<ol>
+<li>
+<p>Créez <code>mondup.c</code> :</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fcntl.h&gt;</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unistd.h&gt;</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">ecrire</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">write</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">strlen</span><span class="p">(</span><span class="n">s</span><span class="p">));</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>
+</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">fd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">open</span><span class="p">(</span><span class="s">&quot;journal.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">O_WRONLY</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">O_CREAT</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">O_TRUNC</span><span class="p">,</span><span class="w"> </span><span class="mo">0644</span><span class="p">);</span>
+</span><span id="__span-26-10"><a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fd</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">perror</span><span class="p">(</span><span class="s">&quot;open&quot;</span><span class="p">);</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-26-11"><a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a>
+</span><span id="__span-26-12"><a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">copie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dup</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span><span class="w">                       </span><span class="c1">// (i)</span>
+</span><span id="__span-26-13"><a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">copie</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">perror</span><span class="p">(</span><span class="s">&quot;dup&quot;</span><span class="p">);</span><span class="w"> </span><span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-26-14"><a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a>
+</span><span id="__span-26-15"><a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;fd = %d, copie = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">fd</span><span class="p">,</span><span class="w"> </span><span class="n">copie</span><span class="p">);</span>
+</span><span id="__span-26-16"><a id="__codelineno-26-16" name="__codelineno-26-16" href="#__codelineno-26-16"></a>
+</span><span id="__span-26-17"><a id="__codelineno-26-17" name="__codelineno-26-17" href="#__codelineno-26-17"></a><span class="w">    </span><span class="n">ecrire</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span><span class="w">    </span><span class="s">&quot;1 - ecrit via fd</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-26-18"><a id="__codelineno-26-18" name="__codelineno-26-18" href="#__codelineno-26-18"></a><span class="w">    </span><span class="n">ecrire</span><span class="p">(</span><span class="n">copie</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2 - ecrit via copie</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w">   </span><span class="c1">// (ii)</span>
+</span><span id="__span-26-19"><a id="__codelineno-26-19" name="__codelineno-26-19" href="#__codelineno-26-19"></a>
+</span><span id="__span-26-20"><a id="__codelineno-26-20" name="__codelineno-26-20" href="#__codelineno-26-20"></a><span class="w">    </span><span class="n">close</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span>
+</span><span id="__span-26-21"><a id="__codelineno-26-21" name="__codelineno-26-21" href="#__codelineno-26-21"></a><span class="w">    </span><span class="n">ecrire</span><span class="p">(</span><span class="n">copie</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;3 - fd ferme, copie toujours valide</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// (iii)</span>
+</span><span id="__span-26-22"><a id="__codelineno-26-22" name="__codelineno-26-22" href="#__codelineno-26-22"></a><span class="w">    </span><span class="n">close</span><span class="p">(</span><span class="n">copie</span><span class="p">);</span>
+</span><span id="__span-26-23"><a id="__codelineno-26-23" name="__codelineno-26-23" href="#__codelineno-26-23"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-26-24"><a id="__codelineno-26-24" name="__codelineno-26-24" href="#__codelineno-26-24"></a><span class="p">}</span>
+</span></code></pre></div>
+<ol>
+<li><code>dup()</code> renvoie le <strong>plus petit descripteur disponible</strong>. Les descripteurs 0, 1
+    et 2 étant déjà pris, attendez-vous à obtenir 3 puis 4.</li>
+<li>Cette écriture ne repart <strong>pas</strong> du début du fichier : l'offset est partagé
+    avec <code>fd</code>.</li>
+<li>Fermer <code>fd</code> ne ferme pas le fichier : la description reste vivante tant qu'au
+    moins un descripteur la référence.</li>
+</ol>
+</li>
+<li>
+<p>Compilez, exécutez, puis affichez le résultat :</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>$<span class="w"> </span>gcc<span class="w"> </span>-Wall<span class="w"> </span>-Wextra<span class="w"> </span>-o<span class="w"> </span>mondup<span class="w"> </span>mondup.c
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>$<span class="w"> </span>./mondup
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>$<span class="w"> </span>cat<span class="w"> </span>journal.txt
+</span></code></pre></div>
+<p>Quels numéros obtenez-vous pour <code>fd</code> et <code>copie</code> ? Les trois lignes se
+suivent-elles, ou se sont-elles écrasées ?</p>
+</li>
+<li>
+<p><strong>Question d'analyse</strong> : remplacez <code>int copie = dup(fd);</code> par un second
+    <code>int copie = open("journal.txt", O_WRONLY);</code>. Recompilez, relancez, observez
+    <code>journal.txt</code>. Expliquez la différence à partir de la notion d'offset partagé.</p>
+</li>
+<li>
+<p><strong>Question de synthèse</strong> : <code>dup2(fd, 1)</code> équivaut à « fermer 1 s'il est ouvert,
+    puis dupliquer <code>fd</code> sur 1 ». Écrivez cette opération <strong>sans</strong> <code>dup2()</code>, en
+    utilisant seulement <code>close()</code> et <code>dup()</code>. Pourquoi cette version est-elle
+    dangereuse dans un programme multithread ? <em>(Indice : que se passe-t-il si un
+    autre fil d'exécution ouvre un fichier entre le <code>close()</code> et le <code>dup()</code> ?)</em></p>
 </li>
 </ol>
 <div class="admonition info">

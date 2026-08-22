@@ -1722,13 +1722,19 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 </div>
 <h3 id="exercice-1-id-et-etcpasswd">Exercice 1 — <code>id</code> et <code>/etc/passwd</code> 📚<a class="headerlink" href="#exercice-1-id-et-etcpasswd" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Entrez la commande suivante et notez le résultat :
+<li>
+<p>Entrez la commande suivante et notez le résultat :
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span>id
-</span></code></pre></div></li>
-<li>Tapez la même commande avec l’argument <code>root</code> :
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Tapez la même commande avec l’argument <code>root</code> :
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span>id<span class="w"> </span>root
-</span></code></pre></div></li>
-<li>Affichez le contenu de <code>/etc/passwd</code> avec <code>cat</code>.</li>
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Affichez le contenu de <code>/etc/passwd</code> avec <code>cat</code>.</p>
+</li>
 <li>Recherchez les lignes correspondant à votre nom d’utilisateur et à <code>root</code>. Quelles sont les différences ?</li>
 <li>Pouvez-vous déduire à quoi sert le fichier <code>/etc/passwd</code> ?</li>
 </ol>
@@ -1818,22 +1824,26 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <h3 id="exercice-2-lire-les-permissions">Exercice 2 — Lire les permissions 📚<a class="headerlink" href="#exercice-2-lire-les-permissions" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Créez un répertoire vide et un fichier vide, au même niveau. Avec <code>ls -l</code> et <code>ls -ld</code>, déterminez les permissions du propriétaire, du groupe et des autres. Comment reconnaissez-vous un répertoire ?</li>
-<li>Les lignes suivantes donnent la réponse de <code>ls -ld</code> sur différents fichiers :
+<li>
+<p>Les lignes suivantes donnent la réponse de <code>ls -ld</code> sur différents fichiers :
    <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>drwxr-xr-x a
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>dr-xr--r-- b
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>-rw-r--r-- c.txt
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>--w--w-r-- d.c
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>-rwxr-xr-x op
 </span></code></pre></div>
-   Parmi ces fichiers, lesquels sont des <strong>répertoires</strong> ?</li>
-<li>Pour chacun des fichiers ci-dessus, donnez les permissions en représentations <strong>symbolique</strong> et <strong>octale</strong>.</li>
+   Parmi ces fichiers, lesquels sont des <strong>répertoires</strong> ?</p>
+</li>
+<li>
+<p>Pour chacun des fichiers ci-dessus, donnez les permissions en représentations <strong>symbolique</strong> et <strong>octale</strong>.</p>
+</li>
 <li>Donnez les représentations symbolique et octale des permissions de <code>/etc/passwd</code>, de la commande <code>ls</code> et de votre répertoire personnel.</li>
 </ol>
 <h3 id="exercice-3-modification-des-permissions-chmod">Exercice 3 — Modification des permissions <code>chmod</code> 📚📚<a class="headerlink" href="#exercice-3-modification-des-permissions-chmod" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>Testez les commandes suivantes et essayez de comprendre <code>chmod</code> en notation <strong>symbolique</strong> :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>touch<span class="w"> </span>f<span class="p">;</span><span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>f
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>touch<span class="w"> </span>f<span class="p">;</span><span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>f
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>$<span class="w"> </span>chmod<span class="w"> </span><span class="nv">a</span><span class="o">=</span><span class="w"> </span>f<span class="p">;</span><span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>f<span class="w">           </span><span class="c1"># (i)</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>$<span class="w"> </span>chmod<span class="w"> </span>o+rw<span class="w"> </span>f<span class="p">;</span><span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>f<span class="w">         </span><span class="c1"># (ii)</span>
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>$<span class="w"> </span>chmod<span class="w"> </span><span class="nv">u</span><span class="o">=</span>o<span class="w"> </span>f<span class="p">;</span><span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>f<span class="w">          </span><span class="c1"># (iii)</span>
@@ -1851,13 +1861,15 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 </li>
 <li>
 <p>Testez et observez :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span>chmod<span class="w"> </span><span class="m">644</span><span class="w"> </span>f<span class="p">;</span><span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>f<span class="w"> </span><span class="c1"># (i)</span>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span>chmod<span class="w"> </span><span class="m">644</span><span class="w"> </span>f<span class="p">;</span><span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>f<span class="w"> </span><span class="c1"># (i)</span>
 </span></code></pre></div></p>
 <ol>
 <li><code>644</code> en octal = <code>rw-r--r--</code> : lecture/écriture pour le propriétaire (<code>6</code> = <code>r</code>+<code>w</code>), lecture seule pour le groupe (<code>4</code> = <code>r</code>) et les autres (<code>4</code> = <code>r</code>).</li>
 </ol>
-<p>Que fait cette commande ?
-3. Avec les <strong>deux notations</strong> (octale et symbolique), modifiez les permissions de <code>f</code> pour obtenir :</p>
+<p>Que fait cette commande ?</p>
+</li>
+<li>
+<p>Avec les <strong>deux notations</strong> (octale et symbolique), modifiez les permissions de <code>f</code> pour obtenir :</p>
 <ul>
 <li>exécution pour tous, lecture et écriture uniquement pour le propriétaire ;</li>
 <li>lecture et exécution pour tous, personne ne peut écrire ;</li>
@@ -1882,23 +1894,31 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>$<span class="w"> </span>cat<span class="w"> </span>g
 </span></code></pre></div></p>
 </li>
-<li>Essayez de modifier <code>g</code> avec un éditeur de texte. Que se passe-t-il ?</li>
-<li>Testez :
+<li>
+<p>Essayez de modifier <code>g</code> avec un éditeur de texte. Que se passe-t-il ?</p>
+</li>
+<li>
+<p>Testez :
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$<span class="w"> </span>cp<span class="w"> </span>f<span class="w"> </span>h
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>$<span class="w"> </span>cp<span class="w"> </span>g<span class="w"> </span>h
 </span></code></pre></div>
-   Puis observez le contenu de <code>h</code> et ses permissions.</li>
-<li>La commande suivante ajoute la chaîne <code>toto</code> à la fin de <code>f</code> (vu au TP4) :
+   Puis observez le contenu de <code>h</code> et ses permissions.</p>
+</li>
+<li>
+<p>La commande suivante ajoute la chaîne <code>toto</code> à la fin de <code>f</code> (vu au TP4) :
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;toto&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>f
 </span></code></pre></div>
-   Testez, puis redonnez-vous la lecture sur <code>f</code>, et affichez son contenu avec <code>cat</code>.</li>
-<li>Testez :
+   Testez, puis redonnez-vous la lecture sur <code>f</code>, et affichez son contenu avec <code>cat</code>.</p>
+</li>
+<li>
+<p>Testez :
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$<span class="w"> </span>rm<span class="w"> </span>g
 </span></code></pre></div>
    <strong>Tapez <code>n</code> pour refuser</strong>. Puis testez :
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>g
 </span></code></pre></div>
-   La commande a-t-elle réussi ? Qu’en déduisez-vous ?</li>
+   La commande a-t-elle réussi ? Qu’en déduisez-vous ?</p>
+</li>
 </ol>
 <hr />
 <h2 id="3-permissions-associees-aux-repertoires">3. Permissions associées aux répertoires<a class="headerlink" href="#3-permissions-associees-aux-repertoires" title="Permanent link">&para;</a></h2>
@@ -1925,16 +1945,21 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <h3 id="exercice-5-permissions-sur-les-repertoires">Exercice 5 — Permissions sur les répertoires 📚📚📚<a class="headerlink" href="#exercice-5-permissions-sur-les-repertoires" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Créez un répertoire <code>rep</code> et deux fichiers normaux <code>a</code> et <code>b</code> à l’intérieur.</li>
-<li>Retirez <strong>toutes</strong> les permissions sur <code>rep</code> et essayez :
+<li>
+<p>Retirez <strong>toutes</strong> les permissions sur <code>rep</code> et essayez :
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>rep
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>$<span class="w"> </span>ls<span class="w"> </span>rep
 </span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>$<span class="w"> </span>cat<span class="w"> </span>rep/a
 </span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>$<span class="w"> </span>touch<span class="w"> </span>rep/c
 </span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>$<span class="w"> </span>rm<span class="w"> </span>rep/a
-</span></code></pre></div></li>
-<li>Redonnez uniquement la permission <code>r</code> sur <code>rep</code> et refaites les commandes. Notez les différences.</li>
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Redonnez uniquement la permission <code>r</code> sur <code>rep</code> et refaites les commandes. Notez les différences.</p>
+</li>
 <li>Même question avec uniquement <code>w</code> sur <code>rep</code>. Notez les différences.</li>
-<li>Uniquement <code>x</code> sur <code>rep</code> :
+<li>
+<p>Uniquement <code>x</code> sur <code>rep</code> :
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>rep
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>$<span class="w"> </span>ls<span class="w"> </span>rep
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;toto&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>rep/a
@@ -1942,7 +1967,8 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 </span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>rep/a
 </span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>$<span class="w"> </span>touch<span class="w"> </span>rep/c
 </span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>$<span class="w"> </span>rm<span class="w"> </span>rep/a
-</span></code></pre></div></li>
+</span></code></pre></div></p>
+</li>
 <li>
 <p>Avec <code>-wx</code> sur <code>rep</code> pour tous, essayez de :</p>
 <ul>
@@ -1968,40 +1994,75 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <p class="admonition-title">Attention — exercice d’expérimentation</p>
 <p>Cet exercice est délicat et important. Prenez votre temps.</p>
 </div>
+<div class="admonition info">
+<p class="admonition-title">Aide structurée</p>
+<p>L'exercice fabrique délibérément un <strong>piège</strong> : vous allez placer dans votre <code>PATH</code>
+un faux <code>rm</code> qui est en réalité une copie de <code>cat</code>. Gardez ces trois repères sous
+la main :</p>
+<ul>
+<li><strong>Étape 1 — observer.</strong> <code>echo $PATH</code> liste les répertoires, séparés par <code>:</code>,
+  dans lesquels le shell cherche une commande tapée sans chemin.</li>
+<li><strong>Étape 2 — détourner.</strong> En plaçant <code>~/bin</code> <strong>en tête</strong> du <code>PATH</code>, votre <code>rm</code>
+  est trouvé avant <code>/usr/bin/rm</code>. Un chemin explicite (<code>/usr/bin/rm</code>, <code>./rm</code>)
+  court-circuite entièrement la recherche.</li>
+<li><strong>Étape 3 — le cache.</strong> Bash mémorise l'emplacement des commandes déjà
+  exécutées. Si <code>type rm</code> semble mentir après une modification, c'est ce cache :
+  <code>hash -r</code> le vide.</li>
+</ul>
+<p>En cas de doute, <code>type -a rm</code> montre <strong>toutes</strong> les correspondances trouvées, dans
+l'ordre. Et si vous vous perdez : ouvrez un nouveau terminal, le <code>PATH</code> d'origine
+y est restauré.</p>
+</div>
 <ol>
-<li>Dans un nouveau terminal :
+<li>
+<p>Dans un nouveau terminal :
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$PATH</span>
 </span></code></pre></div>
-   Observez. À votre avis, à quoi correspondent les éléments séparés par <code>:</code> ?</li>
-<li>Créez un répertoire <code>bin</code> dans votre home et modifiez <code>PATH</code> :
+   Observez. À votre avis, à quoi correspondent les éléments séparés par <code>:</code> ?</p>
+</li>
+<li>
+<p>Créez un répertoire <code>bin</code> dans votre home et modifiez <code>PATH</code> :
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>$<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>~/bin
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>$<span class="w"> </span><span class="nv">PATH</span><span class="o">=</span>~/bin:<span class="nv">$PATH</span>
 </span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$PATH</span>
 </span></code></pre></div>
-   Quelle est la différence avec l’affichage de la question 1 ?</li>
-<li>Avec <code>type</code>, cherchez les chemins absolus de <code>cat</code> et <code>rm</code> et notez-les.</li>
+   Quelle est la différence avec l’affichage de la question 1 ?</p>
+</li>
+<li>
+<p>Avec <code>type</code>, cherchez les chemins absolus de <code>cat</code> et <code>rm</code> et notez-les.</p>
+</li>
 <li>Copiez <code>cat</code> dans <code>~/bin</code> en le renommant <code>rm</code>.</li>
 <li>Créez un fichier <code>fic</code> avec quelques caractères, et deux copies <code>fic2</code>, <code>fic3</code>.</li>
 <li>Essayez de détruire <code>fic</code> avec <code>rm</code>. Que s’est-il passé ?</li>
 <li>Entrez <code>type rm</code>.</li>
-<li>Lancez :
+<li>
+<p>Lancez :
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$<span class="w"> </span>&lt;chemin<span class="w"> </span>absolu<span class="w"> </span>vers<span class="w"> </span>rm&gt;<span class="w"> </span>fic
 </span></code></pre></div>
-   <em>(en remplaçant <code>&lt;chemin absolu vers rm&gt;</code> par le chemin noté à la question 3)</em>. Que s’est-il passé ?</li>
-<li>Enlevez la permission <code>x</code> sur <code>~/bin/rm</code> et essayez de supprimer <code>fic2</code>.</li>
-<li>Demandez au shell d’oublier les emplacements cachés :
+   <em>(en remplaçant <code>&lt;chemin absolu vers rm&gt;</code> par le chemin noté à la question 3)</em>. Que s’est-il passé ?</p>
+</li>
+<li>
+<p>Enlevez la permission <code>x</code> sur <code>~/bin/rm</code> et essayez de supprimer <code>fic2</code>.</p>
+</li>
+<li>
+<p>Demandez au shell d’oublier les emplacements cachés :
     <div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>$<span class="w"> </span><span class="nb">hash</span><span class="w"> </span>-r
 </span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>$<span class="w"> </span><span class="nb">type</span><span class="w"> </span>rm
 </span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>$<span class="w"> </span>rm<span class="w"> </span>fic2
-</span></code></pre></div></li>
-<li>Remettez la permission <code>x</code> sur <code>~/bin/rm</code> et testez :
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Remettez la permission <code>x</code> sur <code>~/bin/rm</code> et testez :
     <div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>$<span class="w"> </span>~/bin/rm<span class="w"> </span>fic3
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/bin
 </span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>$<span class="w"> </span>./rm<span class="w"> </span>fic3
 </span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>$<span class="w"> </span>&lt;chemin<span class="w"> </span>absolu<span class="w"> </span>vers<span class="w"> </span>rm&gt;<span class="w"> </span>rm
 </span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>$<span class="w"> </span>rm<span class="w"> </span>fic3
-</span></code></pre></div></li>
-<li><strong>Bilan</strong> — répondez :<ul>
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Bilan</strong> — répondez :</p>
+<ul>
 <li>Qu’est-ce qui est contenu dans <code>PATH</code> ?</li>
 <li>Dans quel cas un nom de commande est-il cherché dans les répertoires du <code>PATH</code> ?</li>
 <li>S’il y a plusieurs programmes correspondants, lequel est choisi ?</li>
@@ -2055,24 +2116,57 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <h3 id="exercice-8-comprendre-et-manipuler-umask">Exercice 8 — Comprendre et manipuler <code>umask</code> ⭐<a class="headerlink" href="#exercice-8-comprendre-et-manipuler-umask" title="Permanent link">&para;</a></h3>
 <div class="admonition tip">
 <p class="admonition-title"><code>umask</code></p>
-<p><code>umask</code> définit les permissions <strong>retirées par défaut</strong> des fichiers et répertoires que vous créez. La valeur est octale : elle est <strong>soustraite</strong> des permissions par défaut (666 pour les fichiers, 777 pour les répertoires).</p>
-<p>Exemple : si <code>umask</code> vaut <code>022</code>, un fichier créé aura <code>644</code> (= <code>666 − 022</code>) et un répertoire <code>755</code> (= <code>777 − 022</code>).</p>
+<p><code>umask</code> définit les permissions <strong>retirées par défaut</strong> des fichiers et
+répertoires que vous créez. Les permissions de base sont <code>666</code> pour un
+fichier et <code>777</code> pour un répertoire.</p>
+<div class="admonition danger">
+<p class="admonition-title"><code>umask</code> n'est <strong>pas</strong> une soustraction</p>
+<p>On lit souvent « permissions = base − umask ». C'est une approximation
+qui <strong>tombe juste par hasard</strong> dans les cas courants et qui est <strong>fausse
+en général</strong>. <code>umask</code> est un <strong>masque binaire</strong> : chaque bit positionné
+dans le masque est <strong>retiré</strong> des permissions de base.</p>
+<p>La règle exacte est un ET logique avec le complément du masque :</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>permissions = base ET (NON umask)
+</span></code></pre></div>
+<p>Vérification sur <code>umask 121</code> :</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>base fichier   666 = 110 110 110
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>umask          121 = 001 010 001
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>NON umask          = 110 101 110
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>ET                 = 110 100 110 = 646   ← valeur réelle
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>soustraction   666 − 121 = 545           ← valeur FAUSSE
+</span></code></pre></div>
+<p>La soustraction se trompe dès qu'un chiffre du masque contient un bit
+absent du chiffre de base. Vous le vérifierez à la question 4.</p>
+</div>
+<p>Exemple : si <code>umask</code> vaut <code>022</code>, un fichier créé aura <code>644</code> et un répertoire
+<code>755</code> — ici la soustraction et le masque donnent le même résultat.</p>
 </div>
 <ol>
 <li>Tapez <code>umask</code> et notez le résultat.</li>
 <li>Créez un répertoire <code>rep</code> et un fichier <code>f</code> au même niveau. Affichez leurs permissions avec <code>ls -ld rep f</code>. Convertissez en octal et notez.</li>
-<li>Changez le masque :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>$<span class="w"> </span><span class="nb">umask</span><span class="w"> </span><span class="m">240</span>
+<li>
+<p>Changez le masque :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>$<span class="w"> </span><span class="nb">umask</span><span class="w"> </span><span class="m">240</span>
 </span></code></pre></div>
-   Refaites la question 2.</li>
-<li>Idem avec :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>$<span class="w"> </span><span class="nb">umask</span><span class="w"> </span><span class="m">121</span>
-</span></code></pre></div></li>
-<li>Idem avec :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>$<span class="w"> </span><span class="nb">umask</span><span class="w"> </span><span class="m">666</span>
-</span></code></pre></div></li>
-<li>Pouvez-vous déduire comment <code>umask</code> agit ?</li>
-<li>Restaurez la valeur initiale de <code>umask</code>.</li>
+   Refaites la question 2.</p>
+</li>
+<li>
+<p>Idem avec :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>$<span class="w"> </span><span class="nb">umask</span><span class="w"> </span><span class="m">121</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Idem avec :
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>$<span class="w"> </span><span class="nb">umask</span><span class="w"> </span><span class="m">666</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Comparez systématiquement vos relevés avec la prédiction « base − umask ».
+   Pour quelles valeurs les deux méthodes divergent-elles ? Formulez la règle exacte.</p>
+</li>
+<li>
+<p>Restaurez la valeur initiale de <code>umask</code>.</p>
+</li>
 </ol>
 <h3 id="exercice-9-permissions-speciales-suid-sgid-sticky-bit">Exercice 9 — Permissions spéciales : SUID, SGID, sticky bit ⭐<a class="headerlink" href="#exercice-9-permissions-speciales-suid-sgid-sticky-bit" title="Permanent link">&para;</a></h3>
 <div class="admonition tip">
@@ -2113,40 +2207,40 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <ol>
 <li>
 <p>Examinez les permissions de la commande <code>passwd</code> :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span><span class="k">$(</span>which<span class="w"> </span>passwd<span class="k">)</span>
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span><span class="k">$(</span>which<span class="w"> </span>passwd<span class="k">)</span>
 </span></code></pre></div>
    Vous devriez voir un <code>s</code> à la place du <code>x</code> propriétaire. Que signifie ce <code>s</code> ?</p>
 </li>
 <li>
 <p><strong>Question d’analyse</strong> : pourquoi la commande <code>passwd</code> a-t-elle besoin du bit SUID ? Quel fichier doit-elle modifier et à qui appartient-il ?
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>/etc/shadow
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>/etc/shadow
 </span></code></pre></div></p>
 </li>
 <li>
 <p>Cherchez tous les fichiers SUID sur le système :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>$<span class="w"> </span>find<span class="w"> </span>/<span class="w"> </span>-perm<span class="w"> </span>-4000<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span><span class="m">2</span>&gt;/dev/null
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>$<span class="w"> </span>find<span class="w"> </span>/<span class="w"> </span>-perm<span class="w"> </span>-4000<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span><span class="m">2</span>&gt;/dev/null
 </span></code></pre></div>
    Pourquoi redirige-t-on <code>stderr</code> vers <code>/dev/null</code> ? Combien de fichiers SUID trouvez-vous ?</p>
 </li>
 <li>
 <p>Examinez le répertoire <code>/tmp</code> :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>$<span class="w"> </span>ls<span class="w"> </span>-ld<span class="w"> </span>/tmp
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>$<span class="w"> </span>ls<span class="w"> </span>-ld<span class="w"> </span>/tmp
 </span></code></pre></div>
    Que signifie le <code>t</code> à la fin des permissions ? Pourquoi est-il indispensable pour <code>/tmp</code> ?</p>
 </li>
 <li>
 <p><strong>Mise en pratique</strong> : créez un répertoire <code>partage/</code> avec le sticky bit et testez :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>$<span class="w"> </span>mkdir<span class="w"> </span>partage
-</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>$<span class="w"> </span>chmod<span class="w"> </span><span class="m">1777</span><span class="w"> </span>partage
-</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>$<span class="w"> </span>ls<span class="w"> </span>-ld<span class="w"> </span>partage
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>$<span class="w"> </span>mkdir<span class="w"> </span>partage
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>$<span class="w"> </span>chmod<span class="w"> </span><span class="m">1777</span><span class="w"> </span>partage
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>$<span class="w"> </span>ls<span class="w"> </span>-ld<span class="w"> </span>partage
 </span></code></pre></div>
    Décomposez <code>1777</code> : que vaut chaque chiffre ?</p>
 </li>
 <li>
 <p><strong>Mise en pratique SGID</strong> sur un répertoire :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>$<span class="w"> </span>mkdir<span class="w"> </span>equipe
-</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>$<span class="w"> </span>chmod<span class="w"> </span><span class="m">2775</span><span class="w"> </span>equipe
-</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>$<span class="w"> </span>ls<span class="w"> </span>-ld<span class="w"> </span>equipe
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>$<span class="w"> </span>mkdir<span class="w"> </span>equipe
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>$<span class="w"> </span>chmod<span class="w"> </span><span class="m">2775</span><span class="w"> </span>equipe
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>$<span class="w"> </span>ls<span class="w"> </span>-ld<span class="w"> </span>equipe
 </span></code></pre></div>
    Créez un fichier dans <code>equipe/</code>. À quel groupe appartient-il ? Comparez avec un fichier créé dans un répertoire sans SGID.</p>
 </li>
@@ -2159,42 +2253,42 @@ Les exercices 📚📚📚 préparent au <strong>DE S42 (QCM)</strong> par leur 
 <ol>
 <li>
 <p>Créez le script <code>audit-permissions.sh</code> :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="ch">#!/bin/bash</span>
-</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="c1"># Audit de permissions — TP2 étoile</span>
-</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="c1"># Vérifie les points de sécurité courants liés aux permissions</span>
-</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>
-</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;=== AUDIT DE PERMISSIONS ===&quot;</span>
-</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Date : </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span>
-</span><span id="__span-28-7"><a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Utilisateur : </span><span class="k">$(</span>whoami<span class="k">)</span><span class="s2">&quot;</span>
-</span><span id="__span-28-8"><a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
-</span><span id="__span-28-9"><a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a>
-</span><span id="__span-28-10"><a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;--- 1. Fichiers SUID appartenant à root ---&quot;</span>
-</span><span id="__span-28-11"><a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a>find<span class="w"> </span>/<span class="w"> </span>-user<span class="w"> </span>root<span class="w"> </span>-perm<span class="w"> </span>-4000<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-20
-</span><span id="__span-28-12"><a id="__codelineno-28-12" name="__codelineno-28-12" href="#__codelineno-28-12"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
-</span><span id="__span-28-13"><a id="__codelineno-28-13" name="__codelineno-28-13" href="#__codelineno-28-13"></a>
-</span><span id="__span-28-14"><a id="__codelineno-28-14" name="__codelineno-28-14" href="#__codelineno-28-14"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;--- 2. Fichiers SGID ---&quot;</span>
-</span><span id="__span-28-15"><a id="__codelineno-28-15" name="__codelineno-28-15" href="#__codelineno-28-15"></a>find<span class="w"> </span>/<span class="w"> </span>-perm<span class="w"> </span>-2000<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-10
-</span><span id="__span-28-16"><a id="__codelineno-28-16" name="__codelineno-28-16" href="#__codelineno-28-16"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
-</span><span id="__span-28-17"><a id="__codelineno-28-17" name="__codelineno-28-17" href="#__codelineno-28-17"></a>
-</span><span id="__span-28-18"><a id="__codelineno-28-18" name="__codelineno-28-18" href="#__codelineno-28-18"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;--- 3. Fichiers accessibles en écriture par tous (world-writable) ---&quot;</span>
-</span><span id="__span-28-19"><a id="__codelineno-28-19" name="__codelineno-28-19" href="#__codelineno-28-19"></a>find<span class="w"> </span>/home<span class="w"> </span>-perm<span class="w"> </span>-o<span class="o">=</span>w<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span><span class="m">2</span>&gt;/dev/null
-</span><span id="__span-28-20"><a id="__codelineno-28-20" name="__codelineno-28-20" href="#__codelineno-28-20"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
-</span><span id="__span-28-21"><a id="__codelineno-28-21" name="__codelineno-28-21" href="#__codelineno-28-21"></a>
-</span><span id="__span-28-22"><a id="__codelineno-28-22" name="__codelineno-28-22" href="#__codelineno-28-22"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;--- 4. Répertoires sans sticky bit accessibles en écriture par tous ---&quot;</span>
-</span><span id="__span-28-23"><a id="__codelineno-28-23" name="__codelineno-28-23" href="#__codelineno-28-23"></a>find<span class="w"> </span>/<span class="w"> </span>-perm<span class="w"> </span>-o<span class="o">=</span>w<span class="w"> </span>!<span class="w"> </span>-perm<span class="w"> </span>-1000<span class="w"> </span>-type<span class="w"> </span>d<span class="w"> </span><span class="m">2</span>&gt;/dev/null
-</span><span id="__span-28-24"><a id="__codelineno-28-24" name="__codelineno-28-24" href="#__codelineno-28-24"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
-</span><span id="__span-28-25"><a id="__codelineno-28-25" name="__codelineno-28-25" href="#__codelineno-28-25"></a>
-</span><span id="__span-28-26"><a id="__codelineno-28-26" name="__codelineno-28-26" href="#__codelineno-28-26"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;--- 5. Fichiers sans propriétaire ou sans groupe ---&quot;</span>
-</span><span id="__span-28-27"><a id="__codelineno-28-27" name="__codelineno-28-27" href="#__codelineno-28-27"></a>find<span class="w"> </span>/home<span class="w"> </span>-nouser<span class="w"> </span>-o<span class="w"> </span>-nogroup<span class="w"> </span><span class="m">2</span>&gt;/dev/null
-</span><span id="__span-28-28"><a id="__codelineno-28-28" name="__codelineno-28-28" href="#__codelineno-28-28"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
-</span><span id="__span-28-29"><a id="__codelineno-28-29" name="__codelineno-28-29" href="#__codelineno-28-29"></a>
-</span><span id="__span-28-30"><a id="__codelineno-28-30" name="__codelineno-28-30" href="#__codelineno-28-30"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;=== FIN DE L’AUDIT ===&quot;</span>
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="ch">#!/bin/bash</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="c1"># Audit de permissions — TP2 étoile</span>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="c1"># Vérifie les points de sécurité courants liés aux permissions</span>
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>
+</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;=== AUDIT DE PERMISSIONS ===&quot;</span>
+</span><span id="__span-30-6"><a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Date : </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-30-7"><a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Utilisateur : </span><span class="k">$(</span>whoami<span class="k">)</span><span class="s2">&quot;</span>
+</span><span id="__span-30-8"><a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-30-9"><a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a>
+</span><span id="__span-30-10"><a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;--- 1. Fichiers SUID appartenant à root ---&quot;</span>
+</span><span id="__span-30-11"><a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a>find<span class="w"> </span>/<span class="w"> </span>-user<span class="w"> </span>root<span class="w"> </span>-perm<span class="w"> </span>-4000<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-20
+</span><span id="__span-30-12"><a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-30-13"><a id="__codelineno-30-13" name="__codelineno-30-13" href="#__codelineno-30-13"></a>
+</span><span id="__span-30-14"><a id="__codelineno-30-14" name="__codelineno-30-14" href="#__codelineno-30-14"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;--- 2. Fichiers SGID ---&quot;</span>
+</span><span id="__span-30-15"><a id="__codelineno-30-15" name="__codelineno-30-15" href="#__codelineno-30-15"></a>find<span class="w"> </span>/<span class="w"> </span>-perm<span class="w"> </span>-2000<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-10
+</span><span id="__span-30-16"><a id="__codelineno-30-16" name="__codelineno-30-16" href="#__codelineno-30-16"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-30-17"><a id="__codelineno-30-17" name="__codelineno-30-17" href="#__codelineno-30-17"></a>
+</span><span id="__span-30-18"><a id="__codelineno-30-18" name="__codelineno-30-18" href="#__codelineno-30-18"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;--- 3. Fichiers accessibles en écriture par tous (world-writable) ---&quot;</span>
+</span><span id="__span-30-19"><a id="__codelineno-30-19" name="__codelineno-30-19" href="#__codelineno-30-19"></a>find<span class="w"> </span>/home<span class="w"> </span>-perm<span class="w"> </span>-o<span class="o">=</span>w<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span><span class="m">2</span>&gt;/dev/null
+</span><span id="__span-30-20"><a id="__codelineno-30-20" name="__codelineno-30-20" href="#__codelineno-30-20"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-30-21"><a id="__codelineno-30-21" name="__codelineno-30-21" href="#__codelineno-30-21"></a>
+</span><span id="__span-30-22"><a id="__codelineno-30-22" name="__codelineno-30-22" href="#__codelineno-30-22"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;--- 4. Répertoires sans sticky bit accessibles en écriture par tous ---&quot;</span>
+</span><span id="__span-30-23"><a id="__codelineno-30-23" name="__codelineno-30-23" href="#__codelineno-30-23"></a>find<span class="w"> </span>/<span class="w"> </span>-perm<span class="w"> </span>-o<span class="o">=</span>w<span class="w"> </span>!<span class="w"> </span>-perm<span class="w"> </span>-1000<span class="w"> </span>-type<span class="w"> </span>d<span class="w"> </span><span class="m">2</span>&gt;/dev/null
+</span><span id="__span-30-24"><a id="__codelineno-30-24" name="__codelineno-30-24" href="#__codelineno-30-24"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-30-25"><a id="__codelineno-30-25" name="__codelineno-30-25" href="#__codelineno-30-25"></a>
+</span><span id="__span-30-26"><a id="__codelineno-30-26" name="__codelineno-30-26" href="#__codelineno-30-26"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;--- 5. Fichiers sans propriétaire ou sans groupe ---&quot;</span>
+</span><span id="__span-30-27"><a id="__codelineno-30-27" name="__codelineno-30-27" href="#__codelineno-30-27"></a>find<span class="w"> </span>/home<span class="w"> </span>-nouser<span class="w"> </span>-o<span class="w"> </span>-nogroup<span class="w"> </span><span class="m">2</span>&gt;/dev/null
+</span><span id="__span-30-28"><a id="__codelineno-30-28" name="__codelineno-30-28" href="#__codelineno-30-28"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-30-29"><a id="__codelineno-30-29" name="__codelineno-30-29" href="#__codelineno-30-29"></a>
+</span><span id="__span-30-30"><a id="__codelineno-30-30" name="__codelineno-30-30" href="#__codelineno-30-30"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;=== FIN DE L’AUDIT ===&quot;</span>
 </span></code></pre></div></p>
 </li>
 <li>
 <p>Rendez-le exécutable et lancez-le :
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>$<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>audit-permissions.sh
-</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>$<span class="w"> </span>./audit-permissions.sh
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>$<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>audit-permissions.sh
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>$<span class="w"> </span>./audit-permissions.sh
 </span></code></pre></div></p>
 </li>
 <li>

@@ -979,15 +979,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#supplementary-exercises" class="md-nav__link">
+  <a href="#systems-programming" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ⭐ Supplementary Exercises
+        ⭐ Systems programming
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="⭐ Supplementary Exercises">
+    <nav class="md-nav" aria-label="⭐ Systems programming">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1439,15 +1439,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#supplementary-exercises" class="md-nav__link">
+  <a href="#systems-programming" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ⭐ Supplementary Exercises
+        ⭐ Systems programming
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="⭐ Supplementary Exercises">
+    <nav class="md-nav" aria-label="⭐ Systems programming">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1527,7 +1527,7 @@
 <li><strong>[Analyze]</strong> distinguish a <strong>process</strong> from a <strong>job</strong>; distinguish foreground from background.</li>
 <li><strong>[Apply]</strong> send signals to a process with <code>kill</code> (<code>SIGINT</code>, <code>SIGTSTP</code>, <code>SIGCONT</code>, <code>SIGTERM</code>, <code>SIGKILL</code>).</li>
 <li><strong>[Evaluate]</strong> choose between graceful termination (<code>SIGTERM</code>) and forced termination (<code>SIGKILL</code>).</li>
-<li><strong>[Create]</strong> <em>(optional — ⭐)</em> write a C program that reacts to signals and fork a child process.</li>
+<li><strong>[Create]</strong> write a C program that reacts to signals, forks a child process and waits for it (<code>signal</code>, <code>fork</code>, <code>wait</code>/<code>waitpid</code>, <code>execvp</code>).</li>
 </ul>
 <blockquote>
 <p><strong>Reference</strong>: Anderson, L. W., &amp; Krathwohl, D. R. (2001). <em>A Taxonomy for Learning, Teaching, and Assessing</em>. Longman. ISBN 978-0801319037.</p>
@@ -1589,13 +1589,16 @@ In this file, you will progressively record the results of the commands executed
 <blockquote>
 <p>📚 = Easy · 📚📚 = Medium · 📚📚📚 = Advanced</p>
 <p>Exercises <strong>1 to 7</strong> constitute the <strong>core curriculum</strong>, required for all students.
-Exercises <strong>8, 9, 10</strong> are <strong>supplementary exercises</strong> (⭐).</p>
+Exercises <strong>8, 9, 10</strong> (⭐) cover <strong>systems programming in C</strong>.
+<strong>As of 2026‑2027 they are part of the graded scope</strong>: they cover the
+"Programming" section of the module syllabus.</p>
 </blockquote>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Alignment with assessments (Biggs, 1996)</p>
 <p>Exercises 📚 and 📚📚 prepare for the <strong>CC S38</strong> and the <strong>graded lab S40</strong>.
-Exercises 📚📚📚 prepare for the <strong>DE S42 (MCQ)</strong> through their analysis and justification dimensions.</p>
+Exercises 📚📚📚 prepare for the <strong>DE S42 (MCQ)</strong> through their analysis and justification dimensions.
+The ⭐ exercises in this lab prepare for the <strong>system-call</strong> part of the <strong>DE S42</strong>.</p>
 <blockquote>
 <p><strong>Reference</strong>: Biggs, J. (1996). Enhancing teaching through constructive alignment. <em>Higher Education</em>, 32(3), 347–364. DOI: <a href="https://doi.org/10.1007/BF00138871">10.1007/BF00138871</a>.</p>
 </blockquote>
@@ -1650,7 +1653,8 @@ Exercises 📚📚📚 prepare for the <strong>DE S42 (MCQ)</strong> through the
 </div>
 <h3 id="exercise-1-redirecting-standard-output">Exercise 1 — Redirecting standard output 📚<a class="headerlink" href="#exercise-1-redirecting-standard-output" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Test the following commands and observe their results:
+<li>
+<p>Test the following commands and observe their results:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Est-ce que j&#39;apparais sur le terminal ?&quot;</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Ou bien dans le fichier ?&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>fichier.txt
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>$<span class="w"> </span>cat<span class="w"> </span>fichier.txt
@@ -1661,20 +1665,24 @@ Exercises 📚📚📚 prepare for the <strong>DE S42 (MCQ)</strong> through the
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Je veux vider le fichier&quot;</span><span class="w"> </span><span class="m">1</span>&gt;<span class="w"> </span>fichier.txt
 </span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>$<span class="w"> </span>cat<span class="w"> </span>fichier.txt
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Je m&#39;ajoute en fin de ligne&quot;</span><span class="w"> </span><span class="m">1</span>&gt;&gt;<span class="w"> </span>fichier.txt
-</span></code></pre></div></li>
+</span></code></pre></div></p>
+</li>
 <li>
 <p>Recall what the <code>cat</code> command does (<code>man cat</code>), then answer:</p>
-<div class="language-text highlight"><pre><span></span><code>- What is the difference between `&gt;` and `&gt;&gt;`?
-- What is the difference between `1&gt;` and `&gt;`?
-- What is the difference between `1&gt;&gt;` and `&gt;&gt;`?
-</code></pre></div>
+</li>
+<li>
+<p>What is the difference between <code>&gt;</code> and <code>&gt;&gt;</code>?</p>
+</li>
+<li>What is the difference between <code>1&gt;</code> and <code>&gt;</code>?</li>
+<li>
+<p>What is the difference between <code>1&gt;&gt;</code> and <code>&gt;&gt;</code>?</p>
 </li>
 <li>
 <p>Navigate to your home directory and run:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>ls<span class="w"> </span>&gt;<span class="w"> </span>list_files.txt<span class="p">;</span><span class="w"> </span>cat<span class="w"> </span>list_files.txt
-</span></code></pre></div>
-        - What does this command do?</p>
+</span></code></pre></div></p>
 </li>
+<li>What does this command do?</li>
 <li>Can you explain why the string <code>list_files.txt</code> appears inside the file <code>list_files.txt</code>?</li>
 </ol>
 <hr />
@@ -1682,14 +1690,18 @@ Exercises 📚📚📚 prepare for the <strong>DE S42 (MCQ)</strong> through the
 <ol>
 <li>In a directory <code>dir</code>, create a file <code>file-1.txt</code> whose content is <code>Hello world !</code>.</li>
 <li>Create a copy of <code>file-1.txt</code> named <code>file-2.txt</code>. Remove <strong>all read permissions</strong> from <code>file-2.txt</code>.</li>
-<li>Type the following command and note the results (you will get errors):
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span>cat<span class="w"> </span>file-1.txt<span class="w"> </span>file-2.txt<span class="w"> </span>file-3.txt
-</span></code></pre></div></li>
-<li>Which command succeeded? Which commands failed and why?</li>
+<li>
+<p>Type the following command and note the results (you will get errors):
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span>cat<span class="w"> </span>file-1.txt<span class="w"> </span>file-2.txt<span class="w"> </span>file-3.txt
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Which command succeeded? Which commands failed and why?</p>
+</li>
 <li>Redirect the standard output of the previous command to a file <code>result.txt</code>. Observe what is displayed on the terminal <strong>and</strong> what is in <code>result.txt</code>.</li>
 <li>
 <p>Then type:
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>cat<span class="w"> </span>file-1.txt<span class="w"> </span>file-2.txt<span class="w"> </span>file-3.txt<span class="w"> </span><span class="m">1</span>&gt;<span class="w"> </span>result.txt<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>error.txt<span class="w"> </span><span class="c1"># (i)</span>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span>cat<span class="w"> </span>file-1.txt<span class="w"> </span>file-2.txt<span class="w"> </span>file-3.txt<span class="w"> </span><span class="m">1</span>&gt;<span class="w"> </span>result.txt<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>error.txt<span class="w"> </span><span class="c1"># (i)</span>
 </span></code></pre></div></p>
 <ol>
 <li><code>1&gt;</code> redirects <strong>standard output</strong> (channel 1) to <code>result.txt</code>, <code>2&gt;</code> redirects <strong>standard error</strong> (channel 2) to <code>error.txt</code>. This separates normal results from error messages.</li>
@@ -1715,24 +1727,30 @@ The file <code>fichier.txt</code> is then <em>connected</em> to the standard inp
 <h3 id="exercise-3-redirecting-standard-input-and-revisiting-cat">Exercise 3 — Redirecting standard input and revisiting <code>cat</code> 📚📚<a class="headerlink" href="#exercise-3-redirecting-standard-input-and-revisiting-cat" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Consult the manual for <code>cat</code> and find how it behaves when <strong>no file is given</strong> as an argument.</li>
-<li>Test:
+<li>
+<p>Test:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span>cat
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>hello&lt;Entrée&gt;
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>world&lt;Entrée&gt;
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>&lt;Ctrl-d&gt;
 </span></code></pre></div>
-   How many arguments did <code>cat</code> receive? What did it display? Why?</li>
-<li>Now test:
+   How many arguments did <code>cat</code> receive? What did it display? Why?</p>
+</li>
+<li>
+<p>Now test:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$<span class="w"> </span>cat<span class="w"> </span>&gt;<span class="w"> </span>catout.txt
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>hello&lt;Entrée&gt;
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>world&lt;Entrée&gt;
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>&lt;Ctrl-d&gt;
 </span></code></pre></div>
-   Display the contents of <code>catout.txt</code>. What does it contain? Why?</li>
-<li>Finally type:
+   Display the contents of <code>catout.txt</code>. What does it contain? Why?</p>
+</li>
+<li>
+<p>Finally type:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>cat<span class="w"> </span>&lt;<span class="w"> </span>catout.txt
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>$<span class="w"> </span>cat<span class="w"> </span><span class="m">0</span>&lt;<span class="w"> </span>catout.txt
-</span></code></pre></div></li>
+</span></code></pre></div></p>
+</li>
 <li>How many arguments did <code>cat</code> receive? What did it display?</li>
 <li>What is the difference between <code>&lt;</code> and <code>0&lt;</code>?</li>
 </ol>
@@ -1742,7 +1760,7 @@ The file <code>fichier.txt</code> is then <em>connected</em> to the standard inp
 <summary>The pipe <code>|</code>: invented on a napkin in 1973</summary>
 <p>The <strong>pipe</strong> concept was proposed by <strong>Doug McIlroy</strong> (Bell Labs) as early as 1964, but it was <strong>Ken Thompson</strong> who implemented it in Unix in a single night in February 1973. The idea is remarkably elegant: rather than creating monolithic programs, you write <strong>small specialized tools</strong> and connect them together. This philosophy — <em>"Do one thing and do it well"</em> — became Unix's founding principle and still influences software architecture today (microservices, CI/CD pipelines).</p>
 <blockquote>
-<p>McIlroy, M. D. (1978). UNIX Time-Sharing System: Foreword. <em>The Bell System Technical Journal</em>, 57(6), 1899–1904. DOI: <a href="https://doi.org/10.1002/j.1538-7305.1978.tb02135.x">10.1002/j.1538-7305.1978.tb02135.x</a></p>
+<p>McIlroy, M. D., Pinson, E. N. &amp; Tague, B. A. (1978). UNIX Time-Sharing System: Foreword. <em>The Bell System Technical Journal</em>, 57(6), 1899–1904. DOI: <a href="https://doi.org/10.1002/j.1538-7305.1978.tb02135.x">10.1002/j.1538-7305.1978.tb02135.x</a></p>
 </blockquote>
 </details>
 <div class="admonition tip">
@@ -1755,26 +1773,34 @@ The file <code>fichier.txt</code> is then <em>connected</em> to the standard inp
 <h3 id="exercise-4-counting-headers-all-in-one">Exercise 4 — Counting headers: all in one 📚📚<a class="headerlink" href="#exercise-4-counting-headers-all-in-one" title="Permanent link">&para;</a></h3>
 <p>This exercise consolidates redirections <strong>and</strong> pipes. You will work with the <code>.h</code> files in the <code>/usr/include</code> directory (C library headers).</p>
 <ol>
-<li>Using <strong>only an output redirection</strong>, create a file <code>include_files.txt</code> listing all <code>.h</code> files in <code>/usr/include</code>:
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$<span class="w"> </span>ls<span class="w"> </span>/usr/include/*.h<span class="w"> </span>&gt;<span class="w"> </span>include_files.txt
-</span></code></pre></div></li>
+<li>
+<p>Using <strong>only an output redirection</strong>, create a file <code>include_files.txt</code> listing all <code>.h</code> files in <code>/usr/include</code>:
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$<span class="w"> </span>ls<span class="w"> </span>/usr/include/*.h<span class="w"> </span>&gt;<span class="w"> </span>include_files.txt
+</span></code></pre></div></p>
+</li>
 <li>
 <p>Test the following command and comment:
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>$<span class="w"> </span>ls<span class="w"> </span>/usr/include/*.h<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l<span class="w"> </span><span class="c1"># (i)</span>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>$<span class="w"> </span>ls<span class="w"> </span>/usr/include/*.h<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l<span class="w"> </span><span class="c1"># (i)</span>
 </span></code></pre></div></p>
 <ol>
 <li>The <code>|</code> (pipe) connects the output of <code>ls</code> to the input of <code>wc</code>. The <code>-l</code> option of <code>wc</code> counts the number of <strong>lines</strong> received — here, the number of <code>.h</code> files.</li>
 </ol>
-<p>Where is the result of <code>ls</code> redirected? Where does the standard input of <code>wc</code> come from? Where is the result of <code>wc</code> displayed?
-3. Display on the terminal the sentence
-   <code>Il y a &lt;nombre&gt; fichiers .h dans le répertoire /usr/include</code>
-   using <code>echo</code> and <strong>command substitution</strong> <code>$(...)</code> (covered in Lab 3, exercise 6).
-4. Enter the following command and comment:
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$<span class="w"> </span>wc<span class="w"> </span>-l<span class="w"> </span><span class="k">$(</span>ls<span class="w"> </span>/usr/include/*.h<span class="k">)</span>
-</span></code></pre></div>
-5. <strong>Analysis question</strong>: why does the result of question 4 differ from that of question 2? <em>(Hint: does <code>wc -l</code> receive the file names or their content?)</em>
-6. <strong>Justification question</strong>: write a command that appends to the <strong>end</strong> of <code>include_files.txt</code> the sentence from question 3, using <code>&gt;&gt;</code> and command substitution.</p>
+<p>Where is the result of <code>ls</code> redirected? Where does the standard input of <code>wc</code> come from? Where is the result of <code>wc</code> displayed?</p>
 </li>
+<li>
+<p>Display on the terminal the sentence
+    <code>Il y a &lt;nombre&gt; fichiers .h dans le répertoire /usr/include</code>
+    using <code>echo</code> and <strong>command substitution</strong> <code>$(...)</code> (covered in Lab 3, exercise 6).</p>
+</li>
+<li>
+<p>Enter the following command and comment:
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$<span class="w"> </span>wc<span class="w"> </span>-l<span class="w"> </span><span class="k">$(</span>ls<span class="w"> </span>/usr/include/*.h<span class="k">)</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Analysis question</strong>: why does the result of question 4 differ from that of question 2? <em>(Hint: does <code>wc -l</code> receive the file names or their content?)</em></p>
+</li>
+<li><strong>Justification question</strong>: write a command that appends to the <strong>end</strong> of <code>include_files.txt</code> the sentence from question 3, using <code>&gt;&gt;</code> and command substitution.</li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">This exercise is representative of a typical <strong>DE S42 (MCQ)</strong> item.</p>
@@ -1808,7 +1834,8 @@ The file <code>fichier.txt</code> is then <em>connected</em> to the standard inp
 <h3 id="exercise-5-observing-a-process-with-sleep">Exercise 5 — Observing a process with <code>sleep</code> 📚📚<a class="headerlink" href="#exercise-5-observing-a-process-with-sleep" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Run <code>sleep 10</code> and observe: does the prompt return immediately?</li>
-<li>Test the following sequence, noting the output of <code>ps</code> each time:
+<li>
+<p>Test the following sequence, noting the output of <code>ps</code> each time:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>$<span class="w"> </span>ps
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>$<span class="w"> </span>sleep<span class="w"> </span><span class="m">240</span>
 </span></code></pre></div>
@@ -1818,7 +1845,8 @@ The file <code>fichier.txt</code> is then <em>connected</em> to the standard inp
 </span></code></pre></div>
    Then <kbd>Ctrl</kbd>+<kbd>C</kbd>, then:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$<span class="w"> </span>ps
-</span></code></pre></div></li>
+</span></code></pre></div></p>
+</li>
 <li>
 <p><strong>Questions</strong>:</p>
 <ul>
@@ -1843,14 +1871,12 @@ The file <code>fichier.txt</code> is then <em>connected</em> to the standard inp
 <ol>
 <li>
 <p>Write a C program <code>compteur.c</code> that indefinitely increments a variable <code>i</code> and displays its value <strong>on standard output every multiple of 100</strong>. Use <code>sleep</code> to slow down execution and observe the output.</p>
-<div class="admonition info">
-<p class="admonition-title">Where is <code>sleep</code> in C?</p>
-<p>Type <code>man 3 sleep</code> to see the signature of the <code>sleep</code> function in the standard library (<code>&lt;unistd.h&gt;</code>).</p>
-</div>
+<p>!!! info "Where is <code>sleep</code> in C?"
+     Type <code>man 3 sleep</code> to see the signature of the <code>sleep</code> function in the standard library (<code>&lt;unistd.h&gt;</code>).</p>
 </li>
 <li>
 <p>Compile with <code>gcc -Wall -o compteur compteur.c</code>. Test:
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>$<span class="w"> </span>./compteur
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>$<span class="w"> </span>./compteur
 </span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>&lt;Ctrl-z&gt;<span class="w">           </span><span class="c1"># (i)</span>
 </span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>$<span class="w"> </span><span class="nb">jobs</span>
 </span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>$<span class="w"> </span><span class="nb">jobs</span><span class="w"> </span>-p<span class="w">           </span><span class="c1"># (ii)</span>
@@ -1948,15 +1974,34 @@ The file <code>fichier.txt</code> is then <em>connected</em> to the standard inp
 </blockquote>
 </div>
 <h3 id="exercise-7-manipulating-signals-with-kill">Exercise 7 — Manipulating signals with <code>kill</code> 📚📚📚<a class="headerlink" href="#exercise-7-manipulating-signals-with-kill" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Structured help</p>
+<ul>
+<li><strong>Naming the target.</strong> <code>kill</code> accepts a <strong>PID</strong> (<code>kill 12345</code>) or a <strong>job number</strong>
+  prefixed with <code>%</code> (<code>kill %2</code>). <code>jobs -p</code> gives the PIDs, <code>jobs</code> the job numbers.</li>
+<li><strong>Naming the signal.</strong> Three spellings are equivalent:
+  <code>kill -SIGTERM &lt;target&gt;</code>, <code>kill -s SIGTERM &lt;target&gt;</code>, <code>kill -15 &lt;target&gt;</code>.
+  With no signal given, <code>kill</code> sends <code>SIGTERM</code>.</li>
+<li><strong>Reading the effect.</strong> After each <code>kill</code>, run <code>jobs</code> again: the status column
+  goes from <code>Running</code> to <code>Stopped</code> (suspended) then to <code>Terminated</code>/<code>Killed</code>. A
+  finished process only disappears from <code>jobs</code> on the <strong>second</strong> call — which is why
+  question 3 has you type <code>jobs</code> twice.</li>
+<li><strong>If you lose control.</strong> <code>jobs -p | xargs kill -9</code> terminates every job of the
+  current terminal.</li>
+</ul>
+</div>
 <ol>
 <li>Type <code>kill -L</code> and note the numbers associated with <code>SIGINT</code>, <code>SIGTSTP</code>, <code>SIGCONT</code>, <code>SIGTERM</code>, <code>SIGKILL</code>.</li>
-<li>The <code>&amp;</code> character at the end of a command launches it in the background. Launch <strong>three</strong> <code>./compteur</code> processes in the background:
+<li>
+<p>The <code>&amp;</code> character at the end of a command launches it in the background. Launch <strong>three</strong> <code>./compteur</code> processes in the background:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>$<span class="w"> </span>./compteur<span class="w"> </span><span class="p">&amp;</span><span class="w">           </span><span class="c1"># processus 1</span>
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>$<span class="w"> </span>./compteur<span class="w"> </span><span class="p">&amp;</span><span class="w">           </span><span class="c1"># processus 2</span>
 </span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>$<span class="w"> </span>./compteur<span class="w"> </span><span class="p">&amp;</span><span class="w">           </span><span class="c1"># processus 3</span>
 </span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>$<span class="w"> </span><span class="nb">jobs</span><span class="w"> </span>-p<span class="w">                </span><span class="c1"># note les PID</span>
-</span></code></pre></div></li>
-<li>Manipulate the signals:
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Manipulate the signals:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>$<span class="w"> </span><span class="nb">kill</span><span class="w"> </span>-SIGTSTP<span class="w"> </span>&lt;PID<span class="w"> </span>du<span class="w"> </span>processus<span class="w"> </span><span class="m">1</span>&gt;
 </span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>$<span class="w"> </span><span class="nb">jobs</span>
 </span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>$<span class="w"> </span><span class="nb">kill</span><span class="w"> </span>-SIGINT<span class="w"> </span>%2
@@ -1968,7 +2013,8 @@ The file <code>fichier.txt</code> is then <em>connected</em> to the standard inp
 </span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>$<span class="w"> </span><span class="nb">jobs</span>
 </span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>$<span class="w"> </span><span class="nb">kill</span><span class="w"> </span>-9<span class="w"> </span>&lt;PID<span class="w"> </span>du<span class="w"> </span>processus<span class="w"> </span><span class="m">3</span>&gt;
 </span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>$<span class="w"> </span><span class="nb">jobs</span>
-</span></code></pre></div></li>
+</span></code></pre></div></p>
+</li>
 <li>
 <p><strong>Questions</strong>:</p>
 <ul>
@@ -1989,7 +2035,7 @@ The file <code>fichier.txt</code> is then <em>connected</em> to the standard inp
 <hr />
 <h2 id="summary-what-you-should-be-able-to-do">Summary — What You Should Be Able to Do<a class="headerlink" href="#summary-what-you-should-be-able-to-do" title="Permanent link">&para;</a></h2>
 <div class="admonition success">
-<p class="admonition-title">Quick self-assessment (core curriculum)</p>
+<p class="admonition-title">Quick self-assessment</p>
 <p>Before leaving the session, verify that you can:</p>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Redirect <code>stdout</code> (<code>&gt;</code>, <code>&gt;&gt;</code>), <code>stderr</code> (<code>2&gt;</code>), <code>stdin</code> (<code>&lt;</code>).</li>
@@ -2001,47 +2047,86 @@ The file <code>fichier.txt</code> is then <em>connected</em> to the standard inp
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Send a signal with <code>kill</code> using the different syntaxes (<code>-SIGTERM</code>, <code>-s SIGTERM</code>, <code>-15</code>).</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Choose between <code>SIGTERM</code> (graceful) and <code>SIGKILL</code> (forced) depending on the context.</li>
 </ul>
+<p><strong>Systems programming (⭐ — graded)</strong>:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Install a signal handler with <code>signal()</code> and explain why <code>sigaction()</code> is preferred.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Create a child process with <code>fork()</code> and tell the two execution paths apart from the return value.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Wait for a child with <code>wait()</code> / <code>waitpid()</code> and explain what a zombie process is.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Replace a process image with <code>execvp()</code> and justify why it does not return on success.</li>
+</ul>
 <p>If an item is not checked, <strong>go back to the corresponding exercise</strong>.</p>
 </div>
 <hr />
-<h2 id="supplementary-exercises">⭐ Supplementary Exercises<a class="headerlink" href="#supplementary-exercises" title="Permanent link">&para;</a></h2>
+<h2 id="systems-programming">⭐ Systems programming<a class="headerlink" href="#systems-programming" title="Permanent link">&para;</a></h2>
 <div class="admonition star">
-<p class="admonition-title">Who are exercises 8, 9, 10 for?</p>
-<p>You have completed exercises 1 to 7? These three exercises close the C programming progression started in Lab 3 and have you write a <strong>mini-shell</strong>.</p>
-<p><strong>Reminder</strong> of system calls covered in <strong>Lab 3 ⭐</strong>: <code>open</code>, <code>read</code>, <code>write</code>, <code>close</code>, <code>perror</code>, <code>dup</code>, <code>dup2</code>.</p>
-<p><strong>Lab 4 ⭐</strong>: <strong><code>signal</code></strong>, <strong><code>fork</code></strong>, <strong><code>exec*</code></strong>, <strong><code>wait</code></strong> — the core of Unix multitasking.</p>
-<p>The targeted taxonomic levels are <strong>[Analyze]</strong>, <strong>[Evaluate]</strong> and <strong>[Create]</strong> (Bloom's revised).</p>
-<p>These exercises are <strong>optional</strong> and <strong>not graded</strong>.</p>
+<p class="admonition-title">Exercises 8, 9 and 10 are part of the syllabus</p>
+<p>These three exercises close the C programming progression started in Lab 3 and have
+you write a <strong>mini-shell</strong>.</p>
+<p><strong>Reminder</strong> of the system calls covered in <strong>Lab 3 ⭐</strong>: <code>open</code>, <code>read</code>, <code>write</code>,
+<code>close</code>, <code>perror</code>, <code>dup</code>, <code>dup2</code>.</p>
+<p><strong>Lab 4 ⭐</strong>: <strong><code>signal</code></strong>, <strong><code>fork</code></strong>, <strong><code>exec*</code></strong>, <strong><code>wait</code></strong> / <strong><code>waitpid</code></strong> — the
+core of Unix multitasking.</p>
+<p>Targeted taxonomic levels: <strong>[Analyze]</strong>, <strong>[Evaluate]</strong>, <strong>[Create]</strong> (revised Bloom).</p>
+<div class="admonition warning">
+<p class="admonition-title">Change for 2026‑2027</p>
+<p>These exercises used to be presented as optional. <strong>They are now graded</strong>:
+<code>fork</code>, <code>exec*</code>, <code>wait</code> and signals are part of the <strong>DE S42</strong> scope.</p>
+</div>
 </div>
 <h3 id="exercise-8-catching-a-signal-in-c-with-signal">Exercise 8 — Catching a signal in C with <code>signal()</code> ⭐<a class="headerlink" href="#exercise-8-catching-a-signal-in-c-with-signal" title="Permanent link">&para;</a></h3>
 <p>The <code>signal()</code> system call allows you to install a <strong>handler</strong> that will be called each time the process receives a given signal.</p>
 <ol>
-<li>Read the manual page: <code>man 2 signal</code>. Note the signature.</li>
-<li>Create <code>catch-sigint.c</code>:
-   <div class="language-c highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="c1">      /* printf */</span>
-</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;signal.h&gt;</span><span class="c1">     /* signal, SIGINT */</span>
-</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unistd.h&gt;</span><span class="c1">     /* sleep */</span>
-</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
-</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="k">static</span><span class="w"> </span><span class="k">volatile</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">compteur_sigint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>
-</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="kt">void</span><span class="w"> </span><span class="nf">handler</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">sig</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">    </span><span class="n">compteur_sigint</span><span class="o">++</span><span class="p">;</span>
-</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">[Signal %d reçu — total : %d]</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">sig</span><span class="p">,</span><span class="w"> </span><span class="n">compteur_sigint</span><span class="p">);</span>
-</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="p">}</span>
-</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>
-</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="w">    </span><span class="n">signal</span><span class="p">(</span><span class="n">SIGINT</span><span class="p">,</span><span class="w"> </span><span class="n">handler</span><span class="p">);</span>
+<li>
+<p>Read the manual page: <code>man 2 signal</code>. Note the signature.</p>
+</li>
+<li>
+<p>Create <code>catch-sigint.c</code>:</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="c1">      /* printf */</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;signal.h&gt;</span><span class="c1">     /* signal, SIGINT, sig_atomic_t */</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unistd.h&gt;</span><span class="c1">     /* pause, write, getpid, STDERR_FILENO */</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span><span class="c1">     /* strlen */</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="k">static</span><span class="w"> </span><span class="k">volatile</span><span class="w"> </span><span class="kt">sig_atomic_t</span><span class="w"> </span><span class="n">sigint_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">   </span><span class="c1">// (i)</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="kt">void</span><span class="w"> </span><span class="nf">handler</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">sig</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">    </span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">sig</span><span class="p">;</span>
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="w">    </span><span class="n">sigint_count</span><span class="o">++</span><span class="p">;</span>
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;</span><span class="se">\n</span><span class="s">[SIGINT received]</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="w">    </span><span class="n">write</span><span class="p">(</span><span class="n">STDERR_FILENO</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="p">,</span><span class="w"> </span><span class="n">strlen</span><span class="p">(</span><span class="n">msg</span><span class="p">));</span><span class="w">      </span><span class="c1">// (ii)</span>
+</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="p">}</span>
 </span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>
-</span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;PID = %d. Appuyez sur Ctrl-C plusieurs fois...</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">getpid</span><span class="p">());</span>
-</span><span id="__span-19-16"><a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">compteur_sigint</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-19-17"><a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a><span class="w">        </span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-</span><span id="__span-19-18"><a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-19-19"><a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Trois SIGINT reçus, je m&#39;arrête proprement.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span id="__span-19-20"><a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-19-21"><a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a><span class="p">}</span>
-</span></code></pre></div></li>
-<li>Compile: <code>gcc -Wall -o catch-sigint catch-sigint.c</code>.</li>
-<li>Run <code>./catch-sigint</code>, then press <kbd>Ctrl</kbd>+<kbd>C</kbd> <strong>3 times</strong>.</li>
+</span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-19-16"><a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a><span class="w">    </span><span class="n">signal</span><span class="p">(</span><span class="n">SIGINT</span><span class="p">,</span><span class="w"> </span><span class="n">handler</span><span class="p">);</span>
+</span><span id="__span-19-17"><a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>
+</span><span id="__span-19-18"><a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;PID = %d. Press Ctrl-C several times...</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">getpid</span><span class="p">());</span>
+</span><span id="__span-19-19"><a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">sigint_count</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-19-20"><a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a><span class="w">        </span><span class="n">pause</span><span class="p">();</span><span class="w">                                  </span><span class="c1">// (iii)</span>
+</span><span id="__span-19-21"><a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-19-22"><a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Three SIGINT received (total = %d), exiting cleanly.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+</span><span id="__span-19-23"><a id="__codelineno-19-23" name="__codelineno-19-23" href="#__codelineno-19-23"></a><span class="w">           </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">sigint_count</span><span class="p">);</span>
+</span><span id="__span-19-24"><a id="__codelineno-19-24" name="__codelineno-19-24" href="#__codelineno-19-24"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-19-25"><a id="__codelineno-19-25" name="__codelineno-19-25" href="#__codelineno-19-25"></a><span class="p">}</span>
+</span></code></pre></div>
+<ol>
+<li><code>volatile sig_atomic_t</code> is <strong>the only type</strong> the C standard guarantees can be
+    read and written atomically between the main program and a signal handler. A
+    plain <code>int</code> gives no such guarantee.</li>
+<li>We write with <code>write()</code> and <strong>not</strong> <code>printf()</code>: a signal handler may only call
+    so-called <strong>async-signal-safe</strong> functions. <code>printf()</code> is not one of them —
+    calling it from a handler can corrupt the <code>stdio</code> buffers if the signal arrives
+    at the wrong moment. Official list: <code>man 7 signal-safety</code>.</li>
+<li><code>pause()</code> suspends the process until a signal arrives — more accurate than a
+    <code>sleep(1)</code> that would poll the variable periodically.</li>
+</ol>
+</li>
+<li>
+<p>Compile without letting a single warning through:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>$<span class="w"> </span>gcc<span class="w"> </span>-Wall<span class="w"> </span>-Wextra<span class="w"> </span>-Wstrict-prototypes<span class="w"> </span>-o<span class="w"> </span>catch-sigint<span class="w"> </span>catch-sigint.c
+</span></code></pre></div>
+</li>
+<li>
+<p>Run <code>./catch-sigint</code>, then press <kbd>Ctrl</kbd>+<kbd>C</kbd> <strong>3 times</strong>.</p>
+</li>
 <li>
 <p><strong>Questions</strong>:</p>
 <ul>
@@ -2049,6 +2134,11 @@ The file <code>fichier.txt</code> is then <em>connected</em> to the standard inp
 <li>Try sending <code>SIGTERM</code> from another terminal: <code>kill &lt;PID&gt;</code>. What happens?</li>
 <li>Then try <code>kill -9 &lt;PID&gt;</code>. What happens? Why?</li>
 </ul>
+</li>
+<li>
+<p><strong>Analysis question</strong>: replace <code>write()</code> with the original <code>printf()</code> in the
+    handler, then run the program while holding <kbd>Ctrl</kbd>+<kbd>C</kbd> down. The
+    program may freeze or print garbage. Explain why, using <code>man 7 signal-safety</code>.</p>
 </li>
 </ol>
 <div class="admonition info">
@@ -2060,50 +2150,54 @@ The file <code>fichier.txt</code> is then <em>connected</em> to the standard inp
 </div>
 <h3 id="exercise-9-creating-a-child-process-with-fork">Exercise 9 — Creating a child process with <code>fork()</code> ⭐<a class="headerlink" href="#exercise-9-creating-a-child-process-with-fork" title="Permanent link">&para;</a></h3>
 <p><code>fork()</code> is the system call that <strong>duplicates</strong> the calling process: upon returning from <code>fork()</code>, <strong>two</strong> identical processes execute in parallel. The return value allows you to distinguish them:</p>
-<blockquote>
 <ul>
 <li><code>&gt; 0</code> (child's PID) → we are in the <strong>parent</strong>.</li>
 <li><code>== 0</code> → we are in the <strong>child</strong>.</li>
-<li><code>&lt; 0</code> → failure.</li>
-</ul>
-</blockquote>
-<ol>
-<li>Read: <code>man 2 fork</code> then <code>man 2 wait</code>.</li>
-<li>Create <code>fork-demo.c</code>:
-   <div class="language-c highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
-</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unistd.h&gt;</span><span class="c1">     /* fork, getpid, getppid */</span>
-</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sys/wait.h&gt;</span><span class="c1">   /* wait */</span>
-</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span><span class="c1">     /* exit */</span>
-</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>
-</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Avant fork : PID = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">getpid</span><span class="p">());</span>
-</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>
-</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">    </span><span class="kt">pid_t</span><span class="w"> </span><span class="n">pid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fork</span><span class="p">();</span>
-</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pid</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="w">        </span><span class="n">perror</span><span class="p">(</span><span class="s">&quot;fork&quot;</span><span class="p">);</span>
-</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a>
-</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pid</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="w">        </span><span class="cm">/* --- Code du processus fils --- */</span>
-</span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[FILS]   PID = %d, parent = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
-</span><span id="__span-20-18"><a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a><span class="w">               </span><span class="n">getpid</span><span class="p">(),</span><span class="w"> </span><span class="n">getppid</span><span class="p">());</span>
-</span><span id="__span-20-19"><a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a><span class="w">        </span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</span><span id="__span-20-20"><a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[FILS]   Je termine.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span id="__span-20-21"><a id="__codelineno-20-21" name="__codelineno-20-21" href="#__codelineno-20-21"></a><span class="w">        </span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-</span><span id="__span-20-22"><a id="__codelineno-20-22" name="__codelineno-20-22" href="#__codelineno-20-22"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-20-23"><a id="__codelineno-20-23" name="__codelineno-20-23" href="#__codelineno-20-23"></a><span class="w">        </span><span class="cm">/* --- Code du processus parent --- */</span>
-</span><span id="__span-20-24"><a id="__codelineno-20-24" name="__codelineno-20-24" href="#__codelineno-20-24"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[PARENT] PID = %d, fils créé = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
-</span><span id="__span-20-25"><a id="__codelineno-20-25" name="__codelineno-20-25" href="#__codelineno-20-25"></a><span class="w">               </span><span class="n">getpid</span><span class="p">(),</span><span class="w"> </span><span class="n">pid</span><span class="p">);</span>
-</span><span id="__span-20-26"><a id="__codelineno-20-26" name="__codelineno-20-26" href="#__codelineno-20-26"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">status</span><span class="p">;</span>
-</span><span id="__span-20-27"><a id="__codelineno-20-27" name="__codelineno-20-27" href="#__codelineno-20-27"></a><span class="w">        </span><span class="n">wait</span><span class="p">(</span><span class="o">&amp;</span><span class="n">status</span><span class="p">);</span><span class="w">     </span><span class="cm">/* attend la fin du fils */</span>
-</span><span id="__span-20-28"><a id="__codelineno-20-28" name="__codelineno-20-28" href="#__codelineno-20-28"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[PARENT] Le fils %d s&#39;est terminé.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">pid</span><span class="p">);</span>
-</span><span id="__span-20-29"><a id="__codelineno-20-29" name="__codelineno-20-29" href="#__codelineno-20-29"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-20-30"><a id="__codelineno-20-30" name="__codelineno-20-30" href="#__codelineno-20-30"></a>
-</span><span id="__span-20-31"><a id="__codelineno-20-31" name="__codelineno-20-31" href="#__codelineno-20-31"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-20-32"><a id="__codelineno-20-32" name="__codelineno-20-32" href="#__codelineno-20-32"></a><span class="p">}</span>
-</span></code></pre></div></li>
-<li>Compile and run several times. Observe the PIDs.</li>
+<li>
+<p><code>&lt; 0</code> → failure.</p>
+</li>
+<li>
+<p>Read: <code>man 2 fork</code> then <code>man 2 wait</code>.</p>
+</li>
+<li>
+<p>Create <code>fork-demo.c</code>:
+   <div class="language-c highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unistd.h&gt;</span><span class="c1">     /* fork, getpid, getppid */</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sys/wait.h&gt;</span><span class="c1">   /* wait */</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span><span class="c1">     /* exit */</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Avant fork : PID = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">getpid</span><span class="p">());</span>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="w">    </span><span class="kt">pid_t</span><span class="w"> </span><span class="n">pid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fork</span><span class="p">();</span>
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pid</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="w">        </span><span class="n">perror</span><span class="p">(</span><span class="s">&quot;fork&quot;</span><span class="p">);</span>
+</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>
+</span><span id="__span-21-15"><a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pid</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-21-16"><a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="w">        </span><span class="cm">/* --- Code du processus fils --- */</span>
+</span><span id="__span-21-17"><a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[FILS]   PID = %d, parent = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+</span><span id="__span-21-18"><a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a><span class="w">               </span><span class="n">getpid</span><span class="p">(),</span><span class="w"> </span><span class="n">getppid</span><span class="p">());</span>
+</span><span id="__span-21-19"><a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a><span class="w">        </span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</span><span id="__span-21-20"><a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[FILS]   Je termine.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-21-21"><a id="__codelineno-21-21" name="__codelineno-21-21" href="#__codelineno-21-21"></a><span class="w">        </span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span><span id="__span-21-22"><a id="__codelineno-21-22" name="__codelineno-21-22" href="#__codelineno-21-22"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-21-23"><a id="__codelineno-21-23" name="__codelineno-21-23" href="#__codelineno-21-23"></a><span class="w">        </span><span class="cm">/* --- Code du processus parent --- */</span>
+</span><span id="__span-21-24"><a id="__codelineno-21-24" name="__codelineno-21-24" href="#__codelineno-21-24"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[PARENT] PID = %d, fils créé = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+</span><span id="__span-21-25"><a id="__codelineno-21-25" name="__codelineno-21-25" href="#__codelineno-21-25"></a><span class="w">               </span><span class="n">getpid</span><span class="p">(),</span><span class="w"> </span><span class="n">pid</span><span class="p">);</span>
+</span><span id="__span-21-26"><a id="__codelineno-21-26" name="__codelineno-21-26" href="#__codelineno-21-26"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">status</span><span class="p">;</span>
+</span><span id="__span-21-27"><a id="__codelineno-21-27" name="__codelineno-21-27" href="#__codelineno-21-27"></a><span class="w">        </span><span class="n">wait</span><span class="p">(</span><span class="o">&amp;</span><span class="n">status</span><span class="p">);</span><span class="w">     </span><span class="cm">/* attend la fin du fils */</span>
+</span><span id="__span-21-28"><a id="__codelineno-21-28" name="__codelineno-21-28" href="#__codelineno-21-28"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[PARENT] Le fils %d s&#39;est terminé.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">pid</span><span class="p">);</span>
+</span><span id="__span-21-29"><a id="__codelineno-21-29" name="__codelineno-21-29" href="#__codelineno-21-29"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-21-30"><a id="__codelineno-21-30" name="__codelineno-21-30" href="#__codelineno-21-30"></a>
+</span><span id="__span-21-31"><a id="__codelineno-21-31" name="__codelineno-21-31" href="#__codelineno-21-31"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-21-32"><a id="__codelineno-21-32" name="__codelineno-21-32" href="#__codelineno-21-32"></a><span class="p">}</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Compile and run several times. Observe the PIDs.</p>
+</li>
 <li>
 <p><strong>Questions</strong>:</p>
 <ul>
@@ -2112,7 +2206,7 @@ The file <code>fichier.txt</code> is then <em>connected</em> to the standard inp
 <li>Modify the program to create <strong>two children</strong> (two successive <code>fork()</code> calls on the parent side). The parent must wait for both children before terminating.</li>
 </ul>
 </li>
-</ol>
+</ul>
 <h3 id="exercise-10-mini-project-a-mini-shell-that-executes-a-command">Exercise 10 — Mini-project: a mini-shell that executes a command ⭐<a class="headerlink" href="#exercise-10-mini-project-a-mini-shell-that-executes-a-command" title="Permanent link">&para;</a></h3>
 <p>When you type <code>ls /tmp</code> in <code>bash</code>, the shell actually does:</p>
 <ol>
@@ -2122,51 +2216,57 @@ The file <code>fichier.txt</code> is then <em>connected</em> to the standard inp
 </ol>
 <p>You are going to reproduce this mechanism.</p>
 <ol>
-<li>Create <code>mysh.c</code> in <code>~/ti307/c/</code>:
-   <div class="language-c highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unistd.h&gt;</span><span class="c1">     /* fork, execvp */</span>
-</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sys/wait.h&gt;</span><span class="c1">   /* wait */</span>
-</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span><span class="c1">     /* exit */</span>
-</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>
-</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">argv</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">argc</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="w">        </span><span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span>
-</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="w">                </span><span class="s">&quot;Usage: %s &lt;commande&gt; [arguments...]</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
-</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>
-</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="w">    </span><span class="kt">pid_t</span><span class="w"> </span><span class="n">pid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fork</span><span class="p">();</span>
-</span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pid</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-21-15"><a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a><span class="w">        </span><span class="n">perror</span><span class="p">(</span><span class="s">&quot;fork&quot;</span><span class="p">);</span>
-</span><span id="__span-21-16"><a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-</span><span id="__span-21-17"><a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-21-18"><a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a>
-</span><span id="__span-21-19"><a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pid</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-21-20"><a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a><span class="w">        </span><span class="cm">/* Fils : remplace son image mémoire */</span>
-</span><span id="__span-21-21"><a id="__codelineno-21-21" name="__codelineno-21-21" href="#__codelineno-21-21"></a><span class="w">        </span><span class="n">execvp</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="o">&amp;</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
-</span><span id="__span-21-22"><a id="__codelineno-21-22" name="__codelineno-21-22" href="#__codelineno-21-22"></a><span class="w">        </span><span class="cm">/* execvp ne revient que s&#39;il a échoué */</span>
-</span><span id="__span-21-23"><a id="__codelineno-21-23" name="__codelineno-21-23" href="#__codelineno-21-23"></a><span class="w">        </span><span class="n">perror</span><span class="p">(</span><span class="s">&quot;execvp&quot;</span><span class="p">);</span>
-</span><span id="__span-21-24"><a id="__codelineno-21-24" name="__codelineno-21-24" href="#__codelineno-21-24"></a><span class="w">        </span><span class="n">exit</span><span class="p">(</span><span class="mi">127</span><span class="p">);</span>
-</span><span id="__span-21-25"><a id="__codelineno-21-25" name="__codelineno-21-25" href="#__codelineno-21-25"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-21-26"><a id="__codelineno-21-26" name="__codelineno-21-26" href="#__codelineno-21-26"></a><span class="w">        </span><span class="cm">/* Parent : attend le fils */</span>
-</span><span id="__span-21-27"><a id="__codelineno-21-27" name="__codelineno-21-27" href="#__codelineno-21-27"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">status</span><span class="p">;</span>
-</span><span id="__span-21-28"><a id="__codelineno-21-28" name="__codelineno-21-28" href="#__codelineno-21-28"></a><span class="w">        </span><span class="n">waitpid</span><span class="p">(</span><span class="n">pid</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">status</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
-</span><span id="__span-21-29"><a id="__codelineno-21-29" name="__codelineno-21-29" href="#__codelineno-21-29"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">WIFEXITED</span><span class="p">(</span><span class="n">status</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-21-30"><a id="__codelineno-21-30" name="__codelineno-21-30" href="#__codelineno-21-30"></a><span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">[mysh] Le fils a terminé avec code %d.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
-</span><span id="__span-21-31"><a id="__codelineno-21-31" name="__codelineno-21-31" href="#__codelineno-21-31"></a><span class="w">                   </span><span class="n">WEXITSTATUS</span><span class="p">(</span><span class="n">status</span><span class="p">));</span>
-</span><span id="__span-21-32"><a id="__codelineno-21-32" name="__codelineno-21-32" href="#__codelineno-21-32"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-21-33"><a id="__codelineno-21-33" name="__codelineno-21-33" href="#__codelineno-21-33"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-21-34"><a id="__codelineno-21-34" name="__codelineno-21-34" href="#__codelineno-21-34"></a>
-</span><span id="__span-21-35"><a id="__codelineno-21-35" name="__codelineno-21-35" href="#__codelineno-21-35"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-21-36"><a id="__codelineno-21-36" name="__codelineno-21-36" href="#__codelineno-21-36"></a><span class="p">}</span>
-</span></code></pre></div></li>
-<li>Compile: <code>gcc -Wall -o mysh mysh.c</code>.</li>
-<li>Test:
-   <div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>$<span class="w"> </span>./mysh<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>/tmp
-</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>$<span class="w"> </span>./mysh<span class="w"> </span>date
-</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>$<span class="w"> </span>./mysh<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>Hello<span class="w"> </span>from<span class="w"> </span>mysh
-</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>$<span class="w"> </span>./mysh<span class="w"> </span>/commande/inexistante
-</span></code></pre></div></li>
+<li>
+<p>Create <code>mysh.c</code> in <code>~/ti307/c/</code>:
+   <div class="language-c highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unistd.h&gt;</span><span class="c1">     /* fork, execvp */</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;sys/wait.h&gt;</span><span class="c1">   /* wait */</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span><span class="c1">     /* exit */</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">argv</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">argc</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="w">        </span><span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span>
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="w">                </span><span class="s">&quot;Usage: %s &lt;commande&gt; [arguments...]</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-22-12"><a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>
+</span><span id="__span-22-13"><a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a><span class="w">    </span><span class="kt">pid_t</span><span class="w"> </span><span class="n">pid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fork</span><span class="p">();</span>
+</span><span id="__span-22-14"><a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pid</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-22-15"><a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a><span class="w">        </span><span class="n">perror</span><span class="p">(</span><span class="s">&quot;fork&quot;</span><span class="p">);</span>
+</span><span id="__span-22-16"><a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-22-17"><a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-22-18"><a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a>
+</span><span id="__span-22-19"><a id="__codelineno-22-19" name="__codelineno-22-19" href="#__codelineno-22-19"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pid</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-22-20"><a id="__codelineno-22-20" name="__codelineno-22-20" href="#__codelineno-22-20"></a><span class="w">        </span><span class="cm">/* Fils : remplace son image mémoire */</span>
+</span><span id="__span-22-21"><a id="__codelineno-22-21" name="__codelineno-22-21" href="#__codelineno-22-21"></a><span class="w">        </span><span class="n">execvp</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="o">&amp;</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+</span><span id="__span-22-22"><a id="__codelineno-22-22" name="__codelineno-22-22" href="#__codelineno-22-22"></a><span class="w">        </span><span class="cm">/* execvp ne revient que s&#39;il a échoué */</span>
+</span><span id="__span-22-23"><a id="__codelineno-22-23" name="__codelineno-22-23" href="#__codelineno-22-23"></a><span class="w">        </span><span class="n">perror</span><span class="p">(</span><span class="s">&quot;execvp&quot;</span><span class="p">);</span>
+</span><span id="__span-22-24"><a id="__codelineno-22-24" name="__codelineno-22-24" href="#__codelineno-22-24"></a><span class="w">        </span><span class="n">exit</span><span class="p">(</span><span class="mi">127</span><span class="p">);</span>
+</span><span id="__span-22-25"><a id="__codelineno-22-25" name="__codelineno-22-25" href="#__codelineno-22-25"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-22-26"><a id="__codelineno-22-26" name="__codelineno-22-26" href="#__codelineno-22-26"></a><span class="w">        </span><span class="cm">/* Parent : attend le fils */</span>
+</span><span id="__span-22-27"><a id="__codelineno-22-27" name="__codelineno-22-27" href="#__codelineno-22-27"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">status</span><span class="p">;</span>
+</span><span id="__span-22-28"><a id="__codelineno-22-28" name="__codelineno-22-28" href="#__codelineno-22-28"></a><span class="w">        </span><span class="n">waitpid</span><span class="p">(</span><span class="n">pid</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">status</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+</span><span id="__span-22-29"><a id="__codelineno-22-29" name="__codelineno-22-29" href="#__codelineno-22-29"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">WIFEXITED</span><span class="p">(</span><span class="n">status</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-22-30"><a id="__codelineno-22-30" name="__codelineno-22-30" href="#__codelineno-22-30"></a><span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">[mysh] Le fils a terminé avec code %d.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+</span><span id="__span-22-31"><a id="__codelineno-22-31" name="__codelineno-22-31" href="#__codelineno-22-31"></a><span class="w">                   </span><span class="n">WEXITSTATUS</span><span class="p">(</span><span class="n">status</span><span class="p">));</span>
+</span><span id="__span-22-32"><a id="__codelineno-22-32" name="__codelineno-22-32" href="#__codelineno-22-32"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-22-33"><a id="__codelineno-22-33" name="__codelineno-22-33" href="#__codelineno-22-33"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-22-34"><a id="__codelineno-22-34" name="__codelineno-22-34" href="#__codelineno-22-34"></a>
+</span><span id="__span-22-35"><a id="__codelineno-22-35" name="__codelineno-22-35" href="#__codelineno-22-35"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-22-36"><a id="__codelineno-22-36" name="__codelineno-22-36" href="#__codelineno-22-36"></a><span class="p">}</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Compile: <code>gcc -Wall -o mysh mysh.c</code>.</p>
+</li>
+<li>
+<p>Test:
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>$<span class="w"> </span>./mysh<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>/tmp
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>$<span class="w"> </span>./mysh<span class="w"> </span>date
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>$<span class="w"> </span>./mysh<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>Hello<span class="w"> </span>from<span class="w"> </span>mysh
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>$<span class="w"> </span>./mysh<span class="w"> </span>/commande/inexistante
+</span></code></pre></div></p>
+</li>
 <li>
 <p><strong>Analysis questions</strong>:</p>
 <ul>

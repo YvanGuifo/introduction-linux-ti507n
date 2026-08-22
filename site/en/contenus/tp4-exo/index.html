@@ -145,7 +145,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exercise-1-frere-jacques" class="md-skip">
+        <a href="#additional-commands" class="md-skip">
           Skip to content
         </a>
       
@@ -797,6 +797,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -839,6 +841,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -847,6 +851,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#1-basic-text-filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Basic text filters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Basic text filters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#exercise-1-frere-jacques" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -856,8 +872,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#exercise-2-sorting-files" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -867,8 +883,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#exercise-3-more-on-grep" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -876,6 +892,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1135,6 +1156,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1143,6 +1166,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#1-basic-text-filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Basic text filters
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Basic text filters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#exercise-1-frere-jacques" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1152,8 +1187,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#exercise-2-sorting-files" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1163,8 +1198,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#exercise-3-more-on-grep" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1172,6 +1207,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1242,8 +1282,7 @@
 
 
 
-  <h1>Additional commands</h1>
-
+<h1 id="additional-commands">Additional commands<a class="headerlink" href="#additional-commands" title="Permanent link">&para;</a></h1>
 <div class="admonition info">
 <p class="admonition-title">Learning Objectives</p>
 <p>Upon completion of this lab, the student will be able to:</p>
@@ -1282,10 +1321,12 @@
 </ul>
 </div>
 <hr />
+<h2 id="1-basic-text-filters">1. Basic text filters<a class="headerlink" href="#1-basic-text-filters" title="Permanent link">&para;</a></h2>
 <h3 id="exercise-1-frere-jacques">Exercise 1 — Frere Jacques 📚<a class="headerlink" href="#exercise-1-frere-jacques" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Create a file <code>fj</code> containing these lines:
-    <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Frère<span class="w"> </span>Jaques,<span class="w"> </span>
+<li>
+<p>Create a file <code>fj</code> containing these lines:
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Frère<span class="w"> </span>Jacques,<span class="w"> </span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Frère<span class="w"> </span>Jacques,<span class="w">                    </span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Dormez-vous,
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Dormez-vous,
@@ -1296,7 +1337,7 @@
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>Dong<span class="w"> </span>!
 </span></code></pre></div>
     with the <code>echo</code> command (<strong>the <code>&lt;newline&gt;</code> character corresponds to the Enter key on your keyboard</strong>):
-    <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;Frère Jaques,&lt;newline&gt; </span>
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;Frère Jacques,&lt;newline&gt; </span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="s1">&gt; Frère Jacques,&lt;newline&gt;                     </span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="s1">&gt; Dormez-vous,&lt;newline&gt; </span>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="s1">&gt; Dormez-vous,&lt;newline&gt; </span>
@@ -1305,8 +1346,10 @@
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="s1">&gt; Ding !&lt;newline&gt; </span>
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="s1">&gt; Ding !&lt;newline&gt; </span>
 </span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="s1">&gt; Dong !&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>fj
-</span></code></pre></div></li>
-<li>Then test the following commands and observe their results:
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Then test the following commands and observe their results:
     <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$<span class="w"> </span>cat<span class="w"> </span>fj<span class="w"> </span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>$<span class="w"> </span>head<span class="w"> </span>fj
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>$<span class="w"> </span>tail<span class="w"> </span>fj
@@ -1323,7 +1366,8 @@
 </span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>$<span class="w"> </span>cut<span class="w"> </span>-c<span class="w"> </span><span class="m">1</span>-3<span class="w"> </span>fj
 </span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>$<span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39; &#39;</span><span class="w"> </span>-f<span class="w"> </span><span class="m">1</span><span class="w"> </span>fj
 </span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>$<span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39; &#39;</span><span class="w"> </span>-f<span class="w"> </span><span class="m">1</span>,2<span class="w"> </span>fj
-</span></code></pre></div><ul>
+</span></code></pre></div></p>
+<ul>
 <li>Where are the results displayed?</li>
 <li>What is the purpose of the <code>-n</code> option of <code>head</code> and <code>tail</code>?</li>
 <li>What is the purpose of the <code>-v</code> option of <code>grep</code>? What is the purpose of the <code>-i</code> option of <code>grep</code>?</li>
@@ -1346,8 +1390,15 @@
 <li>The <code>-d</code> option of <code>tr</code> deletes the characters received as the first argument instead of replacing them.</li>
 </ul>
 </div>
-<p>If you have installed <code>gcc</code>, you should get:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pool
+<div class="admonition warning">
+<p class="admonition-title">This output depends on your system</p>
+<p>The list below was produced on Debian 12 with <code>build-essential</code> installed. <strong>The
+contents of <code>/usr/include</code> vary with the C library version and the development
+packages present</strong>: your ten names may differ, and that is normal. What is graded
+is the <strong>command line</strong>, not the resulting list.</p>
+</div>
+<p>If you have installed <code>gcc</code>, you should get a list close to this one:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>poll
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">wait</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>syslog
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>syscall
@@ -1517,7 +1568,7 @@
 </span><span id="__span-17-28"><a id="__codelineno-17-28" name="__codelineno-17-28" href="#__codelineno-17-28"></a>
 </span><span id="__span-17-29"><a id="__codelineno-17-29" name="__codelineno-17-29" href="#__codelineno-17-29"></a><span class="c1"># 4. Utilisateurs sans shell de connexion (nologin ou false)</span>
 </span><span id="__span-17-30"><a id="__codelineno-17-30" name="__codelineno-17-30" href="#__codelineno-17-30"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;4. Utilisateurs sans shell interactif :&quot;</span>
-</span><span id="__span-17-31"><a id="__codelineno-17-31" name="__codelineno-17-31" href="#__codelineno-17-31"></a>grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">&quot;nologin|/bin/false&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$FICHIER</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d:<span class="w"> </span>-f1<span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span><span class="s1">&#39;\n&#39;</span><span class="w"> </span><span class="s1">&#39;, &#39;</span>
+</span><span id="__span-17-31"><a id="__codelineno-17-31" name="__codelineno-17-31" href="#__codelineno-17-31"></a>grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">&quot;nologin|/bin/false&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$FICHIER</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d:<span class="w"> </span>-f1<span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span><span class="s1">&#39;\n&#39;</span><span class="w"> </span><span class="s1">&#39;,&#39;</span>
 </span><span id="__span-17-32"><a id="__codelineno-17-32" name="__codelineno-17-32" href="#__codelineno-17-32"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
 </span><span id="__span-17-33"><a id="__codelineno-17-33" name="__codelineno-17-33" href="#__codelineno-17-33"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
 </span><span id="__span-17-34"><a id="__codelineno-17-34" name="__codelineno-17-34" href="#__codelineno-17-34"></a>
