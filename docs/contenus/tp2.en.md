@@ -99,10 +99,12 @@ title: Lab 2 - File system and permissions
    ```bash
    $ id
    ```
+
 2. Type the same command with the argument `root`:
    ```bash
    $ id root
    ```
+
 3. Display the contents of `/etc/passwd` using `cat`.
 4. Find the lines corresponding to your username and to `root`. What are the differences?
 5. Can you deduce what the `/etc/passwd` file is used for?
@@ -165,21 +167,22 @@ title: Lab 2 - File system and permissions
    -rwxr-xr-x op
    ```
    Among these files, which ones are **directories**?
+
 3. For each of the files above, give the permissions in **symbolic** and **octal** representations.
 4. Give the symbolic and octal representations of the permissions of `/etc/passwd`, of the `ls` command, and of your home directory.
 
 ### Exercise 3 — Modifying permissions with `chmod` 📚📚
 
-1. Test the following commands and try to understand `chmod` in **symbolic** notation:
-   ```bash
-   $ touch f; ls -l f
-   $ chmod a= f; ls -l f           # (i)
-   $ chmod o+rw f; ls -l f         # (ii)
-   $ chmod u=o f; ls -l f          # (iii)
-   $ chmod o-wx f; ls -l f
-   $ chmod g+u f; ls -l f          # (iv)
-   $ chmod a+x,g-w f; ls -l f     # (v)
-   ```
+1.  Test the following commands and try to understand `chmod` in **symbolic** notation:
+    ```bash
+    $ touch f; ls -l f
+    $ chmod a= f; ls -l f           # (i)
+    $ chmod o+rw f; ls -l f         # (ii)
+    $ chmod u=o f; ls -l f          # (iii)
+    $ chmod o-wx f; ls -l f
+    $ chmod g+u f; ls -l f          # (iv)
+    $ chmod a+x,g-w f; ls -l f     # (v)
+    ```
 
     1. `a` = **all** (u+g+o), `=` **sets** exact permissions. Here `a=` with no right → removes **all** permissions.
     2. `o` = *others*, `+` **adds** rights. Here: read and write for others.
@@ -187,34 +190,36 @@ title: Lab 2 - File system and permissions
     4. `g+u`: the group gets the owner's **current** permissions.
     5. The comma lets you combine multiple modifications in a single command.
 
-2. Test and observe:
-   ```bash
-   $ chmod 644 f; ls -l f # (i)
-   ```
+2.  Test and observe:
+    ```bash
+    $ chmod 644 f; ls -l f # (i)
+    ```
 
     1. `644` in octal = `rw-r--r--`: read/write for the owner (`6` = `r`+`w`), read only for group (`4` = `r`) and others (`4` = `r`).
 
     What does this command do?
-3. Using **both notations** (octal and symbolic), modify the permissions of `f` to obtain:
 
-      - execute for all, read and write only for the owner;
-      - read and execute for all, no one can write;
-      - all permissions for all, no write for others;
-   - read and write for the owner, execute for the group, none for others.
+3.  Using **both notations** (octal and symbolic), modify the permissions of `f` to obtain:
+
+    - execute for all, read and write only for the owner;
+    - read and execute for all, no one can write;
+    - all permissions for all, no write for others;
+    - read and write for the owner, execute for the group, none for others.
 
 ### Exercise 4 — Effect of permissions on operations 📚📚
 
 1. In a directory of your choice, create two files `f` and `g`. Enter some text in each using an editor.
 2. For yourself (owner):
 
-      - remove the **read** permission on `f`;
-      - remove the **write** permission on `g`.
+    - remove the **read** permission on `f`;
+    - remove the **write** permission on `g`.
 
 3. Test and note the results:
    ```bash
    $ cat f
    $ cat g
    ```
+
 4. Try to modify `g` with a text editor. What happens?
 5. Test:
    ```bash
@@ -222,11 +227,13 @@ title: Lab 2 - File system and permissions
    $ cp g h
    ```
    Then observe the contents of `h` and its permissions.
+
 6. The following command appends the string `toto` to the end of `f` (seen in Lab 4):
    ```bash
    $ echo "toto" >> f
    ```
    Test it, then give yourself back read permission on `f`, and display its contents with `cat`.
+
 7. Test:
    ```bash
    $ rm g
@@ -268,6 +275,7 @@ title: Lab 2 - File system and permissions
    $ touch rep/c
    $ rm rep/a
    ```
+
 3. Give back only the `r` permission on `rep` and redo the commands. Note the differences.
 4. Same question with only `w` on `rep`. Note the differences.
 5. Only `x` on `rep`:
@@ -280,12 +288,13 @@ title: Lab 2 - File system and permissions
    $ touch rep/c
    $ rm rep/a
    ```
+
 6. With `-wx` on `rep` for all, try to:
 
-      - create a file `d` in `rep`;
-   - rename `b`;
-   - remove all permissions on `d`;
-   - delete `d`.
+    - create a file `d` in `rep`;
+    - rename `b`;
+    - remove all permissions on `d`;
+    - delete `d`.
 
 !!! info "This exercise is representative of a typical **DE S42 (MCQ)** item."
 
@@ -303,11 +312,29 @@ title: Lab 2 - File system and permissions
 !!! warning "Caution — experimentation exercise"
     This exercise is delicate and important. Take your time.
 
+!!! info "Structured help"
+    This exercise deliberately builds a **trap**: you are going to place in your `PATH`
+    a fake `rm` that is in fact a copy of `cat`. Keep these three landmarks at hand:
+
+    - **Step 1 — observe.** `echo $PATH` lists the directories, separated by `:`, in
+      which the shell looks for a command typed without a path.
+    - **Step 2 — hijack.** By putting `~/bin` **first** in `PATH`, your `rm` is found
+      before `/usr/bin/rm`. An explicit path (`/usr/bin/rm`, `./rm`) bypasses the
+      search entirely.
+    - **Step 3 — the cache.** Bash remembers the location of commands it has already
+      run. If `type rm` seems to lie after a change, that cache is why: `hash -r`
+      clears it.
+
+    When in doubt, `type -a rm` shows **all** the matches found, in order. And if you
+    get lost: open a new terminal, the original `PATH` is restored there.
+
+
 1. In a new terminal:
    ```bash
    $ echo $PATH
    ```
    Observe. In your opinion, what do the elements separated by `:` correspond to?
+
 2. Create a `bin` directory in your home and modify `PATH`:
    ```bash
    $ mkdir -p ~/bin
@@ -315,6 +342,7 @@ title: Lab 2 - File system and permissions
    $ echo $PATH
    ```
    What is the difference compared to the output from question 1?
+
 3. Using `type`, find the absolute paths of `cat` and `rm` and note them.
 4. Copy `cat` into `~/bin` renaming it `rm`.
 5. Create a file `fic` with a few characters, and two copies `fic2`, `fic3`.
@@ -325,6 +353,7 @@ title: Lab 2 - File system and permissions
    $ <absolute path to rm> fic
    ```
    *(replacing `<absolute path to rm>` with the path noted in question 3)*. What happened?
+
 9. Remove the `x` permission on `~/bin/rm` and try to delete `fic2`.
 10. Ask the shell to forget cached locations:
     ```bash
@@ -332,6 +361,7 @@ title: Lab 2 - File system and permissions
     $ type rm
     $ rm fic2
     ```
+
 11. Restore the `x` permission on `~/bin/rm` and test:
     ```bash
     $ ~/bin/rm fic3
@@ -340,6 +370,7 @@ title: Lab 2 - File system and permissions
     $ <absolute path to rm> rm
     $ rm fic3
     ```
+
 12. **Summary** — answer:
     - What is contained in `PATH`?
     - In which case is a command name searched in the `PATH` directories?
@@ -400,9 +431,37 @@ $ /usr/bin/uname
 ### Exercise 8 — Understanding and manipulating `umask` ⭐
 
 !!! tip "`umask`"
-    `umask` defines the permissions **removed by default** from the files and directories you create. The value is octal: it is **subtracted** from the default permissions (666 for files, 777 for directories).
+    `umask` defines the permissions **removed by default** from the files and
+    directories you create. Base permissions are `666` for a file and `777` for
+    a directory.
 
-    Example: if `umask` is `022`, a created file will have `644` (= `666 − 022`) and a directory `755` (= `777 − 022`).
+    !!! danger "`umask` is **not** a subtraction"
+        You will often read "permissions = base − umask". That approximation
+        **happens to be right** in common cases and is **wrong in general**.
+        `umask` is a **bit mask**: every bit set in the mask is **cleared** from
+        the base permissions.
+
+        The exact rule is a logical AND with the complement of the mask:
+
+        ```
+        permissions = base AND (NOT umask)
+        ```
+
+        Check with `umask 121`:
+
+        ```
+        file base      666 = 110 110 110
+        umask          121 = 001 010 001
+        NOT umask          = 110 101 110
+        AND                = 110 100 110 = 646   <- actual value
+        subtraction    666 - 121 = 545           <- WRONG value
+        ```
+
+        Subtraction breaks as soon as a mask digit sets a bit that the base digit
+        does not have. You will verify this in question 4.
+
+    Example: if `umask` is `022`, a created file will have `644` and a directory
+    `755` — here subtraction and masking agree.
 
 1. Type `umask` and note the result.
 2. Create a directory `rep` and a file `f` at the same level. Display their permissions with `ls -ld rep f`. Convert to octal and note.
@@ -411,15 +470,20 @@ $ /usr/bin/uname
    $ umask 240
    ```
    Redo question 2.
+
 4. Same with:
    ```bash
    $ umask 121
    ```
+
 5. Same with:
    ```bash
    $ umask 666
    ```
-6. Can you deduce how `umask` works?
+
+6. Systematically compare your readings with the "base − umask" prediction.
+   For which values do the two methods diverge? State the exact rule.
+
 7. Restore the initial value of `umask`.
 
 ### Exercise 9 — Special permissions: SUID, SGID, sticky bit ⭐

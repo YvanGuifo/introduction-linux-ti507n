@@ -2,6 +2,8 @@
 title: Additional Commands
 ---
 
+# Additional commands
+
 !!! info "Learning Objectives"
 
     Upon completion of this lab, the student will be able to:
@@ -37,11 +39,13 @@ title: Additional Commands
   
   ---
 
+## 1. Basic text filters
+
 ### Exercise 1 — Frere Jacques 📚
 
 1. Create a file `fj` containing these lines:
     ```bash
-    Frère Jaques, 
+    Frère Jacques, 
     Frère Jacques,                    
     Dormez-vous,
     Dormez-vous,
@@ -53,7 +57,7 @@ title: Additional Commands
     ```
     with the `echo` command (**the `<newline>` character corresponds to the Enter key on your keyboard**):
     ```bash
-    $ echo 'Frère Jaques,<newline> 
+    $ echo 'Frère Jacques,<newline> 
     > Frère Jacques,<newline>                     
     > Dormez-vous,<newline> 
     > Dormez-vous,<newline> 
@@ -63,6 +67,7 @@ title: Additional Commands
     > Ding !<newline> 
     > Dong !' > fj
     ```
+
 2. Then test the following commands and observe their results:
     ```bash
     $ cat fj 
@@ -103,9 +108,15 @@ Using the commands `wc`, `sort`, `cut`, `head` (or possibly `tail`), and pipe re
     - The `-n` option of `sort` allows you to sort the lines of a file in numerical order.
     - The `-d` option of `tr` deletes the characters received as the first argument instead of replacing them.
 
-If you have installed `gcc`, you should get:
+!!! warning "This output depends on your system"
+    The list below was produced on Debian 12 with `build-essential` installed. **The
+    contents of `/usr/include` vary with the C library version and the development
+    packages present**: your ten names may differ, and that is normal. What is graded
+    is the **command line**, not the resulting list.
+
+If you have installed `gcc`, you should get a list close to this one:
 ```bash
-pool
+poll
 wait
 syslog
 syscall
@@ -275,7 +286,7 @@ This exercise combines `grep`, `cut`, `sort`, `wc`, `awk` and `sed` in a complet
 
    # 4. Utilisateurs sans shell de connexion (nologin ou false)
    echo "4. Utilisateurs sans shell interactif :"
-   grep -E "nologin|/bin/false" "$FICHIER" | cut -d: -f1 | tr '\n' ', '
+   grep -E "nologin|/bin/false" "$FICHIER" | cut -d: -f1 | tr '\n' ','
    echo ""
    echo ""
 

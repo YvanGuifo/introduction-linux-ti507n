@@ -21,7 +21,7 @@ hide:
 
 !!! tip "Prerequisites"
     - Preliminary reading completed ([preliminary-reading](./preliminary-reading.md)).
-    - Debian 12 distribution installed ([installation-wsl](./installation-wsl.md)) **or** active MarioNum session ([Intro-MarioNum](./Intro-MarioNum.md)).
+    - Debian 12 distribution installed ([installation d’une distribution Linux](./installation-linux.md)) **or** active MarioNum session ([Intro-MarioNum](./Intro-MarioNum.md)).
     - Terminal open and `$` prompt visible.
 
 !!! info "Instructions"
@@ -71,7 +71,7 @@ hide:
 ??? saviezvous "Why are Unix commands so short?"
     The creators of Unix, **Ken Thompson** and **Dennis Ritchie** (Bell Labs, 1969–1971), used an ASR-33 teletype as their terminal. This mechanical keyboard was slow and noisy: every keystroke counted. That's why commands became `ls` instead of `list`, `cp` instead of `copy`, `mv` instead of `move`. This brevity, born from a hardware constraint, became a cultural trait of Unix.
 
-    > Thompson, K. & Ritchie, D. M. (1974). The UNIX Time-Sharing System. *Communications of the ACM*, 17(7), 365–375. DOI: [10.1145/361011.361061](https://doi.org/10.1145/361011.361061)
+    > Ritchie, D. M. & Thompson, K. (1974). The UNIX Time-Sharing System. *Communications of the ACM*, 17(7), 365–375. DOI: [10.1145/361011.361061](https://doi.org/10.1145/361011.361061)
 
 !!! tip "What is a command?"
     A **command** is a sequence of words terminated by <kbd>Enter</kbd>. The first word is the **name** of the command, the others are its **arguments**.
@@ -98,6 +98,7 @@ hide:
    $ echo Hello, world!
    $ echo       Hello,        world!
    ```
+
 2. Press <kbd>↑</kbd> (or <kbd>Ctrl-P</kbd>) several times until the `who` command appears. Now press <kbd>↓</kbd> (or <kbd>Ctrl-N</kbd>) until you get back to `uname -m -r`, then execute it. Note what these shortcuts do.
 3. Press <kbd>Ctrl-L</kbd>. Note what this shortcut does.
 4. Without typing the command, display `cal 3 2022`, **without executing it**.
@@ -116,9 +117,9 @@ hide:
 
     - `pwd` (*print working directory*): displays the absolute path of the current directory.
     - `cd <path>` (*change directory*): changes location.
-      - `cd` alone → home directory.
-      - `cd ..` → parent directory.
-      - `cd -` → previous directory.
+    - `cd` alone → home directory.
+    - `cd ..` → parent directory.
+    - `cd -` → previous directory.
     - `ls [<path>]`: lists the contents of a directory.
 
     The `~` character (*tilde*) is a shortcut for the user's home directory.
@@ -131,8 +132,9 @@ hide:
 4. Enter `cd` (with no argument), then `pwd`. Comment.
 5. Enter `cd /`, then `pwd` and `ls`. What does `ls` do?
 6. Enter `cd /usr/include` then `ls`. What does this directory seem to be used for?
-??? saviezvous "Why is the command called `cat`?"
-    The command `cat` is short for **concatenate**. Its primary purpose was not to display a file, but to **concatenate** multiple files end-to-end (`cat file1 file2 > merged`). The common usage `cat file` to *display* a file is actually a special case: concatenation of a single file to standard output. This distinction becomes important in Lab 4 when we cover redirections.
+
+    ??? saviezvous "Why is the command called `cat`?"
+        The command `cat` is short for **concatenate**. Its primary purpose was not to display a file, but to **concatenate** multiple files end-to-end (`cat file1 file2 > merged`). The common usage `cat file` to *display* a file is actually a special case: concatenation of a single file to standard output. This distinction becomes important in Lab 4 when we cover redirections.
 
 7. Reminders:
 
@@ -164,56 +166,72 @@ hide:
 
 ### Exercise 3 — Create, move, copy, delete 📚📚
 
-1. Navigate to your home directory and list its contents.
-2. Create a directory `tp_shell` with `mkdir`. List the contents of the home directory and of `tp_shell`.
-3. Enter `mkdir abeilles tp_shell/tp1 ~/arbres`. Which arguments are absolute and which are relative?
-4. What does the following command do?
-   ```bash
-   $ mkdir -p vivant/plante/fleur tp_shell/tp1/exos/ex1/ # (i)
-   ```
+1.  Navigate to your home directory and list its contents.
+2.  Create a directory `tp_shell` with `mkdir`. List the contents of the home directory and of `tp_shell`.
+3.  Enter `mkdir abeilles tp_shell/tp1 ~/arbres`. Which arguments are absolute and which are relative?
+4.  What does the following command do?
+    ```bash
+    $ mkdir -p vivant/plante/fleur tp_shell/tp1/exos/ex1/ # (i)
+    ```
 
     1. `-p` (*parents*) creates all missing intermediate directories. Without this option, `mkdir` fails if a parent directory doesn't exist.
-??? saviezvous "The Tab key: a revolution in human-computer interaction"
-    **Tab completion** was introduced in the **C shell** (`csh`) by Bill Joy at UC Berkeley in 1978, then adopted and improved by Bash. Before that, every filename had to be typed in full, letter by letter — a constant source of typos. Today, "smart" completion goes far beyond filenames: it completes command options, SSH hostnames, Git branches, and much more.
 
-    > Joy, W. (1979). *An Introduction to the C Shell*. Computer Science Division, University of California, Berkeley.
+    ??? saviezvous "The Tab key: a revolution in human-computer interaction"
+        **Tab completion** was introduced in the **C shell** (`csh`) by Bill Joy at UC Berkeley in 1978, then adopted and improved by Bash. Before that, every filename had to be typed in full, letter by letter — a constant source of typos. Today, "smart" completion goes far beyond filenames: it completes command options, SSH hostnames, Git branches, and much more.
 
-5. Test **tab completion** with the <kbd>Tab</kbd> key:
-   ```bash
-   $ mkd<Tab> vi<Tab><Tab><Tab>roses
-   ```
-   Then:
-   ```bash
-   $ ls a<Tab><Tab>
-   ```
-6. Delete empty directories with `rmdir`:
-   ```bash
-   $ rmdir vivant tp_shell/tp1/exos/ex1
-   ```
-   Also delete the `tp1` subdirectory of `tp_shell`.
-7. Create empty files with `touch`:
-   ```bash
-   $ touch ~/arbres/hello.c abeilles/truc.txt bidule
-   $ ls ~/arbres abeilles/ .
-   ```
-8. Move / rename with `mv`:
-   ```bash
-   $ mv arbres/hello.c arbres/bonjour.c
-   $ mv abeilles arbres vivant/
-   $ mv bidule vivant
-   $ mv vivant vie
-   ```
-9. Copy with `cp`:
-   ```bash
-   $ cp vie/arbres/bonjour.c salut.c
-   $ mkdir copies
-   $ cp salut.c vie/abeilles/truc.txt copies
-   $ cp -R vie copie_vie # (i)
-   ```
+        > Joy, W. (1979). *An Introduction to the C Shell*. Computer Science Division, University of California, Berkeley.
+
+5.  Test **tab completion** with the <kbd>Tab</kbd> key:
+    ```bash
+    $ mkd<Tab> vi<Tab><Tab><Tab>roses
+    ```
+    Then:
+    ```bash
+    $ ls a<Tab><Tab>
+    ```
+
+6.  Delete empty directories with `rmdir`:
+    ```bash
+    $ rmdir vivant tp_shell/tp1/exos/ex1
+    ```
+
+    **One of the two deletions fails.** Which one, and what exactly does the error
+    message say? What does that tell you about `rmdir`?
+
+    Now try to delete the `tp1` subdirectory of `tp_shell` with `rmdir`: this fails
+    too. Find out why (`ls -R tp_shell`), then actually delete it — either by working
+    up the tree from the bottom, or with `rmdir`'s `-p` option.
+
+    !!! warning "Do not delete `vivant`"
+        `vivant` must stay in place: question 8 uses it as a destination.
+        Also delete the `tp1` subdirectory of `tp_shell`.
+
+7.  Create empty files with `touch`:
+    ```bash
+    $ touch ~/arbres/hello.c abeilles/truc.txt bidule
+    $ ls ~/arbres abeilles/ .
+    ```
+
+8.  Move / rename with `mv`:
+    ```bash
+    $ mv arbres/hello.c arbres/bonjour.c
+    $ mv abeilles arbres vivant/
+    $ mv bidule vivant
+    $ mv vivant vie
+    ```
+
+9.  Copy with `cp`:
+    ```bash
+    $ cp vie/arbres/bonjour.c salut.c
+    $ mkdir copies
+    $ cp salut.c vie/abeilles/truc.txt copies
+    $ cp -R vie copie_vie # (i)
+    ```
 
     1. `-R` (*recursive*) copies the directory and **all** its contents (subdirectories and files). Without `-R`, `cp` refuses to copy a directory.
 
     Describe the behavior of `cp` depending on whether its last argument is an existing directory or not, with and without `-R`.
+
 10. Delete with `rm`:
     ```bash
     $ rm vie/bidule
@@ -232,17 +250,20 @@ hide:
 
 Create the following directory tree from your home directory. Only `rapport.txt` and `index.html` are regular files. The directories **Mail**, **Rapport**, and **Web** must be created **in a single** `mkdir` **command**.
 
-```mermaid
-stateDiagram-v2
-    ~ --> Mail
-    ~ --> Rapport
-    ~ --> Web
-    Rapport --> rapport.txt
-    Rapport --> Docs
-    Docs --> Afaire
-    Docs --> Fait
-    Web --> index.html
+```text
+~
+├── Mail/
+├── Rapport/
+│   ├── rapport.txt
+│   └── Docs/
+│       ├── Afaire/
+│       └── Fait/
+└── Web/
+    └── index.html
 ```
+
+*(Names followed by `/` are directories; `rapport.txt` and `index.html` are regular
+files. You can check your work with `ls -R ~`.)*
 
 Use `touch` to create the regular files, then a text editor to give them some content.
 
@@ -309,6 +330,7 @@ From your home directory, execute:
    $ man 1 printf
    $ man 3 printf
    ```
+
 6. In the SYNOPSIS of `mv`, what do the square brackets `[ ]` and the ellipsis `...` mean? Consult `man man` if needed.
 
 ---
@@ -326,36 +348,37 @@ From your home directory, execute:
 
 ### Exercise 7 — Wildcards 📚📚📚
 
-1. Create a directory `tp_joker` in your home. Navigate into it. Create the following **empty** files:
-   `annee1  Annee2  annee4  annee45  annee41  annee510  annee_saucisse  annee_banane  bonbon`
-2. Without executing them, predict the result of the following commands, then test:
-   ```bash
-   $ echo *          # (i)
-   $ echo *_*        # (ii)
-   $ echo [ab]*      # (iii)
-   $ echo [^ab]*     # (iv)
-   $ echo c*
-   $ echo ??????     # (v)
-   ```
+1.  Create a directory `tp_joker` in your home. Navigate into it. Create the following **empty** files:
+    `annee1  Annee2  annee4  annee45  annee41  annee510  annee_saucisse  annee_banane  bonbon`
 
-    1. `*` matches any string (even empty), except files starting with `.`.
-    2. `*_*`: files containing an underscore — `*` on each side matches any prefix/suffix.
-    3. `[ab]*`: files starting with `a` **or** `b`. Brackets define a set of possible characters for **one** position.
-   4. `[^ab]*`: the `^` **negates** the class — here, files starting with **neither** `a` **nor** `b`.
-   5. `?` matches exactly **one** character. Six `?` = files with exactly 6 characters.
+2.  Without executing them, predict the result of the following commands, then test:
+    ```bash
+    $ echo *          # (i)
+    $ echo *_*        # (ii)
+    $ echo [ab]*      # (iii)
+    $ echo [^ab]*     # (iv)
+    $ echo c*
+    $ echo ??????     # (v)
+    ```
 
-3. Using `ls`, list all files that:
+     1. `*` matches any string (even empty), except files starting with `.`.
+     2. `*_*`: files containing an underscore — `*` on each side matches any prefix/suffix.
+     3. `[ab]*`: files starting with `a` **or** `b`. Brackets define a set of possible characters for **one** position.
+    4. `[^ab]*`: the `^` **negates** the class — here, files starting with **neither** `a` **nor** `b`.
+    5. `?` matches exactly **one** character. Six `?` = files with exactly 6 characters.
 
-      - end with `5`;
-      - start with `annee4`;
-      - start with `annee4` and have at most 7 characters;
-      - start with `annee` and whose sixth character is **not** a digit;
-   - contain the string `ana`;
-   - start with `a` **or** `A`;
-   - whose second-to-last character is `4` **or** `1`.
+3.  Using `ls`, list all files that:
 
-4. List all hidden files (names starting with `.`) in your home directory.
-5. List all files whose name starts with `std` and ends with `.h` in `/usr/include`.
+    - end with `5`;
+    - start with `annee4`;
+    - start with `annee4` and have at most 7 characters;
+    - start with `annee` and whose sixth character is **not** a digit;
+    - contain the string `ana`;
+    - start with `a` **or** `A`;
+    - whose second-to-last character is `4` **or** `1`.
+
+4.  List all hidden files (names starting with `.`) in your home directory.
+5.  List all files whose name starts with `std` and ends with `.h` in `/usr/include`.
 
 !!! info "This exercise is representative of a typical **DE S42 (MCQ)** item."
 
@@ -508,11 +531,13 @@ From your home directory, execute:
    echo "=== Espace disque ==="
    df -h /
    ```
+
 3. Make the script executable and run it:
    ```bash
    $ chmod +x info-systeme.sh
    $ ./info-systeme.sh
    ```
+
 4. **Creation exercise**: write a script `creer-arbo.sh` that:
     - Takes one **argument**: the name of a project (e.g. `mon_projet`).
     - Creates the following directory tree:

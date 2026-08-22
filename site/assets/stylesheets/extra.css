@@ -520,3 +520,106 @@ a.card:hover {
   color: var(--md-accent-fg-color, #7986cb);
   background: var(--md-default-fg-color--lightest, #ffffff0d);
 }
+
+/* --- Listes numérotées imbriquées : garder les CHIFFRES (1,2,3) --- */
+/* Par défaut, le thème numérote les listes imbriquées en a, b, c. On force les
+   CHIFFRES pour toutes les sous-listes (sous-étapes procédurales : « Clic droit /
+   Créer / Nommez »...) afin de rester lisible. */
+.md-typeset ol ol {
+  list-style-type: decimal;
+}
+
+/* --- Explications d'un bloc de code : numérotation ROMAINE « i) ii) iii) » --- */
+/* Une liste ordonnée qui suit un bloc de code contenant des repères
+   « # (i) », « # (ii) »... donne la signification de ces repères. Le script
+   « extra.js » (fonction tagCodeLegends) la marque de la classe
+   « ti507n-legende » en se basant sur la PRÉSENCE des marqueurs dans le code.
+   On la numérote ici en chiffres romains suivis d'une parenthèse pour la
+   distinguer sans ambiguïté des étapes de l'exercice (numérotées 1, 2, 3...).
+   Repli sans JavaScript : la liste reste numérotée en chiffres — lisible. */
+@counter-style ti507n-romain-parenthese {
+  system: extends lower-roman;
+  suffix: ") ";
+}
+
+/* Présentation « note de bas de page » (convention LaTeX/PDF) :
+   - un filet horizontal court au-dessus du bloc (comme \footnoterule) ;
+   - un corps réduit et légèrement atténué (comme \footnotesize) ;
+   - la numérotation romaine « i) ii) iii) » reprend les repères du code.
+   Le bloc reste juste sous le code concerné (le web n'a pas de « bas de page »),
+   mais l'aspect visuel est celui d'un appareil de notes. */
+.md-typeset ol.ti507n-legende {
+  list-style: ti507n-romain-parenthese;
+  margin-top: 1.1em;
+  padding-top: 0.75em;
+  padding-left: 2.2em;
+  font-size: 0.75em;                               /* ≈ \footnotesize */
+  line-height: 1.5;
+  color: var(--md-default-fg-color--light);
+  position: relative;
+}
+/* Filet court, aligné à gauche, façon \footnoterule LaTeX (~0,4 largeur col.) */
+.md-typeset ol.ti507n-legende::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 38%;
+  min-width: 6em;
+  max-width: 14em;
+  border-top: 1px solid var(--md-default-fg-color--lighter);
+}
+.md-typeset ol.ti507n-legende > li {
+  margin-bottom: 0.15em;
+}
+.md-typeset ol.ti507n-legende > li::marker {
+  color: var(--md-default-fg-color--light);
+}
+/* Le code cité dans les notes suit le corps réduit de la note */
+.md-typeset ol.ti507n-legende code {
+  font-size: 0.95em;
+}
+
+/* ==========================================================================
+   Interrupteur de langue FR ⇄ EN — 1 clic, drapeaux (voir extra.js)
+   ========================================================================== */
+/* Quand l'interrupteur est en place, on masque le menu déroulant d'origine.
+   Sans JavaScript, la classe n'est pas ajoutée → le menu reste disponible. */
+.ti507n-has-lang .md-select {
+  display: none;
+}
+.ti507n-lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+  margin: 0 0.2rem;
+}
+.ti507n-lang__flag {
+  display: inline-flex;
+  padding: 0.2rem;
+  border-radius: 0.25rem;
+  line-height: 0;
+  opacity: 0.5;                         /* langue inactive : atténuée */
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+.ti507n-lang__flag:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+.ti507n-lang__flag:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--md-primary-bg-color, #fff);
+}
+.ti507n-lang__flag[aria-current] {      /* langue active : pleine opacité + halo */
+  opacity: 1;
+  box-shadow: 0 0 0 2px var(--md-primary-bg-color, #fff);
+  cursor: default;
+}
+.ti507n-flag {
+  width: 1.45rem;
+  height: 0.97rem;
+  display: block;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.18);
+}

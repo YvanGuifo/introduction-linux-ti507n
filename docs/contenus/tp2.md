@@ -99,10 +99,12 @@ title: TP2 - Système de fichiers et permissions
    ```bash
    $ id
    ```
+
 2. Tapez la même commande avec l’argument `root` :
    ```bash
    $ id root
    ```
+
 3. Affichez le contenu de `/etc/passwd` avec `cat`.
 4. Recherchez les lignes correspondant à votre nom d’utilisateur et à `root`. Quelles sont les différences ?
 5. Pouvez-vous déduire à quoi sert le fichier `/etc/passwd` ?
@@ -165,21 +167,22 @@ title: TP2 - Système de fichiers et permissions
    -rwxr-xr-x op
    ```
    Parmi ces fichiers, lesquels sont des **répertoires** ?
+
 3. Pour chacun des fichiers ci-dessus, donnez les permissions en représentations **symbolique** et **octale**.
 4. Donnez les représentations symbolique et octale des permissions de `/etc/passwd`, de la commande `ls` et de votre répertoire personnel.
 
 ### Exercice 3 — Modification des permissions `chmod` 📚📚
 
-1. Testez les commandes suivantes et essayez de comprendre `chmod` en notation **symbolique** :
-   ```bash
-   $ touch f; ls -l f
-   $ chmod a= f; ls -l f           # (i)
-   $ chmod o+rw f; ls -l f         # (ii)
-   $ chmod u=o f; ls -l f          # (iii)
-   $ chmod o-wx f; ls -l f
-   $ chmod g+u f; ls -l f          # (iv)
-   $ chmod a+x,g-w f; ls -l f     # (v)
-   ```
+1.  Testez les commandes suivantes et essayez de comprendre `chmod` en notation **symbolique** :
+    ```bash
+    $ touch f; ls -l f
+    $ chmod a= f; ls -l f           # (i)
+    $ chmod o+rw f; ls -l f         # (ii)
+    $ chmod u=o f; ls -l f          # (iii)
+    $ chmod o-wx f; ls -l f
+    $ chmod g+u f; ls -l f          # (iv)
+    $ chmod a+x,g-w f; ls -l f     # (v)
+    ```
 
     1. `a` = **all** (u+g+o), `=` **fixe** les permissions exactes. Ici `a=` sans droit → retire **toutes** les permissions.
     2. `o` = *others*, `+` **ajoute** des droits. Ici : lecture et écriture pour les autres.
@@ -187,34 +190,36 @@ title: TP2 - Système de fichiers et permissions
     4. `g+u` : le groupe reçoit les permissions **actuelles** du propriétaire.
     5. La virgule permet de combiner plusieurs modifications en une seule commande.
 
-2. Testez et observez :
-   ```bash
-   $ chmod 644 f; ls -l f # (i)
-   ```
+2.  Testez et observez :
+    ```bash
+    $ chmod 644 f; ls -l f # (i)
+    ```
 
     1. `644` en octal = `rw-r--r--` : lecture/écriture pour le propriétaire (`6` = `r`+`w`), lecture seule pour le groupe (`4` = `r`) et les autres (`4` = `r`).
 
     Que fait cette commande ?
-3. Avec les **deux notations** (octale et symbolique), modifiez les permissions de `f` pour obtenir :
 
-      - exécution pour tous, lecture et écriture uniquement pour le propriétaire ;
-   - lecture et exécution pour tous, personne ne peut écrire ;
-   - toutes les permissions pour tous, pas d’écriture pour les autres ;
-   - lecture et écriture pour le propriétaire, exécution pour le groupe, aucune pour les autres.
+3.  Avec les **deux notations** (octale et symbolique), modifiez les permissions de `f` pour obtenir :
+
+    - exécution pour tous, lecture et écriture uniquement pour le propriétaire ;
+    - lecture et exécution pour tous, personne ne peut écrire ;
+    - toutes les permissions pour tous, pas d’écriture pour les autres ;
+    - lecture et écriture pour le propriétaire, exécution pour le groupe, aucune pour les autres.
 
 ### Exercice 4 — Effet des permissions sur les opérations 📚📚
 
 1. Dans un répertoire de votre choix, créez deux fichiers `f` et `g`. Entrez du texte dans chacun avec un éditeur.
 2. Pour vous (propriétaire) :
 
-      - retirez la permission de **lire** dans `f` ;
-      - retirez la permission d’**écrire** dans `g`.
+    - retirez la permission de **lire** dans `f` ;
+    - retirez la permission d’**écrire** dans `g`.
 
 3. Testez et notez les résultats :
    ```bash
    $ cat f
    $ cat g
    ```
+
 4. Essayez de modifier `g` avec un éditeur de texte. Que se passe-t-il ?
 5. Testez :
    ```bash
@@ -222,11 +227,13 @@ title: TP2 - Système de fichiers et permissions
    $ cp g h
    ```
    Puis observez le contenu de `h` et ses permissions.
+
 6. La commande suivante ajoute la chaîne `toto` à la fin de `f` (vu au TP4) :
    ```bash
    $ echo "toto" >> f
    ```
    Testez, puis redonnez-vous la lecture sur `f`, et affichez son contenu avec `cat`.
+
 7. Testez :
    ```bash
    $ rm g
@@ -268,6 +275,7 @@ title: TP2 - Système de fichiers et permissions
    $ touch rep/c
    $ rm rep/a
    ```
+
 3. Redonnez uniquement la permission `r` sur `rep` et refaites les commandes. Notez les différences.
 4. Même question avec uniquement `w` sur `rep`. Notez les différences.
 5. Uniquement `x` sur `rep` :
@@ -280,12 +288,13 @@ title: TP2 - Système de fichiers et permissions
    $ touch rep/c
    $ rm rep/a
    ```
+
 6. Avec `-wx` sur `rep` pour tous, essayez de :
 
-      - créer un fichier `d` dans `rep` ;
-   - renommer `b` ;
-   - retirer toutes les permissions sur `d` ;
-   - supprimer `d`.
+    - créer un fichier `d` dans `rep` ;
+    - renommer `b` ;
+    - retirer toutes les permissions sur `d` ;
+    - supprimer `d`.
 
 !!! info "Cet exercice est représentatif d’un item type **DE S42 (QCM)**."
 
@@ -303,11 +312,30 @@ title: TP2 - Système de fichiers et permissions
 !!! warning "Attention — exercice d’expérimentation"
     Cet exercice est délicat et important. Prenez votre temps.
 
+!!! info "Aide structurée"
+    L'exercice fabrique délibérément un **piège** : vous allez placer dans votre `PATH`
+    un faux `rm` qui est en réalité une copie de `cat`. Gardez ces trois repères sous
+    la main :
+
+    - **Étape 1 — observer.** `echo $PATH` liste les répertoires, séparés par `:`,
+      dans lesquels le shell cherche une commande tapée sans chemin.
+    - **Étape 2 — détourner.** En plaçant `~/bin` **en tête** du `PATH`, votre `rm`
+      est trouvé avant `/usr/bin/rm`. Un chemin explicite (`/usr/bin/rm`, `./rm`)
+      court-circuite entièrement la recherche.
+    - **Étape 3 — le cache.** Bash mémorise l'emplacement des commandes déjà
+      exécutées. Si `type rm` semble mentir après une modification, c'est ce cache :
+      `hash -r` le vide.
+
+    En cas de doute, `type -a rm` montre **toutes** les correspondances trouvées, dans
+    l'ordre. Et si vous vous perdez : ouvrez un nouveau terminal, le `PATH` d'origine
+    y est restauré.
+
 1. Dans un nouveau terminal :
    ```bash
    $ echo $PATH
    ```
    Observez. À votre avis, à quoi correspondent les éléments séparés par `:` ?
+
 2. Créez un répertoire `bin` dans votre home et modifiez `PATH` :
    ```bash
    $ mkdir -p ~/bin
@@ -315,6 +343,7 @@ title: TP2 - Système de fichiers et permissions
    $ echo $PATH
    ```
    Quelle est la différence avec l’affichage de la question 1 ?
+
 3. Avec `type`, cherchez les chemins absolus de `cat` et `rm` et notez-les.
 4. Copiez `cat` dans `~/bin` en le renommant `rm`.
 5. Créez un fichier `fic` avec quelques caractères, et deux copies `fic2`, `fic3`.
@@ -325,6 +354,7 @@ title: TP2 - Système de fichiers et permissions
    $ <chemin absolu vers rm> fic
    ```
    *(en remplaçant `<chemin absolu vers rm>` par le chemin noté à la question 3)*. Que s’est-il passé ?
+
 9. Enlevez la permission `x` sur `~/bin/rm` et essayez de supprimer `fic2`.
 10. Demandez au shell d’oublier les emplacements cachés :
     ```bash
@@ -332,6 +362,7 @@ title: TP2 - Système de fichiers et permissions
     $ type rm
     $ rm fic2
     ```
+
 11. Remettez la permission `x` sur `~/bin/rm` et testez :
     ```bash
     $ ~/bin/rm fic3
@@ -340,6 +371,7 @@ title: TP2 - Système de fichiers et permissions
     $ <chemin absolu vers rm> rm
     $ rm fic3
     ```
+
 12. **Bilan** — répondez :
     - Qu’est-ce qui est contenu dans `PATH` ?
     - Dans quel cas un nom de commande est-il cherché dans les répertoires du `PATH` ?
@@ -400,9 +432,37 @@ $ /usr/bin/uname
 ### Exercice 8 — Comprendre et manipuler `umask` ⭐
 
 !!! tip "`umask`"
-    `umask` définit les permissions **retirées par défaut** des fichiers et répertoires que vous créez. La valeur est octale : elle est **soustraite** des permissions par défaut (666 pour les fichiers, 777 pour les répertoires).
+    `umask` définit les permissions **retirées par défaut** des fichiers et
+    répertoires que vous créez. Les permissions de base sont `666` pour un
+    fichier et `777` pour un répertoire.
 
-    Exemple : si `umask` vaut `022`, un fichier créé aura `644` (= `666 − 022`) et un répertoire `755` (= `777 − 022`).
+    !!! danger "`umask` n'est **pas** une soustraction"
+        On lit souvent « permissions = base − umask ». C'est une approximation
+        qui **tombe juste par hasard** dans les cas courants et qui est **fausse
+        en général**. `umask` est un **masque binaire** : chaque bit positionné
+        dans le masque est **retiré** des permissions de base.
+
+        La règle exacte est un ET logique avec le complément du masque :
+
+        ```
+        permissions = base ET (NON umask)
+        ```
+
+        Vérification sur `umask 121` :
+
+        ```
+        base fichier   666 = 110 110 110
+        umask          121 = 001 010 001
+        NON umask          = 110 101 110
+        ET                 = 110 100 110 = 646   ← valeur réelle
+        soustraction   666 − 121 = 545           ← valeur FAUSSE
+        ```
+
+        La soustraction se trompe dès qu'un chiffre du masque contient un bit
+        absent du chiffre de base. Vous le vérifierez à la question 4.
+
+    Exemple : si `umask` vaut `022`, un fichier créé aura `644` et un répertoire
+    `755` — ici la soustraction et le masque donnent le même résultat.
 
 1. Tapez `umask` et notez le résultat.
 2. Créez un répertoire `rep` et un fichier `f` au même niveau. Affichez leurs permissions avec `ls -ld rep f`. Convertissez en octal et notez.
@@ -411,15 +471,20 @@ $ /usr/bin/uname
    $ umask 240
    ```
    Refaites la question 2.
+
 4. Idem avec :
    ```bash
    $ umask 121
    ```
+
 5. Idem avec :
    ```bash
    $ umask 666
    ```
-6. Pouvez-vous déduire comment `umask` agit ?
+
+6. Comparez systématiquement vos relevés avec la prédiction « base − umask ».
+   Pour quelles valeurs les deux méthodes divergent-elles ? Formulez la règle exacte.
+
 7. Restaurez la valeur initiale de `umask`.
 
 ### Exercice 9 — Permissions spéciales : SUID, SGID, sticky bit ⭐

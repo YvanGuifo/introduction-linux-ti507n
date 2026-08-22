@@ -2,6 +2,8 @@
 title: Quelques commandes supplémentaires
 ---
 
+# Quelques commandes supplémentaires
+
 !!! info "Objectifs pédagogiques"
 
     À l’issue de ce TP, l’étudiant sera capable de :
@@ -23,7 +25,7 @@ title: Quelques commandes supplémentaires
     > 📚 = Facile · 📚📚 = Moyenne · 📚📚📚 = Élevée
 
 !!! tip "Filtres textuels"
-    Les *filtres textuel* sont des commandes qui lisent ou peuvent lire depuis leur entrée standard et écrivent des données modifiées sur leur sortie standard. 
+    Les *filtres textuels* sont des commandes qui lisent ou peuvent lire depuis leur entrée standard et écrivent des données modifiées sur leur sortie standard. 
 
     En voici quelques-uns parmi les plus courants :
 
@@ -37,11 +39,13 @@ title: Quelques commandes supplémentaires
   
   ---
 
+## 1. Filtres textuels de base
+
 ### Exercice 1 — Frère Jacques 📚
 
 1. Créer un fichier `fj` contenant ces lignes :
     ```bash
-    Frère Jaques, 
+    Frère Jacques, 
     Frère Jacques,                    
     Dormez-vous,
     Dormez-vous,
@@ -53,7 +57,7 @@ title: Quelques commandes supplémentaires
     ```
     avec la commande `echo` (**le caractère `<newline>` correspond à la touche entrée de votre clavier**):
     ```bash
-    $ echo 'Frère Jaques,<newline> 
+    $ echo 'Frère Jacques,<newline> 
     > Frère Jacques,<newline>                     
     > Dormez-vous,<newline> 
     > Dormez-vous,<newline> 
@@ -63,6 +67,7 @@ title: Quelques commandes supplémentaires
     > Ding !<newline> 
     > Dong !' > fj
     ```
+
 2. Testez ensuite les commandes suivantes et observez leur résultats:
     ```bash
     $ cat fj 
@@ -103,9 +108,16 @@ En utilisant les commandes `wc`, `sort`, `cut`, `head` (ou éventuellement `tail
     - L'option `-n` de `sort` vous permet de trier les lignes d'un fichier par ordre numérique.
     - L'option `-d` de `tr` supprime les caractères reçus en premiers argument au lieu de les remplacer.
 
-Si vous avez installé `gcc`, vous devriez avoir :
+!!! warning "Cette sortie dépend de votre système"
+    La liste ci-dessous a été produite sur une Debian 12 avec `build-essential`
+    installé. **Le contenu de `/usr/include` varie selon la version de la
+    bibliothèque C et les paquets de développement présents** : vos dix noms peuvent
+    différer, et c'est normal. Ce qui est évalué, c'est la **ligne de commande**, pas
+    la liste obtenue.
+
+Si vous avez installé `gcc`, vous devriez obtenir une liste proche de celle-ci :
 ```bash
-pool
+poll
 wait
 syslog
 syscall
@@ -275,7 +287,7 @@ Cet exercice combine `grep`, `cut`, `sort`, `wc`, `awk` et `sed` dans un script 
 
    # 4. Utilisateurs sans shell de connexion (nologin ou false)
    echo "4. Utilisateurs sans shell interactif :"
-   grep -E "nologin|/bin/false" "$FICHIER" | cut -d: -f1 | tr '\n' ', '
+   grep -E "nologin|/bin/false" "$FICHIER" | cut -d: -f1 | tr '\n' ','
    echo ""
    echo ""
 

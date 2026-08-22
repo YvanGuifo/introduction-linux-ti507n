@@ -13,7 +13,7 @@ title: Lab 4 - Standard Channels and Redirections | Processes and Jobs | Signals
     - **[Analyze]** distinguish a **process** from a **job**; distinguish foreground from background.
     - **[Apply]** send signals to a process with `kill` (`SIGINT`, `SIGTSTP`, `SIGCONT`, `SIGTERM`, `SIGKILL`).
     - **[Evaluate]** choose between graceful termination (`SIGTERM`) and forced termination (`SIGKILL`).
-    - **[Create]** *(optional — ⭐)* write a C program that reacts to signals and fork a child process.
+    - **[Create]** write a C program that reacts to signals, forks a child process and waits for it (`signal`, `fork`, `wait`/`waitpid`, `execvp`).
 
     > **Reference**: Anderson, L. W., & Krathwohl, D. R. (2001). *A Taxonomy for Learning, Teaching, and Assessing*. Longman. ISBN 978-0801319037.
 
@@ -52,11 +52,14 @@ title: Lab 4 - Standard Channels and Redirections | Processes and Jobs | Signals
     > 📚 = Easy · 📚📚 = Medium · 📚📚📚 = Advanced
     >
     > Exercises **1 to 7** constitute the **core curriculum**, required for all students.
-    > Exercises **8, 9, 10** are **supplementary exercises** (⭐).
+    > Exercises **8, 9, 10** (⭐) cover **systems programming in C**.
+    > **As of 2026‑2027 they are part of the graded scope**: they cover the
+    > "Programming" section of the module syllabus.
 
 !!! info "Alignment with assessments (Biggs, 1996)"
     Exercises 📚 and 📚📚 prepare for the **CC S38** and the **graded lab S40**.
     Exercises 📚📚📚 prepare for the **DE S42 (MCQ)** through their analysis and justification dimensions.
+    The ⭐ exercises in this lab prepare for the **system-call** part of the **DE S42**.
 
     > **Reference**: Biggs, J. (1996). Enhancing teaching through constructive alignment. *Higher Education*, 32(3), 347–364. DOI: [10.1007/BF00138871](https://doi.org/10.1007/BF00138871).
 
@@ -104,39 +107,41 @@ title: Lab 4 - Standard Channels and Redirections | Processes and Jobs | Signals
    $ cat fichier.txt
    $ echo "Je m'ajoute en fin de ligne" 1>> fichier.txt
    ```
+
 2. Recall what the `cat` command does (`man cat`), then answer:
 
-        - What is the difference between `>` and `>>`?
-        - What is the difference between `1>` and `>`?
-        - What is the difference between `1>>` and `>>`?
+   - What is the difference between `>` and `>>`?
+   - What is the difference between `1>` and `>`?
+   - What is the difference between `1>>` and `>>`?
     
 3. Navigate to your home directory and run:
    ```bash
    $ ls > list_files.txt; cat list_files.txt
    ```
-        - What does this command do?
+   - What does this command do?
    - Can you explain why the string `list_files.txt` appears inside the file `list_files.txt`?
 
 ---
 
 ### Exercise 2 — Redirecting standard error 📚📚
 
-1. In a directory `dir`, create a file `file-1.txt` whose content is `Hello world !`.
-2. Create a copy of `file-1.txt` named `file-2.txt`. Remove **all read permissions** from `file-2.txt`.
-3. Type the following command and note the results (you will get errors):
-   ```bash
-   $ cat file-1.txt file-2.txt file-3.txt
-   ```
-4. Which command succeeded? Which commands failed and why?
-5. Redirect the standard output of the previous command to a file `result.txt`. Observe what is displayed on the terminal **and** what is in `result.txt`.
-6. Then type:
-   ```bash
-   $ cat file-1.txt file-2.txt file-3.txt 1> result.txt 2> error.txt # (i)
-   ```
+1.  In a directory `dir`, create a file `file-1.txt` whose content is `Hello world !`.
+2.  Create a copy of `file-1.txt` named `file-2.txt`. Remove **all read permissions** from `file-2.txt`.
+3.  Type the following command and note the results (you will get errors):
+    ```bash
+    $ cat file-1.txt file-2.txt file-3.txt
+    ```
+
+4.  Which command succeeded? Which commands failed and why?
+5.  Redirect the standard output of the previous command to a file `result.txt`. Observe what is displayed on the terminal **and** what is in `result.txt`.
+6.  Then type:
+    ```bash
+    $ cat file-1.txt file-2.txt file-3.txt 1> result.txt 2> error.txt # (i)
+    ```
 
     1. `1>` redirects **standard output** (channel 1) to `result.txt`, `2>` redirects **standard error** (channel 2) to `error.txt`. This separates normal results from error messages.
 
-7. Observe the contents of `result.txt` and `error.txt`. In your opinion, what do `1>` and `2>` mean? Draw a conclusion about the difference between standard output and standard error.
+7.  Observe the contents of `result.txt` and `error.txt`. In your opinion, what do `1>` and `2>` mean? Draw a conclusion about the difference between standard output and standard error.
 
 ---
 
@@ -163,6 +168,7 @@ title: Lab 4 - Standard Channels and Redirections | Processes and Jobs | Signals
    <Ctrl-d>
    ```
    How many arguments did `cat` receive? What did it display? Why?
+
 3. Now test:
    ```bash
    $ cat > catout.txt
@@ -171,6 +177,7 @@ title: Lab 4 - Standard Channels and Redirections | Processes and Jobs | Signals
    <Ctrl-d>
    ```
    Display the contents of `catout.txt`. What does it contain? Why?
+
 4. Finally type:
    ```bash
    $ cat < catout.txt
@@ -186,7 +193,7 @@ title: Lab 4 - Standard Channels and Redirections | Processes and Jobs | Signals
 ??? saviezvous "The pipe `|`: invented on a napkin in 1973"
     The **pipe** concept was proposed by **Doug McIlroy** (Bell Labs) as early as 1964, but it was **Ken Thompson** who implemented it in Unix in a single night in February 1973. The idea is remarkably elegant: rather than creating monolithic programs, you write **small specialized tools** and connect them together. This philosophy — *"Do one thing and do it well"* — became Unix's founding principle and still influences software architecture today (microservices, CI/CD pipelines).
 
-    > McIlroy, M. D. (1978). UNIX Time-Sharing System: Foreword. *The Bell System Technical Journal*, 57(6), 1899–1904. DOI: [10.1002/j.1538-7305.1978.tb02135.x](https://doi.org/10.1002/j.1538-7305.1978.tb02135.x)
+    > McIlroy, M. D., Pinson, E. N. & Tague, B. A. (1978). UNIX Time-Sharing System: Foreword. *The Bell System Technical Journal*, 57(6), 1899–1904. DOI: [10.1002/j.1538-7305.1978.tb02135.x](https://doi.org/10.1002/j.1538-7305.1978.tb02135.x)
 
 !!! tip "Definition"
     A **pipe** connects the standard output of one command to the standard input of another. The `|` character is used.
@@ -200,27 +207,31 @@ title: Lab 4 - Standard Channels and Redirections | Processes and Jobs | Signals
 
 This exercise consolidates redirections **and** pipes. You will work with the `.h` files in the `/usr/include` directory (C library headers).
 
-1. Using **only an output redirection**, create a file `include_files.txt` listing all `.h` files in `/usr/include`:
-   ```bash
-   $ ls /usr/include/*.h > include_files.txt
-   ```
-2. Test the following command and comment:
-   ```bash
-   $ ls /usr/include/*.h | wc -l # (i)
-   ```
+1.  Using **only an output redirection**, create a file `include_files.txt` listing all `.h` files in `/usr/include`:
+    ```bash
+    $ ls /usr/include/*.h > include_files.txt
+    ```
+
+2.  Test the following command and comment:
+    ```bash
+    $ ls /usr/include/*.h | wc -l # (i)
+    ```
 
     1. The `|` (pipe) connects the output of `ls` to the input of `wc`. The `-l` option of `wc` counts the number of **lines** received — here, the number of `.h` files.
 
     Where is the result of `ls` redirected? Where does the standard input of `wc` come from? Where is the result of `wc` displayed?
-3. Display on the terminal the sentence
-   `Il y a <nombre> fichiers .h dans le répertoire /usr/include`
-   using `echo` and **command substitution** `$(...)` (covered in Lab 3, exercise 6).
-4. Enter the following command and comment:
-   ```bash
-   $ wc -l $(ls /usr/include/*.h)
-   ```
-5. **Analysis question**: why does the result of question 4 differ from that of question 2? *(Hint: does `wc -l` receive the file names or their content?)*
-6. **Justification question**: write a command that appends to the **end** of `include_files.txt` the sentence from question 3, using `>>` and command substitution.
+
+3.  Display on the terminal the sentence
+    `Il y a <nombre> fichiers .h dans le répertoire /usr/include`
+    using `echo` and **command substitution** `$(...)` (covered in Lab 3, exercise 6).
+
+4.  Enter the following command and comment:
+    ```bash
+    $ wc -l $(ls /usr/include/*.h)
+    ```
+
+5.  **Analysis question**: why does the result of question 4 differ from that of question 2? *(Hint: does `wc -l` receive the file names or their content?)*
+6.  **Justification question**: write a command that appends to the **end** of `include_files.txt` the sentence from question 3, using `>>` and command substitution.
 
 !!! info "This exercise is representative of a typical **DE S42 (MCQ)** item."
 
@@ -265,11 +276,12 @@ This exercise consolidates redirections **and** pipes. You will work with the `.
    ```bash
    $ ps
    ```
+
 3. **Questions**:
 
-       - What does <kbd>Ctrl</kbd>+<kbd>Z</kbd> do? And <kbd>Ctrl</kbd>+<kbd>C</kbd>?
-       - Redo the sequence by typing commands (for example `pwd`, `ls`) **between** `sleep 240` and <kbd>Ctrl</kbd>+<kbd>Z</kbd>. What do you notice?
-   - What does `fg %1` do in general?
+    - What does <kbd>Ctrl</kbd>+<kbd>Z</kbd> do? And <kbd>Ctrl</kbd>+<kbd>C</kbd>?
+    - Redo the sequence by typing commands (for example `pwd`, `ls`) **between** `sleep 240` and <kbd>Ctrl</kbd>+<kbd>Z</kbd>. What do you notice?
+    - What does `fg %1` do in general?
 
 !!! info "Information about `ps` output"
     By default, `ps` returns four columns:
@@ -283,39 +295,39 @@ This exercise consolidates redirections **and** pipes. You will work with the `.
 
 This exercise asks you to write a small C program using the skills from Lab 3.
 
-1. Write a C program `compteur.c` that indefinitely increments a variable `i` and displays its value **on standard output every multiple of 100**. Use `sleep` to slow down execution and observe the output.
+1.  Write a C program `compteur.c` that indefinitely increments a variable `i` and displays its value **on standard output every multiple of 100**. Use `sleep` to slow down execution and observe the output.
 
-    !!! info "Where is `sleep` in C?"
-        Type `man 3 sleep` to see the signature of the `sleep` function in the standard library (`<unistd.h>`).
+     !!! info "Where is `sleep` in C?"
+         Type `man 3 sleep` to see the signature of the `sleep` function in the standard library (`<unistd.h>`).
 
-2. Compile with `gcc -Wall -o compteur compteur.c`. Test:
-   ```bash
-   $ ./compteur
-   <Ctrl-z>           # (i)
-   $ jobs
-   $ jobs -p           # (ii)
-   $ ps
-   $ fg %1
-   <Ctrl-z>
-   $ bg %1
-   $ fg %1
-   <Ctrl-z>
-   $ jobs
-   $ fg %1
-   <Ctrl-c>
-   $ jobs
-   ```
+2.  Compile with `gcc -Wall -o compteur compteur.c`. Test:
+    ```bash
+    $ ./compteur
+    <Ctrl-z>           # (i)
+    $ jobs
+    $ jobs -p           # (ii)
+    $ ps
+    $ fg %1
+    <Ctrl-z>
+    $ bg %1
+    $ fg %1
+    <Ctrl-z>
+    $ jobs
+    $ fg %1
+    <Ctrl-c>
+    $ jobs
+    ```
 
     1. <kbd>Ctrl+Z</kbd> sends the `SIGTSTP` signal: the process is **suspended** (not terminated), it remains in memory.
     2. `-p` displays only the **PID** (numeric identifier) of each job, useful for `kill`.
 
-3. **Analysis questions**:
+3.  **Analysis questions**:
 
-       - What methods allow you to place a process in the background? In the foreground?
-       - What is the difference between <kbd>Ctrl</kbd>+<kbd>Z</kbd> and <kbd>Ctrl</kbd>+<kbd>C</kbd>?
-       - What is the purpose of the `-p` option of `jobs`?
-   - What does `bg` do in general?
-   - What **job states** did you observe? *(Hint: `Running`, `Stopped`, `Terminated`...)*
+    - What methods allow you to place a process in the background? In the foreground?
+    - What is the difference between <kbd>Ctrl</kbd>+<kbd>Z</kbd> and <kbd>Ctrl</kbd>+<kbd>C</kbd>?
+    - What is the purpose of the `-p` option of `jobs`?
+    - What does `bg` do in general?
+    - What **job states** did you observe? *(Hint: `Running`, `Stopped`, `Terminated`...)*
 
 !!! info "This exercise is representative of a typical **DE S42 (MCQ)** item."
 
@@ -355,6 +367,19 @@ This exercise asks you to write a small C program using the skills from Lab 3.
 
 ### Exercise 7 — Manipulating signals with `kill` 📚📚📚
 
+!!! info "Structured help"
+    - **Naming the target.** `kill` accepts a **PID** (`kill 12345`) or a **job number**
+      prefixed with `%` (`kill %2`). `jobs -p` gives the PIDs, `jobs` the job numbers.
+    - **Naming the signal.** Three spellings are equivalent:
+      `kill -SIGTERM <target>`, `kill -s SIGTERM <target>`, `kill -15 <target>`.
+      With no signal given, `kill` sends `SIGTERM`.
+    - **Reading the effect.** After each `kill`, run `jobs` again: the status column
+      goes from `Running` to `Stopped` (suspended) then to `Terminated`/`Killed`. A
+      finished process only disappears from `jobs` on the **second** call — which is why
+      question 3 has you type `jobs` twice.
+    - **If you lose control.** `jobs -p | xargs kill -9` terminates every job of the
+      current terminal.
+
 1. Type `kill -L` and note the numbers associated with `SIGINT`, `SIGTSTP`, `SIGCONT`, `SIGTERM`, `SIGKILL`.
 2. The `&` character at the end of a command launches it in the background. Launch **three** `./compteur` processes in the background:
    ```bash
@@ -363,6 +388,7 @@ This exercise asks you to write a small C program using the skills from Lab 3.
    $ ./compteur &           # processus 3
    $ jobs -p                # note les PID
    ```
+
 3. Manipulate the signals:
    ```bash
    $ kill -SIGTSTP <PID du processus 1>
@@ -377,10 +403,11 @@ This exercise asks you to write a small C program using the skills from Lab 3.
    $ kill -9 <PID du processus 3>
    $ jobs
    ```
+
 4. **Questions**:
 
-       - What is the difference between `SIGINT` and `SIGTSTP`? Between `SIGTSTP` and `SIGTERM`?
-       - Based on your observations, **how many different syntaxes** of `kill` produce the same effect? List them.
+    - What is the difference between `SIGINT` and `SIGTSTP`? Between `SIGTSTP` and `SIGTERM`?
+    - Based on your observations, **how many different syntaxes** of `kill` produce the same effect? List them.
        
 5. **Evaluation question** — for each of the following cases, indicate **the most appropriate signal and justify**:
 
@@ -393,7 +420,7 @@ This exercise asks you to write a small C program using the skills from Lab 3.
 
 ## Summary — What You Should Be Able to Do
 
-!!! success "Quick self-assessment (core curriculum)"
+!!! success "Quick self-assessment"
     Before leaving the session, verify that you can:
 
     - [ ] Redirect `stdout` (`>`, `>>`), `stderr` (`2>`), `stdin` (`<`).
@@ -405,59 +432,98 @@ This exercise asks you to write a small C program using the skills from Lab 3.
     - [ ] Send a signal with `kill` using the different syntaxes (`-SIGTERM`, `-s SIGTERM`, `-15`).
     - [ ] Choose between `SIGTERM` (graceful) and `SIGKILL` (forced) depending on the context.
 
+    **Systems programming (⭐ — graded)**:
+
+    - [ ] Install a signal handler with `signal()` and explain why `sigaction()` is preferred.
+    - [ ] Create a child process with `fork()` and tell the two execution paths apart from the return value.
+    - [ ] Wait for a child with `wait()` / `waitpid()` and explain what a zombie process is.
+    - [ ] Replace a process image with `execvp()` and justify why it does not return on success.
+
     If an item is not checked, **go back to the corresponding exercise**.
 
 ---
 
-## ⭐ Supplementary Exercises
+## ⭐ Systems programming
 
-!!! star "Who are exercises 8, 9, 10 for?"
-    You have completed exercises 1 to 7? These three exercises close the C programming progression started in Lab 3 and have you write a **mini-shell**.
+!!! star "Exercises 8, 9 and 10 are part of the syllabus"
+    These three exercises close the C programming progression started in Lab 3 and have
+    you write a **mini-shell**.
 
-    **Reminder** of system calls covered in **Lab 3 ⭐**: `open`, `read`, `write`, `close`, `perror`, `dup`, `dup2`.
+    **Reminder** of the system calls covered in **Lab 3 ⭐**: `open`, `read`, `write`,
+    `close`, `perror`, `dup`, `dup2`.
 
-    **Lab 4 ⭐**: **`signal`**, **`fork`**, **`exec*`**, **`wait`** — the core of Unix multitasking.
+    **Lab 4 ⭐**: **`signal`**, **`fork`**, **`exec*`**, **`wait`** / **`waitpid`** — the
+    core of Unix multitasking.
 
-    The targeted taxonomic levels are **[Analyze]**, **[Evaluate]** and **[Create]** (Bloom's revised).
+    Targeted taxonomic levels: **[Analyze]**, **[Evaluate]**, **[Create]** (revised Bloom).
 
-    These exercises are **optional** and **not graded**.
+    !!! warning "Change for 2026‑2027"
+        These exercises used to be presented as optional. **They are now graded**:
+        `fork`, `exec*`, `wait` and signals are part of the **DE S42** scope.
 
 ### Exercise 8 — Catching a signal in C with `signal()` ⭐
 
 The `signal()` system call allows you to install a **handler** that will be called each time the process receives a given signal.
 
-1. Read the manual page: `man 2 signal`. Note the signature.
-2. Create `catch-sigint.c`:
-   ```c
-   #include <stdio.h>      /* printf */
-   #include <signal.h>     /* signal, SIGINT */
-   #include <unistd.h>     /* sleep */
+1.  Read the manual page: `man 2 signal`. Note the signature.
 
-   static volatile int compteur_sigint = 0;
+2.  Create `catch-sigint.c`:
 
-   void handler(int sig) {
-       compteur_sigint++;
-       printf("\n[Signal %d reçu — total : %d]\n", sig, compteur_sigint);
-   }
+    ```c
+    #include <stdio.h>      /* printf */
+    #include <signal.h>     /* signal, SIGINT, sig_atomic_t */
+    #include <unistd.h>     /* pause, write, getpid, STDERR_FILENO */
+    #include <string.h>     /* strlen */
 
-   int main(void) {
-       signal(SIGINT, handler);
+    static volatile sig_atomic_t sigint_count = 0;   // (i)
 
-       printf("PID = %d. Appuyez sur Ctrl-C plusieurs fois...\n", (int)getpid());
-       while (compteur_sigint < 3) {
-           sleep(1);
-       }
-       printf("Trois SIGINT reçus, je m'arrête proprement.\n");
-       return 0;
-   }
-   ```
-3. Compile: `gcc -Wall -o catch-sigint catch-sigint.c`.
-4. Run `./catch-sigint`, then press <kbd>Ctrl</kbd>+<kbd>C</kbd> **3 times**.
-5. **Questions**:
+    void handler(int sig) {
+        (void)sig;
+        sigint_count++;
+        const char *msg = "\n[SIGINT received]\n";
+        write(STDERR_FILENO, msg, strlen(msg));      // (ii)
+    }
+
+    int main(void) {
+        signal(SIGINT, handler);
+
+        printf("PID = %d. Press Ctrl-C several times...\n", (int)getpid());
+        while (sigint_count < 3) {
+            pause();                                  // (iii)
+        }
+        printf("Three SIGINT received (total = %d), exiting cleanly.\n",
+               (int)sigint_count);
+        return 0;
+    }
+    ```
+
+    1.  `volatile sig_atomic_t` is **the only type** the C standard guarantees can be
+        read and written atomically between the main program and a signal handler. A
+        plain `int` gives no such guarantee.
+    2.  We write with `write()` and **not** `printf()`: a signal handler may only call
+        so-called **async-signal-safe** functions. `printf()` is not one of them —
+        calling it from a handler can corrupt the `stdio` buffers if the signal arrives
+        at the wrong moment. Official list: `man 7 signal-safety`.
+    3.  `pause()` suspends the process until a signal arrives — more accurate than a
+        `sleep(1)` that would poll the variable periodically.
+
+3.  Compile without letting a single warning through:
+
+    ```bash
+    $ gcc -Wall -Wextra -Wstrict-prototypes -o catch-sigint catch-sigint.c
+    ```
+
+4.  Run `./catch-sigint`, then press <kbd>Ctrl</kbd>+<kbd>C</kbd> **3 times**.
+
+5.  **Questions**:
 
     - Why does <kbd>Ctrl</kbd>+<kbd>C</kbd> **no longer interrupt** the program?
-   - Try sending `SIGTERM` from another terminal: `kill <PID>`. What happens?
-   - Then try `kill -9 <PID>`. What happens? Why?
+    - Try sending `SIGTERM` from another terminal: `kill <PID>`. What happens?
+    - Then try `kill -9 <PID>`. What happens? Why?
+
+6.  **Analysis question**: replace `write()` with the original `printf()` in the
+    handler, then run the program while holding <kbd>Ctrl</kbd>+<kbd>C</kbd> down. The
+    program may freeze or print garbage. Explain why, using `man 7 signal-safety`.
 
 !!! info "Important note"
     `signal()` has historically variable semantics across systems. In production, `sigaction()` is preferred (see `man 2 sigaction`) as it offers more deterministic behavior.
@@ -468,9 +534,9 @@ The `signal()` system call allows you to install a **handler** that will be call
 
 `fork()` is the system call that **duplicates** the calling process: upon returning from `fork()`, **two** identical processes execute in parallel. The return value allows you to distinguish them:
 
-> - `> 0` (child's PID) → we are in the **parent**.
-> - `== 0` → we are in the **child**.
-> - `< 0` → failure.
+- `> 0` (child's PID) → we are in the **parent**.
+- `== 0` → we are in the **child**.
+- `< 0` → failure.
 
 1. Read: `man 2 fork` then `man 2 wait`.
 2. Create `fork-demo.c`:
@@ -508,6 +574,7 @@ The `signal()` system call allows you to install a **handler** that will be call
        return 0;
    }
    ```
+
 3. Compile and run several times. Observe the PIDs.
 4. **Questions**:
 
@@ -564,6 +631,7 @@ You are going to reproduce this mechanism.
        return 0;
    }
    ```
+
 2. Compile: `gcc -Wall -o mysh mysh.c`.
 3. Test:
    ```bash
@@ -572,11 +640,12 @@ You are going to reproduce this mechanism.
    $ ./mysh echo Hello from mysh
    $ ./mysh /commande/inexistante
    ```
+
 4. **Analysis questions**:
 
-       - Why does `execvp` **never** return if everything goes well?
-   - What is the difference between `execv`, `execvp` and `execve`? *(Hint: `man 3 exec`.)*
-   - Combine what you have learned: modify `mysh.c` so that the output of the executed command is **redirected** to a file `mysh.out`. *(Hint: before the `exec*`, use `dup2` as in exercise 10 of Lab 3.)*
+    - Why does `execvp` **never** return if everything goes well?
+    - What is the difference between `execv`, `execvp` and `execve`? *(Hint: `man 3 exec`.)*
+    - Combine what you have learned: modify `mysh.c` so that the output of the executed command is **redirected** to a file `mysh.out`. *(Hint: before the `exec*`, use `dup2` as in exercise 10 of Lab 3.)*
 
 !!! success "Congratulations"
     You have just implemented the core functionality of a Unix shell: `fork` + `exec` + `wait` + redirection via `dup2`. All these building blocks are what `bash` itself does internally for every command you type.

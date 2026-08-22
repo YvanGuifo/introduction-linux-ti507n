@@ -21,7 +21,7 @@ hide:
 
 !!! tip "Prérequis"
     - Lecture préliminaire effectuée ([preliminary-reading](./preliminary-reading.md)).
-    - Distribution Debian 12 installée ([installation-wsl](./installation-wsl.md)) **ou** session MarioNum active ([Intro-MarioNum](./Intro-MarioNum.md)).
+    - Distribution Debian 12 installée ([installation d’une distribution Linux](./installation-linux.md)) **ou** session MarioNum active ([Intro-MarioNum](./Intro-MarioNum.md)).
     - Terminal ouvert et prompt `$` visible.
 
 !!! info "Instructions"
@@ -71,7 +71,7 @@ hide:
 ??? saviezvous "Pourquoi les commandes Unix sont-elles si courtes ?"
     Les créateurs d’Unix, **Ken Thompson** et **Dennis Ritchie** (Bell Labs, 1969–1971), utilisaient un télétype ASR-33 comme terminal. Ce clavier mécanique était lent et bruyant : chaque frappe comptait. C’est pourquoi les commandes sont devenues `ls` plutôt que `list`, `cp` plutôt que `copy`, `mv` plutôt que `move`. Cette concision, née d’une contrainte matérielle, est devenue un trait culturel d’Unix.
 
-    > Thompson, K. & Ritchie, D. M. (1974). The UNIX Time-Sharing System. *Communications of the ACM*, 17(7), 365–375. DOI : [10.1145/361011.361061](https://doi.org/10.1145/361011.361061)
+    > Ritchie, D. M. & Thompson, K. (1974). The UNIX Time-Sharing System. *Communications of the ACM*, 17(7), 365–375. DOI : [10.1145/361011.361061](https://doi.org/10.1145/361011.361061)
 
 !!! tip "Qu’est-ce qu’une commande ?"
     Une **commande** est une séquence de mots terminée par <kbd>Entrée</kbd>. Le premier mot est le **nom** de la commande, les autres sont ses **arguments**.
@@ -98,6 +98,7 @@ hide:
    $ echo Hello, world!
    $ echo       Hello,        world!
    ```
+
 2. Appuyez sur <kbd>↑</kbd> (ou <kbd>Ctrl-P</kbd>) plusieurs fois jusqu’à ce que la commande `who` s’affiche. Appuyez maintenant sur <kbd>↓</kbd> (ou <kbd>Ctrl-N</kbd>) jusqu’à revenir sur `uname -m -r`, puis exécutez. Notez à quoi servent ces raccourcis.
 3. Appuyez sur <kbd>Ctrl-L</kbd>. Notez à quoi sert ce raccourci.
 4. Sans écrire la commande, faites afficher `cal 3 2022`, **sans l’exécuter**.
@@ -116,9 +117,9 @@ hide:
 
     - `pwd` (*print working directory*) : affiche le chemin absolu du répertoire courant.
     - `cd <chemin>` (*change directory*) : se déplace.
-      - `cd` seul → répertoire personnel.
-      - `cd ..` → répertoire parent.
-      - `cd -` → répertoire précédent.
+    - `cd` seul → répertoire personnel.
+    - `cd ..` → répertoire parent.
+    - `cd -` → répertoire précédent.
     - `ls [<chemin>]` : liste le contenu d’un répertoire.
 
     Le caractère `~` (*tilde*) est un raccourci pour le répertoire personnel de l’utilisateur.
@@ -131,8 +132,9 @@ hide:
 4. Entrez `cd` (sans argument), puis `pwd`. Commentez.
 5. Entrez `cd /`, puis `pwd` et `ls`. À quoi sert `ls` ?
 6. Entrez `cd /usr/include` puis `ls`. À quoi semble servir ce répertoire ?
-??? saviezvous "Pourquoi la commande s'appelle `cat` ?"
-    La commande `cat` est l'abréviation de **concatenate** (concaténer). Sa fonction première n'était pas d'afficher un fichier, mais de **concaténer** plusieurs fichiers bout à bout (`cat fichier1 fichier2 > fusion`). L'usage courant `cat fichier` pour *afficher* un fichier est en réalité un cas particulier : la concaténation d'un seul fichier vers la sortie standard. Cette distinction reste importante en TP4 quand on abordera les redirections.
+
+    ??? saviezvous "Pourquoi la commande s'appelle `cat` ?"
+        La commande `cat` est l'abréviation de **concatenate** (concaténer). Sa fonction première n'était pas d'afficher un fichier, mais de **concaténer** plusieurs fichiers bout à bout (`cat fichier1 fichier2 > fusion`). L'usage courant `cat fichier` pour *afficher* un fichier est en réalité un cas particulier : la concaténation d'un seul fichier vers la sortie standard. Cette distinction reste importante en TP4 quand on abordera les redirections.
 
 7. Rappels :
 
@@ -164,56 +166,72 @@ hide:
 
 ### Exercice 3 — Créer, déplacer, copier, supprimer 📚📚
 
-1. Placez-vous dans votre répertoire personnel et listez son contenu.
-2. Créez un répertoire `tp_shell` avec `mkdir`. Listez le contenu du répertoire personnel et de `tp_shell`.
-3. Entrez `mkdir abeilles tp_shell/tp1 ~/arbres`. Quels arguments sont absolus, lesquels sont relatifs ?
-4. Que fait la commande suivante ?
-   ```bash
-   $ mkdir -p vivant/plante/fleur tp_shell/tp1/exos/ex1/ # (i)
-   ```
+1.  Placez-vous dans votre répertoire personnel et listez son contenu.
+2.  Créez un répertoire `tp_shell` avec `mkdir`. Listez le contenu du répertoire personnel et de `tp_shell`.
+3.  Entrez `mkdir abeilles tp_shell/tp1 ~/arbres`. Quels arguments sont absolus, lesquels sont relatifs ?
+4.  Que fait la commande suivante ?
+    ```bash
+    $ mkdir -p vivant/plante/fleur tp_shell/tp1/exos/ex1/ # (i)
+    ```
 
     1. `-p` (*parents*) crée tous les répertoires intermédiaires manquants. Sans cette option, `mkdir` échoue si un répertoire parent n'existe pas.
-??? saviezvous "La touche Tab : une révolution dans l'interaction homme-machine"
-    La **complétion automatique** par <kbd>Tab</kbd> a été introduite dans le **C shell** (`csh`) par Bill Joy à l'université de Berkeley en 1978, puis reprise et améliorée par Bash. Avant cela, il fallait taper chaque nom de fichier en entier, lettre par lettre — une source d'erreurs de frappe constante. Aujourd'hui, la complétion « intelligente » va bien au-delà des noms de fichiers : elle complète les options de commandes, les noms d'hôtes SSH, les branches Git, et bien plus.
 
-    > Joy, W. (1979). *An Introduction to the C Shell*. Computer Science Division, University of California, Berkeley.
+    ??? saviezvous "La touche Tab : une révolution dans l'interaction homme-machine"
+        La **complétion automatique** par <kbd>Tab</kbd> a été introduite dans le **C shell** (`csh`) par Bill Joy à l'université de Berkeley en 1978, puis reprise et améliorée par Bash. Avant cela, il fallait taper chaque nom de fichier en entier, lettre par lettre — une source d'erreurs de frappe constante. Aujourd'hui, la complétion « intelligente » va bien au-delà des noms de fichiers : elle complète les options de commandes, les noms d'hôtes SSH, les branches Git, et bien plus.
 
-5. Testez la **complétion automatique** avec la touche <kbd>Tab</kbd> :
-   ```bash
-   $ mkd<Tab> vi<Tab><Tab><Tab>roses
-   ```
-   Puis :
-   ```bash
-   $ ls a<Tab><Tab>
-   ```
-6. Supprimez des répertoires vides avec `rmdir` :
-   ```bash
-   $ rmdir vivant tp_shell/tp1/exos/ex1
-   ```
-   Supprimez également le sous-répertoire `tp1` de `tp_shell`.
-7. Créez des fichiers vides avec `touch` :
-   ```bash
-   $ touch ~/arbres/hello.c abeilles/truc.txt bidule
-   $ ls ~/arbres abeilles/ .
-   ```
-8. Déplacez / renommez avec `mv` :
-   ```bash
-   $ mv arbres/hello.c arbres/bonjour.c
-   $ mv abeilles arbres vivant/
-   $ mv bidule vivant
-   $ mv vivant vie
-   ```
-9. Copiez avec `cp` :
-   ```bash
-   $ cp vie/arbres/bonjour.c salut.c
-   $ mkdir copies
-   $ cp salut.c vie/abeilles/truc.txt copies
-   $ cp -R vie copie_vie # (i)
-   ```
+        > Joy, W. (1979). *An Introduction to the C Shell*. Computer Science Division, University of California, Berkeley.
+
+5.  Testez la **complétion automatique** avec la touche <kbd>Tab</kbd> :
+    ```bash
+    $ mkd<Tab> vi<Tab><Tab><Tab>roses
+    ```
+    Puis :
+    ```bash
+    $ ls a<Tab><Tab>
+    ```
+
+6.  Supprimez des répertoires vides avec `rmdir` :
+    ```bash
+    $ rmdir vivant tp_shell/tp1/exos/ex1
+    ```
+
+    **Une des deux suppressions échoue.** Laquelle, et que dit exactement le message
+    d'erreur ? Que pouvez-vous en déduire sur `rmdir` ?
+
+    Essayez maintenant de supprimer le sous-répertoire `tp1` de `tp_shell` avec
+    `rmdir` : cela échoue aussi. Trouvez pourquoi (`ls -R tp_shell`), puis
+    supprimez-le réellement, soit en remontant l'arborescence de bas en haut, soit
+    avec l'option `-p` de `rmdir`.
+
+    !!! warning "Ne supprimez pas `vivant`"
+        `vivant` doit rester en place : il sert de destination à la question 8.
+
+7.  Créez des fichiers vides avec `touch` :
+    ```bash
+    $ touch ~/arbres/hello.c abeilles/truc.txt bidule
+    $ ls ~/arbres abeilles/ .
+    ```
+
+8.  Déplacez / renommez avec `mv` :
+    ```bash
+    $ mv arbres/hello.c arbres/bonjour.c
+    $ mv abeilles arbres vivant/
+    $ mv bidule vivant
+    $ mv vivant vie
+    ```
+
+9.  Copiez avec `cp` :
+    ```bash
+    $ cp vie/arbres/bonjour.c salut.c
+    $ mkdir copies
+    $ cp salut.c vie/abeilles/truc.txt copies
+    $ cp -R vie copie_vie # (i)
+    ```
 
     1. `-R` (*recursive*) copie le répertoire et **tout** son contenu (sous-répertoires et fichiers). Sans `-R`, `cp` refuse de copier un répertoire.
 
     Décrivez le comportement de `cp` selon que son dernier argument est un répertoire existant ou non, avec/sans `-R`.
+
 10. Supprimez avec `rm` :
     ```bash
     $ rm vie/bidule
@@ -232,17 +250,20 @@ hide:
 
 Créez l’arborescence suivante depuis votre répertoire personnel. Seuls `rapport.txt` et `index.html` sont des fichiers normaux. Les répertoires **Mail**, **Rapport** et **Web** seront créés **en une seule commande** `mkdir`.
 
-```mermaid
-stateDiagram-v2
-    ~ --> Mail
-    ~ --> Rapport
-    ~ --> Web
-    Rapport --> rapport.txt
-    Rapport --> Docs
-    Docs --> Afaire
-    Docs --> Fait
-    Web --> index.html
+```text
+~
+├── Mail/
+├── Rapport/
+│   ├── rapport.txt
+│   └── Docs/
+│       ├── Afaire/
+│       └── Fait/
+└── Web/
+    └── index.html
 ```
+
+*(Les noms suivis de `/` sont des répertoires ; `rapport.txt` et `index.html` sont
+des fichiers ordinaires. Vous pourrez vérifier votre travail avec `ls -R ~`.)*
 
 Utilisez `touch` pour créer les fichiers normaux, puis un éditeur de texte pour leur donner un contenu.
 
@@ -309,6 +330,7 @@ Depuis votre répertoire personnel, exécutez :
    $ man 1 printf
    $ man 3 printf
    ```
+
 6. Dans le SYNOPSIS de `mv`, que signifient les crochets `[ ]` et les points de suspension `...` ? Consultez `man man` si besoin.
 
 ---
@@ -326,36 +348,37 @@ Depuis votre répertoire personnel, exécutez :
 
 ### Exercice 7 — Jokers 📚📚📚
 
-1. Créez un répertoire `tp_joker` dans votre home. Placez-vous dedans. Créez les fichiers **vides** suivants :
-   `annee1  Annee2  annee4  annee45  annee41  annee510  annee_saucisse  annee_banane  bonbon`
-2. Sans les exécuter, prédisez le résultat des commandes suivantes, puis testez :
-   ```bash
-   $ echo *          # (i)
-   $ echo *_*        # (ii)
-   $ echo [ab]*      # (iii)
-   $ echo [^ab]*     # (iv)
-   $ echo c*
-   $ echo ??????     # (v)
-   ```
+1.  Créez un répertoire `tp_joker` dans votre home. Placez-vous dedans. Créez les fichiers **vides** suivants :
+    `annee1  Annee2  annee4  annee45  annee41  annee510  annee_saucisse  annee_banane  bonbon`
+
+2.  Sans les exécuter, prédisez le résultat des commandes suivantes, puis testez :
+    ```bash
+    $ echo *          # (i)
+    $ echo *_*        # (ii)
+    $ echo [ab]*      # (iii)
+    $ echo [^ab]*     # (iv)
+    $ echo c*
+    $ echo ??????     # (v)
+    ```
  
-    1. `*` correspond à toute chaîne de caractères (même vide), sauf les fichiers commençant par `.`.
-    2. `*_*` : fichiers contenant un underscore — `*` de chaque côté correspond à n'importe quel préfixe/suffixe.
-    3. `[ab]*` : fichiers commençant par `a` **ou** `b`. Les crochets définissent un ensemble de caractères possibles pour **une** position.
-    4. `[^ab]*` : le `^` **inverse** la classe — ici, fichiers ne commençant **ni** par `a` **ni** par `b`.
-    5. `?` correspond à exactement **un** caractère. Six `?` = fichiers de exactement 6 caractères.
+     1. `*` correspond à toute chaîne de caractères (même vide), sauf les fichiers commençant par `.`.
+     2. `*_*` : fichiers contenant un underscore — `*` de chaque côté correspond à n'importe quel préfixe/suffixe.
+     3. `[ab]*` : fichiers commençant par `a` **ou** `b`. Les crochets définissent un ensemble de caractères possibles pour **une** position.
+     4. `[^ab]*` : le `^` **inverse** la classe — ici, fichiers ne commençant **ni** par `a` **ni** par `b`.
+     5. `?` correspond à exactement **un** caractère. Six `?` = fichiers de exactement 6 caractères.
 
-3. Avec `ls`, listez tous les fichiers qui :
+3.  Avec `ls`, listez tous les fichiers qui :
 
-    - se terminent par `5` ;
-    - commencent par `annee4` ;
-    - commencent par `annee4` et ont au maximum 7 lettres ;
-    - commencent par `annee` et dont le sixième caractère n’est **pas** un chiffre ;
-    - contiennent la chaîne `ana` ;
-    - commencent par `a` **ou** `A` ;
-    - dont l’avant-dernier caractère est `4` **ou** `1`.
-   
-4. Listez tous les fichiers cachés (nom commençant par `.`) de votre répertoire personnel.
-5. Listez tous les fichiers dont le nom commence par `std` et se termine par `.h` dans `/usr/include`.
+     - se terminent par `5` ;
+     - commencent par `annee4` ;
+     - commencent par `annee4` et ont au maximum 7 lettres ;
+     - commencent par `annee` et dont le sixième caractère n’est **pas** un chiffre ;
+     - contiennent la chaîne `ana` ;
+     - commencent par `a` **ou** `A` ;
+     - dont l’avant-dernier caractère est `4` **ou** `1`.
+    
+4.  Listez tous les fichiers cachés (nom commençant par `.`) de votre répertoire personnel.
+5.  Listez tous les fichiers dont le nom commence par `std` et se termine par `.h` dans `/usr/include`.
 
 !!! info "Cet exercice est représentatif d’un item type **DE S42 (QCM)**."
 
@@ -508,11 +531,13 @@ Depuis votre répertoire personnel, exécutez :
    echo "=== Espace disque ==="
    df -h /
    ```
+
 3. Rendez le script exécutable et lancez-le :
    ```bash
    $ chmod +x info-systeme.sh
    $ ./info-systeme.sh
    ```
+
 4. **Exercice de création** : écrivez un script `creer-arbo.sh` qui :
     - Prend un **argument** : le nom d’un projet (ex. `mon_projet`).
     - Crée l’arborescence suivante :
