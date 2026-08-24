@@ -2,7 +2,7 @@
 title: Home
 ---
 
-# TI507N - Introduction to Linux
+# TI507N & TI507NB - Introduction to Linux
 
 ### Description
 
@@ -12,14 +12,14 @@ This year the module coordinator is Mr. Yvan GUIFO. You can reach him at `yvan.g
 
 ### Schedule
 
-This module spans 15 hours of integrated Lecture-Lab sessions.
+This module spans 14 hours of integrated Lecture-Lab sessions.
 
-- Week 36: 3-hour lab session
-- Week 37: 3-hour lab session
-- **Week 38: 3-hour lab session + 25-minute assessment (CC)**
-- Week 39: 3-hour lab session
-- **Week 40: 2-hour lab session including 1-hour graded lab (TP noté)**
-- **Week 42: 1-hour final exam (DE)**
+- Week 36: 3 hours of practical sessions.
+- Week 37: 3 hours of practical sessions.
+- Week 38: 3 hours of practical sessions.
+- Week 39: 3 hours of practical work.
+- **Week 40: 2 hours of practical work, including 1 hour of assessment (marked practical work) accounting for 40 per cent of the final mark.**
+- **Week 41: 1 hour final examination (DE) accounting for 60 per cent of the final mark.**
 
 ### Group assignments
 

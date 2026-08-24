@@ -2,7 +2,7 @@
 title: Accueil
 ---
 
-# TI507N - Introduction au système Linux
+# TI507N & TI507NB - Introduction au système Linux
 
 ### Description
 
@@ -12,14 +12,14 @@ Cette année le coordinateur de ce module sera M. Yvan GUIFO. Vous pouvez le con
 
 ### Séquencement
 
-Ce module se déroulera en 15 heures de cours sous forme de Cours - TP.
+Ce module se déroulera en 14 heures de cours sous forme de Cours - TP.
 
-- Semaine 36: 3 heures de TP
-- Semaine 37: 3 heures de TP
-- **Semaine 38: 3 heures de TP + 25 minutes d'évaluation (CC)**
-- Semaine 39: 3 heures de TP 
-- **Semaine 40: 2 heures de TP dont 1 heure d'évaluation (TP noté)**
-- **Semaine 42: 1 heure d'examen final (DE)**
+- Semaine 36: 3 heures de TP.
+- Semaine 37: 3 heures de TP.
+- Semaine 38: 3 heures de TP.
+- Semaine 39: 3 heures de TP.
+- **Semaine 40: 2 heures de TP dont 1 heure d'évaluation (TP noté) comptant pour 40% de la note finale.**
+- **Semaine 41: 1 heure d'examen final (DE) comptant pour 60% de la note finale.**
 
 ### Répartition des groupes
 
