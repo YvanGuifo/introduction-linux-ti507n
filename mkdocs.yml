@@ -1,4 +1,4 @@
-site_name: TI507N - Introduction au système Linux
+site_name: TI507N & TI507NB - Introduction au système Linux
 
 repo_url: https://github.com/YvanGuifo/introduction-linux-ti507n
 
@@ -111,12 +111,19 @@ markdown_extensions:
 # exclusion, « mkdocs build --strict » échoue (page hors nav = WARNING). Les
 # corrigés ne sont pas publiés ; les brouillons/anciennes versions non plus.
 exclude_docs: |
-  contenus/corrige-tp2.md
-  contenus/corrige-tp3.md
-  contenus/corrige-tp4.md
-  contenus/draft-corrige-tp4.md
-  contenus/old-tp4.md
-  contenus/old-tp5.md
+  contenus/corrige-*.md
+  contenus/draft-*.md
+  contenus/old-*.md
+  contenus/tp2.md
+  contenus/tp2.en.md
+  contenus/tp3.md
+  contenus/tp3.en.md
+  contenus/tp4.md
+  contenus/tp4.en.md
+  contenus/tp4-exo.md
+  contenus/tp4-exo.en.md
+  contenus/installation-wsl.md
+  contenus/installation-wsl.en.md
 
 plugins:
   - search:
@@ -166,10 +173,10 @@ nav:
     - "Vous n'avez pas de système Linux installé ? Pas grave, Codespace à la rescousse !": contenus/codespace.md
   - Travaux Pratiques:
     - "TP1 - Premières commandes": contenus/tp1.md
-    - "TP2 — Système de fichiers et permissions": contenus/tp2.md
-    - "TP3 — Environnement de travail et Compilateur C": contenus/tp3.md
-    - "TP4 — Canaux standards et redirections, Processus et tâches, Signaux": contenus/tp4.md
-    - "Quelques commandes supplémentaires": contenus/tp4-exo.md
+   # - "TP2 — Système de fichiers et permissions": contenus/tp2.md
+   # - "TP3 — Environnement de travail et Compilateur C": contenus/tp3.md
+   # - "TP4 — Canaux standards et redirections, Processus et tâches, Signaux": contenus/tp4.md
+   # - "Quelques commandes supplémentaires": contenus/tp4-exo.md
   #- Corrigés:
   #  - "Corrigé TP2": contenus/corrige-tp2.md
   #  - "Corrigé TP3": contenus/corrige-tp3.md
@@ -197,4 +204,4 @@ extra:
       name: "Contacter l'enseignant"
 
 copyright: >
-  TI507N - Introduction au système Linux - Efrei Paris
+  TI507N & TI507NB - Introduction au système Linux - Efrei Paris
