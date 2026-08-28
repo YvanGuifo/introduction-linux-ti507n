@@ -122,8 +122,6 @@ exclude_docs: |
   contenus/tp4.en.md
   contenus/tp4-exo.md
   contenus/tp4-exo.en.md
-  contenus/installation-wsl.md
-  contenus/installation-wsl.en.md
 
 plugins:
   - search:
