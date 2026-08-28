@@ -43,6 +43,13 @@
         <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/glossaire/"/>
     </url>
     <url>
+        <loc>Nonecontenus/installation-wsl/</loc>
+        <lastmod>2026-08-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/installation-wsl/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/installation-wsl/"/>
+    </url>
+    <url>
         <loc>Nonecontenus/preliminary-reading/</loc>
         <lastmod>2026-08-28</lastmod>
         <changefreq>daily</changefreq>
@@ -97,6 +104,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/glossaire/"/>
         <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/glossaire/"/>
+    </url>
+    <url>
+        <loc>Noneen/contenus/installation-wsl/</loc>
+        <lastmod>2026-08-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneen/contenus/installation-wsl/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="Nonecontenus/installation-wsl/"/>
     </url>
     <url>
         <loc>Noneen/contenus/preliminary-reading/</loc>
