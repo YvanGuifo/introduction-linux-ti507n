@@ -169,7 +169,7 @@ nav:
     - "Vous n'avez pas de système Linux installé ? Pas grave, Codespace à la rescousse !": contenus/codespace.md
   - Travaux Pratiques:
     - "TP1 - Premières commandes": contenus/tp1.md
-   # - "TP2 — Système de fichiers et permissions": contenus/tp2.md
+    - "TP2 — Système de fichiers et permissions": contenus/tp2.md
    # - "TP3 — Environnement de travail et Compilateur C": contenus/tp3.md
    # - "TP4 — Canaux standards et redirections, Processus et tâches, Signaux": contenus/tp4.md
    # - "Quelques commandes supplémentaires": contenus/tp4-exo.md
