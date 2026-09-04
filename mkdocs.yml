@@ -114,8 +114,6 @@ exclude_docs: |
   contenus/corrige-*.md
   contenus/draft-*.md
   contenus/old-*.md
-  contenus/tp2.md
-  contenus/tp2.en.md
   contenus/tp3.md
   contenus/tp3.en.md
   contenus/tp4.md
