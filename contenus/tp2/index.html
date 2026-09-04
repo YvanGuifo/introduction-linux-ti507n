@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../tp1/">
+      
+      
+        <link rel="next" href="../Intro-MarioNum/">
       
       
         
@@ -351,10 +355,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../tp1/" class="md-tabs__link">
           
   
@@ -613,28 +619,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -652,7 +661,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -686,6 +695,315 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TP2 — Système de fichiers et permissions
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TP2 — Système de fichiers et permissions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-systeme-de-fichiers-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Système de fichiers Linux
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Système de fichiers Linux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercice-1-id-et-etcpasswd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercice 1 — id et /etc/passwd 📚
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-permissions-associees-aux-fichiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Permissions associées aux fichiers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Permissions associées aux fichiers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercice-2-lire-les-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercice 2 — Lire les permissions 📚
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-3-modification-des-permissions-chmod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercice 3 — Modification des permissions chmod 📚📚
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-4-effet-des-permissions-sur-les-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercice 4 — Effet des permissions sur les opérations 📚📚
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-permissions-associees-aux-repertoires" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Permissions associées aux répertoires
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Permissions associées aux répertoires">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercice-5-permissions-sur-les-repertoires" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercice 5 — Permissions sur les répertoires 📚📚📚
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-le-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Le PATH
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Le PATH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercice-6-les-repertoires-du-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercice 6 — Les répertoires du PATH 📚📚📚
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-recapitulatif-sur-les-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Récapitulatif sur les permissions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Récapitulatif sur les permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercice-7-on-lache-le-clavier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercice 7 — On lâche le clavier 📚📚📚
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#synthese-ce-que-vous-devez-savoir-faire" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synthèse — Ce que vous devez savoir faire
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercices-supplementaires" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⭐ Exercices supplémentaires
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⭐ Exercices supplémentaires">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercice-8-comprendre-et-manipuler-umask" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercice 8 — Comprendre et manipuler umask ⭐
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-9-permissions-speciales-suid-sgid-sticky-bit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercice 9 — Permissions spéciales : SUID, SGID, sticky bit ⭐
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-10-script-daudit-de-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercice 10 — Script d’audit de permissions ⭐
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pour-aller-plus-loin-lectures-recommandees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pour aller plus loin (lectures recommandées)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1945,6 +2263,44 @@ absent du chiffre de base. Vous le vérifierez à la question 4.</p>
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
+        
+          
+          <a href="../tp1/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: TP1 - Premières commandes">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              <div class="md-ellipsis">
+                TP1 - Premières commandes
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../Intro-MarioNum/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Introduction à MarioNum">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              <div class="md-ellipsis">
+                Introduction à MarioNum
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
