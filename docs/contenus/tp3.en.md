@@ -59,11 +59,6 @@ title: Lab 3 - Working Environment and C Compiler
     > **As of 2026‑2027 they are part of the graded scope**: they cover the
     > "Programming" section of the module syllabus.
 
-!!! info "Alignment with assessments (Biggs, 1996)"
-    The 📚 and 📚📚 exercises prepare for the **CC S38** and the **graded lab S40**.
-    The 📚📚📚 exercises prepare for the **DE S42 (MCQ)** through their analysis and justification dimension.
-    The ⭐ exercises in this lab prepare for the **system-call** part of the **DE S42**.
-
     > **Reference**: Biggs, J. (1996). Enhancing teaching through constructive alignment. *Higher Education*, 32(3), 347–364. DOI: [10.1007/BF00138871](https://doi.org/10.1007/BF00138871).
 
 ---
