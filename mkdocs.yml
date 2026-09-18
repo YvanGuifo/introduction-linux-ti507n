@@ -114,8 +114,6 @@ exclude_docs: |
   contenus/corrige-*.md
   contenus/draft-*.md
   contenus/old-*.md
-  contenus/tp4.md
-  contenus/tp4.en.md
   contenus/tp4-exo.md
   contenus/tp4-exo.en.md
 
@@ -169,7 +167,7 @@ nav:
     - "TP1 - Premières commandes": contenus/tp1.md
     - "TP2 — Système de fichiers et permissions": contenus/tp2.md
     - "TP3 — Environnement de travail et Compilateur C": contenus/tp3.md
-   # - "TP4 — Canaux standards et redirections, Processus et tâches, Signaux": contenus/tp4.md
+    - "TP4 — Canaux standards et redirections, Processus et tâches, Signaux": contenus/tp4.md
    # - "Quelques commandes supplémentaires": contenus/tp4-exo.md
   #- Corrigés:
   #  - "Corrigé TP2": contenus/corrige-tp2.md
