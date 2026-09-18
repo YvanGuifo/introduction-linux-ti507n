@@ -1561,9 +1561,7 @@ In this file, you will progressively record the results of the commands executed
 <blockquote>
 <p>📚 = Easy · 📚📚 = Medium · 📚📚📚 = Advanced</p>
 <p>Exercises <strong>1 to 7</strong> constitute the <strong>core curriculum</strong>, required for all students.
-Exercises <strong>8, 9, 10</strong> (⭐) cover <strong>systems programming in C</strong>.
-<strong>As of 2026‑2027 they are part of the graded scope</strong>: they cover the
-"Programming" section of the module syllabus.</p>
+Exercises <strong>8, 9, 10</strong> (⭐) cover <strong>systems programming in C</strong>.</p>
 </blockquote>
 </div>
 <hr />
@@ -2010,7 +2008,7 @@ The file <code>fichier.txt</code> is then <em>connected</em> to the standard inp
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Send a signal with <code>kill</code> using the different syntaxes (<code>-SIGTERM</code>, <code>-s SIGTERM</code>, <code>-15</code>).</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Choose between <code>SIGTERM</code> (graceful) and <code>SIGKILL</code> (forced) depending on the context.</li>
 </ul>
-<p><strong>Systems programming (⭐ — graded)</strong>:</p>
+<p><strong>Systems programming</strong>:</p>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Install a signal handler with <code>signal()</code> and explain why <code>sigaction()</code> is preferred.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Create a child process with <code>fork()</code> and tell the two execution paths apart from the return value.</li>
@@ -2030,11 +2028,6 @@ you write a <strong>mini-shell</strong>.</p>
 <p><strong>Lab 4 ⭐</strong>: <strong><code>signal</code></strong>, <strong><code>fork</code></strong>, <strong><code>exec*</code></strong>, <strong><code>wait</code></strong> / <strong><code>waitpid</code></strong> — the
 core of Unix multitasking.</p>
 <p>Targeted taxonomic levels: <strong>[Analyze]</strong>, <strong>[Evaluate]</strong>, <strong>[Create]</strong> (revised Bloom).</p>
-<div class="admonition warning">
-<p class="admonition-title">Change for 2026‑2027</p>
-<p>These exercises used to be presented as optional. <strong>They are now graded</strong>:
-<code>fork</code>, <code>exec*</code>, <code>wait</code> and signals are part of the <strong>DE S42</strong> scope.</p>
-</div>
 </div>
 <h3 id="exercise-8-catching-a-signal-in-c-with-signal">Exercise 8 — Catching a signal in C with <code>signal()</code> ⭐<a class="headerlink" href="#exercise-8-catching-a-signal-in-c-with-signal" title="Permanent link">&para;</a></h3>
 <p>The <code>signal()</code> system call allows you to install a <strong>handler</strong> that will be called each time the process receives a given signal.</p>

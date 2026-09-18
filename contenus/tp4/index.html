@@ -1561,9 +1561,7 @@ Dans ce fichier, vous consignerez progressivement les résultats des commandes e
 <blockquote>
 <p>📚 = Facile · 📚📚 = Moyenne · 📚📚📚 = Élevée</p>
 <p>Les exercices <strong>1 à 7</strong> constituent le <strong>tronc commun</strong>, exigible pour tous.
-Les exercices <strong>8, 9, 10</strong> (⭐) portent sur la <strong>programmation système en C</strong>.
-<strong>Depuis 2026‑2027, ils font partie du périmètre évalué</strong> : ils couvrent la
-partie « Programmation » du syllabus du module.</p>
+Les exercices <strong>8, 9, 10</strong> (⭐) portent sur la <strong>programmation système en C</strong>.</p>
 </blockquote>
 </div>
 <hr />
@@ -2010,7 +2008,7 @@ Le fichier <code>fichier.txt</code> est alors <em>connecté</em> à l’entrée 
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Envoyer un signal avec <code>kill</code> en utilisant les différentes syntaxes (<code>-SIGTERM</code>, <code>-s SIGTERM</code>, <code>-15</code>).</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Choisir entre <code>SIGTERM</code> (propre) et <code>SIGKILL</code> (forcé) selon le contexte.</li>
 </ul>
-<p><strong>Programmation système (⭐ — évalué)</strong> :</p>
+<p><strong>Programmation système</strong> :</p>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Installer un gestionnaire de signal avec <code>signal()</code> et expliquer pourquoi <code>sigaction()</code> lui est préféré.</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Créer un processus fils avec <code>fork()</code> et distinguer les deux flots d’exécution par la valeur de retour.</li>
@@ -2030,12 +2028,6 @@ un <strong>mini-shell</strong>.</p>
 <p><strong>TP4 ⭐</strong> : <strong><code>signal</code></strong>, <strong><code>fork</code></strong>, <strong><code>exec*</code></strong>, <strong><code>wait</code></strong> / <strong><code>waitpid</code></strong> — le
 cœur du multitâche Unix.</p>
 <p>Niveaux taxonomiques visés : <strong>[Analyser]</strong>, <strong>[Évaluer]</strong>, <strong>[Créer]</strong> (Bloom révisé).</p>
-<div class="admonition warning">
-<p class="admonition-title">Changement 2026‑2027</p>
-<p>Ces exercices étaient auparavant présentés comme optionnels. <strong>Ils sont
-désormais évalués</strong> : <code>fork</code>, <code>exec*</code>, <code>wait</code> et les signaux font partie du
-périmètre du <strong>DE S42</strong>.</p>
-</div>
 </div>
 <h3 id="exercice-8-capturer-un-signal-en-c-avec-signal">Exercice 8 — Capturer un signal en C avec <code>signal()</code> ⭐<a class="headerlink" href="#exercice-8-capturer-un-signal-en-c-avec-signal" title="Permanent link">&para;</a></h3>
 <p>L’appel système <code>signal()</code> permet d’installer un <strong>gestionnaire</strong> (<em>handler</em>) qui sera appelé chaque fois que le processus reçoit un signal donné.</p>
