@@ -53,8 +53,6 @@ title: TP4 - Canaux standards et redirections | Processus et tâches | Signaux
     >
     > Les exercices **1 à 7** constituent le **tronc commun**, exigible pour tous.
     > Les exercices **8, 9, 10** (⭐) portent sur la **programmation système en C**.
-    > **Depuis 2026‑2027, ils font partie du périmètre évalué** : ils couvrent la
-    > partie « Programmation » du syllabus du module.
 
 
 
@@ -428,7 +426,7 @@ Cet exercice vous demande d’écrire un petit programme C utilisant les acquis 
     - [ ] Envoyer un signal avec `kill` en utilisant les différentes syntaxes (`-SIGTERM`, `-s SIGTERM`, `-15`).
     - [ ] Choisir entre `SIGTERM` (propre) et `SIGKILL` (forcé) selon le contexte.
 
-    **Programmation système (⭐ — évalué)** :
+    **Programmation système** :
 
     - [ ] Installer un gestionnaire de signal avec `signal()` et expliquer pourquoi `sigaction()` lui est préféré.
     - [ ] Créer un processus fils avec `fork()` et distinguer les deux flots d’exécution par la valeur de retour.
@@ -453,10 +451,7 @@ Cet exercice vous demande d’écrire un petit programme C utilisant les acquis 
 
     Niveaux taxonomiques visés : **[Analyser]**, **[Évaluer]**, **[Créer]** (Bloom révisé).
 
-    !!! warning "Changement 2026‑2027"
-        Ces exercices étaient auparavant présentés comme optionnels. **Ils sont
-        désormais évalués** : `fork`, `exec*`, `wait` et les signaux font partie du
-        périmètre du **DE S42**.
+   
 
 ### Exercice 8 — Capturer un signal en C avec `signal()` ⭐
 

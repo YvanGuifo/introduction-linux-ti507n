@@ -53,8 +53,7 @@ title: Lab 4 - Standard Channels and Redirections | Processes and Jobs | Signals
     >
     > Exercises **1 to 7** constitute the **core curriculum**, required for all students.
     > Exercises **8, 9, 10** (⭐) cover **systems programming in C**.
-    > **As of 2026‑2027 they are part of the graded scope**: they cover the
-    > "Programming" section of the module syllabus.
+  
 
 
 
@@ -427,7 +426,7 @@ This exercise asks you to write a small C program using the skills from Lab 3.
     - [ ] Send a signal with `kill` using the different syntaxes (`-SIGTERM`, `-s SIGTERM`, `-15`).
     - [ ] Choose between `SIGTERM` (graceful) and `SIGKILL` (forced) depending on the context.
 
-    **Systems programming (⭐ — graded)**:
+    **Systems programming**:
 
     - [ ] Install a signal handler with `signal()` and explain why `sigaction()` is preferred.
     - [ ] Create a child process with `fork()` and tell the two execution paths apart from the return value.
@@ -452,9 +451,7 @@ This exercise asks you to write a small C program using the skills from Lab 3.
 
     Targeted taxonomic levels: **[Analyze]**, **[Evaluate]**, **[Create]** (revised Bloom).
 
-    !!! warning "Change for 2026‑2027"
-        These exercises used to be presented as optional. **They are now graded**:
-        `fork`, `exec*`, `wait` and signals are part of the **DE S42** scope.
+    
 
 ### Exercise 8 — Catching a signal in C with `signal()` ⭐
 
