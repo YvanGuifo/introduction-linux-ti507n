@@ -56,12 +56,7 @@ title: Lab 4 - Standard Channels and Redirections | Processes and Jobs | Signals
     > **As of 2026‑2027 they are part of the graded scope**: they cover the
     > "Programming" section of the module syllabus.
 
-!!! info "Alignment with assessments (Biggs, 1996)"
-    Exercises 📚 and 📚📚 prepare for the **CC S38** and the **graded lab S40**.
-    Exercises 📚📚📚 prepare for the **DE S42 (MCQ)** through their analysis and justification dimensions.
-    The ⭐ exercises in this lab prepare for the **system-call** part of the **DE S42**.
 
-    > **Reference**: Biggs, J. (1996). Enhancing teaching through constructive alignment. *Higher Education*, 32(3), 347–364. DOI: [10.1007/BF00138871](https://doi.org/10.1007/BF00138871).
 
 ---
 

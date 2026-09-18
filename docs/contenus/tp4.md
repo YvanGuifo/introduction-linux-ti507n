@@ -56,12 +56,7 @@ title: TP4 - Canaux standards et redirections | Processus et tâches | Signaux
     > **Depuis 2026‑2027, ils font partie du périmètre évalué** : ils couvrent la
     > partie « Programmation » du syllabus du module.
 
-!!! info "Alignement avec les évaluations (Biggs, 1996)"
-    Les exercices 📚 et 📚📚 préparent au **CC S38** et au **TP noté S40**.
-    Les exercices 📚📚📚 préparent au **DE S42 (QCM)** par leur dimension d’analyse et de justification.
-    Les exercices ⭐ de ce TP préparent au **DE S42** sur la partie **appels système**.
 
-    > **Référence** : Biggs, J. (1996). Enhancing teaching through constructive alignment. *Higher Education*, 32(3), 347–364. DOI : [10.1007/BF00138871](https://doi.org/10.1007/BF00138871).
 
 ---
 
